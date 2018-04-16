@@ -7,6 +7,43 @@ package com.example.anan.chartcore_slim;
 
 public class AAChartModel {
 
+    public interface AAChartAnimationType {
+        String EaseInQuad     = "easeInQuad";
+        String EaseOutQuad    = "easeOutQuad";
+        String EaseInOutQuad  = "easeInOutQuad";
+        String EaseInCubic    = "easeInCubic";
+        String EaseOutCubic   = "easeOutCubic";
+        String EaseInOutCubic = "easeInOutCubic";
+        String EaseInQuart    = "easeInQuart";
+        String EaseOutQuart   = "easeOutQuart";
+        String EaseInOutQuart = "easeInOutQuart";
+        String EaseInQuint    = "easeInQuint";
+        String EaseOutQuint   = "easeOutQuint";
+        String EaseInOutQuint = "easeInOutQuint";
+        String EaseInSine     = "easeInSine";
+        String EaseOutSine    = "easeOutSine";
+        String EaseInOutSine  = "easeInOutSine";
+        String EaseInExpo     = "easeInExpo";
+        String EaseOutExpo    = "easeOutExpo";
+        String EaseInOutExpo  = "easeInOutExpo";
+        String EaseInCirc     = "easeInCirc";
+        String EaseOutCirc    = "easeOutCirc";
+        String EaseInOutCirc  = "easeInOutCirc";
+        String EaseOutBounce  = "easeOutBounce";
+        String EaseInBack     = "easeInBack";
+        String EaseOutBack    = "easeOutBack";
+        String EaseInOutBack  = "easeInOutBack";
+        String Elastic        = "elastic";
+        String SwingFromTo    = "swingFromTo";
+        String SwingFrom      = "swingFrom";
+        String SwingTo        = "swingTo";
+        String Bounce         = "bounce";
+        String BouncePast     = "bouncePast";
+        String EaseFromTo     = "easeFromTo";
+        String EaseFrom       = "easeFrom";
+        String EaseTo         = "easeTo";
+    }
+
     public interface AAChartType {
         String Column      = "column";
         String Bar         = "bar";
@@ -23,25 +60,25 @@ public class AAChartModel {
         String Arearange   = "arearange";
     }
 
-    public interface AAChartSubtitleAlignType{
+    public interface AAChartSubtitleAlignType {
         String Left   = "left";
         String Center = "center";
         String Right  = "right";
     }
 
-    public interface AAChartZoomType{
+    public interface AAChartZoomType {
         String X  = "x";
         String Y  = "y";
         String XY = "xy";
     }
 
-    public interface AAChartStackingType{
+    public interface AAChartStackingType {
         String False   = "";
         String Normal  = "normal";
         String Percent = "percent";
     }
 
-    public interface AAChartSymbolType{
+    public interface AAChartSymbolType {
         String Circle         = "circle";
         String Square         = "square";
         String Diamond        = "diamond";
@@ -49,57 +86,37 @@ public class AAChartModel {
         String Triangle_down  = "triangle-down";
     }
 
-    public interface AAchartLegendlLayoutType{
+    public interface AAchartLegendlLayoutType {
         String Horizontal  = "horizontal";
         String Vertical    = "vertical";
     }
 
-    public interface AAChartLegendAlignType{
+    public interface AAChartLegendAlignType {
         String Left     = "left";
         String Center   = "center";
         String Right    = "right";
     }
 
-    public interface AAChartLegendVerticalAlignType{
+    public interface AAChartLegendVerticalAlignType {
         String Top     = "top";
         String Middle  = "middle";
         String Bottom  = "bottom";
     }
 
-    public interface AAChartAnimationType{
-        String Linear              = "linear";
-        String Swing               = "swing";
-        String EaseInQuad          = "easeInQuad";
-        String EaseOutQuad         = "easeOutQuad";
-        String EaseInOutQuad       = "easeInOutQuad";
-        String EaseInCubic         = "easeInCubic";
-        String EaseOutCubic        = "easeOutCubic";
-        String EaseInOutCubic      = "easeInOutCubic";
-        String EaseInQuart         = "easeInQuart";
-        String EaseOutQuart        = "easeOutQuart";
-        String EaseInOutQuart      = "easeInOutQuart";
-        String EaseInQuint         = "easeInQuint";
-        String EaseOutQuint        = "easeOutQuint";
-        String EaseInOutQuint      = "easeInOutQuint";
-        String EaseInExpo          = "easeInExpo";
-        String EaseOutExpo         = "easeOutExpo";
-        String EaseInOutExpo       = "easeInOutExpo";
-        String EaseInSine          = "easeInSine";
-        String EaseOutSine         = "easeOutSine";
-        String EaseInOutSine       = "easeInOutSine";
-        String EaseInCirc          = "easeInCirc";
-        String EaseOutCirc         = "easeOutCirc";
-        String EaseInOutCirc       = "easeInOutCirc";
-        String EaseInElastic       = "easeInElastic";
-        String EaseOutElastic      = "easeOutElastic";
-        String EaseInOutElastic    = "easeInOutElastic";
-        String EaseInBack          = "easeInBack";
-        String EaseOutBack         = "easeOutBack";
-        String EaseInOutBack       = "easeInOutBack";
-        String EaseInBounce        = "easeInBounce";
-        String EaseOutBounce       = "easeOutBounce";
-        String EaseInOutBounce     = "easeInOutBounce";
+    public interface AALineDashSyleType {
+        String Solid           = "Solid";
+        String ShortDash       = "ShortDash";
+        String ShortDot        = "ShortDot";
+        String ShortDashDot    = "ShortDashDot";
+        String ShortDashDotDot = "ShortDashDotDot";
+        String Dot             = "Dot";
+        String Dash            = "Dash";
+        String LongDash        = "LongDash";
+        String DashDot         = "DashDot";
+        String LongDashDot     = "LongDashDot";
+        String LongDashDotDot  = "LongDashDotDot";
     }
+
 
     private String  animationType;         //动画类型
     private Integer animationDuration;     //动画时间
@@ -138,185 +155,185 @@ public class AAChartModel {
     private AASeries[] series;
 
 
-    public AAChartModel setAnimationType(String animationType) {
+    public AAChartModel animationType(String animationType) {
         this.animationType = animationType;
         return this;
     }
 
-    public AAChartModel setAnimationDuration(Integer animationDuration) {
+    public AAChartModel animationDuration(Integer animationDuration) {
         this.animationDuration = animationDuration;
         return this;
     }
 
-    public AAChartModel setTitle(String title) {
+    public AAChartModel title(String title) {
         this.title = title;
         return this;
     }
 
-    public AAChartModel setSubtitle(String subtitle) {
+    public AAChartModel subtitle(String subtitle) {
         this.subtitle = subtitle;
         return this;
     }
 
-    public AAChartModel setChartType(String chartType) {
+    public AAChartModel chartType(String chartType) {
         this.chartType = chartType;
         return this;
     }
 
-    public AAChartModel setStacking(String stacking) {
+    public AAChartModel stacking(String stacking) {
         this.stacking = stacking;
         return this;
     }
 
-    public AAChartModel setSymbol(String symbol) {
+    public AAChartModel symbol(String symbol) {
         this.symbol = symbol;
         return this;
     }
 
-    public AAChartModel setZoomType(String zoomType) {
+    public AAChartModel zoomType(String zoomType) {
         this.zoomType = zoomType;
         return this;
     }
 
-    public AAChartModel setPointHollow(Boolean pointHollow) {
+    public AAChartModel pointHollow(Boolean pointHollow) {
         this.pointHollow = pointHollow;
         return this;
     }
 
-    public AAChartModel setInverted(Boolean inverted) {
+    public AAChartModel inverted(Boolean inverted) {
         this.inverted = inverted;
         return this;
     }
 
-    public AAChartModel setxAxisReversed(Boolean xAxisReversed) {
+    public AAChartModel xAxisReversed(Boolean xAxisReversed) {
         this.xAxisReversed = xAxisReversed;
         return this;
     }
 
-    public AAChartModel setyAxisReversed(Boolean yAxisReversed) {
+    public AAChartModel yAxisReversed(Boolean yAxisReversed) {
         this.yAxisReversed = yAxisReversed;
         return this;
     }
 
-    public AAChartModel setCrosshairs(Boolean crosshairs) {
+    public AAChartModel crosshairs(Boolean crosshairs) {
         this.crosshairs = crosshairs;
         return this;
     }
 
-    public AAChartModel setGradientColorEnable(Boolean gradientColorEnable) {
+    public AAChartModel gradientColorEnable(Boolean gradientColorEnable) {
         this.gradientColorEnable = gradientColorEnable;
         return this;
     }
 
-    public AAChartModel setPolar(Boolean polar) {
+    public AAChartModel polar(Boolean polar) {
         this.polar = polar;
         return this;
     }
 
-    public AAChartModel setDataLabelEnabled(Boolean dataLabelEnabled) {
+    public AAChartModel dataLabelEnabled(Boolean dataLabelEnabled) {
         this.dataLabelEnabled = dataLabelEnabled;
         return this;
     }
 
-    public AAChartModel setxAxisLabelsEnabled(Boolean xAxisLabelsEnabled) {
+    public AAChartModel xAxisLabelsEnabled(Boolean xAxisLabelsEnabled) {
         this.xAxisLabelsEnabled = xAxisLabelsEnabled;
         return this;
     }
 
-    public AAChartModel setCategories(String[] categories) {
+    public AAChartModel categories(String[] categories) {
         this.categories = categories;
         return this;
     }
 
-    public AAChartModel setxAxisGridLineWidth(Integer xAxisGridLineWidth) {
+    public AAChartModel xAxisGridLineWidth(Integer xAxisGridLineWidth) {
         this.xAxisGridLineWidth = xAxisGridLineWidth;
         return this;
     }
 
-    public AAChartModel setyAxisGridLineWidth(Integer yAxisGridLineWidth) {
+    public AAChartModel yAxisGridLineWidth(Integer yAxisGridLineWidth) {
         this.yAxisGridLineWidth = yAxisGridLineWidth;
         return this;
     }
 
-    public AAChartModel setyAxisLabelsEnabled(Boolean yAxisLabelsEnabled) {
+    public AAChartModel yAxisLabelsEnabled(Boolean yAxisLabelsEnabled) {
         this.yAxisLabelsEnabled = yAxisLabelsEnabled;
         return this;
     }
 
-    public AAChartModel setyAxisTitle(String yAxisTitle) {
+    public AAChartModel yAxisTitle(String yAxisTitle) {
         this.yAxisTitle = yAxisTitle;
         return this;
     }
 
-    public AAChartModel setColorsTheme(String[] colorsTheme) {
+    public AAChartModel colorsTheme(String[] colorsTheme) {
         this.colorsTheme = colorsTheme;
         return this;
     }
 
-    public AAChartModel setLegendEnabled(Boolean legendEnabled) {
+    public AAChartModel legendEnabled(Boolean legendEnabled) {
         this.legendEnabled = legendEnabled;
         return this;
     }
 
-    public AAChartModel setLegendLayout(String legendLayout) {
+    public AAChartModel legendLayout(String legendLayout) {
         this.legendLayout = legendLayout;
 
         return this;
     }
 
-    public AAChartModel setLegendAlign(String legendAlign) {
+    public AAChartModel legendAlign(String legendAlign) {
         this.legendAlign = legendAlign;
         return this;
     }
 
-    public AAChartModel setLegendVerticalAlign(String legendVerticalAlign) {
+    public AAChartModel legendVerticalAlign(String legendVerticalAlign) {
         this.legendVerticalAlign = legendVerticalAlign;
         return this;
     }
 
-    public AAChartModel setBackgroundColor(String backgroundColor) {
+    public AAChartModel backgroundColor(String backgroundColor) {
         this.backgroundColor = backgroundColor;
         return this;
     }
 
-    public AAChartModel setOptions3dEnable(Boolean options3dEnable) {
+    public AAChartModel options3dEnable(Boolean options3dEnable) {
         this.options3dEnable = options3dEnable;
         return this;
     }
 
-    public AAChartModel setOptions3dAlphaInt(Integer options3dAlphaInt) {
+    public AAChartModel options3dAlphaInt(Integer options3dAlphaInt) {
         this.options3dAlphaInt = options3dAlphaInt;
         return this;
     }
 
-    public AAChartModel setOptions3dBetaInt(Integer options3dBetaInt) {
+    public AAChartModel options3dBetaInt(Integer options3dBetaInt) {
         this.options3dBetaInt = options3dBetaInt;
         return this;
     }
 
-    public AAChartModel setOptions3dDepth(Integer options3dDepth) {
+    public AAChartModel options3dDepth(Integer options3dDepth) {
         this.options3dDepth = options3dDepth;
         return this;
     }
 
-    public AAChartModel setBorderRadius(Integer borderRadius) {
+    public AAChartModel borderRadius(Integer borderRadius) {
         this.borderRadius = borderRadius;
         return this;
     }
 
-    public AAChartModel setMarkerRadius(Integer markerRadius) {
+    public AAChartModel markerRadius(Integer markerRadius) {
         this.markerRadius = markerRadius;
         return this;
     }
 
-    public AAChartModel setSeries(AASeries[] series) {
+    public AAChartModel series(AASeries[] series) {
         this.series = series;
         return this;
     }
 
 
     // 构造函数(亦即是初始化函数)
-    public AAChartModel(){
+    public AAChartModel() {
 
 //        this.animationType = AAChartAnimationType.EaseInBack;
 //        this.animationDuration = 800;//以毫秒为单位
