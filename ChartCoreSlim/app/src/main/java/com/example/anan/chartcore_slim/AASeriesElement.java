@@ -1,3 +1,36 @@
+//
+//  AASeriesElement.java
+//  ChartCore-Slim
+//
+//  Created by anan on 2018/4/16..
+//  Copyright © 2018年 An An. All rights reserved.
+//*************** ...... SOURCE CODE ...... ***************
+//***...................................................***
+//*** https://github.com/AAChartModel/ChartCore         ***
+//*** https://github.com/AAChartModel/ChartCore-Slim    ***
+//***...................................................***
+//*************** ...... SOURCE CODE ...... ***************
+
+
+ /*
+
+ * -------------------------------------------------------------------------------
+ *
+ *  🌕 🌖 🌗 🌘  ❀❀❀   WARM TIPS!!!   ❀❀❀ 🌑 🌒 🌓 🌔
+ *
+ * Please contact me on GitHub,if there are any problems encountered in use.
+ * GitHub Issues : https://github.com/AAChartModel/ChartCore-Slim/issues
+ * -------------------------------------------------------------------------------
+ * And if you want to contribute for this project, please contact me as well
+ * GitHub        : https://github.com/AAChartModel
+ * StackOverflow : https://stackoverflow.com/users/7842508/codeforu
+ * JianShu       : http://www.jianshu.com/u/f1e6753d4254
+ * SegmentFault  : https://segmentfault.com/u/huanghunbieguan
+ *
+ * -------------------------------------------------------------------------------
+
+ */
+
 package com.example.anan.chartcore_slim;
 
 import java.lang.reflect.Array;
@@ -61,7 +94,7 @@ public class AASeriesElement {
         this.negativeColor = negativeColor;
         return this;
     }
-    
+
     public AASeriesElement dashStyle(String dashStyle) {
         this.dashStyle = dashStyle;
         return this;
