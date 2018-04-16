@@ -1,4 +1,4 @@
-package com.jswym.cloud.statistics;
+package com.example.anan.chartcore_slim;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.jswym.cloud.statistics;
+package com.example.anan.chartcore_slim;
 
 
 /**
@@ -7,7 +7,7 @@ package com.jswym.cloud.statistics;
 
 public class AAChartModel {
 
-    public interface AAChartType{
+    public interface AAChartType {
         String Column      = "column";
         String Bar         = "bar";
         String Area        = "area";

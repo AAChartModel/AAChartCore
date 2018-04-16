@@ -1,4 +1,4 @@
-package com.jswym.cloud.statistics;
+package com.example.anan.chartcore_slim;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -6,7 +6,6 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 import com.google.gson.Gson;
-import com.jswym.utils.LoggerUtils;
 
 /**
  * Created by AnAn on 2017/9/8.
@@ -69,13 +68,15 @@ public class AAChartView extends WebView {
         // 将对象编译成json
         Gson gson = new Gson();
         optionsJson = gson.toJson(chartModel);
-        LoggerUtils.verbose("aa", "获得了最后的字符串 Options "+optionsJson);
+//        LoggerUtils.verbose("aa", "获得了最后的字符串 Options "+optionsJson);
 
         this.loadUrl("javascript:loadTheHighChartView('" + optionsJson + "', '" + 320 + "', '" + 380 + "')");
 
     }
 
     private void drawChartWithChartModel(AAChartModel chartModel) {
+
+
 
         // 将对象编译成json
         Gson gson = new Gson();
