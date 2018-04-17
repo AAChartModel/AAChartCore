@@ -123,6 +123,12 @@ public class AAChartModel {
         String Triangle_down  = "triangle-down";
     }
 
+    public interface AAChartSymbolStyleType {
+        String Normal       = "normal";
+        String InnerBlank   = "innerBlank";
+        String BorderBlank  = "borderBlank";
+    }
+
     public interface AAchartLegendlLayoutType {
         String Horizontal  = "horizontal";
         String Vertical    = "vertical";
@@ -162,6 +168,7 @@ public class AAChartModel {
     private String  chartType;             //图表类型
     private String  stacking;              //堆积样式
     private String  symbol;                //折线曲线连接点的类型："circle", "square", "diamond", "triangle","triangle-down"，默认是"circle"
+    private String  symbolStyle;
     private String  zoomType;              //缩放类型 AAChartZoomTypeX表示可沿着 x 轴进行手势缩放
     private Boolean pointHollow;           //折线或者曲线的连接点是否为空心的
     private Boolean inverted;              //x 轴是否翻转(垂直)
@@ -224,6 +231,11 @@ public class AAChartModel {
 
     public AAChartModel symbol(String symbol) {
         this.symbol = symbol;
+        return this;
+    }
+
+    public AAChartModel symbolStyle(String symbolStyle) {
+        this.symbolStyle = symbolStyle;
         return this;
     }
 

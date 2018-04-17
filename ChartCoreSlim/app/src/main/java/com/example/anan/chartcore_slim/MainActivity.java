@@ -69,49 +69,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     void goToAnotherActivity(int position) {
-        String[] chartTypeArr = {
-            /*基础类型图表*/
-                AAChartModel.AAChartType.Column,
-                AAChartModel.AAChartType.Bar,
-                AAChartModel.AAChartType.Area,
-                AAChartModel.AAChartType.AreaSpline,
-                AAChartModel.AAChartType.Area,
-                AAChartModel.AAChartType.Line,
-                AAChartModel.AAChartType.Line,
-                AAChartModel.AAChartType.Spline,
-            /*特殊类型图表*/
-                AAChartModel.AAChartType.Pie,
-                AAChartModel.AAChartType.Bubble,
-                AAChartModel.AAChartType.Scatter,
-                AAChartModel.AAChartType.Arearange,
-                AAChartModel.AAChartType.Columnrange,
-                AAChartModel.AAChartType.Line,
-                AAChartModel.AAChartType.Area,
-                AAChartModel.AAChartType.Boxplot,
-                AAChartModel.AAChartType.Waterfall,
-                AAChartModel.AAChartType.Pyramid,
-                AAChartModel.AAChartType.Funnel,
-            /*Mixed Chart---混合图*/
-                "Arearange Mixed Line---面积范围均线图",
-                "Columnrange Mixed Line---柱形范围图混合折线图",
-                "Dash Style Types Mixed---多种类型曲线混合图",
-                "Negative Color Mixed---基准线以下异色混合图",
-                "scatterMixedLine---散点图混合折线图(待完成)",
-                "Negative Color Mixed bubble---基准线以下异色气泡图"
-
-        };
-
-        String chartType = chartTypeArr[position];
-        String step = "FALSE";
-
-        if (position  == 4 || position == 5) {
-            step = "TRUE";
-        }
 
         Intent intent = new Intent(this, CommonChartActivity.class);
-        intent.putExtra(CommonChartActivity.CHART_TYPE, chartType);
-        intent.putExtra(CommonChartActivity.STEP, step);
-
+        intent.putExtra(CommonChartActivity.CHART_TYPE, position);
 
         startActivity(intent);
     }
