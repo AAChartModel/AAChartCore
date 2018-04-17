@@ -165,7 +165,7 @@ public class AAChartModel {
     private Boolean inverted;              //x 轴是否翻转(垂直)
     private Boolean xAxisReversed;         //x 轴翻转
     private Boolean yAxisReversed;         //y 轴翻转
-    private Boolean crosshairs;            //是否显示准星线(默认显示)
+    private Boolean tooltipCrosshairs;     //是否显示准星线(默认显示)
     private Boolean gradientColorEnable;   //是否要为渐变色
     private Boolean polar;                 //是否极化图形(变为雷达图)
     private Boolean dataLabelEnabled;      //是否显示数据
@@ -250,8 +250,8 @@ public class AAChartModel {
         return this;
     }
 
-    public AAChartModel crosshairs(Boolean crosshairs) {
-        this.crosshairs = crosshairs;
+    public AAChartModel tooltipCrosshairs(Boolean tooltipCrosshairs) {
+        this.tooltipCrosshairs = tooltipCrosshairs;
         return this;
     }
 
@@ -404,15 +404,15 @@ public class AAChartModel {
         this.stacking = AAChartStackingType.False;
         this.xAxisReversed = false;
         this.yAxisReversed = false;
-        this.yAxisTitle = "y轴副标题";
         this.zoomType = "x";
 //        this.colorsTheme = new String[]{"#b5282a","#e7a701","#50c18d","#fd4800","#f1c6c5"};
-        this.colorsTheme = new String[]{"#fb2180","#eb6100","#0066ff","#51ff00","#1bb7ce",};//默认的颜色数组(必须要添加默认数组,否则就会出错)
+        this.colorsTheme = new String[]{"#fe117c","#ffc069","#06caf4","#7dffc0"};//默认的颜色数组(必须要添加默认数组,否则就会出错)
+
+        this.tooltipCrosshairs = true;
 
         this.gradientColorEnable = false;
         this.polar = false;
         this.options3dEnable = false;
-        this.crosshairs = true;
         this.xAxisLabelsEnabled = true;
         this.xAxisGridLineWidth = 0;
         this.yAxisLabelsEnabled = true;

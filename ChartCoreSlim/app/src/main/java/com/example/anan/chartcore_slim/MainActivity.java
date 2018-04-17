@@ -20,27 +20,27 @@ public class MainActivity extends AppCompatActivity {
         AAChartView aaChartView = (AAChartView) findViewById(R.id.AAChartView);
 
 
-        ArrayList<Number> dataArr = new ArrayList<Number>();
-        dataArr = new ArrayList<Number>(Arrays.asList(
-                5, 25, 50, 120, 150, 200, 426, 660, 869, 1060, 1605, 2471, 3322,
-                4238, 5221, 6129, 7089, 8339, 9399, 10538, 11643, 13092, 14478,
-                15915, 17385, 19055, 21205, 23044, 25393, 27935, 30062, 32049,
-                33952, 35804, 37431, 39197, 45000, 43000, 41000, 39000, 37000,
-                35000, 33000, 31000, 29000, 27000, 25000, 24000, 23000, 22000,
-                21000, 20000, 19000, 18000, 18000, 17000, 16000));
-
-
         AAChartModel aaChartModel = new AAChartModel()
                 .chartType(AAChartModel.AAChartType.Area)
-                .title("店内会员占比情况")
-                .subtitle("")
+                .title("title")
+                .subtitle("subtitleubtitleSubtitle")
                 .dataLabelEnabled(true)
                 .legendVerticalAlign(AAChartModel.AAChartLegendVerticalAlignType.Bottom)
                 .series(
                         new AASeriesElement[]{
                                 new AASeriesElement()
-                                        .data(dataArr)
-                                        .name("店内会员数量"),
+                                        .name("Tokyo")
+                                        .data(getSeriesData(1)),
+                                new AASeriesElement()
+                                        .name("NewYork")
+                                        .data(getSeriesData(2)),
+                                new AASeriesESlement()
+                                        .name("London")
+                                        .data(getSeriesData(3)),
+                                new AASeriesElement()
+                                        .name("Berlin")
+                                        .data(getSeriesData(4))
+
 
                         }
                 );
@@ -52,14 +52,39 @@ public class MainActivity extends AppCompatActivity {
        String optionsJson = gson.toJson(aaChartModel);
         System.out.println("🍎获得了最后的字符串 Options "+optionsJson);
 
-        new AlertDialog.Builder(this)
-                .setTitle("标题")
-                .setMessage(optionsJson)
-                .setPositiveButton("确定", null)
-                .show();
+//        new AlertDialog.Builder(this)
+//                .setTitle("标题")
+//                .setMessage(optionsJson)
+//                .setPositiveButton("确定", null)
+//                .show();
 
+    }
 
+    /**
+     *
+     * @param series
+     * @return
+     */
+    public ArrayList<Number> getSeriesData(int series) {
+        ArrayList<Number> array = new ArrayList<Number>();
 
+        if (series == 1) {
+            array = new ArrayList<Number>(Arrays.asList
+                    (7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6));
+        }
+        else if (series == 2) {
+            array = new ArrayList<Number>(Arrays.asList
+                    (0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5));
+        }
+        else if (series == 3) {
+            array = new ArrayList<Number>(Arrays.asList
+                    (0.9, 0.6, 3.5, 8.4, 13.5, 17.0, 18.6, 17.9, 14.3, 9.0, 3.9, 1.0));
+        }
+        else if (series == 4) {
+            array = new ArrayList<Number>(Arrays.asList
+                    (3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8));
+        }
 
+        return array;
     }
 }

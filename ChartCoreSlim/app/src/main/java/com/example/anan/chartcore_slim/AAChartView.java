@@ -99,15 +99,6 @@ public class AAChartView extends WebView {
 
 
 
-        // 将对象编译成json
-        Gson gson = new Gson();
-        optionsJson = gson.toJson(chartModel);
-//        LoggerUtils.verbose("aa", "获得了最后的字符串 Options "+optionsJson);
-        System.out.println("👌获得了最后的字符串 Options "+optionsJson);
-
-
-        this.loadUrl("javascript:loadTheHighChartView('" + optionsJson + "', '" + 320 + "', '" + 380 + "')");
-
     }
 
     private void drawChartWithChartModel(AAChartModel chartModel) {
@@ -123,7 +114,7 @@ public class AAChartView extends WebView {
 
 
 //        this.loadUrl("javascript:loadTheHighChartView('" + optionsJson + "','" + contentWidth + "','" + contentHeight + "',)");
-        this.loadUrl("javascript:loadTheHighChartView('" + optionsJson + "','" + 320 + "','" + 380 + "')");
+        this.loadUrl("javascript:loadTheHighChartView('" + optionsJson + "','" + 420 + "','" + 480 + "')");
 
 
 
