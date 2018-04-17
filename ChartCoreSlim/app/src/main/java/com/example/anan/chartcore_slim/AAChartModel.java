@@ -93,6 +93,8 @@ public class AAChartModel {
         String Funnel      = "funnel";
         String Columnrange = "columnrange";
         String Arearange   = "arearange";
+        String Boxplot     = "boxplot";
+        String Waterfall   = "waterfall";
     }
 
     public interface AAChartSubtitleAlignType {

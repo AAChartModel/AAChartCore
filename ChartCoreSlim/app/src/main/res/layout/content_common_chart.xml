@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.anan.chartcore_slim.MainActivity">
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.anan.chartcore_slim.CommonChartActivity"
+    tools:showIn="@layout/activity_common_chart">
 
-    <ListView
-        android:id="@+id/list"
+    <com.example.anan.chartcore_slim.AAChartView
+        android:id="@+id/AAChartView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-    </ListView>
-
+        android:layout_height="match_parent"
+        />
 
 </android.support.constraint.ConstraintLayout>
