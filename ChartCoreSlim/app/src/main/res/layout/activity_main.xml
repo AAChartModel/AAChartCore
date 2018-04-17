@@ -15,4 +15,12 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <com.example.anan.chartcore_slim.AAChartView
+        android:id="@+id/AAChartView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+       />
+
+
+
 </android.support.constraint.ConstraintLayout>

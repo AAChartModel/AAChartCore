@@ -33,6 +33,7 @@
 
 package com.example.anan.chartcore_slim;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.webkit.WebView;
@@ -80,7 +81,7 @@ public class AAChartView extends WebView {
 
     }
 
-    public void aa_drawChartWithChartModel(final AAChartModel chartModel){
+    public void aa_drawChartWithChartModel(final AAChartModel chartModel) {
         //设置WebView支持JavaScript(这一句是十分关键的一句)
         this.getSettings().setJavaScriptEnabled(true);
         this.loadUrl("file:///android_asset/AAChartView.html");//神奇了,这个方法写在aa_drawChartWithChartModel方法里面就不行,难道是因为不能在还未加载成功的时候就直接调用 JS 方法?(跟 OC 一样)必须在加载完成后的代理里面调用 JS 方法
@@ -102,6 +103,8 @@ public class AAChartView extends WebView {
         Gson gson = new Gson();
         optionsJson = gson.toJson(chartModel);
 //        LoggerUtils.verbose("aa", "获得了最后的字符串 Options "+optionsJson);
+        System.out.println("👌获得了最后的字符串 Options "+optionsJson);
+
 
         this.loadUrl("javascript:loadTheHighChartView('" + optionsJson + "', '" + 320 + "', '" + 380 + "')");
 
@@ -111,10 +114,13 @@ public class AAChartView extends WebView {
 
 
 
+
+
         // 将对象编译成json
         Gson gson = new Gson();
         optionsJson = gson.toJson(chartModel);
-        System.out.println("获得了最后的字符串 Options "+optionsJson);
+        System.out.println("🍎获得了最后的字符串 Options "+optionsJson);
+
 
 //        this.loadUrl("javascript:loadTheHighChartView('" + optionsJson + "','" + contentWidth + "','" + contentHeight + "',)");
         this.loadUrl("javascript:loadTheHighChartView('" + optionsJson + "','" + 320 + "','" + 380 + "')");
@@ -132,11 +138,11 @@ public class AAChartView extends WebView {
          this.loadUrl("javascript:loadTheHighChartView('" + newOptions + "','" + contentWidth + "','" + contentHeight + "')");
     }
 
-    public void aa_onlyRefreshTheChartDataWithChartModel(AAChartModel chartModel){
+    public void aa_onlyRefreshTheChartDataWithChartModelSeriesArray(AASeriesElement[] seriesElementsArr){
         // 将对象编译成json
         Gson gson = new Gson();
-        String newOptions = gson.toJson(chartModel);
-        this.loadUrl("javascript:onlyRefreshTheChartDataWithAAChartModel('" + newOptions + "','" + contentWidth + "','" + contentHeight + "')");
+        String seriesArr = gson.toJson(seriesElementsArr);
+        this.loadUrl("javascript:onlyRefreshTheChartDataWithSeries('" + seriesArr + "',')");
     }
 
 

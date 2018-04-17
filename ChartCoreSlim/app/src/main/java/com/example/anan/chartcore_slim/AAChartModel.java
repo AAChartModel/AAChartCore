@@ -361,7 +361,7 @@ public class AAChartModel {
         return this;
     }
 
-    public AAChartModel series(AASeries[] series) {
+    public AAChartModel series(AASeriesElement[] series) {
         this.series = series;
         return this;
     }
@@ -407,7 +407,7 @@ public class AAChartModel {
         this.yAxisTitle = "y轴副标题";
         this.zoomType = "x";
 //        this.colorsTheme = new String[]{"#b5282a","#e7a701","#50c18d","#fd4800","#f1c6c5"};
-//        this.colorsTheme = new String[]{"#fb2180","#eb6100","#0066ff","#51ff00","#1bb7ce",};//默认的颜色数组
+        this.colorsTheme = new String[]{"#fb2180","#eb6100","#0066ff","#51ff00","#1bb7ce",};//默认的颜色数组(必须要添加默认数组,否则就会出错)
 
         this.gradientColorEnable = false;
         this.polar = false;

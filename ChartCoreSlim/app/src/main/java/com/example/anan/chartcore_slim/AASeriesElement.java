@@ -34,6 +34,7 @@
 package com.example.anan.chartcore_slim;
 
 import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Dictionary;
 
 /**
@@ -43,8 +44,8 @@ import java.util.Dictionary;
 public class AASeriesElement {
 
     private String type;
-    private String name:;
-    private Array data;
+    private String name;
+    private ArrayList<Number> data;
     private Float lineWidth;//折线图、曲线图、直方折线图、折线填充图、曲线填充图、直方折线填充图的线条宽度
     private String color;
     private Float fillOpacity;//折线填充图、曲线填充图、直方折线填充图等填充图类型的填充颜色透明度
@@ -65,7 +66,7 @@ public class AASeriesElement {
         return this;
     }
 
-    public AASeriesElement data(Array data) {
+    public AASeriesElement data(ArrayList<Number> data) {
         this.data = data;
         return this;
     }
