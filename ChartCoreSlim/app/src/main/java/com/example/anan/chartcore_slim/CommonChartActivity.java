@@ -12,10 +12,16 @@ import java.util.Arrays;
 
 
 public class CommonChartActivity extends AppCompatActivity {
-    public static final String RETURN_INFO = "com.demo.parameterdemo.SubActivity.info";
+    public static final String CHART_TYPE = "chartType";
+    public static final String STEP = "step";
+
 
 
     public String chartType;
+    private String step;
+
+
+    private AAChartModel aaChartModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,31 +42,68 @@ public class CommonChartActivity extends AppCompatActivity {
         AAChartView aaChartView = (AAChartView) findViewById(R.id.AAChartView);
 
         // 获取传递过来的信息。
-        String infoString = getIntent().getStringExtra(RETURN_INFO);
-        this.chartType = infoString;
+        this.chartType = getIntent().getStringExtra(CHART_TYPE);
+        this.step = getIntent().getStringExtra(STEP);
 
-        AAChartModel aaChartModel = new AAChartModel()
+        aaChartModel = new AAChartModel()
                 .chartType(this.chartType)
                 .title("title")
                 .subtitle("subtitleubtitleSubtitle")
                 .dataLabelEnabled(true)
-                .legendVerticalAlign(AAChartModel.AAChartLegendVerticalAlignType.Bottom)
-                .series(
-                        new AASeriesElement[]{
-                                new AASeriesElement()
-                                        .name("Tokyo")
-                                        .data(getSeriesData(1)),
-                                new AASeriesElement()
-                                        .name("NewYork")
-                                        .data(getSeriesData(2)),
-                                new AASeriesElement()
-                                        .name("London")
-                                        .data(getSeriesData(3)),
-                                new AASeriesElement()
-                                        .name("Berlin")
-                                        .data(getSeriesData(4))
-                        }
-                );
+                .legendVerticalAlign(AAChartModel.AAChartLegendVerticalAlignType.Bottom);
+
+        if ((this.chartType == AAChartModel.AAChartType.Area && this.step == "TRUE")
+                || (this.chartType == AAChartModel.AAChartType.Line && this.step == "TRUE")) {
+            this.aaChartModel =  this.aaChartModel.series(
+                    new AASeriesElement[]{
+                            new AASeriesElement()
+                                    .name("Tokyo")
+                                    .data(getStepChartSeriesData(1))
+                                    .step(true)
+                            ,
+                            new AASeriesElement()
+                                    .name("NewYork")
+                                    .data(getStepChartSeriesData(2))
+                                    .step(true)
+                            ,
+                            new AASeriesElement()
+                                    .name("London")
+                                    .data(getStepChartSeriesData(3))
+                                    .step(true)
+                            ,
+                            new AASeriesElement()
+                                    .name("Berlin")
+                                    .data(getStepChartSeriesData(4))
+                                    .step(true)
+
+                    });
+
+        } else  {
+            this.aaChartModel =  this.aaChartModel.series(
+                    new AASeriesElement[]{
+                            new AASeriesElement()
+                                    .name("Tokyo")
+                                    .data(getSeriesData(1))
+                                    .step(true)
+                            ,
+                            new AASeriesElement()
+                                    .name("NewYork")
+                                    .data(getSeriesData(2))
+                                    .step(true)
+                            ,
+                            new AASeriesElement()
+                                    .name("London")
+                                    .data(getSeriesData(3))
+                                    .step(true)
+                            ,
+                            new AASeriesElement()
+                                    .name("Berlin")
+                                    .data(getSeriesData(4))
+                                    .step(true)
+
+                    });
+        }
+
 
         aaChartView.aa_drawChartWithChartModel(aaChartModel);
 
@@ -73,12 +116,41 @@ public class CommonChartActivity extends AppCompatActivity {
     }
 
 
+
     /**
      *
      * @param series
      * @return
      */
-    public ArrayList<Number> getSeriesData(int series) {
+     ArrayList<Number> getSeriesData(int series) {
+        ArrayList<Number> array = new ArrayList<Number>();
+
+        if (series == 1) {
+            array = new ArrayList<Number>(Arrays.asList
+                    (7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6));
+        }
+        else if (series == 2) {
+            array = new ArrayList<Number>(Arrays.asList
+                    (0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5));
+        }
+        else if (series == 3) {
+            array = new ArrayList<Number>(Arrays.asList
+                    (0.9, 0.6, 3.5, 8.4, 13.5, 17.0, 18.6, 17.9, 14.3, 9.0, 3.9, 1.0));
+        }
+        else if (series == 4) {
+            array = new ArrayList<Number>(Arrays.asList
+                    (3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8));
+        }
+
+        return array;
+    }
+
+    /**
+     *
+     * @param series
+     * @return
+     */
+    ArrayList<Number> getStepChartSeriesData(int series) {
         ArrayList<Number> array = new ArrayList<Number>();
 
         if (series == 1) {

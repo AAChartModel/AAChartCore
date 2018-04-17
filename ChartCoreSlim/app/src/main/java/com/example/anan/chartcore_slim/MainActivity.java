@@ -102,10 +102,17 @@ public class MainActivity extends AppCompatActivity {
         };
 
         String chartType = chartTypeArr[position];
+        String step = "FALSE";
 
+        if (position  == 4 || position == 5) {
+            step = "TRUE";
+        }
 
         Intent intent = new Intent(this, CommonChartActivity.class);
-        intent.putExtra(CommonChartActivity.RETURN_INFO, chartType);
+        intent.putExtra(CommonChartActivity.CHART_TYPE, chartType);
+        intent.putExtra(CommonChartActivity.STEP, step);
+
+
         startActivity(intent);
     }
 

@@ -54,7 +54,7 @@ public class AASeriesElement {
     private String dashStyle;
     private Dictionary dataLabels;
     private Dictionary marker;
-    private Boolean step;
+    private boolean step;
 
     public AASeriesElement type(String type) {
         this.type = type;
@@ -111,7 +111,7 @@ public class AASeriesElement {
         return this;
     }
 
-    public AASeriesElement step(Boolean step) {
+    public AASeriesElement step(boolean step) {
         this.step = step;
         return this;
     }
