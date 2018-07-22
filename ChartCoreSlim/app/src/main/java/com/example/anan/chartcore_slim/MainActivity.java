@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
             "Line Chart---折线图",
             "Spline Chart---曲线图",
             /*特殊类型图表*/
+            "--------------Polar Chart---极地图图-------------",
             "Pie Chart---扇形图",
             "Bubble Chart---气泡图",
             "Scatter Chart---散点图",
@@ -33,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
             "Pyramid Chart---金字塔图",
             "Funnel Chart---漏斗图",
             /*Mixed Chart---混合图*/
-            "Arearange Mixed Line---面积范围均线图",
+            "-------Arearange Mixed Line---面积范围均线图-------",
             "Columnrange Mixed Line---柱形范围图混合折线图",
             "Dash Style Types Mixed---多种类型曲线混合图",
             "Negative Color Mixed---基准线以下异色混合图",
@@ -61,6 +62,8 @@ public class MainActivity extends AppCompatActivity {
                 System.out.println(position);
                 if (position <= 7 ) {
             goToAnotherActivity(position);
+                } else {
+                    goToSpecialChartActivity(position);
                 }
 
             }
@@ -72,6 +75,14 @@ public class MainActivity extends AppCompatActivity {
 
         Intent intent = new Intent(this, CommonChartActivity.class);
         intent.putExtra(CommonChartActivity.CHART_TYPE, position);
+
+        startActivity(intent);
+    }
+
+    void goToSpecialChartActivity(int position) {
+
+        Intent intent = new Intent(this, SpecialChartActivity.class);
+        intent.putExtra(SpecialChartActivity.CHART_TYPE, position);
 
         startActivity(intent);
     }

@@ -52,6 +52,7 @@ public class CommonChartActivity extends AppCompatActivity {
                 AAChartModel.AAChartType.Line,
                 AAChartModel.AAChartType.Spline,
             /*特殊类型图表*/
+                AAChartModel.AAChartType.Column,
                 AAChartModel.AAChartType.Pie,
                 AAChartModel.AAChartType.Bubble,
                 AAChartModel.AAChartType.Scatter,
@@ -95,17 +96,17 @@ public class CommonChartActivity extends AppCompatActivity {
                     new AASeriesElement[]{
                             new AASeriesElement()
                                     .name("Tokyo")
-                                    .data(getStepChartSeriesData(1))
+                                    .data(new Object[]{149.9, 171.5, 106.4, 129.2, 144.0, 176.0, 135.6, 188.5, 276.4, 214.1, 95.6, 54.4})
                                     .step(true)
                             ,
                             new AASeriesElement()
                                     .name("NewYork")
-                                    .data(getStepChartSeriesData(2))
+                                    .data(new Object[]{83.6, 78.8, 188.5, 93.4, 106.0, 84.5, 105.0, 104.3, 131.2, 153.5, 226.6, 192.3})
                                     .step(true)
                             ,
                             new AASeriesElement()
                                     .name("London")
-                                    .data(getStepChartSeriesData(3))
+                                    .data(new Object[]{48.9, 38.8, 19.3, 41.4, 47.0, 28.3, 59.0, 69.6, 52.4, 65.2, 53.3, 72.2})
                                     .step(true)
                             ,
 
@@ -116,19 +117,19 @@ public class CommonChartActivity extends AppCompatActivity {
                     new AASeriesElement[]{
                             new AASeriesElement()
                                     .name("Tokyo")
-                                    .data(getSeriesData(1))
+                                    .data(new Object[]{7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6})
                             ,
                             new AASeriesElement()
                                     .name("NewYork")
-                                    .data(getSeriesData(2))
+                                    .data(new Object[]{0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5})
                             ,
                             new AASeriesElement()
                                     .name("London")
-                                    .data(getSeriesData(3))
+                                    .data(new Object[]{0.9, 0.6, 3.5, 8.4, 13.5, 17.0, 18.6, 17.9, 14.3, 9.0, 3.9, 1.0})
                             ,
                             new AASeriesElement()
                                     .name("Berlin")
-                                    .data(getSeriesData(4))
+                                    .data(new Object[]{3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8})
 
                     });
 
@@ -150,60 +151,6 @@ public class CommonChartActivity extends AppCompatActivity {
 //                .setMessage(optionsJson)
 //                .setPositiveButton("确定", null)
 //                .show();
-    }
-
-
-
-    /**
-     *
-     * @param series
-     * @return
-     */
-     ArrayList<Number> getSeriesData(int series) {
-        ArrayList<Number> array = new ArrayList<Number>();
-
-        if (series == 1) {
-            array = new ArrayList<Number>(Arrays.asList
-                    (7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6));
-        }
-        else if (series == 2) {
-            array = new ArrayList<Number>(Arrays.asList
-                    (0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5));
-        }
-        else if (series == 3) {
-            array = new ArrayList<Number>(Arrays.asList
-                    (0.9, 0.6, 3.5, 8.4, 13.5, 17.0, 18.6, 17.9, 14.3, 9.0, 3.9, 1.0));
-        }
-        else if (series == 4) {
-            array = new ArrayList<Number>(Arrays.asList
-                    (3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8));
-        }
-
-        return array;
-    }
-
-    /**
-     *
-     * @param series
-     * @return
-     */
-    ArrayList<Number> getStepChartSeriesData(int series) {
-        ArrayList<Number> array = new ArrayList<Number>();
-
-        if (series == 1) {
-            array = new ArrayList<Number>(Arrays.asList
-                    (149.9, 171.5, 106.4, 129.2, 144.0, 176.0, 135.6, 188.5, 276.4, 214.1, 95.6, 54.4));
-        }
-        else if (series == 2) {
-            array = new ArrayList<Number>(Arrays.asList
-                    (83.6, 78.8, 188.5, 93.4, 106.0, 84.5, 105.0, 104.3, 131.2, 153.5, 226.6, 192.3));
-        }
-        else if (series == 3) {
-            array = new ArrayList<Number>(Arrays.asList
-                    (48.9, 38.8, 19.3, 41.4, 47.0, 28.3, 59.0, 69.6, 52.4, 65.2, 53.3, 72.2));
-        }
-
-        return array;
     }
 
 }

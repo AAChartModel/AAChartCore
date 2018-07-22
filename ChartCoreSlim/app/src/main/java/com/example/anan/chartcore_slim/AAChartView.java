@@ -114,7 +114,7 @@ public class AAChartView extends WebView {
 
 
 //        this.loadUrl("javascript:loadTheHighChartView('" + optionsJson + "','" + contentWidth + "','" + contentHeight + "',)");
-        this.loadUrl("javascript:loadTheHighChartView('" + optionsJson + "','" + 420 + "','" + 480 + "')");
+        this.loadUrl("javascript:loadTheHighChartView('" + optionsJson + "','" + 420 + "','" + 580 + "')");
 
 
 
