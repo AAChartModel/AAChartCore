@@ -1,4 +1,4 @@
-package com.example.anan.chartcore_slim;
+package com.example.anan.chartcore_slim.ChartsDemo.MainContent;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,8 +8,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
-import java.util.ArrayList;
-import java.util.Arrays;
+import com.example.anan.chartcore_slim.AAChartConfiger.AAChartModel;
+import com.example.anan.chartcore_slim.AAChartConfiger.AAChartView;
+import com.example.anan.chartcore_slim.AAChartConfiger.AASeriesElement;
+import com.example.anan.chartcore_slim.R;
 
 
 public class CommonChartActivity extends AppCompatActivity {

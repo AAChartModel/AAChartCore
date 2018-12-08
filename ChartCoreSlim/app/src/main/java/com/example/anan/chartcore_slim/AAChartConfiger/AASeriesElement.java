@@ -31,10 +31,8 @@
 
  */
 
-package com.example.anan.chartcore_slim;
+package com.example.anan.chartcore_slim.AAChartConfiger;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 import java.util.Dictionary;
 
 /**
@@ -55,6 +53,7 @@ public class AASeriesElement {
     private Dictionary dataLabels;
     private Dictionary marker;
     private boolean step;
+    private Boolean colorByPoint;
 
     public AASeriesElement type(String type) {
         this.type = type;
@@ -113,6 +112,11 @@ public class AASeriesElement {
 
     public AASeriesElement step(boolean step) {
         this.step = step;
+        return this;
+    }
+
+    public AASeriesElement colorByPoint(Boolean colorByPoint) {
+        this.colorByPoint = colorByPoint;
         return this;
     }
 

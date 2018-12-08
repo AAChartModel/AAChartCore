@@ -31,10 +31,8 @@
 
  */
 
-package com.example.anan.chartcore_slim;
+package com.example.anan.chartcore_slim.AAChartConfiger;
 
-
-import java.lang.reflect.Array;
 
 /**
  * Created by AnAn on 2017/9/5.
@@ -193,7 +191,7 @@ public class AAChartModel {
     public Float   yAxisLineWidth;       //y 轴轴线的宽度
 
     public Integer yAxisGridLineWidth;    //y轴网格线的宽度
-    public String[]colorsTheme;           //图表主题颜色数组
+    public Object[]colorsTheme;           //图表主题颜色数组
     public Boolean legendEnabled;         //是否显示图例
     public String  legendLayout;          //图例数据项的布局。布局类型： "horizontal" 或 "vertical" 即水平布局和垂直布局 默认是：horizontal.
     public String  legendAlign;           //设定图例在图表区中的水平对齐方式，合法值有left，center 和 right。
@@ -327,7 +325,7 @@ public class AAChartModel {
         return this;
     }
 
-    public AAChartModel colorsTheme(String[] colorsTheme) {
+    public AAChartModel colorsTheme(Object[] colorsTheme) {
         this.colorsTheme = colorsTheme;
         return this;
     }

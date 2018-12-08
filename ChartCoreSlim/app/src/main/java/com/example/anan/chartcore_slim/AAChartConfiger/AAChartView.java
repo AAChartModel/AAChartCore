@@ -31,9 +31,8 @@
 
  */
 
-package com.example.anan.chartcore_slim;
+package com.example.anan.chartcore_slim.AAChartConfiger;
 
-import android.app.AlertDialog;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.webkit.WebView;
