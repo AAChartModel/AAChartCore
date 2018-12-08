@@ -41,6 +41,9 @@ import android.webkit.WebViewClient;
 
 import com.google.gson.Gson;
 
+import java.util.HashMap;
+
+
 /**
  * Created by AnAn on 2017/9/8.
  */
@@ -111,6 +114,10 @@ public class AAChartView extends WebView {
         Gson gson = new Gson();
         optionsJson = gson.toJson(chartModel);
         System.out.println("🍎获得了最后的字符串 Options "+optionsJson);
+
+
+       HashMap myJson = AAOptionsConstructor.configureChartOptions(chartModel);
+        System.out.println("🔥🔥🔥🔥🔥获得了最后的字符串 Options "+optionsJson);
 
 
 //        this.loadUrl("javascript:loadTheHighChartView('" + optionsJson + "','" + contentWidth + "','" + contentHeight + "',)");
