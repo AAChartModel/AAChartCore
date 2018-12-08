@@ -54,9 +54,7 @@ public class AAColor {
         return "purple";
     }
 
-    public static String brownColor() {
-        return "brown";
-    }
+    public static String brownColor() { return "brown"; }
 
     public static String clearColor() {
         return "clear";

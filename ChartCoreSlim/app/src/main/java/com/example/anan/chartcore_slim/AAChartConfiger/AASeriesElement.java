@@ -54,6 +54,28 @@ public class AASeriesElement {
     private Dictionary marker;
     private boolean step;
     private Boolean colorByPoint;
+    private Integer zIndex;
+
+
+
+
+
+    public AASeriesElement zIndex(Integer zIndex) {
+        this.zIndex = zIndex;
+        return this;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
 
     public AASeriesElement type(String type) {
         this.type = type;

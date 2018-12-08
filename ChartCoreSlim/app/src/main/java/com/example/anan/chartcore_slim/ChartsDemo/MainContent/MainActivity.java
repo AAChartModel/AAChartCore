@@ -36,12 +36,17 @@ public class MainActivity extends AppCompatActivity {
             "Pyramid Chart---金字塔图",
             "Funnel Chart---漏斗图",
             /*Mixed Chart---混合图*/
-            "-------Arearange Mixed Line---面积范围均线图-------",
-            "Columnrange Mixed Line---柱形范围图混合折线图",
-            "Dash Style Types Mixed---多种类型曲线混合图",
-            "Negative Color Mixed---基准线以下异色混合图",
-            "scatterMixedLine---散点图混合折线图(待完成)",
-            "Negative Color Mixed bubble---基准线以下异色气泡图"
+            "---------------arearangeMixedLine-----------------",
+            "columnrangeMixedLine",
+            "stackingColumnMixedLine",
+            "dashStyleTypeMixed",
+            "negativeColorMixed",
+            "scatterMixedLine",
+            "negativeColorMixedBubble",
+            "polygonMixedScatter",
+            "polarChartMixed",
+            "-----------------colorfulChart-----------------r",
+            "gradientColofulChart"
 
     };
 
@@ -63,11 +68,15 @@ public class MainActivity extends AppCompatActivity {
                                     long id) {
                 System.out.println(position);
                 if (position <= 7 ) {
-            goToAnotherActivity(position);
-                } else {
+                    goToAnotherActivity(position);
+                } else if (position > 7 && position <= 19 ) {
                     goToSpecialChartActivity(position);
-                }
+                } else if (position > 19 && position <= 28 ) {
+                    goToMixedChartActivity(position);
+                } else {
+                    goToCustomStyleChartActivity(position);
 
+                }
             }
 
         });
@@ -85,6 +94,20 @@ public class MainActivity extends AppCompatActivity {
 
         Intent intent = new Intent(this, SpecialChartActivity.class);
         intent.putExtra(SpecialChartActivity.CHART_TYPE, position);
+
+        startActivity(intent);
+    }
+
+    void goToCustomStyleChartActivity(int position) {
+        Intent intent = new Intent(this, CustomStyleChartActivity.class);
+        intent.putExtra(CustomStyleChartActivity.CHART_TYPE, position);
+
+        startActivity(intent);
+    }
+
+    void goToMixedChartActivity(int position) {
+        Intent intent = new Intent(this, MixedChartActivity.class);
+        intent.putExtra(MixedChartActivity.CHART_TYPE, position);
 
         startActivity(intent);
     }

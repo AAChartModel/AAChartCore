@@ -1,9 +1,11 @@
 package com.example.anan.chartcore_slim.ChartsDemo.MainContent;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.example.anan.chartcore_slim.AAChartConfiger.AAChartModel;
+import com.example.anan.chartcore_slim.AAChartConfiger.AAChartView;
 import com.example.anan.chartcore_slim.AAChartConfiger.AASeriesElement;
 import com.example.anan.chartcore_slim.AATools.AAColor;
 import com.example.anan.chartcore_slim.AATools.AAGradientColor;
@@ -12,21 +14,26 @@ import com.example.anan.chartcore_slim.R;
 import java.util.HashMap;
 
 public class CustomStyleChartActivity extends AppCompatActivity {
-   private AAChartModel aaChartModel;
+    public static final String CHART_TYPE = "chartType";
+
+    private AAChartModel aaChartModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_custom_style_chart);
 
-        aaChartModel = new AAChartModel()
-                .chartType(AAChartModel.AAChartType.Column)
-                .title("title")
-                .subtitle("subtitleubtitleSubtitle")
-                .backgroundColor("#4b2b7f")
-                .dataLabelEnabled(true)
-                .yAxisGridLineWidth(0)
-                .legendVerticalAlign(AAChartModel.AAChartLegendVerticalAlignType.Bottom);
+        Intent intent = getIntent();
+        int position = intent.getIntExtra(CHART_TYPE,0);
+
+        if (position == 29) {
+            configureColorfulChart();
+        } else  {
+            configureColorfulGradientColorChart();
+        }
+
+        AAChartView aaChartView = (AAChartView) findViewById(R.id.AAChartView);
+        aaChartView.aa_drawChartWithChartModel(aaChartModel);
     }
 
     void configureColorfulChart() {
@@ -72,8 +79,9 @@ public class CustomStyleChartActivity extends AppCompatActivity {
                 .series(new AASeriesElement[]{
                         new AASeriesElement()
                                 .name("Tokyo")
-                                .data(new Object[]{149.9, 171.5, 106.4, 129.2, 144.0, 176.0, 135.6, 188.5, 276.4, 214.1, 95.6, 54.4})
-                                .step(true)
+                                .data(new Object[] {
+                                        149.9, 171.5, 106.4, 129.2, 144.0, 176.0, 135.6, 188.5, 276.4, 214.1, 95.6, 54.4})
+                                .colorByPoint(true)
                 });
 
     }
@@ -131,17 +139,19 @@ public class CustomStyleChartActivity extends AppCompatActivity {
            };
 
             aaChartModel = new AAChartModel()
-                    .chartType(AAChartModel.AAChartType.Bar)
+                    .chartType(AAChartModel.AAChartType.Column)
                     .title("Colorful Column Chart")
                     .subtitle("single data array colorful column chart")
                     .categories(gradientColorNamesArr)
                     .colorsTheme(gradientColorArr)
                     .yAxisTitle("gradient color")
+                    .stacking(AAChartModel.AAChartStackingType.Percent)
                     .series(new AASeriesElement[]{
                             new AASeriesElement()
                                     .name("Tokyo")
-                                    .data(new Object[]{149.9, 171.5, 106.4, 129.2, 144.0, 176.0, 135.6, 188.5, 276.4, 214.1, 95.6, 54.4})
-                                    .step(true)
+                                    .data(new Object[] {
+                                            149.9, 171.5, 106.4, 129.2, 144.0, 176.0, 135.6, 188.5, 276.4, 214.1, 95.6, 54.4})
+                                    .colorByPoint(true)
                     });
 
         }

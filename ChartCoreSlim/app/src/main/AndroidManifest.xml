@@ -24,7 +24,8 @@
             android:name=".ChartsDemo.MainContent.SpecialChartActivity"
             android:label="@string/title_activity_special_chart"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".ChartsDemo.MainContent.CustomStyleChartActivity"></activity>
+        <activity android:name=".ChartsDemo.MainContent.CustomStyleChartActivity" />
+        <activity android:name=".ChartsDemo.MainContent.MixedChartActivity"></activity>
     </application>
 
 </manifest>
