@@ -115,8 +115,8 @@ public class AAChartView extends WebView {
         System.out.println("🍎获得了最后的字符串 Options "+optionsJson);
 
 
-       HashMap myJson = AAOptionsConstructor.configureChartOptions(chartModel);
-        System.out.println("🔥🔥🔥🔥🔥获得了最后的字符串 Options "+optionsJson);
+//        HashMap myJson = AAOptionsConstructor.configureChartOptions(chartModel);
+//        System.out.println("🔥🔥🔥🔥🔥获得了最后的字符串 Options "+optionsJson);
 
 
 //        this.loadUrl("javascript:loadTheHighChartView('" + optionsJson + "','" + contentWidth + "','" + contentHeight + "',)");

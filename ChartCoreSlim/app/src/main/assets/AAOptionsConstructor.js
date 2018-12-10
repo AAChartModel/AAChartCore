@@ -137,7 +137,8 @@ function configureAAOptions(sender, receivedWidth, receivedHeight) {
         if (   AAChartModel.chartType === "area"
             || AAChartModel.chartType === "areaspline"
             || AAChartModel.chartType === "line"
-            || AAChartModel.chartType === "spline") {
+            || AAChartModel.chartType === "spline"
+            || AAChartModel.chartType === "scatter") {
 
                 var AAMarker = {};
                 AAMarker.radius = AAChartModel.markerRadius; //曲线连接点半径，默认是4

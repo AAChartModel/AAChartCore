@@ -11,7 +11,6 @@ import com.example.anan.chartcore_slim.AATools.AAColor;
 import com.example.anan.chartcore_slim.R;
 
 public class MixedChartActivity extends AppCompatActivity {
-    public static final String CHART_TYPE = "chartType";
     private AAChartModel aaChartModel;
 
 
@@ -21,49 +20,8 @@ public class MixedChartActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mixed_chart);
 
-
-
-        String[] chartTypeArr = {
-                /*基础类型图表*/
-                AAChartModel.AAChartType.Column,
-                AAChartModel.AAChartType.Bar,
-                AAChartModel.AAChartType.Area,
-                AAChartModel.AAChartType.AreaSpline,
-                AAChartModel.AAChartType.Area,
-                AAChartModel.AAChartType.Line,
-                AAChartModel.AAChartType.Line,
-                AAChartModel.AAChartType.Spline,
-                /*特殊类型图表*/
-                AAChartModel.AAChartType.Column,
-                AAChartModel.AAChartType.Pie,
-                AAChartModel.AAChartType.Bubble,
-                AAChartModel.AAChartType.Scatter,
-                AAChartModel.AAChartType.Arearange,
-                AAChartModel.AAChartType.Columnrange,
-                AAChartModel.AAChartType.Line,
-                AAChartModel.AAChartType.Area,
-                AAChartModel.AAChartType.Boxplot,
-                AAChartModel.AAChartType.Waterfall,
-                AAChartModel.AAChartType.Pyramid,
-                AAChartModel.AAChartType.Funnel,
-
-                /*Mixed Chart---混合图*/
-                "arearangeMixedLine",
-                "columnrangeMixedLine",
-                "stackingColumnMixedLine",
-                "dashStyleTypeMixed",
-                "negativeColorMixed",
-                "scatterMixedLine",
-                "negativeColorMixedBubble",
-                "polygonMixedScatter",
-                "polarChartMixed",
-                "columnMixedScatter",
-                "PieMixeLineMixedColumn"
-        };
-
         Intent intent = getIntent();
-        int position = intent.getIntExtra(CHART_TYPE,0);
-        String chartType = chartTypeArr[position];
+        String chartType = intent.getStringExtra("chartType");
 
         configureTheAAChartModel(chartType);
 
@@ -314,10 +272,10 @@ public class MixedChartActivity extends AppCompatActivity {
                 aaChartModel = new AAChartModel()
                         .dataLabelEnabled(false)//是否显示数字
                         .chartType(AAChartModel.AAChartType.Scatter)
-                .symbolStyle(AAChartModel.AAChartSymbolStyleType.InnerBlank)
-                .symbol(AAChartModel.AAChartSymbolType.Circle)
-                .markerRadius(10)
-                    .series(new AASeriesElement[]{
+                        .symbolStyle(AAChartModel.AAChartSymbolStyleType.InnerBlank)
+                        .symbol(AAChartModel.AAChartSymbolType.Circle)
+                        .markerRadius(8)
+                        .series(new AASeriesElement[]{
                             new AASeriesElement()
                                     .name("Scatter")
                                     .data(new Object[][] {

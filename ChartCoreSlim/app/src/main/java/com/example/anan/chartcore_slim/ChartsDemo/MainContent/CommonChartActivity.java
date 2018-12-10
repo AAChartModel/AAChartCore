@@ -15,12 +15,6 @@ import com.example.anan.chartcore_slim.R;
 
 
 public class CommonChartActivity extends AppCompatActivity {
-    public static final String CHART_TYPE = "chartType";
-
-
-
-    public String chartType;
-
 
     private AAChartModel aaChartModel;
 
@@ -33,47 +27,10 @@ public class CommonChartActivity extends AppCompatActivity {
 
         AAChartView aaChartView = (AAChartView) findViewById(R.id.AAChartView);
 
-
-        String[] chartTypeArr = {
-                /*基础类型图表*/
-                AAChartModel.AAChartType.Column,
-                AAChartModel.AAChartType.Bar,
-                AAChartModel.AAChartType.Area,
-                AAChartModel.AAChartType.AreaSpline,
-                AAChartModel.AAChartType.Area,
-                AAChartModel.AAChartType.Line,
-                AAChartModel.AAChartType.Line,
-                AAChartModel.AAChartType.Spline,
-                /*特殊类型图表*/
-                AAChartModel.AAChartType.Column,
-                AAChartModel.AAChartType.Pie,
-                AAChartModel.AAChartType.Bubble,
-                AAChartModel.AAChartType.Scatter,
-                AAChartModel.AAChartType.Arearange,
-                AAChartModel.AAChartType.Columnrange,
-                AAChartModel.AAChartType.Line,
-                AAChartModel.AAChartType.Area,
-                AAChartModel.AAChartType.Boxplot,
-                AAChartModel.AAChartType.Waterfall,
-                AAChartModel.AAChartType.Pyramid,
-                AAChartModel.AAChartType.Funnel,
-                /*Mixed Chart---混合图*/
-                "Arearange Mixed Line---面积范围均线图",
-                "Columnrange Mixed Line---柱形范围图混合折线图",
-                "Dash Style Types Mixed---多种类型曲线混合图",
-                "Negative Color Mixed---基准线以下异色混合图",
-                "scatterMixedLine---散点图混合折线图(待完成)",
-                "Negative Color Mixed bubble---基准线以下异色气泡图"
-
-        };
-
-//        String position =  getIntent().getExtras(CHART_TYPE);
-
         Intent intent = getIntent();
-        int position = intent.getIntExtra(CHART_TYPE,0);
+        String chartType = intent.getStringExtra("chartType");
+        int position = intent.getIntExtra("position",0);
 
-
-        String chartType = chartTypeArr[position];
 
         aaChartModel = new AAChartModel()
                 .chartType(chartType)

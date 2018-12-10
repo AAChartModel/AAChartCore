@@ -14,12 +14,7 @@ import com.example.anan.chartcore_slim.AAChartConfiger.AASeriesElement;
 import com.example.anan.chartcore_slim.R;
 
 public class SpecialChartActivity extends AppCompatActivity {
-    public static final String CHART_TYPE = "chartType";
-
-
-    public String chartType;
     private AAChartModel aaChartModel;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,47 +25,8 @@ public class SpecialChartActivity extends AppCompatActivity {
 
         AAChartView aaChartView = (AAChartView) findViewById(R.id.AAChartView);
 
-
-        String[] chartTypeArr = {
-                /*基础类型图表*/
-                AAChartModel.AAChartType.Column,
-                AAChartModel.AAChartType.Bar,
-                AAChartModel.AAChartType.Area,
-                AAChartModel.AAChartType.AreaSpline,
-                AAChartModel.AAChartType.Area,
-                AAChartModel.AAChartType.Line,
-                AAChartModel.AAChartType.Line,
-                AAChartModel.AAChartType.Spline,
-                /*特殊类型图表*/
-                AAChartModel.AAChartType.Column,
-                AAChartModel.AAChartType.Pie,
-                AAChartModel.AAChartType.Bubble,
-                AAChartModel.AAChartType.Scatter,
-                AAChartModel.AAChartType.Arearange,
-                AAChartModel.AAChartType.Columnrange,
-                AAChartModel.AAChartType.Line,
-                AAChartModel.AAChartType.Area,
-                AAChartModel.AAChartType.Boxplot,
-                AAChartModel.AAChartType.Waterfall,
-                AAChartModel.AAChartType.Pyramid,
-                AAChartModel.AAChartType.Funnel,
-                /*Mixed Chart---混合图*/
-                "Arearange Mixed Line---面积范围均线图",
-                "Columnrange Mixed Line---柱形范围图混合折线图",
-                "Dash Style Types Mixed---多种类型曲线混合图",
-                "Negative Color Mixed---基准线以下异色混合图",
-                "scatterMixedLine---散点图混合折线图(待完成)",
-                "Negative Color Mixed bubble---基准线以下异色气泡图"
-
-        };
-
-//        String position =  getIntent().getExtras(CHART_TYPE);
-
         Intent intent = getIntent();
-        int position = intent.getIntExtra(CHART_TYPE,0);
-
-
-        String chartType = chartTypeArr[position];
+        String chartType = intent.getStringExtra("chartType");
 
 
 
@@ -202,11 +158,13 @@ public class SpecialChartActivity extends AppCompatActivity {
                 aaChartModel = new AAChartModel()
                         .chartType(AAChartModel.AAChartType.Scatter)
                         .title("Height and weight distribution by sex")
-                        .yAxisTitle("kg)")
+                        .yAxisTitle("kg")
+                        .markerRadius(8)
+                        .symbolStyle(AAChartModel.AAChartSymbolStyleType.InnerBlank)
                         .series(new AASeriesElement[] {
                                         new AASeriesElement()
                                                 .name("Female")
-                                                .color("rgba(223, 83, 83, 1)")
+                                                .color("#ff0000")
                                                 .data(new Object[][] {
                                                 {161.2, 51.6}, {167.5, 59.0}, {159.5, 49.2}, {157.0, 63.0}, {155.8, 53.6},
                                                 {170.0, 59.0}, {159.1, 47.6}, {166.0, 69.8}, {176.2, 66.8}, {160.2, 75.2},

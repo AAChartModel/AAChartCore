@@ -14,7 +14,6 @@ import com.example.anan.chartcore_slim.R;
 import java.util.HashMap;
 
 public class CustomStyleChartActivity extends AppCompatActivity {
-    public static final String CHART_TYPE = "chartType";
 
     private AAChartModel aaChartModel;
 
@@ -24,9 +23,9 @@ public class CustomStyleChartActivity extends AppCompatActivity {
         setContentView(R.layout.activity_custom_style_chart);
 
         Intent intent = getIntent();
-        int position = intent.getIntExtra(CHART_TYPE,0);
+        String chartType = intent.getStringExtra("chartType");
 
-        if (position == 29) {
+        if (chartType.equals("colorfulChart")) {
             configureColorfulChart();
         } else  {
             configureColorfulGradientColorChart();

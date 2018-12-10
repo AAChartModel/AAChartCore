@@ -8,6 +8,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.example.anan.chartcore_slim.AAChartConfiger.AAChartModel;
 import com.example.anan.chartcore_slim.R;
 
 public class MainActivity extends AppCompatActivity {
@@ -46,8 +47,48 @@ public class MainActivity extends AppCompatActivity {
             "polygonMixedScatter",
             "polarChartMixed",
             "-----------------colorfulChart-----------------r",
-            "gradientColofulChart"
+            "gradientColorfulChart"
 
+    };
+
+    String[] chartTypeArr = {
+            /*基础类型图表*/
+            AAChartModel.AAChartType.Column,
+            AAChartModel.AAChartType.Bar,
+            AAChartModel.AAChartType.Area,
+            AAChartModel.AAChartType.AreaSpline,
+            AAChartModel.AAChartType.Area,
+            AAChartModel.AAChartType.Line,
+            AAChartModel.AAChartType.Line,
+            AAChartModel.AAChartType.Spline,
+            /*特殊类型图表*/
+            AAChartModel.AAChartType.Column,
+            AAChartModel.AAChartType.Pie,
+            AAChartModel.AAChartType.Bubble,
+            AAChartModel.AAChartType.Scatter,
+            AAChartModel.AAChartType.Arearange,
+            AAChartModel.AAChartType.Columnrange,
+            AAChartModel.AAChartType.Line,
+            AAChartModel.AAChartType.Area,
+            AAChartModel.AAChartType.Boxplot,
+            AAChartModel.AAChartType.Waterfall,
+            AAChartModel.AAChartType.Pyramid,
+            AAChartModel.AAChartType.Funnel,
+
+            /*Mixed Chart---混合图*/
+            "arearangeMixedLine",
+            "columnrangeMixedLine",
+            "stackingColumnMixedLine",
+            "dashStyleTypeMixed",
+            "negativeColorMixed",
+            "scatterMixedLine",
+            "negativeColorMixedBubble",
+            "polygonMixedScatter",
+            "polarChartMixed",
+            "colorfulChart",
+            "gradientColorfulChart",
+            "columnMixedScatter",
+            "pieMixedLineMixedColumn"
     };
 
     @Override
@@ -83,31 +124,30 @@ public class MainActivity extends AppCompatActivity {
     }
 
     void goToAnotherActivity(int position) {
-
         Intent intent = new Intent(this, CommonChartActivity.class);
-        intent.putExtra(CommonChartActivity.CHART_TYPE, position);
+        intent.putExtra("chartType", chartTypeArr[position]);
+        intent.putExtra("position",position);
 
         startActivity(intent);
     }
 
     void goToSpecialChartActivity(int position) {
-
         Intent intent = new Intent(this, SpecialChartActivity.class);
-        intent.putExtra(SpecialChartActivity.CHART_TYPE, position);
+        intent.putExtra("chartType", chartTypeArr[position]);
 
         startActivity(intent);
     }
 
     void goToCustomStyleChartActivity(int position) {
         Intent intent = new Intent(this, CustomStyleChartActivity.class);
-        intent.putExtra(CustomStyleChartActivity.CHART_TYPE, position);
+        intent.putExtra("chartType", chartTypeArr[position]);
 
         startActivity(intent);
     }
 
     void goToMixedChartActivity(int position) {
         Intent intent = new Intent(this, MixedChartActivity.class);
-        intent.putExtra(MixedChartActivity.CHART_TYPE, position);
+        intent.putExtra("chartType", chartTypeArr[position]);
 
         startActivity(intent);
     }
