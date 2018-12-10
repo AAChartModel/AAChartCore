@@ -38,6 +38,7 @@ import android.util.AttributeSet;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
+import com.example.anan.chartcore_slim.AATools.AAColor;
 import com.google.gson.Gson;
 
 import java.util.HashMap;
@@ -115,8 +116,8 @@ public class AAChartView extends WebView {
         System.out.println("🍎获得了最后的字符串 Options "+optionsJson);
 
 
-//        HashMap myJson = AAOptionsConstructor.configureChartOptions(chartModel);
-//        System.out.println("🔥🔥🔥🔥🔥获得了最后的字符串 Options "+optionsJson);
+        HashMap myJson = AAColor.AAOptionsConstructor.configureChartOptions(chartModel);
+        System.out.println("🔥🔥🔥🔥🔥获得了最后的字符串 Options "+optionsJson);
 
 
 //        this.loadUrl("javascript:loadTheHighChartView('" + optionsJson + "','" + contentWidth + "','" + contentHeight + "',)");

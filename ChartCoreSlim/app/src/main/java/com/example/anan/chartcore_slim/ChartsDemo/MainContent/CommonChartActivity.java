@@ -2,11 +2,16 @@ package com.example.anan.chartcore_slim.ChartsDemo.MainContent;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.CompoundButton;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.Switch;
 
 import com.example.anan.chartcore_slim.AAChartConfiger.AAChartModel;
 import com.example.anan.chartcore_slim.AAChartConfiger.AAChartView;
@@ -14,33 +19,42 @@ import com.example.anan.chartcore_slim.AAChartConfiger.AASeriesElement;
 import com.example.anan.chartcore_slim.R;
 
 
-public class CommonChartActivity extends AppCompatActivity {
+public class CommonChartActivity extends AppCompatActivity implements RadioGroup.OnCheckedChangeListener {
 
     private AAChartModel aaChartModel;
+    private AAChartView aaChartView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_common_chart);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
-        AAChartView aaChartView = (AAChartView) findViewById(R.id.AAChartView);
 
+        setUpRadioButtonsAndSwithes();
+        setUpAAChartView();
+    }
+
+    void setUpAAChartView() {
+        aaChartView = (AAChartView) findViewById(R.id.AAChartView);
+        aaChartModel = configureAAChartModel();
+        aaChartView.aa_drawChartWithChartModel(aaChartModel);
+    }
+
+    AAChartModel configureAAChartModel() {
         Intent intent = getIntent();
         String chartType = intent.getStringExtra("chartType");
         int position = intent.getIntExtra("position",0);
 
 
-        aaChartModel = new AAChartModel()
+       AAChartModel aaChartModel = new AAChartModel()
                 .chartType(chartType)
                 .title("title")
-                .subtitle("subtitleubtitleSubtitle")
-                .backgroundColor("#4b2b7f")
+                .subtitle("this is the subtitle of chart")
+                .backgroundColor("#ffffff")
                 .dataLabelEnabled(true)
                 .yAxisGridLineWidth(0)
                 .legendVerticalAlign(AAChartModel.AAChartLegendVerticalAlignType.Bottom)
-         ;
+        ;
 
         if (position == 4 || position == 5) {
             aaChartModel =  aaChartModel
@@ -100,15 +114,99 @@ public class CommonChartActivity extends AppCompatActivity {
                 ||chartType.equals(AAChartModel.AAChartType.Spline)) {
             aaChartModel.symbolStyle(AAChartModel.AAChartSymbolStyleType.BorderBlank);
         }
+        return aaChartModel;
+    }
+
+
+    void setUpRadioButtonsAndSwithes() {
+
+        RadioGroup radioGroup1 = (RadioGroup)findViewById(R.id.radioGroup1);
+        radioGroup1.setOnCheckedChangeListener(this);
+        RadioGroup radioGroup2 = (RadioGroup)findViewById(R.id.radioGroup2);
+        radioGroup2.setOnCheckedChangeListener(this);
+
+        Switch boolSwitch1 = (Switch)findViewById(R.id.switch1);
+        boolSwitch1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener(){
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+              aaChartModel.xAxisReversed(isChecked);
+              aaChartView.aa_refreshChartWithChartModel(aaChartModel);
+            }
+        });
+        Switch boolSwitch2 = (Switch)findViewById(R.id.switch2);
+        boolSwitch2.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener(){
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                aaChartModel.yAxisReversed(isChecked);
+                aaChartView.aa_refreshChartWithChartModel(aaChartModel);
+            }
+        });
+
+        Switch boolSwitch3 = (Switch)findViewById(R.id.switch3);
+        boolSwitch3.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener(){
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                aaChartModel.inverted(isChecked);
+                aaChartView.aa_refreshChartWithChartModel(aaChartModel);
+            }
+        });
+        Switch boolSwitch4 = (Switch)findViewById(R.id.switch4);
+        boolSwitch4.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener(){
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                aaChartModel.polar(isChecked);
+                aaChartView.aa_refreshChartWithChartModel(aaChartModel);
+            }
+        });
+        Switch boolSwitch5 = (Switch)findViewById(R.id.switch5);
+        boolSwitch5.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener(){
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                aaChartModel.dataLabelEnabled(isChecked);
+                aaChartView.aa_refreshChartWithChartModel(aaChartModel);
+            }
+        });
+
+
+    }
+
+    /**
+     * 重写的状态改变的事件的方法
+     * @param group 单选组合框
+     * @param checkedId 其中的每个RadioButton的Id
+     */
+    @Override
+    public void onCheckedChanged(RadioGroup group, int checkedId) {
+        if (group.getId() == R.id.radioGroup1) {
+            //根据不同ID 弹出不同的吐司
+            switch (group.getCheckedRadioButtonId()) {
+                case R.id.stackingRadioButton1:
+                    aaChartModel.stacking(AAChartModel.AAChartStackingType.False);
+                    break;
+                case R.id.stackingRadioButton2:
+                    aaChartModel.stacking(AAChartModel.AAChartStackingType.Normal);
+                    break;
+                case R.id.stackingRadioButton3:
+                    aaChartModel.stacking(AAChartModel.AAChartStackingType.Percent);
+                    break;
+            }
+        } else {
+            switch (group.getCheckedRadioButtonId()) {
+                case R.id.symbolRadioButton1:
+                    aaChartModel.symbol(AAChartModel.AAChartSymbolType.Circle);
+                    break;
+                case R.id.symbolRadioButton2:
+                    aaChartModel.symbol(AAChartModel.AAChartSymbolType.Diamond);
+                    break;
+                case R.id.symbolRadioButton3:
+                    aaChartModel.symbol(AAChartModel.AAChartSymbolType.Square);
+                    break;
+                case R.id.symbolRadioButton4:
+                    aaChartModel.symbol(AAChartModel.AAChartSymbolType.Triangle);
+                    break;
+                case R.id.symbolRadioButton5:
+                    aaChartModel.symbol(AAChartModel.AAChartSymbolType.Triangle_down);
+                    break;
+            }
+        }
 
         aaChartView.aa_drawChartWithChartModel(aaChartModel);
+        }
 
-
-//        new AlertDialog.Builder(this)
-//                .setTitle("标题")
-//                .setMessage(optionsJson)
-//                .setPositiveButton("确定", null)
-//                .show();
-    }
 
 }
