@@ -34,6 +34,8 @@
 
 package com.example.anan.chartcore_slim.AAChartConfiger;
 
+import com.example.anan.chartcore_slim.AAChartConfiger.AAChartModel;
+
 import java.util.HashMap;
 
 public class AAOptionsConstructor

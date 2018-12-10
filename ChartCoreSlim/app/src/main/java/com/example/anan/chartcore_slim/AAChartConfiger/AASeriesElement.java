@@ -52,29 +52,9 @@ public class AASeriesElement {
     private String dashStyle;
     private Dictionary dataLabels;
     private Dictionary marker;
-    private boolean step;
+    private Boolean step;
     private Boolean colorByPoint;
     private Integer zIndex;
-
-
-
-
-
-    public AASeriesElement zIndex(Integer zIndex) {
-        this.zIndex = zIndex;
-        return this;
-    }
-
-
-
-
-
-
-
-
-
-
-
 
 
     public AASeriesElement type(String type) {
@@ -132,13 +112,18 @@ public class AASeriesElement {
         return this;
     }
 
-    public AASeriesElement step(boolean step) {
+    public AASeriesElement step(Boolean step) {
         this.step = step;
         return this;
     }
 
     public AASeriesElement colorByPoint(Boolean colorByPoint) {
         this.colorByPoint = colorByPoint;
+        return this;
+    }
+
+    public AASeriesElement zIndex(Integer zIndex) {
+        this.zIndex = zIndex;
         return this;
     }
 
