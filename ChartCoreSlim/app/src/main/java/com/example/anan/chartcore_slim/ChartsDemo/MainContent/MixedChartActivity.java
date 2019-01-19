@@ -8,6 +8,7 @@ import com.example.anan.chartcore_slim.AAChartConfiger.AAChartModel;
 import com.example.anan.chartcore_slim.AAChartConfiger.AAChartView;
 import com.example.anan.chartcore_slim.AAChartConfiger.AASeriesElement;
 import com.example.anan.chartcore_slim.AATools.AAColor;
+import com.example.anan.chartcore_slim.AATools.AAGradientColor;
 import com.example.anan.chartcore_slim.R;
 
 public class MixedChartActivity extends AppCompatActivity {
@@ -40,7 +41,7 @@ public class MixedChartActivity extends AppCompatActivity {
                                 new AASeriesElement()
                                         .name("Temperature")
                                         .color("#1E90FF")
-                                        .type(AAChartModel.AAChartType.Line)
+                                        .type(AAChartModel.Type.Line)
                                         .data(new Object[][] {
                                                 {12464064, 21.5},
                                                 {12464928, 22.1},
@@ -79,7 +80,7 @@ public class MixedChartActivity extends AppCompatActivity {
                                 new AASeriesElement()
                                         .name("Range")
                                         .color("#1E90FF")
-                                        .type(AAChartModel.AAChartType.Arearange)
+                                        .type(AAChartModel.Type.Arearange)
                                         .lineWidth(0f)
                                         .fillOpacity(0.3f)
                                         .data(new Object[][] {
@@ -126,13 +127,13 @@ public class MixedChartActivity extends AppCompatActivity {
                                 "#1e90ff","#EA007B", "#49C1B6", "#FDC20A", "#F78320", "#068E81",})//主题颜色数组
                         .title("")//图形标题
                         .subtitle("")//图形副标题
-                        .chartType(AAChartModel.AAChartType.Line)
+                        .chartType(AAChartModel.Type.Line)
                         .dataLabelEnabled(false)
-                        .symbolStyle(AAChartModel.AAChartSymbolStyleType.BorderBlank)
+                        .symbolStyle(AAChartModel.SymbolStyleType.BorderBlank)
                         .series(new AASeriesElement[]{
                                         new AASeriesElement()
                                                 .name("Temperature")
-                                                .type(AAChartModel.AAChartType.Columnrange)
+                                                .type(AAChartModel.Type.Columnrange)
                                                 .data(new Object[][] {
                                                 {(-9.7), 9.4},
                                                 {(-8.7), 6.5},
@@ -146,27 +147,19 @@ public class MixedChartActivity extends AppCompatActivity {
                                                 {(-3.1),11.4},
                                                 {(-5.2),10.4},
                                                 {(-9.9),16.8}
-                                        })
-                                        ,
+                                        }),
                                         new AASeriesElement()
                                                 .name("Tokyo")
-                                                .data(new Object[] {
-                                                7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6})
-                                        ,
+                                                .data(new Object[] {7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6}),
                                         new AASeriesElement()
                                                 .name("New York")
-                                                .data(new Object[] {
-                                                0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5})
-                                        ,
+                                                .data(new Object[] {0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5}),
                                         new AASeriesElement()
                                                 .name("Berlin")
-                                                .data(new Object[] {
-                                                0.9, 0.6, 3.5, 8.4, 13.5, 17.0, 18.6, 17.9, 14.3, 9.0, 3.9, 1.0})
-                                        ,
+                                                .data(new Object[] {0.9, 0.6, 3.5, 8.4, 13.5, 17.0, 18.6, 17.9, 14.3, 9.0, 3.9, 1.0}),
                                         new AASeriesElement()
                                                 .name("London")
-                                                .data(new Object[] {
-                                                3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8})
+                                                .data(new Object[] {3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8})
                                         ,
                                 }
                         );
@@ -176,30 +169,25 @@ public class MixedChartActivity extends AppCompatActivity {
                 aaChartModel = new AAChartModel()
                         .title("16年1月-16年11月充值客单分析")//图形标题
                         .subtitle("BY MICVS")//图形副标题
-                        .chartType(AAChartModel.AAChartType.Column)
-                        .stacking(AAChartModel.AAChartStackingType.Normal)
+                        .chartType(AAChartModel.Type.Column)
+                        .stacking(AAChartModel.StackingType.Normal)
                         .legendEnabled(true)
                         .colorsTheme(new Object[] {
-                                AAColor.redColor(),
-                                AAColor.blueColor(),
-                                AAColor.blackColor(),
+                                AAGradientColor.oceanBlueColor(),
+                                AAGradientColor.sanguineColor(),
+                                AAGradientColor.lusciousLimeColor(),
                         })
                         .series(new AASeriesElement[]{
                                         new AASeriesElement()
                                                 .name("新用户")
-                                                .data(new Object[] {
-                                                82.89,67.54,62.07,59.43,67.02,67.09,35.66,71.78,81.61,78.85,79.12,72.30})
-                                        ,
+                                                .data(new Object[] {82.89,67.54,62.07,59.43,67.02,67.09,35.66,71.78,81.61,78.85,79.12,72.30}),
                                         new AASeriesElement()
                                                 .name("老用户")
-                                                .data(new Object[] {
-                                                198.66,330.81,151.95,160.12,222.56,229.05,128.53,250.91,224.47,473.99,126.85,260.50})
-                                        ,
+                                                .data(new Object[] {198.66,330.81,151.95,160.12,222.56,229.05,128.53,250.91,224.47,473.99,126.85,260.50}),
                                         new AASeriesElement()
                                                 .name("总量")
-                                                .type(AAChartModel.AAChartType.Line)
-                                                .data(new Object[] {
-                                                281.55,398.35,214.02,219.55,289.57,296.14,164.18,322.69,306.08,552.84,205.97,332.79})
+                                                .type(AAChartModel.Type.Line)
+                                                .data(new Object[] {281.55,398.35,214.02,219.55,289.57,296.14,164.18,322.69,306.08,552.84,205.97,332.79})
                                         ,
                                 }
                         );
@@ -207,44 +195,35 @@ public class MixedChartActivity extends AppCompatActivity {
 
             case "dashStyleTypeMixed":
                 aaChartModel = new AAChartModel()
-                        .chartType(AAChartModel.AAChartType.Spline)//图形类型
+                        .chartType(AAChartModel.Type.Spline)//图形类型
                         .dataLabelEnabled(false)//是否显示数字
-                        .stacking(AAChartModel.AAChartStackingType.Normal)
+                        .stacking(AAChartModel.StackingType.Normal)
                         .markerRadius(0)
                         .series(new AASeriesElement[]{
                                 new AASeriesElement()
                                         .name("SolidLine")
                                         .lineWidth(3f)
-                                        .data(new Object[] {
-                                        50, 320, 230, 370, 230, 400,})
-                                ,
+                                        .data(new Object[] {50, 320, 230, 370, 230, 400,320}),
                                 new AASeriesElement()
-                                        .name(AAChartModel.AALineDashSyleType.Dash)
+                                        .name("Dash")
                                         .lineWidth(3f)
-                                        .dashStyle(AAChartModel.AALineDashSyleType.Dash)
-                                        .data(new Object[] {
-                                        50, 320, 230, 370, 230, 400,})
-                                ,
+                                        .dashStyle(AAChartModel.LineDashSyleType.Dash)
+                                        .data(new Object[] {50, 320, 230, 370, 230, 400,320}),
                                 new AASeriesElement()
-                                        .name(AAChartModel.AALineDashSyleType.DashDot)
+                                        .name("DashDot")
                                         .lineWidth(3f)
-                                        .dashStyle(AAChartModel.AALineDashSyleType.DashDot)
-                                        .data(new Object[] {
-                                        50, 320, 230, 370, 230, 400,})
-                                ,
+                                        .dashStyle(AAChartModel.LineDashSyleType.DashDot)
+                                        .data(new Object[] {50, 320, 230, 370, 230, 400,320}),
                                 new AASeriesElement()
-                                        .name(AAChartModel.AALineDashSyleType.LongDash)
+                                        .name("LongDash")
                                         .lineWidth(3f)
-                                        .dashStyle(AAChartModel.AALineDashSyleType.LongDash)
-                                        .data(new Object[] {
-                                        50, 320, 230, 370, 230, 400,})
-                                ,
+                                        .dashStyle(AAChartModel.LineDashSyleType.LongDash)
+                                        .data(new Object[] {50, 320, 230, 370, 230, 400,320}),
                                 new AASeriesElement()
-                                        .name(AAChartModel.AALineDashSyleType.LongDashDot)
+                                        .name("LongDashDot")
                                         .lineWidth(3f)
-                                        .dashStyle(AAChartModel.AALineDashSyleType.LongDashDot)
-                                        .data(new Object[] {
-                                        50, 320, 230, 370, 230, 400,})
+                                        .dashStyle(AAChartModel.LineDashSyleType.LongDashDot)
+                                        .data(new Object[] {50, 320, 230, 370, 230, 400,320})
                                 ,
                         });
 
@@ -256,7 +235,7 @@ public class MixedChartActivity extends AppCompatActivity {
                         .series(new AASeriesElement[]{
                                 new AASeriesElement()
                                         .name("Column")
-                                        .type(AAChartModel.AAChartType.Column)
+                                        .type(AAChartModel.Type.Column)
                                         .data(new Object[] {
                                                 -6.4, -5.2, -3.0, 0.2, 2.3, 5.5, 8.4, 8.3, 5.1, 0.9, -1.1, -4.0,
                                                 -6.4, -5.2, -3.0, 0.2, 2.3, 5.5, 8.4, 8.3, 5.1, 0.9, -1.1, -4.0,
@@ -271,9 +250,9 @@ public class MixedChartActivity extends AppCompatActivity {
             case "scatterMixedLine":
                 aaChartModel = new AAChartModel()
                         .dataLabelEnabled(false)//是否显示数字
-                        .chartType(AAChartModel.AAChartType.Scatter)
-                        .symbolStyle(AAChartModel.AAChartSymbolStyleType.InnerBlank)
-                        .symbol(AAChartModel.AAChartSymbolType.Circle)
+                        .chartType(AAChartModel.Type.Scatter)
+                        .symbolStyle(AAChartModel.SymbolStyleType.InnerBlank)
+                        .symbol(AAChartModel.SymbolType.Circle)
                         .markerRadius(8)
                         .series(new AASeriesElement[]{
                             new AASeriesElement()
@@ -487,12 +466,11 @@ public class MixedChartActivity extends AppCompatActivity {
 
             case "negativeColorMixedBubble":
                 aaChartModel = new AAChartModel()
-                        .categories(new String[] {
-                                "Saturday", "Friday", "Thursday","Wednesday", "Tuesday", "Monday", "Sunday"})
+                        .categories(new String[] {"Saturday", "Friday", "Thursday","Wednesday", "Tuesday", "Monday", "Sunday"})
                         .series(new AASeriesElement[]{
                                 new AASeriesElement()
                                         .name("Bubble")
-                                        .type(AAChartModel.AAChartType.Bubble)
+                                        .type(AAChartModel.Type.Bubble)
                                         .data(new Object[][] {
                                                 {0,0,5},{0,1,1},{0,2,0},{0,3,0},{0,4,0},{0,5,0},{0,6,0},{0,7,0},{0,8,0},{0,9,0},
                                                 {0,10,0},{0,11,2},{0,12,4},{0,13,1},{0,14,1},{0,15,3},{0,16,4},{0,17,6},{0,18,4},
@@ -534,7 +512,7 @@ public class MixedChartActivity extends AppCompatActivity {
                                 ,
                                 new AASeriesElement()
                                         .name("实际值")
-                                        .type(AAChartModel.AAChartType.Scatter)
+                                        .type(AAChartModel.Type.Scatter)
                                         .data(new Object[][] {
                                                 {161.2, 51.6}, {167.5, 59.0}, {159.5, 49.2}, {157.0, 63.0}, {155.8, 53.6},
                                                 {170.0, 59.0}, {159.1, 47.6}, {166.0, 69.8}, {176.2, 66.8}, {160.2, 75.2},
@@ -596,26 +574,21 @@ public class MixedChartActivity extends AppCompatActivity {
 
             case "polarChartMixed":
                 aaChartModel = new AAChartModel()
-                        .chartType(AAChartModel.AAChartType.Column)
+                        .chartType(AAChartModel.Type.Column)
                         .polar(true)
                         .series(new AASeriesElement[]{
                                 new AASeriesElement()
                                         .name("Column")
-                                        .type(AAChartModel.AAChartType.Column)
-                                        .data(new Object[] {
-                                        8, 7, 6, 5, 4, 3, 2, 1})
-                                ,
+                                        .type(AAChartModel.Type.Column)
+                                        .data(new Object[] {8, 7, 6, 5, 4, 3, 2, 1}),
                                 new AASeriesElement()
                                         .name("Line")
-                                        .type(AAChartModel.AAChartType.Line)
-                                        .data(new Object[] {
-                                        1, 2, 3, 4, 5, 6, 7, 8})
-                                ,
+                                        .type(AAChartModel.Type.Line)
+                                        .data(new Object[] {1, 2, 3, 4, 5, 6, 7, 8}),
                                 new AASeriesElement()
                                         .name("Area")
-                                        .type(AAChartModel.AAChartType.Area)
-                                        .data(new Object[] {
-                                        1, 8, 2, 7, 3, 6, 4, 5})
+                                        .type(AAChartModel.Type.Area)
+                                        .data(new Object[] {1, 8, 2, 7, 3, 6, 4, 5})
                                 ,
                         });
                 break;

@@ -35,10 +35,10 @@ function configureAAOptions(sender, receivedWidth, receivedHeight) {
         //    alert(sender);//输出查看传输的是什么
         var AAChartModel = JSON.parse(sender);
         var o = document.getElementById('container'); //获得元素
-        if (receivedWidth != 0) {
-                o.style.width = receivedWidth; //设置宽度
-        }
-        o.style.height = receivedHeight; //设置高度
+//        if (receivedWidth != 0) {
+//                o.style.width = receivedWidth; //设置宽度
+//        }
+//        o.style.height = receivedHeight; //设置高度
     
         if (AAChartModel.gradientColorEnable == true) { //开启图表渐变色功能
             var colors = AAChartModel.colorsTheme;

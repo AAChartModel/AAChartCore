@@ -27,8 +27,10 @@ public class CustomStyleChartActivity extends AppCompatActivity {
 
         if (chartType.equals("colorfulChart")) {
             configureColorfulChart();
-        } else  {
+        } else if (chartType.equals("gradientColorfulChart"))  {
             configureColorfulGradientColorChart();
+        }  else if (chartType.equals("discontinuousDataChart"))  {
+            configureDiscontinuousDataChart();
         }
 
         AAChartView aaChartView = (AAChartView) findViewById(R.id.AAChartView);
@@ -67,14 +69,14 @@ public class CustomStyleChartActivity extends AppCompatActivity {
                 AAColor.blackColor(),};
 
         aaChartModel = new AAChartModel()
-                .chartType(AAChartModel.AAChartType.Bar)
-                .animationType(AAChartModel.AAChartAnimationType.Bounce)
+                .chartType(AAChartModel.Type.Bar)
+                .animationType(AAChartModel.AnimationType.Bounce)
                 .title("Colorful Chart")
                 .subtitle("use AAColor to get color string")
                 .dataLabelEnabled(false)
                 .categories(colorsNameArr)
                 .colorsTheme(colorsArr)
-                .stacking(AAChartModel.AAChartStackingType.Percent)
+                .stacking(AAChartModel.StackingType.Percent)
                 .series(new AASeriesElement[]{
                         new AASeriesElement()
                                 .name("Tokyo")
@@ -138,19 +140,36 @@ public class CustomStyleChartActivity extends AppCompatActivity {
            };
 
             aaChartModel = new AAChartModel()
-                    .chartType(AAChartModel.AAChartType.Column)
+                    .chartType(AAChartModel.Type.Column)
                     .title("Colorful Column Chart")
                     .subtitle("single data array colorful column chart")
                     .categories(gradientColorNamesArr)
                     .colorsTheme(gradientColorArr)
                     .yAxisTitle("gradient color")
-                    .stacking(AAChartModel.AAChartStackingType.Percent)
+                    .stacking(AAChartModel.StackingType.Percent)
                     .series(new AASeriesElement[]{
                             new AASeriesElement()
                                     .name("Tokyo")
                                     .data(new Object[] {
                                             149.9, 171.5, 106.4, 129.2, 144.0, 176.0, 135.6, 188.5, 276.4, 214.1, 95.6, 54.4})
                                     .colorByPoint(true)
+                    });
+
+        }
+
+        void configureDiscontinuousDataChart() {
+            aaChartModel = new AAChartModel()
+                    .chartType(AAChartModel.Type.Column)
+                    .title("Discontinuous Data Chart")
+                    .yAxisTitle("")
+                    .dataLabelEnabled(true)
+                    .tooltipEnabled(true)
+                    .series(new AASeriesElement[]{
+                            new AASeriesElement()
+                                    .name("Tokyo")
+                                    .data(new Object[] { 6.9, 9.5, 14.5, 18.2, 21.5, null, null, null, null, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6})
+                            .color(AAGradientColor.deepSeaColor())
+
                     });
 
         }

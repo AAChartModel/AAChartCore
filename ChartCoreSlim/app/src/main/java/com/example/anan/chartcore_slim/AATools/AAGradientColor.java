@@ -103,7 +103,11 @@ public class AAGradientColor {
 
    private static  HashMap<String,Object> configureGradientColor(String startColor,
                                                                  String endColo) {
-        HashMap linearGradientColorMap = new HashMap<String,Object>();
+        HashMap linearGradientColorMap = new HashMap<String,Integer>();
+        linearGradientColorMap.put("x1",0);
+        linearGradientColorMap.put("y1",1);
+        linearGradientColorMap.put("x2",0);
+        linearGradientColorMap.put("y2",0);
         Object[][] stopsArr =  new Object[][]{
                 {0  ,startColor},
                 {1  ,endColo},

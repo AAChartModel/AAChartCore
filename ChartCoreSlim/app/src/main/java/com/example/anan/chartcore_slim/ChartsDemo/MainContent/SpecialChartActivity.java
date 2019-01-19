@@ -48,9 +48,9 @@ public class SpecialChartActivity extends AppCompatActivity {
 
     AAChartModel configureChartModelWithChartType(String chartType) {
         switch (chartType) {
-            case AAChartModel.AAChartType.Column:
+            case AAChartModel.Type.Column:
                 aaChartModel = new AAChartModel()
-                        .chartType(AAChartModel.AAChartType.Column)
+                        .chartType(AAChartModel.Type.Column)
                         .polar(true)
                         .dataLabelEnabled(false)
                         .categories(new String[]{
@@ -67,9 +67,9 @@ public class SpecialChartActivity extends AppCompatActivity {
                         );
                 break;
 
-            case AAChartModel.AAChartType.Pie:
+            case AAChartModel.Type.Pie:
                 aaChartModel = new AAChartModel()
-                        .chartType(AAChartModel.AAChartType.Pie)
+                        .chartType(AAChartModel.Type.Pie)
                         .backgroundColor("#ffffff")
                         .title("LANGUAGE MARKET SHARES JANUARY,2020 TO MAY")
                         .subtitle("virtual data")
@@ -91,9 +91,9 @@ public class SpecialChartActivity extends AppCompatActivity {
                 break;
 
 
-            case AAChartModel.AAChartType.Bubble:
+            case AAChartModel.Type.Bubble:
                 aaChartModel = new AAChartModel()
-                        .chartType(AAChartModel.AAChartType.Bubble)
+                        .chartType(AAChartModel.Type.Bubble)
                         .title("AACHARTKIT BUBBLES")
                         .subtitle("JUST FOR FUN")
                         .yAxisTitle("℃")
@@ -154,13 +154,13 @@ public class SpecialChartActivity extends AppCompatActivity {
 
                 break;
 
-            case AAChartModel.AAChartType.Scatter:
+            case AAChartModel.Type.Scatter:
                 aaChartModel = new AAChartModel()
-                        .chartType(AAChartModel.AAChartType.Scatter)
+                        .chartType(AAChartModel.Type.Scatter)
                         .title("Height and weight distribution by sex")
                         .yAxisTitle("kg")
                         .markerRadius(8)
-                        .symbolStyle(AAChartModel.AAChartSymbolStyleType.InnerBlank)
+                        .symbolStyle(AAChartModel.SymbolStyleType.InnerBlank)
                         .series(new AASeriesElement[] {
                                         new AASeriesElement()
                                                 .name("Female")
@@ -278,9 +278,9 @@ public class SpecialChartActivity extends AppCompatActivity {
                         );
                 break;
 
-            case AAChartModel.AAChartType.Arearange:
+            case AAChartModel.Type.Arearange:
                 aaChartModel = new AAChartModel()
-                        .chartType(AAChartModel.AAChartType.Arearange)
+                        .chartType(AAChartModel.Type.Arearange)
                         .title("Twilight Hall day temperature fluctuation map")
                         .subtitle("real-time monitoring data")
                         .yAxisTitle("℃")
@@ -671,11 +671,11 @@ public class SpecialChartActivity extends AppCompatActivity {
                         );
                 break;
 
-            case AAChartModel.AAChartType.Areasplinerange:
+            case AAChartModel.Type.Areasplinerange:
                 String gradientColorDic = "#ff0000" ;
 
                 aaChartModel = new AAChartModel()
-                        .chartType(AAChartModel.AAChartType.Areasplinerange)
+                        .chartType(AAChartModel.Type.Areasplinerange)
                         .title("Area spline range chart")
                         .subtitle("virtual data")
                         .yAxisTitle("℃")
@@ -721,9 +721,9 @@ public class SpecialChartActivity extends AppCompatActivity {
                 break;
 
 
-            case AAChartModel.AAChartType.Columnrange:
+            case AAChartModel.Type.Columnrange:
                 aaChartModel = new AAChartModel()
-                        .chartType(AAChartModel.AAChartType.Columnrange)
+                        .chartType(AAChartModel.Type.Columnrange)
                         .title("TEMPERATURE VARIATION BY MONTH")
                         .subtitle("observed in Gotham city")
                         .yAxisTitle("℃")
@@ -753,45 +753,45 @@ public class SpecialChartActivity extends AppCompatActivity {
                         );
                 break;
 
-            case AAChartModel.AAChartType.Line:
+            case AAChartModel.Type.Line:
                 aaChartModel = new AAChartModel()
-                        .chartType(AAChartModel.AAChartType.Line)//图形类型
-                        .animationType(AAChartModel.AAChartAnimationType.Bounce)//图形渲染动画类型为"bounce"
+                        .chartType(AAChartModel.Type.Line)//图形类型
+                        .animationType(AAChartModel.AnimationType.Bounce)//图形渲染动画类型为"bounce"
                         .title("STEP LINE CHART")//图形标题
                         .subtitle("2020/08/08")//图形副标题
                         .dataLabelEnabled(false)//是否显示数字
-                        .symbolStyle(AAChartModel.AAChartSymbolStyleType.BorderBlank)//折线连接点样式
+                        .symbolStyle(AAChartModel.SymbolStyleType.BorderBlank)//折线连接点样式
                         .markerRadius(7)//折线连接点半径长度,为0时相当于没有折线连接点
                         .series(new AASeriesElement[]{
                                 new AASeriesElement()
                                         .name("Berlin")
                                         .data(new Object[] {
                                         450, 432, 401, 454, 590, 530, 510})
-//                                        .step("right")//设置折线样式为直方折线,折线连接点位置靠右👉
+                                        .step("right")//设置折线样式为直方折线,折线连接点位置靠右👉
                                 ,
                                 new AASeriesElement()
                                         .name("New York")
                                         .data(new Object[] {
                                         220, 282, 201, 234, 290, 430, 410})
-//                                        .step("center")//设置折线样式为直方折线,折线连接点位置居中
+                                        .step("center")//设置折线样式为直方折线,折线连接点位置居中
                                 ,
                                 new AASeriesElement()
                                         .name("Tokyo")
                                         .data(new Object[] {
                                         120, 132, 101, 134, 90, 230, 210})
-//                                        .step("left")//设置折线样式为直方折线,折线连接点位置靠左👈
+                                        .step("left")//设置折线样式为直方折线,折线连接点位置靠左👈
                                 ,
                         });
                 break;
 
-            case AAChartModel.AAChartType.Area:
+            case AAChartModel.Type.Area:
                 aaChartModel = new AAChartModel()
-                        .chartType(AAChartModel.AAChartType.Area)//图形类型
-                        .animationType(AAChartModel.AAChartAnimationType.Bounce)//图形渲染动画类型为"bounce"
+                        .chartType(AAChartModel.Type.Area)//图形类型
+                        .animationType(AAChartModel.AnimationType.Bounce)//图形渲染动画类型为"bounce"
                         .title("STEP AREA CHART")//图形标题
                         .subtitle("2049/08/08")//图形副标题
                         .dataLabelEnabled(false)//是否显示数字
-                        .symbolStyle(AAChartModel.AAChartSymbolStyleType.InnerBlank)//折线连接点样式
+                        .symbolStyle(AAChartModel.SymbolStyleType.InnerBlank)//折线连接点样式
                         .markerRadius(0)//折线连接点半径长度,为0时相当于没有折线连接点
                         .series(new AASeriesElement[]{
                                 new AASeriesElement()
@@ -815,9 +815,9 @@ public class SpecialChartActivity extends AppCompatActivity {
                         });
                 break;
 
-            case AAChartModel.AAChartType.Boxplot:
+            case AAChartModel.Type.Boxplot:
                 aaChartModel = new AAChartModel()
-                        .chartType(AAChartModel.AAChartType.Boxplot)
+                        .chartType(AAChartModel.Type.Boxplot)
                         .title("BOXPLOT CHART")
                         .subtitle("virtual data")
                         .yAxisTitle("℃")
@@ -836,9 +836,9 @@ public class SpecialChartActivity extends AppCompatActivity {
                         });
                 break;
 
-            case AAChartModel.AAChartType.Waterfall:
+            case AAChartModel.Type.Waterfall:
                 aaChartModel = new AAChartModel()
-                        .chartType(AAChartModel.AAChartType.Waterfall)
+                        .chartType(AAChartModel.Type.Waterfall)
                         .title("WATERFALL CHART")
                         .subtitle("virtual data");
 //                        .series(
@@ -874,9 +874,9 @@ public class SpecialChartActivity extends AppCompatActivity {
 //            )
                 break;
 
-            case AAChartModel.AAChartType.Pyramid:
+            case AAChartModel.Type.Pyramid:
                 aaChartModel = new AAChartModel()
-                        .chartType(AAChartModel.AAChartType.Pyramid)
+                        .chartType(AAChartModel.Type.Pyramid)
                         .title("THE HEAT OF PROGRAM LANGUAGE")
                         .subtitle("virtual data")
                         .yAxisTitle("℃")
@@ -894,9 +894,9 @@ public class SpecialChartActivity extends AppCompatActivity {
                         });
                 break;
 
-            case AAChartModel.AAChartType.Funnel:
+            case AAChartModel.Type.Funnel:
                 aaChartModel = new AAChartModel()
-                        .chartType(AAChartModel.AAChartType.Funnel)
+                        .chartType(AAChartModel.Type.Funnel)
                         .title("THE HEAT OF PROGRAM LANGUAGE")
                         .subtitle("virtual data")
                         .yAxisTitle("℉")

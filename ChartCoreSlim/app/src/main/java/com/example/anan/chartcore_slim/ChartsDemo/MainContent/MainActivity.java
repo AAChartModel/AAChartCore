@@ -47,33 +47,34 @@ public class MainActivity extends AppCompatActivity {
             "polygonMixedScatter",
             "polarChartMixed",
             "-----------------colorfulChart-----------------r",
-            "gradientColorfulChart"
+            "gradientColorfulChart",
+            "discontinuousDataChart"
 
     };
 
     String[] chartTypeArr = {
             /*基础类型图表*/
-            AAChartModel.AAChartType.Column,
-            AAChartModel.AAChartType.Bar,
-            AAChartModel.AAChartType.Area,
-            AAChartModel.AAChartType.AreaSpline,
-            AAChartModel.AAChartType.Area,
-            AAChartModel.AAChartType.Line,
-            AAChartModel.AAChartType.Line,
-            AAChartModel.AAChartType.Spline,
+            AAChartModel.Type.Column,
+            AAChartModel.Type.Bar,
+            AAChartModel.Type.Area,
+            AAChartModel.Type.AreaSpline,
+            AAChartModel.Type.Area,
+            AAChartModel.Type.Line,
+            AAChartModel.Type.Line,
+            AAChartModel.Type.Spline,
             /*特殊类型图表*/
-            AAChartModel.AAChartType.Column,
-            AAChartModel.AAChartType.Pie,
-            AAChartModel.AAChartType.Bubble,
-            AAChartModel.AAChartType.Scatter,
-            AAChartModel.AAChartType.Arearange,
-            AAChartModel.AAChartType.Columnrange,
-            AAChartModel.AAChartType.Line,
-            AAChartModel.AAChartType.Area,
-            AAChartModel.AAChartType.Boxplot,
-            AAChartModel.AAChartType.Waterfall,
-            AAChartModel.AAChartType.Pyramid,
-            AAChartModel.AAChartType.Funnel,
+            AAChartModel.Type.Column,
+            AAChartModel.Type.Pie,
+            AAChartModel.Type.Bubble,
+            AAChartModel.Type.Scatter,
+            AAChartModel.Type.Arearange,
+            AAChartModel.Type.Columnrange,
+            AAChartModel.Type.Line,
+            AAChartModel.Type.Area,
+            AAChartModel.Type.Boxplot,
+            AAChartModel.Type.Waterfall,
+            AAChartModel.Type.Pyramid,
+            AAChartModel.Type.Funnel,
 
             /*Mixed Chart---混合图*/
             "arearangeMixedLine",
@@ -87,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
             "polarChartMixed",
             "colorfulChart",
             "gradientColorfulChart",
-            "columnMixedScatter",
+            "discontinuousDataChart",
             "pieMixedLineMixedColumn"
     };
 

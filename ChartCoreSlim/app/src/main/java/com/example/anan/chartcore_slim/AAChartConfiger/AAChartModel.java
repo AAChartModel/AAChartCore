@@ -34,13 +34,14 @@
 package com.example.anan.chartcore_slim.AAChartConfiger;
 
 
+
 /**
  * Created by AnAn on 2017/9/5.
  */
 
 public class AAChartModel {
 
-    public interface AAChartAnimationType {
+    public interface AnimationType {
         String EaseInQuad     = "easeInQuad";
         String EaseOutQuad    = "easeOutQuad";
         String EaseInOutQuad  = "easeInOutQuad";
@@ -77,7 +78,7 @@ public class AAChartModel {
         String EaseTo         = "easeTo";
     }
 
-    public interface AAChartType {
+    public interface Type {
         String Column          = "column";
         String Bar             = "bar";
         String Area            = "area";
@@ -96,25 +97,25 @@ public class AAChartModel {
         String Waterfall       = "waterfall";
     }
 
-    public interface AAChartSubtitleAlignType {
+    public interface SubtitleAlignType {
         String Left   = "left";
         String Center = "center";
         String Right  = "right";
     }
 
-    public interface AAChartZoomType {
+    public interface ZoomType {
         String X  = "x";
         String Y  = "y";
         String XY = "xy";
     }
 
-    public interface AAChartStackingType {
+    public interface StackingType {
         String False   = "";
         String Normal  = "normal";
         String Percent = "percent";
     }
 
-    public interface AAChartSymbolType {
+    public interface SymbolType {
         String Circle         = "circle";
         String Square         = "square";
         String Diamond        = "diamond";
@@ -122,30 +123,30 @@ public class AAChartModel {
         String Triangle_down  = "triangle-down";
     }
 
-    public interface AAChartSymbolStyleType {
+    public interface SymbolStyleType {
         String Normal       = "normal";
         String InnerBlank   = "innerBlank";
         String BorderBlank  = "borderBlank";
     }
 
-    public interface AAchartLegendlLayoutType {
+    public interface LegendlLayoutType {
         String Horizontal  = "horizontal";
         String Vertical    = "vertical";
     }
 
-    public interface AAChartLegendAlignType {
+    public interface LegendAlignType {
         String Left     = "left";
         String Center   = "center";
         String Right    = "right";
     }
 
-    public interface AAChartLegendVerticalAlignType {
+    public interface LegendVerticalAlignType {
         String Top     = "top";
         String Middle  = "middle";
         String Bottom  = "bottom";
     }
 
-    public interface AALineDashSyleType {
+    public interface LineDashSyleType {
         String Solid           = "Solid";
         String ShortDash       = "ShortDash";
         String ShortDot        = "ShortDot";
@@ -272,6 +273,11 @@ public class AAChartModel {
 
     public AAChartModel yAxisReversed(Boolean yAxisReversed) {
         this.yAxisReversed = yAxisReversed;
+        return this;
+    }
+
+    public AAChartModel tooltipEnabled(Boolean tooltipEnabled) {
+        this.tooltipEnabled = tooltipEnabled;
         return this;
     }
 
@@ -422,11 +428,11 @@ public class AAChartModel {
 //        this.borderRadius = 0;//柱状图长条图头部圆角半径(可用于设置头部的形状,仅对条形图,柱状图有效,设置为1000时,柱形图或者条形图头部为楔形)
 //        this.markerRadius = 5;//折线连接点的半径长度,设置默认值为0,这样就相当于不显示了
 
-        this.animationType = AAChartAnimationType.EaseInBack;
+        this.animationType = AnimationType.EaseInBack;
         this.animationDuration = 800;//以毫秒为单位
         this.pointHollow = false;
         this.inverted = false;
-        this.stacking = AAChartStackingType.False;
+        this.stacking = StackingType.False;
         this.xAxisReversed = false;
         this.yAxisReversed = false;
         this.zoomType = "x";
@@ -453,6 +459,8 @@ public class AAChartModel {
     }
 
 }
+
+
 
 
 

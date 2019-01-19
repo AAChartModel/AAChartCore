@@ -38,6 +38,7 @@ public class CommonChartActivity extends AppCompatActivity implements RadioGroup
         aaChartView = (AAChartView) findViewById(R.id.AAChartView);
         aaChartModel = configureAAChartModel();
         aaChartView.aa_drawChartWithChartModel(aaChartModel);
+
     }
 
     AAChartModel configureAAChartModel() {
@@ -53,66 +54,52 @@ public class CommonChartActivity extends AppCompatActivity implements RadioGroup
                 .backgroundColor("#ffffff")
                 .dataLabelEnabled(true)
                 .yAxisGridLineWidth(0)
-                .legendVerticalAlign(AAChartModel.AAChartLegendVerticalAlignType.Bottom)
+                .legendVerticalAlign(AAChartModel.LegendVerticalAlignType.Bottom)
         ;
 
         if (position == 4 || position == 5) {
-            aaChartModel =  aaChartModel
-                    .series(new AASeriesElement[]{
+            aaChartModel.series(
+                    new AASeriesElement[]{
                             new AASeriesElement()
                                     .name("Tokyo")
-                                    .data(new Object[]
-                                            {149.9, 171.5, 106.4, 129.2, 144.0, 176.0, 135.6, 188.5, 276.4, 214.1, 95.6, 54.4})
-                                    .step(true)
-                            ,
+                                    .data(new Object[]{149.9, 171.5, 106.4, 129.2, 144.0, 176.0, 135.6, 188.5, 276.4, 214.1, 95.6, 54.4})
+                                    .step(true),
                             new AASeriesElement()
                                     .name("NewYork")
-                                    .data(new Object[]
-                                            {83.6, 78.8, 188.5, 93.4, 106.0, 84.5, 105.0, 104.3, 131.2, 153.5, 226.6, 192.3})
-                                    .step(true)
-                            ,
+                                    .data(new Object[]{83.6, 78.8, 188.5, 93.4, 106.0, 84.5, 105.0, 104.3, 131.2, 153.5, 226.6, 192.3})
+                                    .step(true),
                             new AASeriesElement()
                                     .name("London")
-                                    .data(new Object[]
-                                            {48.9, 38.8, 19.3, 41.4, 47.0, 28.3, 59.0, 69.6, 52.4, 65.2, 53.3, 72.2})
-                                    .step(true)
-                            ,
-
+                                    .data(new Object[]{48.9, 38.8, 19.3, 41.4, 47.0, 28.3, 59.0, 69.6, 52.4, 65.2, 53.3, 72.2})
+                                    .step(true),
                     });
 
         } else {
-            aaChartModel =  aaChartModel
-                    .series(new AASeriesElement[]{
+            aaChartModel.series(
+                    new AASeriesElement[]{
                             new AASeriesElement()
                                     .name("Tokyo")
-                                    .data(new Object[]
-                                    {7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6})
-                            ,
+                                    .data(new Object[]{7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6}),
                             new AASeriesElement()
                                     .name("NewYork")
-                                    .data(new Object[]
-                                    {0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5})
-                            ,
+                                    .data(new Object[]{0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5}),
                             new AASeriesElement()
                                     .name("London")
-                                    .data(new Object[]
-                                    {0.9, 0.6, 3.5, 8.4, 13.5, 17.0, 18.6, 17.9, 14.3, 9.0, 3.9, 1.0})
-                            ,
+                                    .data(new Object[]{0.9, 0.6, 3.5, 8.4, 13.5, 17.0, 18.6, 17.9, 14.3, 9.0, 3.9, 1.0}),
                             new AASeriesElement()
                                     .name("Berlin")
-                                    .data(new Object[]
-                                    {3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8})
+                                    .data(new Object[]{3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8})
 
                     });
 
         }
 
-        if (chartType.equals(AAChartModel.AAChartType.Area)
-                || chartType.equals(AAChartModel.AAChartType.Arearange)) {
-            aaChartModel.symbolStyle(AAChartModel.AAChartSymbolStyleType.InnerBlank);
-        } else if (chartType.equals(AAChartModel.AAChartType.Line)
-                ||chartType.equals(AAChartModel.AAChartType.Spline)) {
-            aaChartModel.symbolStyle(AAChartModel.AAChartSymbolStyleType.BorderBlank);
+        if (chartType.equals(AAChartModel.Type.Area)
+                || chartType.equals(AAChartModel.Type.Arearange)) {
+            aaChartModel.symbolStyle(AAChartModel.SymbolStyleType.InnerBlank);
+        } else if (chartType.equals(AAChartModel.Type.Line)
+                ||chartType.equals(AAChartModel.Type.Spline)) {
+            aaChartModel.symbolStyle(AAChartModel.SymbolStyleType.BorderBlank);
         }
         return aaChartModel;
     }
@@ -176,31 +163,31 @@ public class CommonChartActivity extends AppCompatActivity implements RadioGroup
             //根据不同ID 弹出不同的吐司
             switch (group.getCheckedRadioButtonId()) {
                 case R.id.stackingRadioButton1:
-                    aaChartModel.stacking(AAChartModel.AAChartStackingType.False);
+                    aaChartModel.stacking(AAChartModel.StackingType.False);
                     break;
                 case R.id.stackingRadioButton2:
-                    aaChartModel.stacking(AAChartModel.AAChartStackingType.Normal);
+                    aaChartModel.stacking(AAChartModel.StackingType.Normal);
                     break;
                 case R.id.stackingRadioButton3:
-                    aaChartModel.stacking(AAChartModel.AAChartStackingType.Percent);
+                    aaChartModel.stacking(AAChartModel.StackingType.Percent);
                     break;
             }
         } else {
             switch (group.getCheckedRadioButtonId()) {
                 case R.id.symbolRadioButton1:
-                    aaChartModel.symbol(AAChartModel.AAChartSymbolType.Circle);
+                    aaChartModel.symbol(AAChartModel.SymbolType.Circle);
                     break;
                 case R.id.symbolRadioButton2:
-                    aaChartModel.symbol(AAChartModel.AAChartSymbolType.Diamond);
+                    aaChartModel.symbol(AAChartModel.SymbolType.Diamond);
                     break;
                 case R.id.symbolRadioButton3:
-                    aaChartModel.symbol(AAChartModel.AAChartSymbolType.Square);
+                    aaChartModel.symbol(AAChartModel.SymbolType.Square);
                     break;
                 case R.id.symbolRadioButton4:
-                    aaChartModel.symbol(AAChartModel.AAChartSymbolType.Triangle);
+                    aaChartModel.symbol(AAChartModel.SymbolType.Triangle);
                     break;
                 case R.id.symbolRadioButton5:
-                    aaChartModel.symbol(AAChartModel.AAChartSymbolType.Triangle_down);
+                    aaChartModel.symbol(AAChartModel.SymbolType.Triangle_down);
                     break;
             }
         }

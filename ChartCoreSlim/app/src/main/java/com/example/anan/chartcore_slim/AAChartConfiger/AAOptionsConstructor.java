@@ -121,23 +121,23 @@ public class AAOptionsConstructor
     {
         String chartType = aaChartModel.chartType;
         //数据点标记相关配置，只有线性图(折线图、曲线图、折线区域填充图、曲线区域填充图,散点图)才有数据点标记
-        if (       chartType == AAChartModel.AAChartType.Area
-                || chartType == AAChartModel.AAChartType.AreaSpline
-                || chartType == AAChartModel.AAChartType.Line
-                || chartType == AAChartModel.AAChartType.Spline
-                || chartType == AAChartModel.AAChartType.Scatter)
+        if (       chartType == AAChartModel.Type.Area
+                || chartType == AAChartModel.Type.AreaSpline
+                || chartType == AAChartModel.Type.Line
+                || chartType == AAChartModel.Type.Spline
+                || chartType == AAChartModel.Type.Scatter)
         {
             HashMap aaMarker = new HashMap<String, Object>();
             aaMarker.put("radius", aaChartModel.markerRadius);//曲线连接点半径，默认是4
             aaMarker.put("symbol",aaChartModel.symbol);//曲线连接点类型："circle", "square", "diamond", "triangle","triangle-down"，默认是"circle"
             //设置曲线连接点风格样式
-            if (aaChartModel.symbolStyle == AAChartModel.AAChartSymbolStyleType.InnerBlank)
+            if (aaChartModel.symbolStyle == AAChartModel.SymbolStyleType.InnerBlank)
             {
                 aaMarker.put("fillColor", "#FFFFFF");//点的填充色(用来设置折线连接点的填充色)
                 aaMarker.put("lineWidth", 2);//外沿线的宽度(用来设置折线连接点的轮廓描边的宽度)
                 aaMarker.put("lineColor", "");//外沿线的颜色(用来设置折线连接点的轮廓描边颜色，当值为空字符串时，默认取数据点或数据列的颜色。)
             }
-            else if (aaChartModel.symbolStyle == AAChartModel.AAChartSymbolStyleType.BorderBlank)
+            else if (aaChartModel.symbolStyle == AAChartModel.SymbolStyleType.BorderBlank)
             {
                 aaMarker.put("lineWidth", 2);//外沿线的宽度(用来设置折线连接点的轮廓描边的宽度)
                 aaMarker.put("lineColor", aaChartModel.backgroundColor);//外沿线的颜色(用来设置折线连接点的轮廓描边颜色，当值为空字符串时，默认取数据点或数据列的颜色。)
@@ -158,8 +158,8 @@ public class AAOptionsConstructor
         aaDataLabels.put("enabled", aaChartModel.xAxisLabelsEnabled);
         HashMap aaSomeTypeChart = new HashMap<String, Object>();
 
-        if (       chartType == AAChartModel.AAChartType.Column
-                || chartType == AAChartModel.AAChartType.Bar)
+        if (       chartType == AAChartModel.Type.Column
+                || chartType == AAChartModel.Type.Bar)
         {
             aaSomeTypeChart.put("borderWidth", 0);
             aaSomeTypeChart.put("borderRadius", aaChartModel.borderRadius);
@@ -170,7 +170,7 @@ public class AAOptionsConstructor
                 aaSomeTypeChart.put("groupPadding", 0.005);
             }
         }
-        else if (chartType == AAChartModel.AAChartType.Pie)
+        else if (chartType == AAChartModel.Type.Pie)
         {
             aaSomeTypeChart.put("allowPointSelect", true);
             aaSomeTypeChart.put("cursor", "pointer");
@@ -191,9 +191,9 @@ public class AAOptionsConstructor
                                                       AAChartModel aaChartModel)
     {
 
-        if (       aaChartModel.chartType != AAChartModel.AAChartType.Pie
-                && aaChartModel.chartType != AAChartModel.AAChartType.Pyramid
-                && aaChartModel.chartType != AAChartModel.AAChartType.Funnel  )
+        if (       aaChartModel.chartType != AAChartModel.Type.Pie
+                && aaChartModel.chartType != AAChartModel.Type.Pyramid
+                && aaChartModel.chartType != AAChartModel.Type.Funnel  )
         {
             HashMap aaAxisLabel = new HashMap<String, Object>();
             aaAxisLabel.put("enabled", aaChartModel.xAxisLabelsEnabled);
