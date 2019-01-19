@@ -140,7 +140,7 @@ public class CustomStyleChartActivity extends AppCompatActivity {
            };
 
             aaChartModel = new AAChartModel()
-                    .chartType(AAChartModel.Type.Column)
+                    .chartType(AAChartModel.Type.Bar)
                     .title("Colorful Column Chart")
                     .subtitle("single data array colorful column chart")
                     .categories(gradientColorNamesArr)
@@ -168,7 +168,7 @@ public class CustomStyleChartActivity extends AppCompatActivity {
                             new AASeriesElement()
                                     .name("Tokyo")
                                     .data(new Object[] { 6.9, 9.5, 14.5, 18.2, 21.5, null, null, null, null, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6})
-                            .color(AAGradientColor.deepSeaColor())
+                                    .color(AAGradientColor.deepSeaColor())
 
                     });
 

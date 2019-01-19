@@ -9,6 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".ChartsDemo.MainContent.EvaluateJSStringFunctionActivity"></activity>
+        <activity android:name=".ChartsDemo.MainContent.OnlyRefreshChartDataActivity" />
+        <activity android:name=".ChartsDemo.MainContent.HideOrShowChartSeriesActivity" />
+        <activity android:name=".ChartsDemo.MainContent.DrawChartWithAAOptionsActivity" />
         <activity android:name=".ChartsDemo.MainContent.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,7 +29,7 @@
             android:label="@string/title_activity_special_chart"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".ChartsDemo.MainContent.CustomStyleChartActivity" />
-        <activity android:name=".ChartsDemo.MainContent.MixedChartActivity"></activity>
+        <activity android:name=".ChartsDemo.MainContent.MixedChartActivity" />
     </application>
 
 </manifest>
