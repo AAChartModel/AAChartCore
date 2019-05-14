@@ -26,18 +26,18 @@ public class CustomStyleChartActivity extends AppCompatActivity {
         String chartType = intent.getStringExtra("chartType");
 
         if (chartType.equals("colorfulChart")) {
-            configureColorfulChart();
+           aaChartModel = configureColorfulChart();
         } else if (chartType.equals("gradientColorfulChart"))  {
-            configureColorfulGradientColorChart();
+            aaChartModel = configureColorfulGradientColorChart();
         }  else if (chartType.equals("discontinuousDataChart"))  {
-            configureDiscontinuousDataChart();
+            aaChartModel = configureDiscontinuousDataChart();
         }
 
         AAChartView aaChartView = (AAChartView) findViewById(R.id.AAChartView);
         aaChartView.aa_drawChartWithChartModel(aaChartModel);
     }
 
-    void configureColorfulChart() {
+    AAChartModel configureColorfulChart() {
         String[] colorsNameArr = {
                 "red",
                 "orange",
@@ -68,7 +68,7 @@ public class CustomStyleChartActivity extends AppCompatActivity {
                 AAColor.brownColor(),
                 AAColor.blackColor(),};
 
-        aaChartModel = new AAChartModel()
+        return new AAChartModel()
                 .chartType(AAChartModel.Type.Bar)
                 .animationType(AAChartModel.AnimationType.Bounce)
                 .title("Colorful Chart")
@@ -87,7 +87,7 @@ public class CustomStyleChartActivity extends AppCompatActivity {
 
     }
 
-        void configureColorfulGradientColorChart() {
+        AAChartModel configureColorfulGradientColorChart() {
 
            String[] gradientColorNamesArr = {
                    "oceanBlue",
@@ -139,7 +139,7 @@ public class CustomStyleChartActivity extends AppCompatActivity {
                    AAGradientColor.eveningDelightColor(),
            };
 
-            aaChartModel = new AAChartModel()
+            return new AAChartModel()
                     .chartType(AAChartModel.Type.Bar)
                     .title("Colorful Column Chart")
                     .subtitle("single data array colorful column chart")
@@ -157,22 +157,22 @@ public class CustomStyleChartActivity extends AppCompatActivity {
 
         }
 
-        void configureDiscontinuousDataChart() {
-            aaChartModel = new AAChartModel()
-                    .chartType(AAChartModel.Type.Column)
-                    .title("Discontinuous Data Chart")
-                    .yAxisTitle("")
-                    .dataLabelEnabled(true)
-                    .tooltipEnabled(true)
-                    .series(new AASeriesElement[]{
-                            new AASeriesElement()
-                                    .name("Tokyo")
-                                    .data(new Object[] { 6.9, 9.5, 14.5, 18.2, 21.5, null, null, null, null, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6})
-                                    .color(AAGradientColor.deepSeaColor())
+    AAChartModel configureDiscontinuousDataChart() {
+        return new AAChartModel()
+                .chartType(AAChartModel.Type.Column)
+                .title("Discontinuous Data Chart")
+                .yAxisTitle("")
+                .dataLabelEnabled(true)
+                .tooltipEnabled(true)
+                .series(new AASeriesElement[]{
+                        new AASeriesElement()
+                                .name("Tokyo")
+                                .data(new Object[] { 6.9, 9.5, 14.5, 18.2, 21.5, null, null, null, null, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6})
+                                .color(AAGradientColor.deepSeaColor())
 
-                    });
+                });
 
-        }
+    }
 
 
     }
