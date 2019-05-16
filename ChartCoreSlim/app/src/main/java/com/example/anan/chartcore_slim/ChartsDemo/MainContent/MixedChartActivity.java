@@ -133,7 +133,7 @@ public class MixedChartActivity extends AppCompatActivity {
     }
     
     AAChartModel columnrangeMixedLine() {
-       return new AAChartModel()
+        return new AAChartModel()
                 .colorsTheme(new Object[] {
                         "#1e90ff","#EA007B", "#49C1B6", "#FDC20A", "#F78320", "#068E81",})//主题颜色数组
                 .title("")//图形标题
@@ -142,38 +142,38 @@ public class MixedChartActivity extends AppCompatActivity {
                 .dataLabelEnabled(false)
                 .symbolStyle(AAChartModel.SymbolStyleType.BorderBlank)
                 .series(new AASeriesElement[]{
-                                new AASeriesElement()
-                                        .name("Temperature")
-                                        .type(AAChartModel.Type.Columnrange)
-                                        .data(new Object[][] {
-                                        {(-9.7), 9.4},
-                                        {(-8.7), 6.5},
-                                        {(-3.5), 9.4},
-                                        {(-1.4),19.9},
-                                        {0.0 ,  22.6},
-                                        {2.9 ,  29.5},
-                                        {9.2 ,  30.7},
-                                        {7.3 ,  26.5},
-                                        {4.4 ,  18.0},
-                                        {(-3.1),11.4},
-                                        {(-5.2),10.4},
-                                        {(-9.9),16.8}
-                                }),
-                                new AASeriesElement()
-                                        .name("Tokyo")
-                                        .data(new Object[] {7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6}),
-                                new AASeriesElement()
-                                        .name("New York")
-                                        .data(new Object[] {0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5}),
-                                new AASeriesElement()
-                                        .name("Berlin")
-                                        .data(new Object[] {0.9, 0.6, 3.5, 8.4, 13.5, 17.0, 18.6, 17.9, 14.3, 9.0, 3.9, 1.0}),
-                                new AASeriesElement()
-                                        .name("London")
-                                        .data(new Object[] {3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8})
-                                ,
+                        new AASeriesElement()
+                                .name("Temperature")
+                                .type(AAChartModel.Type.Columnrange)
+                                .data(new Object[][] {
+                                {(-9.7), 9.4},
+                                {(-8.7), 6.5},
+                                {(-3.5), 9.4},
+                                {(-1.4),19.9},
+                                {0.0 ,  22.6},
+                                {2.9 ,  29.5},
+                                {9.2 ,  30.7},
+                                {7.3 ,  26.5},
+                                {4.4 ,  18.0},
+                                {(-3.1),11.4},
+                                {(-5.2),10.4},
+                                {(-9.9),16.8}
+                        }),
+                        new AASeriesElement()
+                                .name("Tokyo")
+                                .data(new Object[] {7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6}),
+                        new AASeriesElement()
+                                .name("New York")
+                                .data(new Object[] {0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5}),
+                        new AASeriesElement()
+                                .name("Berlin")
+                                .data(new Object[] {0.9, 0.6, 3.5, 8.4, 13.5, 17.0, 18.6, 17.9, 14.3, 9.0, 3.9, 1.0}),
+                        new AASeriesElement()
+                                .name("London")
+                                .data(new Object[] {3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8})
+                        ,
                         }
-                ); 
+                );
     }
     
     AAChartModel stackingColumnMixedLine() {
@@ -189,17 +189,17 @@ public class MixedChartActivity extends AppCompatActivity {
                         AAGradientColor.lusciousLimeColor(),
                 })
                 .series(new AASeriesElement[]{
-                                new AASeriesElement()
-                                        .name("新用户")
-                                        .data(new Object[] {82.89,67.54,62.07,59.43,67.02,67.09,35.66,71.78,81.61,78.85,79.12,72.30}),
-                                new AASeriesElement()
-                                        .name("老用户")
-                                        .data(new Object[] {198.66,330.81,151.95,160.12,222.56,229.05,128.53,250.91,224.47,473.99,126.85,260.50}),
-                                new AASeriesElement()
-                                        .name("总量")
-                                        .type(AAChartModel.Type.Line)
-                                        .data(new Object[] {281.55,398.35,214.02,219.55,289.57,296.14,164.18,322.69,306.08,552.84,205.97,332.79})
-                                ,
+                        new AASeriesElement()
+                                .name("新用户")
+                                .data(new Object[] {82.89,67.54,62.07,59.43,67.02,67.09,35.66,71.78,81.61,78.85,79.12,72.30}),
+                        new AASeriesElement()
+                                .name("老用户")
+                                .data(new Object[] {198.66,330.81,151.95,160.12,222.56,229.05,128.53,250.91,224.47,473.99,126.85,260.50}),
+                        new AASeriesElement()
+                                .name("总量")
+                                .type(AAChartModel.Type.Line)
+                                .data(new Object[] {281.55,398.35,214.02,219.55,289.57,296.14,164.18,322.69,306.08,552.84,205.97,332.79})
+                        ,
                         }
                 );
     }

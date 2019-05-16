@@ -77,11 +77,11 @@ public class SpecialChartActivity extends AppCompatActivity {
                         "January", "February", "March", "April", "May", "June",
                         "July", "August", "September", "October", "November", "December"})
                 .series(new AASeriesElement[]{
-                                new AASeriesElement()
-                                        .name("2018")
-                                        .data(new Object[] {
-                                        7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6}
-                                )
+                        new AASeriesElement()
+                                .name("2018")
+                                .data(new Object[] {
+                                7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6}
+                        )
                         }
 
                 );
@@ -96,16 +96,16 @@ public class SpecialChartActivity extends AppCompatActivity {
               .dataLabelEnabled(true)//是否直接显示扇形图数据
               .yAxisTitle("℃")
               .series(new AASeriesElement[] {
-                              new AASeriesElement()
-                                      .name("Language market shares")
-                                      .data(new Object[][] {
-                                      {"Java"  ,67},
-                                      {"Swift",999},
-                                      {"Python",83},
-                                      {"OC"    ,11},
-                                      {"Go"    ,30},
-                              })
-                              ,
+                      new AASeriesElement()
+                              .name("Language market shares")
+                              .data(new Object[][] {
+                              {"Java"  ,67},
+                              {"Swift",999},
+                              {"Python",83},
+                              {"OC"    ,11},
+                              {"Go"    ,30},
+                      })
+                      ,
                       }
               );
     }
@@ -749,23 +749,23 @@ public class SpecialChartActivity extends AppCompatActivity {
                 .dataLabelEnabled(true)
                 .inverted(true)//x 轴是否垂直翻转
                 .series(new AASeriesElement[] {
-                                new AASeriesElement()
-                                        .name("temperature")
-                                        .data(new Object[][] {
-                                        {-9.7,  9.4},
-                                        {-8.7,  6.5},
-                                        {-3.5,  9.4},
-                                        {-1.4, 19.9},
-                                        {0.0,  22.6},
-                                        {2.9,  29.5},
-                                        {9.2,  30.7},
-                                        {7.3,  26.5},
-                                        {4.4,  18.0},
-                                        {-3.1, 11.4},
-                                        {-5.2, 10.4},
-                                        {-13.5, 9.8}
-                                })
-                                ,
+                        new AASeriesElement()
+                                .name("temperature")
+                                .data(new Object[][] {
+                                {-9.7,  9.4},
+                                {-8.7,  6.5},
+                                {-3.5,  9.4},
+                                {-1.4, 19.9},
+                                {0.0,  22.6},
+                                {2.9,  29.5},
+                                {9.2,  30.7},
+                                {7.3,  26.5},
+                                {4.4,  18.0},
+                                {-3.1, 11.4},
+                                {-5.2, 10.4},
+                                {-13.5, 9.8}
+                        })
+                        ,
                         }
                 );
     }
