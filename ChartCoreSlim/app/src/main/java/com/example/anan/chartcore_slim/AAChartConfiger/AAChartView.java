@@ -86,6 +86,9 @@ public class AAChartView extends WebView {
 
 
     public void aa_drawChartWithChartModel(final AAChartModel chartModel) {
+
+
+
         this.loadUrl("file:///android_asset/AAChartView.html");//神奇了,这个方法写在aa_drawChartWithChartModel方法里面就不行,难道是因为不能在还未加载成功的时候就直接调用 JS 方法?(跟 OC 一样)必须在加载完成后的代理里面调用 JS 方法
 
         this.setWebViewClient(new WebViewClient()
@@ -110,10 +113,14 @@ public class AAChartView extends WebView {
         // 将对象编译成json
         Gson gson = new Gson();
         String newOptions = gson.toJson(chartModel);
-        this.loadUrl("javascript:loadTheHighChartView('" + newOptions + "','" + contentWidth + "','" + contentHeight + "')");
+        HashMap aaOptions = AAOptionsConstructor.configureChartOptions(chartModel);
+        String aaOptionsJsonStr = gson.toJson(aaOptions);
+        this.loadUrl("javascript:loadTheHighChartView('" + aaOptionsJsonStr + "','" + contentWidth + "','" + contentHeight + "')");
     }
 
     private void configureChartOptionsAndDrawChart(AAChartModel chartModel) {
+
+
         // 将对象编译成json
         Gson gson = new Gson();
         optionsJson = gson.toJson(chartModel);
@@ -123,8 +130,11 @@ public class AAChartView extends WebView {
 //        HashMap myJson = AAOptionsConstructor.configureChartOptions(chartModel);
 //        System.out.println("🔥🔥🔥🔥🔥获得了最后的字符串 Options "+optionsJson);
 
+        HashMap aaOptions = AAOptionsConstructor.configureChartOptions(chartModel);
+        String aaOptionsJsonStr = gson.toJson(aaOptions);
+
 //        this.loadUrl("javascript:loadTheHighChartView('" + optionsJson + "','" + contentWidth + "','" + contentHeight + "',)");
-        this.loadUrl("javascript:loadTheHighChartView('" + optionsJson + "','" + 420 + "','" + 580 + "')");
+        this.loadUrl("javascript:loadTheHighChartView('" + aaOptionsJsonStr + "','" + 420 + "','" + 580 + "')");
     }
 
 

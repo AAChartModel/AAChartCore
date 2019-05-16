@@ -35,7 +35,7 @@ public class CommonChartActivity extends AppCompatActivity implements RadioGroup
     }
 
     void setUpAAChartView() {
-        aaChartView = (AAChartView) findViewById(R.id.AAChartView);
+        aaChartView = findViewById(R.id.AAChartView);
         aaChartModel = configureAAChartModel();
         aaChartView.aa_drawChartWithChartModel(aaChartModel);
 
@@ -62,16 +62,19 @@ public class CommonChartActivity extends AppCompatActivity implements RadioGroup
             aaChartModel.series(new AASeriesElement[]{
                     new AASeriesElement()
                             .name("Tokyo")
+                            .step(true)
                             .data(new Object[]{149.9, 171.5, 106.4, 129.2, 144.0, 176.0, 135.6, 188.5, 276.4, 214.1, 95.6, 54.4})
-                            .step(true),
+                            ,
                     new AASeriesElement()
                             .name("NewYork")
+                            .step(true)
                             .data(new Object[]{83.6, 78.8, 188.5, 93.4, 106.0, 84.5, 105.0, 104.3, 131.2, 153.5, 226.6, 192.3})
-                            .step(true),
+                            ,
                     new AASeriesElement()
                             .name("London")
+                            .step(true)
                             .data(new Object[]{48.9, 38.8, 19.3, 41.4, 47.0, 28.3, 59.0, 69.6, 52.4, 65.2, 53.3, 72.2})
-                            .step(true),
+                            ,
             });
 
         } else {
@@ -191,7 +194,7 @@ public class CommonChartActivity extends AppCompatActivity implements RadioGroup
             }
         }
 
-        aaChartView.aa_drawChartWithChartModel(aaChartModel);
+        aaChartView.aa_refreshChartWithChartModel(aaChartModel);
         }
 
 
