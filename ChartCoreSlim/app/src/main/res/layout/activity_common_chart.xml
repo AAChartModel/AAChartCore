@@ -40,21 +40,21 @@
             android:orientation="horizontal">
 
             <RadioButton
-                android:id="@+id/stackingRadioButton1"
+                android:id="@+id/stacking1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="no stacking" />
 
             <RadioButton
-                android:id="@+id/stackingRadioButton2"
+                android:id="@+id/stacking2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="normalStacking" />
 
             <RadioButton
-                android:id="@+id/stackingRadioButton3"
+                android:id="@+id/stacking3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -68,35 +68,35 @@
             android:orientation="horizontal">
 
             <RadioButton
-                android:id="@+id/symbolRadioButton1"
+                android:id="@+id/symbol1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="1" />
 
             <RadioButton
-                android:id="@+id/symbolRadioButton2"
+                android:id="@+id/symbol2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="2" />
 
             <RadioButton
-                android:id="@+id/symbolRadioButton3"
+                android:id="@+id/symbol3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="3" />
 
             <RadioButton
-                android:id="@+id/symbolRadioButton4"
+                android:id="@+id/symbol4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="4" />
 
             <RadioButton
-                android:id="@+id/symbolRadioButton5"
+                android:id="@+id/symbol5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"

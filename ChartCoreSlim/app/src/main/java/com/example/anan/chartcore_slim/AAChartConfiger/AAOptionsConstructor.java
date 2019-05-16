@@ -34,8 +34,6 @@
 
 package com.example.anan.chartcore_slim.AAChartConfiger;
 
-import com.example.anan.chartcore_slim.AAChartConfiger.AAChartModel;
-
 import java.util.HashMap;
 
 public class AAOptionsConstructor
@@ -155,7 +153,7 @@ public class AAOptionsConstructor
 
         String chartType = aaChartModel.chartType;
         HashMap aaDataLabels = new HashMap<String, Object>();
-        aaDataLabels.put("enabled", aaChartModel.xAxisLabelsEnabled);
+        aaDataLabels.put("enabled", aaChartModel.dataLabelEnabled);
         HashMap aaSomeTypeChart = new HashMap<String, Object>();
 
         if (       chartType.equals(AAChartModel.Type.Column)

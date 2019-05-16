@@ -2,14 +2,8 @@ package com.example.anan.chartcore_slim.ChartsDemo.MainContent;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.provider.MediaStore;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.widget.CompoundButton;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Switch;
 
@@ -19,7 +13,10 @@ import com.example.anan.chartcore_slim.AAChartConfiger.AASeriesElement;
 import com.example.anan.chartcore_slim.R;
 
 
-public class CommonChartActivity extends AppCompatActivity implements RadioGroup.OnCheckedChangeListener {
+public class CommonChartActivity extends AppCompatActivity
+        implements
+        RadioGroup.OnCheckedChangeListener,
+        CompoundButton.OnCheckedChangeListener {
 
     private AAChartModel aaChartModel;
     private AAChartView aaChartView;
@@ -30,7 +27,7 @@ public class CommonChartActivity extends AppCompatActivity implements RadioGroup
         setContentView(R.layout.activity_common_chart);
 
 
-        setUpRadioButtonsAndSwithes();
+        setUpRadioButtonsAndSwitches();
         setUpAAChartView();
     }
 
@@ -52,7 +49,7 @@ public class CommonChartActivity extends AppCompatActivity implements RadioGroup
                 .title("title")
                 .subtitle("this is the subtitle of chart")
                 .backgroundColor("#ffffff")
-                .dataLabelEnabled(true)
+                .dataLabelEnabled(false)
                 .yAxisGridLineWidth(0)
                 .legendVerticalAlign(AAChartModel.LegendVerticalAlignType.Bottom)
 
@@ -107,51 +104,29 @@ public class CommonChartActivity extends AppCompatActivity implements RadioGroup
     }
 
 
-    void setUpRadioButtonsAndSwithes() {
+    void setUpRadioButtonsAndSwitches() {
 
-        RadioGroup radioGroup1 = (RadioGroup)findViewById(R.id.radioGroup1);
+        RadioGroup radioGroup1 = findViewById(R.id.radioGroup1);
         radioGroup1.setOnCheckedChangeListener(this);
-        RadioGroup radioGroup2 = (RadioGroup)findViewById(R.id.radioGroup2);
+
+        RadioGroup radioGroup2 = findViewById(R.id.radioGroup2);
         radioGroup2.setOnCheckedChangeListener(this);
 
-        Switch boolSwitch1 = (Switch)findViewById(R.id.switch1);
-        boolSwitch1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener(){
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-              aaChartModel.xAxisReversed(isChecked);
-              aaChartView.aa_refreshChartWithChartModel(aaChartModel);
-            }
-        });
-        Switch boolSwitch2 = (Switch)findViewById(R.id.switch2);
-        boolSwitch2.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener(){
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                aaChartModel.yAxisReversed(isChecked);
-                aaChartView.aa_refreshChartWithChartModel(aaChartModel);
-            }
-        });
 
-        Switch boolSwitch3 = (Switch)findViewById(R.id.switch3);
-        boolSwitch3.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener(){
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                aaChartModel.inverted(isChecked);
-                aaChartView.aa_refreshChartWithChartModel(aaChartModel);
-            }
-        });
-        Switch boolSwitch4 = (Switch)findViewById(R.id.switch4);
-        boolSwitch4.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener(){
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                aaChartModel.polar(isChecked);
-                aaChartView.aa_refreshChartWithChartModel(aaChartModel);
-            }
-        });
-        Switch boolSwitch5 = (Switch)findViewById(R.id.switch5);
-        boolSwitch5.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener(){
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                aaChartModel.dataLabelEnabled(isChecked);
-                aaChartView.aa_refreshChartWithChartModel(aaChartModel);
-            }
-        });
+        Switch boolSwitch1 = findViewById(R.id.switch1);
+        boolSwitch1.setOnCheckedChangeListener(this);
 
+        Switch boolSwitch2 = findViewById(R.id.switch2);
+        boolSwitch2.setOnCheckedChangeListener(this);
 
+        Switch boolSwitch3 = findViewById(R.id.switch3);
+        boolSwitch3.setOnCheckedChangeListener(this);
+
+        Switch boolSwitch4 = findViewById(R.id.switch4);
+        boolSwitch4.setOnCheckedChangeListener(this);
+
+        Switch boolSwitch5 = findViewById(R.id.switch5);
+        boolSwitch5.setOnCheckedChangeListener(this);
     }
 
     /**
@@ -164,31 +139,31 @@ public class CommonChartActivity extends AppCompatActivity implements RadioGroup
         if (group.getId() == R.id.radioGroup1) {
             //根据不同ID 弹出不同的吐司
             switch (group.getCheckedRadioButtonId()) {
-                case R.id.stackingRadioButton1:
+                case R.id.stacking1:
                     aaChartModel.stacking(AAChartModel.StackingType.False);
                     break;
-                case R.id.stackingRadioButton2:
+                case R.id.stacking2:
                     aaChartModel.stacking(AAChartModel.StackingType.Normal);
                     break;
-                case R.id.stackingRadioButton3:
+                case R.id.stacking3:
                     aaChartModel.stacking(AAChartModel.StackingType.Percent);
                     break;
             }
         } else {
             switch (group.getCheckedRadioButtonId()) {
-                case R.id.symbolRadioButton1:
+                case R.id.symbol1:
                     aaChartModel.symbol(AAChartModel.SymbolType.Circle);
                     break;
-                case R.id.symbolRadioButton2:
+                case R.id.symbol2:
                     aaChartModel.symbol(AAChartModel.SymbolType.Diamond);
                     break;
-                case R.id.symbolRadioButton3:
+                case R.id.symbol3:
                     aaChartModel.symbol(AAChartModel.SymbolType.Square);
                     break;
-                case R.id.symbolRadioButton4:
+                case R.id.symbol4:
                     aaChartModel.symbol(AAChartModel.SymbolType.Triangle);
                     break;
-                case R.id.symbolRadioButton5:
+                case R.id.symbol5:
                     aaChartModel.symbol(AAChartModel.SymbolType.Triangle_down);
                     break;
             }
@@ -197,5 +172,28 @@ public class CommonChartActivity extends AppCompatActivity implements RadioGroup
         aaChartView.aa_refreshChartWithChartModel(aaChartModel);
         }
 
+    @Override
+    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+        switch (buttonView.getId()) {
+            case R.id.switch1:
+                aaChartModel.xAxisReversed(isChecked);
+                break;
+            case R.id.switch2:
+                aaChartModel.yAxisReversed(isChecked);
+                break;
+            case R.id.switch3:
+                aaChartModel.inverted(isChecked);
+                break;
+            case R.id.switch4:
+                aaChartModel.polar(isChecked);
+                break;
+            case R.id.switch5:
+                aaChartModel.dataLabelEnabled(isChecked);
+                break;
+        }
+
+        aaChartView.aa_refreshChartWithChartModel(aaChartModel);
+
+    }
 
 }

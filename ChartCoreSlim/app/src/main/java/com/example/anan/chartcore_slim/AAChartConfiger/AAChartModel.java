@@ -400,36 +400,8 @@ public class AAChartModel {
 
     // 构造函数(亦即是初始化函数)
     public AAChartModel() {
-
-//        this.animationType = AAChartAnimationType.EaseInBack;
-//        this.animationDuration = 800;//以毫秒为单位
-//        this.chartType = AAChartType.Column;
-//        this.inverted = false;
-//        this.stacking = AAChartStackingType.False;
-//        //this.symbol = AAChartSymbolType.Square.rawValue//默认的折线连接点类型
-//        this.xAxisReversed = false;
-//        this.yAxisReversed = false;
-//        this.zoomType = AAChartZoomType.X;
-//        this.pointHollow = false;//默认折线或者曲线的连接点不为空
-//        this.colorsTheme = new String[]{"#b5282a","#e7a701","#50c18d","#fd4800","#f1c6c5"};
-//        this.gradientColorEnable = false;
-//        this.polar = false;
-//        this.dataLabelEnabled = true;
-//        this.options3dEnable = false;
-//        this.crosshairs = true;
-//        this.xAxisLabelsEnabled = true;
-//        this.xAxisGridLineWidth = 0;
-//        this.yAxisLabelsEnabled = true;
-//        this.yAxisGridLineWidth = 1;
-//        this.legendEnabled = true;
-//        this.legendLayout = AAchartLegendlLayoutType.Horizontal;
-//        this.legendAlign = AAChartLegendAlignType.Center;
-//        this.legendVerticalAlign = AAChartLegendVerticalAlignType.Bottom;
-//        this.borderRadius = 0;//柱状图长条图头部圆角半径(可用于设置头部的形状,仅对条形图,柱状图有效,设置为1000时,柱形图或者条形图头部为楔形)
-//        this.markerRadius = 5;//折线连接点的半径长度,设置默认值为0,这样就相当于不显示了
-
         this.animationType = AnimationType.EaseInBack;
-        this.animationDuration = 800;//以毫秒为单位
+        this.animationDuration = 500;//以毫秒为单位
         this.pointHollow = false;
         this.inverted = false;
         this.stacking = StackingType.False;
