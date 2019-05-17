@@ -400,12 +400,16 @@ public String  axisColor;             //x 轴和 y 轴文字颜色
 ```
 
 ## 源代码⛓
-语言版本 |  项目名称 | 源代码链接|
------------- | ------------- | ------------- |
-Kotlin | AAInfographics | https://github.com/AAChartModel/AAChartKit-Kotlin |
-Java | AAChartCore | https://github.com/AAChartModel/AAChartKit |
-Swift | AAInfographics | https://github.com/AAChartModel/AAChartKit-Swift |
-Objective C | AAChartKit | https://github.com/AAChartModel/AAChartKit |
+语言版本 |  项目名称 | 适用平台| 源代码链接|
+------------ | ------------- |------------- | ------------- |
+Kotlin | AAInfographics | Android | https://github.com/AAChartModel/AAChartKit-Kotlin |
+Java | AAChartCore | Android | https://github.com/AAChartModel/AAChartKit |
+Swift | AAInfographics |  iOS |https://github.com/AAChartModel/AAChartKit-Swift |
+Objective C | AAChartKit | iOS | https://github.com/AAChartModel/AAChartKit |
+Dart | AACharts-Flutter | iOS/Android/MacOS/Windows/Linux  | https://github.com/AAChartModel/AACharts-Flutter |
+C++ |  AACharts-Qt | iOS/Android/MacOS/Windows/Linux | https://github.com/AAChartModel/AACharts-Qt |
+C# |  AACharts-Xamarin | iOS/Android | https://github.com/AAChartModel/AACharts-Xamarin |
+
 
 ## 许可证
 
