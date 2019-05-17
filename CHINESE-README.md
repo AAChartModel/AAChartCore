@@ -2,14 +2,14 @@
 # AAChartCore
 
  
-[![Support](https://img.shields.io/badge/support-iOS%208%2B%20-blue.svg?style=flat)](https://www.apple.com/nl/ios/) </br>
-[![](https://img.shields.io/badge/license-MIT-brightgreen.svg)](https://github.com/AAChartModel/AAChartKit-Swift/blob/master/LICENSE)</br>
-[![](https://img.shields.io/badge/language-Swift-green.svg)](https://github.com/AAChartModel/AAChartKit-Swift) </br>
-[![](https://img.shields.io/badge/support-Animation-yellow.svg)](https://github.com/AAChartModel/AAChartKit-Swift/blob/master/CHINESE-README.md#当前已支持的图表渲染动画类型有三十种以上说明如下)</br>
-[![](https://img.shields.io/badge/support-OC-orange.svg)](https://github.com/AAChartModel/AAChartKit)</br>
+[![Support](https://img.shields.io/badge/support-iOS%208%2B%20-blue.svg?style=flat)](https://www.apple.com/nl/ios/) 
+[![](https://img.shields.io/badge/license-MIT-brightgreen.svg)](https://github.com/AAChartModel/AAChartKit-Swift/blob/master/LICENSE)
+[![](https://img.shields.io/badge/language-Swift-green.svg)](https://github.com/AAChartModel/AAChartKit-Swift) 
+[![](https://img.shields.io/badge/support-Animation-yellow.svg)](https://github.com/AAChartModel/AAChartKit-Swift/blob/master/CHINESE-README.md#当前已支持的图表渲染动画类型有三十种以上说明如下)
+[![](https://img.shields.io/badge/support-OC-orange.svg)](https://github.com/AAChartModel/AAChartKit)
 [![](https://jaywcjlove.github.io/sb/lang/chinese.svg)](https://github.com/AAChartModel/AAChartKit-Swift/blob/master/CHINESE-README.md)</br>
-[![](https://jaywcjlove.github.io/sb/lang/english.svg)](https://github.com/AAChartModel/AAChartKit-Swift)</br>
-[![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/AAChartModel/AAChartKit-Swift.svg)](http://isitmaintained.com/project/AAChartModel/AAChartKit-Swift "Average time to resolve an issue")</br>
+[![](https://jaywcjlove.github.io/sb/lang/english.svg)](https://github.com/AAChartModel/AAChartKit-Swift)
+[![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/AAChartModel/AAChartKit-Swift.svg)](http://isitmaintained.com/project/AAChartModel/AAChartKit-Swift "Average time to resolve an issue")
 [![Percentage of issues still open](http://isitmaintained.com/badge/open/AAChartModel/AAChartKit-Swift.svg)](http://isitmaintained.com/project/AAChartModel/AAChartKit-Swift "Percentage of issues still open")
 
 
@@ -21,17 +21,17 @@
 
 ## 前言
 
- ***AAChartCore***,是 [AAChartKit](https://github.com/AAChartModel/AAChartKit) 的 `Java`语言版本,是在流行的开源前端图表框架*Highcharts*的基础上,封装的面向对象的,一组简单易用,极其精美的图表绘制控件.可能是这个星球上 UI 最精致的第三方 Android 开源图表框架了(✟我以无神论者的名义向上帝起誓🖐,我真的没有在说鬼话✟)
+ ***AAChartCore***,是 [AAChartKit](https://github.com/AAChartModel/AAChartKit) 的 `Java`语言版本,是在流行的开源前端图表框架的基础上,封装的面向对象的,一组简单易用,极其精美的图表绘制控件.可能是这个星球上 UI 最精致的第三方 Android 开源图表框架了(✟我以无神论者的名义向上帝起誓🖐,我真的没有在说鬼话✟)
 
 ***
 ## 功能特性
 
-1. **环境友好,兼容性强**. 适配 `iOS 8 +`,  支持`ARC`,支持 `Kotlin`语言,配置简单.同时更有 Objective-C 版本[AAChartKit](https://github.com/AAChartModel/AAChartKit)可供使用.
+1. **环境友好,兼容性强**. 支持 `Kotlin`语言,配置简单.同时更有 Objective-C 版本[AAChartKit](https://github.com/AAChartModel/AAChartKit)可供使用.
 1. **功能强大,类型多样**. 支持`柱状图` 、`条形图` 、`折线图` 、`曲线图` 、`折线填充图` 、`曲线填充图`、`雷达图`、`极地图`、`扇形图`、`气泡图`、`散点图`、`区域范围图`、`柱形范围图`、`面积范围图`、`面积范围均线图`、`直方折线图`、`直方折线填充图`、`箱线图`、`瀑布图`、`热力图`、`桑基图`、`金字塔图`、`漏斗图`、等二十几种类型的图形,不可谓之不多.
-1. **交互式图形动画**. 有着清晰和充满细节的用户交互方式,与此同时,图形渲染`动画`效果细腻精致,流畅优美.有三十多种以上渲染动画效果可供选择,用户可自由设置渲染图形时的动画时间和动画类型,关于图形渲染动画类型,具体参见[ AAInfographics 动画类型](https://github.com/AAChartModel/AAChartKit-Swift/blob/master/CHINESE-README.md#当前已支持的图表渲染动画类型有三十种以上说明如下).
-1. **支持手势缩放**.支持图表的手势缩放和拖动阅览,手势缩放类型具体参见[ AAInfographics 手势缩放类型](https://github.com/AAChartModel/AAChartKit-Swift/blob/master/CHINESE-README.md#当前已支持的图表手势缩放类型共有三种说明如下),默认禁用手势缩放功能.
-1. **极简主义**. `AAChartView + AAChartModel = Chart`,在 ***AAInfographics*** 数据可视化图形框架当中,遵循这样一个极简主义公式:`图表视图控件 + 图表模型 = 你想要的图表`.同另一款强大、精美而又易用的开源图形框架 [AAChartKit](https://github.com/AAChartModel/AAChartKit)完全一致.
-1. **链式编程语法**. 支持类 *Masonry* `链式编程语法`,一行代码即可配置完成 `AAChartModel`模型对象实例.
+1. **交互式图形动画**. 有着清晰和充满细节的用户交互方式,与此同时,图形渲染`动画`效果细腻精致,流畅优美.有三十多种以上渲染动画效果可供选择,用户可自由设置渲染图形时的动画时间和动画类型,关于图形渲染动画类型,具体参见[ AAChartCore 动画类型](https://github.com/AAChartModel/AAChartKit-Swift/blob/master/CHINESE-README.md#当前已支持的图表渲染动画类型有三十种以上说明如下).
+1. **支持手势缩放**.支持图表的手势缩放和拖动阅览,手势缩放类型具体参见[ AAChartCore 手势缩放类型](https://github.com/AAChartModel/AAChartKit-Swift/blob/master/CHINESE-README.md#当前已支持的图表手势缩放类型共有三种说明如下),默认禁用手势缩放功能.
+1. **极简主义**. `AAChartView + AAChartModel = Chart`,在 ***AAChartCore*** 数据可视化图形框架当中,遵循这样一个极简主义公式:`图表视图控件 + 图表模型 = 你想要的图表`.同另一款强大、精美而又易用的开源图形框架 [AAChartKit](https://github.com/AAChartModel/AAChartKit)完全一致.
+1. **链式编程语法**. 支持系统类推荐的 `链式编程语法`,一行代码即可配置完成 `AAChartModel`模型对象实例.
 1. **简洁清晰,轻便易用**. 最少仅仅需要 **五行代码** 即可完成整个图表的绘制工作(使用链式编程语法配置 `AAChartModel` 实例对象时,无论你写多少行代码,理论上只能算作是一行). 😜😜😜
 
 ***
@@ -70,8 +70,8 @@
 
 ### 手动安装
 
-1. 下载 Demo  `AAInfographicsDemo`
-2. 将 Demo 中的名为`AAInfographics` 的文件夹拖入至你的项目之中.
+1. 下载 Demo  `AAChartCoreDemo`
+2. 将 Demo 中的名为`AAChartCore` 的文件夹拖入至你的项目之中.
 
 
 ## 使用方法
@@ -139,7 +139,7 @@ AAChartModel aaChartModel = new AAChartModel()
 
 ```java
     /*更新 AAChartModel 整体内容(如修改了图表的类型,将 column chart 改为 area chart)之后,刷新图表*/
-    aaChartView?.aa_refreshChartWholeContentWithChartModel(aaChartModel)
+    aaChartView.aa_refreshChartWholeContentWithChartModel(aaChartModel)
 ```
 
 
@@ -309,57 +309,60 @@ title | String | 图表主标题 | 任意有效的字符串 |
 subtitle | String |图表副标题  | 任意有效的字符串 |
 chartType | AAChartType |  图表类型,可以为`AAChartType`枚举字符串当中指定的任意有效类型.其中有支持`柱状图` 、`条形图` 、`折线图` 、`曲线图` 、`折线填充图` 、`曲线填充图`、`雷达图`、`扇形图`、`气泡图`、`散点图`、`金字塔图`、`漏斗图`、`区域范围图`、`柱形范围图`等多种图形  | .column,  .bar,  .area,  .areaSpline,  .line,  .spline,  .pie,  .bubble,  .scatter,  .pyramid,  .funnel,  .areaRange,  .columnRange |  
 stacking| AAChartStackingType | 是否将图表每个数据列的值叠加在一起。 默认的值为`.none`， 即禁用堆叠样式效果.另有常规堆叠样式和百分比堆叠样式可供选择 | .none,  .normal,  .percent | 
-symbol | AAChartSymbolType | 预定义的图表曲线连接点的样式类型.其可供选择的值有`圆`、`正方形`、`钻石`、`常规三角形`和`倒三角形`,默认为混合样式 | .circle,  .square,  .diamond,  .triangle,  .triangleDown | 
+symbol | AAChartSymbolType | 图表曲线连接点的样式类型.其可供选择的值有`圆`、`正方形`、`钻石`、`常规三角形`和`倒三角形`,默认为混合样式 | .circle,  .square,  .diamond,  .triangle,  .triangleDown | 
+colorsTheme | Object[] | 图表显示的颜色主题效果 |类似此 `new String[]{"#fe117c","#ffc069","#06caf4","#7dffc0"}` 有效十六进制颜色字符串数组 | 
+series | AASeriesElement[] | 图表的数据列 | AASeriesElement实例对象组成的有效数组,其中每个AASeriesElement都有与之对应的数据、类型、颜色、透明度等具体的值 | 
+
 
 * ### AAChartModel 所有属性列表说明
 ```java
-    public String  animationType;         //动画类型
-    public Integer animationDuration;     //动画时间
-    public String  title;                 //标题内容
-    public String  subtitle;              //副标题内容
-    public String  chartType;             //图表类型
-    public String  stacking;              //堆积样式
-    public String  symbol;                //折线曲线连接点的类型："circle", "square", "diamond", "triangle","triangle-down"，默认是"circle"
-    public String  symbolStyle;
-    public String  zoomType;              //缩放类型 AAChartZoomTypeX表示可沿着 x 轴进行手势缩放
-    public Boolean pointHollow;           //折线或者曲线的连接点是否为空心的
-    public Boolean inverted;              //x 轴是否翻转(垂直)
-    public Boolean xAxisReversed;         //x 轴翻转
-    public Boolean yAxisReversed;         //y 轴翻转
-    public Boolean tooltipEnabled;        //是否显示浮动提示框(默认显示)
-    public String  tooltipValueSuffix;    //浮动提示框单位后缀
-    public Boolean tooltipCrosshairs;     //是否显示准星线(默认显示)
-    public Boolean gradientColorEnable;   //是否要为渐变色
-    public Boolean polar;                 //是否极化图形(变为雷达图)
-    public Float   marginLeft;
-    public Float   marginRight;
-    public Boolean dataLabelEnabled;      //是否显示数据
-    public Boolean xAxisLabelsEnabled;    //x轴是否显示数据
-    public String[]categories;            //x轴是否显示数据
-    public Integer xAxisGridLineWidth;    //x轴网格线的宽度
-    public Boolean xAxisVisible;          //x 轴是否显示
-    public Boolean yAxisVisible;          //y 轴是否显示
-    public Boolean yAxisLabelsEnabled;    //y轴是否显示数据
-    public String  yAxisTitle;            //y轴标题
-    public Float   yAxisLineWidth;        //y 轴轴线的宽度
+public String  animationType;         //动画类型
+public Integer animationDuration;     //动画时间
+public String  title;                 //标题内容
+public String  subtitle;              //副标题内容
+public String  chartType;             //图表类型
+public String  stacking;              //堆积样式
+public String  symbol;                //折线曲线连接点的类型："circle", "square", "diamond", "triangle","triangle-down"，默认是"circle"
+public String  symbolStyle;
+public String  zoomType;              //缩放类型 AAChartZoomTypeX表示可沿着 x 轴进行手势缩放
+public Boolean pointHollow;           //折线或者曲线的连接点是否为空心的
+public Boolean inverted;              //x 轴是否翻转(垂直)
+public Boolean xAxisReversed;         //x 轴翻转
+public Boolean yAxisReversed;         //y 轴翻转
+public Boolean tooltipEnabled;        //是否显示浮动提示框(默认显示)
+public String  tooltipValueSuffix;    //浮动提示框单位后缀
+public Boolean tooltipCrosshairs;     //是否显示准星线(默认显示)
+public Boolean gradientColorEnable;   //是否要为渐变色
+public Boolean polar;                 //是否极化图形(变为雷达图)
+public Float   marginLeft;
+public Float   marginRight;
+public Boolean dataLabelEnabled;      //是否显示数据
+public Boolean xAxisLabelsEnabled;    //x轴是否显示数据
+public String[]categories;            //x轴是否显示数据
+public Integer xAxisGridLineWidth;    //x轴网格线的宽度
+public Boolean xAxisVisible;          //x 轴是否显示
+public Boolean yAxisVisible;          //y 轴是否显示
+public Boolean yAxisLabelsEnabled;    //y轴是否显示数据
+public String  yAxisTitle;            //y轴标题
+public Float   yAxisLineWidth;        //y 轴轴线的宽度
 
-    public Integer yAxisGridLineWidth;    //y轴网格线的宽度
-    public Object[]colorsTheme;           //图表主题颜色数组
-    public Boolean legendEnabled;         //是否显示图例
-    public String  legendLayout;          //图例数据项的布局。布局类型： "horizontal" 或 "vertical" 即水平布局和垂直布局 默认是：horizontal.
-    public String  legendAlign;           //设定图例在图表区中的水平对齐方式，合法值有left，center 和 right。
-    public String  legendVerticalAlign;   //设定图例在图表区中的垂直对齐方式，合法值有 top，middle 和 bottom。垂直位置可以通过 y 选项做进一步设定。
-    public String  backgroundColor;       //图表背景色
-    public Boolean options3dEnable;       //是否3D化图形(仅对条形图,柱状图有效)
-    public Integer options3dAlphaInt;
-    public Integer options3dBetaInt;
-    public Integer options3dDepth;        //3D图形深度
-    public Integer borderRadius;          //柱状图长条图头部圆角半径(可用于设置头部的形状,仅对条形图,柱状图有效)
-    public Integer markerRadius;          //折线连接点的半径长度
-    public AASeriesElement[] series;
-    public String  titleColor;            //标题颜色
-    public String  subTitleColor;         //副标题颜色
-    public String  axisColor;             //x 轴和 y 轴文字颜色
+public Integer yAxisGridLineWidth;    //y轴网格线的宽度
+public Object[]colorsTheme;           //图表主题颜色数组
+public Boolean legendEnabled;         //是否显示图例
+public String  legendLayout;          //图例数据项的布局。布局类型： "horizontal" 或 "vertical" 即水平布局和垂直布局 默认是：horizontal.
+public String  legendAlign;           //设定图例在图表区中的水平对齐方式，合法值有left，center 和 right。
+public String  legendVerticalAlign;   //设定图例在图表区中的垂直对齐方式，合法值有 top，middle 和 bottom。垂直位置可以通过 y 选项做进一步设定。
+public String  backgroundColor;       //图表背景色
+public Boolean options3dEnable;       //是否3D化图形(仅对条形图,柱状图有效)
+public Integer options3dAlphaInt;
+public Integer options3dBetaInt;
+public Integer options3dDepth;        //3D图形深度
+public Integer borderRadius;          //柱状图长条图头部圆角半径(可用于设置头部的形状,仅对条形图,柱状图有效)
+public Integer markerRadius;          //折线连接点的半径长度
+public AASeriesElement[] series;
+public String  titleColor;            //标题颜色
+public String  subTitleColor;         //副标题颜色
+public String  axisColor;             //x 轴和 y 轴文字颜色
 ```
 
 
@@ -399,6 +402,8 @@ symbol | AAChartSymbolType | 预定义的图表曲线连接点的样式类型.�
 ## 源代码⛓
 语言版本 |  项目名称 | 源代码链接|
 ------------ | ------------- | ------------- |
+Kotlin | AAInfographics | https://github.com/AAChartModel/AAChartKit-Kotlin |
+Java | AAChartCore | https://github.com/AAChartModel/AAChartKit |
 Swift | AAInfographics | https://github.com/AAChartModel/AAChartKit-Swift |
 Objective C | AAChartKit | https://github.com/AAChartModel/AAChartKit |
 
@@ -406,7 +411,7 @@ Objective C | AAChartKit | https://github.com/AAChartModel/AAChartKit |
 
 ![](https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/License_icon-mit-88x31-2.svg/128px-License_icon-mit-88x31-2.svg.png)
 
-本项目 `AAInfographics`使用 MIT许可证,详情请点击[MIT LICENSE](https://github.com/AAChartModel/AAChartKit-Swift/blob/master/LICENSE)
+本项目 `AAChartCore`使用 MIT许可证,详情请点击[MIT LICENSE](https://github.com/AAChartModel/AAChartKit-Swift/blob/master/LICENSE)
 
 ## 联系方式
 
@@ -414,7 +419,7 @@ Objective C | AAChartKit | https://github.com/AAChartModel/AAChartKit |
 *  🌕 🌖 🌗 🌘     暖心提示   🌑 🌒 🌓 🌔
 *
 * 如果有任何使用上的问题,随时欢迎您在 GitHub 上向我提 issue.
-* GitHub Issues : https://github.com/AAChartModel/AAChartKit-Swift/issues
+* GitHub Issues : https://github.com/AAChartModel/AAChartCore/issues
 -------------------------------------------------------------------------------
 *  如果您想参与到此项目的开源活动中来,也同样随时欢迎您联系我
 * GitHub        : https://github.com/AAChartModel
@@ -429,7 +434,6 @@ Objective C | AAChartKit | https://github.com/AAChartModel/AAChartKit |
 - [x] 支持图形动态刷新全局内容
 - [x] 支持图形动态刷新纯数据`(series)`内容
 - [x] 支持色彩图层渐变效果
-- [x] 支持3D图形效果,仅对`柱状图`、`条形图`、`扇形图`、`散点图`、`气泡图`等部分图形有效
 - [x] 支持横屏(全屏)效果
 - [x] 支持自由设置图形渲染动画
 - [x] 支持用户自由配置`AAOptions`模型对象属性
