@@ -406,8 +406,8 @@ Kotlin | AAInfographics | Android | https://github.com/AAChartModel/AAChartKit-K
 Java | AAChartCore | Android | https://github.com/AAChartModel/AAChartKit |
 Swift | AAInfographics |  iOS |https://github.com/AAChartModel/AAChartKit-Swift |
 Objective C | AAChartKit | iOS | https://github.com/AAChartModel/AAChartKit |
-Dart | AACharts-Flutter | iOS/Android/MacOS/Windows/Linux  | https://github.com/AAChartModel/AACharts-Flutter |
-C++ |  AACharts-Qt | iOS/Android/MacOS/Windows/Linux | https://github.com/AAChartModel/AACharts-Qt |
+Dart | AACharts-Flutter | iOS/Android  | https://github.com/AAChartModel/AACharts-Flutter |
+C++ |  AACharts-Qt | MacOS/Windows/Linux | https://github.com/AAChartModel/AACharts-Qt |
 C# |  AACharts-Xamarin | iOS/Android | https://github.com/AAChartModel/AACharts-Xamarin |
 
 
