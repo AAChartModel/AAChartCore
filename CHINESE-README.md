@@ -1,5 +1,5 @@
-  ![AAInfographics-LOGO](https://github.com/AAChartModel/loadHtmlCssJsDemo-master/blob/master/AAInfographics/AAInfographics-LOGO.png)
-# ChartCore-Slim
+  ![AAInfographics-LOGO](https://camo.githubusercontent.com/5099cc4be9cb90afdfd94e3a8351a8c114d4b33b/68747470733a2f2f766567612e6769746875622e696f2f766567612f6173736574732f62616e6e65722e706e67)
+# AAChartCore
 
  
 [![Support](https://img.shields.io/badge/support-iOS%208%2B%20-blue.svg?style=flat)](https://www.apple.com/nl/ios/) </br>
@@ -15,18 +15,18 @@
 
 ## [ **English Document 🇬🇧** ](https://github.com/AAChartModel-Swift/AAChartKit)  |  [ **简体中文文档 🇨🇳** ](https://github.com/AAChartModel/AAChartKit-Swift/blob/master/CHINESE-README.md)| [ **繁體中文文檔 🇭🇰** ](https://github.com/AAChartModel/AAChartKit-Swift/blob/master/TRADITIONAL-CHINESE-README.md)
 
-### 您所喜爱的`AAInfographics`开源图表框架同时更有`Objective-C`版本可供使用,详情请点击以下链接
+### 您所喜爱的`AAChartCore`开源图表框架同时更有`Kotlin`版本可供使用,详情请点击以下链接
 ### 传送门
-#### *https://github.com/AAChartModel/AAChartKit*
+#### *https://github.com/AAChartModel/AAChartCore-Kotlin*
 
 ## 前言
 
- ***AAInfographics***,是 [AAChartKit](https://github.com/AAChartModel/AAChartKit) 的 `swift`语言版本,是在流行的开源前端图表框架*Highcharts*的基础上,封装的面向对象的,一组简单易用,极其精美的图表绘制控件.可能是这个星球上 UI 最精致的第三方 iOS 开源图表框架了(✟我以无神论者的名义向上帝起誓🖐,我真的没有在说鬼话✟)
+ ***AAChartCore***,是 [AAChartKit](https://github.com/AAChartModel/AAChartKit) 的 `Java`语言版本,是在流行的开源前端图表框架*Highcharts*的基础上,封装的面向对象的,一组简单易用,极其精美的图表绘制控件.可能是这个星球上 UI 最精致的第三方 Android 开源图表框架了(✟我以无神论者的名义向上帝起誓🖐,我真的没有在说鬼话✟)
 
 ***
 ## 功能特性
 
-1. **环境友好,兼容性强**. 适配 `iOS 8 +`,  支持`ARC`,支持 `swift`语言,配置简单.同时更有 Objective-C 版本[AAChartKit](https://github.com/AAChartModel/AAChartKit)可供使用.
+1. **环境友好,兼容性强**. 适配 `iOS 8 +`,  支持`ARC`,支持 `Kotlin`语言,配置简单.同时更有 Objective-C 版本[AAChartKit](https://github.com/AAChartModel/AAChartKit)可供使用.
 1. **功能强大,类型多样**. 支持`柱状图` 、`条形图` 、`折线图` 、`曲线图` 、`折线填充图` 、`曲线填充图`、`雷达图`、`极地图`、`扇形图`、`气泡图`、`散点图`、`区域范围图`、`柱形范围图`、`面积范围图`、`面积范围均线图`、`直方折线图`、`直方折线填充图`、`箱线图`、`瀑布图`、`热力图`、`桑基图`、`金字塔图`、`漏斗图`、等二十几种类型的图形,不可谓之不多.
 1. **交互式图形动画**. 有着清晰和充满细节的用户交互方式,与此同时,图形渲染`动画`效果细腻精致,流畅优美.有三十多种以上渲染动画效果可供选择,用户可自由设置渲染图形时的动画时间和动画类型,关于图形渲染动画类型,具体参见[ AAInfographics 动画类型](https://github.com/AAChartModel/AAChartKit-Swift/blob/master/CHINESE-README.md#当前已支持的图表渲染动画类型有三十种以上说明如下).
 1. **支持手势缩放**.支持图表的手势缩放和拖动阅览,手势缩放类型具体参见[ AAInfographics 手势缩放类型](https://github.com/AAChartModel/AAChartKit-Swift/blob/master/CHINESE-README.md#当前已支持的图表手势缩放类型共有三种说明如下),默认禁用手势缩放功能.
@@ -86,42 +86,34 @@
  ```
 
  ```java
-        AAChartView aaChartView = (AAChartView) findViewById(R.id.AAChartView);
+        AAChartView aaChartView = findViewById(R.id.AAChartView);
  ```
 2. 配置视图模型*AAChartModel*
 
 * 链式编程的方式配置 *AAChartModel* 模型对象属性
 ```java
-         aaChartModel = new AAChartModel()
-                .chartType(chartType)
-                .title("title")
-                .subtitle("subtitleubtitleSubtitle")
-                .backgroundColor("#4b2b7f")
-                .dataLabelEnabled(true)
-                .yAxisGridLineWidth(0)
-                .legendVerticalAlign(AAChartModel.AAChartLegendVerticalAlignType.Bottom)
-                .series(new AASeriesElement[]{
-                        new AASeriesElement()
-                                .name("Tokyo")
-                                .data(new Object[] 
-                                	{7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6})
-                        ,
-                        new AASeriesElement()
-                                .name("NewYork")
-                                .data(new Object[] 
-                                	{0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5})
-                        ,
-                        new AASeriesElement()
-                                .name("London")
-                                .data(new Object[]
-                                	{0.9, 0.6, 3.5, 8.4, 13.5, 17.0, 18.6, 17.9, 14.3, 9.0, 3.9, 1.0})
-                        ,
-                        new AASeriesElement()
-                                .name("Berlin")
-                                .data(new Object[]
-                                	{3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8})
-
-                });
+AAChartModel aaChartModel = new AAChartModel()
+    .chartType(chartType)
+    .title("title")
+    .subtitle("subtitleubtitleSubtitle")
+    .backgroundColor("#4b2b7f")
+    .dataLabelEnabled(true)
+    .yAxisGridLineWidth(0)
+    .legendVerticalAlign(AAChartModel.LegendVerticalAlignType.Bottom)
+    .series(new AASeriesElement[]{
+        new AASeriesElement()
+        .name("Tokyo")
+        .data(new Object[]{7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6}),
+        new AASeriesElement()
+        .name("NewYork")
+        .data(new Object[]{0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5}),
+        new AASeriesElement()
+        .name("London")
+        .data(new Object[]{0.9, 0.6, 3.5, 8.4, 13.5, 17.0, 18.6, 17.9, 14.3, 9.0, 3.9, 1.0}),
+        new AASeriesElement()
+        .name("Berlin")
+        .data(new Object[]{3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8})
+        });
 ```
 
 3.  绘制图形(创建 AAChartView 实例对象后,首次绘制图形调用此方法)
@@ -218,131 +210,6 @@
 
 ## 特别说明
 
-### 特殊类型图表配置
-
-**AAInfographics** 中扇形图、气泡图都归属为特殊类型,所以想要绘制扇形图、气泡图,图表模型 *AAChartModel* 的数据属性`series`设置稍有不同,示例如下
-
-- 绘制扇形图,你需要这样配置模型对象 *AAChartModel*
-```java
-     aaChartModel = new AAChartModel()
-                        .chartType(AAChartModel.AAChartType.Pie)
-                        .backgroundColor("#ffffff")
-                        .title("LANGUAGE MARKET SHARES JANUARY,2020 TO MAY")
-                        .subtitle("virtual data")
-                        .dataLabelEnabled(true)//是否直接显示扇形图数据
-                        .yAxisTitle("℃")
-                        .series(new AASeriesElement[] {
-                                        new AASeriesElement()
-                                                .name("Language market shares")
-                                                .data(new Object[][] {
-                                                {"Java"  ,67},
-                                                {"Swift",999},
-                                                {"Python",83},
-                                                {"OC"    ,11},
-                                                {"Go"    ,30},
-                                        })
-                                        ,
-                                }
-                        );                    
-```
-- 绘制气泡图,你需要这样配置模型对象 *AAChartModel*
-
-```java  
-      aaChartModel = new AAChartModel()
-                        .chartType(AAChartModel.AAChartType.Bubble)
-                        .title("AACHARTKIT BUBBLES")
-                        .subtitle("JUST FOR FUN")
-                        .yAxisTitle("℃")
-                        .gradientColorEnable(true)
-                        .colorsTheme(new String[] {
-                                "#0c9674","#7dffc0","#d11b5f","#facd32","#ffffa0","#EA007B"})
-                        .series(new AASeriesElement[] {
-                                        new AASeriesElement()
-                                                .name("BubbleOne")
-                                                .data(new Object[][] {
-                                                {97, 36, 79},
-                                                {94, 74, 60},
-                                                {68, 76, 58},
-                                                {64, 87, 56},
-                                                {68, 27, 73},
-                                                {74, 99, 42},
-                                                {7,  93, 99},
-                                                {51, 69, 40},
-                                                {38, 23, 33},
-                                                {57, 86, 31},
-                                                {33, 24, 22}
-                                        })
-                                        ,
-                                        new AASeriesElement()
-                                                .name("BubbleTwo")
-                                                .data( new Object[][] {
-                                                {25, 60, 87},
-                                                {2,  75, 59},
-                                                {11, 54, 8 },
-                                                {86, 55, 93},
-                                                {5,  33, 88},
-                                                {90, 63, 44},
-                                                {91, 43, 17},
-                                                {97, 56, 56},
-                                                {15, 67, 48},
-                                                {54, 25, 81},
-                                                {55, 66, 11}
-                                        })
-                                        ,
-                                        new AASeriesElement()
-                                                .name("BubbleThree")
-                                                .data( new Object[][] {
-                                                {47, 47, 21},
-                                                {20, 12, 66},
-                                                {6,  76, 91},
-                                                {38, 30, 60},
-                                                {57, 98, 64},
-                                                {61, 47, 80},
-                                                {83, 60, 13},
-                                                {67, 78, 75},
-                                                {64, 12, 55},
-                                                {30, 77, 82},
-                                                {88, 66, 13}
-                                        })
-                                        ,
-                                }
-                        );    
-```
-
-- 绘制柱形范围图,你需要这样配置模型对象 *AAChartModel*
-
-```java
-    aaChartModel = new AAChartModel()
-                        .chartType(AAChartModel.AAChartType.Columnrange)
-                        .title("TEMPERATURE VARIATION BY MONTH")
-                        .subtitle("observed in Gotham city")
-                        .yAxisTitle("℃")
-                        .categories(new String[]{"January", "February", "March", "April", "May", "June",
-                                "July", "August", "September", "October", "November", "December"})
-                        .dataLabelEnabled(true)
-                        .inverted(true)//x 轴是否垂直翻转
-                        .series(new AASeriesElement[] {
-                                        new AASeriesElement()
-                                                .name("temperature")
-                                                .data(new Object[][] {
-                                                {-9.7,  9.4},
-                                                {-8.7,  6.5},
-                                                {-3.5,  9.4},
-                                                {-1.4, 19.9},
-                                                {0.0,  22.6},
-                                                {2.9,  29.5},
-                                                {9.2,  30.7},
-                                                {7.3,  26.5},
-                                                {4.4,  18.0},
-                                                {-3.1, 11.4},
-                                                {-5.2, 10.4},
-                                                {-13.5, 9.8}
-                                        })
-                                        ,
-                                }
-                        );
-```
-***NOTE:*** 关于更多类型特殊图表的 `AAChartModel`实例对象属性配置,详情请见 ***AAInfographics*** 工程 `Demo` 中的`SpecialChartVC.swift`文件内容,查看文件内容详情请点击[这里](https://github.com/AAChartModel/AAChartKit-Swift/blob/master/AAInfographicsDemo/Demo/SpecialChartVC.swift),您也可以选择下载 `Demo` 后,在  `Xcode` 中查看 ***AAInfographics*** 的`SpecialChartVC.swift`内容
 
 ### 当前已支持的图表类型有十种以上,说明如下
 
