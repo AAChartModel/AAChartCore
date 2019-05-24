@@ -6,10 +6,14 @@ import android.os.Bundle;
 
 import com.example.anan.chartcore_slim.AAChartConfiger.AAChartModel;
 import com.example.anan.chartcore_slim.AAChartConfiger.AAChartView;
+import com.example.anan.chartcore_slim.AAChartConfiger.AAOptionsConstructor;
 import com.example.anan.chartcore_slim.AAChartConfiger.AASeriesElement;
+import com.example.anan.chartcore_slim.AAOptionsModel.AAPlotBandsElement;
 import com.example.anan.chartcore_slim.AATools.AAColor;
 import com.example.anan.chartcore_slim.AATools.AAGradientColor;
 import com.example.anan.chartcore_slim.R;
+
+import java.util.HashMap;
 
 public class MixedChartActivity extends AppCompatActivity {
     private AAChartModel aaChartModel;
@@ -27,7 +31,60 @@ public class MixedChartActivity extends AppCompatActivity {
         this.aaChartModel = configureTheAAChartModel(chartType);
 
         AAChartView aaChartView = findViewById(R.id.AAChartView);
-        aaChartView.aa_drawChartWithChartModel(this.aaChartModel);
+//        aaChartView.aa_drawChartWithChartModel(this.aaChartModel);
+        aaChartView.aa_drawChartWithChartOptions(configureAAPlotBandsForChart());
+    }
+
+    HashMap<String,Object> configureAAPlotBandsForChart() {
+        AAChartModel aaChartModel = new AAChartModel()
+                .chartType(AAChartModel.Type.Spline)//图形类型
+                .dataLabelEnabled(false)
+                .markerRadius(0)
+                .series(new AASeriesElement[]{
+                        new AASeriesElement()
+                                .name("Tokyo")
+                                .data(new Object[]{7.0, 6.9, 2.5, 14.5, 18.2, 21.5, 5.2, 26.5, 23.3, 45.3, 13.9, 9.6})
+                                .color(AAColor.whiteColor())
+                                .lineWidth(10.0f),
+                });
+
+        HashMap<String,Object> aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
+        AAPlotBandsElement[] aaPlotBandsElementArr = new AAPlotBandsElement[]{
+                new AAPlotBandsElement()
+                        .from(0.f)
+                        .to(5.f)
+                        .color("#BC2B44")
+                ,
+                new AAPlotBandsElement()
+                        .from(5.f)
+                        .to(10.f)
+                        .color("#EC6444")
+                ,
+                new AAPlotBandsElement()
+                        .from(10.f)
+                        .to(15.f)
+                        .color("#f19742")
+                ,
+                new AAPlotBandsElement()
+                        .from(15.f)
+                        .to(20.f)
+                        .color("#f3da60")
+                ,
+                new AAPlotBandsElement()
+                        .from(20.f)
+                        .to(25.f)
+                        .color("#9bd040")
+                ,
+                new AAPlotBandsElement()
+                        .from(25.f)
+                        .to(50.f)
+                        .color("#acf08f")
+                ,
+        };
+
+        HashMap<String,Object> aaYAxis = (HashMap<String, Object>) aaOptions.get("yAxis");
+        aaYAxis.put("plotBands",aaPlotBandsElementArr);
+        return aaOptions;
     }
 
     private AAChartModel configureTheAAChartModel(String chartType) {
@@ -42,7 +99,7 @@ public class MixedChartActivity extends AppCompatActivity {
             case "polygonMixedScatter": return polygonMixedScatter();
             case "polarChartMixed": return polarChartMixed();
         }
-        return null;
+        return arearangeMixedLine();
     }
     
     AAChartModel arearangeMixedLine() {

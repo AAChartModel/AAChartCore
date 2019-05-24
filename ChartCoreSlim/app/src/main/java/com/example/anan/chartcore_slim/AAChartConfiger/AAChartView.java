@@ -83,12 +83,23 @@ public class AAChartView extends WebView {
 
     }
 
-
-
     public void aa_drawChartWithChartModel(final AAChartModel chartModel) {
+        HashMap aaOptions = AAOptionsConstructor.configureChartOptions(chartModel);
+        this.aa_drawChartWithChartOptions(aaOptions);
+    }
+
+    public void aa_onlyRefreshTheChartDataWithChartModelSeriesArray(AASeriesElement[] seriesElementsArr){
+        this.aa_onlyRefreshTheChartDataWithChartOptionsSeriesArray(seriesElementsArr);
+    }
+
+    public void aa_refreshChartWithChartModel(AAChartModel chartModel) {
+        HashMap aaOptions = AAOptionsConstructor.configureChartOptions(chartModel);
+        this.aa_refreshChartWithChartOptions(aaOptions);
+    }
 
 
 
+    public void aa_drawChartWithChartOptions(final HashMap chartOptions) {
         this.loadUrl("file:///android_asset/AAChartView.html");//神奇了,这个方法写在aa_drawChartWithChartModel方法里面就不行,难道是因为不能在还未加载成功的时候就直接调用 JS 方法?(跟 OC 一样)必须在加载完成后的代理里面调用 JS 方法
 
         this.setWebViewClient(new WebViewClient()
@@ -96,44 +107,30 @@ public class AAChartView extends WebView {
             @Override
             public void onPageFinished(WebView view,String url)
             {
-//                System.out.println("图表加载完成!!!!!!!! ");
-                configureChartOptionsAndDrawChart(chartModel);
+                System.out.println("图表加载完成!!!!!!!! ");
+                configureChartOptionsAndDrawChart(chartOptions);
             }
         });
     }
 
-    public void aa_onlyRefreshTheChartDataWithChartModelSeriesArray(AASeriesElement[] seriesElementsArr){
+    public void aa_onlyRefreshTheChartDataWithChartOptionsSeriesArray(AASeriesElement[] seriesElementsArr) {
         // 将对象编译成json
         Gson gson = new Gson();
         String seriesArr = gson.toJson(seriesElementsArr);
         this.loadUrl("javascript:onlyRefreshTheChartDataWithSeries('" + seriesArr + "',')");
     }
 
-    public void aa_refreshChartWithChartModel(AAChartModel chartModel){
+    public void aa_refreshChartWithChartOptions(HashMap chartOptions) {
         // 将对象编译成json
         Gson gson = new Gson();
-        String newOptions = gson.toJson(chartModel);
-        HashMap aaOptions = AAOptionsConstructor.configureChartOptions(chartModel);
-        String aaOptionsJsonStr = gson.toJson(aaOptions);
+        String aaOptionsJsonStr = gson.toJson(chartOptions);
         this.loadUrl("javascript:loadTheHighChartView('" + aaOptionsJsonStr + "','" + contentWidth + "','" + contentHeight + "')");
     }
 
-    private void configureChartOptionsAndDrawChart(AAChartModel chartModel) {
-
-
+    private void configureChartOptionsAndDrawChart(HashMap chartOptions) {
         // 将对象编译成json
         Gson gson = new Gson();
-        optionsJson = gson.toJson(chartModel);
-//        System.out.println("🍎获得了最后的字符串 Options "+optionsJson);
-//
-//
-//        HashMap myJson = AAOptionsConstructor.configureChartOptions(chartModel);
-//        System.out.println("🔥🔥🔥🔥🔥获得了最后的字符串 Options "+optionsJson);
-
-        HashMap aaOptions = AAOptionsConstructor.configureChartOptions(chartModel);
-        String aaOptionsJsonStr = gson.toJson(aaOptions);
-
-//        this.loadUrl("javascript:loadTheHighChartView('" + optionsJson + "','" + contentWidth + "','" + contentHeight + "',)");
+        String aaOptionsJsonStr = gson.toJson(chartOptions);
         this.loadUrl("javascript:loadTheHighChartView('" + aaOptionsJsonStr + "','" + 420 + "','" + 580 + "')");
     }
 

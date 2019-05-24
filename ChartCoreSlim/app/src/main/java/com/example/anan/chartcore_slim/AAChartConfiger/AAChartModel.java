@@ -82,7 +82,7 @@ public class AAChartModel {
         String Column          = "column";
         String Bar             = "bar";
         String Area            = "area";
-        String AreaSpline      = "areaspline";
+        String Areaspline = "areaspline";
         String Line            = "line";
         String Spline          = "spline";
         String Scatter         = "scatter";

@@ -9,7 +9,11 @@
                 aaOptions.plotOptions.series.animation.easing = configureTheChartAnimationEasingType(animationEasingType);
             }
             aaOptions.credits = {enabled:false};//去掉表格右下角版权信息
-
+            if (aaOptions.tooltip) {
+                    if (aaOptions.tooltip.formatter) {
+                        aaOptions.tooltip.formatter = eval(aaOptions.tooltip.formatter);
+                    }
+                }
             AAGlobalChart = Highcharts.chart('container', aaOptions);
            //全局配置(可通过全局配置设置主题)https://api.hcharts.cn/highcharts#Highcharts.setOptions
         };

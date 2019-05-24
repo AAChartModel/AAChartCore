@@ -65,7 +65,7 @@ public class SpecialChartActivity extends AppCompatActivity {
                 break;
         }
 
-        return aaChartModel;
+        return configureColumnChart();
     }
 
     AAChartModel configureColumnChart() {

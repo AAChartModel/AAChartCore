@@ -48,7 +48,11 @@ public class MainActivity extends AppCompatActivity {
             "polarChartMixed",
             "-----------------colorfulChart-----------------r",
             "gradientColorfulChart",
-            "discontinuousDataChart"
+            "discontinuousDataChart",
+            "-----------------drawChartWithOptionsOne-----------------r",
+            "Two",
+            "Three",
+            "Four",
 
     };
 
@@ -57,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
             AAChartModel.Type.Column,
             AAChartModel.Type.Bar,
             AAChartModel.Type.Area,
-            AAChartModel.Type.AreaSpline,
+            AAChartModel.Type.Areaspline,
             AAChartModel.Type.Area,
             AAChartModel.Type.Line,
             AAChartModel.Type.Line,
@@ -89,7 +93,10 @@ public class MainActivity extends AppCompatActivity {
             "colorfulChart",
             "gradientColorfulChart",
             "discontinuousDataChart",
-            "pieMixedLineMixedColumn"
+            "configureAAPlotBandsForChart",
+            "configureAAPlotLinesForChart",
+            "customAATooltipWithJSFuntion",
+            "customXAxisCrosshairStyle"
     };
 
     @Override
@@ -115,9 +122,10 @@ public class MainActivity extends AppCompatActivity {
                     goToSpecialChartActivity(position);
                 } else if (position > 19 && position <= 28 ) {
                     goToMixedChartActivity(position);
-                } else {
+                } else if (position > 28 && position <= 31 )  {
                     goToCustomStyleChartActivity(position);
-
+                } else {
+                    goToDrawChartWithAAOptionsActivity(position);
                 }
             }
 
@@ -148,6 +156,13 @@ public class MainActivity extends AppCompatActivity {
 
     void goToMixedChartActivity(int position) {
         Intent intent = new Intent(this, MixedChartActivity.class);
+        intent.putExtra("chartType", chartTypeArr[position]);
+
+        startActivity(intent);
+    }
+
+    void goToDrawChartWithAAOptionsActivity(int position) {
+        Intent intent = new Intent(this, DrawChartWithAAOptionsActivity.class);
         intent.putExtra("chartType", chartTypeArr[position]);
 
         startActivity(intent);

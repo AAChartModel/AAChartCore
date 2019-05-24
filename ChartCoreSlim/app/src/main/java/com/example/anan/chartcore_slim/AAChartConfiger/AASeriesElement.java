@@ -55,6 +55,7 @@ public class AASeriesElement {
     private Object step;
     private Boolean colorByPoint;
     private Integer zIndex;
+    private Object[] zones;
 
 
     public AASeriesElement type(String type) {
@@ -126,6 +127,13 @@ public class AASeriesElement {
         this.zIndex = zIndex;
         return this;
     }
+
+    public AASeriesElement zones(Object[] zones) {
+        this.zones = zones;
+        return this;
+    }
+
+
 
 
 
