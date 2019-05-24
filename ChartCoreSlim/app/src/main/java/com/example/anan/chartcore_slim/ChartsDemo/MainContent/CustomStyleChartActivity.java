@@ -25,15 +25,19 @@ public class CustomStyleChartActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String chartType = intent.getStringExtra("chartType");
 
-        if (chartType.equals("colorfulChart")) {
-           aaChartModel = configureColorfulChart();
-        } else if (chartType.equals("gradientColorfulChart"))  {
-            aaChartModel = configureColorfulGradientColorChart();
-        }  else if (chartType.equals("discontinuousDataChart"))  {
-            aaChartModel = configureDiscontinuousDataChart();
+        switch (chartType) {
+            case "colorfulChart":
+                aaChartModel = configureColorfulChart();
+                break;
+            case "gradientColorfulChart":
+                aaChartModel = configureColorfulGradientColorChart();
+                break;
+            case "discontinuousDataChart":
+                aaChartModel = configureDiscontinuousDataChart();
+                break;
         }
 
-        AAChartView aaChartView = (AAChartView) findViewById(R.id.AAChartView);
+        AAChartView aaChartView = findViewById(R.id.AAChartView);
         aaChartView.aa_drawChartWithChartModel(aaChartModel);
     }
 
@@ -88,7 +92,6 @@ public class CustomStyleChartActivity extends AppCompatActivity {
     }
 
         AAChartModel configureColorfulGradientColorChart() {
-
            String[] gradientColorNamesArr = {
                    "oceanBlue",
                     "sanguine",

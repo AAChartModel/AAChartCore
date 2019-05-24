@@ -174,8 +174,8 @@ public class AAChartModel {
     public Boolean inverted;              //x 轴是否翻转(垂直)
     public Boolean xAxisReversed;         //x 轴翻转
     public Boolean yAxisReversed;         //y 轴翻转
-    public Boolean tooltipEnabled;      //是否显示浮动提示框(默认显示)
-    public String  tooltipValueSuffix;  //浮动提示框单位后缀
+    public Boolean tooltipEnabled;        //是否显示浮动提示框(默认显示)
+    public String  tooltipValueSuffix;    //浮动提示框单位后缀
     public Boolean tooltipCrosshairs;     //是否显示准星线(默认显示)
     public Boolean gradientColorEnable;   //是否要为渐变色
     public Boolean polar;                 //是否极化图形(变为雷达图)
@@ -185,11 +185,11 @@ public class AAChartModel {
     public Boolean xAxisLabelsEnabled;    //x轴是否显示数据
     public String[]categories;            //x轴是否显示数据
     public Integer xAxisGridLineWidth;    //x轴网格线的宽度
-    public Boolean xAxisVisible;        //x 轴是否显示
-    public Boolean yAxisVisible;        //y 轴是否显示
+    public Boolean xAxisVisible;          //x 轴是否显示
+    public Boolean yAxisVisible;          //y 轴是否显示
     public Boolean yAxisLabelsEnabled;    //y轴是否显示数据
     public String  yAxisTitle;            //y轴标题
-    public Float   yAxisLineWidth;       //y 轴轴线的宽度
+    public Float   yAxisLineWidth;        //y 轴轴线的宽度
 
     public Integer yAxisGridLineWidth;    //y轴网格线的宽度
     public Object[]colorsTheme;           //图表主题颜色数组
@@ -205,9 +205,9 @@ public class AAChartModel {
     public Integer borderRadius;          //柱状图长条图头部圆角半径(可用于设置头部的形状,仅对条形图,柱状图有效)
     public Integer markerRadius;          //折线连接点的半径长度
     public AASeriesElement[] series;
-    public String  titleColor;//标题颜色
-    public String  subTitleColor;//副标题颜色
-    public String  axisColor;//x 轴和 y 轴文字颜色
+    public String  titleColor;            //标题颜色
+    public String  subTitleColor;         //副标题颜色
+    public String  axisColor;             //x 轴和 y 轴文字颜色
 
 
 
