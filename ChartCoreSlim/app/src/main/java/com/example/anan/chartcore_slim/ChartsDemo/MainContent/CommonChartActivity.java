@@ -151,32 +151,24 @@ public class CommonChartActivity extends AppCompatActivity
         if (group.getId() == R.id.radioGroup1) {
             //根据不同ID 弹出不同的吐司
             switch (group.getCheckedRadioButtonId()) {
-                case R.id.stacking1:
-                    aaChartModel.stacking(AAChartModel.StackingType.False);
+                case R.id.stacking1: aaChartModel.stacking(AAChartModel.StackingType.False);
                     break;
-                case R.id.stacking2:
-                    aaChartModel.stacking(AAChartModel.StackingType.Normal);
+                case R.id.stacking2: aaChartModel.stacking(AAChartModel.StackingType.Normal);
                     break;
-                case R.id.stacking3:
-                    aaChartModel.stacking(AAChartModel.StackingType.Percent);
+                case R.id.stacking3: aaChartModel.stacking(AAChartModel.StackingType.Percent);
                     break;
             }
         } else {
             switch (group.getCheckedRadioButtonId()) {
-                case R.id.symbol1:
-                    aaChartModel.symbol(AAChartModel.SymbolType.Circle);
+                case R.id.symbol1: aaChartModel.symbol(AAChartModel.SymbolType.Circle);
                     break;
-                case R.id.symbol2:
-                    aaChartModel.symbol(AAChartModel.SymbolType.Diamond);
+                case R.id.symbol2: aaChartModel.symbol(AAChartModel.SymbolType.Diamond);
                     break;
-                case R.id.symbol3:
-                    aaChartModel.symbol(AAChartModel.SymbolType.Square);
+                case R.id.symbol3: aaChartModel.symbol(AAChartModel.SymbolType.Square);
                     break;
-                case R.id.symbol4:
-                    aaChartModel.symbol(AAChartModel.SymbolType.Triangle);
+                case R.id.symbol4: aaChartModel.symbol(AAChartModel.SymbolType.Triangle);
                     break;
-                case R.id.symbol5:
-                    aaChartModel.symbol(AAChartModel.SymbolType.Triangle_down);
+                case R.id.symbol5: aaChartModel.symbol(AAChartModel.SymbolType.Triangle_down);
                     break;
             }
         }
@@ -187,20 +179,15 @@ public class CommonChartActivity extends AppCompatActivity
     @Override
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
         switch (buttonView.getId()) {
-            case R.id.switch1:
-                aaChartModel.xAxisReversed(isChecked);
+            case R.id.switch1: aaChartModel.xAxisReversed(isChecked);
                 break;
-            case R.id.switch2:
-                aaChartModel.yAxisReversed(isChecked);
+            case R.id.switch2: aaChartModel.yAxisReversed(isChecked);
                 break;
-            case R.id.switch3:
-                aaChartModel.inverted(isChecked);
+            case R.id.switch3: aaChartModel.inverted(isChecked);
                 break;
-            case R.id.switch4:
-                aaChartModel.polar(isChecked);
+            case R.id.switch4: aaChartModel.polar(isChecked);
                 break;
-            case R.id.switch5:
-                aaChartModel.dataLabelEnabled(isChecked);
+            case R.id.switch5: aaChartModel.dataLabelEnabled(isChecked);
                 break;
         }
 

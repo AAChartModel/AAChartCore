@@ -107,6 +107,7 @@ public class AAOptionsConstructor
         aaOptions.put("colors", aaChartModel.colorsTheme);//图表的主体颜色数组
         aaOptions.put("series", aaChartModel.series);//图表的数据列数组
         aaOptions.put("axisColor", aaChartModel.axisColor);//图表的 x 轴颜色
+        aaOptions.put("touchEventEnabled", aaChartModel.touchEventEnabled);
 
         configureAxisContentAndStyle(aaOptions,aaChartModel);
 

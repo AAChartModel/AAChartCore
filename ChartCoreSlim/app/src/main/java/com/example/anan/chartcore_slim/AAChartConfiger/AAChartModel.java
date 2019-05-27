@@ -198,16 +198,13 @@ public class AAChartModel {
     public String  legendAlign;           //设定图例在图表区中的水平对齐方式，合法值有left，center 和 right。
     public String  legendVerticalAlign;   //设定图例在图表区中的垂直对齐方式，合法值有 top，middle 和 bottom。垂直位置可以通过 y 选项做进一步设定。
     public String  backgroundColor;       //图表背景色
-    public Boolean options3dEnable;       //是否3D化图形(仅对条形图,柱状图有效)
-    public Integer options3dAlphaInt;
-    public Integer options3dBetaInt;
-    public Integer options3dDepth;        //3D图形深度
     public Integer borderRadius;          //柱状图长条图头部圆角半径(可用于设置头部的形状,仅对条形图,柱状图有效)
     public Integer markerRadius;          //折线连接点的半径长度
     public AASeriesElement[] series;
     public String  titleColor;            //标题颜色
     public String  subTitleColor;         //副标题颜色
     public String  axisColor;             //x 轴和 y 轴文字颜色
+    public Boolean touchEventEnabled;     //
 
 
 
@@ -362,25 +359,6 @@ public class AAChartModel {
         return this;
     }
 
-    public AAChartModel options3dEnable(Boolean options3dEnable) {
-        this.options3dEnable = options3dEnable;
-        return this;
-    }
-
-    public AAChartModel options3dAlphaInt(Integer options3dAlphaInt) {
-        this.options3dAlphaInt = options3dAlphaInt;
-        return this;
-    }
-
-    public AAChartModel options3dBetaInt(Integer options3dBetaInt) {
-        this.options3dBetaInt = options3dBetaInt;
-        return this;
-    }
-
-    public AAChartModel options3dDepth(Integer options3dDepth) {
-        this.options3dDepth = options3dDepth;
-        return this;
-    }
 
     public AAChartModel borderRadius(Integer borderRadius) {
         this.borderRadius = borderRadius;
@@ -394,6 +372,11 @@ public class AAChartModel {
 
     public AAChartModel series(AASeriesElement[] series) {
         this.series = series;
+        return this;
+    }
+
+    public AAChartModel touchEventEnabled(Boolean touchEventEnabled) {
+        this.touchEventEnabled = touchEventEnabled;
         return this;
     }
 
@@ -415,7 +398,6 @@ public class AAChartModel {
 
         this.gradientColorEnable = false;
         this.polar = false;
-        this.options3dEnable = false;
         this.xAxisLabelsEnabled = true;
         this.xAxisGridLineWidth = 0;
         this.yAxisLabelsEnabled = true;
@@ -427,6 +409,7 @@ public class AAChartModel {
         this.backgroundColor = "#ffffff";
         this.borderRadius = 0;//柱状图长条图头部圆角半径(可用于设置头部的形状,仅对条形图,柱状图有效,设置为1000时,柱形图或者条形图头部为楔形)
         this.markerRadius = 6;//折线连接点的半径长度,如果值设置为0,这样就相当于不显示了
+        this.touchEventEnabled = true;
 
     }
 

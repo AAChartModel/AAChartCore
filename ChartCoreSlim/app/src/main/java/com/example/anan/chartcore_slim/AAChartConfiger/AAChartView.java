@@ -35,17 +35,29 @@ package com.example.anan.chartcore_slim.AAChartConfiger;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.util.Log;
+import android.webkit.JavascriptInterface;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 import com.google.gson.Gson;
 
 import java.util.HashMap;
+import java.util.Map;
 
 
 /**
  * Created by AnAn on 2017/9/8.
  */
+
+class AAMoveOverEventMessageModel {
+    public String name;
+    public Float x;
+    public Float y;
+    public String category;
+    public HashMap offset;
+    public Integer index;
+        }
 
 public class AAChartView extends WebView {
 
@@ -79,8 +91,32 @@ public class AAChartView extends WebView {
         this.contentHeight = 350.f;
 //        //设置WebView支持JavaScript(这一句是十分关键的一句)
         this.getSettings().setJavaScriptEnabled(true);
-//        this.loadUrl("file:///android_asset/AAChartView.html");//神奇了,这个方法写在aa_drawChartWithChartModel方法里面就不行,难道是因为不能在还未加载成功的时候就直接调用 JS 方法?(跟 OC 一样)必须在加载完成后的代理里面调用 JS 方法
+        //把当前对象作为androidObject别名传递给js
+        //js通过window.androidObject.androidMethod()就可以直接调用安卓的androidMethod方法
+        this.addJavascriptInterface(this, "androidObject");
+    }
 
+    //js调用安卓，必须加@JavascriptInterface注释的方法才可以被js调用
+    @JavascriptInterface
+    public String androidMethod(String message) {
+
+        String myMessage = message;
+//        Gson gson = new Gson();
+//        Map<String, Object> map = new HashMap<String, Object>();
+//        map = gson.fromJson(message, map.getClass());
+//        AAMoveOverEventMessageModel messageModel = getEventMessageModel(map);
+        return "";
+    }
+
+    AAMoveOverEventMessageModel getEventMessageModel(Map messageBody) {
+        AAMoveOverEventMessageModel eventMessageModel =  new AAMoveOverEventMessageModel();
+        eventMessageModel.name = (String) messageBody.get("name");
+        eventMessageModel.x = (Float) messageBody.get("x");
+        eventMessageModel.y = (Float) messageBody.get("y");
+        eventMessageModel.category = (String) messageBody.get("category");
+        eventMessageModel.offset = (HashMap) messageBody.get("offset");
+        eventMessageModel.index = (Integer) messageBody.get("index");
+        return eventMessageModel;
     }
 
     public void aa_drawChartWithChartModel(final AAChartModel chartModel) {
