@@ -10,6 +10,11 @@ public class AAEasyTool {
         pureJSFunctionStr = pureJSFunctionStr.replace("\'", "\\\'");
         pureJSFunctionStr = pureJSFunctionStr.replace("\n", "\\n");
         pureJSFunctionStr = pureJSFunctionStr.replace("\r", "\\r");
+        pureJSFunctionStr = pureJSFunctionStr.replace("\u2028", "\\u2028");
+        pureJSFunctionStr = pureJSFunctionStr.replace("\u2029","\\u2029" );
+
+
+
         return pureJSFunctionStr;
     }
 }

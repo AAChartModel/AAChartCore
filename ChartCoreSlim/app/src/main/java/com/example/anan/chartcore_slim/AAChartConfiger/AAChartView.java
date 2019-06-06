@@ -12,7 +12,7 @@
 //*************** ...... SOURCE CODE ...... ***************
 
 
- /*
+/*
 
  * -------------------------------------------------------------------------------
  *
@@ -34,9 +34,11 @@
 package com.example.anan.chartcore_slim.AAChartConfiger;
 
 import android.content.Context;
+import android.os.Build;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.webkit.JavascriptInterface;
+import android.webkit.ValueCallback;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
@@ -57,7 +59,7 @@ class AAMoveOverEventMessageModel {
     public String category;
     public HashMap offset;
     public Integer index;
-        }
+}
 
 public class AAChartView extends WebView {
 
@@ -136,7 +138,7 @@ public class AAChartView extends WebView {
 
 
     public void aa_drawChartWithChartOptions(final HashMap chartOptions) {
-        this.loadUrl("file:///android_asset/AAChartView.html");//神奇了,这个方法写在aa_drawChartWithChartModel方法里面就不行,难道是因为不能在还未加载成功的时候就直接调用 JS 方法?(跟 OC 一样)必须在加载完成后的代理里面调用 JS 方法
+        this.loadUrl("file:///android_asset/AAChartView.html");//神奇了,这个fdsa方法写在aa_drawChartWithChartModel方法里面就不行,难道是因为不能在还未加载成功的时候就直接调用 JS 方法?(跟 OC 一样)必须在加载完成后的代理里面调用 JS 方法
 
         this.setWebViewClient(new WebViewClient()
         {
@@ -153,21 +155,40 @@ public class AAChartView extends WebView {
         // 将对象编译成json
         Gson gson = new Gson();
         String seriesArr = gson.toJson(seriesElementsArr);
-        this.loadUrl("javascript:onlyRefreshTheChartDataWithSeries('" + seriesArr + "',')");
+//        this.loadUrl("javascript:onlyRefreshTheChartDataWithSeries('" + seriesArr + "',')");
+        String javaScriptStr = "onlyRefreshTheChartDataWithSeries('" + seriesArr + "',')";
+        this.safeEvaluateJavaScriptString(javaScriptStr);
     }
 
     public void aa_refreshChartWithChartOptions(HashMap chartOptions) {
         // 将对象编译成json
         Gson gson = new Gson();
         String aaOptionsJsonStr = gson.toJson(chartOptions);
-        this.loadUrl("javascript:loadTheHighChartView('" + aaOptionsJsonStr + "','" + contentWidth + "','" + contentHeight + "')");
+//        this.loadUrl("javascript:loadTheHighChartView('" + aaOptionsJsonStr + "','" + contentWidth + "','" + contentHeight + "')");
+        String javaScriptStr = "loadTheHighChartView('" + aaOptionsJsonStr + "','" + contentWidth + "','" + contentHeight + "')";
+        this.safeEvaluateJavaScriptString(javaScriptStr);
     }
 
     private void configureChartOptionsAndDrawChart(HashMap chartOptions) {
         // 将对象编译成json
         Gson gson = new Gson();
         String aaOptionsJsonStr = gson.toJson(chartOptions);
-        this.loadUrl("javascript:loadTheHighChartView('" + aaOptionsJsonStr + "','" + 420 + "','" + 580 + "')");
+//        this.loadUrl("javascript:loadTheHighChartView('" + aaOptionsJsonStr + "','" + 420 + "','" + 580 + "')");
+        String javaScriptStr = "loadTheHighChartView('" + aaOptionsJsonStr + "','" + 420 + "','" + 580 + "')";
+        this.safeEvaluateJavaScriptString(javaScriptStr);
+    }
+
+    private void safeEvaluateJavaScriptString(String javaScriptString) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            this.evaluateJavascript("javascript:"+javaScriptString, new ValueCallback<String>() {
+                @Override
+                public void onReceiveValue(String s) {
+                    Log.i("回调信息","输出打印查看回调的结果"+s);
+                }
+            });
+        } else {
+            this.loadUrl("javascript:"+javaScriptString);
+        }
     }
 
 

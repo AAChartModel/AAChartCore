@@ -3,6 +3,7 @@ package com.example.anan.chartcore_slim.ChartsDemo.MainContent;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.webkit.WebView;
 import android.widget.CompoundButton;
 import android.widget.RadioGroup;
 import android.widget.Switch;
@@ -17,6 +18,8 @@ public class CommonChartActivity extends AppCompatActivity
         implements
         RadioGroup.OnCheckedChangeListener,
         CompoundButton.OnCheckedChangeListener {
+
+
 
     private AAChartModel aaChartModel;
     private AAChartView aaChartView;
