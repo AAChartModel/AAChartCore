@@ -8,7 +8,12 @@ import android.support.v7.widget.Toolbar;
 import com.example.anan.chartcore_slim.AAChartConfiger.AAChartModel;
 import com.example.anan.chartcore_slim.AAChartConfiger.AAChartView;
 import com.example.anan.chartcore_slim.AAChartConfiger.AASeriesElement;
+import com.example.anan.chartcore_slim.AAOptionsModel.AAWaterfallChart;
+import com.example.anan.chartcore_slim.AATools.AAGradientColor;
 import com.example.anan.chartcore_slim.R;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class SpecialChartActivity extends AppCompatActivity {
     private AAChartModel aaChartModel;
@@ -839,6 +844,7 @@ public class SpecialChartActivity extends AppCompatActivity {
                       new AASeriesElement()
                               .name("Observed Data")
                               .color("#ef476f")
+                              .fillColor(AAGradientColor.deepSeaColor())
                               .data( new Object[][] {
                               {760, 801, 848, 895, 965},
                               {733, 853, 939, 980, 1080},
@@ -851,41 +857,55 @@ public class SpecialChartActivity extends AppCompatActivity {
     }
 
     AAChartModel configureWaterfallChart() {
+        Map dataElement1 = new HashMap<String,Object>();
+        dataElement1.put("name","启动资金");
+        dataElement1.put("y",120000);
+
+        Map dataElement2 = new HashMap<String,Object>();
+        dataElement2.put("name","产品收入");
+        dataElement2.put("y",569000);
+
+        Map dataElement3 = new HashMap<String,Object>();
+        dataElement3.put("name","服务收入");
+        dataElement3.put("y",231000);
+
+        Map dataElement4 = new HashMap<String,Object>();
+        dataElement4.put("name","正平衡");
+        dataElement4.put("isIntermediateSum",true);
+        dataElement4.put("color","#ffd066");
+
+        Map dataElement5 = new HashMap<String,Object>();
+        dataElement5.put("name","固定成本");
+        dataElement5.put("y",-342000);
+
+        Map dataElement6 = new HashMap<String,Object>();
+        dataElement6.put("name","可变成本");
+        dataElement6.put("y",-233000);
+
+        Map dataElement7 = new HashMap<String,Object>();
+        dataElement7.put("name","余额");
+        dataElement7.put("isSum",true);
+        dataElement7.put("color","#04d69f");
+
        return new AAChartModel()
                .chartType(AAChartModel.Type.Waterfall)
                .title("WATERFALL CHART")
-               .subtitle("virtual data");
-//                        .series(
-//                                new AASeriesElement[]{{
-//                                        "upColor":"#9b43b4",
-//                    "color": "#ef476f",
-//                    "data": {{
-//                "name": "启动资金",
-//                        "y": 120000
-//            }, {
-//                "name": "产品收入",
-//                        "y": 569000
-//            }, {
-//                "name": "服务收入",
-//                        "y": 231000
-//            }, {
-//                "name": "正平衡",
-//                        "isIntermediateSum": true,
-//                        "color": "#ffd066"
-//            }, {
-//                "name": "固定成本",
-//                        "y": -342000
-//            }, {
-//                "name": "可变成本",
-//                        "y": -233000
-//            }, {
-//                "name": "余额",
-//                        "isSum": true,
-//                        "color": "#04d69f"
-//            }},
-//            "pointPadding": 0
-//                        }}
-//            );
+               .subtitle("virtual data")
+               .series(new Object[]{
+                       new AAWaterfallChart()
+                               .upColor("#9b43b4")
+                               .color("#ef476f")
+                       .borderWidth(0f)
+                       .data(new Map[]{
+                               dataElement1,
+                               dataElement2,
+                               dataElement3,
+                               dataElement4,
+                               dataElement5,
+                               dataElement6,
+                               dataElement7
+                       }),
+        });
     }
 
     AAChartModel configurePyramidChart() {

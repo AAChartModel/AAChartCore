@@ -200,7 +200,7 @@ public class AAChartModel {
     public String  backgroundColor;       //图表背景色
     public Integer borderRadius;          //柱状图长条图头部圆角半径(可用于设置头部的形状,仅对条形图,柱状图有效)
     public Integer markerRadius;          //折线连接点的半径长度
-    public AASeriesElement[] series;
+    public Object[] series;
     public String  titleColor;            //标题颜色
     public String  subTitleColor;         //副标题颜色
     public String  axisColor;             //x 轴和 y 轴文字颜色
@@ -396,7 +396,7 @@ public class AAChartModel {
         return this;
     }
 
-    public AAChartModel series(AASeriesElement[] prop) {
+    public AAChartModel series(Object[] prop) {
         series = prop;
         return this;
     }

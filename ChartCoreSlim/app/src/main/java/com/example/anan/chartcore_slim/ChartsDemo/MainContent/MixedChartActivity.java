@@ -49,7 +49,7 @@ public class MixedChartActivity extends AppCompatActivity {
                 });
 
         HashMap<String,Object> aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
-        AAPlotBandsElement[] aaPlotBandsElementArr = new AAPlotBandsElement[]{
+        AAPlotBandsElement[] aaPlotBandsElementArr = {
                 new AAPlotBandsElement()
                         .from(0.f)
                         .to(5.f)
