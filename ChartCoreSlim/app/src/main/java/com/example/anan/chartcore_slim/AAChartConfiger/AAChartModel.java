@@ -167,7 +167,7 @@ public class AAChartModel {
     public String  subtitle;              //副标题内容
     public String  chartType;             //图表类型
     public String  stacking;              //堆积样式
-    public String  markerSymbol;                //折线曲线连接点的类型："circle", "square", "diamond", "triangle","triangle-down"，默认是"circle"
+    public String  markerSymbol;          //折线曲线连接点的类型："circle", "square", "diamond", "triangle","triangle-down"，默认是"circle"
     public String  markerSymbolStyle;
     public String  zoomType;              //缩放类型 AAChartZoomTypeX表示可沿着 x 轴进行手势缩放
     public Boolean pointHollow;           //折线或者曲线的连接点是否为空心的
@@ -204,228 +204,234 @@ public class AAChartModel {
     public String  titleColor;            //标题颜色
     public String  subTitleColor;         //副标题颜色
     public String  axisColor;             //x 轴和 y 轴文字颜色
-    public Boolean touchEventEnabled;     //
+    public Boolean touchEventEnabled;     //是否支持用户触摸事件
 
 
 
-    public AAChartModel animationType(String animationType) {
-        this.animationType = animationType;
+    public AAChartModel animationType(String prop) {
+        animationType = prop;
         return this;
     }
 
-    public AAChartModel animationDuration(Integer animationDuration) {
-        this.animationDuration = animationDuration;
+    public AAChartModel animationDuration(Integer prop) {
+        animationDuration = prop;
         return this;
     }
 
-    public AAChartModel title(String title) {
-        this.title = title;
+    public AAChartModel title(String prop) {
+        title = prop;
         return this;
     }
 
-    public AAChartModel subtitle(String subtitle) {
-        this.subtitle = subtitle;
+    public AAChartModel subtitle(String prop) {
+        subtitle = prop;
         return this;
     }
 
-    public AAChartModel chartType(String chartType) {
-        this.chartType = chartType;
+    public AAChartModel chartType(String prop) {
+        chartType = prop;
         return this;
     }
 
-    public AAChartModel stacking(String stacking) {
-        this.stacking = stacking;
+    public AAChartModel stacking(String prop) {
+        stacking = prop;
         return this;
     }
 
-    public AAChartModel markerSymbol(String symbol) {
-        this.markerSymbol = symbol;
+    public AAChartModel markerSymbol(String prop) {
+        markerSymbol = prop;
         return this;
     }
 
-    public AAChartModel markerSymbolStyle(String symbolStyle) {
-        this.markerSymbolStyle = symbolStyle;
+    public AAChartModel markerSymbolStyle(String prop) {
+        markerSymbolStyle = prop;
         return this;
     }
 
-    public AAChartModel zoomType(String zoomType) {
-        this.zoomType = zoomType;
+    public AAChartModel zoomType(String prop) {
+        zoomType = prop;
         return this;
     }
 
-    public AAChartModel pointHollow(Boolean pointHollow) {
-        this.pointHollow = pointHollow;
+    public AAChartModel pointHollow(Boolean prop) {
+        pointHollow = prop;
         return this;
     }
 
-    public AAChartModel inverted(Boolean inverted) {
-        this.inverted = inverted;
+    public AAChartModel inverted(Boolean prop) {
+        inverted = prop;
         return this;
     }
 
-    public AAChartModel xAxisReversed(Boolean xAxisReversed) {
-        this.xAxisReversed = xAxisReversed;
+    public AAChartModel xAxisReversed(Boolean prop) {
+        xAxisReversed = prop;
         return this;
     }
 
-    public AAChartModel yAxisReversed(Boolean yAxisReversed) {
-        this.yAxisReversed = yAxisReversed;
+    public AAChartModel yAxisReversed(Boolean prop) {
+        yAxisReversed = prop;
         return this;
     }
 
-    public AAChartModel tooltipEnabled(Boolean tooltipEnabled) {
-        this.tooltipEnabled = tooltipEnabled;
+    public AAChartModel tooltipEnabled(Boolean prop) {
+        tooltipEnabled = prop;
         return this;
     }
 
-    public AAChartModel tooltipCrosshairs(Boolean tooltipCrosshairs) {
-        this.tooltipCrosshairs = tooltipCrosshairs;
+    public AAChartModel tooltipCrosshairs(Boolean prop) {
+        tooltipCrosshairs = prop;
         return this;
     }
 
-    public AAChartModel gradientColorEnable(Boolean gradientColorEnable) {
-        this.gradientColorEnable = gradientColorEnable;
+    public AAChartModel gradientColorEnable(Boolean prop) {
+        gradientColorEnable = prop;
         return this;
     }
 
-    public AAChartModel polar(Boolean polar) {
-        this.polar = polar;
+    public AAChartModel polar(Boolean prop) {
+        polar = prop;
         return this;
     }
 
-    public AAChartModel dataLabelEnabled(Boolean dataLabelEnabled) {
-        this.dataLabelEnabled = dataLabelEnabled;
+    public AAChartModel marginLeft(Float prop) {
+        marginLeft = prop;
         return this;
     }
 
-    public AAChartModel xAxisLabelsEnabled(Boolean xAxisLabelsEnabled) {
-        this.xAxisLabelsEnabled = xAxisLabelsEnabled;
+    public AAChartModel marginright(Float prop) {
+        marginRight = prop;
         return this;
     }
 
-    public AAChartModel categories(String[] categories) {
-        this.categories = categories;
+    public AAChartModel dataLabelEnabled(Boolean prop) {
+        dataLabelEnabled = prop;
         return this;
     }
 
-    public AAChartModel xAxisGridLineWidth(Integer xAxisGridLineWidth) {
-        this.xAxisGridLineWidth = xAxisGridLineWidth;
+    public AAChartModel xAxisLabelsEnabled(Boolean prop) {
+        xAxisLabelsEnabled = prop;
         return this;
     }
 
-    public AAChartModel yAxisGridLineWidth(Integer yAxisGridLineWidth) {
-        this.yAxisGridLineWidth = yAxisGridLineWidth;
+    public AAChartModel categories(String[] prop) {
+        categories = prop;
         return this;
     }
 
-    public AAChartModel xAxisVisible(Boolean xAxisVisible) {
-        this.xAxisVisible = xAxisVisible;
+    public AAChartModel xAxisGridLineWidth(Integer prop) {
+        xAxisGridLineWidth = prop;
         return this;
     }
 
-    public AAChartModel yAxisVisible(Boolean yAxisVisible) {
-        this.yAxisVisible = yAxisVisible;
+    public AAChartModel yAxisGridLineWidth(Integer prop) {
+        yAxisGridLineWidth = prop;
         return this;
     }
 
-    public AAChartModel yAxisLabelsEnabled(Boolean yAxisLabelsEnabled) {
-        this.yAxisLabelsEnabled = yAxisLabelsEnabled;
+    public AAChartModel xAxisVisible(Boolean prop) {
+        xAxisVisible = prop;
         return this;
     }
 
-    public AAChartModel yAxisTitle(String yAxisTitle) {
-        this.yAxisTitle = yAxisTitle;
+    public AAChartModel yAxisVisible(Boolean prop) {
+        yAxisVisible = prop;
         return this;
     }
 
-    public AAChartModel yAxisLineWidth(Float yAxisLineWidth) {
-        this.yAxisLineWidth = yAxisLineWidth;
+    public AAChartModel yAxisLabelsEnabled(Boolean prop) {
+        yAxisLabelsEnabled = prop;
         return this;
     }
 
-
-    public AAChartModel colorsTheme(Object[] colorsTheme) {
-        this.colorsTheme = colorsTheme;
+    public AAChartModel yAxisTitle(String prop) {
+        yAxisTitle = prop;
         return this;
     }
 
-    public AAChartModel legendEnabled(Boolean legendEnabled) {
-        this.legendEnabled = legendEnabled;
-        return this;
-    }
-
-    public AAChartModel legendLayout(String legendLayout) {
-        this.legendLayout = legendLayout;
-
-        return this;
-    }
-
-    public AAChartModel legendAlign(String legendAlign) {
-        this.legendAlign = legendAlign;
-        return this;
-    }
-
-    public AAChartModel legendVerticalAlign(String legendVerticalAlign) {
-        this.legendVerticalAlign = legendVerticalAlign;
-        return this;
-    }
-
-    public AAChartModel backgroundColor(String backgroundColor) {
-        this.backgroundColor = backgroundColor;
+    public AAChartModel yAxisLineWidth(Float prop) {
+        yAxisLineWidth = prop;
         return this;
     }
 
 
-    public AAChartModel borderRadius(Integer borderRadius) {
-        this.borderRadius = borderRadius;
+    public AAChartModel colorsTheme(Object[] prop) {
+        colorsTheme = prop;
         return this;
     }
 
-    public AAChartModel markerRadius(Integer markerRadius) {
-        this.markerRadius = markerRadius;
+    public AAChartModel legendEnabled(Boolean prop) {
+        legendEnabled = prop;
         return this;
     }
 
-    public AAChartModel series(AASeriesElement[] series) {
-        this.series = series;
+    public AAChartModel legendLayout(String prop) {
+        legendLayout = prop;
+
         return this;
     }
 
-    public AAChartModel touchEventEnabled(Boolean touchEventEnabled) {
-        this.touchEventEnabled = touchEventEnabled;
+    public AAChartModel legendAlign(String prop) {
+        legendAlign = prop;
+        return this;
+    }
+
+    public AAChartModel legendVerticalAlign(String prop) {
+        legendVerticalAlign = prop;
+        return this;
+    }
+
+    public AAChartModel backgroundColor(String prop) {
+        backgroundColor = prop;
         return this;
     }
 
 
-    // 构造函数(亦即是初始化函数)
+    public AAChartModel borderRadius(Integer prop) {
+        borderRadius = prop;
+        return this;
+    }
+
+    public AAChartModel markerRadius(Integer prop) {
+        markerRadius = prop;
+        return this;
+    }
+
+    public AAChartModel series(AASeriesElement[] prop) {
+        series = prop;
+        return this;
+    }
+
+    public AAChartModel touchEventEnabled(Boolean prop) {
+        touchEventEnabled = prop;
+        return this;
+    }
+
     public AAChartModel() {
-        this.animationType = AnimationType.EaseInBack;
-        this.animationDuration = 500;//以毫秒为单位
-        this.pointHollow = false;
-        this.inverted = false;
-        this.stacking = StackingType.False;
-        this.xAxisReversed = false;
-        this.yAxisReversed = false;
-        this.zoomType = "x";
-//        this.colorsTheme = new String[]{"#b5282a","#e7a701","#50c18d","#fd4800","#f1c6c5"};
-        this.colorsTheme = new String[]{"#fe117c","#ffc069","#06caf4","#7dffc0"};//默认的颜色数组(必须要添加默认数组,否则就会出错)
-
-        this.tooltipCrosshairs = true;
-
-        this.gradientColorEnable = false;
-        this.polar = false;
-        this.xAxisLabelsEnabled = true;
-        this.xAxisGridLineWidth = 0;
-        this.yAxisLabelsEnabled = true;
-        this.yAxisGridLineWidth = 1;
-        this.legendEnabled = true;
-        this.legendLayout = "horizontal";
-        this.legendAlign = "center";
-        this.legendVerticalAlign = "bottom";
-        this.backgroundColor = "#ffffff";
-        this.borderRadius = 0;//柱状图长条图头部圆角半径(可用于设置头部的形状,仅对条形图,柱状图有效,设置为1000时,柱形图或者条形图头部为楔形)
-        this.markerRadius = 6;//折线连接点的半径长度,如果值设置为0,这样就相当于不显示了
-        this.touchEventEnabled = true;
+        animationType = AnimationType.EaseInBack;
+        animationDuration = 500;//以毫秒为单位
+        pointHollow = false;
+        inverted = false;
+        stacking = StackingType.False;
+        xAxisReversed = false;
+        yAxisReversed = false;
+        zoomType = "x";
+//        colorsTheme = new String[]{"#b5282a","#e7a701","#50c18d","#fd4800","#f1c6c5"};
+        colorsTheme = new String[]{"#fe117c","#ffc069","#06caf4","#7dffc0"};//默认的颜色数组(必须要添加默认数组,否则就会出错)
+        tooltipCrosshairs = true;
+        gradientColorEnable = false;
+        polar = false;
+        xAxisLabelsEnabled = true;
+        xAxisGridLineWidth = 0;
+        yAxisLabelsEnabled = true;
+        yAxisGridLineWidth = 1;
+        legendEnabled = true;
+        legendLayout = "horizontal";
+        legendAlign = "center";
+        legendVerticalAlign = "bottom";
+        backgroundColor = "#ffffff";
+        borderRadius = 0;//柱状图长条图头部圆角半径(可用于设置头部的形状,仅对条形图,柱状图有效,设置为1000时,柱形图或者条形图头部为楔形)
+        markerRadius = 6;//折线连接点的半径长度,如果值设置为0,这样就相当于不显示了
+        touchEventEnabled = true;
 
     }
 

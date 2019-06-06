@@ -5,18 +5,18 @@ public class AACrosshair {
     private String color;
     private String dashStyle;
 
-    public AACrosshair width(Float width) {
-        this.width = width;
+    public AACrosshair width(Float prop) {
+        width = prop;
         return this;
     }
 
-    public AACrosshair color(String color) {
-        this.color = color;
+    public AACrosshair color(String prop) {
+        color = prop;
         return this;
     }
 
-    public AACrosshair dashStyle(String dashStyle) {
-        this.dashStyle = dashStyle;
+    public AACrosshair dashStyle(String prop) {
+        dashStyle = prop;
         return this;
     }
 }

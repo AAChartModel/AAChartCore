@@ -19,80 +19,80 @@ public class AATooltip {
     private Boolean crosshairs;
     private String valueSuffix;
 
-    public AATooltip backgroundColor(String backgroundColor) {
-        this.backgroundColor = backgroundColor;
+    public AATooltip backgroundColor(String prop) {
+        backgroundColor = prop;
         return this;
     }
 
-    public AATooltip borderColor(String borderColor) {
-        this.borderColor = borderColor;
+    public AATooltip borderColor(String prop) {
+        borderColor = prop;
         return this;
     }
 
-    public AATooltip borderRadius(Float borderRadius) {
-        this.borderRadius = borderRadius;
+    public AATooltip borderRadius(Float prop) {
+        borderRadius = prop;
         return this;
     }
 
-    public AATooltip borderWidth(Float borderWidth) {
-        this.borderWidth = borderWidth;
+    public AATooltip borderWidth(Float prop) {
+        borderWidth = prop;
         return this;
     }
 
-    public AATooltip style(AAStyle style) {
-        this.style = style;
+    public AATooltip style(AAStyle prop) {
+        style = prop;
         return this;
     }
 
-    public AATooltip enabled(Boolean enabled) {
-        this.enabled = enabled;
+    public AATooltip enabled(Boolean prop) {
+        enabled = prop;
         return this;
     }
 
-    public AATooltip useHTML(Boolean useHTML) {
-        this.useHTML = useHTML;
+    public AATooltip useHTML(Boolean prop) {
+        useHTML = prop;
         return this;
     }
 
-    public AATooltip formatter(String formatter) {
-        String pureJSFunctionStr = "(" + formatter + ")";
+    public AATooltip formatter(String prop) {
+        String pureJSFunctionStr = "(" + prop + ")";
         pureJSFunctionStr = AAEasyTool.pureJavaScriptFunctionString(pureJSFunctionStr);
-        this.formatter = pureJSFunctionStr;
+        formatter = pureJSFunctionStr;
         return this;
     }
 
-    public AATooltip headerFormat(String headerFormat) {
-        this.headerFormat = headerFormat;
+    public AATooltip headerFormat(String prop) {
+        headerFormat = prop;
         return this;
     }
 
-    public AATooltip pointFormat(String pointFormat) {
-        this.pointFormat = pointFormat;
+    public AATooltip pointFormat(String prop) {
+        pointFormat = prop;
         return this;
     }
 
-    public AATooltip footerFormat(String footerFormat) {
-        this.footerFormat = footerFormat;
+    public AATooltip footerFormat(String prop) {
+        footerFormat = prop;
         return this;
     }
 
-    public AATooltip valueDecimals(Integer valueDecimals) {
-        this.valueDecimals = valueDecimals;
+    public AATooltip valueDecimals(Integer prop) {
+        valueDecimals = prop;
         return this;
     }
 
-    public AATooltip shared(Boolean shared) {
-        this.shared = shared;
+    public AATooltip shared(Boolean prop) {
+        shared = prop;
         return this;
     }
 
-    public AATooltip crosshairs(Boolean crosshairs) {
-        this.crosshairs = crosshairs;
+    public AATooltip crosshairs(Boolean prop) {
+        crosshairs = prop;
         return this;
     }
 
-    public AATooltip valueSuffix(String valueSuffix) {
-        this.valueSuffix = valueSuffix;
+    public AATooltip valueSuffix(String prop) {
+        valueSuffix = prop;
         return this;
     }
 

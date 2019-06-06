@@ -7,28 +7,28 @@ public class AAShadow {
     private Float opacity;
     private Float width;
 
-    public AAShadow color(String color) {
-        this.color = color;
+    public AAShadow color(String prop) {
+        color = prop;
         return this;
     }
 
-    public AAShadow offsetX(Float offsetX) {
-        this.offsetX = offsetX;
+    public AAShadow offsetX(Float prop) {
+        offsetX = prop;
         return this;
     }
 
-    public AAShadow offsetY(Float offsetY) {
-        this.offsetY = offsetY;
+    public AAShadow offsetY(Float prop) {
+        offsetY = prop;
         return this;
     }
 
-    public AAShadow opacity(Float opacity) {
-        this.opacity = opacity;
+    public AAShadow opacity(Float prop) {
+        opacity = prop;
         return this;
     }
 
-    public AAShadow width(Float width) {
-        this.width = width;
+    public AAShadow width(Float prop) {
+        width = prop;
         return this;
     }
 
