@@ -155,8 +155,8 @@ public class AAChartView extends WebView {
         // 将对象编译成json
         Gson gson = new Gson();
         String seriesArr = gson.toJson(seriesElementsArr);
-//        this.loadUrl("javascript:onlyRefreshTheChartDataWithSeries('" + seriesArr + "',')");
-        String javaScriptStr = "onlyRefreshTheChartDataWithSeries('" + seriesArr + "',')";
+//        this.loadUrl("javascript:onlyRefreshTheChartDataWithSeries('" + seriesArr + "')");
+        String javaScriptStr = "onlyRefreshTheChartDataWithSeries('" + seriesArr + "')";
         this.safeEvaluateJavaScriptString(javaScriptStr);
     }
 
