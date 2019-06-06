@@ -1,5 +1,5 @@
 
-        var AAGlobalChart;
+        var aaGlobalChart;
 
         function loadTheHighChartView (sender,receivedWidth, receivedHeight) {
 
@@ -14,7 +14,7 @@
                         aaOptions.tooltip.formatter = eval(aaOptions.tooltip.formatter);
                     }
                 }
-            AAGlobalChart = Highcharts.chart('container', aaOptions);
+            aaGlobalChart = Highcharts.chart('container', aaOptions);
            //全局配置(可通过全局配置设置主题)https://api.hcharts.cn/highcharts#Highcharts.setOptions
         };
 
@@ -62,13 +62,13 @@
         function setTheChartViewContentWidth (receivedWidth) {
             var container = document.getElementById('container');//获得元素
             container.style.width = receivedWidth;//设置宽度
-            AAGlobalChart.reflow();
+            aaGlobalChart.reflow();
         }
 
         function setTheChartViewContentHeight (receivedHeight) {
             var container = document.getElementById('container');//获得元素
             container.style.height = receivedHeight;//设置高度
-            AAGlobalChart.reflow();
+            aaGlobalChart.reflow();
         }
 
         function onlyRefreshTheChartDataWithSeries (receivedSeries) {
@@ -77,15 +77,15 @@
             for (var i = 0; i < receivedSeriesElementArr.length; i++) {
                 var receivedSeriesData = receivedSeriesElementArr[i].data;
                 // 获取series
-                var chartSeries =  AAGlobalChart.series[i];
+                var chartSeries =  aaGlobalChart.series[i];
                 // 执行只刷新数据的函数
                 chartSeries.setData(receivedSeriesData);
             }
         }
 
         function chartSeriesContentHideOrShow (hidden) {
-            for (var i = 0; i < AAGlobalChart.series.length; i++) {
-                var series = AAGlobalChart.series[i];
+            for (var i = 0; i < aaGlobalChart.series.length; i++) {
+                var series = aaGlobalChart.series[i];
                 if (hidden == true) {
                     series.hide();
                 } else {
@@ -95,6 +95,6 @@
         }
 
         function showTheSeriesElementContentWithIndex (elementIndex) {
-            var series = AAGlobalChart.series[elementIndex];
+            var series = aaGlobalChart.series[elementIndex];
             series.show();
         }
