@@ -197,7 +197,7 @@ public class MixedChartActivity extends AppCompatActivity {
                 .subtitle("")//图形副标题
                 .chartType(AAChartModel.Type.Line)
                 .dataLabelEnabled(false)
-                .symbolStyle(AAChartModel.SymbolStyleType.BorderBlank)
+                .markerSymbolStyle(AAChartModel.SymbolStyleType.BorderBlank)
                 .series(new AASeriesElement[]{
                         new AASeriesElement()
                                 .name("Temperature")
@@ -318,8 +318,8 @@ public class MixedChartActivity extends AppCompatActivity {
         return new AAChartModel()
                 .dataLabelEnabled(false)//是否显示数字
                 .chartType(AAChartModel.Type.Scatter)
-                .symbolStyle(AAChartModel.SymbolStyleType.InnerBlank)
-                .symbol(AAChartModel.SymbolType.Circle)
+                .markerSymbolStyle(AAChartModel.SymbolStyleType.InnerBlank)
+                .markerSymbol(AAChartModel.SymbolType.Circle)
                 .markerRadius(8)
                 .series(new AASeriesElement[]{
                         new AASeriesElement()

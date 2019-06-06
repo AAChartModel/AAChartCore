@@ -181,7 +181,7 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
                 .chartType(AAChartModel.Type.Area)//图形类型
                 .title("近三个月金价起伏周期图")//图表主标题
                 .subtitle("金价(元/克)")//图表副标题
-                .symbolStyle(AAChartModel.SymbolStyleType.BorderBlank)//折线连接点样式为外边缘空白
+                .markerSymbolStyle(AAChartModel.SymbolStyleType.BorderBlank)//折线连接点样式为外边缘空白
                 .dataLabelEnabled(false)
                 .categories(new String[]{
                         "10-01","10-02","10-03","10-04","10-05","10-06","10-07","10-08","10-09","10-10","10-11",

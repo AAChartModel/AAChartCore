@@ -2,11 +2,8 @@ package com.example.anan.chartcore_slim.ChartsDemo.MainContent;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 
 import com.example.anan.chartcore_slim.AAChartConfiger.AAChartModel;
 import com.example.anan.chartcore_slim.AAChartConfiger.AAChartView;
@@ -295,7 +292,7 @@ public class SpecialChartActivity extends AppCompatActivity {
                 .title("Height and weight distribution by sex")
                 .yAxisTitle("kg")
                 .markerRadius(8)
-                .symbolStyle(AAChartModel.SymbolStyleType.InnerBlank)
+                .markerSymbolStyle(AAChartModel.SymbolStyleType.InnerBlank)
                 .series(seriesElements);
     }
 
@@ -777,7 +774,7 @@ public class SpecialChartActivity extends AppCompatActivity {
                 .title("STEP LINE CHART")//图形标题
                 .subtitle("2020/08/08")//图形副标题
                 .dataLabelEnabled(false)//是否显示数字
-                .symbolStyle(AAChartModel.SymbolStyleType.BorderBlank)//折线连接点样式
+                .markerSymbolStyle(AAChartModel.SymbolStyleType.BorderBlank)//折线连接点样式
                 .markerRadius(7)//折线连接点半径长度,为0时相当于没有折线连接点
                 .series(new AASeriesElement[]{
                         new AASeriesElement()
@@ -808,7 +805,7 @@ public class SpecialChartActivity extends AppCompatActivity {
               .title("STEP AREA CHART")//图形标题
               .subtitle("2049/08/08")//图形副标题
               .dataLabelEnabled(false)//是否显示数字
-              .symbolStyle(AAChartModel.SymbolStyleType.InnerBlank)//折线连接点样式
+              .markerSymbolStyle(AAChartModel.SymbolStyleType.InnerBlank)//折线连接点样式
               .markerRadius(0)//折线连接点半径长度,为0时相当于没有折线连接点
               .series(new AASeriesElement[]{
                       new AASeriesElement()

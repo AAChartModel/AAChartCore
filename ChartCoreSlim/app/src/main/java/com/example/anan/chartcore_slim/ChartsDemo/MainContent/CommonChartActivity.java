@@ -3,7 +3,6 @@ package com.example.anan.chartcore_slim.ChartsDemo.MainContent;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.webkit.WebView;
 import android.widget.CompoundButton;
 import android.widget.RadioGroup;
 import android.widget.Switch;
@@ -110,10 +109,10 @@ public class CommonChartActivity extends AppCompatActivity
 
         if (chartType.equals(AAChartModel.Type.Area)
                 || chartType.equals(AAChartModel.Type.Arearange)) {
-            aaChartModel.symbolStyle(AAChartModel.SymbolStyleType.InnerBlank);
+            aaChartModel.markerSymbolStyle(AAChartModel.SymbolStyleType.InnerBlank);
         } else if (chartType.equals(AAChartModel.Type.Line)
                 ||chartType.equals(AAChartModel.Type.Spline)) {
-            aaChartModel.symbolStyle(AAChartModel.SymbolStyleType.BorderBlank);
+            aaChartModel.markerSymbolStyle(AAChartModel.SymbolStyleType.BorderBlank);
         }
         return aaChartModel;
     }
@@ -163,15 +162,15 @@ public class CommonChartActivity extends AppCompatActivity
             }
         } else {
             switch (group.getCheckedRadioButtonId()) {
-                case R.id.symbol1: aaChartModel.symbol(AAChartModel.SymbolType.Circle);
+                case R.id.symbol1: aaChartModel.markerSymbol(AAChartModel.SymbolType.Circle);
                     break;
-                case R.id.symbol2: aaChartModel.symbol(AAChartModel.SymbolType.Diamond);
+                case R.id.symbol2: aaChartModel.markerSymbol(AAChartModel.SymbolType.Diamond);
                     break;
-                case R.id.symbol3: aaChartModel.symbol(AAChartModel.SymbolType.Square);
+                case R.id.symbol3: aaChartModel.markerSymbol(AAChartModel.SymbolType.Square);
                     break;
-                case R.id.symbol4: aaChartModel.symbol(AAChartModel.SymbolType.Triangle);
+                case R.id.symbol4: aaChartModel.markerSymbol(AAChartModel.SymbolType.Triangle);
                     break;
-                case R.id.symbol5: aaChartModel.symbol(AAChartModel.SymbolType.Triangle_down);
+                case R.id.symbol5: aaChartModel.markerSymbol(AAChartModel.SymbolType.Triangle_down);
                     break;
             }
         }

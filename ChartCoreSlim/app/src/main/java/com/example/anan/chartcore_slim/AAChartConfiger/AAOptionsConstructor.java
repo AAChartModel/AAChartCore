@@ -128,17 +128,17 @@ public class AAOptionsConstructor
         {
             HashMap aaMarker = new HashMap<String, Object>();
             aaMarker.put("radius", aaChartModel.markerRadius);//曲线连接点半径，默认是4
-            aaMarker.put("symbol",aaChartModel.symbol);//曲线连接点类型："circle", "square", "diamond", "triangle","triangle-down"，默认是"circle"
+            aaMarker.put("symbol",aaChartModel.markerSymbol);//曲线连接点类型："circle", "square", "diamond", "triangle","triangle-down"，默认是"circle"
 
-           if (aaChartModel.symbolStyle != null) {
+           if (aaChartModel.markerSymbolStyle != null) {
                //设置曲线连接点风格样式
-               if (aaChartModel.symbolStyle.equals(AAChartModel.SymbolStyleType.InnerBlank))
+               if (aaChartModel.markerSymbolStyle.equals(AAChartModel.SymbolStyleType.InnerBlank))
                {
                    aaMarker.put("fillColor", "#FFFFFF");//点的填充色(用来设置折线连接点的填充色)
                    aaMarker.put("lineWidth", 2);//外沿线的宽度(用来设置折线连接点的轮廓描边的宽度)
                    aaMarker.put("lineColor", "");//外沿线的颜色(用来设置折线连接点的轮廓描边颜色，当值为空字符串时，默认取数据点或数据列的颜色。)
                }
-               else if (aaChartModel.symbolStyle.equals(AAChartModel.SymbolStyleType.BorderBlank))
+               else if (aaChartModel.markerSymbolStyle.equals(AAChartModel.SymbolStyleType.BorderBlank))
                {
                    aaMarker.put("lineWidth", 2);//外沿线的宽度(用来设置折线连接点的轮廓描边的宽度)
                    aaMarker.put("lineColor", aaChartModel.backgroundColor);//外沿线的颜色(用来设置折线连接点的轮廓描边颜色，当值为空字符串时，默认取数据点或数据列的颜色。)

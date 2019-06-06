@@ -167,8 +167,8 @@ public class AAChartModel {
     public String  subtitle;              //副标题内容
     public String  chartType;             //图表类型
     public String  stacking;              //堆积样式
-    public String  symbol;                //折线曲线连接点的类型："circle", "square", "diamond", "triangle","triangle-down"，默认是"circle"
-    public String  symbolStyle;
+    public String  markerSymbol;                //折线曲线连接点的类型："circle", "square", "diamond", "triangle","triangle-down"，默认是"circle"
+    public String  markerSymbolStyle;
     public String  zoomType;              //缩放类型 AAChartZoomTypeX表示可沿着 x 轴进行手势缩放
     public Boolean pointHollow;           //折线或者曲线的连接点是否为空心的
     public Boolean inverted;              //x 轴是否翻转(垂直)
@@ -238,13 +238,13 @@ public class AAChartModel {
         return this;
     }
 
-    public AAChartModel symbol(String symbol) {
-        this.symbol = symbol;
+    public AAChartModel markerSymbol(String symbol) {
+        this.markerSymbol = symbol;
         return this;
     }
 
-    public AAChartModel symbolStyle(String symbolStyle) {
-        this.symbolStyle = symbolStyle;
+    public AAChartModel markerSymbolStyle(String symbolStyle) {
+        this.markerSymbolStyle = symbolStyle;
         return this;
     }
 
@@ -318,6 +318,16 @@ public class AAChartModel {
         return this;
     }
 
+    public AAChartModel xAxisVisible(Boolean xAxisVisible) {
+        this.xAxisVisible = xAxisVisible;
+        return this;
+    }
+
+    public AAChartModel yAxisVisible(Boolean yAxisVisible) {
+        this.yAxisVisible = yAxisVisible;
+        return this;
+    }
+
     public AAChartModel yAxisLabelsEnabled(Boolean yAxisLabelsEnabled) {
         this.yAxisLabelsEnabled = yAxisLabelsEnabled;
         return this;
@@ -327,6 +337,12 @@ public class AAChartModel {
         this.yAxisTitle = yAxisTitle;
         return this;
     }
+
+    public AAChartModel yAxisLineWidth(Float yAxisLineWidth) {
+        this.yAxisLineWidth = yAxisLineWidth;
+        return this;
+    }
+
 
     public AAChartModel colorsTheme(Object[] colorsTheme) {
         this.colorsTheme = colorsTheme;
