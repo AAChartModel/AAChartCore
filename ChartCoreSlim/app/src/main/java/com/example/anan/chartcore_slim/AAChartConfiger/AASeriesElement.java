@@ -62,88 +62,88 @@ public class AASeriesElement {
     private AAShadow shadow;
 
 
-    public AASeriesElement type(String type) {
-        this.type = type;
+    public AASeriesElement type(String prop) {
+        type = prop;
         return this;
     }
 
-    public AASeriesElement name(String name) {
-        this.name = name;
+    public AASeriesElement name(String prop) {
+        name = prop;
         return this;
     }
 
-    public AASeriesElement data(Object[] data) {
-        this.data = data;
+    public AASeriesElement data(Object[] prop) {
+        data = prop;
         return this;
     }
 
-    public AASeriesElement lineWidth(Float lineWidth) {
-        this.lineWidth = lineWidth;
+    public AASeriesElement lineWidth(Float prop) {
+        lineWidth = prop;
         return this;
     }
 
-    public AASeriesElement  color(Object color) {
-        this.color = color;
+    public AASeriesElement  color(Object prop) {
+        color = prop;
         return this;
     }
 
-    public AASeriesElement fillColor(Object fillColor) {
-        this.fillColor = fillColor;
+    public AASeriesElement fillColor(Object prop) {
+        fillColor = prop;
         return this;
     }
 
-    public AASeriesElement fillOpacity(Float fillOpacity) {
-        this.fillOpacity = fillOpacity;
+    public AASeriesElement fillOpacity(Float prop) {
+        fillOpacity = prop;
         return this;
     }
 
-    public AASeriesElement threshold(Float threshold) {
-        this.threshold = threshold;
+    public AASeriesElement threshold(Float prop) {
+        threshold = prop;
         return this;
     }
 
-    public AASeriesElement negativeColor(String negativeColor) {
-        this.negativeColor = negativeColor;
+    public AASeriesElement negativeColor(String prop) {
+        negativeColor = prop;
         return this;
     }
 
-    public AASeriesElement dashStyle(String dashStyle) {
-        this.dashStyle = dashStyle;
+    public AASeriesElement dashStyle(String prop) {
+        dashStyle = prop;
         return this;
     }
 
-    public AASeriesElement dataLabels(Dictionary dataLabels) {
-        this.dataLabels = dataLabels;
+    public AASeriesElement dataLabels(Dictionary prop) {
+        dataLabels = prop;
         return this;
     }
 
-    public AASeriesElement marker(Dictionary marker) {
-        this.marker = marker;
+    public AASeriesElement marker(Dictionary prop) {
+        marker = prop;
         return this;
     }
 
-    public AASeriesElement step(Object step) {
-        this.step = step;
+    public AASeriesElement step(Object prop) {
+        step = prop;
         return this;
     }
 
-    public AASeriesElement colorByPoint(Boolean colorByPoint) {
-        this.colorByPoint = colorByPoint;
+    public AASeriesElement colorByPoint(Boolean prop) {
+        colorByPoint = prop;
         return this;
     }
 
-    public AASeriesElement zIndex(Integer zIndex) {
-        this.zIndex = zIndex;
+    public AASeriesElement zIndex(Integer prop) {
+        zIndex = prop;
         return this;
     }
 
-    public AASeriesElement zones(Object[] zones) {
-        this.zones = zones;
+    public AASeriesElement zones(Object[] prop) {
+        zones = prop;
         return this;
     }
 
-    public AASeriesElement shadow(AAShadow shadow) {
-        this.shadow = shadow;
+    public AASeriesElement shadow(AAShadow prop) {
+        shadow = prop;
         return this;
     }
 

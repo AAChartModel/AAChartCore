@@ -5,12 +5,12 @@ public class AALabel {
     private Object style;
 
     public AALabel text(String prop) {
-        this.text = prop;
+        text = prop;
         return this;
     }
 
     public AALabel style(Object prop) {
-        this.style = prop;
+        style = prop;
         return this;
     }
 }

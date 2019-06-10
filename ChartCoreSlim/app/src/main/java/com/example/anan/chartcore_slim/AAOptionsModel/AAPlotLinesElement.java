@@ -12,32 +12,32 @@ public class AAPlotLinesElement {
     private AALabel label;
 
     public AAPlotLinesElement color(Object prop) {
-        this.color = prop;
+        color = prop;
         return this;
     }
 
     public AAPlotLinesElement dashStyle(String prop) {
-        this.dashStyle = prop;
+        dashStyle = prop;
         return this;
     }
 
     public AAPlotLinesElement width(Float prop) {
-        this.width = prop;
+        width = prop;
         return this;
     }
 
     public AAPlotLinesElement value(Float prop) {
-        this.value = prop;
+        value = prop;
         return this;
     }
 
     public AAPlotLinesElement zIndex(Integer prop) {
-        this.zIndex = prop;
+        zIndex = prop;
         return this;
     }
 
     public AAPlotLinesElement label(AALabel prop) {
-        this.label = prop;
+        label = prop;
         return this;
     }
 
