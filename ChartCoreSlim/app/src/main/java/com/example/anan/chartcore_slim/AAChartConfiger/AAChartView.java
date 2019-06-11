@@ -169,6 +169,18 @@ public class AAChartView extends WebView {
         this.safeEvaluateJavaScriptString(javaScriptStr);
     }
 
+    public void aa_showTheSeriesElementContent(Integer elementIndex) {
+//        NSString *javaScriptStr = [NSString stringWithFormat:@"showTheSeriesElementContentWithIndex(%ld)",(long)elementIndex];
+        String javaScriptStr = "showTheSeriesElementContentWithIndex('" + elementIndex + "')";
+        this.safeEvaluateJavaScriptString(javaScriptStr);
+
+    }
+
+    public void aa_hideTheSeriesElementContent(Integer elementIndex) {
+        String javaScriptStr = "hideTheSeriesElementContentWithIndex('" + elementIndex + "')";
+        this.safeEvaluateJavaScriptString(javaScriptStr);
+    }
+
     private void configureChartOptionsAndDrawChart(HashMap chartOptions) {
         // 将对象编译成json
         Gson gson = new Gson();

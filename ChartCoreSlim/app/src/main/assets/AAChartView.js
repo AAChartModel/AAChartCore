@@ -98,3 +98,8 @@
             var series = aaGlobalChart.series[elementIndex];
             series.show();
         }
+
+        function hideTheSeriesElementContentWithIndex(elementIndex) {
+            var series = aaGlobalChart.series[elementIndex];
+            series.hide();
+        }
