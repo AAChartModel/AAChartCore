@@ -5,11 +5,11 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
-import com.example.anan.chartcore_slim.AAChartConfiger.AAChartModel;
-import com.example.anan.chartcore_slim.AAChartConfiger.AAChartView;
-import com.example.anan.chartcore_slim.AAChartConfiger.AASeriesElement;
-import com.example.anan.chartcore_slim.AAOptionsModel.AAWaterfallChart;
-import com.example.anan.chartcore_slim.AATools.AAGradientColor;
+import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartConfiger.AAChartModel;
+import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartConfiger.AAChartView;
+import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartConfiger.AASeriesElement;
+import com.example.anan.chartcore_slim.AAChartCoreLib.AAOptionsModel.AAWaterfallChart;
+import com.example.anan.chartcore_slim.AAChartCoreLib.AATools.AAGradientColor;
 import com.example.anan.chartcore_slim.R;
 
 import java.util.HashMap;

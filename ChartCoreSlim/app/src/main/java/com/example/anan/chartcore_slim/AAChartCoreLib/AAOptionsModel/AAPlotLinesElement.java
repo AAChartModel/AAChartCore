@@ -1,6 +1,4 @@
-package com.example.anan.chartcore_slim.AAOptionsModel;
-
-import java.util.Map;
+package com.example.anan.chartcore_slim.AAChartCoreLib.AAOptionsModel;
 
 public class AAPlotLinesElement {
 

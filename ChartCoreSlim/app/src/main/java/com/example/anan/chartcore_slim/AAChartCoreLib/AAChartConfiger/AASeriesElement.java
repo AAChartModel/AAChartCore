@@ -31,9 +31,9 @@
 
  */
 
-package com.example.anan.chartcore_slim.AAChartConfiger;
+package com.example.anan.chartcore_slim.AAChartCoreLib.AAChartConfiger;
 
-import com.example.anan.chartcore_slim.AAOptionsModel.AAShadow;
+import com.example.anan.chartcore_slim.AAChartCoreLib.AAOptionsModel.AAShadow;
 
 import java.util.Dictionary;
 

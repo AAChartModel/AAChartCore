@@ -32,7 +32,7 @@
  */
 
 
-package com.example.anan.chartcore_slim.AAChartConfiger;
+package com.example.anan.chartcore_slim.AAChartCoreLib.AAChartConfiger;
 
 import java.util.HashMap;
 

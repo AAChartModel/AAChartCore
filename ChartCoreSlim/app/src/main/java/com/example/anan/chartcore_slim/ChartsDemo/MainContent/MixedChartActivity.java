@@ -4,13 +4,13 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.example.anan.chartcore_slim.AAChartConfiger.AAChartModel;
-import com.example.anan.chartcore_slim.AAChartConfiger.AAChartView;
-import com.example.anan.chartcore_slim.AAChartConfiger.AAOptionsConstructor;
-import com.example.anan.chartcore_slim.AAChartConfiger.AASeriesElement;
-import com.example.anan.chartcore_slim.AAOptionsModel.AAPlotBandsElement;
-import com.example.anan.chartcore_slim.AATools.AAColor;
-import com.example.anan.chartcore_slim.AATools.AAGradientColor;
+import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartConfiger.AAChartModel;
+import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartConfiger.AAChartView;
+import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartConfiger.AAOptionsConstructor;
+import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartConfiger.AASeriesElement;
+import com.example.anan.chartcore_slim.AAChartCoreLib.AAOptionsModel.AAPlotBandsElement;
+import com.example.anan.chartcore_slim.AAChartCoreLib.AATools.AAColor;
+import com.example.anan.chartcore_slim.AAChartCoreLib.AATools.AAGradientColor;
 import com.example.anan.chartcore_slim.R;
 
 import java.util.HashMap;

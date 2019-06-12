@@ -7,9 +7,9 @@ import android.widget.CompoundButton;
 import android.widget.RadioGroup;
 import android.widget.Switch;
 
-import com.example.anan.chartcore_slim.AAChartConfiger.AAChartModel;
-import com.example.anan.chartcore_slim.AAChartConfiger.AAChartView;
-import com.example.anan.chartcore_slim.AAChartConfiger.AASeriesElement;
+import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartConfiger.AAChartModel;
+import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartConfiger.AAChartView;
+import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartConfiger.AASeriesElement;
 import com.example.anan.chartcore_slim.R;
 
 

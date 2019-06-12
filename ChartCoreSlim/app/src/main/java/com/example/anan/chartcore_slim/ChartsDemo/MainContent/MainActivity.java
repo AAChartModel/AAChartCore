@@ -8,7 +8,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.example.anan.chartcore_slim.AAChartConfiger.AAChartModel;
+import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartConfiger.AAChartModel;
 import com.example.anan.chartcore_slim.R;
 
 public class MainActivity extends AppCompatActivity {

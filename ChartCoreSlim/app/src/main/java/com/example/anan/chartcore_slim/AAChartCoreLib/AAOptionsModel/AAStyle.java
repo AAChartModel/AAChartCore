@@ -1,4 +1,4 @@
-package com.example.anan.chartcore_slim.AAOptionsModel;
+package com.example.anan.chartcore_slim.AAChartCoreLib.AAOptionsModel;
 
 public class AAStyle {
 

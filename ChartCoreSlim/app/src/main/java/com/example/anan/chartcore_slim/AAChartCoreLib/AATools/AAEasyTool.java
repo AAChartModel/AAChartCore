@@ -1,4 +1,4 @@
-package com.example.anan.chartcore_slim.AATools;
+package com.example.anan.chartcore_slim.AAChartCoreLib.AATools;
 
 public class AAEasyTool {
 

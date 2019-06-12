@@ -1,6 +1,6 @@
-package com.example.anan.chartcore_slim.AAOptionsModel;
+package com.example.anan.chartcore_slim.AAChartCoreLib.AAOptionsModel;
 
-import com.example.anan.chartcore_slim.AATools.AAEasyTool;
+import com.example.anan.chartcore_slim.AAChartCoreLib.AATools.AAEasyTool;
 
 public class AATooltip {
     private String backgroundColor;
