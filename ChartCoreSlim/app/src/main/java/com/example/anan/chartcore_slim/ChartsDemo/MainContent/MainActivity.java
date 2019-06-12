@@ -1,4 +1,4 @@
-package com.example.anan.chartcore_slim.ChartsDemo.MainContent;
+package com.example.anan.chartcore_slim.ChartsDemo.MainContent.MainContent;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartConfiger.AAChartModel;
+import com.example.anan.chartcore_slim.ChartsDemo.MainContent.AdditionalContent.DrawChartWithAAOptionsActivity;
 import com.example.anan.chartcore_slim.R;
 
 public class MainActivity extends AppCompatActivity {

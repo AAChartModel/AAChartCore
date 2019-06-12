@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ChartsDemo.MainContent.CustomStyleChartActivity">
+    tools:context=".ChartsDemo.MainContent.MainContent.CustomStyleChartActivity">
 
     <include
         layout="@layout/content_special_chart"
