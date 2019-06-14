@@ -54,7 +54,7 @@ public class CommonChartActivity extends AppCompatActivity
         AAChartModel aaChartModel = new AAChartModel()
                 .chartType(chartType)
                 .title("title")
-                .subtitle("subtitleubtitleSubtitle")
+                .subtitle("subtitle")
                 .backgroundColor("#4b2b7f")
                 .dataLabelEnabled(true)
                 .yAxisGridLineWidth(0)
@@ -204,13 +204,13 @@ public class CommonChartActivity extends AppCompatActivity
 
     @Override
     public void chartViewDidFinishedLoad(AAChartView aaChartView) {
-
+        System.out.println("🔥图表加载完成回调方法!!!!!!!! ");
     }
 
     @Override
     public void chartViewMoveOverEventMessage(AAChartView aaChartView, AAMoveOverEventMessageModel messageModel) {
         Gson gson = new Gson();
-        System.out.println("move over event message " + gson.toJson(messageModel));
+        System.out.println("🚀move over event message " + gson.toJson(messageModel));
 
     }
 }

@@ -27,20 +27,25 @@ public class CustomStyleChartActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String chartType = intent.getStringExtra("chartType");
 
-        switch (chartType) {
-            case "colorfulChart":
-                aaChartModel = configureColorfulChart();
-                break;
-            case "gradientColorfulChart":
-                aaChartModel = configureColorfulGradientColorChart();
-                break;
-            case "discontinuousDataChart":
-                aaChartModel = configureDiscontinuousDataChart();
-                break;
-        }
+        aaChartModel = configureTheAAChartModel(chartType);
 
         AAChartView aaChartView = findViewById(R.id.AAChartView);
         aaChartView.aa_drawChartWithChartModel(aaChartModel);
+    }
+
+    private AAChartModel configureTheAAChartModel(String chartType) {
+        switch (chartType) {
+            case "colorfulChart": return  configureColorfulChart();
+            case "gradientColorfulChart": return configureColorfulGradientColorChart();
+            case "discontinuousDataChart": return configureDiscontinuousDataChart();
+            case "colorfulColumnChart": return configureColorfulColumnChart();
+            case "nightingaleRoseChart": return configureNightingaleRoseChart();
+            case "chartWithShadowStyle": return configureChartWithShadowStyle();
+            case "colorfulGradientAreaChart": return configureColorfulGradientAreaChart();
+            case "colorfulGradientSplineChart": return configureColorfulGradientSplineChart();
+            case "gradientColorAreasplineChart": return configureGradientColorAreasplineChart();
+        }
+        return configureColorfulChart();
     }
 
     AAChartModel configureColorfulChart() {

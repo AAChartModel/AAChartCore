@@ -50,10 +50,16 @@ public class MainActivity extends AppCompatActivity {
             "-----------------colorfulChart-----------------r",
             "gradientColorfulChart",
             "discontinuousDataChart",
+            "colorfulColumnChart",
+            "nightingaleRoseChart",
+            "chartWithShadowStyle",
+            "colorfulGradientAreaChart",
+            "colorfulGradientSplineChart",
+            "gradientColorAreasplineChart",
             "-----------------drawChartWithOptionsOne-----------------r",
-            "Two",
-            "Three",
-            "Four",
+            "configureAAPlotLinesForChart",
+            "customAATooltipWithJSFuntion",
+            "customXAxisCrosshairStyle"
 
     };
 
@@ -91,14 +97,24 @@ public class MainActivity extends AppCompatActivity {
             "negativeColorMixedBubble",
             "polygonMixedScatter",
             "polarChartMixed",
+            /*自定义样式图表*/
             "colorfulChart",
             "gradientColorfulChart",
             "discontinuousDataChart",
+            "colorfulColumnChart",
+            "nightingaleRoseChart",
+            "chartWithShadowStyle",
+            "colorfulGradientAreaChart",
+            "colorfulGradientSplineChart",
+            "gradientColorAreasplineChart",
+            /*使用AAOptions绘制图表*/
             "configureAAPlotBandsForChart",
             "configureAAPlotLinesForChart",
             "customAATooltipWithJSFuntion",
             "customXAxisCrosshairStyle"
     };
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -123,7 +139,7 @@ public class MainActivity extends AppCompatActivity {
                     goToSpecialChartActivity(position);
                 } else if (position > 19 && position <= 28 ) {
                     goToMixedChartActivity(position);
-                } else if (position > 28 && position <= 31 )  {
+                } else if (position > 28 && position <= 37 )  {
                     goToCustomStyleChartActivity(position);
                 } else {
                     goToDrawChartWithAAOptionsActivity(position);

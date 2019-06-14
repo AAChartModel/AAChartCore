@@ -57,24 +57,42 @@ import java.util.Map;
 
 
 public class AAChartView extends WebView {
+
     public interface AAChartViewCallBack {
         void chartViewDidFinishedLoad(AAChartView aaChartView);
         void chartViewMoveOverEventMessage(AAChartView aaChartView,AAMoveOverEventMessageModel messageModel);
-
     }
+
     public Float contentWidth;
     public Float contentHeight;
     public Boolean chartSeriesHidden;
-    public String testTheAutoGenerateGetMethod;
     public AAChartViewCallBack callBack;
+
+    public void setContentWidth(Float contentWidth) {
+        this.contentWidth = contentWidth;
+        String jsStr = "setTheChartViewContentWidth('" + this.contentWidth + "')";
+        safeEvaluateJavaScriptString(jsStr);
+    }
+
+    public void setContentHeight(Float contentHeight) {
+        this.contentHeight = contentHeight;
+        String jsStr = "setTheChartViewContentHeight('" + this.contentHeight + "')";
+        safeEvaluateJavaScriptString(jsStr);
+    }
+
+
+    public void setChartSeriesHidden(Boolean chartSeriesHidden) {
+        this.chartSeriesHidden = chartSeriesHidden;
+        String jsStr = "setChartSeriesHidden('" + this.contentHeight + "')";
+        safeEvaluateJavaScriptString(jsStr);
+    }
+
 
     private String optionsJson;
 
     public AAChartView(Context context) {
         super(context);
         sharedConstructor();
-
-
     }
 
     public AAChartView(Context context, AttributeSet attrs) {
@@ -101,10 +119,8 @@ public class AAChartView extends WebView {
     //js调用安卓，必须加@JavascriptInterface注释的方法才可以被js调用
     @JavascriptInterface
     public String androidMethod(String message) {
-
-        String myMessage = message;
         Gson gson = new Gson();
-        Map<String, Object> messageBody = new HashMap<String, Object>();
+        Map messageBody = new HashMap<String, Object>();
         messageBody = gson.fromJson(message, messageBody.getClass());
         AAMoveOverEventMessageModel eventMessageModel = getEventMessageModel(messageBody);
         if (callBack != null) {
@@ -140,15 +156,15 @@ public class AAChartView extends WebView {
         this.aa_refreshChartWithChartOptions(aaOptions);
     }
 
-
-
     public void aa_drawChartWithChartOptions(final HashMap chartOptions) {
         this.loadUrl("file:///android_asset/AAChartView.html");
         this.setWebViewClient(new WebViewClient() {
             @Override
             public void onPageFinished(WebView view,String url) {
                 System.out.println("图表加载完成!!!!!!!! ");
-//                callBack.chartViewDidFinishedLoad(AAChartView.this);
+                if (callBack != null) {
+                    callBack.chartViewDidFinishedLoad(AAChartView.this);
+                }
                 configureChartOptionsAndDrawChart(chartOptions);
             }
 
@@ -161,7 +177,7 @@ public class AAChartView extends WebView {
                 if (urlStr.startsWith(jsBridgeName)) {
                     String message = urlStr.replace(jsBridgeName +"://?","");
                     Gson gson = new Gson();
-                    Map<String, Object> messageBody = new HashMap<String, Object>();
+                    Map messageBody = new HashMap<String, Object>();
                     messageBody = gson.fromJson(message, messageBody.getClass());
                 }
 
@@ -227,6 +243,7 @@ public class AAChartView extends WebView {
             this.loadUrl("javascript:"+javaScriptString);
         }
     }
+
 
 
 
