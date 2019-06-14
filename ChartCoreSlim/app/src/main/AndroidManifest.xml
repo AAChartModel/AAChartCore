@@ -9,11 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ChartsDemo.MainContent.AdditionalContent.EvaluateJSStringFunctionActivity"></activity>
-        <activity android:name=".ChartsDemo.MainContent.AdditionalContent.OnlyRefreshChartDataActivity" />
-        <activity android:name=".ChartsDemo.MainContent.AdditionalContent.HideOrShowChartSeriesActivity" />
-        <activity android:name=".ChartsDemo.MainContent.AdditionalContent.DrawChartWithAAOptionsActivity" />
-        <activity android:name=".ChartsDemo.MainContent.MainContent.MainActivity">
+        <activity android:name=".ChartsDemo.AdditionalContent.EvaluateJSStringFunctionActivity"></activity>
+        <activity android:name=".ChartsDemo.AdditionalContent.OnlyRefreshChartDataActivity" />
+        <activity android:name=".ChartsDemo.AdditionalContent.HideOrShowChartSeriesActivity" />
+        <activity android:name=".ChartsDemo.AdditionalContent.DrawChartWithAAOptionsActivity" />
+        <activity android:name=".ChartsDemo.MainContent.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,15 +21,15 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ChartsDemo.MainContent.MainContent.CommonChartActivity"
+            android:name=".ChartsDemo.MainContent.CommonChartActivity"
             android:label="@string/title_activity_common_chart"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".ChartsDemo.MainContent.MainContent.SpecialChartActivity"
+            android:name=".ChartsDemo.MainContent.SpecialChartActivity"
             android:label="@string/title_activity_special_chart"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".ChartsDemo.MainContent.MainContent.CustomStyleChartActivity" />
-        <activity android:name=".ChartsDemo.MainContent.MainContent.MixedChartActivity" />
+        <activity android:name=".ChartsDemo.MainContent.CustomStyleChartActivity" />
+        <activity android:name=".ChartsDemo.MainContent.MixedChartActivity" />
     </application>
 
 </manifest>

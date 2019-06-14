@@ -1,4 +1,4 @@
-package com.example.anan.chartcore_slim.ChartsDemo.MainContent.MainContent;
+package com.example.anan.chartcore_slim.ChartsDemo.MainContent;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
