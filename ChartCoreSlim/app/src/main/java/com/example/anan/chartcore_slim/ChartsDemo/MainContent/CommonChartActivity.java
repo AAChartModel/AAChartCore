@@ -9,14 +9,18 @@ import android.widget.Switch;
 
 import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartConfiger.AAChartModel;
 import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartConfiger.AAChartView;
+import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartConfiger.AAMoveOverEventMessageModel;
 import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartConfiger.AASeriesElement;
 import com.example.anan.chartcore_slim.R;
+import com.google.gson.Gson;
 
 
 public class CommonChartActivity extends AppCompatActivity
         implements
         RadioGroup.OnCheckedChangeListener,
-        CompoundButton.OnCheckedChangeListener {
+        CompoundButton.OnCheckedChangeListener,
+        AAChartView.AAChartViewCallBack
+{
 
 
 
@@ -35,6 +39,7 @@ public class CommonChartActivity extends AppCompatActivity
 
     void setUpAAChartView() {
         aaChartView = findViewById(R.id.AAChartView);
+        aaChartView.callBack = this;
         aaChartModel = configureAAChartModel();
         aaChartView.aa_drawChartWithChartModel(aaChartModel);
 
@@ -197,4 +202,15 @@ public class CommonChartActivity extends AppCompatActivity
 
     }
 
+    @Override
+    public void chartViewDidFinishedLoad(AAChartView aaChartView) {
+
+    }
+
+    @Override
+    public void chartViewMoveOverEventMessage(AAChartView aaChartView, AAMoveOverEventMessageModel messageModel) {
+        Gson gson = new Gson();
+        System.out.println("move over event message " + gson.toJson(messageModel));
+
+    }
 }

@@ -34,39 +34,39 @@
 package com.example.anan.chartcore_slim.AAChartCoreLib.AAChartConfiger;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Build;
+import android.support.annotation.RequiresApi;
+import android.support.v7.app.AlertDialog;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.webkit.JavascriptInterface;
+import android.webkit.JsResult;
 import android.webkit.ValueCallback;
+import android.webkit.WebChromeClient;
+import android.webkit.WebResourceRequest;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
+import com.google.gson.internal.LinkedTreeMap;
 
 import java.util.HashMap;
 import java.util.Map;
 
 
-/**
- * Created by AnAn on 2017/9/8.
- */
-
-class AAMoveOverEventMessageModel {
-    public String name;
-    public Float x;
-    public Float y;
-    public String category;
-    public HashMap offset;
-    public Integer index;
-}
-
 public class AAChartView extends WebView {
+    public interface AAChartViewCallBack {
+        void chartViewDidFinishedLoad(AAChartView aaChartView);
+        void chartViewMoveOverEventMessage(AAChartView aaChartView,AAMoveOverEventMessageModel messageModel);
 
+    }
     public Float contentWidth;
     public Float contentHeight;
     public Boolean chartSeriesHidden;
     public String testTheAutoGenerateGetMethod;
+    public AAChartViewCallBack callBack;
 
     private String optionsJson;
 
@@ -103,21 +103,26 @@ public class AAChartView extends WebView {
     public String androidMethod(String message) {
 
         String myMessage = message;
-//        Gson gson = new Gson();
-//        Map<String, Object> map = new HashMap<String, Object>();
-//        map = gson.fromJson(message, map.getClass());
-//        AAMoveOverEventMessageModel messageModel = getEventMessageModel(map);
+        Gson gson = new Gson();
+        Map<String, Object> messageBody = new HashMap<String, Object>();
+        messageBody = gson.fromJson(message, messageBody.getClass());
+        AAMoveOverEventMessageModel eventMessageModel = getEventMessageModel(messageBody);
+        if (callBack != null) {
+            callBack.chartViewMoveOverEventMessage(this,eventMessageModel);
+        }
+        System.out.println("显示总共调用了几次");
+
         return "";
     }
 
     AAMoveOverEventMessageModel getEventMessageModel(Map messageBody) {
         AAMoveOverEventMessageModel eventMessageModel =  new AAMoveOverEventMessageModel();
-        eventMessageModel.name = (String) messageBody.get("name");
-        eventMessageModel.x = (Float) messageBody.get("x");
-        eventMessageModel.y = (Float) messageBody.get("y");
-        eventMessageModel.category = (String) messageBody.get("category");
-        eventMessageModel.offset = (HashMap) messageBody.get("offset");
-        eventMessageModel.index = (Integer) messageBody.get("index");
+        eventMessageModel.name = messageBody.get("name").toString();
+        eventMessageModel.x = (Double) messageBody.get("x");
+        eventMessageModel.y = (Double) messageBody.get("y");
+        eventMessageModel.category = messageBody.get("category").toString();
+        eventMessageModel.offset = (LinkedTreeMap) messageBody.get("offset");
+        eventMessageModel.index = (Double) messageBody.get("index");
         return eventMessageModel;
     }
 
@@ -138,15 +143,39 @@ public class AAChartView extends WebView {
 
 
     public void aa_drawChartWithChartOptions(final HashMap chartOptions) {
-        this.loadUrl("file:///android_asset/AAChartView.html");//神奇了,这个fdsa方法写在aa_drawChartWithChartModel方法里面就不行,难道是因为不能在还未加载成功的时候就直接调用 JS 方法?(跟 OC 一样)必须在加载完成后的代理里面调用 JS 方法
-
-        this.setWebViewClient(new WebViewClient()
-        {
+        this.loadUrl("file:///android_asset/AAChartView.html");
+        this.setWebViewClient(new WebViewClient() {
             @Override
-            public void onPageFinished(WebView view,String url)
-            {
+            public void onPageFinished(WebView view,String url) {
                 System.out.println("图表加载完成!!!!!!!! ");
+//                callBack.chartViewDidFinishedLoad(AAChartView.this);
                 configureChartOptionsAndDrawChart(chartOptions);
+            }
+
+            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
+                super.shouldOverrideUrlLoading(view, request);
+                String urlStr = request.getUrl().toString();
+                String jsBridgeName = "AAChartViewBridge".toLowerCase();
+                if (urlStr.startsWith(jsBridgeName)) {
+                    String message = urlStr.replace(jsBridgeName +"://?","");
+                    Gson gson = new Gson();
+                    Map<String, Object> messageBody = new HashMap<String, Object>();
+                    messageBody = gson.fromJson(message, messageBody.getClass());
+                }
+
+                return false;
+            }
+        });
+
+
+        this.setWebChromeClient(new WebChromeClient() {
+            @Override
+            public boolean onJsAlert(WebView view, String url, String message, final JsResult result) {
+                super.onJsAlert(view, url, message, result);
+
+                return true;
             }
         });
     }
@@ -155,7 +184,6 @@ public class AAChartView extends WebView {
         // 将对象编译成json
         Gson gson = new Gson();
         String seriesArr = gson.toJson(seriesElementsArr);
-//        this.loadUrl("javascript:onlyRefreshTheChartDataWithSeries('" + seriesArr + "')");
         String javaScriptStr = "onlyRefreshTheChartDataWithSeries('" + seriesArr + "')";
         this.safeEvaluateJavaScriptString(javaScriptStr);
     }
@@ -164,13 +192,11 @@ public class AAChartView extends WebView {
         // 将对象编译成json
         Gson gson = new Gson();
         String aaOptionsJsonStr = gson.toJson(chartOptions);
-//        this.loadUrl("javascript:loadTheHighChartView('" + aaOptionsJsonStr + "','" + contentWidth + "','" + contentHeight + "')");
         String javaScriptStr = "loadTheHighChartView('" + aaOptionsJsonStr + "','" + contentWidth + "','" + contentHeight + "')";
         this.safeEvaluateJavaScriptString(javaScriptStr);
     }
 
     public void aa_showTheSeriesElementContent(Integer elementIndex) {
-//        NSString *javaScriptStr = [NSString stringWithFormat:@"showTheSeriesElementContentWithIndex(%ld)",(long)elementIndex];
         String javaScriptStr = "showTheSeriesElementContentWithIndex('" + elementIndex + "')";
         this.safeEvaluateJavaScriptString(javaScriptStr);
 
@@ -185,7 +211,6 @@ public class AAChartView extends WebView {
         // 将对象编译成json
         Gson gson = new Gson();
         String aaOptionsJsonStr = gson.toJson(chartOptions);
-//        this.loadUrl("javascript:loadTheHighChartView('" + aaOptionsJsonStr + "','" + 420 + "','" + 580 + "')");
         String javaScriptStr = "loadTheHighChartView('" + aaOptionsJsonStr + "','" + 420 + "','" + 580 + "')";
         this.safeEvaluateJavaScriptString(javaScriptStr);
     }

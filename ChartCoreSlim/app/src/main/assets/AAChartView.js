@@ -45,18 +45,43 @@
 
                         var messageStr = JSON.stringify(message);
 
+//                        alert("AAChartViewBridge://?"+ messageStr);
+
                         window.androidObject.androidMethod(messageStr);
+
+//                        overrideUrlLoading("AAChartViewBridge://?"+ messageStr);
+
                     };
 
                     var pointEvents = {
                         point:{
                             events:{
-                                mouseOver: mouseOverFunc,
+                            mouseOver: mouseOverFunc,
+//                                click: mouseOverFunc,
                             }
                         }
                     };
                     aaOptions.plotOptions.series = Object.assign(pointEvents,aaOptions.plotOptions.series)
                 }
+
+
+        function overrideUrlLoading(testOverrideUrlStr) {
+            alert(testOverrideUrlStr);
+            uiWebViewLoadURL(testOverrideUrlStr);
+        }
+
+        function uiWebViewLoadURL(url) {
+            var iFrame;
+            iFrame = document.createElement("iframe");
+            iFrame.setAttribute("src", url);
+            iFrame.setAttribute("style", "display:none;");
+            iFrame.setAttribute("height", "0px");
+            iFrame.setAttribute("width", "0px");
+            iFrame.setAttribute("frameborder", "0");
+            document.body.appendChild(iFrame);
+            iFrame.parentNode.removeChild(iFrame);
+            iFrame = null;
+        }
 
         //pragma mark -- setter method 适应内容https://code.hcharts.cn/highcharts/4YM0a8
         function setTheChartViewContentWidth (receivedWidth) {
