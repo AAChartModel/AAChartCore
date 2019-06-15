@@ -83,7 +83,7 @@ public class AAChartView extends WebView {
 
     public void setChartSeriesHidden(Boolean chartSeriesHidden) {
         this.chartSeriesHidden = chartSeriesHidden;
-        String jsStr = "setChartSeriesHidden('" + this.contentHeight + "')";
+        String jsStr = "setChartSeriesHidden('" + this.chartSeriesHidden + "')";
         safeEvaluateJavaScriptString(jsStr);
     }
 
@@ -111,10 +111,14 @@ public class AAChartView extends WebView {
         this.contentHeight = 350.f;
 //        //设置WebView支持JavaScript(这一句是十分关键的一句)
         this.getSettings().setJavaScriptEnabled(true);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            this.setWebContentsDebuggingEnabled(true);
+        }
         //把当前对象作为androidObject别名传递给js
         //js通过window.androidObject.androidMethod()就可以直接调用安卓的androidMethod方法
         this.addJavascriptInterface(this, "androidObject");
     }
+
 
     //js调用安卓，必须加@JavascriptInterface注释的方法才可以被js调用
     @JavascriptInterface
@@ -238,6 +242,7 @@ public class AAChartView extends WebView {
                 public void onReceiveValue(String s) {
                     Log.i("回调信息","输出打印查看回调的结果"+s);
                 }
+
             });
         } else {
             this.loadUrl("javascript:"+javaScriptString);

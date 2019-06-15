@@ -83,19 +83,6 @@
             iFrame = null;
         }
 
-        //pragma mark -- setter method 适应内容https://code.hcharts.cn/highcharts/4YM0a8
-        function setTheChartViewContentWidth (receivedWidth) {
-            var container = document.getElementById('container');//获得元素
-            container.style.width = receivedWidth;//设置宽度
-            aaGlobalChart.reflow();
-        }
-
-        function setTheChartViewContentHeight (receivedHeight) {
-            var container = document.getElementById('container');//获得元素
-            container.style.height = receivedHeight;//设置高度
-            aaGlobalChart.reflow();
-        }
-
         function onlyRefreshTheChartDataWithSeries (receivedSeries) {
             var receivedSeriesElementArr = JSON.parse(receivedSeries);
 
@@ -108,15 +95,29 @@
             }
         }
 
-        function chartSeriesContentHideOrShow (hidden) {
-            for (var i = 0; i < aaGlobalChart.series.length; i++) {
-                var series = aaGlobalChart.series[i];
-                if (hidden == true) {
-                    series.hide();
-                } else {
-                    series.show();
-                }
-            }
+          //pragma mark -- setter method 适应内容https://code.hcharts.cn/highcharts/4YM0a8
+        function setTheChartViewContentWidth (receivedWidth) {
+            var container = document.getElementById('container');//获得元素
+            container.style.width = receivedWidth;//设置宽度
+            aaGlobalChart.reflow();
+        }
+
+        function setTheChartViewContentHeight (receivedHeight) {
+             var container = document.getElementById('container');//获得元素
+             container.style.height = receivedHeight;//设置高度
+             aaGlobalChart.reflow();
+        }
+
+        function setChartSeriesHidden(hidden) {
+        alert("隐藏还是显示"+ hidden);
+             for (var i = 0; i < aaGlobalChart.series.length; i++) {
+                  var series = aaGlobalChart.series[i];
+                     if (hidden == true) {
+                        series.hide()
+                     } else {
+                         series.show()
+                       }
+                   }
         }
 
         function showTheSeriesElementContentWithIndex (elementIndex) {

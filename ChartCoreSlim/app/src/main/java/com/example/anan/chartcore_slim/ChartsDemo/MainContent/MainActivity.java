@@ -10,13 +10,14 @@ import android.widget.ListView;
 
 import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartConfiger.AAChartModel;
 import com.example.anan.chartcore_slim.ChartsDemo.AdditionalContent.DrawChartWithAAOptionsActivity;
+import com.example.anan.chartcore_slim.ChartsDemo.AdditionalContent.HideOrShowChartSeriesActivity;
 import com.example.anan.chartcore_slim.R;
 
 public class MainActivity extends AppCompatActivity {
 
     private String[] data = {
             /*基础类型图表*/
-            "Column Chart---柱形图",
+            "/*基础类型图表*/Column Chart---柱形图--------------",
             "Bar Chart---条形图",
             "Area Chart---折线填充图",
             "Areaspline Chart---曲线填充图",
@@ -25,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
             "Line Chart---折线图",
             "Spline Chart---曲线图",
             /*特殊类型图表*/
-            "--------------Polar Chart---极地图图-------------",
+            "/*特殊类型图表*/Polar Chart---极地图图-------------",
             "Pie Chart---扇形图",
             "Bubble Chart---气泡图",
             "Scatter Chart---散点图",
@@ -38,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
             "Pyramid Chart---金字塔图",
             "Funnel Chart---漏斗图",
             /*Mixed Chart---混合图*/
-            "---------------arearangeMixedLine-----------------",
+            "/*Mixed Chart---混合图*/arearangeMixedLine-----------------",
             "columnrangeMixedLine",
             "stackingColumnMixedLine",
             "dashStyleTypeMixed",
@@ -47,7 +48,8 @@ public class MainActivity extends AppCompatActivity {
             "negativeColorMixedBubble",
             "polygonMixedScatter",
             "polarChartMixed",
-            "-----------------colorfulChart-----------------r",
+            /*自定义样式图表*/
+            "/*自定义样式图表*/colorfulChart-----------------",
             "gradientColorfulChart",
             "discontinuousDataChart",
             "colorfulColumnChart",
@@ -56,10 +58,20 @@ public class MainActivity extends AppCompatActivity {
             "colorfulGradientAreaChart",
             "colorfulGradientSplineChart",
             "gradientColorAreasplineChart",
-            "-----------------drawChartWithOptionsOne-----------------r",
+            /*使用AAOptions绘制图表*/
+            "/*使用AAOptions绘制图表*/drawChartWithOptionsOne-----------------",
             "configureAAPlotLinesForChart",
             "customAATooltipWithJSFuntion",
-            "customXAxisCrosshairStyle"
+            "customXAxisCrosshairStyle",
+            /*隐藏或显示内容*/
+            "/*隐藏或显示内容*/Column Chart---柱形图--------------",
+            "Bar Chart---条形图",
+            "Area Chart---折线填充图",
+            "Areaspline Chart---曲线填充图",
+            "Step Area Chart--- 直方折线填充图",
+            "Step Line Chart--- 直方折线图",
+            "Line Chart---折线图",
+            "Spline Chart---曲线图",
 
     };
 
@@ -111,7 +123,16 @@ public class MainActivity extends AppCompatActivity {
             "configureAAPlotBandsForChart",
             "configureAAPlotLinesForChart",
             "customAATooltipWithJSFuntion",
-            "customXAxisCrosshairStyle"
+            "customXAxisCrosshairStyle",
+            /*隐藏或显示内容*/
+            AAChartModel.Type.Column,
+            AAChartModel.Type.Bar,
+            AAChartModel.Type.Area,
+            AAChartModel.Type.Areaspline,
+            AAChartModel.Type.Area,
+            AAChartModel.Type.Line,
+            AAChartModel.Type.Line,
+            AAChartModel.Type.Spline,
     };
 
 
@@ -141,8 +162,10 @@ public class MainActivity extends AppCompatActivity {
                     goToMixedChartActivity(position);
                 } else if (position > 28 && position <= 37 )  {
                     goToCustomStyleChartActivity(position);
-                } else {
+                } else if (position > 37 && position <= 41){
                     goToDrawChartWithAAOptionsActivity(position);
+                } else if (position > 41 ) {
+                    goToHideOrShowChartSeriesActivity(position);
                 }
             }
 
@@ -180,6 +203,13 @@ public class MainActivity extends AppCompatActivity {
 
     void goToDrawChartWithAAOptionsActivity(int position) {
         Intent intent = new Intent(this, DrawChartWithAAOptionsActivity.class);
+        intent.putExtra("chartType", chartTypeArr[position]);
+
+        startActivity(intent);
+    }
+
+    void goToHideOrShowChartSeriesActivity(int position) {
+        Intent intent = new Intent(this, HideOrShowChartSeriesActivity.class);
         intent.putExtra("chartType", chartTypeArr[position]);
 
         startActivity(intent);
