@@ -5,6 +5,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartConfiger.AAChartModel;
+import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartEnum.AAChartLineDashSyleType;
+import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartEnum.AAChartSymbolStyleType;
+import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartEnum.AAChartType;
 import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartConfiger.AAChartView;
 import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartConfiger.AAOptionsConstructor;
 import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartConfiger.AASeriesElement;
@@ -35,6 +38,7 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
 
         AAChartView aaChartView = findViewById(R.id.AAChartView);
         aaChartView.aa_drawChartWithChartOptions(aaOptions);
+
     }
 
     HashMap configureTheChartOptions(String chartType) {
@@ -49,7 +53,7 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
 
     HashMap<String,Object> configureAAPlotBandsForChart() {
         AAChartModel aaChartModel = new AAChartModel()
-                .chartType(AAChartModel.Type.Spline)//图形类型
+                .chartType(AAChartType.Spline)//图形类型
                 .dataLabelEnabled(false)
                 .markerRadius(0)
                 .series(new AASeriesElement[]{
@@ -114,7 +118,7 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
         Map[] zonesArr = new Map[]{map1,map2,map3,map4};
 
         AAChartModel aaChartModel = new  AAChartModel()
-                .chartType(AAChartModel.Type.Areaspline)//图形类型
+                .chartType(AAChartType.Areaspline)//图形类型
                 .dataLabelEnabled(false)
                 .series(new AASeriesElement[]{
                         new AASeriesElement()
@@ -129,7 +133,7 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
         AAPlotLinesElement[] aaPlotLinesElementsArr = new AAPlotLinesElement[] {
                new AAPlotLinesElement()
                         .color("#1e90ff")//颜色值(16进制)
-                        .dashStyle(AAChartModel.LineDashSyleType.LongDashDotDot)//样式：Dash,Dot,Solid等,默认Solid
+                        .dashStyle(AAChartLineDashSyleType.LongDashDotDot)//样式：Dash,Dot,Solid等,默认Solid
                 .width((1f)) //标示线粗细
                 .value((12f)) //所在位置
                 .zIndex((1)) //层叠,标示线在图表中显示的层叠级别，值越大，显示越向前
@@ -143,7 +147,7 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
             ,
                 new AAPlotLinesElement()
                         .color("#ef476f")//颜色值(16进制)
-                        .dashStyle(AAChartModel.LineDashSyleType.LongDashDot)//样式：Dash,Dot,Solid等,默认Solid
+                        .dashStyle(AAChartLineDashSyleType.LongDashDot)//样式：Dash,Dot,Solid等,默认Solid
                         .width((1f)) //标示线粗细
                         .value((24f)) //所在位置
                         .zIndex((1)) //层叠,标示线在图表中显示的层叠级别，值越大，显示越向前
@@ -157,7 +161,7 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
                 ,
                 new AAPlotLinesElement()
                         .color("#1e90ff")//颜色值(16进制)
-                        .dashStyle(AAChartModel.LineDashSyleType.LongDash)//样式：Dash,Dot,Solid等,默认Solid
+                        .dashStyle(AAChartLineDashSyleType.LongDash)//样式：Dash,Dot,Solid等,默认Solid
                         .width((1f)) //标示线粗细
                         .value((36f)) //所在位置
                         .zIndex((1)) //层叠,标示线在图表中显示的层叠级别，值越大，显示越向前
@@ -178,10 +182,10 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
 
     HashMap customAATooltipWithJSFuntion() {
         AAChartModel aaChartModel = new AAChartModel()
-                .chartType(AAChartModel.Type.Area)//图形类型
+                .chartType(AAChartType.Area)//图形类型
                 .title("近三个月金价起伏周期图")//图表主标题
                 .subtitle("金价(元/克)")//图表副标题
-                .markerSymbolStyle(AAChartModel.SymbolStyleType.BorderBlank)//折线连接点样式为外边缘空白
+                .markerSymbolStyle(AAChartSymbolStyleType.BorderBlank)//折线连接点样式为外边缘空白
                 .dataLabelEnabled(false)
                 .categories(new String[]{
                         "10-01","10-02","10-03","10-04","10-05","10-06","10-07","10-08","10-09","10-10","10-11",
@@ -234,7 +238,7 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
 
     HashMap customXAxisCrosshairStyle() {
         AAChartModel aaChartModel = new AAChartModel()
-                .chartType(AAChartModel.Type.Line)//图表类型
+                .chartType(AAChartType.Line)//图表类型
             .series(new AASeriesElement[]{
                     new AASeriesElement()
                             .name("2020")
@@ -279,7 +283,7 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
         AACrosshair aaCrosshair = new AACrosshair()
                 .color(AAColor.redColor())
                 .width(1f)
-                .dashStyle(AAChartModel.LineDashSyleType.LongDashDotDot);
+                .dashStyle(AAChartLineDashSyleType.LongDashDotDot);
         HashMap aaXAxis = (HashMap) aaOptions.get("xAxis");
         aaXAxis.put("crosshair",aaCrosshair);
         return aaOptions;

@@ -1,5 +1,5 @@
 //
-//  AAChartModel.java
+//  AAChartjava
 //  ChartCore-Slim
 //
 //  Created by AnAn on 2018/12/08.
@@ -33,6 +33,9 @@
 
 
 package com.example.anan.chartcore_slim.AAChartCoreLib.AAChartConfiger;
+
+import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartEnum.AAChartSymbolStyleType;
+import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartEnum.AAChartType;
 
 import java.util.HashMap;
 
@@ -120,11 +123,11 @@ public class AAOptionsConstructor
     {
         String chartType = aaChartModel.chartType;
         //数据点标记相关配置，只有线性图(折线图、曲线图、折线区域填充图、曲线区域填充图,散点图)才有数据点标记
-        if (chartType.equals(AAChartModel.Type.Area)
-                || chartType.equals(AAChartModel.Type.Areaspline)
-                || chartType.equals(AAChartModel.Type.Line)
-                || chartType.equals(AAChartModel.Type.Spline)
-                || chartType.equals(AAChartModel.Type.Scatter))
+        if (chartType.equals(AAChartType.Area)
+                || chartType.equals(AAChartType.Areaspline)
+                || chartType.equals(AAChartType.Line)
+                || chartType.equals(AAChartType.Spline)
+                || chartType.equals(AAChartType.Scatter))
         {
             HashMap aaMarker = new HashMap<String, Object>();
             aaMarker.put("radius", aaChartModel.markerRadius);//曲线连接点半径，默认是4
@@ -132,13 +135,13 @@ public class AAOptionsConstructor
 
            if (aaChartModel.markerSymbolStyle != null) {
                //设置曲线连接点风格样式
-               if (aaChartModel.markerSymbolStyle.equals(AAChartModel.SymbolStyleType.InnerBlank))
+               if (aaChartModel.markerSymbolStyle.equals(AAChartSymbolStyleType.InnerBlank))
                {
                    aaMarker.put("fillColor", "#FFFFFF");//点的填充色(用来设置折线连接点的填充色)
                    aaMarker.put("lineWidth", 2);//外沿线的宽度(用来设置折线连接点的轮廓描边的宽度)
                    aaMarker.put("lineColor", "");//外沿线的颜色(用来设置折线连接点的轮廓描边颜色，当值为空字符串时，默认取数据点或数据列的颜色。)
                }
-               else if (aaChartModel.markerSymbolStyle.equals(AAChartModel.SymbolStyleType.BorderBlank))
+               else if (aaChartModel.markerSymbolStyle.equals(AAChartSymbolStyleType.BorderBlank))
                {
                    aaMarker.put("lineWidth", 2);//外沿线的宽度(用来设置折线连接点的轮廓描边的宽度)
                    aaMarker.put("lineColor", aaChartModel.backgroundColor);//外沿线的颜色(用来设置折线连接点的轮廓描边颜色，当值为空字符串时，默认取数据点或数据列的颜色。)
@@ -161,8 +164,8 @@ public class AAOptionsConstructor
         aaDataLabels.put("enabled", aaChartModel.dataLabelEnabled);
         HashMap aaSomeTypeChart = new HashMap<String, Object>();
 
-        if (       chartType.equals(AAChartModel.Type.Column)
-                || chartType.equals(AAChartModel.Type.Bar))
+        if (       chartType.equals(AAChartType.Column)
+                || chartType.equals(AAChartType.Bar))
         {
             aaSomeTypeChart.put("borderWidth", 0);
             aaSomeTypeChart.put("borderRadius", aaChartModel.borderRadius);
@@ -173,7 +176,7 @@ public class AAOptionsConstructor
                 aaSomeTypeChart.put("groupPadding", 0.005);
             }
         }
-        else if (chartType.equals(AAChartModel.Type.Pie))
+        else if (chartType.equals(AAChartType.Pie))
         {
             aaSomeTypeChart.put("allowPointSelect", true);
             aaSomeTypeChart.put("cursor", "pointer");
@@ -195,9 +198,9 @@ public class AAOptionsConstructor
     {
         String chartType = aaChartModel.chartType;
 
-        if (       !chartType.equals(AAChartModel.Type.Pie)
-                && !chartType.equals(AAChartModel.Type.Pyramid)
-                && !chartType.equals(AAChartModel.Type.Funnel)  )
+        if (       !chartType.equals(AAChartType.Pie)
+                && !chartType.equals(AAChartType.Pyramid)
+                && !chartType.equals(AAChartType.Funnel)  )
         {
             HashMap aaAxisLabel = new HashMap<String, Object>();
             aaAxisLabel.put("enabled", aaChartModel.xAxisLabelsEnabled);

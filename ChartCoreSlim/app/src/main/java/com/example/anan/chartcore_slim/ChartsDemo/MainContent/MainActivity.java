@@ -8,7 +8,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartConfiger.AAChartModel;
+import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartEnum.AAChartType;
 import com.example.anan.chartcore_slim.ChartsDemo.AdditionalContent.DrawChartWithAAOptionsActivity;
 import com.example.anan.chartcore_slim.ChartsDemo.AdditionalContent.HideOrShowChartSeriesActivity;
 import com.example.anan.chartcore_slim.R;
@@ -77,27 +77,27 @@ public class MainActivity extends AppCompatActivity {
 
     String[] chartTypeArr = {
             /*基础类型图表*/
-            AAChartModel.Type.Column,
-            AAChartModel.Type.Bar,
-            AAChartModel.Type.Area,
-            AAChartModel.Type.Areaspline,
-            AAChartModel.Type.Area,
-            AAChartModel.Type.Line,
-            AAChartModel.Type.Line,
-            AAChartModel.Type.Spline,
+            AAChartType.Column,
+            AAChartType.Bar,
+            AAChartType.Area,
+            AAChartType.Areaspline,
+            AAChartType.Area,
+            AAChartType.Line,
+            AAChartType.Line,
+            AAChartType.Spline,
             /*特殊类型图表*/
-            AAChartModel.Type.Column,
-            AAChartModel.Type.Pie,
-            AAChartModel.Type.Bubble,
-            AAChartModel.Type.Scatter,
-            AAChartModel.Type.Arearange,
-            AAChartModel.Type.Columnrange,
-            AAChartModel.Type.Line,
-            AAChartModel.Type.Area,
-            AAChartModel.Type.Boxplot,
-            AAChartModel.Type.Waterfall,
-            AAChartModel.Type.Pyramid,
-            AAChartModel.Type.Funnel,
+            AAChartType.Column,
+            AAChartType.Pie,
+            AAChartType.Bubble,
+            AAChartType.Scatter,
+            AAChartType.Arearange,
+            AAChartType.Columnrange,
+            AAChartType.Line,
+            AAChartType.Area,
+            AAChartType.Boxplot,
+            AAChartType.Waterfall,
+            AAChartType.Pyramid,
+            AAChartType.Funnel,
 
             /*Mixed Chart---混合图*/
             "arearangeMixedLine",
@@ -125,14 +125,14 @@ public class MainActivity extends AppCompatActivity {
             "customAATooltipWithJSFuntion",
             "customXAxisCrosshairStyle",
             /*隐藏或显示内容*/
-            AAChartModel.Type.Column,
-            AAChartModel.Type.Bar,
-            AAChartModel.Type.Area,
-            AAChartModel.Type.Areaspline,
-            AAChartModel.Type.Area,
-            AAChartModel.Type.Line,
-            AAChartModel.Type.Line,
-            AAChartModel.Type.Spline,
+            AAChartType.Column,
+            AAChartType.Bar,
+            AAChartType.Area,
+            AAChartType.Areaspline,
+            AAChartType.Area,
+            AAChartType.Line,
+            AAChartType.Line,
+            AAChartType.Spline,
     };
 
 

@@ -8,6 +8,9 @@ import android.widget.RadioGroup;
 import android.widget.Switch;
 
 import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartConfiger.AAChartModel;
+import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartEnum.AAChartLegendVerticalAlignType;
+import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartEnum.AAChartSymbolStyleType;
+import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartEnum.AAChartType;
 import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartConfiger.AAChartView;
 import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartConfiger.AAMoveOverEventMessageModel;
 import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartConfiger.AASeriesElement;
@@ -54,7 +57,7 @@ public class HideOrShowChartSeriesActivity extends AppCompatActivity
                 .backgroundColor("#4b2b7f")
                 .dataLabelEnabled(true)
                 .yAxisGridLineWidth(0)
-                .legendVerticalAlign(AAChartModel.LegendVerticalAlignType.Bottom)
+                .legendVerticalAlign(AAChartLegendVerticalAlignType.Bottom)
                 .series(new AASeriesElement[]{
                         new AASeriesElement()
                                 .name("Tokyo")
@@ -108,12 +111,12 @@ public class HideOrShowChartSeriesActivity extends AppCompatActivity
 
         }
 
-        if (chartType.equals(AAChartModel.Type.Area)
-                || chartType.equals(AAChartModel.Type.Arearange)) {
-            aaChartModel.markerSymbolStyle(AAChartModel.SymbolStyleType.InnerBlank);
-        } else if (chartType.equals(AAChartModel.Type.Line)
-                ||chartType.equals(AAChartModel.Type.Spline)) {
-            aaChartModel.markerSymbolStyle(AAChartModel.SymbolStyleType.BorderBlank);
+        if (chartType.equals(AAChartType.Area)
+                || chartType.equals(AAChartType.Arearange)) {
+            aaChartModel.markerSymbolStyle(AAChartSymbolStyleType.InnerBlank);
+        } else if (chartType.equals(AAChartType.Line)
+                ||chartType.equals(AAChartType.Spline)) {
+            aaChartModel.markerSymbolStyle(AAChartSymbolStyleType.BorderBlank);
         }
         return aaChartModel;
     }

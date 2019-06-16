@@ -6,8 +6,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
 import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartConfiger.AAChartModel;
+import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartEnum.AAChartSymbolStyleType;
+import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartEnum.AAChartType;
 import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartConfiger.AAChartView;
 import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartConfiger.AASeriesElement;
+import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartEnum.AAChartAnimationType;
 import com.example.anan.chartcore_slim.AAChartCoreLib.AAOptionsModel.AAWaterfallChart;
 import com.example.anan.chartcore_slim.AAChartCoreLib.AATools.AAGradientColor;
 import com.example.anan.chartcore_slim.R;
@@ -50,19 +53,19 @@ public class SpecialChartActivity extends AppCompatActivity {
 
     AAChartModel configureChartModelWithChartType(String chartType) {
         switch (chartType) {
-            case AAChartModel.Type.Column: return configureColumnChart();
-            case AAChartModel.Type.Pie: return configurePieChart();
-            case AAChartModel.Type.Bubble: return configureBubbleChart();
-            case AAChartModel.Type.Scatter: return configureScatterChart();
-            case AAChartModel.Type.Arearange: return configureArearangeChart();
-            case AAChartModel.Type.Areasplinerange: return configureAreasplinerangeChart();
-            case AAChartModel.Type.Columnrange: return configureColumnrangeChart();
-            case AAChartModel.Type.Line: return configureLineChart();
-            case AAChartModel.Type.Area: return configureAreaChart();
-            case AAChartModel.Type.Boxplot: return configureBoxplotChart();
-            case AAChartModel.Type.Waterfall: return configureWaterfallChart();
-            case AAChartModel.Type.Pyramid: return configurePyramidChart();
-            case AAChartModel.Type.Funnel: return configureFunnelChart();
+            case AAChartType.Column: return configureColumnChart();
+            case AAChartType.Pie: return configurePieChart();
+            case AAChartType.Bubble: return configureBubbleChart();
+            case AAChartType.Scatter: return configureScatterChart();
+            case AAChartType.Arearange: return configureArearangeChart();
+            case AAChartType.Areasplinerange: return configureAreasplinerangeChart();
+            case AAChartType.Columnrange: return configureColumnrangeChart();
+            case AAChartType.Line: return configureLineChart();
+            case AAChartType.Area: return configureAreaChart();
+            case AAChartType.Boxplot: return configureBoxplotChart();
+            case AAChartType.Waterfall: return configureWaterfallChart();
+            case AAChartType.Pyramid: return configurePyramidChart();
+            case AAChartType.Funnel: return configureFunnelChart();
             default:
                 break;
         }
@@ -72,7 +75,7 @@ public class SpecialChartActivity extends AppCompatActivity {
 
     AAChartModel configureColumnChart() {
         return new AAChartModel()
-                .chartType(AAChartModel.Type.Column)
+                .chartType(AAChartType.Column)
                 .polar(true)
                 .dataLabelEnabled(false)
                 .categories(new String[]{
@@ -91,7 +94,7 @@ public class SpecialChartActivity extends AppCompatActivity {
 
     AAChartModel configurePieChart() {
       return new AAChartModel()
-              .chartType(AAChartModel.Type.Pie)
+              .chartType(AAChartType.Pie)
               .backgroundColor("#ffffff")
               .title("LANGUAGE MARKET SHARES JANUARY,2020 TO MAY")
               .subtitle("virtual data")
@@ -165,7 +168,7 @@ public class SpecialChartActivity extends AppCompatActivity {
                 };
 
        return new AAChartModel()
-               .chartType(AAChartModel.Type.Bubble)
+               .chartType(AAChartType.Bubble)
                .title("AACHARTKIT BUBBLES")
                .subtitle("JUST FOR FUN")
                .yAxisTitle("℃")
@@ -293,17 +296,17 @@ public class SpecialChartActivity extends AppCompatActivity {
         AASeriesElement[] seriesElements = new AASeriesElement[]{elementOne,elementTwo};
 
         return new AAChartModel()
-                .chartType(AAChartModel.Type.Scatter)
+                .chartType(AAChartType.Scatter)
                 .title("Height and weight distribution by sex")
                 .yAxisTitle("kg")
                 .markerRadius(8)
-                .markerSymbolStyle(AAChartModel.SymbolStyleType.InnerBlank)
+                .markerSymbolStyle(AAChartSymbolStyleType.InnerBlank)
                 .series(seriesElements);
     }
 
     AAChartModel configureArearangeChart() {
         return new AAChartModel()
-                .chartType(AAChartModel.Type.Arearange)
+                .chartType(AAChartType.Arearange)
                 .title("Twilight Hall day temperature fluctuation map")
                 .subtitle("real-time monitoring data")
                 .yAxisTitle("℃")
@@ -695,7 +698,7 @@ public class SpecialChartActivity extends AppCompatActivity {
 
     AAChartModel configureAreasplinerangeChart() {
         return new AAChartModel()
-                .chartType(AAChartModel.Type.Areasplinerange)
+                .chartType(AAChartType.Areasplinerange)
                 .title("Area spline range chart")
                 .subtitle("virtual data")
                 .yAxisTitle("℃")
@@ -742,7 +745,7 @@ public class SpecialChartActivity extends AppCompatActivity {
 
     AAChartModel configureColumnrangeChart() {
         return new AAChartModel()
-                .chartType(AAChartModel.Type.Columnrange)
+                .chartType(AAChartType.Columnrange)
                 .title("TEMPERATURE VARIATION BY MONTH")
                 .subtitle("observed in Gotham city")
                 .yAxisTitle("℃")
@@ -774,12 +777,12 @@ public class SpecialChartActivity extends AppCompatActivity {
 
     AAChartModel configureLineChart() {
         return new AAChartModel()
-                .chartType(AAChartModel.Type.Line)//图形类型
-                .animationType(AAChartModel.AnimationType.Bounce)//图形渲染动画类型为"bounce"
+                .chartType(AAChartType.Line)//图形类型
+                .animationType(AAChartAnimationType.Bounce)//图形渲染动画类型为"bounce"
                 .title("STEP LINE CHART")//图形标题
                 .subtitle("2020/08/08")//图形副标题
                 .dataLabelEnabled(false)//是否显示数字
-                .markerSymbolStyle(AAChartModel.SymbolStyleType.BorderBlank)//折线连接点样式
+                .markerSymbolStyle(AAChartSymbolStyleType.BorderBlank)//折线连接点样式
                 .markerRadius(7)//折线连接点半径长度,为0时相当于没有折线连接点
                 .series(new AASeriesElement[]{
                         new AASeriesElement()
@@ -805,12 +808,12 @@ public class SpecialChartActivity extends AppCompatActivity {
 
     AAChartModel configureAreaChart() {
       return new AAChartModel()
-              .chartType(AAChartModel.Type.Area)//图形类型
-              .animationType(AAChartModel.AnimationType.Bounce)//图形渲染动画类型为"bounce"
+              .chartType(AAChartType.Area)//图形类型
+              .animationType(AAChartAnimationType.Bounce)//图形渲染动画类型为"bounce"
               .title("STEP AREA CHART")//图形标题
               .subtitle("2049/08/08")//图形副标题
               .dataLabelEnabled(false)//是否显示数字
-              .markerSymbolStyle(AAChartModel.SymbolStyleType.InnerBlank)//折线连接点样式
+              .markerSymbolStyle(AAChartSymbolStyleType.InnerBlank)//折线连接点样式
               .markerRadius(0)//折线连接点半径长度,为0时相当于没有折线连接点
               .series(new AASeriesElement[]{
                       new AASeriesElement()
@@ -836,7 +839,7 @@ public class SpecialChartActivity extends AppCompatActivity {
 
     AAChartModel configureBoxplotChart() {
       return new AAChartModel()
-              .chartType(AAChartModel.Type.Boxplot)
+              .chartType(AAChartType.Boxplot)
               .title("BOXPLOT CHART")
               .subtitle("virtual data")
               .yAxisTitle("℃")
@@ -888,7 +891,7 @@ public class SpecialChartActivity extends AppCompatActivity {
         dataElement7.put("color","#04d69f");
 
        return new AAChartModel()
-               .chartType(AAChartModel.Type.Waterfall)
+               .chartType(AAChartType.Waterfall)
                .title("WATERFALL CHART")
                .subtitle("virtual data")
                .series(new Object[]{
@@ -910,7 +913,7 @@ public class SpecialChartActivity extends AppCompatActivity {
 
     AAChartModel configurePyramidChart() {
         return new AAChartModel()
-                .chartType(AAChartModel.Type.Pyramid)
+                .chartType(AAChartType.Pyramid)
                 .title("THE HEAT OF PROGRAM LANGUAGE")
                 .subtitle("virtual data")
                 .yAxisTitle("℃")
@@ -930,7 +933,7 @@ public class SpecialChartActivity extends AppCompatActivity {
 
     AAChartModel configureFunnelChart() {
        return  new AAChartModel()
-               .chartType(AAChartModel.Type.Funnel)
+               .chartType(AAChartType.Funnel)
                .title("THE HEAT OF PROGRAM LANGUAGE")
                .subtitle("virtual data")
                .yAxisTitle("℉")

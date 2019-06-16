@@ -5,8 +5,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartConfiger.AAChartModel;
+import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartEnum.AAChartStackingType;
+import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartEnum.AAChartSymbolStyleType;
+import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartEnum.AAChartSymbolType;
+import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartEnum.AAChartType;
 import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartConfiger.AAChartView;
 import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartConfiger.AASeriesElement;
+import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartEnum.AAChartAnimationType;
 import com.example.anan.chartcore_slim.AAChartCoreLib.AAOptionsModel.AAShadow;
 import com.example.anan.chartcore_slim.AAChartCoreLib.AATools.AAColor;
 import com.example.anan.chartcore_slim.AAChartCoreLib.AATools.AAGradientColor;
@@ -80,14 +85,14 @@ public class CustomStyleChartActivity extends AppCompatActivity {
                 AAColor.blackColor(),};
 
         return new AAChartModel()
-                .chartType(AAChartModel.Type.Bar)
-                .animationType(AAChartModel.AnimationType.Bounce)
+                .chartType(AAChartType.Bar)
+                .animationType(AAChartAnimationType.Bounce)
                 .title("Colorful Chart")
                 .subtitle("use AAColor to get color string")
                 .dataLabelEnabled(false)
                 .categories(colorsNameArr)
                 .colorsTheme(colorsArr)
-                .stacking(AAChartModel.StackingType.Percent)
+                .stacking(AAChartStackingType.Percent)
                 .series(new AASeriesElement[]{
                         new AASeriesElement()
                                 .name("Tokyo")
@@ -150,13 +155,13 @@ public class CustomStyleChartActivity extends AppCompatActivity {
            };
 
             return new AAChartModel()
-                    .chartType(AAChartModel.Type.Bar)
+                    .chartType(AAChartType.Bar)
                     .title("Colorful Column Chart")
                     .subtitle("single data array colorful column chart")
                     .categories(gradientColorNamesArr)
                     .colorsTheme(gradientColorArr)
                     .yAxisTitle("gradient color")
-                    .stacking(AAChartModel.StackingType.Percent)
+                    .stacking(AAChartStackingType.Percent)
                     .series(new AASeriesElement[]{
                             new AASeriesElement()
                                     .name("Tokyo")
@@ -169,7 +174,7 @@ public class CustomStyleChartActivity extends AppCompatActivity {
 
     AAChartModel configureDiscontinuousDataChart() {
         return new AAChartModel()
-                .chartType(AAChartModel.Type.Column)
+                .chartType(AAChartType.Column)
                 .title("Discontinuous Data Chart")
                 .yAxisTitle("")
                 .dataLabelEnabled(true)
@@ -186,7 +191,7 @@ public class CustomStyleChartActivity extends AppCompatActivity {
 
     AAChartModel configureColorfulColumnChart() {
         return new AAChartModel()
-                .chartType(AAChartModel.Type.Column)
+                .chartType(AAChartType.Column)
                 .title("Colorful Column Chart")
                 .subtitle("single data array colorful column chart")
                 .colorsTheme(new String[]{"#febc0f","#FF14d4","#0bf8f5","#F33c52","#1904dd",})
@@ -203,7 +208,7 @@ public class CustomStyleChartActivity extends AppCompatActivity {
                 .title("南丁格尔玫瑰图")
                 .subtitle("极地图中的一种")
                 .yAxisTitle("cm")
-                .chartType(AAChartModel.Type.Column)
+                .chartType(AAChartType.Column)
                 .xAxisVisible(false)//是否显示最外一层圆环
                 .yAxisVisible(true)//是否显示中间的多个圆环
                 .legendEnabled(false)//隐藏图例(底部可点按的小圆点)
@@ -222,7 +227,7 @@ public class CustomStyleChartActivity extends AppCompatActivity {
 
     AAChartModel configureChartWithShadowStyle() {
         return new AAChartModel()
-                .chartType(AAChartModel.Type.Areaspline)
+                .chartType(AAChartType.Areaspline)
                 .title("")
                 .subtitle("")
                 .categories(new String[]{"一月", "二月", "三月", "四月", "五月", "六月",
@@ -263,7 +268,7 @@ public class CustomStyleChartActivity extends AppCompatActivity {
         gradientColorMap.put("stops",stopsArr);
 
         return new AAChartModel()
-                .chartType(AAChartModel.Type.Areaspline)
+                .chartType(AAChartType.Areaspline)
                 .title("")
                 .subtitle("")
                 .categories(new String[]{"一月", "二月", "三月", "四月", "五月", "六月",
@@ -302,7 +307,7 @@ public class CustomStyleChartActivity extends AppCompatActivity {
         gradientColorMap.put("stops",stopsArr);
 
         return new AAChartModel()
-                .chartType(AAChartModel.Type.Spline)
+                .chartType(AAChartType.Spline)
                 .title("")
                 .subtitle("")
                 .categories(new String[]{"一月", "二月", "三月", "四月", "五月", "六月",
@@ -338,15 +343,15 @@ public class CustomStyleChartActivity extends AppCompatActivity {
         gradientColorMap.put("stops",stopsArr);
 
         return new AAChartModel()
-                .chartType(AAChartModel.Type.Areaspline)
+                .chartType(AAChartType.Areaspline)
                 .title("")
                 .subtitle("")
                 .categories(new String[]{"一月", "二月", "三月", "四月", "五月", "六月",
                 "七月", "八月", "九月", "十月", "十一月", "十二月"})
                 .yAxisTitle("")
                 .markerRadius(8)//marker点半径为8个像素
-                .markerSymbolStyle(AAChartModel.SymbolStyleType.InnerBlank)//marker点为空心效果
-                .markerSymbol(AAChartModel.SymbolType.Circle)//marker点为圆形点○
+                .markerSymbolStyle(AAChartSymbolStyleType.InnerBlank)//marker点为空心效果
+                .markerSymbol(AAChartSymbolType.Circle)//marker点为圆形点○
                 .yAxisLineWidth(0f)
                 .yAxisGridLineWidth(0)
                 .legendEnabled(false)

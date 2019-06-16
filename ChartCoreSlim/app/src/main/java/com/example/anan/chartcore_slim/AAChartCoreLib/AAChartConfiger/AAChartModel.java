@@ -33,133 +33,10 @@
 
 package com.example.anan.chartcore_slim.AAChartCoreLib.AAChartConfiger;
 
-
-
-/**
- * Created by AnAn on 2017/9/5.
- */
+import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartEnum.AAChartAnimationType;
+import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartEnum.AAChartStackingType;
 
 public class AAChartModel {
-
-    public interface AnimationType {
-        String EaseInQuad     = "easeInQuad";
-        String EaseOutQuad    = "easeOutQuad";
-        String EaseInOutQuad  = "easeInOutQuad";
-        String EaseInCubic    = "easeInCubic";
-        String EaseOutCubic   = "easeOutCubic";
-        String EaseInOutCubic = "easeInOutCubic";
-        String EaseInQuart    = "easeInQuart";
-        String EaseOutQuart   = "easeOutQuart";
-        String EaseInOutQuart = "easeInOutQuart";
-        String EaseInQuint    = "easeInQuint";
-        String EaseOutQuint   = "easeOutQuint";
-        String EaseInOutQuint = "easeInOutQuint";
-        String EaseInSine     = "easeInSine";
-        String EaseOutSine    = "easeOutSine";
-        String EaseInOutSine  = "easeInOutSine";
-        String EaseInExpo     = "easeInExpo";
-        String EaseOutExpo    = "easeOutExpo";
-        String EaseInOutExpo  = "easeInOutExpo";
-        String EaseInCirc     = "easeInCirc";
-        String EaseOutCirc    = "easeOutCirc";
-        String EaseInOutCirc  = "easeInOutCirc";
-        String EaseOutBounce  = "easeOutBounce";
-        String EaseInBack     = "easeInBack";
-        String EaseOutBack    = "easeOutBack";
-        String EaseInOutBack  = "easeInOutBack";
-        String Elastic        = "elastic";
-        String SwingFromTo    = "swingFromTo";
-        String SwingFrom      = "swingFrom";
-        String SwingTo        = "swingTo";
-        String Bounce         = "bounce";
-        String BouncePast     = "bouncePast";
-        String EaseFromTo     = "easeFromTo";
-        String EaseFrom       = "easeFrom";
-        String EaseTo         = "easeTo";
-    }
-
-    public interface Type {
-        String Column          = "column";
-        String Bar             = "bar";
-        String Area            = "area";
-        String Areaspline = "areaspline";
-        String Line            = "line";
-        String Spline          = "spline";
-        String Scatter         = "scatter";
-        String Pie             = "pie";
-        String Bubble          = "bubble";
-        String Pyramid         = "pyramid";
-        String Funnel          = "funnel";
-        String Columnrange     = "columnrange";
-        String Arearange       = "arearange";
-        String Areasplinerange = "areasplinerange";
-        String Boxplot         = "boxplot";
-        String Waterfall       = "waterfall";
-    }
-
-    public interface SubtitleAlignType {
-        String Left   = "left";
-        String Center = "center";
-        String Right  = "right";
-    }
-
-    public interface ZoomType {
-        String X  = "x";
-        String Y  = "y";
-        String XY = "xy";
-    }
-
-    public interface StackingType {
-        String False   = "";
-        String Normal  = "normal";
-        String Percent = "percent";
-    }
-
-    public interface SymbolType {
-        String Circle         = "circle";
-        String Square         = "square";
-        String Diamond        = "diamond";
-        String Triangle       = "triangle";
-        String Triangle_down  = "triangle-down";
-    }
-
-    public interface SymbolStyleType {
-        String Normal       = "normal";
-        String InnerBlank   = "innerBlank";
-        String BorderBlank  = "borderBlank";
-    }
-
-    public interface LegendlLayoutType {
-        String Horizontal  = "horizontal";
-        String Vertical    = "vertical";
-    }
-
-    public interface LegendAlignType {
-        String Left     = "left";
-        String Center   = "center";
-        String Right    = "right";
-    }
-
-    public interface LegendVerticalAlignType {
-        String Top     = "top";
-        String Middle  = "middle";
-        String Bottom  = "bottom";
-    }
-
-    public interface LineDashSyleType {
-        String Solid           = "Solid";
-        String ShortDash       = "ShortDash";
-        String ShortDot        = "ShortDot";
-        String ShortDashDot    = "ShortDashDot";
-        String ShortDashDotDot = "ShortDashDotDot";
-        String Dot             = "Dot";
-        String Dash            = "Dash";
-        String LongDash        = "LongDash";
-        String DashDot         = "DashDot";
-        String LongDashDot     = "LongDashDot";
-        String LongDashDotDot  = "LongDashDotDot";
-    }
-
 
     public String  animationType;         //动画类型
     public Integer animationDuration;     //动画时间
@@ -407,11 +284,11 @@ public class AAChartModel {
     }
 
     public AAChartModel() {
-        animationType = AnimationType.EaseInBack;
+        animationType = AAChartAnimationType.EaseInBack;
         animationDuration = 500;//以毫秒为单位
         pointHollow = false;
         inverted = false;
-        stacking = StackingType.False;
+        stacking = AAChartStackingType.False;
         xAxisReversed = false;
         yAxisReversed = false;
         zoomType = "x";
