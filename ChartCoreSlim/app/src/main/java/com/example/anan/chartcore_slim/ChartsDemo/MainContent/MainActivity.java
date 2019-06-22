@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartEnum.AAChartType;
+import com.example.anan.chartcore_slim.ChartsDemo.AdditionalContent.CustomTooltipWithJSFunctionActivity;
 import com.example.anan.chartcore_slim.ChartsDemo.AdditionalContent.DrawChartWithAAOptionsActivity;
 import com.example.anan.chartcore_slim.ChartsDemo.AdditionalContent.HideOrShowChartSeriesActivity;
 import com.example.anan.chartcore_slim.R;
@@ -72,6 +73,11 @@ public class MainActivity extends AppCompatActivity {
             "Step Line Chart--- 直方折线图",
             "Line Chart---折线图",
             "Spline Chart---曲线图",
+            "简单字符串拼接",
+            "自定义不同单位后缀",
+            "值为0时,在tooltip中不显示",
+            "自定义多彩颜色文字",
+            "自定义箱线图的浮动提示框头部内容"
 
     };
 
@@ -133,6 +139,12 @@ public class MainActivity extends AppCompatActivity {
             AAChartType.Line,
             AAChartType.Line,
             AAChartType.Spline,
+            "formatterFunction1",
+            "formatterFunction2",
+            "formatterFunction3",
+            "formatterFunction4",
+            "formatterFunction5",
+
     };
 
 
@@ -164,8 +176,10 @@ public class MainActivity extends AppCompatActivity {
                     goToCustomStyleChartActivity(position);
                 } else if (position > 37 && position <= 41){
                     goToDrawChartWithAAOptionsActivity(position);
-                } else if (position > 41 ) {
+                } else if (position > 41 && position <= 49 ) {
                     goToHideOrShowChartSeriesActivity(position);
+                } else if (position > 49) {
+                    goToCustomTooltipWithJSFunctionActivity(position);
                 }
             }
 
@@ -210,6 +224,13 @@ public class MainActivity extends AppCompatActivity {
 
     void goToHideOrShowChartSeriesActivity(int position) {
         Intent intent = new Intent(this, HideOrShowChartSeriesActivity.class);
+        intent.putExtra("chartType", chartTypeArr[position]);
+
+        startActivity(intent);
+    }
+
+    void goToCustomTooltipWithJSFunctionActivity(int position) {
+        Intent intent = new Intent(this, CustomTooltipWithJSFunctionActivity.class);
         intent.putExtra("chartType", chartTypeArr[position]);
 
         startActivity(intent);

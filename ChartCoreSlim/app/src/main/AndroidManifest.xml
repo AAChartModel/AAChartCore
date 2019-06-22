@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ChartsDemo.AdditionalContent.EvaluateJSStringFunctionActivity"></activity>
+        <activity android:name=".ChartsDemo.AdditionalContent.CustomTooltipWithJSFunctionActivity"></activity>
+        <activity android:name=".ChartsDemo.AdditionalContent.EvaluateJSStringFunctionActivity" />
         <activity android:name=".ChartsDemo.AdditionalContent.OnlyRefreshChartDataActivity" />
         <activity android:name=".ChartsDemo.AdditionalContent.HideOrShowChartSeriesActivity" />
         <activity android:name=".ChartsDemo.AdditionalContent.DrawChartWithAAOptionsActivity" />

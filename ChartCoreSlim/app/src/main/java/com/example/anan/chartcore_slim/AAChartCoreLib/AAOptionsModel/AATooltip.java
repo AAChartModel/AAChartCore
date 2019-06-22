@@ -96,6 +96,12 @@ public class AATooltip {
         return this;
     }
 
+    public AATooltip() {
+        enabled = true;
+        shared = true;
+        crosshairs = true;
+    }
+
 
     
   
