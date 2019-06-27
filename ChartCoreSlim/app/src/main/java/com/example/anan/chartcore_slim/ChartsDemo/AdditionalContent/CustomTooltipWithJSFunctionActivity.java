@@ -133,10 +133,10 @@ public class CustomTooltipWithJSFunctionActivity extends AppCompatActivity {
                 .useHTML(true)
                 .formatter("function () {\n" +
                         "        var s = '第' + '<b>' +  this.x + '</b>' + '年' + '<br/>';\n" +
-                        "        let colorDot1 = '<span style=\\\"' + 'color:red; font-size:13px\\\"' + '>◉</span> ';\n" +
-                        "        let colorDot2 = '<span style=\\\"' + 'color:blue; font-size:13px\\\"' + '>◉</span> ';\n" +
-                        "        let s1 = colorDot1  + this.points[0].series.name + ': ' + this.points[0].y + '只' + '<br/>';\n" +
-                        "        let s2 =  colorDot2 + this.points[1].series.name + ': ' + this.points[1].y + '棵';\n" +
+                        "        var colorDot1 = '<span style=\\\"' + 'color:red; font-size:13px\\\"' + '>◉</span> ';\n" +
+                        "        var colorDot2 = '<span style=\\\"' + 'color:blue; font-size:13px\\\"' + '>◉</span> ';\n" +
+                        "        var s1 = colorDot1  + this.points[0].series.name + ': ' + this.points[0].y + '只' + '<br/>';\n" +
+                        "        var s2 =  colorDot2 + this.points[1].series.name + ': ' + this.points[1].y + '棵';\n" +
                         "        s += s1 + s2;\n" +
                         "        return s;\n" +
                         "    }")
@@ -173,20 +173,20 @@ public class CustomTooltipWithJSFunctionActivity extends AppCompatActivity {
         AATooltip aaTooltip = new AATooltip()
                 .useHTML(true)
                 .formatter("function () {\n" +
-                        "        let colorDot0 = '<span style=\\\"' + 'color:red; font-size:13px\\\"' + '>◉</span> ';\n" +
-                        "        let colorDot1 = '<span style=\\\"' + 'color:mediumspringgreen; font-size:13px\\\"' + '>◉</span> ';\n" +
-                        "        let colorDot2 = '<span style=\\\"' + 'color:deepskyblue; font-size:13px\\\"' + '>◉</span> ';\n" +
-                        "        let colorDot3 = '<span style=\\\"' + 'color:sandybrown; font-size:13px\\\"' + '>◉</span> ';\n" +
-                        "        let colorDotArr = [];\n" +
+                        "        var colorDot0 = '<span style=\\\"' + 'color:red; font-size:13px\\\"' + '>◉</span> ';\n" +
+                        "        var colorDot1 = '<span style=\\\"' + 'color:mediumspringgreen; font-size:13px\\\"' + '>◉</span> ';\n" +
+                        "        var colorDot2 = '<span style=\\\"' + 'color:deepskyblue; font-size:13px\\\"' + '>◉</span> ';\n" +
+                        "        var colorDot3 = '<span style=\\\"' + 'color:sandybrown; font-size:13px\\\"' + '>◉</span> ';\n" +
+                        "        var colorDotArr = [];\n" +
                         "        colorDotArr.push(colorDot0);\n" +
                         "        colorDotArr.push(colorDot1);\n" +
                         "        colorDotArr.push(colorDot2);\n" +
                         "        colorDotArr.push(colorDot3);\n" +
-                        "        let wholeContentString = this.points[0].x + '<br/>';\n" +
-                        "        for (let i = 0;i < 4;i++) {\n" +
-                        "            let yValue = this.points[i].y;\n" +
+                        "        var wholeContentString = this.points[0].x + '<br/>';\n" +
+                        "        for (var i = 0;i < 4;i++) {\n" +
+                        "            var yValue = this.points[i].y;\n" +
                         "            if (yValue != 0) {\n" +
-                        "                let prefixStr = colorDotArr[i];\n" +
+                        "                var prefixStr = colorDotArr[i];\n" +
                         "                wholeContentString += prefixStr + this.points[i].series.name + ': ' + this.points[i].y + '<br/>';\n" +
                         "            }\n" +
                         "        }\n" +
@@ -242,18 +242,18 @@ public class CustomTooltipWithJSFunctionActivity extends AppCompatActivity {
         AATooltip aaTooltip = new AATooltip()
                 .useHTML(true)
                 .formatter("function () {\n" +
-                        "        let colorsArr = [];\n" +
+                        "        var colorsArr = [];\n" +
                         "        colorsArr.push(\"mediumspringgreen\");\n" +
                         "        colorsArr.push(\"deepskyblue\");\n" +
                         "        colorsArr.push(\"red\");\n" +
                         "        colorsArr.push(\"sandybrown\");\n" +
-                        "        let wholeContentString ='<span style=\\\"' + 'color:lightGray; font-size:13px\\\"' + '>◉ Time: ' + this.x + ' year</span><br/>';\n" +
-                        "        for (let i = 0;i < 4;i++) {\n" +
-                        "            let thisPoint = this.points[i];\n" +
-                        "            let yValue = thisPoint.y;\n" +
+                        "        var wholeContentString ='<span style=\\\"' + 'color:lightGray; font-size:13px\\\"' + '>◉ Time: ' + this.x + ' year</span><br/>';\n" +
+                        "        for (var i = 0;i < 4;i++) {\n" +
+                        "            var thisPoint = this.points[i];\n" +
+                        "            var yValue = thisPoint.y;\n" +
                         "            if (yValue != 0) {\n" +
-                        "                let spanStyleStartStr = '<span style=\\\"' + 'color:'+ colorsArr[i] + '; font-size:13px\\\"' + '>◉ ';\n" +
-                        "                let spanStyleEndStr = '</span> <br/>';\n" +
+                        "                var spanStyleStartStr = '<span style=\\\"' + 'color:'+ colorsArr[i] + '; font-size:13px\\\"' + '>◉ ';\n" +
+                        "                var spanStyleEndStr = '</span> <br/>';\n" +
                         "                wholeContentString += spanStyleStartStr + thisPoint.series.name + ': ' + thisPoint.y + '℃' + spanStyleEndStr;\n" +
                         "            }\n" +
                         "        }\n" +
