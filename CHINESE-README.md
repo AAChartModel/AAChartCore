@@ -36,34 +36,32 @@
 
 ***
 
-
-
-
-
 ## 真机美图
 
 <div>
-<img src='https://github.com/AAChartModel/loadHtmlCssJsDemo-master/blob/master/AAChartKit/BeautyAppreciation/ColumnChart.png' width=280>
-<img src='https://github.com/AAChartModel/loadHtmlCssJsDemo-master/blob/master/AAChartKit/BeautyAppreciation/BarChart.png' width=280>
-<img src='https://github.com/AAChartModel/loadHtmlCssJsDemo-master/blob/master/AAChartKit/BeautyAppreciation/AreaChart.png' width=280>
+<img src='https://github.com/AAChartModel/loadHtmlCssJsDemo-master/blob/master/AAChartKit/BeautyAppreciation/ColumnChart.png' width="210" height="413">
+<img src='https://github.com/AAChartModel/loadHtmlCssJsDemo-master/blob/master/AAChartKit/BeautyAppreciation/BarChart.png' width="210" height="413">
+<img src='https://github.com/AAChartModel/loadHtmlCssJsDemo-master/blob/master/AAChartKit/BeautyAppreciation/AreaChart.png' width="210" height="413">
+<img src='https://github.com/AAChartModel/loadHtmlCssJsDemo-master/blob/master/AAChartKit/BeautyAppreciation/LineChart.png' width=210 height="413">
+
 </div>
 
 <div>
-<img src='https://github.com/AAChartModel/loadHtmlCssJsDemo-master/blob/master/AAChartKit/BeautyAppreciation/LineChart.png' width=280>
-<img src='https://github.com/AAChartModel/loadHtmlCssJsDemo-master/blob/master/AAChartKit/BeautyAppreciation/StepAreaChart.png' width=280>
-<img src='https://github.com/AAChartModel/loadHtmlCssJsDemo-master/blob/master/AAChartKit/BeautyAppreciation/StepLineChart.png' width=280>
+<img src='https://github.com/AAChartModel/loadHtmlCssJsDemo-master/blob/master/AAChartKit/BeautyAppreciation/StepAreaChart.png' width=210 height="413">
+<img src='https://github.com/AAChartModel/loadHtmlCssJsDemo-master/blob/master/AAChartKit/BeautyAppreciation/StepLineChart.png' width=210 height="413">
+<img src='https://github.com/AAChartModel/loadHtmlCssJsDemo-master/blob/master/AAChartKit/BeautyAppreciation/SplineChart.png' width=210 height="413">
+<img src='https://github.com/AAChartModel/loadHtmlCssJsDemo-master/blob/master/AAChartKit/BeautyAppreciation/AreasplineChart.png' width=210 height="413">
 </div>
 
 <div>
-<img src='https://github.com/AAChartModel/loadHtmlCssJsDemo-master/blob/master/AAChartKit/BeautyAppreciation/SplineChart.png' width=280>
-<img src='https://github.com/AAChartModel/loadHtmlCssJsDemo-master/blob/master/AAChartKit/BeautyAppreciation/AreasplineChart.png' width=280>
-<img src='https://github.com/AAChartModel/loadHtmlCssJsDemo-master/blob/master/AAChartKit/BeautyAppreciation/StackedPolarChart.png' width=280>
+
+<img src='https://github.com/AAChartModel/loadHtmlCssJsDemo-master/blob/master/AAChartKit/BeautyAppreciation/StackedPolarChart.png' width=210 height="413">
 </div>
 
 <div>
-<img src='https://github.com/AAChartModel/Gallery/blob/master/AAInfographics/BubbleChart.png' width=280>
-<img src='https://github.com/AAChartModel/Gallery/blob/master/AAInfographics/ArearangeAverageValueChart.png' width=280>
-<img src='https://github.com/AAChartModel/Gallery/blob/master/AAInfographics/ColumnMixedLineChart.png' width=280>
+<img src='https://github.com/AAChartModel/Gallery/blob/master/AAInfographics/BubbleChart.png' width=210>
+<img src='https://github.com/AAChartModel/Gallery/blob/master/AAInfographics/ArearangeAverageValueChart.png' width=210>
+<img src='https://github.com/AAChartModel/Gallery/blob/master/AAInfographics/ColumnMixedLineChart.png' width=210>
 </div>
 
 ## 安装
