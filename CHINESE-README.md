@@ -66,11 +66,6 @@
 <img src='https://raw.githubusercontent.com/AAChartModel/Gallery/master/AAChartKit/stackingColumnChart.png' width=210>
 </div>
 
-
-| Spline Chart 曲线图| Areaspline Chart 曲线填充图 | Stacked Polar Chart 堆积填充图 |
-| :----:  | :----: | :----: |
-| ![image1](https://raw.githubusercontent.com/AAChartModel/Gallery/master/AAChartKit/splineChart.png) | ![image1](https://raw.githubusercontent.com/AAChartModel/Gallery/master/AAChartKit/areasplineChart.png) | ![image1](https://raw.githubusercontent.com/AAChartModel/Gallery/master/AAChartKit/percentStackingAreasplineChart.png) |
-
 ## 安装
 
 ### 手动安装
