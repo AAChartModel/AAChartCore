@@ -1,4 +1,4 @@
- ![AAChartCore-LOGO](https://raw.githubusercontent.com/AAChartModel/Gallery/blob/master/AAChartCore/AAChartCore-Logo.png)
+ ![AAChartCore-LOGO](https://raw.githubusercontent.com/AAChartModel/Gallery/master/AAChartCore/AAChartCore-Logo.png)
 
 # AAChartCore
  
