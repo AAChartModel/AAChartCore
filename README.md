@@ -1,4 +1,5 @@
- ![AAInfographics-LOGO](https://raw.githubusercontent.com/AAChartModel/loadHtmlCssJsDemo-master/master/AAInfographics/AAInfographics-LOGO.png)
+ ![AAChartCore-LOGO](https://raw.githubusercontent.com/AAChartModel/Gallery/blob/master/AAChartCore/AAChartCore-Logo.png)
+
 # AAChartCore
  
 [![Support](https://img.shields.io/badge/Support-Android-brightgreen.svg)](https://github.com/AAChartModel/AAChartCore) </br>
@@ -246,7 +247,7 @@ For example, configuring AATooltip instance object properties as follow:
                         "        +  this.y\n" +
                         "        + ' </b> Dollars ';\n" +
                         "        }")
-                .valueDecimals(2)//设置取值精确到小数点后几位//设置取值精确到小数点后几位
+                .valueDecimals(2)
                 .backgroundColor("#000000")
                 .borderColor("#000000")
                 .style(new AAStyle()
