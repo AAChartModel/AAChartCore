@@ -3,17 +3,6 @@ package com.example.anan.chartcore_slim.AAChartCoreLib.AATools;
 import java.util.HashMap;
 import java.util.Map;
 
-enum AALinearGradientDirection {
-    ToTop,           //⇧⇧⇧⇧⇧⇧
-    ToBottom,        //⇩⇩⇩⇩⇩⇩
-    ToLeft,          //⇦⇦⇦⇦⇦⇦
-    ToRight,         //⇨⇨⇨⇨⇨⇨
-    ToTopLeft,       //⇖⇖⇖⇖⇖⇖
-    ToTopRight,      //⇗⇗⇗⇗⇗⇗
-    ToBottomLeft,    //⇙⇙⇙⇙⇙⇙
-    ToBottomRight,   //⇘⇘⇘⇘⇘⇘
-}
-
 public class AAGradientColor {
 
     public static HashMap<String,Object> oceanBlueColor() {
@@ -120,11 +109,11 @@ public class AAGradientColor {
     public static  HashMap<String,Object> gradientColorMap(
             AALinearGradientDirection direction,
             String startColor,
-            String endColo) {
+            String endColor) {
         Map linearGradientColorMap = linearGradientMap(direction);
         Object[][] stopsArr =  new Object[][]{
                 {0  ,startColor},
-                {1  ,endColo},
+                {1  ,endColor},
         };
         HashMap gradientColorMap = new  HashMap<String,Object>();
         gradientColorMap.put("linearGradient",linearGradientColorMap);

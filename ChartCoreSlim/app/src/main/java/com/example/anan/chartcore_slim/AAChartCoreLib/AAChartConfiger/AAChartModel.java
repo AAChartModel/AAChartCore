@@ -35,6 +35,7 @@ package com.example.anan.chartcore_slim.AAChartCoreLib.AAChartConfiger;
 
 import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartEnum.AAChartAnimationType;
 import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartEnum.AAChartStackingType;
+import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartEnum.AAChartType;
 
 public class AAChartModel {
 
@@ -74,7 +75,7 @@ public class AAChartModel {
     public String  legendLayout;          //图例数据项的布局。布局类型： "horizontal" 或 "vertical" 即水平布局和垂直布局 默认是：horizontal.
     public String  legendAlign;           //设定图例在图表区中的水平对齐方式，合法值有left，center 和 right。
     public String  legendVerticalAlign;   //设定图例在图表区中的垂直对齐方式，合法值有 top，middle 和 bottom。垂直位置可以通过 y 选项做进一步设定。
-    public String  backgroundColor;       //图表背景色
+    public Object  backgroundColor;       //图表背景色
     public Integer borderRadius;          //柱状图长条图头部圆角半径(可用于设置头部的形状,仅对条形图,柱状图有效)
     public Integer markerRadius;          //折线连接点的半径长度
     public Object[] series;
@@ -257,7 +258,7 @@ public class AAChartModel {
         return this;
     }
 
-    public AAChartModel backgroundColor(String prop) {
+    public AAChartModel backgroundColor(Object prop) {
         backgroundColor = prop;
         return this;
     }
@@ -284,6 +285,7 @@ public class AAChartModel {
     }
 
     public AAChartModel() {
+        chartType = AAChartType.Line;
         animationType = AAChartAnimationType.EaseInBack;
         animationDuration = 500;//以毫秒为单位
         pointHollow = false;

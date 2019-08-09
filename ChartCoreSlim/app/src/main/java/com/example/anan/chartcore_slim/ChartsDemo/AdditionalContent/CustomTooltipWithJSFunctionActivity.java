@@ -96,7 +96,7 @@ public class CustomTooltipWithJSFunctionActivity extends AppCompatActivity {
                 .borderColor("#000000")
                 .style(new AAStyle()
                         .color("#FFD700")
-                        .fontSize("12 px")
+                        .fontSize(12.f)
                 );
         HashMap<String,Object> aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
         aaOptions.put("tooltip",aaTooltip);
@@ -305,7 +305,7 @@ public class CustomTooltipWithJSFunctionActivity extends AppCompatActivity {
                 .borderColor("#000000")
                 .style(new AAStyle()
                         .color("#1e90ff")
-                        .fontSize("12 px")
+                        .fontSize(12.f)
                 );
         HashMap<String,Object> aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
         aaOptions.put("tooltip",aaTooltip);

@@ -202,18 +202,18 @@ public class AAOptionsConstructor
                 && !chartType.equals(AAChartType.Pyramid)
                 && !chartType.equals(AAChartType.Funnel)  )
         {
-            HashMap aaAxisLabel = new HashMap<String, Object>();
-            aaAxisLabel.put("enabled", aaChartModel.xAxisLabelsEnabled);
+            HashMap aaAxisLabels = new HashMap<String, Object>();
+            aaAxisLabels.put("enabled", aaChartModel.xAxisLabelsEnabled);
 
             HashMap aaXAxis = new HashMap<String, Object>();
-            aaXAxis.put("label", aaAxisLabel);
+            aaXAxis.put("labels", aaAxisLabels);
             aaXAxis.put("reversed", aaChartModel.xAxisReversed);
             aaXAxis.put("gridLineWidth", aaChartModel.xAxisGridLineWidth);
             aaXAxis.put("categories", aaChartModel.categories);
             aaXAxis.put("visible", aaChartModel.xAxisVisible);
 
             HashMap aaYAxis = new HashMap<String, Object>();
-            aaYAxis.put("label", aaAxisLabel);
+            aaYAxis.put("labels", aaAxisLabels);
             aaYAxis.put("reversed", aaChartModel.yAxisReversed);
             aaYAxis.put("gridLineWidth", aaChartModel.yAxisGridLineWidth);
             aaYAxis.put("title", aaChartModel.yAxisTitle);

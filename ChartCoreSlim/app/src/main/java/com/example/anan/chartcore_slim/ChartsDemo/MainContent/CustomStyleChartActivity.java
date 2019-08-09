@@ -129,7 +129,7 @@ public class CustomStyleChartActivity extends AppCompatActivity {
                     "eveningDelight",
             };
 
-           HashMap[] gradientColorArr =  {
+           Map[] gradientColorArr =  {
                    AAGradientColor.oceanBlueColor(),
                    AAGradientColor.sanguineColor(),
                    AAGradientColor.lusciousLimeColor(),

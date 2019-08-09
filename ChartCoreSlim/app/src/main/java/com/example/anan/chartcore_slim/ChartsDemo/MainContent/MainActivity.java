@@ -64,6 +64,10 @@ public class MainActivity extends AppCompatActivity {
             "configureAAPlotLinesForChart",
             "customAATooltipWithJSFuntion",
             "customXAxisCrosshairStyle",
+            "configureXAxisLabelsFontColorWithHTMLString",
+            "configureXAxisLabelsFontColorAndFontSizeWithHTMLString",
+            "configure_DataLabels_XAXis_YAxis_Legend_Style",
+            "configureXAxisPlotBand",
             /*隐藏或显示内容*/
             "/*隐藏或显示内容*/Column Chart---柱形图--------------",
             "Bar Chart---条形图",
@@ -130,6 +134,10 @@ public class MainActivity extends AppCompatActivity {
             "configureAAPlotLinesForChart",
             "customAATooltipWithJSFuntion",
             "customXAxisCrosshairStyle",
+            "configureXAxisLabelsFontColorWithHTMLString",
+            "configureXAxisLabelsFontColorAndFontSizeWithHTMLString",
+            "configure_DataLabels_XAXis_YAxis_Legend_Style",
+            "configureXAxisPlotBand",
             /*隐藏或显示内容*/
             AAChartType.Column,
             AAChartType.Bar,
@@ -146,8 +154,6 @@ public class MainActivity extends AppCompatActivity {
             "formatterFunction5",
 
     };
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -174,11 +180,11 @@ public class MainActivity extends AppCompatActivity {
                     goToMixedChartActivity(position);
                 } else if (position > 28 && position <= 37 )  {
                     goToCustomStyleChartActivity(position);
-                } else if (position > 37 && position <= 41){
+                } else if (position > 37 && position <= 45){
                     goToDrawChartWithAAOptionsActivity(position);
-                } else if (position > 41 && position <= 49 ) {
+                } else if (position > 45 && position <= 53 ) {
                     goToHideOrShowChartSeriesActivity(position);
-                } else if (position > 49) {
+                } else if (position > 53) {
                     goToCustomTooltipWithJSFunctionActivity(position);
                 }
             }

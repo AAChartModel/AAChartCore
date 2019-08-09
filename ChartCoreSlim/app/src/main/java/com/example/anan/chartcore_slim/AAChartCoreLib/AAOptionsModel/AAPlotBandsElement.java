@@ -8,7 +8,7 @@ public class AAPlotBandsElement {
     private Float borderWidth;
     private String className;
     private AALabel label;
-    private Integer index;
+    private Integer zIndex;
 
     public AAPlotBandsElement from(Float prop) {
         from = prop;
@@ -45,8 +45,8 @@ public class AAPlotBandsElement {
         return this;
     }
 
-    public AAPlotBandsElement index(Integer prop) {
-        index = prop;
+    public AAPlotBandsElement zIndex(Integer prop) {
+        zIndex = prop;
         return this;
     }
 

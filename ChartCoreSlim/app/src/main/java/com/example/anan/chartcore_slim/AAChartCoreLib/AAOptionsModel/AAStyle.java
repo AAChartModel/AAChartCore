@@ -12,8 +12,8 @@ public class AAStyle {
         return this;
     }
 
-    public AAStyle fontSize(String prop) {
-        fontSize = prop;
+    public AAStyle fontSize(Float prop) {
+        fontSize = prop + "px";
         return this;
     }
 
@@ -22,7 +22,7 @@ public class AAStyle {
         return this;
     }
 
-    public AAStyle textOutLine(String prop) {
+    public AAStyle textOutline(String prop) {
         textOutLine = prop;
         return this;
     }

@@ -61,7 +61,7 @@ public class CommonChartActivity extends AppCompatActivity
                 .title("title")
                 .subtitle("subtitle")
                 .backgroundColor("#4b2b7f")
-                .dataLabelEnabled(true)
+                .dataLabelEnabled(false)
                 .yAxisGridLineWidth(0)
                 .legendVerticalAlign(AAChartLegendVerticalAlignType.Bottom)
                 .series(new AASeriesElement[]{
