@@ -261,7 +261,7 @@ public class CustomStyleChartActivity extends AppCompatActivity {
         };//颜色字符串设置支持十六进制类型和 rgba 类型
 
         Map linearGradientColor =  AAGradientColor.gradientColorMap(
-                AALinearGradientDirection.ToRight,
+                AALinearGradientDirection.ToLeft,
                 stopsArr
         );//颜色字符串设置支持十六进制类型和 rgba 类型
 
@@ -279,7 +279,7 @@ public class CustomStyleChartActivity extends AppCompatActivity {
                 .series(new AASeriesElement[]{
                         new AASeriesElement()
                                 .name("Tokyo Hot")
-                                .lineWidth(15.0f)
+                                .lineWidth(3f)
                                 .color(linearGradientColor)
                                 .data(new Object[]{7.0, 6.9, 2.5, 14.5, 18.2, 21.5, 5.2, 26.5, 23.3, 45.3, 13.9, 9.6}),
                         }
@@ -297,7 +297,7 @@ public class CustomStyleChartActivity extends AppCompatActivity {
         };//颜色字符串设置支持十六进制类型和 rgba 类型
 
         Map linearGradientColor =  AAGradientColor.gradientColorMap(
-                AALinearGradientDirection.ToRight,
+                AALinearGradientDirection.ToLeft,
                 stopsArr
         );//颜色字符串设置支持十六进制类型和 rgba 类型
 

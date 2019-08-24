@@ -163,10 +163,10 @@ public class AAGradientColor {
 
     private static Map linearGradientMap(int x1, int y1, int x2, int y2) {
         Map linearGradientColorMap = new HashMap<String,Integer>();
-        linearGradientColorMap.put("x1",0);
-        linearGradientColorMap.put("y1",1);
-        linearGradientColorMap.put("x2",0);
-        linearGradientColorMap.put("y2",0);
+        linearGradientColorMap.put("x1",x1);
+        linearGradientColorMap.put("y1",y1);
+        linearGradientColorMap.put("x2",x2);
+        linearGradientColorMap.put("y2",y2);
         return linearGradientColorMap;
     }
 }
