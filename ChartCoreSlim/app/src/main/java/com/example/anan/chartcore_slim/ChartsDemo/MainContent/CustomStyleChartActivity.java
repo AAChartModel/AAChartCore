@@ -15,6 +15,7 @@ import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartEnum.AAChartAnimati
 import com.example.anan.chartcore_slim.AAChartCoreLib.AAOptionsModel.AAShadow;
 import com.example.anan.chartcore_slim.AAChartCoreLib.AATools.AAColor;
 import com.example.anan.chartcore_slim.AAChartCoreLib.AATools.AAGradientColor;
+import com.example.anan.chartcore_slim.AAChartCoreLib.AATools.AALinearGradientDirection;
 import com.example.anan.chartcore_slim.R;
 
 import java.util.HashMap;
@@ -227,7 +228,7 @@ public class CustomStyleChartActivity extends AppCompatActivity {
 
     AAChartModel configureChartWithShadowStyle() {
         return new AAChartModel()
-                .chartType(AAChartType.Areaspline)
+                .chartType(AAChartType.Spline)
                 .title("")
                 .subtitle("")
                 .categories(new String[]{"一月", "二月", "三月", "四月", "五月", "六月",
@@ -253,19 +254,16 @@ public class CustomStyleChartActivity extends AppCompatActivity {
     }
 
     AAChartModel configureColorfulGradientAreaChart() {
-        Map linearGradientColorMap = new HashMap<String,Integer>();
-        linearGradientColorMap.put("x1",0);
-        linearGradientColorMap.put("y1",0);
-        linearGradientColorMap.put("x2",1);
-        linearGradientColorMap.put("y2",0);
         Object[][] stopsArr =  new Object[][]{
                 {0.00 ,"#febc0f"},
                 {0.50  ,"#FF14d4"},
                 {1.00  ,"#0bf8f5"},
         };//颜色字符串设置支持十六进制类型和 rgba 类型
-        Map gradientColorMap = new  HashMap<String,Object>();
-        gradientColorMap.put("linearGradient",linearGradientColorMap);
-        gradientColorMap.put("stops",stopsArr);
+
+        Map linearGradientColor =  AAGradientColor.gradientColorMap(
+                AALinearGradientDirection.ToRight,
+                stopsArr
+        );//颜色字符串设置支持十六进制类型和 rgba 类型
 
         return new AAChartModel()
                 .chartType(AAChartType.Areaspline)
@@ -282,7 +280,7 @@ public class CustomStyleChartActivity extends AppCompatActivity {
                         new AASeriesElement()
                                 .name("Tokyo Hot")
                                 .lineWidth(15.0f)
-                                .color(gradientColorMap)
+                                .color(linearGradientColor)
                                 .data(new Object[]{7.0, 6.9, 2.5, 14.5, 18.2, 21.5, 5.2, 26.5, 23.3, 45.3, 13.9, 9.6}),
                         }
                 );
@@ -290,11 +288,6 @@ public class CustomStyleChartActivity extends AppCompatActivity {
 
 
     AAChartModel configureColorfulGradientSplineChart() {
-        Map linearGradientColorMap = new HashMap<String,Integer>();
-        linearGradientColorMap.put("x1",0);
-        linearGradientColorMap.put("y1",0);
-        linearGradientColorMap.put("x2",1);
-        linearGradientColorMap.put("y2",0);
         Object[][] stopsArr =  new Object[][]{
                 {0.00 ,"#febc0f"},
                 {0.25  ,"#FF14d4"},
@@ -302,9 +295,11 @@ public class CustomStyleChartActivity extends AppCompatActivity {
                 {0.75 ,"#F33c52"},
                 {1.00  ,"#1904dd"},
         };//颜色字符串设置支持十六进制类型和 rgba 类型
-        Map gradientColorMap = new  HashMap<String,Object>();
-        gradientColorMap.put("linearGradient",linearGradientColorMap);
-        gradientColorMap.put("stops",stopsArr);
+
+        Map linearGradientColor =  AAGradientColor.gradientColorMap(
+                AALinearGradientDirection.ToRight,
+                stopsArr
+        );//颜色字符串设置支持十六进制类型和 rgba 类型
 
         return new AAChartModel()
                 .chartType(AAChartType.Spline)
@@ -321,7 +316,7 @@ public class CustomStyleChartActivity extends AppCompatActivity {
                         new AASeriesElement()
                                 .name("Tokyo Hot")
                                 .lineWidth(15.0f)
-                                .color(gradientColorMap)
+                                .color(linearGradientColor)
                                 .data(new Object[]{7.0, 6.9, 2.5, 14.5, 18.2, 21.5, 5.2, 26.5, 23.3, 45.3, 13.9, 9.6}),
                         }
                 );
@@ -329,18 +324,11 @@ public class CustomStyleChartActivity extends AppCompatActivity {
 
 
     AAChartModel configureGradientColorAreasplineChart() {
-        Map linearGradientColorMap = new HashMap<String,Integer>();
-        linearGradientColorMap.put("x1",0);
-        linearGradientColorMap.put("y1",0);
-        linearGradientColorMap.put("x2",0);
-        linearGradientColorMap.put("y2",1);
-        Object[][] stopsArr =  new Object[][]{
-                {0  ,"rgba(2255,20,147,1)"},//深粉色, alpha 透明度 1
-                {1  ,"rgba(255,105,180,0.1)"},//热情的粉红, alpha 透明度 0.1
-        };//颜色字符串设置支持十六进制类型和 rgba 类型
-        Map gradientColorMap = new  HashMap<String,Object>();
-        gradientColorMap.put("linearGradient",linearGradientColorMap);
-        gradientColorMap.put("stops",stopsArr);
+      Map linearGradientColor =  AAGradientColor.gradientColorMap(
+              AALinearGradientDirection.ToTop,
+              "rgba(2255,20,147,1)",//深粉色, alpha 透明度 1
+              "rgba(255,105,180,0.1)"//热情的粉红, alpha 透明度 0.1
+              );//颜色字符串设置支持十六进制类型和 rgba 类型
 
         return new AAChartModel()
                 .chartType(AAChartType.Areaspline)
@@ -360,7 +348,7 @@ public class CustomStyleChartActivity extends AppCompatActivity {
                                 .name("Tokyo Hot")
                                 .lineWidth(5.0f)
                                 .color("rgba(220,20,60,1)")//猩红色, alpha 透明度 1
-                                .fillColor(gradientColorMap)
+                                .fillColor(linearGradientColor)
                                 .data(new Object[]{7.0, 6.9, 2.5, 14.5, 18.2, 21.5, 5.2, 26.5, 23.3, 45.3, 13.9, 9.6}),
                  }
                );

@@ -109,14 +109,23 @@ public class AAGradientColor {
     public static  HashMap<String,Object> gradientColorMap(
             AALinearGradientDirection direction,
             String startColor,
-            String endColor) {
-        Map linearGradientColorMap = linearGradientMap(direction);
+            String endColor
+    ) {
         Object[][] stopsArr =  new Object[][]{
                 {0  ,startColor},
                 {1  ,endColor},
         };
+
+        return gradientColorMap(direction,stopsArr);
+    }
+
+    public static  HashMap<String,Object> gradientColorMap(
+            AALinearGradientDirection direction,
+            Object[][] stopsArr
+    ) {
+        Map linearGradientMap = linearGradientMap(direction);
         HashMap gradientColorMap = new  HashMap<String,Object>();
-        gradientColorMap.put("linearGradient",linearGradientColorMap);
+        gradientColorMap.put("linearGradient",linearGradientMap);
         gradientColorMap.put("stops",stopsArr);
         return gradientColorMap;
     }
