@@ -61,7 +61,7 @@ public class CommonChartActivity extends AppCompatActivity
                 .title("title")
                 .subtitle("subtitle")
                 .backgroundColor("#4b2b7f")
-                .dataLabelEnabled(false)
+                .dataLabelsEnabled(false)
                 .yAxisGridLineWidth(0)
                 .legendVerticalAlign(AAChartLegendVerticalAlignType.Bottom)
                 .series(new AASeriesElement[]{
@@ -201,7 +201,7 @@ public class CommonChartActivity extends AppCompatActivity
                 break;
             case R.id.switch4: aaChartModel.polar(isChecked);
                 break;
-            case R.id.switch5: aaChartModel.dataLabelEnabled(isChecked);
+            case R.id.switch5: aaChartModel.dataLabelsEnabled(isChecked);
                 break;
         }
 

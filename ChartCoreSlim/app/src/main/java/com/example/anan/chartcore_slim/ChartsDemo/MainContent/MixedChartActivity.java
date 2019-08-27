@@ -144,7 +144,7 @@ public class MixedChartActivity extends AppCompatActivity {
                 .title("")//图形标题
                 .subtitle("")//图形副标题
                 .chartType(AAChartType.Line)
-                .dataLabelEnabled(false)
+                .dataLabelsEnabled(false)
                 .markerSymbolStyle(AAChartSymbolStyleType.BorderBlank)
                 .series(new AASeriesElement[]{
                         new AASeriesElement()
@@ -212,7 +212,7 @@ public class MixedChartActivity extends AppCompatActivity {
     AAChartModel dashStyleTypeMixed() {
         return new AAChartModel()
                 .chartType(AAChartType.Spline)//图形类型
-                .dataLabelEnabled(false)//是否显示数字
+                .dataLabelsEnabled(false)//是否显示数字
                 .stacking(AAChartStackingType.Normal)
                 .markerRadius(0)
                 .series(new AASeriesElement[]{
@@ -246,7 +246,7 @@ public class MixedChartActivity extends AppCompatActivity {
     
     AAChartModel negativeColorMixed() {
         return new AAChartModel()
-                .dataLabelEnabled(false)//是否显示数字
+                .dataLabelsEnabled(false)//是否显示数字
                 .series(new AASeriesElement[]{
                         new AASeriesElement()
                                 .name("Column")
@@ -264,7 +264,7 @@ public class MixedChartActivity extends AppCompatActivity {
     
     AAChartModel scatterMixedLine() {
         return new AAChartModel()
-                .dataLabelEnabled(false)//是否显示数字
+                .dataLabelsEnabled(false)//是否显示数字
                 .chartType(AAChartType.Scatter)
                 .markerSymbolStyle(AAChartSymbolStyleType.InnerBlank)
                 .markerSymbol(AAChartSymbolType.Circle)

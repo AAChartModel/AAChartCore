@@ -181,7 +181,7 @@ public class AAChartModel {
         return this;
     }
 
-    public AAChartModel dataLabelEnabled(Boolean prop) {
+    public AAChartModel dataLabelsEnabled(Boolean prop) {
         dataLabelEnabled = prop;
         return this;
     }
@@ -313,6 +313,10 @@ public class AAChartModel {
         touchEventEnabled = true;
 
     }
+
+
+
+
 
 }
 

@@ -18,7 +18,6 @@ import com.example.anan.chartcore_slim.AAChartCoreLib.AATools.AAGradientColor;
 import com.example.anan.chartcore_slim.AAChartCoreLib.AATools.AALinearGradientDirection;
 import com.example.anan.chartcore_slim.R;
 
-import java.util.HashMap;
 import java.util.Map;
 
 public class CustomStyleChartActivity extends AppCompatActivity {
@@ -90,7 +89,7 @@ public class CustomStyleChartActivity extends AppCompatActivity {
                 .animationType(AAChartAnimationType.Bounce)
                 .title("Colorful Chart")
                 .subtitle("use AAColor to get color string")
-                .dataLabelEnabled(false)
+                .dataLabelsEnabled(false)
                 .categories(colorsNameArr)
                 .colorsTheme(colorsArr)
                 .stacking(AAChartStackingType.Percent)
@@ -167,6 +166,7 @@ public class CustomStyleChartActivity extends AppCompatActivity {
                             new AASeriesElement()
                                     .name("Tokyo")
                                     .data(new Object[] {
+                                            149.9, 171.5, 106.4, 129.2, 144.0, 176.0, 135.6, 188.5, 276.4, 214.1, 95.6, 54.4,
                                             149.9, 171.5, 106.4, 129.2, 144.0, 176.0, 135.6, 188.5, 276.4, 214.1, 95.6, 54.4})
                                     .colorByPoint(true)
                     });
@@ -178,7 +178,7 @@ public class CustomStyleChartActivity extends AppCompatActivity {
                 .chartType(AAChartType.Column)
                 .title("Discontinuous Data Chart")
                 .yAxisTitle("")
-                .dataLabelEnabled(true)
+                .dataLabelsEnabled(true)
                 .tooltipEnabled(true)
                 .series(new AASeriesElement[]{
                         new AASeriesElement()
@@ -215,7 +215,7 @@ public class CustomStyleChartActivity extends AppCompatActivity {
                 .legendEnabled(false)//隐藏图例(底部可点按的小圆点)
                 .categories(new String[]{"一月", "二月", "三月", "四月", "五月", "六月",
                         "七月", "八月", "九月", "十月", "十一月", "十二月"})
-                .dataLabelEnabled(true)
+                .dataLabelsEnabled(true)
                 .polar(true)//极地化图形
                 .series(new AASeriesElement[]{
                         new AASeriesElement()

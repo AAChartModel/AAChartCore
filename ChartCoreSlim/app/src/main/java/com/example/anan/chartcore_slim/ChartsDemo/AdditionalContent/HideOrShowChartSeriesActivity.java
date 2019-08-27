@@ -55,7 +55,7 @@ public class HideOrShowChartSeriesActivity extends AppCompatActivity
                 .title("title")
                 .subtitle("subtitle")
                 .backgroundColor("#4b2b7f")
-                .dataLabelEnabled(true)
+                .dataLabelsEnabled(true)
                 .yAxisGridLineWidth(0)
                 .legendVerticalAlign(AAChartLegendVerticalAlignType.Bottom)
                 .series(new AASeriesElement[]{
@@ -190,7 +190,7 @@ public class HideOrShowChartSeriesActivity extends AppCompatActivity
                     break;
 //                case R.id.switch4: aaChartModel.polar(isChecked);
 //                    break;
-//                case R.id.switch5: aaChartModel.dataLabelEnabled(isChecked);
+//                case R.id.switch5: aaChartModel.dataLabelsEnabled(isChecked);
 //                    break;
             }
 
