@@ -127,6 +127,8 @@ public class CustomStyleChartActivity extends AppCompatActivity {
                     "deepSea",
                     "coastalBreeze",
                     "eveningDelight",
+                    "neonGlowColor",
+                    "berrySmoothieColor"
             };
 
            Map[] gradientColorArr =  {
@@ -152,6 +154,8 @@ public class CustomStyleChartActivity extends AppCompatActivity {
                    AAGradientColor.deepSeaColor(),
                    AAGradientColor.coastalBreezeColor(),
                    AAGradientColor.eveningDelightColor(),
+                   AAGradientColor.neonGlowColor(),
+                   AAGradientColor.berrySmoothieColor()
            };
 
             return new AAChartModel()
@@ -205,7 +209,7 @@ public class CustomStyleChartActivity extends AppCompatActivity {
     }
 
     AAChartModel configureNightingaleRoseChart() {
-        return  new  AAChartModel()
+        return new AAChartModel()
                 .title("南丁格尔玫瑰图")
                 .subtitle("极地图中的一种")
                 .yAxisTitle("cm")
