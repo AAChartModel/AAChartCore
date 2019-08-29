@@ -1,13 +1,13 @@
 package com.example.anan.chartcore_slim.AAChartCoreLib.AAOptionsModel;
 
-import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartEnum.AAChartLegendAlignType;
-import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartEnum.AAChartLegendVerticalAlignType;
-import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartEnum.AAChartLegendlLayoutType;
+import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartEnum.AAChartAlignType;
+import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartEnum.AAChartVerticalAlignType;
+import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartEnum.AAChartLayoutType;
 
 public class AALegend {
-    private AAChartLegendlLayoutType layout; //图例数据项的布局。布局类型： "horizontal" 或 "vertical" 即水平布局和垂直布局 默认是：horizontal.
-    private AAChartLegendAlignType align; //设定图例在图表区中的水平对齐方式，合法值有left，center 和 right。
-    private AAChartLegendVerticalAlignType verticalAlign; //设定图例在图表区中的垂直对齐方式，合法值有 top，middle 和 bottom。垂直位置可以通过 y 选项做进一步设定。
+    private AAChartLayoutType layout; //图例数据项的布局。布局类型： "horizontal" 或 "vertical" 即水平布局和垂直布局 默认是：horizontal.
+    private AAChartAlignType align; //设定图例在图表区中的水平对齐方式，合法值有left，center 和 right。
+    private AAChartVerticalAlignType verticalAlign; //设定图例在图表区中的垂直对齐方式，合法值有 top，middle 和 bottom。垂直位置可以通过 y 选项做进一步设定。
     private Boolean enabled;
     private String borderColor;
     private Float borderWidth;
@@ -16,17 +16,17 @@ public class AALegend {
     private Float x;
     private Float y;
 
-    public AALegend layout(AAChartLegendlLayoutType prop) {
+    public AALegend layout(AAChartLayoutType prop) {
         this.layout = prop;
         return this;
     }
 
-    public AALegend align(AAChartLegendAlignType prop) {
+    public AALegend align(AAChartAlignType prop) {
         this.align = prop;
         return this;
     }
 
-    public AALegend verticalAlign(AAChartLegendVerticalAlignType prop) {
+    public AALegend verticalAlign(AAChartVerticalAlignType prop) {
         this.verticalAlign = prop;
         return this;
     }

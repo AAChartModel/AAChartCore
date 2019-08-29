@@ -1,6 +1,6 @@
 package com.example.anan.chartcore_slim.AAChartCoreLib.AAChartEnum;
 
-public interface AAChartLegendlLayoutType {
+public interface AAChartLayoutType {
     String Horizontal  = "horizontal";
     String Vertical    = "vertical";
 }

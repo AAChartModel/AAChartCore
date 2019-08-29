@@ -8,7 +8,7 @@ import android.widget.RadioGroup;
 import android.widget.Switch;
 
 import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartConfiger.AAChartModel;
-import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartEnum.AAChartLegendVerticalAlignType;
+import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartEnum.AAChartVerticalAlignType;
 import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartEnum.AAChartStackingType;
 import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartEnum.AAChartSymbolStyleType;
 import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartEnum.AAChartSymbolType;
@@ -63,7 +63,7 @@ public class CommonChartActivity extends AppCompatActivity
                 .backgroundColor("#4b2b7f")
                 .dataLabelsEnabled(false)
                 .yAxisGridLineWidth(0)
-                .legendVerticalAlign(AAChartLegendVerticalAlignType.Bottom)
+                .legendVerticalAlign(AAChartVerticalAlignType.Bottom)
                 .series(new AASeriesElement[]{
                         new AASeriesElement()
                                 .name("Tokyo")
