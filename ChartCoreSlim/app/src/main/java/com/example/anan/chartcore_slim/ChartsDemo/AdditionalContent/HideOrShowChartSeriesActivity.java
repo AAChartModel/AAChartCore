@@ -56,8 +56,7 @@ public class HideOrShowChartSeriesActivity extends AppCompatActivity
                 .subtitle("subtitle")
                 .backgroundColor("#4b2b7f")
                 .dataLabelsEnabled(true)
-                .yAxisGridLineWidth(0)
-                .legendVerticalAlign(AAChartVerticalAlignType.Bottom)
+                .yAxisGridLineWidth(0f)
                 .series(new AASeriesElement[]{
                         new AASeriesElement()
                                 .name("Tokyo")

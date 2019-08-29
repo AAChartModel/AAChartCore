@@ -1,6 +1,7 @@
 package com.example.anan.chartcore_slim.AAChartCoreLib.AAChartEnum;
 
 public interface AAChartAnimationType {
+    String Linear         = "linear";
     String EaseInQuad     = "easeInQuad";
     String EaseOutQuad    = "easeOutQuad";
     String EaseInOutQuad  = "easeInOutQuad";

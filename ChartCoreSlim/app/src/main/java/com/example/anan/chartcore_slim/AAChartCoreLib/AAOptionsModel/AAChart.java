@@ -2,10 +2,10 @@ package com.example.anan.chartcore_slim.AAChartCoreLib.AAOptionsModel;
 
 public class AAChart {
     private String type;
-    private String backgroundColor;
+    private Object backgroundColor;
     private String plotBackgroundImage;
     private String pinchType;
-    private String panning;
+    private Boolean panning;
     private String panKey;
     private Boolean polar;
     private AAAnimation animation;
@@ -18,7 +18,7 @@ public class AAChart {
         return this;
     }
 
-    public AAChart backgroundColor(String prop) {
+    public AAChart backgroundColor(Object prop) {
         backgroundColor = prop;
         return this;
     }
@@ -33,7 +33,7 @@ public class AAChart {
         return this;
     }
 
-    public AAChart panning(String prop) {
+    public AAChart panning(Boolean prop) {
         panning = prop;
         return this;
     }

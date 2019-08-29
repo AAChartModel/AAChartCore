@@ -1,9 +1,9 @@
 package com.example.anan.chartcore_slim.AAChartCoreLib.AAOptionsModel;
 
 public class AAYAxis {
-    private String title;
-    private String[] plotBands;
-    private String[] plotLines;
+    private AATitle title;
+    private AAPlotBandsElement[] plotBands;
+    private AAPlotLinesElement[] plotLines;
     private String[] categories;
     private Boolean reversed;
     private Float gridLineWidth;// y 轴网格线宽度
@@ -11,7 +11,7 @@ public class AAYAxis {
     private String gridLineDashStyle; //网格线线条样式，所有可用的线条样式参考：Highcharts线条样式
     private String alternateGridColor;  //backcolor of every other grid line area
     private String gridLineInterpolation; //Polar charts only. Whether the grid lines should draw as a polygon with straight lines between categories, or as circles. Can be either circle or polygon. 默认是：null.
-    private String labels;//用于设置 y 轴文字相关的
+    private AALabels labels;//用于设置 y 轴文字相关的
     private Float lineWidth; // y 轴线宽度
     private String lineColor; // y 轴线颜色
     private Float off; // y 轴线水平偏移
@@ -30,133 +30,133 @@ public class AAYAxis {
     private String tickPosition; //刻度线相对于轴线的位置，可用的值有 inside 和 outside，分别表示在轴线的内部和外部。 默认是：outside.
 
 
-    public AAYAxis title(String prop) {
-        this.title = prop;
+    public AAYAxis title(AATitle prop) {
+        title = prop;
         return this;
     }
 
-    public AAYAxis plotBands(String[] prop) {
-        this.plotBands = prop;
+    public AAYAxis plotBands(AAPlotBandsElement[] prop) {
+        plotBands = prop;
         return this;
     }
 
-    public AAYAxis plotLines(String[] prop) {
-        this.plotLines = prop;
+    public AAYAxis plotLines(AAPlotLinesElement[] prop) {
+        plotLines = prop;
         return this;
     }
 
     public AAYAxis categories(String[] prop) {
-        this.categories = prop;
+        categories = prop;
         return this;
     }
 
     public AAYAxis reversed(Boolean prop) {
-        this.reversed = prop;
+        reversed = prop;
         return this;
     }
 
     public AAYAxis gridLineWidth(Float prop) {
-        this.gridLineWidth = prop;
+        gridLineWidth = prop;
         return this;
     }
 
     public AAYAxis gridLineColor(String prop) {
-        this.gridLineColor = prop;
+        gridLineColor = prop;
         return this;
     }
 
     public AAYAxis gridLineDashStyle(String prop) {
-        this.gridLineDashStyle = prop;
+        gridLineDashStyle = prop;
         return this;
     }
 
     public AAYAxis alternateGridColor(String prop) {
-        this.alternateGridColor = prop;
+        alternateGridColor = prop;
         return this;
     }
 
     public AAYAxis gridLineInterpolation(String prop) {
-        this.gridLineInterpolation = prop;
+        gridLineInterpolation = prop;
         return this;
     }
 
     public AAYAxis labels(AALabels prop) {
-        this.labels = prop.toString();
+        labels = prop;
         return this;
     }
 
     public AAYAxis lineWidth(Float prop) {
-        this.lineWidth = prop;
+        lineWidth = prop;
         return this;
     }
 
     public AAYAxis lineColor(String prop) {
-        this.lineColor = prop;
+        lineColor = prop;
         return this;
     }
 
     public AAYAxis off(Float prop) {
-        this.off = prop;
+        off = prop;
         return this;
     }
 
     public AAYAxis allowDecimals(Boolean prop) {
-        this.allowDecimals = prop;
+        allowDecimals = prop;
         return this;
     }
 
     public AAYAxis max(Float prop) {
-        this.max = max;
+        max = max;
         return this;
     }
 
     public AAYAxis min(Float prop) {
-        this.min = min;
+        min = min;
         return this;
     }
 
     public AAYAxis tickPositions(Object[] prop) {
-        this.tickPositions = prop;
+        tickPositions = prop;
         return this;
     }
 
     public AAYAxis visible(Boolean prop) {
-        this.visible = prop;
+        visible = prop;
         return this;
     }
 
     public AAYAxis opposite(Boolean prop) {
-        this.opposite = prop;
+        opposite = prop;
         return this;
     }
 
     public AAYAxis tickInterval(Integer prop) {
-        this.tickInterval = prop;
+        tickInterval = prop;
         return this;
     }
 
     public AAYAxis crosshair(AACrosshair prop) {
-        this.crosshair = prop.toString();
+        crosshair = prop.toString();
         return this;
     }
 
     public AAYAxis stackLabels(String prop) {
-        this.stackLabels = prop;
+        stackLabels = prop;
         return this;
     }
 
     public AAYAxis tickWidth(Float prop) {
-        this.tickWidth = prop;
+        tickWidth = prop;
         return this;
     }
 
     public AAYAxis tickLength(Float prop) {
-        this.tickLength = prop;
+        tickLength = prop;
         return this;
     }
 
     public AAYAxis tickPosition(String prop) {
-        this.tickPosition = prop;
+        tickPosition = prop;
         return this;
     }
 

@@ -18,8 +18,10 @@ import com.example.anan.chartcore_slim.AAChartCoreLib.AAOptionsModel.AAItemStyle
 import com.example.anan.chartcore_slim.AAChartCoreLib.AAOptionsModel.AALabel;
 import com.example.anan.chartcore_slim.AAChartCoreLib.AAOptionsModel.AALabels;
 import com.example.anan.chartcore_slim.AAChartCoreLib.AAOptionsModel.AALegend;
+import com.example.anan.chartcore_slim.AAChartCoreLib.AAOptionsModel.AAOptions;
 import com.example.anan.chartcore_slim.AAChartCoreLib.AAOptionsModel.AAPlotBandsElement;
 import com.example.anan.chartcore_slim.AAChartCoreLib.AAOptionsModel.AAPlotLinesElement;
+import com.example.anan.chartcore_slim.AAChartCoreLib.AAOptionsModel.AAPlotOptions;
 import com.example.anan.chartcore_slim.AAChartCoreLib.AAOptionsModel.AAStyle;
 import com.example.anan.chartcore_slim.AAChartCoreLib.AAOptionsModel.AATooltip;
 import com.example.anan.chartcore_slim.AAChartCoreLib.AAOptionsModel.AAXAxis;
@@ -45,14 +47,14 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String chartType = intent.getStringExtra("chartType");
 
-        HashMap aaOptions = configureTheChartOptions(chartType);
+        AAOptions aaOptions = configureTheChartOptions(chartType);
 
         AAChartView aaChartView = findViewById(R.id.AAChartView);
         aaChartView.aa_drawChartWithChartOptions(aaOptions);
 
     }
 
-    HashMap configureTheChartOptions(String chartType) {
+    AAOptions configureTheChartOptions(String chartType) {
         switch (chartType) {
             case "configureAAPlotBandsForChart": return  configureAAPlotBandsForChart();
             case "configureAAPlotLinesForChart": return configureAAPlotLinesForChart();
@@ -66,11 +68,11 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
         return configureAAPlotBandsForChart();
     }
 
-    HashMap<String,Object> configureAAPlotBandsForChart() {
+    AAOptions configureAAPlotBandsForChart() {
         AAChartModel aaChartModel = new AAChartModel()
                 .chartType(AAChartType.Spline)//图形类型
                 .dataLabelsEnabled(false)
-                .markerRadius(0)
+                .markerRadius(0f)
                 .series(new AASeriesElement[]{
                         new AASeriesElement()
                                 .name("Tokyo")
@@ -79,7 +81,7 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
                                 .lineWidth(10.0f),
                 });
 
-        HashMap<String,Object> aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
+        AAOptions aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
         AAPlotBandsElement[] aaPlotBandsElementArr = new AAPlotBandsElement[]{
                 new AAPlotBandsElement()
                         .from(0.f)
@@ -113,12 +115,12 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
                 ,
         };
 
-        HashMap<String,Object> aaYAxis = (HashMap<String, Object>) aaOptions.get("yAxis");
-        aaYAxis.put("plotBands",aaPlotBandsElementArr);
+        AAYAxis aaYAxis = aaOptions.yAxis;
+        aaYAxis.plotBands(aaPlotBandsElementArr);
         return aaOptions;
     }
 
-    HashMap<String,Object> configureAAPlotLinesForChart() {
+AAOptions configureAAPlotLinesForChart() {
         Map map1 = new HashMap();
         map1.put("value",12);
         map1.put("color","#1e90ff");
@@ -144,7 +146,7 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
                                 .zones(zonesArr)
                 });
 
-        HashMap<String,Object> aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
+        AAOptions aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
         AAPlotLinesElement[] aaPlotLinesElementsArr = new AAPlotLinesElement[] {
                 new AAPlotLinesElement()
                         .color("#1e90ff")//颜色值(16进制)
@@ -190,12 +192,12 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
                 ,
         };
 
-        HashMap<String,Object> aaYAxis = (HashMap<String, Object>) aaOptions.get("yAxis");
-        aaYAxis.put("plotLines",aaPlotLinesElementsArr);
+        AAYAxis aaYAxis =  aaOptions.yAxis;
+        aaYAxis.plotLines(aaPlotLinesElementsArr);
         return aaOptions;
     }
 
-    HashMap customAATooltipWithJSFuntion() {
+AAOptions customAATooltipWithJSFuntion() {
         AAChartModel aaChartModel = new AAChartModel()
                 .chartType(AAChartType.Area)//图形类型
                 .title("近三个月金价起伏周期图")//图表主标题
@@ -246,12 +248,12 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
                         .color("#FFD700")
                         .fontSize(12.f)
                 );
-        HashMap<String,Object> aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
-        aaOptions.put("tooltip",aaTooltip);
-        return aaOptions;
+    AAOptions aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
+    aaOptions.tooltip(aaTooltip);
+    return aaOptions;
     }
 
-    HashMap customXAxisCrosshairStyle() {
+AAOptions customXAxisCrosshairStyle() {
         AAChartModel aaChartModel = new AAChartModel()
                 .chartType(AAChartType.Line)//图表类型
                 .series(new AASeriesElement[]{
@@ -294,17 +296,17 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
                         }
                 );
 
-        HashMap<String,Object> aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
+    AAOptions aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
         AACrosshair aaCrosshair = new AACrosshair()
                 .color(AAColor.redColor())
                 .width(1f)
                 .dashStyle(AAChartLineDashSyleType.LongDashDotDot);
-        HashMap aaXAxis = (HashMap) aaOptions.get("xAxis");
-        aaXAxis.put("crosshair",aaCrosshair);
+    AAXAxis aaXAxis =  aaOptions.xAxis;
+        aaXAxis.crosshair(aaCrosshair);
         return aaOptions;
     }
 
-    HashMap configureXAxisLabelsFontColorWithHTMLString() {
+AAOptions configureXAxisLabelsFontColorWithHTMLString() {
         String[] categories = new String[]{
                 "<font color=\\\"#CC0066\\\">孤岛危机<\\/font>",
                 "<font color=\\\"#CC0033\\\">使命召唤<\\/font>",
@@ -327,7 +329,7 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
                 .stacking(AAChartStackingType.Normal)
                 .categories(categories)
                 .dataLabelsEnabled(false)
-                .markerRadius(0)
+                .markerRadius(0f)
                 .series(new AASeriesElement[] {
                                 new AASeriesElement()
                                         .name("Berlin Hot")
@@ -337,16 +339,15 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
                         }
                 );
 
-        HashMap<String,Object> aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
-        HashMap aaXAxis = (HashMap) aaOptions.get("xAxis");
-        HashMap aaXAxisLabels = (HashMap) aaXAxis.get("labels");
-        aaXAxisLabels.put("useHTML",true);
-        aaXAxis.put("labels",aaXAxisLabels);
-
-        return aaOptions;
+    AAOptions aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
+    AAXAxis aaXAxis = aaOptions.xAxis;
+    AALabels aaXAxisLabels = aaXAxis.labels;
+    aaXAxisLabels.useHTML(true);
+    aaXAxis.labels(aaXAxisLabels);
+    return aaOptions;
     }
 
-    HashMap configureXAxisLabelsFontColorAndFontSizeWithHTMLString() {
+AAOptions configureXAxisLabelsFontColorAndFontSizeWithHTMLString() {
         String[] categories = new String[]{
                 "<span style=\\\"color:#CC0066;font-weight:bold;font-size:10px\\\">使命召唤</span>",
                 "<span style=\\\"color:#CC0033;font-weight:bold;font-size:11px\\\">荣誉勋章</span>",
@@ -369,7 +370,7 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
                 .stacking(AAChartStackingType.Normal)
                 .categories(categories)
                 .dataLabelsEnabled(false)
-                .markerRadius(0)
+                .markerRadius(0f)
                 .series(new AASeriesElement[] {
                                 new AASeriesElement()
                                         .name("Berlin Hot")
@@ -379,23 +380,23 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
                         }
                 );
 
-        HashMap<String,Object> aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
-        HashMap aaXAxis = (HashMap) aaOptions.get("xAxis");
-        HashMap aaXAxisLabels = (HashMap) aaXAxis.get("labels");
-        aaXAxisLabels.put("useHTML",true);
-        aaXAxis.put("labels",aaXAxisLabels);
+    AAOptions aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
+    AAXAxis aaXAxis = aaOptions.xAxis;
+    AALabels aaXAxisLabels = aaXAxis.labels;
+    aaXAxisLabels.useHTML(true);
+    aaXAxis.labels(aaXAxisLabels);
 
-        return aaOptions;
+    return aaOptions;
     }
 
-    HashMap configure_DataLabels_XAXis_YAxis_Legend_Style() {
-        HashMap backgroundColorGradientColor = AAGradientColor.gradientColorMap(
+AAOptions configure_DataLabels_XAXis_YAxis_Legend_Style() {
+    Map backgroundColorGradientColor = AAGradientColor.gradientColorMap(
                 AALinearGradientDirection.ToBottom,
                 "#4F00BC",
                 "#29ABE2"//颜色字符串设置支持十六进制类型和 rgba 类型
         );
 
-        HashMap fillColorGradientColor = AAGradientColor.gradientColorMap(
+    Map fillColorGradientColor = AAGradientColor.gradientColorMap(
                 AALinearGradientDirection.ToBottom,
                 "rgba(256,256,256,0.3)",
                 "rgba(256,256,256,1.0)"//颜色字符串设置支持十六进制类型和 rgba 类型
@@ -411,7 +412,7 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
                 .yAxisTitle("")
                 .categories(new String[] {"一月", "二月", "三月", "四月", "五月", "六月",
                         "七月", "八月", "九月", "十月", "十一月", "十二月"})
-                .markerRadius(0)
+                .markerRadius(0f)
                 .series(new AASeriesElement[]{
                         new AASeriesElement()
                                 .name("Berlin Hot")
@@ -472,35 +473,35 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
                         .fontWeight("thin")//字体为细体字
                 );
 
-        HashMap<String,Object> aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
+    AAOptions aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
 
-        HashMap plotOptions = (HashMap) aaOptions.get("plotOptions");
-        HashMap someTypeChart = (HashMap) plotOptions.get(AAChartType.Areaspline);
-        Map aaDataLabelsMap = Object2Map(aaDataLabels);
-        someTypeChart.put("dataLabels",aaDataLabelsMap);
-
-        HashMap XAxis = (HashMap) aaOptions.get("xAxis");
-        Map xAxisMap = Object2Map(XAxis);
-        XAxis.putAll(xAxisMap);
-
-        HashMap YAxis = (HashMap) aaOptions.get("yAxis");
-        Map yAxisMap = Object2Map(YAxis);
-        YAxis.putAll(yAxisMap);
-
-        HashMap legend = (HashMap) aaOptions.get("legend");
-        Map legendMap = Object2Map(legend);
-        YAxis.putAll(legendMap);
-
-
-        LinkedTreeMap XAxisLabels = (LinkedTreeMap) XAxis.get("labels");
-        XAxisLabels.put("useHTML",true);
-        XAxis.put("labels",XAxisLabels);
+    AAPlotOptions plotOptions = aaOptions.plotOptions;
+//    AAOptions someTypeChart = (HashMap) plotOptions.get(AAChartType.Areaspline);
+//        Map aaDataLabelsMap = Object2Map(aaDataLabels);
+//        someTypeChart.put("dataLabels",aaDataLabelsMap);
+//
+//    AAOptions XAxis = (HashMap) aaOptions.get("xAxis");
+//        Map xAxisMap = Object2Map(XAxis);
+//        XAxis.putAll(xAxisMap);
+//
+//    AAOptions YAxis = (HashMap) aaOptions.get("yAxis");
+//        Map yAxisMap = Object2Map(YAxis);
+//        YAxis.putAll(yAxisMap);
+//
+//    AAOptions legend = (HashMap) aaOptions.get("legend");
+//        Map legendMap = Object2Map(legend);
+//        YAxis.putAll(legendMap);
+//
+//
+//        LinkedTreeMap XAxisLabels = (LinkedTreeMap) XAxis.get("labels");
+//        XAxisLabels.put("useHTML",true);
+//        XAxis.put("labels",XAxisLabels);
 
         return aaOptions;
     }
 
 
-    private HashMap configureXAxisPlotBand() {
+     AAOptions configureXAxisPlotBand() {
         AAChartModel aaChartModel = new AAChartModel()
                 .chartType(AAChartType.Areaspline)
                 .title("")
@@ -508,8 +509,8 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
                 .categories(new String[] {"一月", "二月", "三月", "四月", "五月", "六月",
                         "七月", "八月", "九月", "十月", "十一月", "十二月"})
                 .yAxisTitle("")
-                .yAxisGridLineWidth(0)
-                .markerRadius(8)
+                .yAxisGridLineWidth(0f)
+                .markerRadius(8f)
                 .markerSymbolStyle(AAChartSymbolStyleType.InnerBlank)
                 .series(new AASeriesElement[] {
                         new AASeriesElement()
@@ -525,7 +526,7 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
                 });
 
 
-        HashMap<String,Object> aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
+    AAOptions aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
         AAPlotBandsElement[] aaPlotBandsElementArr = new AAPlotBandsElement[]{
                 new AAPlotBandsElement()
                         .from(-0.25f)//值域颜色带X轴起始值
@@ -547,8 +548,8 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
                 ,
         };
 
-        HashMap<String,Object> aaXAxis = (HashMap<String, Object>) aaOptions.get("xAxis");
-        aaXAxis.put("plotBands",aaPlotBandsElementArr);
+    AAXAxis aaXAxis =  aaOptions.xAxis;
+    aaXAxis.plotBands(aaPlotBandsElementArr);
 
         return aaOptions;
     }

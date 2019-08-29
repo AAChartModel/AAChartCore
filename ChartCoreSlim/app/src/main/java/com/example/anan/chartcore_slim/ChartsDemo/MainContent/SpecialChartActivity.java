@@ -299,7 +299,7 @@ public class SpecialChartActivity extends AppCompatActivity {
                 .chartType(AAChartType.Scatter)
                 .title("Height and weight distribution by sex")
                 .yAxisTitle("kg")
-                .markerRadius(8)
+                .markerRadius(8f)
                 .markerSymbolStyle(AAChartSymbolStyleType.InnerBlank)
                 .series(seriesElements);
     }
@@ -783,7 +783,7 @@ public class SpecialChartActivity extends AppCompatActivity {
                 .subtitle("2020/08/08")//图形副标题
                 .dataLabelsEnabled(false)//是否显示数字
                 .markerSymbolStyle(AAChartSymbolStyleType.BorderBlank)//折线连接点样式
-                .markerRadius(7)//折线连接点半径长度,为0时相当于没有折线连接点
+                .markerRadius(7f)//折线连接点半径长度,为0时相当于没有折线连接点
                 .series(new AASeriesElement[]{
                         new AASeriesElement()
                                 .name("Berlin")
@@ -814,7 +814,7 @@ public class SpecialChartActivity extends AppCompatActivity {
               .subtitle("2049/08/08")//图形副标题
               .dataLabelsEnabled(false)//是否显示数字
               .markerSymbolStyle(AAChartSymbolStyleType.InnerBlank)//折线连接点样式
-              .markerRadius(0)//折线连接点半径长度,为0时相当于没有折线连接点
+              .markerRadius(0f)//折线连接点半径长度,为0时相当于没有折线连接点
               .series(new AASeriesElement[]{
                       new AASeriesElement()
                               .name("Berlin")

@@ -214,7 +214,7 @@ public class MixedChartActivity extends AppCompatActivity {
                 .chartType(AAChartType.Spline)//图形类型
                 .dataLabelsEnabled(false)//是否显示数字
                 .stacking(AAChartStackingType.Normal)
-                .markerRadius(0)
+                .markerRadius(0f)
                 .series(new AASeriesElement[]{
                         new AASeriesElement()
                                 .name("SolidLine")
@@ -268,7 +268,7 @@ public class MixedChartActivity extends AppCompatActivity {
                 .chartType(AAChartType.Scatter)
                 .markerSymbolStyle(AAChartSymbolStyleType.InnerBlank)
                 .markerSymbol(AAChartSymbolType.Circle)
-                .markerRadius(8)
+                .markerRadius(8f)
                 .series(new AASeriesElement[]{
                         new AASeriesElement()
                                 .name("Scatter")

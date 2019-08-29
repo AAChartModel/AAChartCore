@@ -49,6 +49,7 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Toast;
 
+import com.example.anan.chartcore_slim.AAChartCoreLib.AAOptionsModel.AAOptions;
 import com.google.gson.Gson;
 import com.google.gson.internal.LinkedTreeMap;
 
@@ -147,7 +148,7 @@ public class AAChartView extends WebView {
     }
 
     public void aa_drawChartWithChartModel(final AAChartModel chartModel) {
-        HashMap aaOptions = AAOptionsConstructor.configureChartOptions(chartModel);
+        AAOptions aaOptions = AAOptionsConstructor.configureChartOptions(chartModel);
         this.aa_drawChartWithChartOptions(aaOptions);
     }
 
@@ -156,11 +157,11 @@ public class AAChartView extends WebView {
     }
 
     public void aa_refreshChartWithChartModel(AAChartModel chartModel) {
-        HashMap aaOptions = AAOptionsConstructor.configureChartOptions(chartModel);
+        AAOptions aaOptions = AAOptionsConstructor.configureChartOptions(chartModel);
         this.aa_refreshChartWithChartOptions(aaOptions);
     }
 
-    public void aa_drawChartWithChartOptions(final HashMap chartOptions) {
+    public void aa_drawChartWithChartOptions(final AAOptions chartOptions) {
         this.loadUrl("file:///android_asset/AAChartView.html");
         this.setWebViewClient(new WebViewClient() {
             @Override
@@ -208,7 +209,7 @@ public class AAChartView extends WebView {
         this.safeEvaluateJavaScriptString(javaScriptStr);
     }
 
-    public void aa_refreshChartWithChartOptions(HashMap chartOptions) {
+    public void aa_refreshChartWithChartOptions(AAOptions chartOptions) {
         // 将对象编译成json
         Gson gson = new Gson();
         String aaOptionsJsonStr = gson.toJson(chartOptions);
@@ -227,7 +228,7 @@ public class AAChartView extends WebView {
         this.safeEvaluateJavaScriptString(javaScriptStr);
     }
 
-    private void configureChartOptionsAndDrawChart(HashMap chartOptions) {
+    private void configureChartOptionsAndDrawChart(AAOptions chartOptions) {
         // 将对象编译成json
         Gson gson = new Gson();
         String aaOptionsJsonStr = gson.toJson(chartOptions);

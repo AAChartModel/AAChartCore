@@ -10,6 +10,11 @@ public class AAPie extends AABaseChart {
     private Float depth;
     private Float center;
 
+    public AAPie dataLabels(AADataLabels prop) {
+        dataLabels = prop;
+        return this;
+    }
+
     public AAPie size(Float prop) {
         size = prop;
         return this;

@@ -33,8 +33,10 @@
 
 package com.example.anan.chartcore_slim.AAChartCoreLib.AAChartConfiger;
 
+import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartEnum.AAChartAlignType;
 import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartEnum.AAChartAnimationType;
 import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartEnum.AAChartStackingType;
+import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartEnum.AAChartSymbolStyleType;
 import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartEnum.AAChartType;
 
 public class AAChartModel {
@@ -42,7 +44,14 @@ public class AAChartModel {
     public String  animationType;         //动画类型
     public Integer animationDuration;     //动画时间
     public String  title;                 //标题内容
+    public String  titleFontColor;        //标题字体颜色
+    public Float   titleFontSize;         //标题字体大小
+    public String  titleFontWeight;       //标题字体粗细
     public String  subtitle;              //副标题内容
+    public String subtitleAlign;
+    public String  subtitleFontColor;     //副标题字体颜色
+    public Float   subtitleFontSize;      //副标题字体大小
+    public String  subtitleFontWeight;    //副标题字体粗细
     public String  chartType;             //图表类型
     public String  stacking;              //堆积样式
     public String  markerSymbol;          //折线曲线连接点的类型："circle", "square", "diamond", "triangle","triangle-down"，默认是"circle"
@@ -59,25 +68,28 @@ public class AAChartModel {
     public Boolean polar;                 //是否极化图形(变为雷达图)
     public Float   marginLeft;
     public Float   marginRight;
-    public Boolean dataLabelEnabled;      //是否显示数据
+    public Boolean dataLabelsEnabled;      //是否显示数据
+    public String  dataLabelsFontColor;
+    public Float  dataLabelsFontSize;
+    public String  dataLabelsFontWeight;
     public Boolean xAxisLabelsEnabled;    //x轴是否显示数据
+    public Integer xAxisTickInterval;
     public String[]categories;            //x轴是否显示数据
-    public Integer xAxisGridLineWidth;    //x轴网格线的宽度
+    public Float xAxisGridLineWidth;    //x轴网格线的宽度
     public Boolean xAxisVisible;          //x 轴是否显示
     public Boolean yAxisVisible;          //y 轴是否显示
     public Boolean yAxisLabelsEnabled;    //y轴是否显示数据
     public String  yAxisTitle;            //y轴标题
     public Float   yAxisLineWidth;        //y 轴轴线的宽度
-
-    public Integer yAxisGridLineWidth;    //y轴网格线的宽度
+    public Float   yAxisMin;
+    public Float   yAxisMax;
+    public Boolean yAxisAllowDecimals;
+    public Float yAxisGridLineWidth;    //y轴网格线的宽度
     public Object[]colorsTheme;           //图表主题颜色数组
     public Boolean legendEnabled;         //是否显示图例
-    public String  legendLayout;          //图例数据项的布局。布局类型： "horizontal" 或 "vertical" 即水平布局和垂直布局 默认是：horizontal.
-    public String  legendAlign;           //设定图例在图表区中的水平对齐方式，合法值有left，center 和 right。
-    public String  legendVerticalAlign;   //设定图例在图表区中的垂直对齐方式，合法值有 top，middle 和 bottom。垂直位置可以通过 y 选项做进一步设定。
     public Object  backgroundColor;       //图表背景色
-    public Integer borderRadius;          //柱状图长条图头部圆角半径(可用于设置头部的形状,仅对条形图,柱状图有效)
-    public Integer markerRadius;          //折线连接点的半径长度
+    public Float borderRadius;          //柱状图长条图头部圆角半径(可用于设置头部的形状,仅对条形图,柱状图有效)
+    public Float markerRadius;          //折线连接点的半径长度
     public Object[] series;
     public String  titleColor;            //标题颜色
     public String  subTitleColor;         //副标题颜色
@@ -101,8 +113,43 @@ public class AAChartModel {
         return this;
     }
 
+    public AAChartModel titleFontColor(String prop) {
+        titleFontColor = prop;
+        return this;
+    }
+
+    public AAChartModel titleFontSize(Float prop) {
+        titleFontSize = prop;
+        return this;
+    }
+
+    public AAChartModel titleFontWeight(String prop) {
+        titleFontWeight = prop;
+        return this;
+    }
+
     public AAChartModel subtitle(String prop) {
         subtitle = prop;
+        return this;
+    }
+
+    public AAChartModel subtitleAlign(String prop) {
+        subtitleAlign = prop;
+        return this;
+    }
+
+    public AAChartModel subtitleFontColor(String prop) {
+        subtitleFontColor = prop;
+        return this;
+    }
+
+    public AAChartModel subtitleFontSize(Float prop) {
+        subtitleFontSize = prop;
+        return this;
+    }
+
+    public AAChartModel subtitleFontWeight(String prop) {
+        subtitleFontWeight = prop;
         return this;
     }
 
@@ -182,7 +229,22 @@ public class AAChartModel {
     }
 
     public AAChartModel dataLabelsEnabled(Boolean prop) {
-        dataLabelEnabled = prop;
+        dataLabelsEnabled = prop;
+        return this;
+    }
+
+    public AAChartModel dataLabelsFontColor(String prop) {
+        dataLabelsFontColor = prop;
+        return this;
+    }
+
+    public AAChartModel dataLabelsFontSize(Float prop) {
+        dataLabelsFontSize = prop;
+        return this;
+    }
+
+    public AAChartModel dataLabelsFontWeight(String prop) {
+        dataLabelsFontWeight = prop;
         return this;
     }
 
@@ -191,17 +253,22 @@ public class AAChartModel {
         return this;
     }
 
+    public AAChartModel xAxisTickInterval(Integer prop) {
+        xAxisTickInterval = prop;
+        return this;
+    }
+
     public AAChartModel categories(String[] prop) {
         categories = prop;
         return this;
     }
 
-    public AAChartModel xAxisGridLineWidth(Integer prop) {
+    public AAChartModel xAxisGridLineWidth(Float prop) {
         xAxisGridLineWidth = prop;
         return this;
     }
 
-    public AAChartModel yAxisGridLineWidth(Integer prop) {
+    public AAChartModel yAxisGridLineWidth(Float prop) {
         yAxisGridLineWidth = prop;
         return this;
     }
@@ -231,6 +298,20 @@ public class AAChartModel {
         return this;
     }
 
+    public AAChartModel yAxisMin(Float prop) {
+        yAxisMin = prop;
+        return this;
+    }
+
+    public AAChartModel yAxisMax(Float prop) {
+        yAxisMax = prop;
+        return this;
+    }
+
+    public AAChartModel yAxisAllowDecimals(Boolean prop) {
+        yAxisAllowDecimals = prop;
+        return this;
+    }
 
     public AAChartModel colorsTheme(Object[] prop) {
         colorsTheme = prop;
@@ -242,34 +323,18 @@ public class AAChartModel {
         return this;
     }
 
-    public AAChartModel legendLayout(String prop) {
-        legendLayout = prop;
-
-        return this;
-    }
-
-    public AAChartModel legendAlign(String prop) {
-        legendAlign = prop;
-        return this;
-    }
-
-    public AAChartModel legendVerticalAlign(String prop) {
-        legendVerticalAlign = prop;
-        return this;
-    }
-
     public AAChartModel backgroundColor(Object prop) {
         backgroundColor = prop;
         return this;
     }
 
 
-    public AAChartModel borderRadius(Integer prop) {
+    public AAChartModel borderRadius(Float prop) {
         borderRadius = prop;
         return this;
     }
 
-    public AAChartModel markerRadius(Integer prop) {
+    public AAChartModel markerRadius(Float prop) {
         markerRadius = prop;
         return this;
     }
@@ -286,31 +351,39 @@ public class AAChartModel {
 
     public AAChartModel() {
         chartType = AAChartType.Line;
-        animationType = AAChartAnimationType.EaseInBack;
         animationDuration = 500;//以毫秒为单位
+        animationType = AAChartAnimationType.Linear;
         pointHollow = false;
         inverted = false;
         stacking = AAChartStackingType.False;
         xAxisReversed = false;
         yAxisReversed = false;
         zoomType = "x";
+        dataLabelsEnabled = false;
+        markerSymbolStyle = AAChartSymbolStyleType.Normal;
 //        colorsTheme = new String[]{"#b5282a","#e7a701","#50c18d","#fd4800","#f1c6c5"};
         colorsTheme = new String[]{"#fe117c","#ffc069","#06caf4","#7dffc0"};//默认的颜色数组(必须要添加默认数组,否则就会出错)
         tooltipCrosshairs = true;
         gradientColorEnable = false;
         polar = false;
         xAxisLabelsEnabled = true;
-        xAxisGridLineWidth = 0;
+        xAxisGridLineWidth = 0f;
         yAxisLabelsEnabled = true;
-        yAxisGridLineWidth = 1;
+        yAxisGridLineWidth = 1f;
         legendEnabled = true;
-        legendLayout = "horizontal";
-        legendAlign = "center";
-        legendVerticalAlign = "bottom";
         backgroundColor = "#ffffff";
-        borderRadius = 0;//柱状图长条图头部圆角半径(可用于设置头部的形状,仅对条形图,柱状图有效,设置为1000时,柱形图或者条形图头部为楔形)
-        markerRadius = 6;//折线连接点的半径长度,如果值设置为0,这样就相当于不显示了
+        borderRadius = 0f;//柱状图长条图头部圆角半径(可用于设置头部的形状,仅对条形图,柱状图有效,设置为1000时,柱形图或者条形图头部为楔形)
+        markerRadius = 6f;//折线连接点的半径长度,如果值设置为0,这样就相当于不显示了
         touchEventEnabled = true;
+        titleFontColor        = "#000000";//标题字体颜色为黑色
+        titleFontWeight       = "regular";//常规字体
+        titleFontSize         = 11f;
+        subtitleFontColor     = "#000000";//副标题字体颜色为黑色
+        subtitleFontWeight    = "regular";//常规字体
+        subtitleFontSize      = 9f;
+        dataLabelsFontColor   = "#000000";//数据标签默认颜色为黑色
+        dataLabelsFontWeight  = "bold";//图表的数据字体为粗体
+        dataLabelsFontSize    = 10f;
 
     }
 

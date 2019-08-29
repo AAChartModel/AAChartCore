@@ -11,6 +11,7 @@ import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartConfiger.AASeriesEl
 import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartEnum.AAChartStackingType;
 import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartEnum.AAChartSymbolStyleType;
 import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartEnum.AAChartType;
+import com.example.anan.chartcore_slim.AAChartCoreLib.AAOptionsModel.AAOptions;
 import com.example.anan.chartcore_slim.AAChartCoreLib.AAOptionsModel.AAStyle;
 import com.example.anan.chartcore_slim.AAChartCoreLib.AAOptionsModel.AATooltip;
 import com.example.anan.chartcore_slim.AAChartCoreLib.AATools.AAGradientColor;
@@ -27,14 +28,14 @@ public class CustomTooltipWithJSFunctionActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String chartType = intent.getStringExtra("chartType");
 
-        HashMap aaOptions = configureTheChartOptions(chartType);
+        AAOptions aaOptions = configureTheChartOptions(chartType);
 
         AAChartView aaChartView = findViewById(R.id.AAChartView);
         aaChartView.aa_drawChartWithChartOptions(aaOptions);
 
     }
 
-    HashMap configureTheChartOptions(String chartType) {
+    AAOptions configureTheChartOptions(String chartType) {
         switch (chartType) {
             case "formatterFunction1": return customAreaChartTooltipStyleWithFormatterFunction1();
             case "formatterFunction2": return customAreaChartTooltipStyleWithFormatterFunction2();
@@ -46,7 +47,7 @@ public class CustomTooltipWithJSFunctionActivity extends AppCompatActivity {
         return customAreaChartTooltipStyleWithFormatterFunction1();
     }
 
-    HashMap customAreaChartTooltipStyleWithFormatterFunction1() {
+    AAOptions customAreaChartTooltipStyleWithFormatterFunction1() {
         AAChartModel aaChartModel = new AAChartModel()
                 .chartType(AAChartType.Area)//图形类型
                 .title("近三个月金价起伏周期图")//图表主标题
@@ -97,12 +98,12 @@ public class CustomTooltipWithJSFunctionActivity extends AppCompatActivity {
                         .color("#FFD700")
                         .fontSize(12.f)
                 );
-        HashMap<String,Object> aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
-        aaOptions.put("tooltip",aaTooltip);
+        AAOptions aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
+        aaOptions.tooltip(aaTooltip);
         return aaOptions;
     }
 
-    HashMap customAreaChartTooltipStyleWithFormatterFunction2() {
+    AAOptions customAreaChartTooltipStyleWithFormatterFunction2() {
         AAChartModel aaChartModel = new AAChartModel()
                 .chartType(AAChartType.Area)//图形类型
                 .title("2014 ~ 2020 汪星人生存指数")//图表主标题
@@ -140,12 +141,12 @@ public class CustomTooltipWithJSFunctionActivity extends AppCompatActivity {
                         "        return s;\n" +
                         "    }")
                ;
-        HashMap<String,Object> aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
-        aaOptions.put("tooltip",aaTooltip);
+        AAOptions aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
+        aaOptions.tooltip(aaTooltip);
         return aaOptions;
     }
 
-    HashMap customAreaChartTooltipStyleWithFormatterFunction3() {
+    AAOptions customAreaChartTooltipStyleWithFormatterFunction3() {
         AAChartModel aaChartModel = new AAChartModel()
                 .chartType(AAChartType.Area)//图形类型
                 .title("2014 ~ 2020 汪星人生存指数")//图表主标题
@@ -192,12 +193,12 @@ public class CustomTooltipWithJSFunctionActivity extends AppCompatActivity {
                         "        return wholeContentString;\n" +
                         "    }")
                 ;
-        HashMap<String,Object> aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
-        aaOptions.put("tooltip",aaTooltip);
+        AAOptions aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
+        aaOptions.tooltip(aaTooltip);
         return aaOptions;
     }
 
-    HashMap customAreaChartTooltipStyleWithFormatterFunction4() {
+    AAOptions customAreaChartTooltipStyleWithFormatterFunction4() {
         AAChartModel aaChartModel = new AAChartModel()
                 .chartType(AAChartType.Areaspline)//图形类型
                 .title("")//图表主标题
@@ -206,7 +207,7 @@ public class CustomTooltipWithJSFunctionActivity extends AppCompatActivity {
                 .dataLabelsEnabled(false)
                 .colorsTheme(new Object[]{"#04d69f","#1e90ff","#ef476f","#ffd066",})
                 .stacking(AAChartStackingType.Normal)
-                .markerRadius(0)
+                .markerRadius(0f)
                 .series(new AASeriesElement[]{
                         new AASeriesElement()
                                 .name("Tokyo Hot")
@@ -261,12 +262,12 @@ public class CustomTooltipWithJSFunctionActivity extends AppCompatActivity {
                 .backgroundColor("#050505")
                 .borderColor("#050505")
                 ;
-        HashMap<String,Object> aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
-        aaOptions.put("tooltip",aaTooltip);
+        AAOptions aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
+        aaOptions.tooltip(aaTooltip);
         return aaOptions;
     }
 
-    HashMap customBoxplotTooltipContent() {
+    AAOptions customBoxplotTooltipContent() {
         AAChartModel aaChartModel = new AAChartModel()
                 .chartType(AAChartType.Boxplot)
                 .title("BOXPLOT CHART")
@@ -306,8 +307,8 @@ public class CustomTooltipWithJSFunctionActivity extends AppCompatActivity {
                         .color("#1e90ff")
                         .fontSize(12.f)
                 );
-        HashMap<String,Object> aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
-        aaOptions.put("tooltip",aaTooltip);
+        AAOptions aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
+        aaOptions.tooltip(aaTooltip);
         return aaOptions;
     }
 

@@ -6,7 +6,7 @@ import java.util.HashMap;
 
 public class AADataLabels {
     private Boolean enabled;
-    private String style;
+    private AAStyle style;
     private String format;
     private Float rotation;
     private Boolean allowOverlap;
@@ -29,8 +29,7 @@ public class AADataLabels {
     }
 
     public AADataLabels style(AAStyle prop) {
-        Gson gson = new Gson();
-        style = gson.toJson(prop);
+        style = prop;
         return this;
     }
 

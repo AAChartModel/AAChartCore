@@ -10,7 +10,7 @@ public class AAPlotOptions {
     private AAAreaspline areaspline;
     private Object columnrange;
     private Object arearange;
-    private AASeries series;
+    public AASeries series;
 
 
     public AAPlotOptions column(AAColumn prop) {

@@ -5,7 +5,7 @@ public class AAMarker {
     private String symbol;
     private String fillColor;//点的填充色(用来设置折线连接点的填充色)
     private Float lineWidth;//外沿线的宽度(用来设置折线连接点的轮廓描边的宽度)
-    private String lineColor;//外沿线的颜色(用来设置折线连接点的轮廓描边颜色，当值为空字符串时，默认取数据点或数据列的颜色。)
+    private Object lineColor;//外沿线的颜色(用来设置折线连接点的轮廓描边颜色，当值为空字符串时，默认取数据点或数据列的颜色。)
 
 
     public AAMarker radius(Float prop) {
@@ -28,7 +28,7 @@ public class AAMarker {
         return this;
     }
 
-    public AAMarker lineColor(String prop) {
+    public AAMarker lineColor(Object prop) {
         lineColor = prop;
         return this;
     }

@@ -238,9 +238,9 @@ public class CustomStyleChartActivity extends AppCompatActivity {
                 .categories(new String[]{"一月", "二月", "三月", "四月", "五月", "六月",
                         "七月", "八月", "九月", "十月", "十一月", "十二月"})
                 .yAxisTitle("")
-                .markerRadius(0)
+                .markerRadius(0f)
                 .yAxisLineWidth(0f)
-                .yAxisGridLineWidth(0)
+                .yAxisGridLineWidth(0f)
                 .legendEnabled(false)
                 .series(new AASeriesElement[]{
                         new AASeriesElement()
@@ -276,9 +276,9 @@ public class CustomStyleChartActivity extends AppCompatActivity {
                 .categories(new String[]{"一月", "二月", "三月", "四月", "五月", "六月",
                         "七月", "八月", "九月", "十月", "十一月", "十二月"})
                 .yAxisTitle("")
-                .markerRadius(0)
+                .markerRadius(0f)
                 .yAxisLineWidth(0f)
-                .yAxisGridLineWidth(0)
+                .yAxisGridLineWidth(0f)
                 .legendEnabled(false)
                 .series(new AASeriesElement[]{
                         new AASeriesElement()
@@ -312,9 +312,9 @@ public class CustomStyleChartActivity extends AppCompatActivity {
                 .categories(new String[]{"一月", "二月", "三月", "四月", "五月", "六月",
                 "七月", "八月", "九月", "十月", "十一月", "十二月"})
                  .yAxisTitle("")
-                .markerRadius(0)
+                .markerRadius(0f)
                 .yAxisLineWidth(0f)
-                .yAxisGridLineWidth(0)
+                .yAxisGridLineWidth(0f)
                 .legendEnabled(false)
                 .series(new AASeriesElement[]{
                         new AASeriesElement()
@@ -341,11 +341,11 @@ public class CustomStyleChartActivity extends AppCompatActivity {
                 .categories(new String[]{"一月", "二月", "三月", "四月", "五月", "六月",
                 "七月", "八月", "九月", "十月", "十一月", "十二月"})
                 .yAxisTitle("")
-                .markerRadius(8)//marker点半径为8个像素
+                .markerRadius(8f)//marker点半径为8个像素
                 .markerSymbolStyle(AAChartSymbolStyleType.InnerBlank)//marker点为空心效果
                 .markerSymbol(AAChartSymbolType.Circle)//marker点为圆形点○
                 .yAxisLineWidth(0f)
-                .yAxisGridLineWidth(0)
+                .yAxisGridLineWidth(0f)
                 .legendEnabled(false)
                 .series(new AASeriesElement[]{
                         new AASeriesElement()
