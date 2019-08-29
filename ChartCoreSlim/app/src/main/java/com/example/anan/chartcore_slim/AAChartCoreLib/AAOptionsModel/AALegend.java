@@ -12,57 +12,57 @@ public class AALegend {
     private String borderColor;
     private Float borderWidth;
     private Float itemMarginTop; //图例的每一项的顶部外边距，单位px。 默认是：0.
-    private String itemStyle;
+    private AAItemStyle itemStyle;
     private Float x;
     private Float y;
 
     public AALegend layout(AAChartLayoutType prop) {
-        this.layout = prop;
+        layout = prop;
         return this;
     }
 
     public AALegend align(AAChartAlignType prop) {
-        this.align = prop;
+        align = prop;
         return this;
     }
 
     public AALegend verticalAlign(AAChartVerticalAlignType prop) {
-        this.verticalAlign = prop;
+        verticalAlign = prop;
         return this;
     }
 
     public AALegend enabled(Boolean prop) {
-        this.enabled = prop;
+        enabled = prop;
         return this;
     }
 
     public AALegend borderColor(String prop) {
-        this.borderColor = prop;
+        borderColor = prop;
         return this;
     }
 
     public AALegend BorderWidth(Float prop) {
-        this.borderWidth = prop;
+        borderWidth = prop;
         return this;
     }
 
     public AALegend itemMarginTop(Float prop) {
-        this.itemMarginTop = prop;
+        itemMarginTop = prop;
         return this;
     }
 
     public AALegend itemStyle(AAItemStyle prop) {
-        this.itemStyle = prop.toString();
+        itemStyle = prop;
         return this;
     }
 
     public AALegend x(Float prop) {
-        this.x = prop;
+        x = prop;
         return this;
     }
 
     public AALegend y(Float prop) {
-        this.y = prop;
+        y = prop;
         return this;
     }
 

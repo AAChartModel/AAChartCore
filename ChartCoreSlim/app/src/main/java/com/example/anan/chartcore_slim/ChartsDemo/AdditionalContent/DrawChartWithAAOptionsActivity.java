@@ -17,11 +17,9 @@ import com.example.anan.chartcore_slim.AAChartCoreLib.AAOptionsModel.AADataLabel
 import com.example.anan.chartcore_slim.AAChartCoreLib.AAOptionsModel.AAItemStyle;
 import com.example.anan.chartcore_slim.AAChartCoreLib.AAOptionsModel.AALabel;
 import com.example.anan.chartcore_slim.AAChartCoreLib.AAOptionsModel.AALabels;
-import com.example.anan.chartcore_slim.AAChartCoreLib.AAOptionsModel.AALegend;
 import com.example.anan.chartcore_slim.AAChartCoreLib.AAOptionsModel.AAOptions;
 import com.example.anan.chartcore_slim.AAChartCoreLib.AAOptionsModel.AAPlotBandsElement;
 import com.example.anan.chartcore_slim.AAChartCoreLib.AAOptionsModel.AAPlotLinesElement;
-import com.example.anan.chartcore_slim.AAChartCoreLib.AAOptionsModel.AAPlotOptions;
 import com.example.anan.chartcore_slim.AAChartCoreLib.AAOptionsModel.AAStyle;
 import com.example.anan.chartcore_slim.AAChartCoreLib.AAOptionsModel.AATooltip;
 import com.example.anan.chartcore_slim.AAChartCoreLib.AAOptionsModel.AAXAxis;
@@ -30,10 +28,7 @@ import com.example.anan.chartcore_slim.AAChartCoreLib.AATools.AAColor;
 import com.example.anan.chartcore_slim.AAChartCoreLib.AATools.AAGradientColor;
 import com.example.anan.chartcore_slim.AAChartCoreLib.AATools.AALinearGradientDirection;
 import com.example.anan.chartcore_slim.R;
-import com.google.gson.Gson;
-import com.google.gson.internal.LinkedTreeMap;
 
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -120,7 +115,7 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
         return aaOptions;
     }
 
-AAOptions configureAAPlotLinesForChart() {
+    AAOptions configureAAPlotLinesForChart() {
         Map map1 = new HashMap();
         map1.put("value",12);
         map1.put("color","#1e90ff");
@@ -197,7 +192,7 @@ AAOptions configureAAPlotLinesForChart() {
         return aaOptions;
     }
 
-AAOptions customAATooltipWithJSFuntion() {
+    AAOptions customAATooltipWithJSFuntion() {
         AAChartModel aaChartModel = new AAChartModel()
                 .chartType(AAChartType.Area)//图形类型
                 .title("近三个月金价起伏周期图")//图表主标题
@@ -248,12 +243,12 @@ AAOptions customAATooltipWithJSFuntion() {
                         .color("#FFD700")
                         .fontSize(12.f)
                 );
-    AAOptions aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
-    aaOptions.tooltip(aaTooltip);
-    return aaOptions;
+        AAOptions aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
+        aaOptions.tooltip(aaTooltip);
+        return aaOptions;
     }
 
-AAOptions customXAxisCrosshairStyle() {
+    AAOptions customXAxisCrosshairStyle() {
         AAChartModel aaChartModel = new AAChartModel()
                 .chartType(AAChartType.Line)//图表类型
                 .series(new AASeriesElement[]{
@@ -296,17 +291,17 @@ AAOptions customXAxisCrosshairStyle() {
                         }
                 );
 
-    AAOptions aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
+        AAOptions aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
         AACrosshair aaCrosshair = new AACrosshair()
                 .color(AAColor.redColor())
                 .width(1f)
                 .dashStyle(AAChartLineDashSyleType.LongDashDotDot);
-    AAXAxis aaXAxis =  aaOptions.xAxis;
+        AAXAxis aaXAxis =  aaOptions.xAxis;
         aaXAxis.crosshair(aaCrosshair);
         return aaOptions;
     }
 
-AAOptions configureXAxisLabelsFontColorWithHTMLString() {
+    AAOptions configureXAxisLabelsFontColorWithHTMLString() {
         String[] categories = new String[]{
                 "<font color=\\\"#CC0066\\\">孤岛危机<\\/font>",
                 "<font color=\\\"#CC0033\\\">使命召唤<\\/font>",
@@ -339,15 +334,12 @@ AAOptions configureXAxisLabelsFontColorWithHTMLString() {
                         }
                 );
 
-    AAOptions aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
-    AAXAxis aaXAxis = aaOptions.xAxis;
-    AALabels aaXAxisLabels = aaXAxis.labels;
-    aaXAxisLabels.useHTML(true);
-    aaXAxis.labels(aaXAxisLabels);
-    return aaOptions;
+        AAOptions aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
+        aaOptions.xAxis.labels.useHTML(true);
+        return aaOptions;
     }
 
-AAOptions configureXAxisLabelsFontColorAndFontSizeWithHTMLString() {
+    AAOptions configureXAxisLabelsFontColorAndFontSizeWithHTMLString() {
         String[] categories = new String[]{
                 "<span style=\\\"color:#CC0066;font-weight:bold;font-size:10px\\\">使命召唤</span>",
                 "<span style=\\\"color:#CC0033;font-weight:bold;font-size:11px\\\">荣誉勋章</span>",
@@ -380,23 +372,20 @@ AAOptions configureXAxisLabelsFontColorAndFontSizeWithHTMLString() {
                         }
                 );
 
-    AAOptions aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
-    AAXAxis aaXAxis = aaOptions.xAxis;
-    AALabels aaXAxisLabels = aaXAxis.labels;
-    aaXAxisLabels.useHTML(true);
-    aaXAxis.labels(aaXAxisLabels);
+        AAOptions aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
+        aaOptions.xAxis.labels.useHTML(true);
 
-    return aaOptions;
+        return aaOptions;
     }
 
-AAOptions configure_DataLabels_XAXis_YAxis_Legend_Style() {
-    Map backgroundColorGradientColor = AAGradientColor.gradientColorMap(
+    AAOptions configure_DataLabels_XAXis_YAxis_Legend_Style() {
+        Map backgroundColorGradientColor = AAGradientColor.gradientColorMap(
                 AALinearGradientDirection.ToBottom,
                 "#4F00BC",
                 "#29ABE2"//颜色字符串设置支持十六进制类型和 rgba 类型
         );
 
-    Map fillColorGradientColor = AAGradientColor.gradientColorMap(
+        Map fillColorGradientColor = AAGradientColor.gradientColorMap(
                 AALinearGradientDirection.ToBottom,
                 "rgba(256,256,256,0.3)",
                 "rgba(256,256,256,1.0)"//颜色字符串设置支持十六进制类型和 rgba 类型
@@ -421,15 +410,17 @@ AAOptions configure_DataLabels_XAXis_YAxis_Legend_Style() {
                                 .fillColor(fillColorGradientColor)
                                 .data(new Object[]{7.0, 6.9, 2.5, 14.5, 18.2, 21.5, 5.2, 26.5, 23.3, 45.3, 13.9, 9.6}),
                 });
-
-        AADataLabels aaDataLabels = new AADataLabels()
+        AAOptions aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
+        aaOptions.plotOptions.areaspline
+                .dataLabels(new AADataLabels()
                 .enabled(true)
                 .style(new AAStyle()
                         .color(AAColor.whiteColor())
                         .fontSize(14.f)
                         .fontWeight("thin")
                         .textOutline("0px 0px contrast")//文字轮廓描边
-                );
+                ));
+
 
         AACrosshair aaCrosshair = new AACrosshair()
                 .dashStyle(AAChartLineDashSyleType.LongDashDot)
@@ -437,27 +428,32 @@ AAOptions configure_DataLabels_XAXis_YAxis_Legend_Style() {
                 .width(1.f);
 
         AALabels aaLabels = new AALabels()
+                .useHTML(true)
                 .style(new AAStyle()
                         .fontSize(10.f)
                         .fontWeight("bold")
                         .color(AAColor.whiteColor())//轴文字颜色
                 );
 
-        AAYAxis aaYAxis = new AAYAxis()
+        aaOptions.yAxis
                 .opposite(true)
                 .tickWidth(2.f)
                 .lineWidth(1.5f)//Y轴轴线颜色
                 .lineColor(AAColor.whiteColor())//Y轴轴线颜色
                 .gridLineWidth(0.f)//Y轴网格线宽度
                 .crosshair(aaCrosshair)
-                .labels(aaLabels);
+                .labels(aaLabels
+        );
 
-        AAXAxis aaXAxis = new AAXAxis()
+        aaOptions.xAxis
                 .tickWidth(2.f)//X轴刻度线宽度
                 .lineWidth(1.5f)//X轴轴线宽度
                 .lineColor(AAColor.whiteColor())//X轴轴线颜色
                 .crosshair(aaCrosshair)
-                .labels(aaLabels);
+                .labels(aaLabels
+        );
+
+
         //设定图例项的CSS样式。只支持有关文本的CSS样式设定。
         /*默认是：{
          "color": "#333333",
@@ -466,42 +462,20 @@ AAOptions configure_DataLabels_XAXis_YAxis_Legend_Style() {
          "fontWeight": "bold"
          }
          */
-        AALegend aaLegend = new AALegend()
+
+        aaOptions.legend
                 .itemStyle( new AAItemStyle()
                         .color(AAColor.whiteColor())//字体颜色
                         .fontSize(13.f)//字体大小
                         .fontWeight("thin")//字体为细体字
-                );
 
-    AAOptions aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
-
-    AAPlotOptions plotOptions = aaOptions.plotOptions;
-//    AAOptions someTypeChart = (HashMap) plotOptions.get(AAChartType.Areaspline);
-//        Map aaDataLabelsMap = Object2Map(aaDataLabels);
-//        someTypeChart.put("dataLabels",aaDataLabelsMap);
-//
-//    AAOptions XAxis = (HashMap) aaOptions.get("xAxis");
-//        Map xAxisMap = Object2Map(XAxis);
-//        XAxis.putAll(xAxisMap);
-//
-//    AAOptions YAxis = (HashMap) aaOptions.get("yAxis");
-//        Map yAxisMap = Object2Map(YAxis);
-//        YAxis.putAll(yAxisMap);
-//
-//    AAOptions legend = (HashMap) aaOptions.get("legend");
-//        Map legendMap = Object2Map(legend);
-//        YAxis.putAll(legendMap);
-//
-//
-//        LinkedTreeMap XAxisLabels = (LinkedTreeMap) XAxis.get("labels");
-//        XAxisLabels.put("useHTML",true);
-//        XAxis.put("labels",XAxisLabels);
+        );
 
         return aaOptions;
     }
 
 
-     AAOptions configureXAxisPlotBand() {
+    AAOptions configureXAxisPlotBand() {
         AAChartModel aaChartModel = new AAChartModel()
                 .chartType(AAChartType.Areaspline)
                 .title("")
@@ -526,7 +500,7 @@ AAOptions configure_DataLabels_XAXis_YAxis_Legend_Style() {
                 });
 
 
-    AAOptions aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
+        AAOptions aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
         AAPlotBandsElement[] aaPlotBandsElementArr = new AAPlotBandsElement[]{
                 new AAPlotBandsElement()
                         .from(-0.25f)//值域颜色带X轴起始值
@@ -548,26 +522,9 @@ AAOptions configure_DataLabels_XAXis_YAxis_Legend_Style() {
                 ,
         };
 
-    AAXAxis aaXAxis =  aaOptions.xAxis;
-    aaXAxis.plotBands(aaPlotBandsElementArr);
+        AAXAxis aaXAxis =  aaOptions.xAxis;
+        aaXAxis.plotBands(aaPlotBandsElementArr);
 
         return aaOptions;
-    }
-
-    public static final Gson GSON = new Gson ();
-
-    public static Map<String, Object> Object2Map(Object obj){
-        if(obj == null){
-            return Collections.emptyMap();
-        }
-
-        return GSON.fromJson(GSON.toJson(obj), Map.class);
-    }
-
-    public static Map<String, String> Object2MapString(Object obj){
-        if(obj == null){
-            return Collections.emptyMap();
-        }
-        return GSON.fromJson(GSON.toJson(obj), Map.class);
     }
 }

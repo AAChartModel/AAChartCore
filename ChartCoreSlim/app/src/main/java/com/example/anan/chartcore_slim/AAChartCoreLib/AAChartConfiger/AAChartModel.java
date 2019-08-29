@@ -48,7 +48,7 @@ public class AAChartModel {
     public Float   titleFontSize;         //标题字体大小
     public String  titleFontWeight;       //标题字体粗细
     public String  subtitle;              //副标题内容
-    public String subtitleAlign;
+    public String  subtitleAlign;
     public String  subtitleFontColor;     //副标题字体颜色
     public Float   subtitleFontSize;      //副标题字体大小
     public String  subtitleFontWeight;    //副标题字体粗细
@@ -75,7 +75,7 @@ public class AAChartModel {
     public Boolean xAxisLabelsEnabled;    //x轴是否显示数据
     public Integer xAxisTickInterval;
     public String[]categories;            //x轴是否显示数据
-    public Float xAxisGridLineWidth;    //x轴网格线的宽度
+    public Float   xAxisGridLineWidth;    //x轴网格线的宽度
     public Boolean xAxisVisible;          //x 轴是否显示
     public Boolean yAxisVisible;          //y 轴是否显示
     public Boolean yAxisLabelsEnabled;    //y轴是否显示数据
@@ -84,12 +84,12 @@ public class AAChartModel {
     public Float   yAxisMin;
     public Float   yAxisMax;
     public Boolean yAxisAllowDecimals;
-    public Float yAxisGridLineWidth;    //y轴网格线的宽度
+    public Float   yAxisGridLineWidth;    //y轴网格线的宽度
     public Object[]colorsTheme;           //图表主题颜色数组
     public Boolean legendEnabled;         //是否显示图例
     public Object  backgroundColor;       //图表背景色
-    public Float borderRadius;          //柱状图长条图头部圆角半径(可用于设置头部的形状,仅对条形图,柱状图有效)
-    public Float markerRadius;          //折线连接点的半径长度
+    public Float   borderRadius;          //柱状图长条图头部圆角半径(可用于设置头部的形状,仅对条形图,柱状图有效)
+    public Float   markerRadius;          //折线连接点的半径长度
     public Object[] series;
     public String  titleColor;            //标题颜色
     public String  subTitleColor;         //副标题颜色

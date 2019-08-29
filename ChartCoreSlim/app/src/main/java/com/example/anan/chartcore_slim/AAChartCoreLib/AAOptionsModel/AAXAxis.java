@@ -20,7 +20,7 @@ public class AAXAxis {
     public Boolean visible; //用于设置 x 轴以及 x 轴文字是否显示
     public Boolean startOnTick; //Whether to force the axis to start on a tick. Use this option with the minPadding option to control the axis start. 默认是：false.
     public Integer tickInterval;//x轴刻度点间隔数(设置每隔几个点显示一个 X轴的内容:
-    public String crosshair; //准星线样式设置
+    public AACrosshair crosshair; //准星线样式设置
     public String tickmarkPlacement; //本参数只对分类轴有效。 当值为 on 时刻度线将在分类上方显示；当值为 between 时，刻度线将在两个分类中间显示。当 tickInterval 为 1 时，默认是 between，其他情况默认是 on。 默认是：null.
     public Float tickWidth;//坐标轴刻度线的宽度，设置为 0 时则不显示刻度线
     public Float tickLength;//坐标轴刻度线的长度。 默认是：10.
@@ -38,7 +38,7 @@ public class AAXAxis {
     }
 
     public AAXAxis categories(String[] prop) {
-        categories = categories;
+        categories = prop;
         return this;
     }
 
@@ -113,8 +113,7 @@ public class AAXAxis {
     }
 
     public AAXAxis crosshair(AACrosshair prop) {
-        Gson gson = new Gson();
-        crosshair = gson.toJson(prop);
+        crosshair = prop;
         return this;
     }
 

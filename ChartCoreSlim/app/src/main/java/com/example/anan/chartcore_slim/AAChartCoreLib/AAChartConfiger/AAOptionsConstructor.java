@@ -225,7 +225,7 @@ public class AAOptionsConstructor
                     .cursor("pointer")
                         .showInLegend(true)
                         );
-            if (aaChartModel.dataLabelsEnabled == true) {
+            if (aaChartModel.dataLabelsEnabled) {
                 aaPie.dataLabels(aaDataLabels.format("<b>{point.name}</b>: {point.percentage:.1f} %"));
             } else {
                 aaPie.dataLabels(new AADataLabels().enabled(false));
@@ -269,22 +269,22 @@ public class AAOptionsConstructor
 
             AAYAxis aaYAxis = new AAYAxis()
                     .labels(new AALabels()
-                            .enabled(aaChartModel.yAxisLabelsEnabled)//设置 y 轴是否显示数字
-               )
-                .min(aaChartModel.yAxisMin)//设置 y 轴最小值,最小值等于零就不能显示负值了
-                .max(aaChartModel.yAxisMax)//y轴最大值
-                .allowDecimals(aaChartModel.yAxisAllowDecimals)//是否允许显示小数
-                .reversed(aaChartModel.yAxisReversed)
-                .gridLineWidth(aaChartModel.yAxisGridLineWidth)//y轴网格线宽度
-                .title(new AATitle()
-                        .text(aaChartModel.yAxisTitle)
-                )//y 轴标题
-                .lineWidth(aaChartModel.yAxisLineWidth)//设置 y轴轴线的宽度,为0即是隐藏 y轴轴线
-                .visible(aaChartModel.yAxisVisible)
+                            .enabled(aaChartModel.yAxisLabelsEnabled)
+                    )//设置 y 轴是否显示数字
+                    .min(aaChartModel.yAxisMin)//设置 y 轴最小值,最小值等于零就不能显示负值了
+                    .max(aaChartModel.yAxisMax)//y轴最大值
+                    .allowDecimals(aaChartModel.yAxisAllowDecimals)//是否允许显示小数
+                    .reversed(aaChartModel.yAxisReversed)
+                    .gridLineWidth(aaChartModel.yAxisGridLineWidth)//y轴网格线宽度
+                    .title(new AATitle()
+                            .text(aaChartModel.yAxisTitle)
+                    )//y 轴标题
+                    .lineWidth(aaChartModel.yAxisLineWidth)//设置 y轴轴线的宽度,为0即是隐藏 y轴轴线
+                    .visible(aaChartModel.yAxisVisible)
                     ;
 
             aaOptions.xAxis(aaXAxis)
-                    .yAxis(aaYAxis);
+                     .yAxis(aaYAxis);
         }
     }
 

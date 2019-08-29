@@ -1,15 +1,15 @@
 package com.example.anan.chartcore_slim.AAChartCoreLib.AAOptionsModel;
 
 public class AAPlotOptions {
-    private AAColumn column;
-    private AALine line;
-    private AAPie pie;
-    private AABar bar;
-    private AASpline spline;
-    private AAArea area;
-    private AAAreaspline areaspline;
-    private Object columnrange;
-    private Object arearange;
+    public AAColumn column;
+    public AALine line;
+    public AAPie pie;
+    public AABar bar;
+    public AASpline spline;
+    public AAArea area;
+    public AAAreaspline areaspline;
+    public Object columnrange;
+    public Object arearange;
     public AASeries series;
 
 
