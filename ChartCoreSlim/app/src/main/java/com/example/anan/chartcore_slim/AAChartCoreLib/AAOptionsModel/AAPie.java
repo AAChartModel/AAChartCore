@@ -1,14 +1,15 @@
 package com.example.anan.chartcore_slim.AAChartCoreLib.AAOptionsModel;
 
-public class AAPie extends AABaseChart {
-    private Float size;
-    private Boolean allowPointSelect;
-    private String cursor;
-    private Boolean showInLegend;
-    private Float startAngle;
-    private Float endAngle;
-    private Float depth;
-    private Float center;
+public class AAPie {
+    AADataLabels dataLabels;
+    Float size;
+    Boolean allowPointSelect;
+    String cursor;
+    Boolean showInLegend;
+    Float startAngle;
+    Float endAngle;
+    Float depth;
+    Float center;
 
     public AAPie dataLabels(AADataLabels prop) {
         dataLabels = prop;

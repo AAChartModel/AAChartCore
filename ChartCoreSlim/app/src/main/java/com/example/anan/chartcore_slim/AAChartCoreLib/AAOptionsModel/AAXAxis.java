@@ -1,7 +1,5 @@
 package com.example.anan.chartcore_slim.AAChartCoreLib.AAOptionsModel;
 
-import com.google.gson.Gson;
-
 public class AAXAxis {
     public AAPlotBandsElement[] plotBands;
     public AAPlotLinesElement[] plotLines;
