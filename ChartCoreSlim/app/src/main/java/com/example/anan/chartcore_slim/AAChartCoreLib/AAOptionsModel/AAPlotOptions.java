@@ -8,8 +8,8 @@ public class AAPlotOptions {
     public AASpline spline;
     public AAArea area;
     public AAAreaspline areaspline;
-    public Object columnrange;
-    public Object arearange;
+    public AAColumnrange columnrange;
+    public AAArearange arearange;
     public AASeries series;
 
 
@@ -48,12 +48,12 @@ public class AAPlotOptions {
         return this;
     }
 
-    public AAPlotOptions columnrange(Object prop) {
+    public AAPlotOptions columnrange(AAColumnrange prop) {
         columnrange = prop;
         return this;
     }
 
-    public AAPlotOptions arearange(Object prop) {
+    public AAPlotOptions arearange(AAArearange prop) {
         arearange = prop;
         return this;
     }

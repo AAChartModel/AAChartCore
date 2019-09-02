@@ -1,4 +1,4 @@
-//
+/**
 //  AAChartjava
 //  ChartCore-Slim
 //
@@ -10,9 +10,6 @@
 //*** https://github.com/AAChartModel/ChartCore-Slim    ***
 //***...................................................***
 //*************** ...... SOURCE CODE ...... ***************
-
-
-/*
 
  * -------------------------------------------------------------------------------
  *
@@ -39,10 +36,12 @@ import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartEnum.AAChartSymbolS
 import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartEnum.AAChartType;
 import com.example.anan.chartcore_slim.AAChartCoreLib.AAOptionsModel.AAAnimation;
 import com.example.anan.chartcore_slim.AAChartCoreLib.AAOptionsModel.AAArea;
+import com.example.anan.chartcore_slim.AAChartCoreLib.AAOptionsModel.AAArearange;
 import com.example.anan.chartcore_slim.AAChartCoreLib.AAOptionsModel.AAAreaspline;
 import com.example.anan.chartcore_slim.AAChartCoreLib.AAOptionsModel.AABar;
 import com.example.anan.chartcore_slim.AAChartCoreLib.AAOptionsModel.AAChart;
 import com.example.anan.chartcore_slim.AAChartCoreLib.AAOptionsModel.AAColumn;
+import com.example.anan.chartcore_slim.AAChartCoreLib.AAOptionsModel.AAColumnrange;
 import com.example.anan.chartcore_slim.AAChartCoreLib.AAOptionsModel.AADataLabels;
 import com.example.anan.chartcore_slim.AAChartCoreLib.AAOptionsModel.AALabels;
 import com.example.anan.chartcore_slim.AAChartCoreLib.AAOptionsModel.AALegend;
@@ -141,7 +140,7 @@ public class AAOptionsConstructor
         return aaOptions;
     }
 
-    private static AAPlotOptions configureAAPlotOptionsMarkerStyle (
+    private static void configureAAPlotOptionsMarkerStyle (
             AAChartModel aaChartModel,
             AAPlotOptions aaPlotOptions
     ) {
@@ -168,21 +167,20 @@ public class AAOptionsConstructor
             aaSeries.marker(aaMarker);
 
         }
-        return aaPlotOptions;
     }
 
 
-    private static AAPlotOptions configureAAPlotOptionsDataLabels (
+    private static void configureAAPlotOptionsDataLabels (
             AAPlotOptions aaPlotOptions,
             AAChartModel aaChartModel
     ) {
 
         String chartType = aaChartModel.chartType;
 
-        AADataLabels aaDataLabels = new AADataLabels();
+        AADataLabels aaDataLabels = new AADataLabels()
+                .enabled(aaChartModel.dataLabelsEnabled);
         if (aaChartModel.dataLabelsEnabled) {
             aaDataLabels = (aaDataLabels
-                    .enabled(true)
                     .style(new AAStyle()
                             .color(aaChartModel.dataLabelsFontColor)
                             .fontSize(aaChartModel.dataLabelsFontSize)
@@ -191,58 +189,66 @@ public class AAOptionsConstructor
             );
         }
 
-        if (chartType.equals(AAChartType.Column)) {
-            AAColumn aaColumn = new AAColumn()
-                    .borderWidth(0f)
-                              .borderRadius(aaChartModel.borderRadius)
-                    .dataLabels(aaDataLabels);
-            if (aaChartModel.polar) {
-                aaColumn.pointPadding(0f)
-            .groupPadding(0.005f);
-            }
-            aaPlotOptions.column(aaColumn);
-        } else if (chartType.equals(AAChartType.Bar)) {
-            AABar aaBar = (new AABar()
-                    .borderWidth(0f)
+        switch (chartType) {
+            case AAChartType.Column:
+                AAColumn aaColumn = new AAColumn()
+                        .borderWidth(0f)
                         .borderRadius(aaChartModel.borderRadius)
-                    .dataLabels(aaDataLabels));
-            if (aaChartModel.polar) {
-                aaBar.pointPadding(0f)
-            .groupPadding(0.005f);
-            }
-            aaPlotOptions.bar(aaBar);
-        } else if (chartType.equals(AAChartType.Area)) {
-            aaPlotOptions.area(new AAArea().dataLabels(aaDataLabels));
-        } else if (chartType.equals(AAChartType.Areaspline)) {
-            aaPlotOptions.areaspline(new AAAreaspline().dataLabels(aaDataLabels));
-        } else if (chartType.equals(AAChartType.Line)) {
-            aaPlotOptions.line(new AALine().dataLabels(aaDataLabels));
-        } else if (chartType.equals(AAChartType.Spline)) {
-            aaPlotOptions.spline(new AASpline().dataLabels(aaDataLabels));
-        } else if (chartType.equals(AAChartType.Pie)) {
-            AAPie aaPie = (new AAPie()
-                    .allowPointSelect(true)
-                    .cursor("pointer")
+                        .dataLabels(aaDataLabels);
+                if (aaChartModel.polar) {
+                    aaColumn.pointPadding(0f)
+                            .groupPadding(0.005f);
+                }
+                aaPlotOptions.column(aaColumn);
+                break;
+            case AAChartType.Bar:
+                AABar aaBar = (new AABar()
+                        .borderWidth(0f)
+                        .borderRadius(aaChartModel.borderRadius)
+                        .dataLabels(aaDataLabels));
+                if (aaChartModel.polar) {
+                    aaBar.pointPadding(0f)
+                            .groupPadding(0.005f);
+                }
+                aaPlotOptions.bar(aaBar);
+                break;
+            case AAChartType.Area:
+                aaPlotOptions.area(new AAArea().dataLabels(aaDataLabels));
+                break;
+            case AAChartType.Areaspline:
+                aaPlotOptions.areaspline(new AAAreaspline().dataLabels(aaDataLabels));
+                break;
+            case AAChartType.Line:
+                aaPlotOptions.line(new AALine().dataLabels(aaDataLabels));
+                break;
+            case AAChartType.Spline:
+                aaPlotOptions.spline(new AASpline().dataLabels(aaDataLabels));
+                break;
+            case AAChartType.Pie:
+                AAPie aaPie = (new AAPie()
+                        .allowPointSelect(true)
+                        .cursor("pointer")
                         .showInLegend(true)
-                        );
-            if (aaChartModel.dataLabelsEnabled) {
-                aaPie.dataLabels(aaDataLabels.format("<b>{point.name}</b>: {point.percentage:.1f} %"));
-            } else {
-                aaPie.dataLabels(new AADataLabels().enabled(false));
-            }
-            aaPlotOptions.pie(aaPie);
-        } else if (chartType.equals(AAChartType.Columnrange)) {
-            Map columnRangeDic = new HashMap();
-            columnRangeDic.put("borderRadius",0);//The color of the border surrounding each column or bar
-            columnRangeDic.put("borderWidth",0);//The corner radius of the border surrounding each column or bar. default：0
-            columnRangeDic.put("dataLabels",aaDataLabels);
-            aaPlotOptions.columnrange(columnRangeDic);
-        } else if (chartType.equals(AAChartType.Arearange)) {
-            Map areaRangeDic = new HashMap();
-            areaRangeDic.put("dataLabels",aaDataLabels);
-            aaPlotOptions.arearange(areaRangeDic);
+                );
+                if (aaChartModel.dataLabelsEnabled) {
+                    aaDataLabels.format("<b>{point.name}</b>: {point.percentage:.1f} %");
+                }
+                aaPie.dataLabels(aaDataLabels);
+                aaPlotOptions.pie(aaPie);
+                break;
+            case AAChartType.Columnrange:
+                AAColumnrange aaColumnrange = new AAColumnrange()
+                        .borderRadius(0f)//The color of the border surrounding each column or bar
+                        .borderWidth(0f)//The corner radius of the border surrounding each column or bar. default：0
+                        .dataLabels(aaDataLabels);
+                aaPlotOptions.columnrange(aaColumnrange);
+                break;
+            case AAChartType.Arearange:
+                AAArearange aaArearange = new AAArearange()
+                        .dataLabels(aaDataLabels);
+                aaPlotOptions.arearange(aaArearange);
+                break;
         }
-        return aaPlotOptions;
     }
 
     private static void configureAxisContentAndStyle (
