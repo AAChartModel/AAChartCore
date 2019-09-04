@@ -103,107 +103,107 @@ public class AAGradientColor {
 
 
     public static HashMap<String,Object> oceanBlueColor(AALinearGradientDirection direction) {
-        return gradientColorMap(direction,"#2E3192","#1BFFFF");
+        return linearGradient(direction,"#2E3192","#1BFFFF");
     }
 
     public static HashMap<String,Object> sanguineColor(AALinearGradientDirection direction) {
-        return gradientColorMap(direction,"#D4145A","#FBB03B");
+        return linearGradient(direction,"#D4145A","#FBB03B");
     }
 
     public static HashMap<String,Object> lusciousLimeColor(AALinearGradientDirection direction) {
-        return gradientColorMap(direction,"#009245","#FCEE21");
+        return linearGradient(direction,"#009245","#FCEE21");
     }
 
     public static HashMap<String,Object> purpleLakeColor(AALinearGradientDirection direction) {
-        return gradientColorMap(direction,"#662D8C","#ED1E79");
+        return linearGradient(direction,"#662D8C","#ED1E79");
     }
 
     public static HashMap<String,Object> freshPapayaColor(AALinearGradientDirection direction) {
-        return gradientColorMap(direction,"#ED1C24","#FCEE21");
+        return linearGradient(direction,"#ED1C24","#FCEE21");
     }
 
     public static HashMap<String,Object> ultramarineColor(AALinearGradientDirection direction) {
-        return gradientColorMap(direction,"#00A8C5","#FFFF7E");
+        return linearGradient(direction,"#00A8C5","#FFFF7E");
     }
 
     public static HashMap<String,Object> pinkSugarColor(AALinearGradientDirection direction) {
-        return gradientColorMap(direction,"#D74177","#FFE98A");
+        return linearGradient(direction,"#D74177","#FFE98A");
     }
 
     public static HashMap<String,Object> lemonDrizzleColor(AALinearGradientDirection direction) {
-        return gradientColorMap(direction,"#FB872B","#D9E021");
+        return linearGradient(direction,"#FB872B","#D9E021");
     }
 
     public static HashMap<String,Object> victoriaPurpleColor(AALinearGradientDirection direction) {
-        return gradientColorMap(direction,"#312A6C","#852D91");
+        return linearGradient(direction,"#312A6C","#852D91");
     }
 
     public static HashMap<String,Object> springGreensColor(AALinearGradientDirection direction) {
-        return gradientColorMap(direction,"#009E00","#FFFF96");
+        return linearGradient(direction,"#009E00","#FFFF96");
     }
 
     public static HashMap<String,Object> mysticMauveColor(AALinearGradientDirection direction) {
-        return gradientColorMap(direction,"#B066FE","#63E2FF");
+        return linearGradient(direction,"#B066FE","#63E2FF");
     }
 
     public static HashMap<String,Object> reflexSilverColor(AALinearGradientDirection direction) {
-        return gradientColorMap(direction,"#808080","#E6E6E6");
+        return linearGradient(direction,"#808080","#E6E6E6");
     }
 
     public static HashMap<String,Object> neonGlowColor(AALinearGradientDirection direction) {
-        return gradientColorMap(direction,"#00FFA1","#00FFFF");
+        return linearGradient(direction,"#00FFA1","#00FFFF");
     }
 
     public static HashMap<String,Object> berrySmoothieColor(AALinearGradientDirection direction) {
-        return gradientColorMap(direction,"#8E78FF","#FC7D7B");
+        return linearGradient(direction,"#8E78FF","#FC7D7B");
     }
 
     public static HashMap<String,Object> newLeafColor(AALinearGradientDirection direction) {
-        return gradientColorMap(direction,"#00537E","#3AA17E");
+        return linearGradient(direction,"#00537E","#3AA17E");
     }
 
     public static HashMap<String,Object> cottonCandyColor(AALinearGradientDirection direction) {
-        return gradientColorMap(direction,"#FCA5F1","#B5FFFF");
+        return linearGradient(direction,"#FCA5F1","#B5FFFF");
     }
 
     public static HashMap<String,Object> pixieDustColor(AALinearGradientDirection direction) {
-        return gradientColorMap(direction,"#D585FF","#00FFEE");
+        return linearGradient(direction,"#D585FF","#00FFEE");
     }
 
     public static HashMap<String,Object> fizzyPeachColor(AALinearGradientDirection direction) {
-        return gradientColorMap(direction,"#F24645","#EBC08D");
+        return linearGradient(direction,"#F24645","#EBC08D");
     }
 
     public static HashMap<String,Object> sweetDreamColor(AALinearGradientDirection direction) {
-        return gradientColorMap(direction,"#3A3897","#A3A1FF");
+        return linearGradient(direction,"#3A3897","#A3A1FF");
     }
 
     public static HashMap<String,Object> firebrickColor(AALinearGradientDirection direction) {
-        return gradientColorMap(direction,"#45145A","#FF5300");
+        return linearGradient(direction,"#45145A","#FF5300");
     }
 
     public static HashMap<String,Object> wroughtIronColor(AALinearGradientDirection direction) {
-        return gradientColorMap(direction,"#333333","#5A5454");
+        return linearGradient(direction,"#333333","#5A5454");
     }
 
     public static HashMap<String,Object> deepSeaColor(AALinearGradientDirection direction) {
-        return gradientColorMap(direction,"#4F00BC","#29ABE2");
+        return linearGradient(direction,"#4F00BC","#29ABE2");
     }
 
     public static HashMap<String,Object> coastalBreezeColor(AALinearGradientDirection direction) {
-        return gradientColorMap(direction,"#00B7FF","#FFFFC7");
+        return linearGradient(direction,"#00B7FF","#FFFFC7");
     }
 
     public static HashMap<String,Object> eveningDelightColor(AALinearGradientDirection direction) {
-        return gradientColorMap(direction,"#93278F","#00A99D");
+        return linearGradient(direction,"#93278F","#00A99D");
     }
 
-    public static  HashMap<String,Object> gradientColorMap(String startColor,
-                                                           String endColor) {
-      return gradientColorMap(AALinearGradientDirection.ToTop, startColor, endColor);
+    public static  HashMap<String,Object> linearGradient(String startColor,
+                                                         String endColor) {
+      return linearGradient(AALinearGradientDirection.ToTop, startColor, endColor);
     }
 
-    public static  HashMap<String,Object> gradientColorMap(
+    public static  HashMap<String,Object> linearGradient(
             AALinearGradientDirection direction,
             String startColor,
             String endColor
@@ -213,18 +213,18 @@ public class AAGradientColor {
                 {1  ,endColor},
         };
 
-        return gradientColorMap(direction,stopsArr);
+        return linearGradient(direction,stopsArr);
     }
 
-    public static  HashMap<String,Object> gradientColorMap(
+    public static  HashMap<String,Object> linearGradient(
             AALinearGradientDirection direction,
             Object[][] stopsArr
     ) {
         Map linearGradientMap = linearGradientMap(direction);
-        HashMap gradientColorMap = new  HashMap<String,Object>();
-        gradientColorMap.put("linearGradient",linearGradientMap);
-        gradientColorMap.put("stops",stopsArr);
-        return gradientColorMap;
+        HashMap linearGradientColorMap = new  HashMap<String,Object>();
+        linearGradientColorMap.put("linearGradient",linearGradientMap);
+        linearGradientColorMap.put("stops",stopsArr);
+        return linearGradientColorMap;
     }
 
     /**
@@ -259,11 +259,11 @@ public class AAGradientColor {
     }
 
     private static Map linearGradientMap(int x1, int y1, int x2, int y2) {
-        Map linearGradientColorMap = new HashMap<String,Integer>();
-        linearGradientColorMap.put("x1",x1);
-        linearGradientColorMap.put("y1",y1);
-        linearGradientColorMap.put("x2",x2);
-        linearGradientColorMap.put("y2",y2);
-        return linearGradientColorMap;
+        Map linearGradientMap = new HashMap<String,Integer>();
+        linearGradientMap.put("x1",x1);
+        linearGradientMap.put("y1",y1);
+        linearGradientMap.put("x2",x2);
+        linearGradientMap.put("y2",y2);
+        return linearGradientMap;
     }
 }

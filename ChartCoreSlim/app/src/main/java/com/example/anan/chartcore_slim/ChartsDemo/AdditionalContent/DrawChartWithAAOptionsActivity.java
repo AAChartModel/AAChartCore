@@ -379,13 +379,13 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
     }
 
     AAOptions configure_DataLabels_XAXis_YAxis_Legend_Style() {
-        Map backgroundColorGradientColor = AAGradientColor.gradientColorMap(
+        Map backgroundColorGradientColor = AAGradientColor.linearGradient(
                 AALinearGradientDirection.ToBottom,
                 "#4F00BC",
                 "#29ABE2"//颜色字符串设置支持十六进制类型和 rgba 类型
         );
 
-        Map fillColorGradientColor = AAGradientColor.gradientColorMap(
+        Map fillColorGradientColor = AAGradientColor.linearGradient(
                 AALinearGradientDirection.ToBottom,
                 "rgba(256,256,256,0.3)",
                 "rgba(256,256,256,1.0)"//颜色字符串设置支持十六进制类型和 rgba 类型
