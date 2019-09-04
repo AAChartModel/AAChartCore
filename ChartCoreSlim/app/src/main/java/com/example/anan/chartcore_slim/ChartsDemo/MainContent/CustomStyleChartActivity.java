@@ -264,7 +264,7 @@ public class CustomStyleChartActivity extends AppCompatActivity {
                 {1.00  ,"#0bf8f5"},
         };//颜色字符串设置支持十六进制类型和 rgba 类型
 
-        Map linearGradientColor =  AAGradientColor.gradientColorMap(
+        Map linearGradientColor =  AAGradientColor.linearGradient(
                 AALinearGradientDirection.ToLeft,
                 stopsArr
         );//颜色字符串设置支持十六进制类型和 rgba 类型
@@ -300,7 +300,7 @@ public class CustomStyleChartActivity extends AppCompatActivity {
                 {1.00  ,"#1904dd"},
         };//颜色字符串设置支持十六进制类型和 rgba 类型
 
-        Map linearGradientColor =  AAGradientColor.gradientColorMap(
+        Map linearGradientColor =  AAGradientColor.linearGradient(
                 AALinearGradientDirection.ToLeft,
                 stopsArr
         );//颜色字符串设置支持十六进制类型和 rgba 类型
@@ -328,7 +328,7 @@ public class CustomStyleChartActivity extends AppCompatActivity {
 
 
     AAChartModel configureGradientColorAreasplineChart() {
-      Map linearGradientColor =  AAGradientColor.gradientColorMap(
+      Map linearGradientColor =  AAGradientColor.linearGradient(
               AALinearGradientDirection.ToTop,
               "rgba(2255,20,147,1)",//深粉色, alpha 透明度 1
               "rgba(255,105,180,0.1)"//热情的粉红, alpha 透明度 0.1
