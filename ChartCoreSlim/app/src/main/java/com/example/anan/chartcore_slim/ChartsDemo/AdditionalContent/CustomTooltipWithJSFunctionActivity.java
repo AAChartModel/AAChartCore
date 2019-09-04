@@ -17,8 +17,6 @@ import com.example.anan.chartcore_slim.AAChartCoreLib.AAOptionsModel.AATooltip;
 import com.example.anan.chartcore_slim.AAChartCoreLib.AATools.AAGradientColor;
 import com.example.anan.chartcore_slim.R;
 
-import java.util.HashMap;
-
 public class CustomTooltipWithJSFunctionActivity extends AppCompatActivity {
 
     @Override
