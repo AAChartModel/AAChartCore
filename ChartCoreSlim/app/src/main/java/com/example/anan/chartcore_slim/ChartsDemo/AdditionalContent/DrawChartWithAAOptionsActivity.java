@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartConfiger.AAChartModel;
-import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartEnum.AAChartLineDashSyleType;
+import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartEnum.AAChartLineDashStyleType;
 import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartEnum.AAChartStackingType;
 import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartEnum.AAChartSymbolStyleType;
 import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartEnum.AAChartType;
@@ -145,7 +145,7 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
         AAPlotLinesElement[] aaPlotLinesElementsArr = new AAPlotLinesElement[] {
                 new AAPlotLinesElement()
                         .color("#1e90ff")//颜色值(16进制)
-                        .dashStyle(AAChartLineDashSyleType.LongDashDotDot)//样式：Dash,Dot,Solid等,默认Solid
+                        .dashStyle(AAChartLineDashStyleType.LongDashDotDot)//样式：Dash,Dot,Solid等,默认Solid
                         .width((1f)) //标示线粗细
                         .value((12f)) //所在位置
                         .zIndex((1)) //层叠,标示线在图表中显示的层叠级别，值越大，显示越向前
@@ -159,7 +159,7 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
                 ,
                 new AAPlotLinesElement()
                         .color("#ef476f")//颜色值(16进制)
-                        .dashStyle(AAChartLineDashSyleType.LongDashDot)//样式：Dash,Dot,Solid等,默认Solid
+                        .dashStyle(AAChartLineDashStyleType.LongDashDot)//样式：Dash,Dot,Solid等,默认Solid
                         .width((1f)) //标示线粗细
                         .value((24f)) //所在位置
                         .zIndex((1)) //层叠,标示线在图表中显示的层叠级别，值越大，显示越向前
@@ -173,7 +173,7 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
                 ,
                 new AAPlotLinesElement()
                         .color("#1e90ff")//颜色值(16进制)
-                        .dashStyle(AAChartLineDashSyleType.LongDash)//样式：Dash,Dot,Solid等,默认Solid
+                        .dashStyle(AAChartLineDashStyleType.LongDash)//样式：Dash,Dot,Solid等,默认Solid
                         .width((1f)) //标示线粗细
                         .value((36f)) //所在位置
                         .zIndex((1)) //层叠,标示线在图表中显示的层叠级别，值越大，显示越向前
@@ -295,7 +295,7 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
         AACrosshair aaCrosshair = new AACrosshair()
                 .color(AAColor.redColor())
                 .width(1f)
-                .dashStyle(AAChartLineDashSyleType.LongDashDotDot);
+                .dashStyle(AAChartLineDashStyleType.LongDashDotDot);
         AAXAxis aaXAxis =  aaOptions.xAxis;
         aaXAxis.crosshair(aaCrosshair);
         return aaOptions;
@@ -423,7 +423,7 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
 
 
         AACrosshair aaCrosshair = new AACrosshair()
-                .dashStyle(AAChartLineDashSyleType.LongDashDot)
+                .dashStyle(AAChartLineDashStyleType.LongDashDot)
                 .color(AAColor.whiteColor())
                 .width(1.f);
 

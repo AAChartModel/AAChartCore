@@ -57,7 +57,6 @@ public class AAChartModel {
     public String  markerSymbol;          //折线曲线连接点的类型："circle", "square", "diamond", "triangle","triangle-down"，默认是"circle"
     public String  markerSymbolStyle;
     public String  zoomType;              //缩放类型 AAChartZoomTypeX表示可沿着 x 轴进行手势缩放
-    public Boolean pointHollow;           //折线或者曲线的连接点是否为空心的
     public Boolean inverted;              //x 轴是否翻转(垂直)
     public Boolean xAxisReversed;         //x 轴翻转
     public Boolean yAxisReversed;         //y 轴翻转
@@ -180,11 +179,6 @@ public class AAChartModel {
         return this;
     }
 
-    public AAChartModel pointHollow(Boolean prop) {
-        pointHollow = prop;
-        return this;
-    }
-
     public AAChartModel inverted(Boolean prop) {
         inverted = prop;
         return this;
@@ -202,6 +196,11 @@ public class AAChartModel {
 
     public AAChartModel tooltipEnabled(Boolean prop) {
         tooltipEnabled = prop;
+        return this;
+    }
+
+    public AAChartModel tooltipValueSuffixSet(String prop) {
+        tooltipValueSuffix = prop;
         return this;
     }
 
@@ -225,7 +224,7 @@ public class AAChartModel {
         return this;
     }
 
-    public AAChartModel marginright(Float prop) {
+    public AAChartModel marginRight(Float prop) {
         marginRight = prop;
         return this;
     }
@@ -355,7 +354,6 @@ public class AAChartModel {
         chartType             = AAChartType.Line;
         animationDuration     = 500;//以毫秒为单位
         animationType         = AAChartAnimationType.Linear;
-        pointHollow           = false;
         inverted              = false;
         stacking              = AAChartStackingType.False;
         xAxisReversed         = false;

@@ -1,6 +1,6 @@
 package com.example.anan.chartcore_slim.AAChartCoreLib.AAChartEnum;
 
-public interface AAChartLineDashSyleType {
+public interface AAChartLineDashStyleType {
     String Solid           = "Solid";
     String ShortDash       = "ShortDash";
     String ShortDot        = "ShortDot";
