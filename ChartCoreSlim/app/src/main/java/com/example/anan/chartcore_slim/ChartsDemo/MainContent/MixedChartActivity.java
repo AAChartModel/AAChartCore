@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartConfiger.AAChartModel;
-import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartEnum.AAChartLineDashSyleType;
+import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartEnum.AAChartLineDashStyleType;
 import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartEnum.AAChartStackingType;
 import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartEnum.AAChartSymbolStyleType;
 import com.example.anan.chartcore_slim.AAChartCoreLib.AAChartEnum.AAChartSymbolType;
@@ -223,22 +223,22 @@ public class MixedChartActivity extends AppCompatActivity {
                         new AASeriesElement()
                                 .name("Dash")
                                 .lineWidth(3f)
-                                .dashStyle(AAChartLineDashSyleType.Dash)
+                                .dashStyle(AAChartLineDashStyleType.Dash)
                                 .data(new Object[] {50, 320, 230, 370, 230, 400,320}),
                         new AASeriesElement()
                                 .name("DashDot")
                                 .lineWidth(3f)
-                                .dashStyle(AAChartLineDashSyleType.DashDot)
+                                .dashStyle(AAChartLineDashStyleType.DashDot)
                                 .data(new Object[] {50, 320, 230, 370, 230, 400,320}),
                         new AASeriesElement()
                                 .name("LongDash")
                                 .lineWidth(3f)
-                                .dashStyle(AAChartLineDashSyleType.LongDash)
+                                .dashStyle(AAChartLineDashStyleType.LongDash)
                                 .data(new Object[] {50, 320, 230, 370, 230, 400,320}),
                         new AASeriesElement()
                                 .name("LongDashDot")
                                 .lineWidth(3f)
-                                .dashStyle(AAChartLineDashSyleType.LongDashDot)
+                                .dashStyle(AAChartLineDashStyleType.LongDashDot)
                                 .data(new Object[] {50, 320, 230, 370, 230, 400,320})
                         ,
                 });
