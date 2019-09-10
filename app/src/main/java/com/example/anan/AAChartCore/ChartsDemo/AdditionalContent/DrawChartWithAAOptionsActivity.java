@@ -415,7 +415,7 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
                 .dataLabels(new AADataLabels()
                 .enabled(true)
                 .style(new AAStyle()
-                        .color(AAColor.black)
+                        .color(AAColor.blackColor())
                         .fontSize(14.f)
                         .fontWeight("thin")
                         .textOutline("0px 0px contrast")//文字轮廓描边

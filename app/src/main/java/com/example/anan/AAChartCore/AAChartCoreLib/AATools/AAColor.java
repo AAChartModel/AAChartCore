@@ -2,13 +2,6 @@ package com.example.anan.AAChartCore.AAChartCoreLib.AATools;
 
 public class AAColor {
 
-    public static String getBlack() {
-        return "black";
-    }
-
-    public static String black;
-
-
     public static String blackColor() {
         return "black";
     }
@@ -65,6 +58,15 @@ public class AAColor {
 
     public static String clearColor() {
         return "clear";
+    }
+
+    public static String rgbaColor(
+            Integer red,
+            Integer green,
+            Integer blue,
+            Float alpha
+    ) {
+        return "rgba(" + red +"," + green + "," + blue + "," + alpha + ")";
     }
 
 }

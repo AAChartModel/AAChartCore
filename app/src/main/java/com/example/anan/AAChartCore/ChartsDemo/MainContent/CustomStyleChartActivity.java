@@ -329,7 +329,7 @@ public class CustomStyleChartActivity extends AppCompatActivity {
 
     AAChartModel configureGradientColorAreasplineChart() {
       Map linearGradientColor =  AAGradientColor.linearGradient(
-              AALinearGradientDirection.ToTop,
+              AALinearGradientDirection.ToBottom,
               "rgba(2255,20,147,1)",//深粉色, alpha 透明度 1
               "rgba(255,105,180,0.1)"//热情的粉红, alpha 透明度 0.1
               );//颜色字符串设置支持十六进制类型和 rgba 类型
@@ -351,7 +351,7 @@ public class CustomStyleChartActivity extends AppCompatActivity {
                         new AASeriesElement()
                                 .name("Tokyo Hot")
                                 .lineWidth(5.0f)
-                                .color("rgba(220,20,60,1)")//猩红色, alpha 透明度 1
+                                .color(AAColor.rgbaColor(220,20,60,1f))//猩红色, alpha 透明度 1
                                 .fillColor(linearGradientColor)
                                 .data(new Object[]{7.0, 6.9, 2.5, 14.5, 18.2, 21.5, 5.2, 26.5, 23.3, 45.3, 13.9, 9.6}),
                  }
