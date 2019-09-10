@@ -32,6 +32,7 @@
 
 package com.example.anan.AAChartCore.AAChartCoreLib.AAChartConfiger;
 
+import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAMarker;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAShadow;
 
 import java.util.Dictionary;
@@ -53,7 +54,7 @@ public class AASeriesElement {
     private String negativeColor;// The color for the parts of the graph or points that are below the threshold
     private String dashStyle;
     private Dictionary dataLabels;
-    private Dictionary marker;
+    private AAMarker marker;
     private Object step;
     private Boolean colorByPoint;
     private Integer zIndex;
@@ -116,7 +117,7 @@ public class AASeriesElement {
         return this;
     }
 
-    public AASeriesElement marker(Dictionary prop) {
+    public AASeriesElement marker(AAMarker prop) {
         marker = prop;
         return this;
     }

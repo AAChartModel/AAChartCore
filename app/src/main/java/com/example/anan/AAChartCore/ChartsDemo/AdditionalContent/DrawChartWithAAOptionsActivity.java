@@ -51,14 +51,14 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
 
     AAOptions configureTheChartOptions(String chartType) {
         switch (chartType) {
-            case "configureAAPlotBandsForChart": return  configureAAPlotBandsForChart();
-            case "configureAAPlotLinesForChart": return configureAAPlotLinesForChart();
+            case "AAPlotBandsForChart": return  configureAAPlotBandsForChart();
+            case "AAPlotLinesForChart": return configureAAPlotLinesForChart();
             case "customAATooltipWithJSFuntion": return customAATooltipWithJSFuntion();
             case "customXAxisCrosshairStyle": return customXAxisCrosshairStyle();
-            case "configureXAxisLabelsFontColorWithHTMLString": return configureXAxisLabelsFontColorWithHTMLString();
-            case "configureXAxisLabelsFontColorAndFontSizeWithHTMLString": return configureXAxisLabelsFontColorAndFontSizeWithHTMLString();
-            case "configure_DataLabels_XAXis_YAxis_Legend_Style": return configure_DataLabels_XAXis_YAxis_Legend_Style();
-            case "configureXAxisPlotBand": return configureXAxisPlotBand();
+            case "XAxisLabelsFontColorWithHTMLString": return configureXAxisLabelsFontColorWithHTMLString();
+            case "XAxisLabelsFontColorAndFontSizeWithHTMLString": return configureXAxisLabelsFontColorAndFontSizeWithHTMLString();
+            case "_DataLabels_XAXis_YAxis_Legend_Style": return configure_DataLabels_XAXis_YAxis_Legend_Style();
+            case "XAxisPlotBand": return configureXAxisPlotBand();
         }
         return configureAAPlotBandsForChart();
     }

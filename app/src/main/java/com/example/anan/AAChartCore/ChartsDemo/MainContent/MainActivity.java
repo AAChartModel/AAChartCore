@@ -58,15 +58,24 @@ public class MainActivity extends AppCompatActivity {
             "colorfulGradientAreaChart",
             "colorfulGradientSplineChart",
             "gradientColorAreasplineChart",
+            "SpecialStyleMarkerOfSingleDataElementChart",
+            "SpecialStyleColumnOfSingleDataElementChart",
+            "AreaChartThreshold",
+            "customScatterChartMarkerSymbolContent",
+            "customLineChartMarkerSymbolContent",
+            "TriangleRadarChart",
+            "QuadrangleRadarChart",
+            "PentagonRadarChart",
+            "HexagonRadarChart",
             /*使用AAOptions绘制图表*/
             "/*使用AAOptions绘制图表*/drawChartWithOptionsOne-----------------",
-            "configureAAPlotLinesForChart",
+            "AAPlotLinesForChart",
             "customAATooltipWithJSFuntion",
             "customXAxisCrosshairStyle",
-            "configureXAxisLabelsFontColorWithHTMLString",
-            "configureXAxisLabelsFontColorAndFontSizeWithHTMLString",
-            "configure_DataLabels_XAXis_YAxis_Legend_Style",
-            "configureXAxisPlotBand",
+            "XAxisLabelsFontColorWithHTMLString",
+            "XAxisLabelsFontColorAndFontSizeWithHTMLString",
+            "_DataLabels_XAXis_YAxis_Legend_Style",
+            "XAxisPlotBand",
             /*隐藏或显示内容*/
             "/*隐藏或显示内容*/Column Chart---柱形图--------------",
             "Bar Chart---条形图",
@@ -128,15 +137,24 @@ public class MainActivity extends AppCompatActivity {
             "colorfulGradientAreaChart",
             "colorfulGradientSplineChart",
             "gradientColorAreasplineChart",
+            "SpecialStyleMarkerOfSingleDataElementChart",
+            "SpecialStyleColumnOfSingleDataElementChart",
+            "AreaChartThreshold",
+            "customScatterChartMarkerSymbolContent",
+            "customLineChartMarkerSymbolContent",
+            "TriangleRadarChart",
+            "QuadrangleRadarChart",
+            "PentagonRadarChart",
+            "HexagonRadarChart",
             /*使用AAOptions绘制图表*/
-            "configureAAPlotBandsForChart",
-            "configureAAPlotLinesForChart",
+            "AAPlotBandsForChart",
+            "AAPlotLinesForChart",
             "customAATooltipWithJSFuntion",
             "customXAxisCrosshairStyle",
-            "configureXAxisLabelsFontColorWithHTMLString",
-            "configureXAxisLabelsFontColorAndFontSizeWithHTMLString",
-            "configure_DataLabels_XAXis_YAxis_Legend_Style",
-            "configureXAxisPlotBand",
+            "XAxisLabelsFontColorWithHTMLString",
+            "XAxisLabelsFontColorAndFontSizeWithHTMLString",
+            "_DataLabels_XAXis_YAxis_Legend_Style",
+            "XAxisPlotBand",
             /*隐藏或显示内容*/
             AAChartType.Column,
             AAChartType.Bar,
@@ -177,13 +195,13 @@ public class MainActivity extends AppCompatActivity {
                     goToSpecialChartActivity(position);
                 } else if (position > 19 && position <= 28 ) {
                     goToMixedChartActivity(position);
-                } else if (position > 28 && position <= 37 )  {
+                } else if (position > 37 && position <= 46 )  {
                     goToCustomStyleChartActivity(position);
-                } else if (position > 37 && position <= 45){
+                } else if (position > 46 && position <= 54){
                     goToDrawChartWithAAOptionsActivity(position);
-                } else if (position > 45 && position <= 53 ) {
+                } else if (position > 54 && position <= 62 ) {
                     goToHideOrShowChartSeriesActivity(position);
-                } else if (position > 53) {
+                } else if (position > 62) {
                     goToCustomTooltipWithJSFunctionActivity(position);
                 }
             }
