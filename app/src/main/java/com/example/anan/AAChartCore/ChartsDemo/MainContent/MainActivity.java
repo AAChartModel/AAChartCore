@@ -195,7 +195,7 @@ public class MainActivity extends AppCompatActivity {
                     goToSpecialChartActivity(position);
                 } else if (position > 19 && position <= 28 ) {
                     goToMixedChartActivity(position);
-                } else if (position > 37 && position <= 46 )  {
+                } else if (position > 28 && position <= 46 )  {
                     goToCustomStyleChartActivity(position);
                 } else if (position > 46 && position <= 54){
                     goToDrawChartWithAAOptionsActivity(position);
