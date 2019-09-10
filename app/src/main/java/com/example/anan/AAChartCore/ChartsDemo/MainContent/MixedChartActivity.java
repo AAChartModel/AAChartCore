@@ -12,6 +12,9 @@ import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartSymbolType
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartConfiger.AAChartView;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartConfiger.AASeriesElement;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AADataLabels;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAStyle;
+import com.example.anan.AAChartCore.AAChartCoreLib.AATools.AAColor;
 import com.example.anan.AAChartCore.AAChartCoreLib.AATools.AAGradientColor;
 import com.example.anan.AAChartCore.R;
 
@@ -194,17 +197,41 @@ public class MixedChartActivity extends AppCompatActivity {
                         AAGradientColor.lusciousLimeColor(),
                 })
                 .series(new AASeriesElement[]{
-                        new AASeriesElement()
-                                .name("新用户")
-                                .data(new Object[] {82.89,67.54,62.07,59.43,67.02,67.09,35.66,71.78,81.61,78.85,79.12,72.30}),
-                        new AASeriesElement()
-                                .name("老用户")
-                                .data(new Object[] {198.66,330.81,151.95,160.12,222.56,229.05,128.53,250.91,224.47,473.99,126.85,260.50}),
-                        new AASeriesElement()
-                                .name("总量")
-                                .type(AAChartType.Line)
-                                .data(new Object[] {281.55,398.35,214.02,219.55,289.57,296.14,164.18,322.69,306.08,552.84,205.97,332.79})
-                        ,
+                                new AASeriesElement()
+                                        .name("新用户")
+                                        .data(new Object[] {82.89,67.54,62.07,59.43,67.02,67.09,35.66,71.78,81.61,78.85,79.12,72.30})
+                                        .dataLabels(new AADataLabels()
+                                        .enabled(true)
+                                        .style(new AAStyle()
+                                                .color(AAColor.redColor())
+                                                .fontSize(11f)
+                                        )
+                                )
+                                ,
+                                new AASeriesElement()
+                                        .name("老用户")
+                                        .data(new Object[] {198.66,330.81,151.95,160.12,222.56,229.05,128.53,250.91,224.47,473.99,126.85,260.50})
+                                        .dataLabels(
+                                        new AADataLabels()
+                                                .enabled(true)
+                                                .style(new AAStyle()
+                                                        .color("#000000")
+                                                        .fontSize(11f)
+                                                )
+                                ),
+                                new AASeriesElement()
+                                        .name("总量")
+                                        .type(AAChartType.Line)
+                                        .data(new Object[] {281.55,398.35,214.02,219.55,289.57,296.14,164.18,322.69,306.08,552.84,205.97,332.79})
+                                        .dataLabels(new AADataLabels()
+                                        .enabled(true)
+                                        .style(new AAStyle()
+                                                .color("#000000")
+                                                .fontSize(15f)
+                                                .fontWeight("bold")
+                                        )
+                                )
+                                ,
                         }
                 );
     }

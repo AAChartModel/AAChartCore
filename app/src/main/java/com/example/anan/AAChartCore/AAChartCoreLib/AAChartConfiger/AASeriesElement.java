@@ -32,6 +32,7 @@
 
 package com.example.anan.AAChartCore.AAChartCoreLib.AAChartConfiger;
 
+import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AADataLabels;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAMarker;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAShadow;
 
@@ -53,7 +54,7 @@ public class AASeriesElement {
     private Float threshold;//The threshold, also called zero level or base level. For line type series this is only used in conjunction with negativeColor. default：0.
     private String negativeColor;// The color for the parts of the graph or points that are below the threshold
     private String dashStyle;
-    private Dictionary dataLabels;
+    private AADataLabels dataLabels;
     private AAMarker marker;
     private Object step;
     private Boolean colorByPoint;
@@ -112,7 +113,7 @@ public class AASeriesElement {
         return this;
     }
 
-    public AASeriesElement dataLabels(Dictionary prop) {
+    public AASeriesElement dataLabels(AADataLabels prop) {
         dataLabels = prop;
         return this;
     }
