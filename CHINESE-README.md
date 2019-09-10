@@ -79,7 +79,7 @@
 
 1. 创建视图*AAChartView*
 ```xml
-        <com.example.anan.chartcore_slim.AAChartConfiger.AAChartView
+        <AAChartCore.AAChartConfiger.AAChartView
         android:id="@+id/AAChartView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
