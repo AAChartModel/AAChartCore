@@ -11,7 +11,7 @@ import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartConfiger.AAChartView;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartConfiger.AASeriesElement;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartAnimationType;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAWaterfallChart;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAWaterfall;
 import com.example.anan.AAChartCore.AAChartCoreLib.AATools.AAGradientColor;
 import com.example.anan.AAChartCore.R;
 
@@ -895,7 +895,7 @@ public class SpecialChartActivity extends AppCompatActivity {
                .title("WATERFALL CHART")
                .subtitle("virtual data")
                .series(new Object[]{
-                       new AAWaterfallChart()
+                       new AAWaterfall()
                                .upColor("#9b43b4")
                                .color("#ef476f")
                        .borderWidth(0f)

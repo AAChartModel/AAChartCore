@@ -53,7 +53,7 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
         switch (chartType) {
             case "AAPlotBandsForChart": return  configureAAPlotBandsForChart();
             case "AAPlotLinesForChart": return configureAAPlotLinesForChart();
-            case "customAATooltipWithJSFuntion": return customAATooltipWithJSFuntion();
+            case "customAATooltipWithJSFuntion": return customAATooltipWithJSFunction();
             case "customXAxisCrosshairStyle": return customXAxisCrosshairStyle();
             case "XAxisLabelsFontColorWithHTMLString": return configureXAxisLabelsFontColorWithHTMLString();
             case "XAxisLabelsFontColorAndFontSizeWithHTMLString": return configureXAxisLabelsFontColorAndFontSizeWithHTMLString();
@@ -192,7 +192,7 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
         return aaOptions;
     }
 
-    AAOptions customAATooltipWithJSFuntion() {
+    AAOptions customAATooltipWithJSFunction() {
         AAChartModel aaChartModel = new AAChartModel()
                 .chartType(AAChartType.Area)//图形类型
                 .title("近三个月金价起伏周期图")//图表主标题

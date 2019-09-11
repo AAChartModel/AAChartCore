@@ -1,27 +1,27 @@
 package com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel;
 
-public class AAWaterfallChart {
+public class AAWaterfall {
     public String upColor;
     public String color;
     public Float borderWidth;
     public Object[] data;
 
-    public AAWaterfallChart upColor(String prop) {
+    public AAWaterfall upColor(String prop) {
         upColor = prop;
         return this;
     }
 
-    public AAWaterfallChart color(String prop) {
+    public AAWaterfall color(String prop) {
         color = prop;
         return this;
     }
 
-    public AAWaterfallChart borderWidth(Float prop) {
+    public AAWaterfall borderWidth(Float prop) {
         borderWidth = prop;
         return this;
     }
 
-    public AAWaterfallChart data(Object[] prop) {
+    public AAWaterfall data(Object[] prop) {
         data = prop;
         return this;
     }
