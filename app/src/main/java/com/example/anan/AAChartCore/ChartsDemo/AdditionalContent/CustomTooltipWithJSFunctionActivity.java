@@ -102,6 +102,17 @@ public class CustomTooltipWithJSFunctionActivity extends AppCompatActivity {
     }
 
     AAOptions customAreaChartTooltipStyleWithFormatterFunction2() {
+        AASeriesElement element1 = new AASeriesElement()
+                .name("🐶狗子")
+                .lineWidth(5f)
+                .fillOpacity(0.5f)
+                .data(new Object[]{0.45, 0.43, 0.50, 0.55, 0.58, 0.62, 0.83, 0.39, 0.56, 0.67, 0.50, 0.34, 0.50, 0.67, 0.58, 0.29, 0.46, 0.23, 0.47, 0.46, 0.38, 0.56, 0.48, 0.36});
+        AASeriesElement element2 = new AASeriesElement()
+                .name("🌲树木")
+                .lineWidth(5f)
+                .fillOpacity(0.5f)
+                .data(new Object[]{0.38, 0.31, 0.32, 0.32, 0.64, 0.66, 0.86, 0.47, 0.52, 0.75, 0.52, 0.56, 0.54, 0.60, 0.46, 0.63, 0.54, 0.51, 0.58, 0.64, 0.60, 0.45, 0.36, 0.67});
+
         AAChartModel aaChartModel = new AAChartModel()
                 .chartType(AAChartType.Area)//图形类型
                 .title("2014 ~ 2020 汪星人生存指数")//图表主标题
@@ -110,22 +121,8 @@ public class CustomTooltipWithJSFunctionActivity extends AppCompatActivity {
                 .dataLabelsEnabled(false)
                 .colorsTheme(new Object[]{"#ff0000","#0000ff"})
                 .stacking(AAChartStackingType.Normal)
-                .series(new AASeriesElement[]{
-                        new AASeriesElement()
-                                .name("🐶狗子")
-                                .lineWidth(5f)
-                                .fillOpacity(0.5f)
-                                .data(new Object[]{
-                                0.45, 0.43, 0.50, 0.55, 0.58, 0.62, 0.83, 0.39, 0.56, 0.67, 0.50,
-                                0.34, 0.50, 0.67, 0.58, 0.29, 0.46, 0.23, 0.47, 0.46, 0.38, 0.56, 0.48, 0.36}),
-                        new AASeriesElement()
-                                .name("🌲树木")
-                                .lineWidth(5f)
-                                .fillOpacity(0.5f)
-                                .data(new Object[]{
-                                0.38, 0.31, 0.32, 0.32, 0.64, 0.66, 0.86, 0.47, 0.52, 0.75, 0.52,
-                                0.56, 0.54, 0.60, 0.46, 0.63, 0.54, 0.51, 0.58, 0.64, 0.60, 0.45, 0.36, 0.67}),
-                });
+                .series(new Object[]{element1, element2});
+
 
         AATooltip aaTooltip = new AATooltip()
                 .useHTML(true)
@@ -145,6 +142,22 @@ public class CustomTooltipWithJSFunctionActivity extends AppCompatActivity {
     }
 
     AAOptions customAreaChartTooltipStyleWithFormatterFunction3() {
+        AASeriesElement[] seriesElements = new AASeriesElement[]{
+                new AASeriesElement()
+                        .name("上市")
+                        .data(new Object[]{0,0,7}),
+                new AASeriesElement()
+                        .name("中止")
+                        .data(new Object[]{4,5,1}),
+                new AASeriesElement()
+                        .name("无进展")
+                        .data(new Object[]{2,0,1}),
+                new AASeriesElement()
+                        .name("进行中")
+                        .data(new Object[]{3,5,2}),
+
+        };
+
         AAChartModel aaChartModel = new AAChartModel()
                 .chartType(AAChartType.Area)//图形类型
                 .title("2014 ~ 2020 汪星人生存指数")//图表主标题
@@ -152,21 +165,7 @@ public class CustomTooltipWithJSFunctionActivity extends AppCompatActivity {
                 .markerSymbolStyle(AAChartSymbolStyleType.BorderBlank)//折线连接点样式为外边缘空白
                 .dataLabelsEnabled(false)
                 .categories(new String[]{"临床一期","临床二期","临床三期"})
-                .series(new AASeriesElement[]{
-                        new AASeriesElement()
-                                .name("上市")
-                                .data(new Object[]{0,0,7}),
-                        new AASeriesElement()
-                                .name("中止")
-                                .data(new Object[]{4,5,1}),
-                        new AASeriesElement()
-                                .name("无进展")
-                                .data(new Object[]{2,0,1}),
-                        new AASeriesElement()
-                                .name("进行中")
-                                .data(new Object[]{3,5,2}),
-
-                });
+                .series(seriesElements);
 
         AATooltip aaTooltip = new AATooltip()
                 .useHTML(true)
@@ -197,6 +196,23 @@ public class CustomTooltipWithJSFunctionActivity extends AppCompatActivity {
     }
 
     AAOptions customAreaChartTooltipStyleWithFormatterFunction4() {
+        AASeriesElement element1 = new AASeriesElement()
+                .name("Predefined symbol")
+                .data(new Object[]{0.45, 0.43, 0.50, 0.55, 0.58, 0.62, 0.83, 0.39, 0.56, 0.67, 0.50, 0.34, 0.50, 0.67, 0.58, 0.29, 0.46, 0.23, 0.47, 0.46, 0.38, 0.56, 0.48, 0.36});
+
+        AASeriesElement element2 = new AASeriesElement()
+                .name("Image symbol")
+                .data(new Object[]{0.38, 0.31, 0.32, 0.32, 0.64, 0.66, 0.86, 0.47, 0.52, 0.75, 0.52, 0.56, 0.54, 0.60, 0.46, 0.63, 0.54, 0.51, 0.58, 0.64, 0.60, 0.45, 0.36, 0.67});
+
+        AASeriesElement element3 = new AASeriesElement()
+                .name("Base64 symbol (*)")
+                .data(new Object[]{0.46, 0.32, 0.53, 0.58, 0.86, 0.68, 0.85, 0.73, 0.69, 0.71, 0.91, 0.74, 0.60, 0.50, 0.39, 0.67, 0.55, 0.49, 0.65, 0.45, 0.64, 0.47, 0.63, 0.64});
+
+        AASeriesElement element4 = new AASeriesElement()
+                .name("Custom symbol")
+                .data(new Object[]{0.60, 0.51, 0.52, 0.53, 0.64, 0.84, 0.65, 0.68, 0.63, 0.47, 0.72, 0.60, 0.65, 0.74, 0.66, 0.65, 0.71, 0.59, 0.65, 0.77, 0.52, 0.53, 0.58, 0.53});
+
+
         AAChartModel aaChartModel = new AAChartModel()
                 .chartType(AAChartType.Areaspline)//图形类型
                 .title("")//图表主标题
@@ -206,36 +222,8 @@ public class CustomTooltipWithJSFunctionActivity extends AppCompatActivity {
                 .colorsTheme(new Object[]{"#04d69f","#1e90ff","#ef476f","#ffd066",})
                 .stacking(AAChartStackingType.Normal)
                 .markerRadius(0f)
-                .series(new AASeriesElement[]{
-                        new AASeriesElement()
-                                .name("Tokyo Hot")
-                                .lineWidth(5.0f)
-                                .fillOpacity(0.4f)
-                                .data(new Object[]{0.45, 0.43, 0.50, 0.55, 0.58, 0.62, 0.83, 0.39,
-                                0.56, 0.67, 0.50, 0.34, 0.50, 0.67, 0.58, 0.29, 0.46, 0.23, 0.47, 0.46, 0.38, 0.56, 0.48, 0.36})
-                        ,
-                        new AASeriesElement()
-                                .name("Berlin Hot")
-                                .lineWidth(5.0f)
-                                .fillOpacity(0.4f)
-                                .data(new Object[]{0.38, 0.31, 0.32, 0.32, 0.64, 0.66, 0.86, 0.47,
-                                0.52, 0.75, 0.52, 0.56, 0.54, 0.60, 0.46, 0.63, 0.54, 0.51, 0.58, 0.64, 0.60, 0.45, 0.36, 0.67})
-                        ,
-                        new AASeriesElement()
-                                .name("New York Hot")
-                                .lineWidth(5.0f)
-                                .fillOpacity(0.4f)
-                                .data(new Object[]{0.46, 0.32, 0.53, 0.58, 0.86, 0.68, 0.85, 0.73,
-                                0.69, 0.71, 0.91, 0.74, 0.60, 0.50, 0.39, 0.67, 0.55, 0.49, 0.65, 0.45, 0.64, 0.47, 0.63, 0.64})
-                        ,
-                        new AASeriesElement()
-                                .name("London Hot")
-                                .lineWidth(5.0f)
-                                .fillOpacity(0.4f)
-                                .data(new Object[]{0.60, 0.51, 0.52, 0.53, 0.64, 0.84, 0.65, 0.68,
-                                0.63, 0.47, 0.72, 0.60, 0.65, 0.74, 0.66, 0.65, 0.71, 0.59, 0.65, 0.77, 0.52, 0.53, 0.58, 0.53})
-                        ,
-                });
+                .series(new Object[]{element1, element2, element3, element4});
+
 
         AATooltip aaTooltip = new AATooltip()
                 .useHTML(true)
