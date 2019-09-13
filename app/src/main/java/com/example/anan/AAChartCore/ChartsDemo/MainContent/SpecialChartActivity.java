@@ -894,7 +894,7 @@ public class SpecialChartActivity extends AppCompatActivity {
                .chartType(AAChartType.Waterfall)
                .title("WATERFALL CHART")
                .subtitle("virtual data")
-               .series(new Object[]{
+               .series(new AASeriesElement[]{
                        new AAWaterfall()
                                .upColor("#9b43b4")
                                .color("#ef476f")

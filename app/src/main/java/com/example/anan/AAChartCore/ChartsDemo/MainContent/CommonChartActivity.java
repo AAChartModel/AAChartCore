@@ -76,7 +76,7 @@ public class CommonChartActivity extends AppCompatActivity
                 .backgroundColor("#4b2b7f")
                 .dataLabelsEnabled(false)
                 .yAxisGridLineWidth(0f)
-                .series(new Object[]{element1, element2, element3, element4});
+                .series(new AASeriesElement[]{element1, element2, element3, element4});
 
 
         configureTheStyleForDifferentTypeChart(chartType,position);
@@ -114,7 +114,7 @@ public class CommonChartActivity extends AppCompatActivity
                 .step(true)
                 .data(new Object[]{48.9, 38.8, 19.3, 41.4, 47.0, 28.3, 59.0, 69.6, 52.4, 65.2, 53.3, 72.2});
 
-        aaChartModel.series(new Object[]{element1, element2, element3});
+        aaChartModel.series(new AASeriesElement[]{element1, element2, element3});
     }
 
     private void configureConlumnChartAndBarChartStyle() {
@@ -160,7 +160,7 @@ public class CommonChartActivity extends AppCompatActivity
 
             aaChartModel
                     .animationType(AAChartAnimationType.EaseFrom)//设置图表渲染动画类型为 EaseFrom
-                    .series(new Object[]{element1, element2, element3, element4});
+                    .series(new AASeriesElement[]{element1, element2, element3, element4});
         }
     }
 
@@ -191,7 +191,7 @@ public class CommonChartActivity extends AppCompatActivity
 
             aaChartModel
                     .animationType(AAChartAnimationType.SwingFromTo)
-                    .series(new Object[]{element1, element2, element3, element4});
+                    .series(new AASeriesElement[]{element1, element2, element3, element4});
 
         }
     }

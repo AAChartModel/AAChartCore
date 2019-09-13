@@ -121,7 +121,7 @@ public class CustomTooltipWithJSFunctionActivity extends AppCompatActivity {
                 .dataLabelsEnabled(false)
                 .colorsTheme(new Object[]{"#ff0000","#0000ff"})
                 .stacking(AAChartStackingType.Normal)
-                .series(new Object[]{element1, element2});
+                .series(new AASeriesElement[]{element1, element2});
 
 
         AATooltip aaTooltip = new AATooltip()
@@ -222,7 +222,7 @@ public class CustomTooltipWithJSFunctionActivity extends AppCompatActivity {
                 .colorsTheme(new Object[]{"#04d69f","#1e90ff","#ef476f","#ffd066",})
                 .stacking(AAChartStackingType.Normal)
                 .markerRadius(0f)
-                .series(new Object[]{element1, element2, element3, element4});
+                .series(new AASeriesElement[]{element1, element2, element3, element4});
 
 
         AATooltip aaTooltip = new AATooltip()

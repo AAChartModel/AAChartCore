@@ -27,11 +27,11 @@
                     }
                     // 添加鼠标事件
                     if (aaOptions.touchEventEnabled == true && aaPlotOptions.series) {
-                        configureChartTouchEvent(aaOptions);
+                        configureChartTouchEvent(aaPlotOptions);
                     }
                 }
 
-        function configureChartTouchEvent(aaOptions) {
+        function configureChartTouchEvent(aaPlotOptions) {
                     var mouseOverFunc = function(){
                         //console.log(this)
                         var message = {
@@ -59,7 +59,7 @@
                 //                      click: mouseOverFunc,
                                     }
                                    };
-                         aaOptions.plotOptions.series.point = seriesPoint;
+                         aaPlotOptions.series.point = seriesPoint;
                 }
 
 

@@ -376,7 +376,7 @@ public class CustomStyleChartActivity extends AppCompatActivity {
                 .yAxisLineWidth(0f)
                 .yAxisGridLineWidth(0f)
                 .legendEnabled(false)
-                .series(new Object[]{
+                .series(new AASeriesElement[]{
                                 new AASeriesElement()
                                         .name("Tokyo Hot")
                                         .lineWidth(5.0f)
@@ -422,7 +422,7 @@ public class CustomStyleChartActivity extends AppCompatActivity {
                 .markerRadius(0f)
                 .xAxisVisible(false)
                 .yAxisVisible(false)
-                .series(new Object[]{
+                .series(new AASeriesElement[]{
                         new AASeriesElement()
                                 .name("Virtual Data")
                                 .lineWidth(6f)
@@ -445,7 +445,7 @@ public class CustomStyleChartActivity extends AppCompatActivity {
                 .markerRadius(0f)
                 .xAxisVisible(false)
                 .yAxisVisible(false)
-                .series(new Object[]{
+                .series(new AASeriesElement[]{
                         new AASeriesElement()
                                 .name("Virtual Data")
                                 .lineWidth(6f)
@@ -472,7 +472,7 @@ public class CustomStyleChartActivity extends AppCompatActivity {
                 .markerSymbol(AAChartSymbolType.Circle)
                 .markerSymbolStyle(AAChartSymbolStyleType.InnerBlank)
                 .legendEnabled(false)
-                .series(new Object[]{
+                .series(new AASeriesElement[]{
                         new AASeriesElement()
                                 .threshold((-200f))
                                 .data(new Object[]{106.4, 129.2, 269.9, -100.5, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4})
@@ -522,7 +522,7 @@ public class CustomStyleChartActivity extends AppCompatActivity {
                 .yAxisGridLineWidth(0f)
                 .stacking(AAChartStackingType.Normal)
                 .markerRadius(8f)
-                .series(new Object[]{element1, element2, element3, element4});
+                .series(new AASeriesElement[]{element1, element2, element3, element4});
     }
 
     //refer to online sample https://jshare.com.cn/github/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-marker-symbol/
@@ -544,7 +544,7 @@ public class CustomStyleChartActivity extends AppCompatActivity {
                 .xAxisVisible(false)
                 .markerRadius(0f)
                 .polar(true)//是否极化图形
-                .series(new Object[]{
+                .series(new AASeriesElement[]{
                         new AASeriesElement()
                                 .data(new Object[]{15.0, 15.0, 15.0,}),
                         new AASeriesElement()
@@ -568,7 +568,7 @@ public class CustomStyleChartActivity extends AppCompatActivity {
                 .xAxisVisible(false)
                 .markerRadius(0f)
                 .polar(true)//是否极化图形
-                .series(new Object[]{
+                .series(new AASeriesElement[]{
                         new AASeriesElement()
                                 .data(new Object[]{15.0, 15.0, 15.0, 15.0,}),
                         new AASeriesElement()
@@ -592,7 +592,7 @@ public class CustomStyleChartActivity extends AppCompatActivity {
                 .xAxisVisible(false)
                 .markerRadius(0f)
                 .polar(true)//是否极化图形
-                .series(new Object[]{
+                .series(new AASeriesElement[]{
                         new AASeriesElement()
                                 .data(new Object[]{15.0, 15.0, 15.0, 15.0, 15.0,}),
                         new AASeriesElement()
@@ -616,7 +616,7 @@ public class CustomStyleChartActivity extends AppCompatActivity {
                 .xAxisVisible(false)
                 .markerRadius(0f)
                 .polar(true)//是否极化图形
-                .series(new Object[]{
+                .series(new AASeriesElement[]{
                         new AASeriesElement()
                                 .data(new Object[]{15.0, 15.0, 15.0, 15.0, 15.0, 15.0,}),
                         new AASeriesElement()

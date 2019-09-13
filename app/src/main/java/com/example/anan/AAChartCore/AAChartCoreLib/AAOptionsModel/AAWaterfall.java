@@ -1,6 +1,8 @@
 package com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel;
 
-public class AAWaterfall {
+import com.example.anan.AAChartCore.AAChartCoreLib.AAChartConfiger.AASeriesElement;
+
+public class AAWaterfall extends AASeriesElement {
     public String upColor;
     public String color;
     public Float borderWidth;
