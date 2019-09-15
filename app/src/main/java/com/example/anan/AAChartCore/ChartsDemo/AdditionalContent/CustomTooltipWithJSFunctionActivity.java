@@ -45,7 +45,7 @@ public class CustomTooltipWithJSFunctionActivity extends AppCompatActivity {
         return customAreaChartTooltipStyleWithFormatterFunction1();
     }
 
-    AAOptions customAreaChartTooltipStyleWithFormatterFunction1() {
+    private AAOptions customAreaChartTooltipStyleWithFormatterFunction1() {
         AAChartModel aaChartModel = new AAChartModel()
                 .chartType(AAChartType.Area)//图形类型
                 .title("近三个月金价起伏周期图")//图表主标题
@@ -101,7 +101,7 @@ public class CustomTooltipWithJSFunctionActivity extends AppCompatActivity {
         return aaOptions;
     }
 
-    AAOptions customAreaChartTooltipStyleWithFormatterFunction2() {
+    private AAOptions customAreaChartTooltipStyleWithFormatterFunction2() {
         AASeriesElement element1 = new AASeriesElement()
                 .name("🐶狗子")
                 .lineWidth(5f)
@@ -141,7 +141,7 @@ public class CustomTooltipWithJSFunctionActivity extends AppCompatActivity {
         return aaOptions;
     }
 
-    AAOptions customAreaChartTooltipStyleWithFormatterFunction3() {
+    private AAOptions customAreaChartTooltipStyleWithFormatterFunction3() {
         AASeriesElement[] seriesElements = new AASeriesElement[]{
                 new AASeriesElement()
                         .name("上市")
@@ -195,7 +195,7 @@ public class CustomTooltipWithJSFunctionActivity extends AppCompatActivity {
         return aaOptions;
     }
 
-    AAOptions customAreaChartTooltipStyleWithFormatterFunction4() {
+    private AAOptions customAreaChartTooltipStyleWithFormatterFunction4() {
         AASeriesElement element1 = new AASeriesElement()
                 .name("Predefined symbol")
                 .data(new Object[]{0.45, 0.43, 0.50, 0.55, 0.58, 0.62, 0.83, 0.39, 0.56, 0.67, 0.50, 0.34, 0.50, 0.67, 0.58, 0.29, 0.46, 0.23, 0.47, 0.46, 0.38, 0.56, 0.48, 0.36});
@@ -253,7 +253,7 @@ public class CustomTooltipWithJSFunctionActivity extends AppCompatActivity {
         return aaOptions;
     }
 
-    AAOptions customBoxplotTooltipContent() {
+    private AAOptions customBoxplotTooltipContent() {
         AAChartModel aaChartModel = new AAChartModel()
                 .chartType(AAChartType.Boxplot)
                 .title("BOXPLOT CHART")

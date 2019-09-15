@@ -33,16 +33,6 @@ public class SpecialChartActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String chartType = intent.getStringExtra("chartType");
 
-
-
-//
-//
-//                new AlertDialog.Builder(this)
-//                .setTitle("标题")
-//                .setMessage(chartType)
-//                .setPositiveButton("确定", null)
-//                .show();
-
         aaChartModel = configureChartModelWithChartType(chartType);
 
 

@@ -49,7 +49,7 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
 
     }
 
-    AAOptions configureTheChartOptions(String chartType) {
+    private AAOptions configureTheChartOptions(String chartType) {
         switch (chartType) {
             case "AAPlotBandsForChart": return  configureAAPlotBandsForChart();
             case "AAPlotLinesForChart": return configureAAPlotLinesForChart();
@@ -63,7 +63,7 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
         return configureAAPlotBandsForChart();
     }
 
-    AAOptions configureAAPlotBandsForChart() {
+    private AAOptions configureAAPlotBandsForChart() {
         AAChartModel aaChartModel = new AAChartModel()
                 .chartType(AAChartType.Spline)//图形类型
                 .dataLabelsEnabled(false)
@@ -115,7 +115,7 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
         return aaOptions;
     }
 
-    AAOptions configureAAPlotLinesForChart() {
+    private AAOptions configureAAPlotLinesForChart() {
         Map map1 = new HashMap();
         map1.put("value",12);
         map1.put("color","#1e90ff");
@@ -192,7 +192,7 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
         return aaOptions;
     }
 
-    AAOptions customAATooltipWithJSFunction() {
+    private AAOptions customAATooltipWithJSFunction() {
         AAChartModel aaChartModel = new AAChartModel()
                 .chartType(AAChartType.Area)//图形类型
                 .title("近三个月金价起伏周期图")//图表主标题
@@ -248,48 +248,49 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
         return aaOptions;
     }
 
-    AAOptions customXAxisCrosshairStyle() {
+    private AAOptions customXAxisCrosshairStyle() {
+        AASeriesElement[] aaSeriesElementsArr = new AASeriesElement[]{
+                new AASeriesElement()
+                        .name("2020")
+                        .color(AAGradientColor.deepSeaColor())
+                        .data(new Object[][]{
+                        {12464064, 21.5},
+                        {12464928, 22.1},
+                        {12465792, 23.2},
+                        {12466656, 23.8},
+                        {12467520, 21.4},
+                        {12468384, 21.3},
+                        {12469248, 18.3},
+                        {12470112, 15.4},
+                        {12470976, 16.4},
+                        {12471840, 17.7},
+                        {12472704, 17.5},
+                        {12473568, 17.6},
+                        {12474432, 17.7},
+                        {12475296, 16.8},
+                        {12476160, 17.7},
+                        {12477024, 16.3},
+                        {12477888, 17.8},
+                        {12478752, 18.1},
+                        {12479616, 17.2},
+                        {12480480, 14.4},
+                        {12481344, 13.7},
+                        {12482208, 15.7},
+                        {12483072, 14.6},
+                        {12483936, 15.3},
+                        {12484800, 15.3},
+                        {12485664, 15.8},
+                        {12486528, 15.2},
+                        {12487392, 14.8},
+                        {12488256, 14.4},
+                        {12489120, 15.5},
+                        {12489984, 13.6}
+                })
+        };
+
         AAChartModel aaChartModel = new AAChartModel()
                 .chartType(AAChartType.Line)//图表类型
-                .series(new AASeriesElement[]{
-                                new AASeriesElement()
-                                        .name("2020")
-                                        .color(AAGradientColor.deepSeaColor())
-                                        .data(new Object[][]{
-                                        {12464064, 21.5},
-                                        {12464928, 22.1},
-                                        {12465792, 23.2},
-                                        {12466656, 23.8},
-                                        {12467520, 21.4},
-                                        {12468384, 21.3},
-                                        {12469248, 18.3},
-                                        {12470112, 15.4},
-                                        {12470976, 16.4},
-                                        {12471840, 17.7},
-                                        {12472704, 17.5},
-                                        {12473568, 17.6},
-                                        {12474432, 17.7},
-                                        {12475296, 16.8},
-                                        {12476160, 17.7},
-                                        {12477024, 16.3},
-                                        {12477888, 17.8},
-                                        {12478752, 18.1},
-                                        {12479616, 17.2},
-                                        {12480480, 14.4},
-                                        {12481344, 13.7},
-                                        {12482208, 15.7},
-                                        {12483072, 14.6},
-                                        {12483936, 15.3},
-                                        {12484800, 15.3},
-                                        {12485664, 15.8},
-                                        {12486528, 15.2},
-                                        {12487392, 14.8},
-                                        {12488256, 14.4},
-                                        {12489120, 15.5},
-                                        {12489984, 13.6}
-                                })
-                        }
-                );
+                .series(aaSeriesElementsArr);
 
         AAOptions aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
         AACrosshair aaCrosshair = new AACrosshair()
@@ -339,7 +340,7 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
         return aaOptions;
     }
 
-    AAOptions configureXAxisLabelsFontColorAndFontSizeWithHTMLString() {
+    private AAOptions configureXAxisLabelsFontColorAndFontSizeWithHTMLString() {
         String[] categories = new String[]{
                 "<span style=\\\"color:#CC0066;font-weight:bold;font-size:10px\\\">使命召唤</span>",
                 "<span style=\\\"color:#CC0033;font-weight:bold;font-size:11px\\\">荣誉勋章</span>",
@@ -378,7 +379,7 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
         return aaOptions;
     }
 
-    AAOptions configure_DataLabels_XAXis_YAxis_Legend_Style() {
+    private AAOptions configure_DataLabels_XAXis_YAxis_Legend_Style() {
         Map backgroundColorGradientColor = AAGradientColor.linearGradient(
                 AALinearGradientDirection.ToBottom,
                 "#4F00BC",
@@ -475,7 +476,7 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
     }
 
 
-    AAOptions configureXAxisPlotBand() {
+    private AAOptions configureXAxisPlotBand() {
         AAChartModel aaChartModel = new AAChartModel()
                 .chartType(AAChartType.Areaspline)
                 .title("")

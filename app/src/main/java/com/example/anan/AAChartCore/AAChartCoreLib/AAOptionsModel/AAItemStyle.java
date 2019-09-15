@@ -9,27 +9,27 @@ public class AAItemStyle {
 
 
     public AAItemStyle color(String prop) {
-        this.color = prop;
+        color = prop;
         return this;
     }
 
     public AAItemStyle cursor(String prop) {
-        this.cursor = prop;
+        cursor = prop;
         return this;
     }
 
     public AAItemStyle pointer(String prop) {
-        this.pointer = prop;
+        pointer = prop;
         return this;
     }
 
     public AAItemStyle fontSize(Float prop) {
-        this.fontSize = prop + "px";
+        fontSize = prop + "px";
         return this;
     }
 
     public AAItemStyle fontWeight(String prop) {
-        this.fontWeight = prop;
+        fontWeight = prop;
         return this;
     }
 }
