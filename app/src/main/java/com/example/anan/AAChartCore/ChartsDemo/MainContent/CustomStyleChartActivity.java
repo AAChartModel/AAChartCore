@@ -287,7 +287,7 @@ public class CustomStyleChartActivity extends AppCompatActivity {
     }
 
     AAChartModel configureColorfulGradientAreaChart() {
-        Object[][] stopsArr = new Object[][]{
+        Object[][] stopsArr = {
                 {0.00, "#febc0f"},
                 {0.50, "#FF14d4"},
                 {1.00, "#0bf8f5"},
@@ -321,7 +321,7 @@ public class CustomStyleChartActivity extends AppCompatActivity {
 
 
     AAChartModel configureColorfulGradientSplineChart() {
-        Object[][] stopsArr = new Object[][]{
+        Object[][] stopsArr = {
                 {0.00, "#febc0f"},
                 {0.25, "#FF14d4"},
                 {0.50, "#0bf8f5"},
@@ -389,7 +389,7 @@ public class CustomStyleChartActivity extends AppCompatActivity {
 
 
     AAChartModel configureSpecialStyleMarkerOfSingleDataElementChart() {
-        Object[][] stopsArr = new Object[][]{
+        Object[][] stopsArr = {
                 {0.00, "#febc0f"},
                 {0.25, "#FF14d4"},
                 {0.50, "#0bf8f5"},

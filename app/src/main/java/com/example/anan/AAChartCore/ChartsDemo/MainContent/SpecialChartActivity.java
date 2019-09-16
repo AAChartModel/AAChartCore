@@ -106,7 +106,7 @@ public class SpecialChartActivity extends AppCompatActivity {
     }
 
     AAChartModel configureBubbleChart() {
-        AASeriesElement[] elements = new AASeriesElement[] {
+        AASeriesElement[] elements = {
                         new AASeriesElement()
                                 .name("BubbleOne")
                                 .data(new Object[][] {
@@ -283,7 +283,7 @@ public class SpecialChartActivity extends AppCompatActivity {
                         {170.2, 62.3}, {177.8, 82.7}, {179.1, 79.1}, {190.5, 98.2}, {177.8, 84.1},
                         {180.3, 83.2}, {180.3, 83.2}});
 
-        AASeriesElement[] seriesElements = new AASeriesElement[]{elementOne,elementTwo};
+        AASeriesElement[] seriesElements = {elementOne,elementTwo};
 
         return new AAChartModel()
                 .chartType(AAChartType.Scatter)

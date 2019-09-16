@@ -142,7 +142,7 @@ public class CustomTooltipWithJSFunctionActivity extends AppCompatActivity {
     }
 
     private AAOptions customAreaChartTooltipStyleWithFormatterFunction3() {
-        AASeriesElement[] seriesElements = new AASeriesElement[]{
+        AASeriesElement[] seriesElements = {
                 new AASeriesElement()
                         .name("上市")
                         .data(new Object[]{0,0,7}),

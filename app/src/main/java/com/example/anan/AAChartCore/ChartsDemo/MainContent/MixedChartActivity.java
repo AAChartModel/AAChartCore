@@ -54,7 +54,7 @@ public class MixedChartActivity extends AppCompatActivity {
     }
     
     AAChartModel arearangeMixedLine() {
-        AASeriesElement[] aaSeriesArr = new AASeriesElement[]{
+        AASeriesElement[] aaSeriesArr = {
                 new AASeriesElement()
                         .name("Temperature")
                         .color("#1E90FF")
@@ -142,7 +142,7 @@ public class MixedChartActivity extends AppCompatActivity {
     }
     
     AAChartModel columnrangeMixedLine() {
-        AASeriesElement[] aaSeriesArr = new AASeriesElement[]{
+        AASeriesElement[] aaSeriesArr = {
                 new AASeriesElement()
                         .name("Temperature")
                         .type(AAChartType.Columnrange)
@@ -186,7 +186,7 @@ public class MixedChartActivity extends AppCompatActivity {
     }
     
     AAChartModel stackingColumnMixedLine() {
-        AASeriesElement[] aaSeriesArr = new AASeriesElement[]{
+        AASeriesElement[] aaSeriesArr = {
                 new AASeriesElement()
                         .name("新用户")
                         .data(new Object[] {82.89,67.54,62.07,59.43,67.02,67.09,35.66,71.78,81.61,78.85,79.12,72.30})
@@ -240,7 +240,7 @@ public class MixedChartActivity extends AppCompatActivity {
     }
 
     AAChartModel dashStyleTypeMixed() {
-        AASeriesElement[] aaSeriesData = new AASeriesElement[]{
+        AASeriesElement[] aaSeriesData = {
                 new AASeriesElement()
                         .name("SolidLine")
                         .lineWidth(3f)
@@ -277,7 +277,7 @@ public class MixedChartActivity extends AppCompatActivity {
     }
     
     AAChartModel negativeColorMixed() {
-        AASeriesElement[] aaSeriesData = new AASeriesElement[]{
+        AASeriesElement[] aaSeriesData = {
                 new AASeriesElement()
                         .name("Column")
                         .type(AAChartType.Column)
@@ -296,7 +296,7 @@ public class MixedChartActivity extends AppCompatActivity {
     }
     
     AAChartModel scatterMixedLine() {
-        Object[][] dataArr = new Object[][] {
+        Object[][] dataArr = {
                 {0.067732, 3.176513},
                 {0.42781,  3.816464},
                 {0.995731, 4.550095},
@@ -522,7 +522,7 @@ public class MixedChartActivity extends AppCompatActivity {
     }
     
     AAChartModel negativeColorMixedBubble() {
-        Object[][] dataArr =  new Object[][] {
+        Object[][] dataArr = {
                 {0,0,5},{0,1,1},{0,2,0},{0,3,0},{0,4,0},{0,5,0},{0,6,0},{0,7,0},{0,8,0},{0,9,0},
                 {0,10,0},{0,11,2},{0,12,4},{0,13,1},{0,14,1},{0,15,3},{0,16,4},{0,17,6},{0,18,4},
                 {0,19,4},{0,20,3},{0,21,3},{0,22,2},{0,23,5},{1,0,7},{1,1,0},{1,2,0},{1,3,0},
@@ -560,14 +560,14 @@ public class MixedChartActivity extends AppCompatActivity {
     }
     
     AAChartModel polygonMixedScatter() {
-        Object[][] goalDataArr = new Object[][] {
+        Object[][] goalDataArr = {
                 {153, 42}, {149, 46}, {149, 55},
                 {152, 60}, {159, 70}, {170, 77},
                 {180, 70}, {180, 60}, {173, 52},
                 {166, 45}
         };
 
-        Object[][] trueDataArr = new Object[][] {
+        Object[][] trueDataArr = {
                 {161.2, 51.6}, {167.5, 59.0}, {159.5, 49.2}, {157.0, 63.0}, {155.8, 53.6},
                 {170.0, 59.0}, {159.1, 47.6}, {166.0, 69.8}, {176.2, 66.8}, {160.2, 75.2},
                 {172.5, 55.2}, {170.9, 54.2}, {172.9, 62.5}, {153.4, 42.0}, {160.0, 50.0},

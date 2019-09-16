@@ -77,7 +77,7 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
                 });
 
         AAOptions aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
-        AAPlotBandsElement[] aaPlotBandsElementArr = new AAPlotBandsElement[]{
+        AAPlotBandsElement[] aaPlotBandsElementArr = {
                 new AAPlotBandsElement()
                         .from(0.f)
                         .to(5.f)
@@ -116,6 +116,7 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
     }
 
     private AAOptions configureAAPlotLinesForChart() {
+
         Map map1 = new HashMap();
         map1.put("value",12);
         map1.put("color","#1e90ff");
@@ -142,7 +143,7 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
                 });
 
         AAOptions aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
-        AAPlotLinesElement[] aaPlotLinesElementsArr = new AAPlotLinesElement[] {
+        AAPlotLinesElement[] aaPlotLinesElementsArr = {
                 new AAPlotLinesElement()
                         .color("#1e90ff")//颜色值(16进制)
                         .dashStyle(AAChartLineDashStyleType.LongDashDotDot)//样式：Dash,Dot,Solid等,默认Solid
@@ -249,7 +250,7 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
     }
 
     private AAOptions customXAxisCrosshairStyle() {
-        AASeriesElement[] aaSeriesElementsArr = new AASeriesElement[]{
+        AASeriesElement[] aaSeriesElementsArr = {
                 new AASeriesElement()
                         .name("2020")
                         .color(AAGradientColor.deepSeaColor())
@@ -502,7 +503,7 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
 
 
         AAOptions aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
-        AAPlotBandsElement[] aaPlotBandsElementArr = new AAPlotBandsElement[]{
+        AAPlotBandsElement[] aaPlotBandsElementArr = {
                 new AAPlotBandsElement()
                         .from(-0.25f)//值域颜色带X轴起始值
                         .to(4.75f)//值域颜色带X轴结束值
