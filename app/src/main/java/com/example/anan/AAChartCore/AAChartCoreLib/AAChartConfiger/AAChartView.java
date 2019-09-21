@@ -52,7 +52,6 @@ import com.google.gson.Gson;
 import com.google.gson.internal.LinkedTreeMap;
 
 import java.lang.reflect.Array;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -62,7 +61,10 @@ public class AAChartView extends WebView {
 
     public interface AAChartViewCallBack {
         void chartViewDidFinishedLoad(AAChartView aaChartView);
-        void chartViewMoveOverEventMessage(AAChartView aaChartView,AAMoveOverEventMessageModel messageModel);
+        void chartViewMoveOverEventMessage(
+                AAChartView aaChartView,
+                AAMoveOverEventMessageModel messageModel
+        );
     }
 
     public Float contentWidth;
@@ -82,7 +84,6 @@ public class AAChartView extends WebView {
         safeEvaluateJavaScriptString(jsStr);
     }
 
-
     public void setChartSeriesHidden(Boolean chartSeriesHidden) {
         this.chartSeriesHidden = chartSeriesHidden;
         String jsStr = "setChartSeriesHidden('" + this.chartSeriesHidden + "')";
@@ -92,22 +93,31 @@ public class AAChartView extends WebView {
 
     private String optionsJson;
 
-    public AAChartView(Context context) {
+    public AAChartView(
+            Context context
+    ) {
         super(context);
-        sharedConstructor();
+        setupBasicContent();
     }
 
-    public AAChartView(Context context, AttributeSet attrs) {
+    public AAChartView(
+            Context context,
+            AttributeSet attrs
+    ) {
         super(context, attrs);
-        sharedConstructor();
+        setupBasicContent();
     }
 
-    public AAChartView(Context context, AttributeSet attrs, int defStyleAttr) {
+    public AAChartView(
+            Context context,
+            AttributeSet attrs,
+            int defStyleAttr
+    ) {
         super(context, attrs, defStyleAttr);
-        sharedConstructor();
+        setupBasicContent();
     }
 
-    private void sharedConstructor() {
+    private void setupBasicContent() {
         // Do some initialize work.
         this.contentWidth = 320.f;
         this.contentHeight = 350.f;
@@ -136,24 +146,10 @@ public class AAChartView extends WebView {
         return "";
     }
 
-    AAMoveOverEventMessageModel getEventMessageModel(Map messageBody) {
-        AAMoveOverEventMessageModel eventMessageModel =  new AAMoveOverEventMessageModel();
-        eventMessageModel.name = messageBody.get("name").toString();
-        eventMessageModel.x = (Double) messageBody.get("x");
-        eventMessageModel.y = (Double) messageBody.get("y");
-        eventMessageModel.category = messageBody.get("category").toString();
-        eventMessageModel.offset = (LinkedTreeMap) messageBody.get("offset");
-        eventMessageModel.index = (Double) messageBody.get("index");
-        return eventMessageModel;
-    }
 
     public void aa_drawChartWithChartModel(final AAChartModel chartModel) {
         AAOptions aaOptions = AAOptionsConstructor.configureChartOptions(chartModel);
         this.aa_drawChartWithChartOptions(aaOptions);
-    }
-
-    public void aa_onlyRefreshTheChartDataWithChartModelSeriesArray(AASeriesElement[] seriesElementsArr){
-        this.aa_onlyRefreshTheChartDataWithChartOptionsSeriesArray(seriesElementsArr);
     }
 
     public void aa_refreshChartWithChartModel(AAChartModel chartModel) {
@@ -165,85 +161,31 @@ public class AAChartView extends WebView {
         if (this.optionsJson != null) {
             this.aa_refreshChartWithChartOptions(chartOptions);
         } else {
-            this.loadUrl("file:///android_asset/AAChartView.html");
-            this.setWebViewClient(new WebViewClient() {
-                @Override
-                public void onPageFinished(WebView view,String url) {
-                    System.out.println("图表加载完成!!!!!!!! ");
-                    if (callBack != null) {
-                        callBack.chartViewDidFinishedLoad(AAChartView.this);
-                    }
-                    configureChartOptionsAndDrawChart(chartOptions);
-                }
-
-                @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
-                @Override
-                public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
-                    super.shouldOverrideUrlLoading(view, request);
-                    String urlStr = request.getUrl().toString();
-                    String jsBridgeName = "AAChartViewBridge".toLowerCase();
-                    if (urlStr.startsWith(jsBridgeName)) {
-                        String message = urlStr.replace(jsBridgeName +"://?","");
-                        Gson gson = new Gson();
-                        Map messageBody = new HashMap<String, Object>();
-                        messageBody = gson.fromJson(message, messageBody.getClass());
-                    }
-
-                    return false;
-                }
-            });
-
-
-            this.setWebChromeClient(new WebChromeClient() {
-                @Override
-                public boolean onJsAlert(WebView view, String url, String message, final JsResult result) {
-                    super.onJsAlert(view, url, message, result);
-
-//                    String jsResultStr = new Gson().toJson(result);
-                    String urlStr = "url --->" + url + "\n\n\n";
-                    String messageStr = "message --->" + message + "\n\n\n";
-                    String resultStr = "result --->" + result;
-
-                    String alertMessageStr = urlStr + messageStr + resultStr;
-
-                    new AlertDialog.Builder(getContext()).setTitle("JavaScript alert Information")//设置对话框标题
-                            .setMessage(alertMessageStr)
-                            .setPositiveButton("sure", new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialog, int which) {
-
-                                }
-                            }).setNegativeButton("cancel", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-
-                        }
-                    })
-                            .show();
-
-                    return true;
-                }
-            });
+            this.loadLocalFilesAndDrawChart(chartOptions);
+            this.showJavaScriptAlertView();
         }
     }
 
-    public void aa_onlyRefreshTheChartDataWithChartOptionsSeriesArray(AASeriesElement[] seriesElementsArr) {
-        // 将对象编译成json
-        Gson gson = new Gson();
-        String seriesArr = gson.toJson(seriesElementsArr);
-        String javaScriptStr = "onlyRefreshTheChartDataWithSeries('" + seriesArr + "')";
-        this.safeEvaluateJavaScriptString(javaScriptStr);
-    }
-
     public void aa_refreshChartWithChartOptions(AAOptions chartOptions) {
-        // 将对象编译成json
         Gson gson = new Gson();
         String aaOptionsJsonStr = gson.toJson(chartOptions);
         String javaScriptStr = "loadTheHighChartView('" + aaOptionsJsonStr + "','" + contentWidth + "','" + contentHeight + "')";
         this.safeEvaluateJavaScriptString(javaScriptStr);
     }
 
-    public  void aa_updateChartWithOptions(Object options, Boolean redraw) {
+
+    public void aa_onlyRefreshTheChartDataWithChartOptionsSeriesArray(AASeriesElement[] seriesElementsArr) {
+        Gson gson = new Gson();
+        String seriesArr = gson.toJson(seriesElementsArr);
+        String javaScriptStr = "onlyRefreshTheChartDataWithSeries('" + seriesArr + "')";
+        this.safeEvaluateJavaScriptString(javaScriptStr);
+    }
+
+
+    public  void aa_updateChartWithOptions(
+            Object options,
+            Boolean redraw
+    ) {
         String classNameStr = options.getClass().getSimpleName();
         classNameStr = classNameStr.replace("AA","");
 
@@ -261,12 +203,27 @@ public class AAChartView extends WebView {
         this.safeEvaluateJavaScriptString(javaScriptStr);
     }
 
-    public void aa_addPointToChartSeriesElement(Integer elementIndex, Object options) {
-        aa_addPointToChartSeriesElement(elementIndex, options,true);
+    public void aa_addPointToChartSeriesElement(
+            Integer elementIndex,
+            Object options
+    ) {
+        aa_addPointToChartSeriesElement(
+                elementIndex,
+                options,
+                true);
     }
 
-    public void aa_addPointToChartSeriesElement(Integer elementIndex, Object options, Boolean shift) {
-        aa_addPointToChartSeriesElement(elementIndex, options,true, shift,true);
+    public void aa_addPointToChartSeriesElement(
+            Integer elementIndex,
+            Object options,
+            Boolean shift
+    ) {
+        aa_addPointToChartSeriesElement(
+                elementIndex,
+                options,
+                true,
+                shift,
+                true);
     }
 
 
@@ -275,7 +232,8 @@ public class AAChartView extends WebView {
             Object options,
             Boolean redraw,
             Boolean shift,
-            Boolean animation) {
+            Boolean animation
+    ) {
         String optionsStr;
         if (options instanceof Integer || options instanceof Float || options instanceof Double) {
             optionsStr = String.valueOf(options);
@@ -289,7 +247,7 @@ public class AAChartView extends WebView {
         this.safeEvaluateJavaScriptString(javaScriptStr);
     }
 
-        public void aa_showTheSeriesElementContent(Integer elementIndex) {
+    public void aa_showTheSeriesElementContent(Integer elementIndex) {
         String javaScriptStr = "showTheSeriesElementContentWithIndex('" + elementIndex + "')";
         this.safeEvaluateJavaScriptString(javaScriptStr);
     }
@@ -299,13 +257,89 @@ public class AAChartView extends WebView {
         this.safeEvaluateJavaScriptString(javaScriptStr);
     }
 
+    private void loadLocalFilesAndDrawChart(final AAOptions aaOptions) {
+        this.loadUrl("file:///android_asset/AAChartView.html");
+        this.setWebViewClient(new WebViewClient() {
+            @Override
+            public void onPageFinished(WebView view,String url) {
+                System.out.println("图表加载完成!!!!!!!! ");
+                if (callBack != null) {
+                    callBack.chartViewDidFinishedLoad(AAChartView.this);
+                }
+                configureChartOptionsAndDrawChart(aaOptions);
+            }
+
+            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
+                super.shouldOverrideUrlLoading(view, request);
+                String urlStr = request.getUrl().toString();
+                String jsBridgeName = "AAChartViewBridge".toLowerCase();
+                if (urlStr.startsWith(jsBridgeName)) {
+                    String message = urlStr.replace(jsBridgeName +"://?","");
+                    Gson gson = new Gson();
+                    Map messageBody = new HashMap<String, Object>();
+                    messageBody = gson.fromJson(message, messageBody.getClass());
+                }
+
+                return false;
+            }
+        });
+    }
+
     private void configureChartOptionsAndDrawChart(AAOptions chartOptions) {
-        // 将对象编译成json
         Gson gson = new Gson();
         String aaOptionsJsonStr = gson.toJson(chartOptions);
+        this.optionsJson = aaOptionsJsonStr;
         String javaScriptStr = "loadTheHighChartView('" + aaOptionsJsonStr + "','" + 420 + "','" + 580 + "')";
         this.safeEvaluateJavaScriptString(javaScriptStr);
     }
+
+    private void showJavaScriptAlertView() {
+        this.setWebChromeClient(new WebChromeClient() {
+            @Override
+            public boolean onJsAlert(WebView view, String url, String message, final JsResult result) {
+                super.onJsAlert(view, url, message, result);
+
+//                    String jsResultStr = new Gson().toJson(result);
+                String urlStr = "url --->" + url + "\n\n\n";
+                String messageStr = "message --->" + message + "\n\n\n";
+                String resultStr = "result --->" + result;
+
+                String alertMessageStr = urlStr + messageStr + resultStr;
+
+                new AlertDialog.Builder(getContext())
+                        .setTitle("JavaScript alert Information")//设置对话框标题
+                        .setMessage(alertMessageStr)
+                        .setPositiveButton("sure", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+
+                            }
+                        }).setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                })
+                        .show();
+
+                return true;
+            }
+        });
+    }
+
+    private AAMoveOverEventMessageModel getEventMessageModel(Map messageBody) {
+        AAMoveOverEventMessageModel eventMessageModel =  new AAMoveOverEventMessageModel();
+        eventMessageModel.name = messageBody.get("name").toString();
+        eventMessageModel.x = (Double) messageBody.get("x");
+        eventMessageModel.y = (Double) messageBody.get("y");
+        eventMessageModel.category = messageBody.get("category").toString();
+        eventMessageModel.offset = (LinkedTreeMap) messageBody.get("offset");
+        eventMessageModel.index = (Double) messageBody.get("index");
+        return eventMessageModel;
+    }
+
 
     private void safeEvaluateJavaScriptString(String javaScriptString) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
@@ -314,7 +348,6 @@ public class AAChartView extends WebView {
                 public void onReceiveValue(String s) {
                     Log.i("回调信息","输出打印查看回调的结果"+s);
                 }
-
             });
         } else {
             this.loadUrl("javascript:"+javaScriptString);
