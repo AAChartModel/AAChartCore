@@ -32,7 +32,9 @@
 
 package com.example.anan.AAChartCore.AAChartCoreLib.AAChartConfiger;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.util.AttributeSet;
@@ -49,7 +51,10 @@ import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAOptions;
 import com.google.gson.Gson;
 import com.google.gson.internal.LinkedTreeMap;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 
@@ -106,7 +111,6 @@ public class AAChartView extends WebView {
         // Do some initialize work.
         this.contentWidth = 320.f;
         this.contentHeight = 350.f;
-//        //设置WebView支持JavaScript(这一句是十分关键的一句)
         this.getSettings().setJavaScriptEnabled(true);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             this.setWebContentsDebuggingEnabled(true);
@@ -158,43 +162,69 @@ public class AAChartView extends WebView {
     }
 
     public void aa_drawChartWithChartOptions(final AAOptions chartOptions) {
-        this.loadUrl("file:///android_asset/AAChartView.html");
-        this.setWebViewClient(new WebViewClient() {
-            @Override
-            public void onPageFinished(WebView view,String url) {
-                System.out.println("图表加载完成!!!!!!!! ");
-                if (callBack != null) {
-                    callBack.chartViewDidFinishedLoad(AAChartView.this);
-                }
-                configureChartOptionsAndDrawChart(chartOptions);
-            }
-
-            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
-            @Override
-            public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
-                super.shouldOverrideUrlLoading(view, request);
-                String urlStr = request.getUrl().toString();
-                String jsBridgeName = "AAChartViewBridge".toLowerCase();
-                if (urlStr.startsWith(jsBridgeName)) {
-                    String message = urlStr.replace(jsBridgeName +"://?","");
-                    Gson gson = new Gson();
-                    Map messageBody = new HashMap<String, Object>();
-                    messageBody = gson.fromJson(message, messageBody.getClass());
+        if (this.optionsJson != null) {
+            this.aa_refreshChartWithChartOptions(chartOptions);
+        } else {
+            this.loadUrl("file:///android_asset/AAChartView.html");
+            this.setWebViewClient(new WebViewClient() {
+                @Override
+                public void onPageFinished(WebView view,String url) {
+                    System.out.println("图表加载完成!!!!!!!! ");
+                    if (callBack != null) {
+                        callBack.chartViewDidFinishedLoad(AAChartView.this);
+                    }
+                    configureChartOptionsAndDrawChart(chartOptions);
                 }
 
-                return false;
-            }
-        });
+                @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+                @Override
+                public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
+                    super.shouldOverrideUrlLoading(view, request);
+                    String urlStr = request.getUrl().toString();
+                    String jsBridgeName = "AAChartViewBridge".toLowerCase();
+                    if (urlStr.startsWith(jsBridgeName)) {
+                        String message = urlStr.replace(jsBridgeName +"://?","");
+                        Gson gson = new Gson();
+                        Map messageBody = new HashMap<String, Object>();
+                        messageBody = gson.fromJson(message, messageBody.getClass());
+                    }
+
+                    return false;
+                }
+            });
 
 
-        this.setWebChromeClient(new WebChromeClient() {
-            @Override
-            public boolean onJsAlert(WebView view, String url, String message, final JsResult result) {
-                super.onJsAlert(view, url, message, result);
+            this.setWebChromeClient(new WebChromeClient() {
+                @Override
+                public boolean onJsAlert(WebView view, String url, String message, final JsResult result) {
+                    super.onJsAlert(view, url, message, result);
 
-                return true;
-            }
-        });
+//                    String jsResultStr = new Gson().toJson(result);
+                    String urlStr = "url --->" + url + "\n\n\n";
+                    String messageStr = "message --->" + message + "\n\n\n";
+                    String resultStr = "result --->" + result;
+
+                    String alertMessageStr = urlStr + messageStr + resultStr;
+
+                    new AlertDialog.Builder(getContext()).setTitle("JavaScript alert Information")//设置对话框标题
+                            .setMessage(alertMessageStr)
+                            .setPositiveButton("sure", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+
+                                }
+                            }).setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+
+                        }
+                    })
+                            .show();
+
+                    return true;
+                }
+            });
+        }
     }
 
     public void aa_onlyRefreshTheChartDataWithChartOptionsSeriesArray(AASeriesElement[] seriesElementsArr) {
@@ -213,10 +243,55 @@ public class AAChartView extends WebView {
         this.safeEvaluateJavaScriptString(javaScriptStr);
     }
 
-    public void aa_showTheSeriesElementContent(Integer elementIndex) {
+    public  void aa_updateChartWithOptions(Object options, Boolean redraw) {
+        String classNameStr = options.getClass().getSimpleName();
+        classNameStr = classNameStr.replace("AA","");
+
+        //convert fist character to be lowercase string
+        String firstChar = classNameStr.substring(0,1);
+        String lowercaseFirstStr = firstChar.toLowerCase();
+        classNameStr = classNameStr.substring(1);
+        String finalClassName = lowercaseFirstStr + classNameStr;
+
+        Map finalOptionsMap = new HashMap();
+        finalOptionsMap.put(finalClassName,options);
+
+        String optionsStr = new Gson().toJson(finalOptionsMap);
+        String javaScriptStr = "updateChart('" + optionsStr + "','" + redraw + "')";
+        this.safeEvaluateJavaScriptString(javaScriptStr);
+    }
+
+    public void aa_addPointToChartSeriesElement(Integer elementIndex, Object options) {
+        aa_addPointToChartSeriesElement(elementIndex, options,true);
+    }
+
+    public void aa_addPointToChartSeriesElement(Integer elementIndex, Object options, Boolean shift) {
+        aa_addPointToChartSeriesElement(elementIndex, options,true, shift,true);
+    }
+
+
+    public void aa_addPointToChartSeriesElement(
+            Integer elementIndex,
+            Object options,
+            Boolean redraw,
+            Boolean shift,
+            Boolean animation) {
+        String optionsStr;
+        if (options instanceof Integer || options instanceof Float || options instanceof Double) {
+            optionsStr = String.valueOf(options);
+        } else if (options instanceof Array || options instanceof List) {
+            optionsStr = new Gson().toJson(options);
+        } else  {
+            optionsStr = new Gson().toJson(options);
+        }
+
+        String javaScriptStr = "addPointToChartSeries('" + elementIndex + "','" + optionsStr + "','" + redraw + "','" + shift + "','" + animation + "')";
+        this.safeEvaluateJavaScriptString(javaScriptStr);
+    }
+
+        public void aa_showTheSeriesElementContent(Integer elementIndex) {
         String javaScriptStr = "showTheSeriesElementContentWithIndex('" + elementIndex + "')";
         this.safeEvaluateJavaScriptString(javaScriptStr);
-
     }
 
     public void aa_hideTheSeriesElementContent(Integer elementIndex) {

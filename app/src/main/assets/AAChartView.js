@@ -2,7 +2,7 @@
         var aaGlobalChart;
 
         function loadTheHighChartView (sender,receivedWidth, receivedHeight) {
-
+//alert("图表加载成功了");
         var aaOptions = JSON.parse(sender);;
 
             aaOptions.credits = {enabled:false};//去掉表格右下角版权信息
@@ -81,49 +81,71 @@
             iFrame = null;
         }
 
-        function onlyRefreshTheChartDataWithSeries (receivedSeries) {
-            var receivedSeriesElementArr = JSON.parse(receivedSeries);
-
-            for (var i = 0; i < receivedSeriesElementArr.length; i++) {
-                var receivedSeriesData = receivedSeriesElementArr[i].data;
+        function onlyRefreshTheChartDataWithSeries(receivedSeries) {
+            var receivedSeriesArr = JSON.parse(receivedSeries);
+            var seriesArrLength = receivedSeriesArr.length;
+            for (var i = 0; i < seriesArrLength; i++) {
+                var receivedSeriesElementData = receivedSeriesArr[i].data;
                 // 获取series
-                var chartSeries =  aaGlobalChart.series[i];
+                var seriesElement = aaGlobalChart.series[i];
                 // 执行只刷新数据的函数
-                chartSeries.setData(receivedSeriesData);
+                seriesElement.setData(receivedSeriesElementData);
             }
         }
 
-          //pragma mark -- setter method 适应内容https://code.hcharts.cn/highcharts/4YM0a8
-        function setTheChartViewContentWidth (receivedWidth) {
-            var container = document.getElementById('container');//获得元素
-            container.style.width = receivedWidth;//设置宽度
+        function updateChart(optionsStr, redraw) {
+
+              var options = JSON.parse(optionsStr);
+
+
+            var testOptions =  {"tooltip":{"crosshairs":true,"enabled":false,"shared":true}};
+
+              aaGlobalChart.update(testOptions,redraw);
+
+                      alert("函数调用😁成功了" + optionsStr);
+
+          }
+
+        function addPointToChartSeries(elementIndex, optionsStr, redraw, shift, animation) {
+            var options = JSON.parse(optionsStr);
+            var redrawBool = (redraw == "true") ? true:false;
+            var shiftBool = (shift == "true") ? true:false;
+            var animationBool = (animation == "true") ? true:false;
+
+            var seriesElement = aaGlobalChart.series[elementIndex];
+            seriesElement.addPoint(options, redrawBool, shiftBool, animationBool);
+        }
+
+        //pragma mark -- setter method
+        function setTheChartViewContentWidth(receivedWidth) {
+            var container = document.getElementById('container'); //获得元素
+            container.style.width = receivedWidth; //设置宽度
             aaGlobalChart.reflow();
         }
 
-        function setTheChartViewContentHeight (receivedHeight) {
-             var container = document.getElementById('container');//获得元素
-             container.style.height = receivedHeight;//设置高度
-             aaGlobalChart.reflow();
+        function setTheChartViewContentHeight(receivedHeight) {
+            var container = document.getElementById('container'); //获得元素
+            container.style.height = receivedHeight; //设置高度
+            aaGlobalChart.reflow();
         }
 
         function setChartSeriesHidden(hidden) {
-        alert("隐藏还是显示"+ hidden);
-             for (var i = 0; i < aaGlobalChart.series.length; i++) {
-                  var series = aaGlobalChart.series[i];
-                     if (hidden == true) {
-                        series.hide()
-                     } else {
-                         series.show()
-                       }
-                   }
+            for (var i = 0; i < aaGlobalChart.series.length; i++) {
+                var seriesElement = aaGlobalChart.series[i];
+                if (hidden == true) {
+                    seriesElement.hide();
+                } else {
+                    seriesElement.show();
+                }
+            }
         }
 
-        function showTheSeriesElementContentWithIndex (elementIndex) {
-            var series = aaGlobalChart.series[elementIndex];
-            series.show();
+        function showTheSeriesElementContentWithIndex(elementIndex) {
+            var seriesElement = aaGlobalChart.series[elementIndex];
+            seriesElement.show();
         }
 
         function hideTheSeriesElementContentWithIndex(elementIndex) {
-            var series = aaGlobalChart.series[elementIndex];
-            series.hide();
+            var seriesElement = aaGlobalChart.series[elementIndex];
+            seriesElement.hide();
         }
