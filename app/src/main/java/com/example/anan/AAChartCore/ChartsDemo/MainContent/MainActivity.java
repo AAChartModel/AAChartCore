@@ -11,6 +11,7 @@ import android.widget.ListView;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartType;
 import com.example.anan.AAChartCore.ChartsDemo.AdditionalContent.CustomTooltipWithJSFunctionActivity;
 import com.example.anan.AAChartCore.ChartsDemo.AdditionalContent.DrawChartWithAAOptionsActivity;
+import com.example.anan.AAChartCore.ChartsDemo.AdditionalContent.EvaluateJSStringFunctionActivity;
 import com.example.anan.AAChartCore.ChartsDemo.AdditionalContent.HideOrShowChartSeriesActivity;
 import com.example.anan.AAChartCore.R;
 
@@ -89,7 +90,11 @@ public class MainActivity extends AppCompatActivity {
             "自定义不同单位后缀",
             "值为0时,在tooltip中不显示",
             "自定义多彩颜色文字",
-            "自定义箱线图的浮动提示框头部内容"
+            "自定义箱线图的浮动提示框头部内容",
+            /*执行由 JavaScript 字符串映射转换成的 js function 函数*/
+            "eval JS function 1--------------------",
+            "eval JS function 2",
+            "eval JS function 3"
 
     };
 
@@ -169,6 +174,9 @@ public class MainActivity extends AppCompatActivity {
             "formatterFunction3",
             "formatterFunction4",
             "formatterFunction5",
+            "evalJSFunction1",
+            "evalJSFunction2",
+            "evalJSFunction3"
 
     };
 
@@ -190,7 +198,7 @@ public class MainActivity extends AppCompatActivity {
                                     long id) {
                 System.out.println(position);
                 if (position <= 7 ) {
-                    goToAnotherActivity(position);
+                    goToCommonChartActivity(position);
                 } else if (position > 7 && position <= 19 ) {
                     goToSpecialChartActivity(position);
                 } else if (position > 19 && position <= 28 ) {
@@ -201,15 +209,17 @@ public class MainActivity extends AppCompatActivity {
                     goToDrawChartWithAAOptionsActivity(position);
                 } else if (position > 54 && position <= 62 ) {
                     goToHideOrShowChartSeriesActivity(position);
-                } else if (position > 62) {
+                } else if (position > 62 && position <= 65) {
                     goToCustomTooltipWithJSFunctionActivity(position);
+                } else if (position > 65) {
+                    goToEvaluateJSStringFunctionActivity(position);
                 }
             }
 
         });
     }
 
-    void goToAnotherActivity(int position) {
+    void goToCommonChartActivity(int position) {
         Intent intent = new Intent(this, CommonChartActivity.class);
         intent.putExtra("chartType", chartTypeArr[position]);
         intent.putExtra("position",position);
@@ -254,6 +264,13 @@ public class MainActivity extends AppCompatActivity {
 
     void goToCustomTooltipWithJSFunctionActivity(int position) {
         Intent intent = new Intent(this, CustomTooltipWithJSFunctionActivity.class);
+        intent.putExtra("chartType", chartTypeArr[position]);
+
+        startActivity(intent);
+    }
+
+    void goToEvaluateJSStringFunctionActivity(int position) {
+        Intent intent = new Intent(this, EvaluateJSStringFunctionActivity.class);
         intent.putExtra("chartType", chartTypeArr[position]);
 
         startActivity(intent);

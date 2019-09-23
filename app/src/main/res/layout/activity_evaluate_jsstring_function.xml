@@ -4,6 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ChartsDemo.MainContent.AdditionalContent.EvaluateJSStringFunctionActivity">
+    tools:context="com.example.anan.AAChartCore.ChartsDemo.AdditionalContent.EvaluateJSStringFunctionActivity">
+
+    <include layout="@layout/content_special_chart" />
+
 
 </android.support.constraint.ConstraintLayout>

@@ -149,3 +149,7 @@
             var seriesElement = aaGlobalChart.series[elementIndex];
             seriesElement.hide();
         }
+
+        function evaluateTheJavaScriptStringFunction(jsStringFunction) {
+            eval(jsStringFunction);
+        }

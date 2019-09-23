@@ -48,6 +48,7 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAOptions;
+import com.example.anan.AAChartCore.AAChartCoreLib.AATools.AAEasyTool;
 import com.google.gson.Gson;
 import com.google.gson.internal.LinkedTreeMap;
 
@@ -271,6 +272,14 @@ public class AAChartView extends WebView {
         this.safeEvaluateJavaScriptString(javaScriptStr);
     }
 
+    public void aa_evaluateTheJavaScriptStringFunction(String jsFunctionStr) {
+        String pureJSFunctionStr = AAEasyTool.pureJavaScriptFunctionString(jsFunctionStr);
+
+        String jsFunctionNameStr = "evaluateTheJavaScriptStringFunction('"
+                + pureJSFunctionStr + "')";
+        safeEvaluateJavaScriptString(jsFunctionNameStr);
+    }
+
 
 
     private void loadLocalFilesAndDrawChart(final AAOptions aaOptions) {
@@ -279,10 +288,11 @@ public class AAChartView extends WebView {
             @Override
             public void onPageFinished(WebView view,String url) {
                 System.out.println("图表加载完成!!!!!!!! ");
+                configureChartOptionsAndDrawChart(aaOptions);
+
                 if (callBack != null) {
                     callBack.chartViewDidFinishedLoad(AAChartView.this);
                 }
-                configureChartOptionsAndDrawChart(aaOptions);
             }
 
             @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)

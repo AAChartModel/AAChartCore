@@ -251,9 +251,9 @@ public class CustomStyleChartActivity extends AppCompatActivity {
                 .dataLabelsEnabled(true)
                 .polar(true)//极地化图形
                 .series(new AASeriesElement[]{
-                                new AASeriesElement()
-                                        .name("东京")
-                                        .data(new Object[]{7.0, 6.9, 9.5, 9.6, 13.9, 14.5, 18.3, 18.2, 21.5, 25.2, 26.5, 23.3}),
+                        new AASeriesElement()
+                                .name("东京")
+                                .data(new Object[]{7.0, 6.9, 9.5, 9.6, 13.9, 14.5, 18.3, 18.2, 21.5, 25.2, 26.5, 23.3}),
                         }
                 )
                 ;
@@ -310,11 +310,11 @@ public class CustomStyleChartActivity extends AppCompatActivity {
                 .yAxisGridLineWidth(0f)
                 .legendEnabled(false)
                 .series(new AASeriesElement[]{
-                                new AASeriesElement()
-                                        .name("Tokyo Hot")
-                                        .lineWidth(3f)
-                                        .color(linearGradientColor)
-                                        .data(new Object[]{7.0, 6.9, 2.5, 14.5, 18.2, 21.5, 5.2, 26.5, 23.3, 45.3, 13.9, 9.6}),
+                        new AASeriesElement()
+                                .name("Tokyo Hot")
+                                .lineWidth(3f)
+                                .color(linearGradientColor)
+                                .data(new Object[]{7.0, 6.9, 2.5, 14.5, 18.2, 21.5, 5.2, 26.5, 23.3, 45.3, 13.9, 9.6}),
                         }
                 );
     }
@@ -346,11 +346,11 @@ public class CustomStyleChartActivity extends AppCompatActivity {
                 .yAxisGridLineWidth(0f)
                 .legendEnabled(false)
                 .series(new AASeriesElement[]{
-                                new AASeriesElement()
-                                        .name("Tokyo Hot")
-                                        .lineWidth(15.0f)
-                                        .color(linearGradientColor)
-                                        .data(new Object[]{7.0, 6.9, 2.5, 14.5, 18.2, 21.5, 5.2, 26.5, 23.3, 45.3, 13.9, 9.6}),
+                        new AASeriesElement()
+                                .name("Tokyo Hot")
+                                .lineWidth(15.0f)
+                                .color(linearGradientColor)
+                                .data(new Object[]{7.0, 6.9, 2.5, 14.5, 18.2, 21.5, 5.2, 26.5, 23.3, 45.3, 13.9, 9.6}),
                         }
                 );
     }
@@ -377,12 +377,12 @@ public class CustomStyleChartActivity extends AppCompatActivity {
                 .yAxisGridLineWidth(0f)
                 .legendEnabled(false)
                 .series(new AASeriesElement[]{
-                                new AASeriesElement()
-                                        .name("Tokyo Hot")
-                                        .lineWidth(5.0f)
-                                        .color(AAColor.rgbaColor(220, 20, 60, 1f))//猩红色, alpha 透明度 1
-                                        .fillColor(linearGradientColor)
-                                        .data(new Object[]{7.0, 6.9, 2.5, 14.5, 18.2, 21.5, 5.2, 26.5, 23.3, 45.3, 13.9, 9.6}),
+                        new AASeriesElement()
+                                .name("Tokyo Hot")
+                                .lineWidth(5.0f)
+                                .color(AAColor.rgbaColor(220, 20, 60, 1f))//猩红色, alpha 透明度 1
+                                .fillColor(linearGradientColor)
+                                .data(new Object[]{7.0, 6.9, 2.5, 14.5, 18.2, 21.5, 5.2, 26.5, 23.3, 45.3, 13.9, 9.6}),
                         }
                 );
     }
