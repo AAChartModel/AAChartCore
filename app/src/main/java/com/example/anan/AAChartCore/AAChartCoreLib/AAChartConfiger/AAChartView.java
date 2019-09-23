@@ -74,19 +74,22 @@ public class AAChartView extends WebView {
 
     public void setContentWidth(Float contentWidth) {
         this.contentWidth = contentWidth;
-        String jsStr = "setTheChartViewContentWidth('" + this.contentWidth + "')";
+        String jsStr = "setTheChartViewContentWidth('"
+                + this.contentWidth + "')";
         safeEvaluateJavaScriptString(jsStr);
     }
 
     public void setContentHeight(Float contentHeight) {
         this.contentHeight = contentHeight;
-        String jsStr = "setTheChartViewContentHeight('" + this.contentHeight + "')";
+        String jsStr = "setTheChartViewContentHeight('"
+                + this.contentHeight + "')";
         safeEvaluateJavaScriptString(jsStr);
     }
 
     public void setChartSeriesHidden(Boolean chartSeriesHidden) {
         this.chartSeriesHidden = chartSeriesHidden;
-        String jsStr = "setChartSeriesHidden('" + this.chartSeriesHidden + "')";
+        String jsStr = "setChartSeriesHidden('"
+                + this.chartSeriesHidden + "')";
         safeEvaluateJavaScriptString(jsStr);
     }
 
@@ -169,7 +172,10 @@ public class AAChartView extends WebView {
     public void aa_refreshChartWithChartOptions(AAOptions chartOptions) {
         Gson gson = new Gson();
         String aaOptionsJsonStr = gson.toJson(chartOptions);
-        String javaScriptStr = "loadTheHighChartView('" + aaOptionsJsonStr + "','" + contentWidth + "','" + contentHeight + "')";
+        String javaScriptStr = "loadTheHighChartView('"
+                + aaOptionsJsonStr + "','"
+                + contentWidth + "','"
+                + contentHeight + "')";
         this.safeEvaluateJavaScriptString(javaScriptStr);
     }
 
@@ -177,7 +183,8 @@ public class AAChartView extends WebView {
     public void aa_onlyRefreshTheChartDataWithChartOptionsSeriesArray(AASeriesElement[] seriesElementsArr) {
         Gson gson = new Gson();
         String seriesArr = gson.toJson(seriesElementsArr);
-        String javaScriptStr = "onlyRefreshTheChartDataWithSeries('" + seriesArr + "')";
+        String javaScriptStr = "onlyRefreshTheChartDataWithSeries('"
+                + seriesArr + "')";
         this.safeEvaluateJavaScriptString(javaScriptStr);
     }
 
@@ -235,27 +242,36 @@ public class AAChartView extends WebView {
             Boolean animation
     ) {
         String optionsStr;
-        if (options instanceof Integer || options instanceof Float || options instanceof Double) {
+        if (       options instanceof Integer
+                || options instanceof Float
+                || options instanceof Double) {
             optionsStr = String.valueOf(options);
-        } else if (options instanceof Array || options instanceof List) {
-            optionsStr = new Gson().toJson(options);
-        } else  {
+        } else {
             optionsStr = new Gson().toJson(options);
         }
 
-        String javaScriptStr = "addPointToChartSeries('" + elementIndex + "','" + optionsStr + "','" + redraw + "','" + shift + "','" + animation + "')";
+        String javaScriptStr = "addPointToChartSeries('"
+                + elementIndex + "','"
+                + optionsStr + "','"
+                + redraw + "','"
+                + shift + "','"
+                + animation + "')";
         this.safeEvaluateJavaScriptString(javaScriptStr);
     }
 
     public void aa_showTheSeriesElementContent(Integer elementIndex) {
-        String javaScriptStr = "showTheSeriesElementContentWithIndex('" + elementIndex + "')";
+        String javaScriptStr = "showTheSeriesElementContentWithIndex('"
+                + elementIndex + "')";
         this.safeEvaluateJavaScriptString(javaScriptStr);
     }
 
     public void aa_hideTheSeriesElementContent(Integer elementIndex) {
-        String javaScriptStr = "hideTheSeriesElementContentWithIndex('" + elementIndex + "')";
+        String javaScriptStr = "hideTheSeriesElementContentWithIndex('"
+                + elementIndex + "')";
         this.safeEvaluateJavaScriptString(javaScriptStr);
     }
+
+
 
     private void loadLocalFilesAndDrawChart(final AAOptions aaOptions) {
         this.loadUrl("file:///android_asset/AAChartView.html");
@@ -291,17 +307,22 @@ public class AAChartView extends WebView {
         Gson gson = new Gson();
         String aaOptionsJsonStr = gson.toJson(chartOptions);
         this.optionsJson = aaOptionsJsonStr;
-        String javaScriptStr = "loadTheHighChartView('" + aaOptionsJsonStr + "','" + 420 + "','" + 580 + "')";
+        String javaScriptStr = "loadTheHighChartView('"
+                + aaOptionsJsonStr + "','"
+                + 420 + "','"
+                + 580 + "')";
         this.safeEvaluateJavaScriptString(javaScriptStr);
     }
 
     private void showJavaScriptAlertView() {
         this.setWebChromeClient(new WebChromeClient() {
             @Override
-            public boolean onJsAlert(WebView view, String url, String message, final JsResult result) {
+            public boolean onJsAlert(WebView view,
+                                     String url,
+                                     String message,
+                                     final JsResult result) {
                 super.onJsAlert(view, url, message, result);
 
-//                    String jsResultStr = new Gson().toJson(result);
                 String urlStr = "url --->" + url + "\n\n\n";
                 String messageStr = "message --->" + message + "\n\n\n";
                 String resultStr = "result --->" + result;
@@ -311,17 +332,7 @@ public class AAChartView extends WebView {
                 new AlertDialog.Builder(getContext())
                         .setTitle("JavaScript alert Information")//设置对话框标题
                         .setMessage(alertMessageStr)
-                        .setPositiveButton("sure", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-
-                            }
-                        }).setNegativeButton("cancel", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-
-                    }
-                })
+                        .setNeutralButton("sure",null)
                         .show();
 
                 return true;
