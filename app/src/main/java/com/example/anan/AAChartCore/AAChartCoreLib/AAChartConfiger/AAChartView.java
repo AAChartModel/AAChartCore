@@ -71,6 +71,7 @@ public class AAChartView extends WebView {
     public Float contentWidth;
     public Float contentHeight;
     public Boolean chartSeriesHidden;
+    public Boolean isClearBackgroundColor;
     public AAChartViewCallBack callBack;
 
     public void setContentWidth(Float contentWidth) {
@@ -92,6 +93,18 @@ public class AAChartView extends WebView {
         String jsStr = "setChartSeriesHidden('"
                 + this.chartSeriesHidden + "')";
         safeEvaluateJavaScriptString(jsStr);
+    }
+
+    public void setIsClearBackgroundColor(Boolean isClearBackgroundColor) {
+        this.isClearBackgroundColor = isClearBackgroundColor;
+        if (this.isClearBackgroundColor) {
+            this.setBackgroundColor(0);
+            this.getBackground().setAlpha(0);
+        } else {
+            this.setBackgroundColor(1);
+            this.getBackground().setAlpha(255);
+        }
+
     }
 
 
@@ -123,8 +136,9 @@ public class AAChartView extends WebView {
 
     private void setupBasicContent() {
         // Do some initialize work.
-        this.contentWidth = 320.f;
-        this.contentHeight = 350.f;
+        this.contentWidth = 420f;
+        this.contentHeight = 580f;
+        this.isClearBackgroundColor = false;
         this.getSettings().setJavaScriptEnabled(true);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             this.setWebContentsDebuggingEnabled(true);
@@ -171,13 +185,7 @@ public class AAChartView extends WebView {
     }
 
     public void aa_refreshChartWithChartOptions(AAOptions chartOptions) {
-        Gson gson = new Gson();
-        String aaOptionsJsonStr = gson.toJson(chartOptions);
-        String javaScriptStr = "loadTheHighChartView('"
-                + aaOptionsJsonStr + "','"
-                + contentWidth + "','"
-                + contentHeight + "')";
-        this.safeEvaluateJavaScriptString(javaScriptStr);
+        configureChartOptionsAndDrawChart(chartOptions);
     }
 
 
@@ -314,13 +322,17 @@ public class AAChartView extends WebView {
     }
 
     private void configureChartOptionsAndDrawChart(AAOptions chartOptions) {
+        if (isClearBackgroundColor) {
+            chartOptions.chart.backgroundColor("rgba(0,0,0,0)");
+        }
+
         Gson gson = new Gson();
         String aaOptionsJsonStr = gson.toJson(chartOptions);
         this.optionsJson = aaOptionsJsonStr;
         String javaScriptStr = "loadTheHighChartView('"
                 + aaOptionsJsonStr + "','"
-                + 420 + "','"
-                + 580 + "')";
+                + this.contentWidth + "','"
+                + this.contentHeight + "')";
         this.safeEvaluateJavaScriptString(javaScriptStr);
     }
 
