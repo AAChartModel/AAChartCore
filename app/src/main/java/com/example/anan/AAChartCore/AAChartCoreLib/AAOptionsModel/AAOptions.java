@@ -6,6 +6,8 @@ public class AAOptions {
     public AASubtitle subtitle;
     public AAXAxis xAxis;
     public AAYAxis yAxis;
+    public AAXAxis[] xAxisArray;
+    public AAYAxis[] yAxisArray;
     public AATooltip tooltip;
     public AAPlotOptions plotOptions;
     public Object[] series;
@@ -35,6 +37,16 @@ public class AAOptions {
 
     public AAOptions yAxis(AAYAxis prop) {
         yAxis = prop;
+        return this;
+    }
+
+    public AAOptions xAxisArray(AAXAxis[] prop) {
+        xAxisArray = prop;
+        return this;
+    }
+
+    public AAOptions yAxisArray(AAYAxis[] prop) {
+        yAxisArray = prop;
         return this;
     }
 

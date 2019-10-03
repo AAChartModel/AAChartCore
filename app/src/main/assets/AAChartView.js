@@ -3,7 +3,15 @@
 
         function loadTheHighChartView (sender,receivedWidth, receivedHeight) {
 //alert("图表加载成功了");
-        var aaOptions = JSON.parse(sender);;
+        var aaOptions = JSON.parse(sender);
+            if (aaOptions.xAxisArray) {
+                aaOptions.xAxis = aaOptions.xAxisArray
+                }
+
+            if (aaOptions.yAxisArray) {
+                aaOptions.yAxis = aaOptions.yAxisArray
+                }
+
 
             aaOptions.credits = {enabled:false};//去掉表格右下角版权信息
             if (aaOptions.plotOptions) {

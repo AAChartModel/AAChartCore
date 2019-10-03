@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartConfiger.AAChartModel;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartAnimationType;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartFontWeightType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartLineDashStyleType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartStackingType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartSymbolStyleType;
@@ -12,6 +14,9 @@ import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartConfiger.AAChartView;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartConfiger.AAOptionsConstructor;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartConfiger.AASeriesElement;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAAnimation;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAChart;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAColumn;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AACrosshair;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AADataLabels;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAItemStyle;
@@ -20,7 +25,10 @@ import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AALabels;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAOptions;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAPlotBandsElement;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAPlotLinesElement;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAPlotOptions;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AASeries;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAStyle;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AATitle;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AATooltip;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAXAxis;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAYAxis;
@@ -59,6 +67,7 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
             case "XAxisLabelsFontColorAndFontSizeWithHTMLString": return configureXAxisLabelsFontColorAndFontSizeWithHTMLString();
             case "_DataLabels_XAXis_YAxis_Legend_Style": return configure_DataLabels_XAXis_YAxis_Legend_Style();
             case "XAxisPlotBand": return configureXAxisPlotBand();
+            case "configureTheMirrorColumnChart": return configureTheMirrorColumnChart();
         }
         return configureAAPlotBandsForChart();
     }
@@ -528,5 +537,75 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
         aaXAxis.plotBands(aaPlotBandsElementArr);
 
         return aaOptions;
+    }
+
+    private  AAOptions configureTheMirrorColumnChart() {
+        Map gradientColorDic1 = AAGradientColor.linearGradient(
+                AALinearGradientDirection.ToTop,
+                "#7052f4",
+                "#00b0ff"//颜色字符串设置支持十六进制类型和 rgba 类型
+        );
+
+        Map gradientColorDic2 = AAGradientColor.linearGradient(
+                AALinearGradientDirection.ToTop,
+                "#EF71FF",
+                "#4740C8"//颜色字符串设置支持十六进制类型和 rgba 类型
+        );
+
+        AAYAxis aaYAxis1 = new AAYAxis()
+                .visible(true)
+                .labels(new AALabels()
+                        .enabled(true)//设置 y 轴是否显示数字
+                        .format("{value:.,0f}$")//让y轴的值完整显示 而不是100000显示为100k,同时单位后缀为°C
+                        .style(new AAStyle()
+                                .color("#ff0000")//yAxis Label font color
+                                .fontSize(15f)//yAxis Label font size
+                                .fontWeight(AAChartFontWeightType.Bold)//yAxis Label font weight
+                        ))
+                .gridLineWidth(0f)// Y 轴网格线宽度
+                .title(new AATitle()
+                        .text("收入"));//Y 轴标题
+
+        AAYAxis aaYAxis2 = new AAYAxis()
+                .visible(true)
+                .opposite(true)
+                .title(new AATitle()
+                        .text("支出"));
+
+        AAOptions aaOptions = new AAOptions()
+                .chart(new AAChart()
+                        .type(AAChartType.Column))
+                .title(new AATitle()
+                        .text("正负镜像柱形图")
+                        .style(new AAStyle()
+                                .color(AAColor.whiteColor())
+                                .fontSize(18.f)))
+                .xAxis(new AAXAxis()
+                        .categories(new String[]{"一月", "二月", "三月", "四月", "五月", "六月",
+                                "七月", "八月", "九月", "十月", "十一月", "十二月"}))
+                .yAxisArray(new AAYAxis[]{aaYAxis1,aaYAxis2})
+                .plotOptions(new AAPlotOptions()
+                        .series(new AASeries()
+                                .animation(new AAAnimation()
+                                        .duration(800)
+                                        .easing(AAChartAnimationType.EaseInCirc)))
+                .column(new AAColumn()
+                        .grouping(false)
+                        .borderWidth(0f)
+                        .borderRadius(5f)))
+                .series(new AASeriesElement[]{
+                        new AASeriesElement()
+                                .name("收入")
+                                .color(gradientColorDic1)
+                                .data(new Object[]{7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9,7.0, 6.9, 9.5, 14.5,}),
+                new AASeriesElement()
+                        .name("支出")
+                        .color(gradientColorDic2)
+                        .data(new Object[]{-20.1, -14.1, -8.6, -2.5, -0.8, -5.7, -11.3, -17.0, -22.0, -24.8, -24.1, -20.1, -14.1, -8.6, -2.5})
+
+                });
+
+        return aaOptions;
+
     }
 }

@@ -77,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
             "XAxisLabelsFontColorAndFontSizeWithHTMLString",
             "_DataLabels_XAXis_YAxis_Legend_Style",
             "XAxisPlotBand",
+            "configureTheMirrorColumnChart",
             /*隐藏或显示内容*/
             "/*隐藏或显示内容*/Column Chart---柱形图--------------",
             "Bar Chart---条形图",
@@ -160,6 +161,7 @@ public class MainActivity extends AppCompatActivity {
             "XAxisLabelsFontColorAndFontSizeWithHTMLString",
             "_DataLabels_XAXis_YAxis_Legend_Style",
             "XAxisPlotBand",
+            "configureTheMirrorColumnChart",
             /*隐藏或显示内容*/
             AAChartType.Column,
             AAChartType.Bar,
@@ -197,21 +199,21 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapter, View view, int position,
                                     long id) {
                 System.out.println(position);
-                if (position <= 7 ) {
+                if (position <= 7 ) {/*基础类型图表*/
                     goToCommonChartActivity(position);
-                } else if (position > 7 && position <= 19 ) {
+                } else if (position > 7 && position <= 19 ) {/*特殊类型图表*/
                     goToSpecialChartActivity(position);
-                } else if (position > 19 && position <= 28 ) {
+                } else if (position > 19 && position <= 28 ) { /*Mixed Chart---混合图*/
                     goToMixedChartActivity(position);
-                } else if (position > 28 && position <= 46 )  {
+                } else if (position > 28 && position <= 46 )  {/*自定义样式图表*/
                     goToCustomStyleChartActivity(position);
-                } else if (position > 46 && position <= 54){
+                } else if (position > 46 && position <= 55){/*使用AAOptions绘制图表*/
                     goToDrawChartWithAAOptionsActivity(position);
-                } else if (position > 54 && position <= 62 ) {
+                } else if (position > 55 && position <= 62 ) { /*隐藏或显示内容*/
                     goToHideOrShowChartSeriesActivity(position);
-                } else if (position > 62 && position <= 65) {
+                } else if (position > 62 && position <= 65) {/*formatter js function*/
                     goToCustomTooltipWithJSFunctionActivity(position);
-                } else if (position > 65) {
+                } else if (position > 65) { /*eval JS Function*/
                     goToEvaluateJSStringFunctionActivity(position);
                 }
             }

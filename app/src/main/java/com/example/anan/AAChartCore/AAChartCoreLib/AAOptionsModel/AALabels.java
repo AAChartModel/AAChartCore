@@ -43,7 +43,7 @@ public class AALabels {
         return this;
     }
 
-    public AALabels Format(String prop) {
+    public AALabels format(String prop) {
         format = prop;
         return this;
     }
