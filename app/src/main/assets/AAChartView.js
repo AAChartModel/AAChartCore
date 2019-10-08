@@ -14,14 +14,13 @@
 
 
             aaOptions.credits = {enabled:false};//去掉表格右下角版权信息
+
             if (aaOptions.plotOptions) {
-                    configurePlotOptions(aaOptions);
-                            }
-            if (aaOptions.tooltip) {
-                    if (aaOptions.tooltip.formatter) {
-                        aaOptions.tooltip.formatter = eval(aaOptions.tooltip.formatter);
-                    }
+                configurePlotOptions(aaOptions);
                 }
+
+            configureOptionsFormatters(aaOptions);
+
             aaGlobalChart = Highcharts.chart('container', aaOptions);
            //全局配置(可通过全局配置设置主题)https://api.hcharts.cn/highcharts#Highcharts.setOptions
         };
@@ -89,6 +88,25 @@
             iFrame = null;
         }
 
+        function configureOptionsFormatters(aaOptions) {
+            if (aaOptions.tooltip
+                && aaOptions.tooltip.formatter) {
+                aaOptions.tooltip.formatter = eval(aaOptions.tooltip.formatter);
+            }
+
+            if (aaOptions.xAxis
+                && aaOptions.xAxis.labels
+                && aaOptions.xAxis.labels.formatter) {
+                aaOptions.xAxis.labels.formatter = eval(aaOptions.xAxis.labels.formatter);
+            }
+
+            if (aaOptions.yAxis
+                && aaOptions.yAxis.labels
+                && aaOptions.yAxis.labels.formatter) {
+                aaOptions.yAxis.labels.formatter = eval(aaOptions.yAxis.labels.formatter);
+            }
+        }
+
         function onlyRefreshTheChartDataWithSeries(receivedSeries) {
             var receivedSeriesArr = JSON.parse(receivedSeries);
             var seriesArrLength = receivedSeriesArr.length;
@@ -102,17 +120,9 @@
         }
 
         function updateChart(optionsStr, redraw) {
-
-              var options = JSON.parse(optionsStr);
-
-
-            var testOptions =  {"tooltip":{"crosshairs":true,"enabled":false,"shared":true}};
-
-              aaGlobalChart.update(testOptions,redraw);
-
-                      alert("函数调用😁成功了" + optionsStr);
-
-          }
+            var options = JSON.parse(optionsStr);
+            aaGlobalChart.update(options,redraw);
+        }
 
         function addPointToChartSeries(elementIndex, optionsStr, redraw, shift, animation) {
             var options = JSON.parse(optionsStr);
@@ -156,6 +166,18 @@
         function hideTheSeriesElementContentWithIndex(elementIndex) {
             var seriesElement = aaGlobalChart.series[elementIndex];
             seriesElement.hide();
+        }
+
+        function addElementToChartSeriesWithElement(elementStr) {
+            var seriesElement = JSON.parse(elementStr);
+            aaGlobalChart.addSeries(seriesElement);
+        }
+
+        function removeElementFromChartSeriesWithElementIndex(elementIndex) {
+            var seriesElement = aaGlobalChart.series[elementIndex];
+            if (seriesElement) {
+                seriesElement.remove(true);
+            }
         }
 
         function evaluateTheJavaScriptStringFunction(jsStringFunction) {

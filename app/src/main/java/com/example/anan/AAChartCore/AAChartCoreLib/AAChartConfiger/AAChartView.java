@@ -228,7 +228,6 @@ public class AAChartView extends WebView {
                 options,
                 true);
     }
-
     public void aa_addPointToChartSeriesElement(
             Integer elementIndex,
             Object options,
@@ -276,6 +275,19 @@ public class AAChartView extends WebView {
 
     public void aa_hideTheSeriesElementContent(Integer elementIndex) {
         String javaScriptStr = "hideTheSeriesElementContentWithIndex('"
+                + elementIndex + "')";
+        this.safeEvaluateJavaScriptString(javaScriptStr);
+    }
+
+    public void aa_addElementToChartSeries(AASeriesElement aaSeriesElement) {
+        String pureElementJsonStr = new Gson().toJson(aaSeriesElement);
+        String javaScriptStr = "addElementToChartSeriesWithElement('"
+                + pureElementJsonStr + "')";
+        this.safeEvaluateJavaScriptString(javaScriptStr);
+    }
+
+    public void aa_removeElementFromChartSeries(Integer elementIndex) {
+        String javaScriptStr = "removeElementFromChartSeriesWithElementIndex('"
                 + elementIndex + "')";
         this.safeEvaluateJavaScriptString(javaScriptStr);
     }
