@@ -8,14 +8,28 @@ import com.example.anan.AAChartCore.AAChartCoreLib.AAChartConfiger.AAChartModel;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartConfiger.AAChartView;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartConfiger.AAOptionsConstructor;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartConfiger.AASeriesElement;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartAnimationType;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartFontWeightType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartStackingType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartSymbolStyleType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartType;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAAnimation;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAChart;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AALabels;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAOptions;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAPlotOptions;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AASeries;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAStyle;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AATitle;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AATooltip;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAXAxis;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAYAxis;
+import com.example.anan.AAChartCore.AAChartCoreLib.AATools.AAColor;
 import com.example.anan.AAChartCore.AAChartCoreLib.AATools.AAGradientColor;
+import com.example.anan.AAChartCore.AAChartCoreLib.AATools.AALinearGradientDirection;
 import com.example.anan.AAChartCore.R;
+
+import java.util.Map;
 
 public class CustomTooltipWithJSFunctionActivity extends AppCompatActivity {
 
@@ -40,6 +54,10 @@ public class CustomTooltipWithJSFunctionActivity extends AppCompatActivity {
             case "formatterFunction3": return customAreaChartTooltipStyleWithFormatterFunction3();
             case "formatterFunction4": return customAreaChartTooltipStyleWithFormatterFunction4();
             case "formatterFunction5": return customBoxplotTooltipContent();
+            case "customYAxisLabels": return customYAxisLabels();
+            case "customYAxisLabels2": return customYAxisLabels2();
+            case "customStackedAndGroupedColumnChartTooltip": return customStackedAndGroupedColumnChartTooltip();
+            case "customDoubleXAxesChart": return customDoubleXAxesChart();
 
         }
         return customAreaChartTooltipStyleWithFormatterFunction1();
@@ -135,7 +153,7 @@ public class CustomTooltipWithJSFunctionActivity extends AppCompatActivity {
                         "        s += s1 + s2;\n" +
                         "        return s;\n" +
                         "    }")
-               ;
+                ;
         AAOptions aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
         aaOptions.tooltip(aaTooltip);
         return aaOptions;
@@ -295,6 +313,249 @@ public class CustomTooltipWithJSFunctionActivity extends AppCompatActivity {
                 );
         AAOptions aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
         aaOptions.tooltip(aaTooltip);
+        return aaOptions;
+    }
+
+    private AAOptions customYAxisLabels() {
+        AAChartModel aaChartModel = new AAChartModel()
+                .chartType(AAChartType.Line)//图形类型
+                .title("")//图表主标题
+                .subtitle("")//图表副标题
+                .markerSymbolStyle(AAChartSymbolStyleType.BorderBlank)//折线连接点样式为外边缘空白
+                .dataLabelsEnabled(false)
+                .colorsTheme(new String[]{"#04d69f","#1e90ff","#ef476f","#ffd066",})
+                .stacking(AAChartStackingType.Normal)
+                .markerRadius(8f)
+                .series(new AASeriesElement[]{
+                        new AASeriesElement()
+                                .name("Tokyo Hot")
+                                .lineWidth(5.0f)
+                                .fillOpacity(0.4f)
+                                .data(new Object[]{29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4})
+                        ,
+                });
+
+        AALabels aaYAxisLabels = new AALabels()
+                .formatter("function () {\n" +
+                        "        let yValue = this.value;\n" +
+                        "        if (yValue >= 200) {\n" +
+                        "            return \"极佳\";\n" +
+                        "        } else if (yValue >= 150 && yValue < 200) {\n" +
+                        "            return \"非常棒\";\n" +
+                        "        } else if (yValue >= 100 && yValue < 150) {\n" +
+                        "            return \"相当棒\";\n" +
+                        "        } else if (yValue >= 50 && yValue < 100) {\n" +
+                        "            return \"还不错\";\n" +
+                        "        } else {\n" +
+                        "            return \"一般\";\n" +
+                        "        }\n" +
+                        "    }");
+
+        AAOptions aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
+        aaOptions.yAxis.labels(aaYAxisLabels);
+
+        return aaOptions;
+    }
+
+    private AAOptions customYAxisLabels2() {
+        AAChartModel aaChartModel = new AAChartModel()
+                .chartType(AAChartType.Line)//图形类型
+                .title("")//图表主标题
+                .subtitle("")//图表副标题
+                .markerSymbolStyle(AAChartSymbolStyleType.BorderBlank)//折线连接点样式为外边缘空白
+                .dataLabelsEnabled(false)
+                .colorsTheme(new String[]{"#04d69f","#1e90ff","#ef476f","#ffd066",})
+                .stacking(AAChartStackingType.Normal)
+                .markerRadius(8f)
+                .series(new AASeriesElement[]{
+                        new AASeriesElement()
+                                .name("Tokyo Hot")
+                                .lineWidth(5.0f)
+                                .fillOpacity(0.4f)
+                                .data(new Object[]{229.9, 771.5, 1106.4, 1129.2, 6644.0, 1176.0, 8835.6, 148.5, 8816.4, 6694.1, 7795.6, 9954.4})
+                        ,
+                });
+
+        AALabels aaYAxisLabels = new AALabels()
+                .style(new AAStyle()
+                        .fontSize(10f)
+                        .fontWeight(AAChartFontWeightType.Bold)
+                        .color(AAColor.grayColor())
+                )
+                .formatter("function () {\n" +
+                        "        let yValue = this.value;\n" +
+                        "        if (yValue == 0) {\n" +
+                        "            return \"0\";\n" +
+                        "        } else if (yValue == 2500) {\n" +
+                        "            return \"25%\";\n" +
+                        "        } else if (yValue == 5000) {\n" +
+                        "            return \"50%\";\n" +
+                        "        } else if (yValue == 7500) {\n" +
+                        "            return \"75%\";\n" +
+                        "        } else if (yValue == 10000) {\n" +
+                        "            return \"100%\";\n" +
+                        "        }\n" +
+                        "    }");
+
+        AAOptions aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
+        aaOptions.yAxis
+                .opposite(true)
+                .tickWidth(2f)
+                .lineWidth(1.5f)//Y轴轴线颜色
+                .lineColor(AAColor.lightGrayColor())//Y轴轴线颜色
+                .gridLineWidth(0f)//Y轴网格线宽度
+                .tickPositions(new Object[]{0,2500,5000,7500,10000})
+                .labels(aaYAxisLabels);
+
+        return aaOptions;
+    }
+
+    private AAOptions customStackedAndGroupedColumnChartTooltip() {
+        AAChartModel aaChartModel = new AAChartModel()
+                .title("Total fruit consumtion, grouped by gender")
+                .subtitle("stacked and grouped")
+                .yAxisTitle("Number of fruits")
+                .chartType(AAChartType.Column)
+                .legendEnabled(false)//隐藏图例(底部可点按的小圆点)
+                .stacking(AAChartStackingType.Normal)
+                .categories(new String[]{"Apples", "Oranges", "Pears","Grapes","Bananas",})
+                .dataLabelsEnabled(true)
+                .series(new AASeriesElement[] {
+                                new AASeriesElement()
+                                        .name("John")
+                                        .data(new Object[]{5,3,4,7,2,})
+                                        .stack("male")
+                                ,
+                                new AASeriesElement()
+                                        .name("Joe")
+                                        .data(new Object[]{3,4,4,2,5,})
+                                        .stack("male")
+                                ,
+                                new AASeriesElement()
+                                        .name("Jane")
+                                        .data(new Object[]{2,5,6,2,1,})
+                                        .stack("female")
+                                ,
+                                new AASeriesElement()
+                                        .name("Janet")
+                                        .data(new Object[]{3,0,4, 4,3,})
+                                        .stack("female")
+                                ,
+                        }
+                );
+
+        /*Custom Tooltip Style --- 自定义图表浮动提示框样式及内容*/
+        AAOptions aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
+        aaOptions.tooltip
+                .shared(false)
+                .formatter("function () {\n" +
+                        "                return '<b>'\n" +
+                        "                + this.x\n" +
+                        "                + '</b><br/>'\n" +
+                        "                + this.series.name\n" +
+                        "                + ': '\n" +
+                        "                + this.y\n" +
+                        "                + '<br/>'\n" +
+                        "                + 'Total: '\n" +
+                        "                + this.point.stackTotal;\n" +
+                        "     }");
+
+        return aaOptions;
+    }
+
+    private AAOptions customDoubleXAxesChart() {
+        Map gradientColorDic1 = AAGradientColor.linearGradient(
+                AALinearGradientDirection.ToTop,
+                "#7052f4",
+                "#00b0ff"//颜色字符串设置支持十六进制类型和 rgba 类型
+        );
+
+        Map gradientColorDic2 = AAGradientColor.linearGradient(
+                AALinearGradientDirection.ToTop,
+                "#EF71FF",
+                "#4740C8"//颜色字符串设置支持十六进制类型和 rgba 类型
+        );
+
+        AAChart aaChart = new AAChart()
+                .type(AAChartType.Bar);
+
+        AATitle aaTitle = new AATitle()
+                .text("2015 年德国人口金字塔")
+                .style(new AAStyle()
+                        .color("#000000")
+                        .fontSize(12.0f));
+
+        String[] aaCategories = new String[]{"0-4", "5-9", "10-14", "15-19",
+                "20-24", "25-29", "30-34", "35-39", "40-44",
+                "45-49", "50-54", "55-59", "60-64", "65-69",
+                "70-74", "75-79", "80-84", "85-89", "90-94",
+                "95-99", "100 + "};
+
+        AAXAxis aaXAxis1 = new AAXAxis()
+                .reversed(true)
+                .categories(aaCategories)
+                .labels(new AALabels()
+                        .step(1))
+                ;
+
+        AAXAxis aaXAxis2 = new AAXAxis()
+                .reversed(true)
+                .opposite(true)
+                .categories(aaCategories)
+                .linkedTo(0)
+                .labels(new AALabels()
+                        .step(1));
+
+        AAYAxis aaYAxis = new AAYAxis()
+                .gridLineWidth(0f)// Y 轴网格线宽度
+                .title(new AATitle()
+                        .text(""))//Y 轴标题
+                .labels(new AALabels()
+                        .formatter("function () {\n" +
+                                "    return (Math.abs(this.value) / 1000000) + 'M';\n" +
+                                "}"))
+                .min(-4000000f)
+                .max(4000000f);
+
+        AAPlotOptions aaPlotOptions = new AAPlotOptions()
+                .series(new AASeries()
+                        .animation(new AAAnimation()
+                                .duration(800)
+                                .easing(AAChartAnimationType.Bounce)
+                        )
+                        .stacking(AAChartStackingType.Normal));
+
+        AATooltip aaTooltip = new AATooltip()
+                .enabled(true)
+                .shared(false)
+                .formatter("function () {\n" +
+                        "    return '<b>' + this.series.name + ', age ' + this.point.category + '</b><br/>' +\n" +
+                        "        '人口: ' + Highcharts.numberFormat(Math.abs(this.point.y), 0);\n" +
+                        "}");
+
+        AASeriesElement aaSeriesElement1 = new AASeriesElement()
+                .name("Men")
+                .color(gradientColorDic1)
+                .data(new Object[]{-1746181, -1884428, -2089758, -2222362, -2537431, -2507081, -2443179,
+                        -2664537, -3556505, -3680231, -3143062, -2721122, -2229181, -2227768,
+                        -2176300, -1329968, -836804, -354784, -90569, -28367, -3878});
+
+        AASeriesElement aaSeriesElement2 = new AASeriesElement()
+                .name("Women")
+                .color(gradientColorDic2)
+                .data(new Object[]{1656154, 1787564, 1981671, 2108575, 2403438, 2366003, 2301402, 2519874,
+                        3360596, 3493473, 3050775, 2759560, 2304444, 2426504, 2568938, 1785638,
+                        1447162, 1005011, 330870, 130632, 21208});
+
+        AAOptions aaOptions = new AAOptions()
+                .chart(aaChart)
+                .title(aaTitle)
+                .xAxisArray(new AAXAxis[]{aaXAxis1,aaXAxis2})
+                .yAxis(aaYAxis)
+                .plotOptions(aaPlotOptions)
+                .tooltip(aaTooltip)
+                .series(new Object[]{aaSeriesElement1,aaSeriesElement2});
+
         return aaOptions;
     }
 

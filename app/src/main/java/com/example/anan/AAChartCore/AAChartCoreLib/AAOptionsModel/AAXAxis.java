@@ -4,7 +4,9 @@ public class AAXAxis {
     public AAPlotBandsElement[] plotBands;
     public AAPlotLinesElement[] plotLines;
     public String[] categories;
+    public Integer linkedTo;
     public Boolean reversed;
+    public Boolean opposite;
     public Float lineWidth; //x轴轴线宽度
     public String lineColor; //x轴轴线线颜色
     public Float max; //x轴最大值
@@ -40,8 +42,18 @@ public class AAXAxis {
         return this;
     }
 
+    public AAXAxis linkedTo(Integer prop) {
+        linkedTo = prop;
+        return this;
+    }
+
     public AAXAxis reversed(Boolean prop) {
         reversed = prop;
+        return this;
+    }
+
+    public AAXAxis opposite(Boolean prop) {
+        opposite = prop;
         return this;
     }
 

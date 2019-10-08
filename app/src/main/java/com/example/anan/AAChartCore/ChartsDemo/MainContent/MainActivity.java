@@ -92,6 +92,10 @@ public class MainActivity extends AppCompatActivity {
             "值为0时,在tooltip中不显示",
             "自定义多彩颜色文字",
             "自定义箱线图的浮动提示框头部内容",
+            "自定义Y轴文字",
+            "自定义Y轴文字2",
+            "自定义分组堆积柱状图tooltip内容",
+            "双 X 轴镜像图表",
             /*执行由 JavaScript 字符串映射转换成的 js function 函数*/
             "eval JS function 1--------------------",
             "eval JS function 2",
@@ -176,11 +180,17 @@ public class MainActivity extends AppCompatActivity {
             "formatterFunction3",
             "formatterFunction4",
             "formatterFunction5",
+            "customYAxisLabels",
+            "customYAxisLabels2",
+            "customStackedAndGroupedColumnChartTooltip",
+            "customDoubleXAxesChart",
             "evalJSFunction1",
             "evalJSFunction2",
             "evalJSFunction3"
 
     };
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -211,9 +221,9 @@ public class MainActivity extends AppCompatActivity {
                     goToDrawChartWithAAOptionsActivity(position);
                 } else if (position > 55 && position <= 62 ) { /*隐藏或显示内容*/
                     goToHideOrShowChartSeriesActivity(position);
-                } else if (position > 62 && position <= 65) {/*formatter js function*/
+                } else if (position > 62 && position <= 72) {/*formatter js function*/
                     goToCustomTooltipWithJSFunctionActivity(position);
-                } else if (position > 65) { /*eval JS Function*/
+                } else if (position > 72) { /*eval JS Function*/
                     goToEvaluateJSStringFunctionActivity(position);
                 }
             }

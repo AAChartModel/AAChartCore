@@ -61,6 +61,7 @@ public class AASeriesElement {
     private Integer zIndex;
     private Object[] zones;
     private AAShadow shadow;
+    private String stack;
 
 
     public AASeriesElement type(String prop) {
@@ -148,6 +149,10 @@ public class AASeriesElement {
         return this;
     }
 
+    public AASeriesElement stack(String prop) {
+        stack = prop;
+        return this;
+    }
 
 }
 

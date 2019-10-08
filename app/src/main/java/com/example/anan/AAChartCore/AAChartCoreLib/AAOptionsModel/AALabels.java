@@ -1,6 +1,8 @@
 package com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel;
 
 
+import com.example.anan.AAChartCore.AAChartCoreLib.AATools.AAEasyTool;
+
 public class AALabels {
     private String align;//轴标签的对齐方式，可用的值有 "left"、"center" 及 "right"。默认值是根据坐标轴的位置（在图表中的位置）即标签的旋转角度进行智能判断的。 默认是：center.
     private Object autoRotation; //只针对水平轴有效，允许在防止轴标签重叠时自动旋转轴标签的角度。当空间足够时，轴标签不会被旋转。当图表变小时（主要是宽度变小） ，轴标签开始旋转对应的角度，然后会依次删除间隔的轴标签并尝试旋转数组中的角度。可以通过将此参数设置为 false 来关闭轴标签旋转（这将导致标签自动换行）。 默认是：[-45].
@@ -49,7 +51,9 @@ public class AALabels {
     }
 
     public AALabels formatter(String prop) {
-        formatter = prop;
+        String pureJSFunctionStr = "(" + prop + ")";
+        pureJSFunctionStr = AAEasyTool.pureJavaScriptFunctionString(pureJSFunctionStr);
+        formatter = pureJSFunctionStr;
         return this;
     }
 
