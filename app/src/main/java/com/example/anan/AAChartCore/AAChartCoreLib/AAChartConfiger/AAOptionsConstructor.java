@@ -150,12 +150,15 @@ public class AAOptionsConstructor
             AAPlotOptions aaPlotOptions
     ) {
         String chartType = aaChartModel.chartType;
-        //数据点标记相关配置，只有线性图(折线图、曲线图、折线区域填充图、曲线区域填充图,散点图)才有数据点标记
+        //数据点标记相关配置，只有线性图(折线图、曲线图、折线区域填充图、曲线区域填充图、散点图、折线范围填充图、曲线范围填充图、多边形图)才有数据点标记
         if (chartType.equals(AAChartType.Area)
                 || chartType.equals(AAChartType.Areaspline)
                 || chartType.equals(AAChartType.Line)
                 || chartType.equals(AAChartType.Spline)
-                || chartType.equals(AAChartType.Scatter))
+                || chartType.equals(AAChartType.Scatter)
+                || chartType.equals(AAChartType.Arearange)
+                || chartType.equals(AAChartType.Areasplinerange)
+                || chartType.equals(AAChartType.Polygon))
         {
             AAMarker aaMarker = new AAMarker()
                     .radius(aaChartModel.markerRadius) //曲线连接点半径，默认是4

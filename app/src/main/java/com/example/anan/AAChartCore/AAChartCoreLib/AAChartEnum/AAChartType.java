@@ -17,4 +17,5 @@ public interface AAChartType {
     String Areasplinerange = "areasplinerange";
     String Boxplot         = "boxplot";
     String Waterfall       = "waterfall";
+    String Polygon         = "polygon";
 }

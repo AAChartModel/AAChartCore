@@ -626,7 +626,7 @@ public class MixedChartActivity extends AppCompatActivity {
                 .series(new AASeriesElement[]{
                         new AASeriesElement()
                                 .name("目标")
-                                .type("polygon")
+                                .type(AAChartType.Polygon)
                                 .data(goalDataArr)
                                 .color("rgba(119, 152, 191, 0.5)")
                         ,
