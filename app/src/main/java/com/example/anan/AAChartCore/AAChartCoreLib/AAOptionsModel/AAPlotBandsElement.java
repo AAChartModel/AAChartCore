@@ -1,14 +1,14 @@
 package com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel;
 
 public class AAPlotBandsElement {
-    private Float from;
-    private Float to;
-    private Object color;
-    private String borderColor;
-    private Float borderWidth;
-    private String className;
-    private AALabel label;
-    private Integer zIndex;
+    public Float from;
+    public Float to;
+    public Object color;
+    public String borderColor;
+    public Float borderWidth;
+    public String className;
+    public AALabel label;
+    public Integer zIndex;
 
     public AAPlotBandsElement from(Float prop) {
         from = prop;

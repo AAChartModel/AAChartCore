@@ -1,15 +1,15 @@
 package com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel;
 
 public class AAPie {
-    AADataLabels dataLabels;
-    Float size;
-    Boolean allowPointSelect;
-    String cursor;
-    Boolean showInLegend;
-    Float startAngle;
-    Float endAngle;
-    Float depth;
-    Float center;
+    public AADataLabels dataLabels;
+    public Float size;
+    public Boolean allowPointSelect;
+    public String cursor;
+    public Boolean showInLegend;
+    public Float startAngle;
+    public Float endAngle;
+    public Float depth;
+    public Float center;
 
     public AAPie dataLabels(AADataLabels prop) {
         dataLabels = prop;

@@ -2,12 +2,12 @@ package com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel;
 
 public class AAPlotLinesElement {
 
-    private Object color;
-    private String dashStyle;
-    private Float width;
-    private Float value;
-    private Integer zIndex;
-    private AALabel label;
+    public Object color;
+    public String dashStyle;
+    public Float width;
+    public Float value;
+    public Integer zIndex;
+    public AALabel label;
 
     public AAPlotLinesElement color(Object prop) {
         color = prop;

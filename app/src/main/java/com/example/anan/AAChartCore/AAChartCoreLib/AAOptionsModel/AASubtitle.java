@@ -3,13 +3,13 @@ package com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartVerticalAlignType;
 
 public class AASubtitle {
-    private String text;
-    private AAStyle style;
-    private String align;
-    private String verticalAlign;
-    private Float x;
-    private Float y;
-    private Boolean userHTML;
+    public String text;
+    public AAStyle style;
+    public String align;
+    public String verticalAlign;
+    public Float x;
+    public Float y;
+    public Boolean userHTML;
 
     public AASubtitle text(String prop) {
         text = prop;

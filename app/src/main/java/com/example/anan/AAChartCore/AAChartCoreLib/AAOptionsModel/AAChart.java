@@ -1,17 +1,17 @@
 package com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel;
 
 public class AAChart {
-    private String type;
-    private Object backgroundColor;
-    private String plotBackgroundImage;
-    private String pinchType;
-    private Boolean panning;
-    private String panKey;
-    private Boolean polar;
-    private AAAnimation animation;
-    private Boolean inverted;
-    private Float marginLeft;
-    private Float marginRight;
+    public String type;
+    public Object backgroundColor;
+    public String plotBackgroundImage;
+    public String pinchType;
+    public Boolean panning;
+    public String panKey;
+    public Boolean polar;
+    public AAAnimation animation;
+    public Boolean inverted;
+    public Float marginLeft;
+    public Float marginRight;
 
     public AAChart type(String prop) {
         type = prop;

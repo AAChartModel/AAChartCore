@@ -1,9 +1,9 @@
 package com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel;
 
 public class AACrosshair {
-    private Float width;
-    private String color;
-    private String dashStyle;
+    public Float width;
+    public String color;
+    public String dashStyle;
 
     public AACrosshair width(Float prop) {
         width = prop;

@@ -3,15 +3,15 @@ package com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel;
 import java.util.Map;
 
 public class AASeries {
-    private Float borderRadius;
-    private AAMarker marker;
-    private String stacking;
-    private AAAnimation animation;
-    private String[] keys;
-    private Boolean colorByPoint;//决定了图表是否给每个数据列或每个点分配一个颜色，默认值是 false， 即默认是给每个数据类分配颜色，
-    private Boolean connectNulls;//设置折线是否断点重连
-    private Map events;
-    private AAShadow shadow;
+    public Float borderRadius;
+    public AAMarker marker;
+    public String stacking;
+    public AAAnimation animation;
+    public String[] keys;
+    public Boolean colorByPoint;//决定了图表是否给每个数据列或每个点分配一个颜色，默认值是 false， 即默认是给每个数据类分配颜色，
+    public Boolean connectNulls;//设置折线是否断点重连
+    public Map events;
+    public AAShadow shadow;
 
     public AASeries borderRadius(Float prop) {
         borderRadius = prop;

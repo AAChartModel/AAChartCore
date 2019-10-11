@@ -1,8 +1,8 @@
 package com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel;
 
 public class AAAnimation {
-    private Integer duration;
-    private String easing;
+    public Integer duration;
+    public String easing;
 
     public AAAnimation duration(Integer prop) {
         duration = prop;

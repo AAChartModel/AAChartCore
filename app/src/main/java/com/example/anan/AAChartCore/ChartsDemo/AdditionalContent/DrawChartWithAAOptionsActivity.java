@@ -5,8 +5,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartConfiger.AAChartModel;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartAlignType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartAnimationType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartFontWeightType;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartLayoutType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartLineDashStyleType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartStackingType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartSymbolStyleType;
@@ -14,6 +16,7 @@ import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartConfiger.AAChartView;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartConfiger.AAOptionsConstructor;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartConfiger.AASeriesElement;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartVerticalAlignType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAAnimation;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAChart;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAColumn;
@@ -59,6 +62,7 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
 
     private AAOptions configureTheChartOptions(String chartType) {
         switch (chartType) {
+            case "customLegendStyle": return customChartLegendStyle();
             case "AAPlotBandsForChart": return  configureAAPlotBandsForChart();
             case "AAPlotLinesForChart": return configureAAPlotLinesForChart();
             case "customAATooltipWithJSFuntion": return customAATooltipWithJSFunction();
@@ -72,11 +76,55 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
         return configureAAPlotBandsForChart();
     }
 
+    private AAOptions customChartLegendStyle() {
+        AASeriesElement element1 = new AASeriesElement()
+                .name("Predefined symbol")
+                .data(new Object[]{0.45, 0.43, 0.50, 0.55, 0.58, 0.62, 0.83, 0.39, 0.56, 0.67, 0.50, 0.34, 0.50, 0.67, 0.58, 0.29, 0.46, 0.23, 0.47, 0.46, 0.38, 0.56, 0.48, 0.36});
+
+        AASeriesElement element2 = new AASeriesElement()
+                .name("Image symbol")
+                .data(new Object[]{0.38, 0.31, 0.32, 0.32, 0.64, 0.66, 0.86, 0.47, 0.52, 0.75, 0.52, 0.56, 0.54, 0.60, 0.46, 0.63, 0.54, 0.51, 0.58, 0.64, 0.60, 0.45, 0.36, 0.67});
+
+        AASeriesElement element3 = new AASeriesElement()
+                .name("Base64 symbol (*)")
+                .data(new Object[]{0.46, 0.32, 0.53, 0.58, 0.86, 0.68, 0.85, 0.73, 0.69, 0.71, 0.91, 0.74, 0.60, 0.50, 0.39, 0.67, 0.55, 0.49, 0.65, 0.45, 0.64, 0.47, 0.63, 0.64});
+
+        AASeriesElement element4 = new AASeriesElement()
+                .name("Custom symbol")
+                .data(new Object[]{0.60, 0.51, 0.52, 0.53, 0.64, 0.84, 0.65, 0.68, 0.63, 0.47, 0.72, 0.60, 0.65, 0.74, 0.66, 0.65, 0.71, 0.59, 0.65, 0.77, 0.52, 0.53, 0.58, 0.53});
+
+
+        AAChartModel aaChartModel = new AAChartModel()
+                .chartType(AAChartType.Areaspline)
+                .title("CUSTOM LEGEND STYLE")
+                .subtitle("LEGEND ON THE TOP_RIGHT SIDE WITH VERTICAL STYLE")
+                .subtitleAlign(AAChartAlignType.Left)
+                .markerRadius(0f)
+                .backgroundColor(AAColor.whiteColor())
+                .dataLabelsEnabled(false)
+                .yAxisGridLineWidth(0f)
+                .yAxisTitle("percent values")
+                .stacking(AAChartStackingType.Normal)
+                .colorsTheme(new String[]{"mediumspringgreen", "deepskyblue", "red", "sandybrown"})
+                .series(new AASeriesElement[]{element1, element2, element3, element4});
+
+        AAOptions aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
+        aaOptions.legend
+                .enabled(true)
+                .align(AAChartAlignType.Right)
+                .layout(AAChartLayoutType.Vertical)
+                .verticalAlign(AAChartVerticalAlignType.Top);
+
+        aaOptions.yAxis.labels.format = "{value} %";//给y轴添加单位
+        return aaOptions;
+    }
+
     private AAOptions configureAAPlotBandsForChart() {
         AAChartModel aaChartModel = new AAChartModel()
                 .chartType(AAChartType.Spline)//图形类型
                 .dataLabelsEnabled(false)
                 .markerRadius(0f)
+                .yAxisMax(40f)
                 .series(new AASeriesElement[]{
                         new AASeriesElement()
                                 .name("Tokyo")

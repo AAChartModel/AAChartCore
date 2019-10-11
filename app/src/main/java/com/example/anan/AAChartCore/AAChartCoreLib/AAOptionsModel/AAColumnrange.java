@@ -1,9 +1,9 @@
 package com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel;
 
 public class AAColumnrange {
-    private Float borderRadius;
-    private Float borderWidth;
-    private AADataLabels dataLabels;
+    public Float borderRadius;
+    public Float borderWidth;
+    public AADataLabels dataLabels;
 
     public AAColumnrange borderRadius(Float prop) {
         borderRadius = prop;

@@ -1,8 +1,8 @@
 package com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel;
 
 public class AALabel {
-    private String text;
-    private Object style;
+    public String text;
+    public Object style;
 
     public AALabel text(String prop) {
         text = prop;

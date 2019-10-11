@@ -2,10 +2,10 @@ package com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel;
 
 public class AAStyle {
 
-    private String color;
-    private String fontSize;
-    private String fontWeight;
-    private String textOutLine;
+    public String color;
+    public String fontSize;
+    public String fontWeight;
+    public String textOutLine;
 
     public AAStyle color(String prop) {
         color = prop;

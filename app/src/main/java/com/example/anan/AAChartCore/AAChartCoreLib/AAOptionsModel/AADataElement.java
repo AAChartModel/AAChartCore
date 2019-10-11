@@ -1,11 +1,11 @@
 package com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel;
 
 public class AADataElement {
-    private String name;
-    private Float y;
-    private Object color;
-    private AADataLabels dataLabels;
-    private AAMarker marker;
+    public String name;
+    public Float y;
+    public Object color;
+    public AADataLabels dataLabels;
+    public AAMarker marker;
 
     public AADataElement name(String prop) {
         name = prop;

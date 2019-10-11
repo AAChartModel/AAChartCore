@@ -69,7 +69,8 @@ public class MainActivity extends AppCompatActivity {
             "PentagonRadarChart",
             "HexagonRadarChart",
             /*使用AAOptions绘制图表*/
-            "/*使用AAOptions绘制图表*/drawChartWithOptionsOne-----------------",
+            "/*使用AAOptions绘制图表*/customLegendStyle-----------------",
+            "drawChartWithOptionsOne",
             "AAPlotLinesForChart",
             "customAATooltipWithJSFuntion",
             "customXAxisCrosshairStyle",
@@ -157,6 +158,7 @@ public class MainActivity extends AppCompatActivity {
             "PentagonRadarChart",
             "HexagonRadarChart",
             /*使用AAOptions绘制图表*/
+            "customLegendStyle",
             "AAPlotBandsForChart",
             "AAPlotLinesForChart",
             "customAATooltipWithJSFuntion",
@@ -175,6 +177,7 @@ public class MainActivity extends AppCompatActivity {
             AAChartType.Line,
             AAChartType.Line,
             AAChartType.Spline,
+            /*隐藏或显示内容*/
             "formatterFunction1",
             "formatterFunction2",
             "formatterFunction3",
@@ -211,19 +214,19 @@ public class MainActivity extends AppCompatActivity {
                 System.out.println(position);
                 if (position <= 7 ) {/*基础类型图表*/
                     goToCommonChartActivity(position);
-                } else if (position > 7 && position <= 19 ) {/*特殊类型图表*/
+                } else if (position <= 19) {/*特殊类型图表*/
                     goToSpecialChartActivity(position);
-                } else if (position > 19 && position <= 28 ) { /*Mixed Chart---混合图*/
+                } else if (position <= 28) { /*Mixed Chart---混合图*/
                     goToMixedChartActivity(position);
-                } else if (position > 28 && position <= 46 )  {/*自定义样式图表*/
+                } else if (position <= 46)  {/*自定义样式图表*/
                     goToCustomStyleChartActivity(position);
-                } else if (position > 46 && position <= 55){/*使用AAOptions绘制图表*/
+                } else if (position <= 56){/*使用AAOptions绘制图表*/
                     goToDrawChartWithAAOptionsActivity(position);
-                } else if (position > 55 && position <= 62 ) { /*隐藏或显示内容*/
+                } else if (position <= 63 ) { /*隐藏或显示内容*/
                     goToHideOrShowChartSeriesActivity(position);
-                } else if (position > 62 && position <= 72) {/*formatter js function*/
+                } else if (position <= 73) {/*formatter js function*/
                     goToCustomTooltipWithJSFunctionActivity(position);
-                } else if (position > 72) { /*eval JS Function*/
+                } else if (position > 73) { /*eval JS Function*/
                     goToEvaluateJSStringFunctionActivity(position);
                 }
             }

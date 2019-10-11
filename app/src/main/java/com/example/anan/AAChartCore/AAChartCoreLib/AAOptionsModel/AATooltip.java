@@ -3,21 +3,21 @@ package com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel;
 import com.example.anan.AAChartCore.AAChartCoreLib.AATools.AAEasyTool;
 
 public class AATooltip {
-    private String backgroundColor;
-    private String borderColor;
-    private Float borderRadius;
-    private Float borderWidth;
-    private AAStyle style;
-    private Boolean enabled;
-    private Boolean useHTML;
-    private String formatter;
-    private String headerFormat;
-    private String pointFormat;
-    private String footerFormat;
-    private Integer valueDecimals;
-    private Boolean shared;
-    private Boolean crosshairs;
-    private String valueSuffix;
+    public String backgroundColor;
+    public String borderColor;
+    public Float borderRadius;
+    public Float borderWidth;
+    public AAStyle style;
+    public Boolean enabled;
+    public Boolean useHTML;
+    public String formatter;
+    public String headerFormat;
+    public String pointFormat;
+    public String footerFormat;
+    public Integer valueDecimals;
+    public Boolean shared;
+    public Boolean crosshairs;
+    public String valueSuffix;
 
     public AATooltip backgroundColor(String prop) {
         backgroundColor = prop;

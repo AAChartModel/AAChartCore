@@ -1,11 +1,11 @@
 package com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel;
 
 public class AAItemStyle {
-    private String color;
-    private String cursor;
-    private String pointer;
-    private String fontSize;
-    private String fontWeight;
+    public String color;
+    public String cursor;
+    public String pointer;
+    public String fontSize;
+    public String fontWeight;
 
 
     public AAItemStyle color(String prop) {

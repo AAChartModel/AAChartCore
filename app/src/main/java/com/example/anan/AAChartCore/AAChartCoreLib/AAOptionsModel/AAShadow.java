@@ -1,11 +1,11 @@
 package com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel;
 
 public class AAShadow {
-    private String color;
-    private Float offsetX;
-    private Float offsetY;
-    private Float opacity;
-    private Float width;
+    public String color;
+    public Float offsetX;
+    public Float offsetY;
+    public Float opacity;
+    public Float width;
 
     public AAShadow color(String prop) {
         color = prop;

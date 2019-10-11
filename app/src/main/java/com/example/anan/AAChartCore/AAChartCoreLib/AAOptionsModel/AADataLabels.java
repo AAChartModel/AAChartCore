@@ -1,22 +1,22 @@
 package com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel;
 
 public class AADataLabels {
-    private Boolean enabled;
-    private AAStyle style;
-    private String format;
-    private Float rotation;
-    private Boolean allowOverlap;
-    private Boolean useHTML;
-    private Float distance;
-    private String verticalAlign;
-    private Float x;
-    private Float y;
-    private String color;
-    private String backgroundColor;
-    private String borderColor;
-    private Float borderRadius;
-    private Float borderWidth;
-    private String shape;
+    public Boolean enabled;
+    public AAStyle style;
+    public String format;
+    public Float rotation;
+    public Boolean allowOverlap;
+    public Boolean useHTML;
+    public Float distance;
+    public String verticalAlign;
+    public Float x;
+    public Float y;
+    public String color;
+    public String backgroundColor;
+    public String borderColor;
+    public Float borderRadius;
+    public Float borderWidth;
+    public String shape;
 
 
     public AADataLabels enabled(Boolean prop) {
