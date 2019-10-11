@@ -2,7 +2,6 @@
         var aaGlobalChart;
 
         function loadTheHighChartView (sender,receivedWidth, receivedHeight) {
-//alert("图表加载成功了");
         var aaOptions = JSON.parse(sender);
             if (aaOptions.xAxisArray) {
                 aaOptions.xAxis = aaOptions.xAxisArray
@@ -40,7 +39,6 @@
 
         function configureChartTouchEvent(aaPlotOptions) {
                     var mouseOverFunc = function(){
-                        //console.log(this)
                         var message = {
                             name: this.series.name,
                             y :this.y,
@@ -51,42 +49,16 @@
                         };
 
                         var messageStr = JSON.stringify(message);
-
-//                        alert("AAChartViewBridge://?"+ messageStr);
-
                         window.androidObject.androidMethod(messageStr);
-
-//                        overrideUrlLoading("AAChartViewBridge://?"+ messageStr);
-
                     };
 
                          var seriesPoint = {
                                     events:{
                                         mouseOver: mouseOverFunc,
-                //                      click: mouseOverFunc,
                                     }
                                    };
                          aaPlotOptions.series.point = seriesPoint;
                 }
-
-
-        function overrideUrlLoading(testOverrideUrlStr) {
-            alert(testOverrideUrlStr);
-            uiWebViewLoadURL(testOverrideUrlStr);
-        }
-
-        function uiWebViewLoadURL(url) {
-            var iFrame;
-            iFrame = document.createElement("iframe");
-            iFrame.setAttribute("src", url);
-            iFrame.setAttribute("style", "display:none;");
-            iFrame.setAttribute("height", "0px");
-            iFrame.setAttribute("width", "0px");
-            iFrame.setAttribute("frameborder", "0");
-            document.body.appendChild(iFrame);
-            iFrame.parentNode.removeChild(iFrame);
-            iFrame = null;
-        }
 
         function configureOptionsFormatters(aaOptions) {
             if (aaOptions.tooltip

@@ -34,27 +34,19 @@ package com.example.anan.AAChartCore.AAChartCoreLib.AAChartConfiger;
 
 import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.os.Build;
-import android.support.annotation.RequiresApi;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.webkit.JavascriptInterface;
 import android.webkit.JsResult;
 import android.webkit.ValueCallback;
 import android.webkit.WebChromeClient;
-import android.webkit.WebResourceRequest;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAOptions;
 import com.example.anan.AAChartCore.AAChartCoreLib.AATools.AAEasyTool;
 import com.google.gson.Gson;
 import com.google.gson.internal.LinkedTreeMap;
-
-import java.lang.reflect.Array;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 
@@ -159,8 +151,7 @@ public class AAChartView extends WebView {
         if (callBack != null) {
             callBack.chartViewMoveOverEventMessage(this,eventMessageModel);
         }
-        System.out.println("显示总共调用了几次");
-
+//       Log.i("androidMethod","++++++++++++++++显示总共调用了几次");
         return "";
     }
 
@@ -307,28 +298,12 @@ public class AAChartView extends WebView {
         this.setWebViewClient(new WebViewClient() {
             @Override
             public void onPageFinished(WebView view,String url) {
-                System.out.println("图表加载完成!!!!!!!! ");
+//                Log.i("js files load","图表加载完成!!!!!!!! ");
                 configureChartOptionsAndDrawChart(aaOptions);
 
                 if (callBack != null) {
                     callBack.chartViewDidFinishedLoad(AAChartView.this);
                 }
-            }
-
-            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
-            @Override
-            public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
-                super.shouldOverrideUrlLoading(view, request);
-                String urlStr = request.getUrl().toString();
-                String jsBridgeName = "AAChartViewBridge".toLowerCase();
-                if (urlStr.startsWith(jsBridgeName)) {
-                    String message = urlStr.replace(jsBridgeName +"://?","");
-                    Gson gson = new Gson();
-                    Map messageBody = new HashMap<String, Object>();
-                    messageBody = gson.fromJson(message, messageBody.getClass());
-                }
-
-                return false;
             }
         });
     }
@@ -391,7 +366,7 @@ public class AAChartView extends WebView {
             this.evaluateJavascript("javascript:"+javaScriptString, new ValueCallback<String>() {
                 @Override
                 public void onReceiveValue(String s) {
-                    Log.i("回调信息","输出打印查看回调的结果"+s);
+//                    Log.i("call back information","输出打印查看回调的结果"+s);
                 }
             });
         } else {

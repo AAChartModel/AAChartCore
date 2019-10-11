@@ -122,7 +122,7 @@ public class CommonChartActivity extends AppCompatActivity
                 .categories(new String[]{"Jan", "Feb", "Mar", "Apr", "May", "Jun","Jul", "Aug", "Sep", "Oct", "Nov", "Dec"})
                 .legendEnabled(true)
                 .colorsTheme(new String[]{"#fe117c","#ffc069","#06caf4","#7dffc0"})
-                .animationType(AAChartAnimationType.Bounce)
+                .animationType(AAChartAnimationType.EaseOutCubic)
                 .animationDuration(1200);
     }
 
@@ -143,7 +143,7 @@ public class CommonChartActivity extends AppCompatActivity
 
             AASeriesElement element1 = new AASeriesElement()
                     .name("Predefined symbol")
-                    .fillColor(gradientColorDic)
+//                    .fillColor(gradientColorDic)
                     .data(new Object[]{0.45, 0.43, 0.50, 0.55, 0.58, 0.62, 0.83, 0.39, 0.56, 0.67, 0.50, 0.34, 0.50, 0.67, 0.58, 0.29, 0.46, 0.23, 0.47, 0.46, 0.38, 0.56, 0.48, 0.36});
 
             AASeriesElement element2 = new AASeriesElement()
@@ -281,18 +281,17 @@ public class CommonChartActivity extends AppCompatActivity
         }
 
         aaChartView.aa_refreshChartWithChartModel(aaChartModel);
-
     }
 
     @Override
     public void chartViewDidFinishedLoad(AAChartView aaChartView) {
-        System.out.println("🔥图表加载完成回调方法!!!!!!!! ");
+        System.out.println("🔥🔥🔥🔥🔥图表加载完成回调方法!!!!!!!! ");
     }
 
     @Override
     public void chartViewMoveOverEventMessage(AAChartView aaChartView, AAMoveOverEventMessageModel messageModel) {
         Gson gson = new Gson();
-        System.out.println("🚀move over event message " + gson.toJson(messageModel));
+        System.out.println("👌👌👌👌👌move over event message " + gson.toJson(messageModel));
 
     }
 }
