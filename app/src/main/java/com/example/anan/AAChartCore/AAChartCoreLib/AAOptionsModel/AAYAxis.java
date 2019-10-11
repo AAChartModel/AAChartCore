@@ -106,12 +106,12 @@ public class AAYAxis {
     }
 
     public AAYAxis max(Float prop) {
-        max = max;
+        max = prop;
         return this;
     }
 
     public AAYAxis min(Float prop) {
-        min = min;
+        min = prop;
         return this;
     }
 
