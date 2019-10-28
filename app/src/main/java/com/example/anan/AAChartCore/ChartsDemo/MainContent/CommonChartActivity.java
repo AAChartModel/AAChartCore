@@ -89,7 +89,7 @@ public class CommonChartActivity extends AppCompatActivity
                 && (position == 4 || position == 5)) {
             configureStepAreaChartAndStepLineChart();
         } else if (chartType.equals(AAChartType.Column) || chartType.equals(AAChartType.Bar)) {
-            configureConlumnChartAndBarChartStyle();
+            configureColumnChartAndBarChartStyle();
         } else if (chartType.equals(AAChartType.Area) || chartType.equals(AAChartType.Areaspline)) {
             configureAreaChartAndAreasplineChartStyle(chartType);
         } else if (chartType.equals(AAChartType.Line) || chartType.equals(AAChartType.Spline)) {
@@ -117,7 +117,7 @@ public class CommonChartActivity extends AppCompatActivity
         aaChartModel.series(new AASeriesElement[]{element1, element2, element3});
     }
 
-    private void configureConlumnChartAndBarChartStyle() {
+    private void configureColumnChartAndBarChartStyle() {
         aaChartModel
                 .categories(new String[]{"Jan", "Feb", "Mar", "Apr", "May", "Jun","Jul", "Aug", "Sep", "Oct", "Nov", "Dec"})
                 .legendEnabled(true)
@@ -284,7 +284,7 @@ public class CommonChartActivity extends AppCompatActivity
     }
 
     @Override
-    public void chartViewDidFinishedLoad(AAChartView aaChartView) {
+    public void chartViewDidFinishLoad(AAChartView aaChartView) {
         System.out.println("🔥🔥🔥🔥🔥图表加载完成回调方法!!!!!!!! ");
     }
 

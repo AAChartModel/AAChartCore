@@ -79,6 +79,8 @@ public class MainActivity extends AppCompatActivity {
             "_DataLabels_XAXis_YAxis_Legend_Style",
             "XAxisPlotBand",
             "configureTheMirrorColumnChart",
+            "configureDoubleYAxisChartOptions",
+            "configureTripleYAxesMixedChart",
             /*隐藏或显示内容*/
             "/*隐藏或显示内容*/Column Chart---柱形图--------------",
             "Bar Chart---条形图",
@@ -168,6 +170,8 @@ public class MainActivity extends AppCompatActivity {
             "_DataLabels_XAXis_YAxis_Legend_Style",
             "XAxisPlotBand",
             "configureTheMirrorColumnChart",
+            "configureDoubleYAxisChartOptions",
+            "configureTripleYAxesMixedChart",
             /*隐藏或显示内容*/
             AAChartType.Column,
             AAChartType.Bar,
@@ -220,13 +224,13 @@ public class MainActivity extends AppCompatActivity {
                     goToMixedChartActivity(position);
                 } else if (position <= 46)  {/*自定义样式图表*/
                     goToCustomStyleChartActivity(position);
-                } else if (position <= 56){/*使用AAOptions绘制图表*/
+                } else if (position <= 58){/*使用AAOptions绘制图表*/
                     goToDrawChartWithAAOptionsActivity(position);
-                } else if (position <= 63 ) { /*隐藏或显示内容*/
+                } else if (position <= 65 ) { /*隐藏或显示内容*/
                     goToHideOrShowChartSeriesActivity(position);
-                } else if (position <= 73) {/*formatter js function*/
+                } else if (position <= 75) {/*formatter js function*/
                     goToCustomTooltipWithJSFunctionActivity(position);
-                } else if (position > 73) { /*eval JS Function*/
+                } else if (position > 75) { /*eval JS Function*/
                     goToEvaluateJSStringFunctionActivity(position);
                 }
             }

@@ -11,6 +11,7 @@ public class AALegend {
     public AAItemStyle itemStyle;
     public Float x;
     public Float y;
+    public Boolean floating;
 
     public AALegend layout(String prop) {
         layout = prop;
@@ -61,5 +62,12 @@ public class AALegend {
         y = prop;
         return this;
     }
+
+    public AALegend floating(Boolean prop) {
+        floating = prop;
+        return this;
+    }
+
+
 
 }

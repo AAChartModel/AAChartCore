@@ -112,7 +112,7 @@ private String chartType;
     }
 
     @Override
-    public void chartViewDidFinishedLoad(AAChartView aaChartView) {
+    public void chartViewDidFinishLoad(AAChartView aaChartView) {
         Log.i("","🔥🔥🔥🔥🔥 AAChartView content did finish load!!!");
 
         String jsFunctionStr;

@@ -53,7 +53,7 @@ import java.util.Map;
 public class AAChartView extends WebView {
 
     public interface AAChartViewCallBack {
-        void chartViewDidFinishedLoad(AAChartView aaChartView);
+        void chartViewDidFinishLoad(AAChartView aaChartView);
         void chartViewMoveOverEventMessage(
                 AAChartView aaChartView,
                 AAMoveOverEventMessageModel messageModel
@@ -302,7 +302,7 @@ public class AAChartView extends WebView {
                 configureChartOptionsAndDrawChart(aaOptions);
 
                 if (callBack != null) {
-                    callBack.chartViewDidFinishedLoad(AAChartView.this);
+                    callBack.chartViewDidFinishLoad(AAChartView.this);
                 }
             }
         });

@@ -196,7 +196,7 @@ public class HideOrShowChartSeriesActivity extends AppCompatActivity
         }
 
         @Override
-        public void chartViewDidFinishedLoad(AAChartView aaChartView) {
+        public void chartViewDidFinishLoad(AAChartView aaChartView) {
             System.out.println("🔥图表加载完成回调方法!!!!!!!! ");
         }
 

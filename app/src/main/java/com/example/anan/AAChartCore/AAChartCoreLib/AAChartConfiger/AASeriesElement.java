@@ -35,6 +35,7 @@ package com.example.anan.AAChartCore.AAChartCoreLib.AAChartConfiger;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AADataLabels;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAMarker;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAShadow;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AATooltip;
 
 import java.util.Dictionary;
 
@@ -54,6 +55,7 @@ public class AASeriesElement {
     private Float threshold;//The threshold, also called zero level or base level. For line type series this is only used in conjunction with negativeColor. default：0.
     private String negativeColor;// The color for the parts of the graph or points that are below the threshold
     private String dashStyle;
+    private Integer yAxis;
     private AADataLabels dataLabels;
     private AAMarker marker;
     private Object step;
@@ -62,6 +64,7 @@ public class AASeriesElement {
     private Object[] zones;
     private AAShadow shadow;
     private String stack;
+    private AATooltip tooltip;
 
 
     public AASeriesElement type(String prop) {
@@ -114,6 +117,11 @@ public class AASeriesElement {
         return this;
     }
 
+    public AASeriesElement yAxis(Integer prop) {
+        yAxis = prop;
+        return this;
+    }
+
     public AASeriesElement dataLabels(AADataLabels prop) {
         dataLabels = prop;
         return this;
@@ -151,6 +159,11 @@ public class AASeriesElement {
 
     public AASeriesElement stack(String prop) {
         stack = prop;
+        return this;
+    }
+
+    public AASeriesElement tooltip(AATooltip prop) {
+        tooltip = prop;
         return this;
     }
 

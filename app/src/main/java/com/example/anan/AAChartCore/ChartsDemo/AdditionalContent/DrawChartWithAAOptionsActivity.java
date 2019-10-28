@@ -12,6 +12,7 @@ import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartLayoutType
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartLineDashStyleType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartStackingType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartSymbolStyleType;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartSymbolType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartConfiger.AAChartView;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartConfiger.AAOptionsConstructor;
@@ -25,12 +26,15 @@ import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AADataLabels;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAItemStyle;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AALabel;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AALabels;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AALegend;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAMarker;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAOptions;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAPlotBandsElement;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAPlotLinesElement;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAPlotOptions;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AASeries;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAStyle;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AASubtitle;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AATitle;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AATooltip;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAXAxis;
@@ -58,6 +62,8 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
         AAChartView aaChartView = findViewById(R.id.AAChartView);
         aaChartView.aa_drawChartWithChartOptions(aaOptions);
 
+
+
     }
 
     private AAOptions configureTheChartOptions(String chartType) {
@@ -72,6 +78,8 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
             case "_DataLabels_XAXis_YAxis_Legend_Style": return configure_DataLabels_XAXis_YAxis_Legend_Style();
             case "XAxisPlotBand": return configureXAxisPlotBand();
             case "configureTheMirrorColumnChart": return configureTheMirrorColumnChart();
+            case "configureDoubleYAxisChartOptions": return configureDoubleYAxisChartOptions();
+            case "configureTripleYAxesMixedChart": return configureTripleYAxesMixedChart();
         }
         return configureAAPlotBandsForChart();
     }
@@ -109,11 +117,14 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
                 .series(new AASeriesElement[]{element1, element2, element3, element4});
 
         AAOptions aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
+        aaOptions.xAxis.tickWidth = 1f;
+
         aaOptions.legend
                 .enabled(true)
-                .align(AAChartAlignType.Right)
+                .verticalAlign(AAChartVerticalAlignType.Top)
                 .layout(AAChartLayoutType.Vertical)
-                .verticalAlign(AAChartVerticalAlignType.Top);
+                .align(AAChartAlignType.Right)
+                ;
 
         aaOptions.yAxis.labels.format = "{value} %";//给y轴添加单位
         return aaOptions;
@@ -501,16 +512,14 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
                 .lineColor(AAColor.whiteColor())//Y轴轴线颜色
                 .gridLineWidth(0.f)//Y轴网格线宽度
                 .crosshair(aaCrosshair)
-                .labels(aaLabels
-        );
+                .labels(aaLabels);
 
         aaOptions.xAxis
                 .tickWidth(2.f)//X轴刻度线宽度
                 .lineWidth(1.5f)//X轴轴线宽度
                 .lineColor(AAColor.whiteColor())//X轴轴线颜色
                 .crosshair(aaCrosshair)
-                .labels(aaLabels
-        );
+                .labels(aaLabels);
 
 
         //设定图例项的CSS样式。只支持有关文本的CSS样式设定。
@@ -523,7 +532,7 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
          */
 
         aaOptions.legend
-                .itemStyle( new AAItemStyle()
+                .itemStyle(new AAItemStyle()
                         .color(AAColor.whiteColor())//字体颜色
                         .fontSize(13.f)//字体大小
                         .fontWeight("thin")//字体为细体字
@@ -656,4 +665,207 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
         return aaOptions;
 
     }
+
+    private AAOptions configureDoubleYAxisChartOptions()  {
+        AATitle aaTitle = new AATitle()
+                .text("");
+
+        AAXAxis aaXAxis = new AAXAxis()
+                .visible(true)
+                .min(0f)
+                .categories(new String[]{
+                        "Java", "Swift", "Python", "Ruby", "PHP", "Go","C",
+                        "C#", "C++", "Perl", "R", "MATLAB", "SQL"});
+
+        AAStyle aaYAxisTitleStyle = new AAStyle()
+                .color("#1e90ff")//Title font color
+                .fontSize(14f)//Title font size
+                .fontWeight(AAChartFontWeightType.Bold)//Title font weight
+                .textOutline("0px 0px contrast");
+
+        AALabels aaYAxisLabels = new AALabels()
+                .enabled(true)//设置 y 轴是否显示数字
+                .format("{value:.,0f}mm")//让y轴的值完整显示 而不是100000显示为100k,同时单位后缀为°C
+                .style(new AAStyle()
+                        .color("#ff0000")//yAxis Label font color
+                        .fontSize(15f)//yAxis Label font size
+                        .fontWeight(AAChartFontWeightType.Bold)//yAxis Label font weight
+                );
+
+        AAYAxis yAxisOne = new AAYAxis()
+                .visible(true)
+                .labels(aaYAxisLabels)
+                .title(new AATitle()
+                        .text("冬季降雨量")
+                        .style(aaYAxisTitleStyle))
+                .opposite(true);
+
+
+        AAYAxis yAxisTwo = new AAYAxis()
+                .visible(true)
+                .labels(aaYAxisLabels)
+                .title(new AATitle()
+                        .text("夏季降雨量")
+                        .style(aaYAxisTitleStyle));
+
+        AATooltip aaTooltip = new AATooltip()
+                .enabled(true)
+                .shared(true);
+
+        Map gradientColorDic1 = AAGradientColor.linearGradient(
+                AALinearGradientDirection.ToTop,
+                "#f54ea2",
+                "#ff7676"//颜色字符串设置支持十六进制类型和 rgba 类型
+        );
+
+        Map gradientColorDic2 = AAGradientColor.linearGradient(
+                AALinearGradientDirection.ToTop,
+                "#17ead9",
+                "#6078ea"//颜色字符串设置支持十六进制类型和 rgba 类型
+        );
+
+        AAMarker aaMarker = new AAMarker()
+                .radius(7f)//曲线连接点半径，默认是4
+                .symbol(AAChartSymbolType.Circle)//曲线点类型："circle", "square", "diamond", "triangle","triangle-down"，默认是"circle"
+                .fillColor("#ffffff")//点的填充色(用来设置折线连接点的填充色)
+                .lineWidth(3f)//外沿线的宽度(用来设置折线连接点的轮廓描边的宽度)
+                .lineColor("");//外沿线的颜色(用来设置折线连接点的轮廓描边颜色，当值为空字符串时，默认取数据点或数据列的颜色)
+
+        AASeriesElement element1 = new AASeriesElement()
+                .name("2017")
+                .type(AAChartType.Areaspline)
+                //          .borderRadius(4)
+                .color(gradientColorDic1)
+                .marker(aaMarker)
+                .yAxis(1)
+                .data(new Object[]{7.0, 6.9, 2.5, 14.5, 18.2, 21.5, 5.2, 26.5, 23.3, 45.3, 13.9, 9.6});
+
+        AASeriesElement element2 = new AASeriesElement()
+                .name("2018")
+                .type(AAChartType.Column)
+                .color(gradientColorDic2)
+                .yAxis(0)
+                .data(new Object[]{7.0, 6.9, 2.5, 14.5, 18.2, 21.5, 5.2, 26.5, 23.3, 45.3, 13.9, 9.6});
+
+        AAOptions aaOptions = new AAOptions()
+                .title(aaTitle)
+                .xAxis(aaXAxis)
+                .yAxisArray(new AAYAxis[]{yAxisOne,yAxisTwo})
+                .tooltip(aaTooltip)
+                .series(new AASeriesElement[]{element1,element2});
+
+        return aaOptions;
+    }
+
+    private AAOptions configureTripleYAxesMixedChart()  {
+        String[] colorsThemeArr = new String[]{"red","mediumspringgreen","deepskyblue",};
+
+        AATitle aaTitle = new AATitle()
+                .text("东京月平均天气数据");
+
+        AASubtitle aaSubtitle = new AASubtitle()
+                .text("数据来源: WorldClimate.com");
+
+        AAXAxis aaXAxis = new AAXAxis()
+                .visible(true)
+                .min(0f)
+                .categories(new String[]{"一月", "二月", "三月", "四月", "五月", "六月",
+                        "七月", "八月", "九月", "十月", "十一月", "十二月"});
+
+        AAYAxis yAxis1 = new AAYAxis()
+                .visible(true)
+                .gridLineWidth(0f)
+                .labels(new AALabels()
+                        .enabled(true)//设置 y 轴是否显示数字
+                        .format("{value}°C")
+                        .style(new AAStyle()
+                                .color(colorsThemeArr[2])//yAxis Label font color
+                        ))
+                .title(new AATitle()
+                        .text("温度")
+                        .style(new AAStyle()
+                                .color(colorsThemeArr[2])))
+                .opposite(true);
+
+        AAYAxis yAxis2 = new AAYAxis()
+                .visible(true)
+                .gridLineWidth(0f)
+                .labels(new AALabels()
+                        .enabled(true)//设置 y 轴是否显示数字
+                        .format("{value}°mm")
+                        .style(new AAStyle()
+                                .color(colorsThemeArr[0])//yAxis Label font color
+                        ))
+                .title(new AATitle()
+                        .text("降雨量")
+                        .style(new AAStyle()
+                                .color(colorsThemeArr[0])));
+
+        AAYAxis yAxis3 = new AAYAxis()
+                .visible(true)
+                .gridLineWidth(0f)
+                .labels(new AALabels()
+                        .enabled(true)//设置 y 轴是否显示数字
+                        .format("{value}°mb")
+                        .style(new AAStyle()
+                                .color(colorsThemeArr[1])//yAxis Label font color
+                        ))
+                .title(new AATitle()
+                        .text("海平面气压")
+                        .style(new AAStyle()
+                                .color(colorsThemeArr[1])))
+                .opposite(true);
+
+
+        AATooltip aaTooltip = new AATooltip()
+                .enabled(true)
+                .shared(true);
+
+        AALegend aaLegend = new AALegend()
+                .enabled(true)
+                .floating(true)
+                .layout(AAChartLayoutType.Vertical)
+                .align(AAChartAlignType.Left)
+                .x(80f)
+                .verticalAlign(AAChartVerticalAlignType.Top)
+                .y(55f);
+
+        AASeriesElement element1 = new AASeriesElement()
+                .name("降雨量")
+                .type(AAChartType.Column)
+                .yAxis(1)
+                .data(new Object[]{49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4})
+                .tooltip(new AATooltip()
+                        .valueSuffix(" mm"));
+
+        AASeriesElement element2 = new AASeriesElement()
+                .name("海平面气压")
+                .type(AAChartType.Line)
+                .yAxis(2)
+                .data(new Object[]{1016, 1016, 1015.9, 1015.5, 1012.3, 1009.5, 1009.6, 1010.2, 1013.1, 1016.9, 1018.2, 1016.7})
+                .dashStyle(AAChartLineDashStyleType.ShortDot)
+                .tooltip(new AATooltip()
+                        .valueSuffix(" mb"));
+
+        AASeriesElement element3 = new AASeriesElement()
+                .name("温度")
+                .type(AAChartType.Line)
+                .yAxis(0)
+                .data(new Object[]{7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6})
+                .tooltip(new AATooltip()
+                        .valueSuffix(" ℃"));
+
+        AAOptions aaOptions = new AAOptions()
+                .title(aaTitle)
+                .subtitle(aaSubtitle)
+                .colors(colorsThemeArr)
+                .xAxis(aaXAxis)
+                .yAxisArray(new AAYAxis[]{yAxis1,yAxis2,yAxis3})
+                .tooltip(aaTooltip)
+                .legend(aaLegend)
+                .series(new AASeriesElement[]{element1,element2,element3,});
+
+        return aaOptions;
+    }
+
 }
