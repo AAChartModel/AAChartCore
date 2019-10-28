@@ -11,6 +11,7 @@ import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartConfiger.AAChartView;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartConfiger.AASeriesElement;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartAnimationType;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAPie;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAWaterfall;
 import com.example.anan.AAChartCore.AAChartCoreLib.AATools.AAGradientColor;
 import com.example.anan.AAChartCore.R;
@@ -90,9 +91,10 @@ public class SpecialChartActivity extends AppCompatActivity {
               .subtitle("virtual data")
               .dataLabelsEnabled(true)//是否直接显示扇形图数据
               .yAxisTitle("℃")
-              .series(new AASeriesElement[] {
-                      new AASeriesElement()
+              .series(new AAPie[] {
+                      new AAPie()
                               .name("Language market shares")
+                              .innerSize("20%")
                               .data(new Object[][] {
                               {"Java"  ,67},
                               {"Swift",999},

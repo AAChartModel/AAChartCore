@@ -339,7 +339,7 @@ public class AAChartModel {
         return this;
     }
 
-    public AAChartModel series(AASeriesElement[] prop) {
+    public AAChartModel series(Object[] prop) {
         series = prop;
         return this;
     }

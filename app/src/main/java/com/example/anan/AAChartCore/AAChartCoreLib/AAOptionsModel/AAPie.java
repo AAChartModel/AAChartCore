@@ -1,8 +1,11 @@
 package com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel;
 
 public class AAPie {
+    public String name;
+    public Object[] data;
     public AADataLabels dataLabels;
     public Float size;
+    public String innerSize;
     public Boolean allowPointSelect;
     public String cursor;
     public Boolean showInLegend;
@@ -11,6 +14,16 @@ public class AAPie {
     public Float depth;
     public Float center;
 
+    public AAPie name(String prop) {
+        name = prop;
+        return this;
+    }
+
+    public AAPie data(Object[] prop) {
+        data = prop;
+        return this;
+    }
+
     public AAPie dataLabels(AADataLabels prop) {
         dataLabels = prop;
         return this;
@@ -18,6 +31,11 @@ public class AAPie {
 
     public AAPie size(Float prop) {
         size = prop;
+        return this;
+    }
+
+    public AAPie innerSize(String prop) {
+        innerSize = prop;
         return this;
     }
 
