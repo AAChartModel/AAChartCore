@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
             "/*使用AAOptions绘制图表*/customLegendStyle-----------------",
             "drawChartWithOptionsOne",
             "AAPlotLinesForChart",
-            "customAATooltipWithJSFuntion",
+            "customAATooltipWithJSFunction",
             "customXAxisCrosshairStyle",
             "XAxisLabelsFontColorWithHTMLString",
             "XAxisLabelsFontColorAndFontSizeWithHTMLString",
@@ -81,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
             "configureTheMirrorColumnChart",
             "configureDoubleYAxisChartOptions",
             "configureTripleYAxesMixedChart",
+            "customLineChartDataLabelsFormat",
             /*隐藏或显示内容*/
             "/*隐藏或显示内容*/Column Chart---柱形图--------------",
             "Bar Chart---条形图",
@@ -90,7 +91,8 @@ public class MainActivity extends AppCompatActivity {
             "Step Line Chart--- 直方折线图",
             "Line Chart---折线图",
             "Spline Chart---曲线图",
-            "简单字符串拼接",
+            /*自定义 formatter 函数*/
+            "/*自定义 formatter 函数*/简单字符串拼接-----------------",
             "自定义不同单位后缀",
             "值为0时,在tooltip中不显示",
             "自定义多彩颜色文字",
@@ -100,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
             "自定义分组堆积柱状图tooltip内容",
             "双 X 轴镜像图表",
             /*执行由 JavaScript 字符串映射转换成的 js function 函数*/
-            "eval JS function 1--------------------",
+            "执行 js function 函数eval JS function 1--------------------",
             "eval JS function 2",
             "eval JS function 3"
 
@@ -163,7 +165,7 @@ public class MainActivity extends AppCompatActivity {
             "customLegendStyle",
             "AAPlotBandsForChart",
             "AAPlotLinesForChart",
-            "customAATooltipWithJSFuntion",
+            "customAATooltipWithJSFunction",
             "customXAxisCrosshairStyle",
             "XAxisLabelsFontColorWithHTMLString",
             "XAxisLabelsFontColorAndFontSizeWithHTMLString",
@@ -172,6 +174,7 @@ public class MainActivity extends AppCompatActivity {
             "configureTheMirrorColumnChart",
             "configureDoubleYAxisChartOptions",
             "configureTripleYAxesMixedChart",
+            "customLineChartDataLabelsFormat",
             /*隐藏或显示内容*/
             AAChartType.Column,
             AAChartType.Bar,
@@ -181,7 +184,7 @@ public class MainActivity extends AppCompatActivity {
             AAChartType.Line,
             AAChartType.Line,
             AAChartType.Spline,
-            /*隐藏或显示内容*/
+            /*自定义 formatter 函数*/
             "formatterFunction1",
             "formatterFunction2",
             "formatterFunction3",
@@ -191,6 +194,7 @@ public class MainActivity extends AppCompatActivity {
             "customYAxisLabels2",
             "customStackedAndGroupedColumnChartTooltip",
             "customDoubleXAxesChart",
+            /*执行由 JavaScript 字符串映射转换成的 js function 函数*/
             "evalJSFunction1",
             "evalJSFunction2",
             "evalJSFunction3"
@@ -224,13 +228,13 @@ public class MainActivity extends AppCompatActivity {
                     goToMixedChartActivity(position);
                 } else if (position <= 46)  {/*自定义样式图表*/
                     goToCustomStyleChartActivity(position);
-                } else if (position <= 58){/*使用AAOptions绘制图表*/
+                } else if (position <= 59){/*使用AAOptions绘制图表*/
                     goToDrawChartWithAAOptionsActivity(position);
-                } else if (position <= 65 ) { /*隐藏或显示内容*/
+                } else if (position <= 66 ) { /*隐藏或显示内容*/
                     goToHideOrShowChartSeriesActivity(position);
-                } else if (position <= 75) {/*formatter js function*/
+                } else if (position <= 76) {/*formatter js function*/
                     goToCustomTooltipWithJSFunctionActivity(position);
-                } else if (position > 75) { /*eval JS Function*/
+                } else if (position > 76) { /*eval JS Function*/
                     goToEvaluateJSStringFunctionActivity(position);
                 }
             }

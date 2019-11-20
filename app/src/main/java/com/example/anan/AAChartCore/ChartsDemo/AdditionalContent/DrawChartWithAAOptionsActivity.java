@@ -71,7 +71,7 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
             case "customLegendStyle": return customChartLegendStyle();
             case "AAPlotBandsForChart": return  configureAAPlotBandsForChart();
             case "AAPlotLinesForChart": return configureAAPlotLinesForChart();
-            case "customAATooltipWithJSFuntion": return customAATooltipWithJSFunction();
+            case "customAATooltipWithJSFunction": return customAATooltipWithJSFunction();
             case "customXAxisCrosshairStyle": return customXAxisCrosshairStyle();
             case "XAxisLabelsFontColorWithHTMLString": return configureXAxisLabelsFontColorWithHTMLString();
             case "XAxisLabelsFontColorAndFontSizeWithHTMLString": return configureXAxisLabelsFontColorAndFontSizeWithHTMLString();
@@ -80,6 +80,7 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
             case "configureTheMirrorColumnChart": return configureTheMirrorColumnChart();
             case "configureDoubleYAxisChartOptions": return configureDoubleYAxisChartOptions();
             case "configureTripleYAxesMixedChart": return configureTripleYAxesMixedChart();
+            case "customLineChartDataLabelsFormat": return customLineChartDataLabelsFormat();
         }
         return configureAAPlotBandsForChart();
     }
@@ -867,5 +868,49 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
 
         return aaOptions;
     }
+
+    private AAOptions customLineChartDataLabelsFormat() {
+        AAChartModel aaChartModel = new AAChartModel()
+                //选择图表类型
+                .chartType(AAChartType.Line)
+                .colorsTheme(new String[]{"#465DBC"})
+                //title标题
+                .title("最近三十分钟数据展示")
+                //title字体大小
+                .titleFontSize(20f)
+                //title字体颜色
+                .titleFontColor("#0F0F0F")
+                //坐标轴字体颜色
+                .axesTextColor("#0F0F0F")
+                //背景颜色
+                .zoomType("xy")
+                .backgroundColor("#FFFFFF")
+                //数据是否显示
+                .dataLabelsEnabled(true)
+                //x轴是否显示数据
+                .xAxisLabelsEnabled(true)
+                //x轴显示的数据间隔
+                .xAxisTickInterval(5)
+                //y轴是否显示数据
+                .yAxisLabelsEnabled(true)
+                //y轴标题
+                .yAxisTitle("湿度%")
+                //y轴最大值
+                .yAxisMax(100.0f)
+                //y轴最小值
+                .yAxisMin(0.0f)
+                .yAxisAllowDecimals(true)
+                //y轴数据
+                .series(new AASeriesElement[]{
+                        new AASeriesElement()
+                                .name("湿度")
+                                .data(new Object[]{44.0999, 44.8880, 44.7770, 43.0066, 43.6660, 43.5550, }),
+                });
+
+        AAOptions aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
+        aaOptions.plotOptions.line.dataLabels.format = "{point.y:.4f} ℃"; //保留 Y 轴值的小数点后 4 位
+        return aaOptions;
+    }
+
 
 }
