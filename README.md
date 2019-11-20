@@ -66,8 +66,8 @@
 
 ### Manually  (old school way)
 
-1. Download whole project demo of `AAInfographicsDemo`
-2. Drag the folder `AAInfographics` into your project.
+1. Download whole project demo of `AAChartCore`
+2. Drag the folder `AAChartCoreLib` and assets files into your project.
 
 ## Usage
 
