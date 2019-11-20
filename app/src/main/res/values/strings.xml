@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ChartCore-Slim</string>
+    <string name="app_name">AAChartCore</string>
     <string name="title_activity_common_chart">CommonChartActivity</string>
     <string name="title_activity_special_chart">SpecialChartActivity</string>
 </resources>
