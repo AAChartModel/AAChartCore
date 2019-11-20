@@ -69,20 +69,24 @@ public class CommonChartActivity extends AppCompatActivity
                 .name("Berlin")
                 .data(new Object[]{3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8});
 
-        aaChartModel = new AAChartModel()
-                .chartType(chartType)
-                .title("title")
-                .subtitle("subtitle")
+        AAChartModel aaChartModel = new AAChartModel()
+                .chartType(AAChartType.Area)
+                .title("THE HEAT OF PROGRAMMING LANGUAGE")
+                .subtitle("Virtual Data")
                 .backgroundColor("#4b2b7f")
+                .categories(new String[]{"Java","Swift","Python","Ruby", "PHP","Go","C","C#","C++"})
                 .dataLabelsEnabled(false)
                 .yAxisGridLineWidth(0f)
                 .series(new AASeriesElement[]{element1, element2, element3, element4});
 
 
+        this.aaChartModel = aaChartModel;
         configureTheStyleForDifferentTypeChart(chartType,position);
 
         return aaChartModel;
     }
+
+
 
     void configureTheStyleForDifferentTypeChart(String chartType,int position) {
         if ((chartType.equals(AAChartType.Area) || chartType.equals(AAChartType.Line))
