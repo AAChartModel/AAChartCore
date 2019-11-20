@@ -1,6 +1,6 @@
 package com.example.anan.AAChartCore.AAChartCoreLib.AATools;
 
-public class AAEasyTool {
+public class AAJSStringPurer {
 
     public static String pureJavaScriptFunctionString(String jsFunctionStr)  {
         String pureJSFunctionStr = jsFunctionStr;

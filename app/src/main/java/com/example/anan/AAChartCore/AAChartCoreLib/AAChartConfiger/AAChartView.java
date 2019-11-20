@@ -43,7 +43,7 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAOptions;
-import com.example.anan.AAChartCore.AAChartCoreLib.AATools.AAEasyTool;
+import com.example.anan.AAChartCore.AAChartCoreLib.AATools.AAJSStringPurer;
 import com.google.gson.Gson;
 import com.google.gson.internal.LinkedTreeMap;
 import java.util.HashMap;
@@ -284,7 +284,7 @@ public class AAChartView extends WebView {
     }
 
     public void aa_evaluateTheJavaScriptStringFunction(String jsFunctionStr) {
-        String pureJSFunctionStr = AAEasyTool.pureJavaScriptFunctionString(jsFunctionStr);
+        String pureJSFunctionStr = AAJSStringPurer.pureJavaScriptFunctionString(jsFunctionStr);
 
         String jsFunctionNameStr = "evaluateTheJavaScriptStringFunction('"
                 + pureJSFunctionStr + "')";

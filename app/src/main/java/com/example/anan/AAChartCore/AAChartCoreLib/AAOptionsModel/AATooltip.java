@@ -1,6 +1,6 @@
 package com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel;
 
-import com.example.anan.AAChartCore.AAChartCoreLib.AATools.AAEasyTool;
+import com.example.anan.AAChartCore.AAChartCoreLib.AATools.AAJSStringPurer;
 
 public class AATooltip {
     public String backgroundColor;
@@ -56,7 +56,7 @@ public class AATooltip {
 
     public AATooltip formatter(String prop) {
         String pureJSFunctionStr = "(" + prop + ")";
-        pureJSFunctionStr = AAEasyTool.pureJavaScriptFunctionString(pureJSFunctionStr);
+        pureJSFunctionStr = AAJSStringPurer.pureJavaScriptFunctionString(pureJSFunctionStr);
         formatter = pureJSFunctionStr;
         return this;
     }
