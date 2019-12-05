@@ -296,6 +296,7 @@ you can get the customized tooltip style chart like this👇
 ### Supported zoom guesture types for now
 ```java
     public interface AAChartZoomType {
+        String None = "none";
         String X  = "x";
         String Y  = "y";
         String XY = "xy";

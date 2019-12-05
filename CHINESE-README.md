@@ -300,11 +300,12 @@ public class AAMoveOverEventMessageModel {
 ### 当前已支持的图表手势缩放类型共有三种,说明如下
 
 ```java
-    public interface AAChartZoomType {
-        String X  = "x";
-        String Y  = "y";
-        String XY = "xy";
-    }
+public interface AAChartZoomType {
+    String None = "none";   //禁用图表手势缩放功能(默认禁用手势缩放)
+    String X    = "x";      //支持图表 X 轴横向缩放
+    String Y    = "y";      //支持图表 Y 轴纵向缩放
+    String XY   = "xy";     //支持图表 Y 轴纵向缩放
+}
 ```
 
 NOTE:例如,设置了`AAChartModel`的缩放属性`zoomType`为`AAChartZoomType.X`,并且将图表进行了手势放大之后,这时候如果想要左右滑动图表,可以使用 **双指点按** 屏幕中的`AAChartView`视图区域进行 **左右拖动** 即可.同时屏幕的右上角会自动出现一个标题为 **"恢复缩放"** 的按钮,点击恢复缩放,图表大小和位置将会回归到原初的样式.

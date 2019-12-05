@@ -36,6 +36,7 @@ import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartAnimationT
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartStackingType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartSymbolStyleType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartType;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartZoomType;
 
 public class AAChartModel {
 
@@ -357,7 +358,7 @@ public class AAChartModel {
         stacking              = AAChartStackingType.False;
         xAxisReversed         = false;
         yAxisReversed         = false;
-        zoomType              = "x";
+        zoomType              = AAChartZoomType.None;
         dataLabelsEnabled     = false;
         markerSymbolStyle     = AAChartSymbolStyleType.Normal;
         colorsTheme           = new String[]{"#fe117c","#ffc069","#06caf4","#7dffc0"};//默认的颜色数组(必须要添加默认数组,否则就会出错)
