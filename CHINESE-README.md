@@ -14,7 +14,7 @@
 [![Percentage of issues still open](http://isitmaintained.com/badge/open/AAChartModel/AAChartKit-Swift.svg)](http://isitmaintained.com/project/AAChartModel/AAChartKit-Swift "Percentage of issues still open")
 
 
-## [ **English Document 🇬🇧** ](https://github.com/AAChartModel-Swift/AAChartKit)  |  [ **简体中文文档 🇨🇳** ](https://github.com/AAChartModel/AAChartKit-Swift/blob/master/CHINESE-README.md)| [ **繁體中文文檔 🇭🇰** ](https://github.com/AAChartModel/AAChartKit-Swift/blob/master/TRADITIONAL-CHINESE-README.md)
+## [ **English Document 🇬🇧** ](https://github.com/AAChartModel/AAChartCore)  |  [ **简体中文文档 🇨🇳** ](https://github.com/AAChartModel/AAChartCore/blob/master/CHINESE-README.md)| [ **繁體中文文檔 🇭🇰** ](https://github.com/AAChartModel/AAChartCore/blob/master/TRADITIONAL-CHINESE-README.md)
 
 ### 您所喜爱的`AAChartCore`开源图表框架同时更有`Kotlin`版本可供使用,详情请点击以下链接
 ### 传送门
@@ -29,11 +29,14 @@
 
 1. **环境友好,兼容性强**. 支持 `Kotlin`语言,配置简单.同时更有 Objective-C 版本[AAChartKit](https://github.com/AAChartModel/AAChartKit)可供使用.
 1. **功能强大,类型多样**. 支持`柱状图` 、`条形图` 、`折线图` 、`曲线图` 、`折线填充图` 、`曲线填充图`、`雷达图`、`极地图`、`扇形图`、`气泡图`、`散点图`、`区域范围图`、`柱形范围图`、`面积范围图`、`面积范围均线图`、`直方折线图`、`直方折线填充图`、`箱线图`、`瀑布图`、`热力图`、`桑基图`、`金字塔图`、`漏斗图`、等二十几种类型的图形,不可谓之不多.
+1. **现代化声明式语法**. 与过往的命令式编程技巧不同, 在 AAChartKit 中绘制任意一款自定义图表, 你完全无需关心挠人的内在实现细节. 描述你所要得到的, 你便得到你所描述的.
+1  **细致入微的用户自定义功能**. 基础的`主标题`、`副标题`、`X 轴`、`Y 轴`自不必谈, 从纵横的`交互准星线`、跟手的`浮动提示框`, 到切割数值的`值域分割线`、`值域分割颜色带`, 再到细小的`线条`类型,`标记点`样式,  各种细微的图形子组件, 应有尽有. 以至于不论是`极简`、抽象的小清新风格, 还是纷繁`复杂`的严肃商业派头, 均可完美驾驭.
 1. **交互式图形动画**. 有着清晰和充满细节的用户交互方式,与此同时,图形渲染`动画`效果细腻精致,流畅优美.有三十多种以上渲染动画效果可供选择,用户可自由设置渲染图形时的动画时间和动画类型,关于图形渲染动画类型,具体参见[ AAChartCore 动画类型](#当前已支持的图表渲染动画类型有三十种以上说明如下).
-1. **支持手势缩放**.支持图表的手势缩放和拖动阅览,手势缩放类型具体参见[ AAChartCore 手势缩放类型](#当前已支持的图表手势缩放类型共有三种说明如下),默认禁用手势缩放功能.
 1. **极简主义**. `AAChartView + AAChartModel = Chart`,在 ***AAChartCore*** 数据可视化图形框架当中,遵循这样一个极简主义公式:`图表视图控件 + 图表模型 = 你想要的图表`.同另一款强大、精美而又易用的开源图形框架 [AAChartKit](https://github.com/AAChartModel/AAChartKit)完全一致.
 1. **链式编程语法**. 支持系统类推荐的 `链式编程语法`,一行代码即可配置完成 `AAChartModel`模型对象实例.
 1. **简洁清晰,轻便易用**. 最少仅仅需要 **五行代码** 即可完成整个图表的绘制工作(使用链式编程语法配置 `AAChartModel` 实例对象时,无论你写多少行代码,理论上只能算作是一行). 😜😜😜
+1. **交互事件回调**       支持图表的[用户点击事件及单指滑动事件](#支持监听用户点击事件及单指滑动事件), 可在此基础上实现双表联动乃至多表联动,以及其他更多更复杂的自定义用户交互效果.
+1. **支持手势缩放**.支持图表的手势缩放和拖动阅览,手势缩放类型具体参见[ AAChartCore 手势缩放类型](#当前已支持的图表手势缩放类型共有三种说明如下),默认禁用手势缩放功能.
 
 ***
 
@@ -267,12 +270,14 @@ public class AAMoveOverEventMessageModel {
 
 ### 支持添加值域分割功能⚔
 
-* 添加`颜色带🎀`值域分割
+* 添加值域分割颜色带 `plotBands 🎀`
 ![plotBandsChart](https://raw.githubusercontent.com/AAChartModel/Gallery/master/AAChartKit/plotBandsChart.png)
 
-
-* 添加`颜色线🧶`值域分割
+* 添加值域分割颜色线 `plotLines 🧶`
 ![plotLinesChart](https://raw.githubusercontent.com/AAChartModel/Gallery/master/AAChartKit/plotLinesChart.png)
+
+* 添加值域分割数据列分区 `zones 🧱`
+![seriesZonesChart](https://raw.githubusercontent.com/AAChartModel/Gallery/master/AAChartKit/seriesZonesChart.png)
 
 ### 当前已支持的图表类型有十种以上,说明如下
 
@@ -303,8 +308,8 @@ public class AAMoveOverEventMessageModel {
 public interface AAChartZoomType {
     String None = "none";   //禁用图表手势缩放功能(默认禁用手势缩放)
     String X    = "x";      //支持图表 X 轴横向缩放
-    String Y    = "y";      //支持图表 Y 轴纵向缩放
-    String XY   = "xy";     //支持图表 Y 轴纵向缩放
+    String Y    = "y";      //支持图表 Y 轴纵向缩放X
+    String XY   = "xy";     //支持图表 XY 轴纵向缩放
 }
 ```
 
