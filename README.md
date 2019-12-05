@@ -67,7 +67,7 @@
 ### Manually  (old school way)
 
 1. Download whole project demo of `AAChartCore`
-2. Drag the folder `AAChartCoreLib` and assets files into your project.
+2. Drag the  `AAChartCoreLib folder` and `assets files` into your project.
 
 ## Usage
 
