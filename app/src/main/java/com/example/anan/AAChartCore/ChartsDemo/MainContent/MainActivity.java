@@ -9,7 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartType;
-import com.example.anan.AAChartCore.ChartsDemo.AdditionalContent.CustomTooltipWithJSFunctionActivity;
+import com.example.anan.AAChartCore.ChartsDemo.AdditionalContent.JSFormatterFunctionActivity;
 import com.example.anan.AAChartCore.ChartsDemo.AdditionalContent.DrawChartWithAAOptionsActivity;
 import com.example.anan.AAChartCore.ChartsDemo.AdditionalContent.EvaluateJSStringFunctionActivity;
 import com.example.anan.AAChartCore.ChartsDemo.AdditionalContent.HideOrShowChartSeriesActivity;
@@ -286,7 +286,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     void goToCustomTooltipWithJSFunctionActivity(int position) {
-        Intent intent = new Intent(this, CustomTooltipWithJSFunctionActivity.class);
+        Intent intent = new Intent(this, JSFormatterFunctionActivity.class);
         intent.putExtra("chartType", chartTypeArr[position]);
 
         startActivity(intent);

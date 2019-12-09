@@ -31,7 +31,7 @@ import com.example.anan.AAChartCore.R;
 
 import java.util.Map;
 
-public class CustomTooltipWithJSFunctionActivity extends AppCompatActivity {
+public class JSFormatterFunctionActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
