@@ -1098,7 +1098,7 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
                                 .width(1.5f)
                                 .label(new AALabel()
                                         .text("实际价格")
-                                .style(AAChartLineDashStyleType.LongDashDotDot)
+                                .style(AAChartLineDashStyleType.ShortDashDotDot)
 //                                .rotation(90)
                         )
                 })
@@ -1107,7 +1107,8 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
         AAYAxis yAxis1 = new AAYAxis()
                 .visible(true)
                 .lineWidth(1f)
-                .title(new AATitle())
+                .title(new AATitle()
+                        .text(""))
                 .tickWidth(1f)
                 .tickLength(5f)
                 .tickPosition("inside")
@@ -1122,7 +1123,8 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
                 .opposite(true)
                 .visible(true)
                 .lineWidth(1f)
-                .title(new AATitle())
+                .title(new AATitle()
+                        .text(""))
                 .tickWidth(1f)
                 .tickLength(5f)
                 .tickPosition("inside")
@@ -1249,6 +1251,7 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
                 .headerFormat("<small>{point.key} 摄氏度</small><table>")
                 .pointFormat("<tr><td style=\\\"color: {series.color}\\\">{series.name}: </td>"
                                 + "<td style=\\\"text-align: right\\\"><b>{point.y}EUR</b></td></tr>")
+                .footerFormat("</table>")
                 .valueDecimals(2)
         ;
         return aaOptions;
