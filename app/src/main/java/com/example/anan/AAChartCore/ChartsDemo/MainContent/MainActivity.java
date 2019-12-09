@@ -82,6 +82,9 @@ public class MainActivity extends AppCompatActivity {
             "configureDoubleYAxisChartOptions",
             "configureTripleYAxesMixedChart",
             "customLineChartDataLabelsFormat",
+            "configureDoubleYAxesAndColumnLineMixedChart",
+            "configureDoubleYAxesMarketDepthChart",
+            "customAreaChartTooltipStyleLikeHTMLTable",
             /*隐藏或显示内容*/
             "/*隐藏或显示内容*/Column Chart---柱形图--------------",
             "Bar Chart---条形图",
@@ -106,7 +109,6 @@ public class MainActivity extends AppCompatActivity {
             "执行 js function 函数eval JS function 1--------------------",
             "eval JS function 2",
             "eval JS function 3"
-
     };
 
     String[] chartTypeArr = {
@@ -176,6 +178,9 @@ public class MainActivity extends AppCompatActivity {
             "configureDoubleYAxisChartOptions",
             "configureTripleYAxesMixedChart",
             "customLineChartDataLabelsFormat",
+            "configureDoubleYAxesAndColumnLineMixedChart",
+            "configureDoubleYAxesMarketDepthChart",
+            "customAreaChartTooltipStyleLikeHTMLTable",
             /*隐藏或显示内容*/
             AAChartType.Column,
             AAChartType.Bar,
@@ -230,11 +235,11 @@ public class MainActivity extends AppCompatActivity {
                     goToMixedChartActivity(position);
                 } else if (position <= 46)  {/*自定义样式图表*/
                     goToCustomStyleChartActivity(position);
-                } else if (position <= 59){/*使用AAOptions绘制图表*/
+                } else if (position <= 62){/*使用AAOptions绘制图表*/
                     goToDrawChartWithAAOptionsActivity(position);
-                } else if (position <= 66 ) { /*隐藏或显示内容*/
+                } else if (position <= 69 ) { /*隐藏或显示内容*/
                     goToHideOrShowChartSeriesActivity(position);
-                } else if (position <= 77) {/*formatter js function*/
+                } else if (position <= 80) {/*formatter js function*/
                     goToCustomTooltipWithJSFunctionActivity(position);
                 } else { /*eval JS Function*/
                     goToEvaluateJSStringFunctionActivity(position);

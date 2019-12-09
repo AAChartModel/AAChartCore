@@ -49,6 +49,7 @@ public class AASeriesElement {
     private String name;
     private Object[] data;
     private Float lineWidth;//折线图、曲线图、直方折线图、折线填充图、曲线填充图、直方折线填充图的线条宽度
+    private Float borderWidth;
     private Object color;
     private Object fillColor;
     private Float fillOpacity;//折线填充图、曲线填充图、直方折线填充图等填充图类型的填充颜色透明度
@@ -84,6 +85,11 @@ public class AASeriesElement {
 
     public AASeriesElement lineWidth(Float prop) {
         lineWidth = prop;
+        return this;
+    }
+
+    public AASeriesElement borderWidth(Float prop) {
+        borderWidth = prop;
         return this;
     }
 

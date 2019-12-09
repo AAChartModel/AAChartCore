@@ -41,9 +41,12 @@ import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAXAxis;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAYAxis;
 import com.example.anan.AAChartCore.AAChartCoreLib.AATools.AAColor;
 import com.example.anan.AAChartCore.AAChartCoreLib.AATools.AAGradientColor;
+import com.example.anan.AAChartCore.AAChartCoreLib.AATools.AAJSStringPurer;
 import com.example.anan.AAChartCore.AAChartCoreLib.AATools.AALinearGradientDirection;
 import com.example.anan.AAChartCore.R;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -81,6 +84,9 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
             case "configureDoubleYAxisChartOptions": return configureDoubleYAxisChartOptions();
             case "configureTripleYAxesMixedChart": return configureTripleYAxesMixedChart();
             case "customLineChartDataLabelsFormat": return customLineChartDataLabelsFormat();
+            case "configureDoubleYAxesAndColumnLineMixedChart": return configureDoubleYAxesAndColumnLineMixedChart();
+            case "configureDoubleYAxesMarketDepthChart": return configureDoubleYAxesMarketDepthChart();
+            case "customAreaChartTooltipStyleLikeHTMLTable": return customAreaChartTooltipStyleLikeHTMLTable();
         }
         return configureAAPlotBandsForChart();
     }
@@ -125,7 +131,7 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
                 .verticalAlign(AAChartVerticalAlignType.Top)
                 .layout(AAChartLayoutType.Vertical)
                 .align(AAChartAlignType.Right)
-                ;
+        ;
 
         aaOptions.yAxis.labels.format = "{value} %";//给y轴添加单位
         return aaOptions;
@@ -397,11 +403,11 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
                 .dataLabelsEnabled(false)
                 .markerRadius(0f)
                 .series(new AASeriesElement[] {
-                        new AASeriesElement()
-                                .name("Berlin Hot")
-                                .color(AAGradientColor.mysticMauveColor())
-                                .data(new Object[]{7.0, 6.9, 2.5, 14.5, 18.2, 21.5, 5.2, 26.5, 23.3, 45.3, 13.9, 9.6})
-                        ,
+                                new AASeriesElement()
+                                        .name("Berlin Hot")
+                                        .color(AAGradientColor.mysticMauveColor())
+                                        .data(new Object[]{7.0, 6.9, 2.5, 14.5, 18.2, 21.5, 5.2, 26.5, 23.3, 45.3, 13.9, 9.6})
+                                ,
                         }
                 );
 
@@ -435,11 +441,11 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
                 .dataLabelsEnabled(false)
                 .markerRadius(0f)
                 .series(new AASeriesElement[] {
-                        new AASeriesElement()
-                                .name("Berlin Hot")
-                                .color(AAGradientColor.deepSeaColor())
-                                .data(new Object[]{7.0, 6.9, 2.5, 14.5, 18.2, 21.5, 5.2, 26.5, 23.3, 45.3, 13.9, 9.6})
-                        ,
+                                new AASeriesElement()
+                                        .name("Berlin Hot")
+                                        .color(AAGradientColor.deepSeaColor())
+                                        .data(new Object[]{7.0, 6.9, 2.5, 14.5, 18.2, 21.5, 5.2, 26.5, 23.3, 45.3, 13.9, 9.6})
+                                ,
                         }
                 );
 
@@ -484,13 +490,13 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
         AAOptions aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
         aaOptions.plotOptions.areaspline
                 .dataLabels(new AADataLabels()
-                .enabled(true)
-                .style(new AAStyle()
-                        .color(AAColor.blackColor())
-                        .fontSize(14.f)
-                        .fontWeight("thin")
-                        .textOutline("0px 0px contrast")//文字轮廓描边
-                ));
+                        .enabled(true)
+                        .style(new AAStyle()
+                                .color(AAColor.blackColor())
+                                .fontSize(14.f)
+                                .fontWeight("thin")
+                                .textOutline("0px 0px contrast")//文字轮廓描边
+                        ));
 
 
         AACrosshair aaCrosshair = new AACrosshair()
@@ -538,7 +544,7 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
                         .fontSize(13.f)//字体大小
                         .fontWeight("thin")//字体为细体字
 
-        );
+                );
 
         return aaOptions;
     }
@@ -647,19 +653,19 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
                                 .animation(new AAAnimation()
                                         .duration(800)
                                         .easing(AAChartAnimationType.EaseInCirc)))
-                .column(new AAColumn()
-                        .grouping(false)
-                        .borderWidth(0f)
-                        .borderRadius(5f)))
+                        .column(new AAColumn()
+                                .grouping(false)
+                                .borderWidth(0f)
+                                .borderRadius(5f)))
                 .series(new AASeriesElement[]{
                         new AASeriesElement()
                                 .name("收入")
                                 .color(gradientColorDic1)
                                 .data(new Object[]{7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9,7.0, 6.9, 9.5, 14.5,}),
-                new AASeriesElement()
-                        .name("支出")
-                        .color(gradientColorDic2)
-                        .data(new Object[]{-20.1, -14.1, -8.6, -2.5, -0.8, -5.7, -11.3, -17.0, -22.0, -24.8, -24.1, -20.1, -14.1, -8.6, -2.5})
+                        new AASeriesElement()
+                                .name("支出")
+                                .color(gradientColorDic2)
+                                .data(new Object[]{-20.1, -14.1, -8.6, -2.5, -0.8, -5.7, -11.3, -17.0, -22.0, -24.8, -24.1, -20.1, -14.1, -8.6, -2.5})
 
                 });
 
@@ -912,5 +918,340 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
         return aaOptions;
     }
 
+    private AAOptions configureDoubleYAxesAndColumnLineMixedChart() {
+        Object[][] stopsArr = new Object[][] {
+                {0.0, "rgba(156,107,211,0.5)"},//颜色字符串设置支持十六进制类型和 rgba 类型
+                {0.2, "rgba(156,107,211,0.3)"},
+                {1.0, "rgba(156,107,211,0)"}
+        };
+
+        Map gradientColorDic1 = AAGradientColor.linearGradient(
+                AALinearGradientDirection.ToBottom,
+                stopsArr);
+
+        Map gradientColorDic2 = AAGradientColor.linearGradient(
+                AALinearGradientDirection.ToBottom,
+                "#956FD4",
+                "#3EACE5"//颜色字符串设置支持十六进制类型和 rgba 类型
+        );
+
+        String[] category = new String[]{
+                "市区", "万州", "江北", "南岸", "北碚", "綦南", "长寿", "永川", "璧山", "江津",
+                "城口", "大足", "垫江", "丰都", "奉节", "合川", "江津区", "开州", "南川", "彭水",
+                "黔江", "石柱", "铜梁", "潼南", "巫山", "巫溪", "武隆", "秀山", "酉阳", "云阳",
+                "忠县", "川东", "检修"
+        };
+
+        Object[] goalValuesArr = new Object[]{
+                18092, 20728, 24045, 28348, 32808
+                , 36097, 39867, 44715, 48444, 50415
+                , 56061, 62677, 59521, 67560, 18092, 20728, 24045, 28348, 32808
+                , 36097, 39867, 44715, 48444, 50415, 36097, 39867, 44715, 48444, 50415
+                , 50061, 32677, 49521, 32808
+        };
+
+        Object[] realValuesArr = new Object[] {
+                4600, 5000, 5500, 6500, 7500
+                , 8500, 9900, 12500, 14000, 21500
+                , 23200, 24450, 25250, 33300, 4600, 5000, 5500, 6500, 7500
+                , 8500, 9900, 22500, 14000, 21500, 8500, 9900, 12500, 14000, 21500
+                , 23200, 24450, 25250, 7500
+        };
+
+        Object[] rateValuesArr = new Object[33];
+
+        for (int i =0; i< 33; i++) {
+            Float goalValue = Float.valueOf((Integer) goalValuesArr[i]);
+            Float realValue = Float.valueOf((Integer) realValuesArr[i]);
+            Float rateValue = realValue / goalValue;
+            rateValuesArr[i] = rateValue;
+        }
+
+        AAChart aaChart = new AAChart()
+                .backgroundColor("#191E40");
+
+        AATitle aaTitle =new AATitle()
+                .text("");
+
+        AALabels aaLabels = new AALabels()
+                .enabled(true)
+                .style(new AAStyle()
+                        .color(AAColor.lightGrayColor()));
+
+        AAXAxis aaXAxis = new AAXAxis()
+                .visible(true)
+                .labels(aaLabels)
+                .min(0f)
+                .categories(category);
+
+        AAStyle aaYAxisTitleStyle = new AAStyle()
+                .color("#1e90ff")//Title font color
+                .fontSize(14f)//Title font size
+                .fontWeight(AAChartFontWeightType.Bold)//Title font weight
+                .textOutline("0px 0px contrast");
+
+        AAYAxis yAxis1 = new AAYAxis()
+                .visible(true)
+                .labels(aaLabels)
+                .gridLineWidth(0f)
+                .title(new AATitle()
+                        .text("已贯通 / 计划贯通")
+                        .style(aaYAxisTitleStyle));
+
+        AAYAxis yAxis2 = new AAYAxis()
+                .visible(true)
+                .labels(aaLabels)
+                .gridLineWidth(0f)
+                .title(new AATitle()
+                        .text("贯通率")
+                        .style(aaYAxisTitleStyle))
+                .opposite(true);
+
+        AATooltip aaTooltip = new AATooltip()
+                .enabled(true)
+                .shared(true);
+
+        AAPlotOptions aaPlotOptions = new AAPlotOptions()
+                .series(new AASeries()
+                        .animation(new AAAnimation()
+                                .easing(AAChartAnimationType.EaseTo)
+                                .duration(1000)))
+                .column(new AAColumn()
+                        .grouping(false)
+                        .pointPadding(0f)
+                        .pointPlacement(0f)
+                );
+
+        AALegend aaLegend = new AALegend()
+                .enabled(true)
+                .itemStyle(new AAItemStyle()
+                        .color(AAColor.lightGrayColor()))
+                .floating(true)
+                .layout(AAChartLayoutType.Horizontal)
+                .align(AAChartAlignType.Left)
+                .x(30f)
+                .verticalAlign(AAChartVerticalAlignType.Top)
+                .y(10f);
+
+        AASeriesElement goalValuesElement = new AASeriesElement()
+                .name("计划贯通")
+                .type(AAChartType.Column)
+                .borderWidth(0f)
+                .color(gradientColorDic1)
+                .yAxis(0)
+                .data(goalValuesArr);
+
+        AASeriesElement realValuesElement = new AASeriesElement()
+                .name("已贯通")
+                .type(AAChartType.Column)
+                .borderWidth(0f)
+                .color(gradientColorDic2)
+                .yAxis(0)
+                .data(realValuesArr);
+
+        AASeriesElement rateValuesElement = new AASeriesElement()
+                .name("贯通率")
+                .type(AAChartType.Line)
+                .marker(new AAMarker()
+                        .radius(7f)//曲线连接点半径，默认是4
+                        .symbol(AAChartSymbolType.Circle)//曲线点类型："circle", "square", "diamond", "triangle","triangle-down"，默认是"circle"
+                        .fillColor("#ffffff")//点的填充色(用来设置折线连接点的填充色)
+                        .lineWidth(3f)//外沿线的宽度(用来设置折线连接点的轮廓描边的宽度)
+                        .lineColor("")//外沿线的颜色(用来设置折线连接点的轮廓描边颜色，当值为空字符串时，默认取数据点或数据列的颜色)
+                )
+                .color("#F02FC2")
+                .yAxis(1)
+                .data(rateValuesArr);
+
+        AAOptions aaOptions = new AAOptions()
+                .chart(aaChart)
+                .title(aaTitle)
+                .xAxis(aaXAxis)
+                .yAxisArray(new AAYAxis[]{yAxis1,yAxis2})
+                .tooltip(aaTooltip)
+                .plotOptions(aaPlotOptions)
+                .legend(aaLegend)
+                .series(new Object[]{
+                        goalValuesElement,
+                        realValuesElement,
+                        rateValuesElement});
+
+        return aaOptions;
+    }
+
+    private AAOptions configureDoubleYAxesMarketDepthChart() {
+        AAChart aaChart = new AAChart()
+                .type(AAChartType.Area);
+
+        AATitle aaTitle = new AATitle()
+                .text("ETH-BTC 市场深度图");
+
+        AASubtitle aaSubtitle = new AASubtitle()
+                .text("数据来源: https://github.com/AAChartModel");
+
+        AAXAxis aaXAxis = new AAXAxis()
+                .visible(true)
+                .plotLines(new AAPlotLinesElement[]{
+                        new AAPlotLinesElement()
+                                .color(AAColor.redColor())
+                                .value(0.1523f)
+                                .width(1.5f)
+                                .label(new AALabel()
+                                        .text("实际价格")
+                                .style(AAChartLineDashStyleType.LongDashDotDot)
+//                                .rotation(90)
+                        )
+                })
+                ;
+
+        AAYAxis yAxis1 = new AAYAxis()
+                .visible(true)
+                .lineWidth(1f)
+                .title(new AATitle())
+                .tickWidth(1f)
+                .tickLength(5f)
+                .tickPosition("inside")
+                .gridLineWidth(1f)
+                .labels(new AALabels()
+                        .enabled(true)//设置 y 轴是否显示数字
+                        .align(AAChartAlignType.Left)
+                        .x(8f)
+                );
+
+        AAYAxis yAxis2 = new AAYAxis()
+                .opposite(true)
+                .visible(true)
+                .lineWidth(1f)
+                .title(new AATitle())
+                .tickWidth(1f)
+                .tickLength(5f)
+                .tickPosition("inside")
+                .gridLineWidth(0f)
+                .labels(new AALabels()
+                        .enabled(true)//设置 y 轴是否显示数字
+                        .align(AAChartAlignType.Right)
+                        .x(-8f)
+                );
+
+        AATooltip aaTooltip = new AATooltip()
+                .enabled(true)
+                .headerFormat("<span style=\\\"font-size=10px;\\\">Price: {point.key}</span><br/>")
+                .valueDecimals(2)
+                ;
+
+        AALegend aaLegend = new AALegend()
+                .enabled(false);
+
+        AASeriesElement element1 = new AASeriesElement()
+                .name("Bids")
+                .color("#04d69f")
+                .step(true)
+                .data(new Object[][]{
+                        {0.1524, 0.948665},
+                        {0.1539, 35.510715},
+                        {0.154,  39.883437},
+                        {0.1541, 40.499661},
+                        {0.1545, 43.262994000000006},
+                        {0.1547, 60.14799400000001},
+                        {0.1553, 60.30799400000001},
+                        {0.1558, 60.55018100000001},
+                        {0.1564, 68.381696},
+                        {0.1567, 69.46518400000001},
+                        {0.1569, 69.621464},
+                        {0.157,  70.398015},
+                        {0.1574, 70.400197},
+                        {0.1575, 73.199217},
+                        {0.158,  77.700017},
+                        {0.1583, 79.449017},
+                        {0.1588, 79.584064},
+                        {0.159,  80.584064},
+                        {0.16,   81.58156},
+                        {0.1608, 83.38156}
+                });
+
+        AASeriesElement element2 = new AASeriesElement()
+                .name("Asks")
+                .color("#1e90ff")
+                .step(true)
+                .data(new Object[][]{
+                        {0.1435, 242.521842},
+                        {0.1436, 206.49862099999999},
+                        {0.1437, 205.823735},
+                        {0.1438, 197.33275},
+                        {0.1439, 153.677454},
+                        {0.144,  146.007722},
+                        {0.1442, 82.55212900000001},
+                        {0.1443, 59.152814000000006},
+                        {0.1444, 57.942260000000005},
+                        {0.1445, 57.483850000000004},
+                        {0.1446, 52.39210800000001},
+                        {0.1447, 51.867208000000005},
+                        {0.1448, 44.104697},
+                        {0.1449, 40.131217},
+                        {0.145,  31.878217},
+                        {0.1451, 22.794916999999998},
+                        {0.1453, 12.345828999999998},
+                        {0.1454, 10.035642},
+                        {0.148,  9.326642},
+                        {0.1522, 3.76317}
+                });
+
+        AAOptions aaOptions = new AAOptions()
+                .chart(aaChart)
+                .title(aaTitle)
+                .subtitle(aaSubtitle)
+                .xAxis(aaXAxis)
+                .yAxisArray(new AAYAxis[]{yAxis1,yAxis2})
+                .tooltip(aaTooltip)
+                .legend(aaLegend)
+                .series(new AASeriesElement[]{element1,element2})
+                ;
+        return aaOptions;
+    }
+
+    private AAOptions customAreaChartTooltipStyleLikeHTMLTable() {
+        AAChartModel aaChartModel = new AAChartModel()
+                .chartType(AAChartType.Areaspline)//图表类型
+                .title("")//图表主标题
+                .subtitle("")//图表副标题
+                .colorsTheme(new String[]{"#04d69f","#1e90ff","#ef476f","#ffd066",})
+                .stacking(AAChartStackingType.Normal)
+                .yAxisTitle("")//设置 Y 轴标题
+                .yAxisVisible(false)
+                .markerRadius(0f)
+                .series(new AASeriesElement[]{
+                        new AASeriesElement()
+                                .name("TokyoHot")
+                                .lineWidth(5.0f)
+                                .fillOpacity(0.4f)
+                                .data(new Object[]{0.45, 0.43, 0.50, 0.55, 0.58, 0.62, 0.83, 0.39, 0.56, 0.67, 0.50, 0.34, 0.50, 0.67, 0.58, 0.29, 0.46, 0.23, 0.47, 0.46, 0.38, 0.56, 0.48, 0.36}),
+                        new AASeriesElement()
+                                .name("BerlinHot")
+                                .lineWidth(5.0f)
+                                .fillOpacity(0.4f)
+                                .data(new Object[]{0.38, 0.31, 0.32, 0.32, 0.64, 0.66, 0.86, 0.47, 0.52, 0.75, 0.52, 0.56, 0.54, 0.60, 0.46, 0.63, 0.54, 0.51, 0.58, 0.64, 0.60, 0.45, 0.36, 0.67}),
+                        new AASeriesElement()
+                                .name("LondonHot")
+                                .lineWidth(5.0f)
+                                .fillOpacity(0.4f)
+                                .data(new Object[]{0.46, 0.32, 0.53, 0.58, 0.86, 0.68, 0.85, 0.73, 0.69, 0.71, 0.91, 0.74, 0.60, 0.50, 0.39, 0.67, 0.55, 0.49, 0.65, 0.45, 0.64, 0.47, 0.63, 0.64}),
+                        new AASeriesElement()
+                                .name("NewYorkHot")
+                                .lineWidth(5.0f)
+                                .fillOpacity(0.4f)
+                                .data(new Object[]{0.60, 0.51, 0.52, 0.53, 0.64, 0.84, 0.65, 0.68, 0.63, 0.47, 0.72, 0.60, 0.65, 0.74, 0.66, 0.65, 0.71, 0.59, 0.65, 0.77, 0.52, 0.53, 0.58, 0.53}),
+                });
+
+        AAOptions aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
+        aaOptions.tooltip
+                .shared(true)
+                .useHTML(true)
+                .headerFormat("<small>{point.key} 摄氏度</small><table>")
+                .pointFormat("<tr><td style=\\\"color: {series.color}\\\">{series.name}: </td>"
+                                + "<td style=\\\"text-align: right\\\"><b>{point.y}EUR</b></td></tr>")
+                .valueDecimals(2)
+        ;
+        return aaOptions;
+    }
 
 }
