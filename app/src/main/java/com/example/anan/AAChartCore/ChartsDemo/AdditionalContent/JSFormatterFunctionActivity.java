@@ -58,6 +58,7 @@ public class JSFormatterFunctionActivity extends AppCompatActivity {
             case "customYAxisLabels2": return customYAxisLabels2();
             case "customStackedAndGroupedColumnChartTooltip": return customStackedAndGroupedColumnChartTooltip();
             case "customDoubleXAxesChart": return customDoubleXAxesChart();
+            case "customArearangeChartTooltip": return customArearangeChartTooltip();
 
         }
         return customAreaChartTooltipStyleWithFormatterFunction1();
@@ -555,6 +556,81 @@ public class JSFormatterFunctionActivity extends AppCompatActivity {
                 .plotOptions(aaPlotOptions)
                 .tooltip(aaTooltip)
                 .series(new Object[]{aaSeriesElement1,aaSeriesElement2});
+
+        return aaOptions;
+    }
+
+    private AAOptions customArearangeChartTooltip() {
+        AAChartModel aaChartModel = new AAChartModel()
+                .title("LANGUAGE MARKET SHARES JANUARY,2020 TO MAY")
+                .subtitle("virtual data")
+                .chartType(AAChartType.Arearange)
+                .markerSymbolStyle(AAChartSymbolStyleType.InnerBlank)
+                .series(new Object[]{
+                        new AASeriesElement()
+                                .name("Range")
+                                .color("#1E90FF")
+                                .type(AAChartType.Arearange)
+                                .lineWidth(0.f)
+                                .fillOpacity(0.3f)
+                                .data(new Object[][] {
+                                        /* 2014-06-01 */
+                                        {140158080, 5.1, 20.6},
+                                        {140166720, 6.6, 24.6},
+                                        {140175360, 9.7, 22.2},
+                                        {140184000, 9.6, 21.6},
+                                        {140192640, 13.0,20.0},
+                                        {140201280, 12.9,18.2},
+                                        {140209920, 8.5, 23.2},
+                                        {140218560, 9.2, 21.4},
+                                        {140227200, 10.5,22.0},
+                                        {140235840, 7.3, 23.4},
+                                        {140244480, 12.1,18.2},
+                                        {140253120, 11.1,13.3},
+                                        {140261760, 10.0,20.7},
+                                        {140270400, 5.8, 23.4},
+                                        {140279040, 7.4, 20.1},
+                                        {140287680, 10.3,21.9},
+                                        {140296320, 7.8, 16.8},
+                                        {140304960, 11.6,19.7},
+                                        {140313600, 9.8, 16.0},
+                                        {140322240, 10.7,14.4},
+                                        {140330880, 9.0, 15.5},
+                                        {140339520, 5.1, 13.3},
+                                        {140348160, 10.0,19.3},
+                                        {140356800, 5.2, 22.1},
+                                        {140365440, 6.3, 21.3},
+                                        {140374080, 5.5, 21.1},
+                                        {140382720, 8.4, 19.7},
+                                        {140391360, 7.1, 23.3},
+                                        {140400000, 6.1, 20.8},
+                                        {140408640, 8.4, 22.6},
+                                })
+                                .zIndex(0)
+                        ,
+                });
+
+        AAOptions aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
+        aaOptions.tooltip
+                .useHTML(true)
+                .formatter(" function () {\n" +
+                        "            let myPointOptions = this.points[0].point.options;\n" +
+                        "            let xValue = myPointOptions.x;\n" +
+                        "            let lowValue = myPointOptions.low;\n" +
+                        "            let highValue = myPointOptions.high;\n" +
+                        "            let titleStr = '🦁 this is my custom tooltip description text content <br>';\n" +
+                        "            let xValueStr = '🐯 this is x value  : ' + xValue + '<br>';\n" +
+                        "            let lowValueStr = ' 🐶 this is low value  : ' + lowValue + '<br>';\n" +
+                        "            let highValueStr = '🐱 this is high value : ' + highValue + '<br>';\n" +
+                        "            let tooltipDescStr =  titleStr + xValueStr + lowValueStr + highValueStr;\n" +
+                        "            return tooltipDescStr;\n" +
+                        "        }")
+                .backgroundColor("#000000")
+                .borderColor("#000000")
+                .style(new AAStyle()
+                        .color("#FFD700")
+                        .fontSize(12f)
+                );
 
         return aaOptions;
     }

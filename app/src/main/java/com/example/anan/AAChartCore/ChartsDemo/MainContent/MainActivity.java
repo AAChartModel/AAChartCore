@@ -101,6 +101,7 @@ public class MainActivity extends AppCompatActivity {
             "自定义Y轴文字2",
             "自定义分组堆积柱状图tooltip内容",
             "双 X 轴镜像图表",
+            "customArearangeChartTooltip---自定义折线范围图的tooltip",
             /*执行由 JavaScript 字符串映射转换成的 js function 函数*/
             "执行 js function 函数eval JS function 1--------------------",
             "eval JS function 2",
@@ -194,6 +195,7 @@ public class MainActivity extends AppCompatActivity {
             "customYAxisLabels2",
             "customStackedAndGroupedColumnChartTooltip",
             "customDoubleXAxesChart",
+            "customArearangeChartTooltip",
             /*执行由 JavaScript 字符串映射转换成的 js function 函数*/
             "evalJSFunction1",
             "evalJSFunction2",
@@ -232,9 +234,9 @@ public class MainActivity extends AppCompatActivity {
                     goToDrawChartWithAAOptionsActivity(position);
                 } else if (position <= 66 ) { /*隐藏或显示内容*/
                     goToHideOrShowChartSeriesActivity(position);
-                } else if (position <= 76) {/*formatter js function*/
+                } else if (position <= 77) {/*formatter js function*/
                     goToCustomTooltipWithJSFunctionActivity(position);
-                } else if (position > 76) { /*eval JS Function*/
+                } else { /*eval JS Function*/
                     goToEvaluateJSStringFunctionActivity(position);
                 }
             }
