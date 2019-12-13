@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
             "Waterfall Chart--- 瀑布图",
             "Pyramid Chart---金字塔图",
             "Funnel Chart---漏斗图",
+            "Errorbar Chart---误差图",
             /*Mixed Chart---混合图*/
             "/*Mixed Chart---混合图*/arearangeMixedLine-----------------",
             "columnrangeMixedLine",
@@ -134,7 +135,7 @@ public class MainActivity extends AppCompatActivity {
             AAChartType.Waterfall,
             AAChartType.Pyramid,
             AAChartType.Funnel,
-
+            AAChartType.Errorbar,
             /*Mixed Chart---混合图*/
             "arearangeMixedLine",
             "columnrangeMixedLine",
@@ -229,17 +230,17 @@ public class MainActivity extends AppCompatActivity {
                 System.out.println(position);
                 if (position <= 7 ) {/*基础类型图表*/
                     goToCommonChartActivity(position);
-                } else if (position <= 19) {/*特殊类型图表*/
+                } else if (position <= 20) {/*特殊类型图表*/
                     goToSpecialChartActivity(position);
-                } else if (position <= 28) { /*Mixed Chart---混合图*/
+                } else if (position <= 29) { /*Mixed Chart---混合图*/
                     goToMixedChartActivity(position);
-                } else if (position <= 46)  {/*自定义样式图表*/
+                } else if (position <= 47)  {/*自定义样式图表*/
                     goToCustomStyleChartActivity(position);
-                } else if (position <= 62){/*使用AAOptions绘制图表*/
+                } else if (position <= 63){/*使用AAOptions绘制图表*/
                     goToDrawChartWithAAOptionsActivity(position);
-                } else if (position <= 69 ) { /*隐藏或显示内容*/
+                } else if (position <= 70 ) { /*隐藏或显示内容*/
                     goToHideOrShowChartSeriesActivity(position);
-                } else if (position <= 80) {/*formatter js function*/
+                } else if (position <= 81) {/*formatter js function*/
                     goToCustomTooltipWithJSFunctionActivity(position);
                 } else { /*eval JS Function*/
                     goToEvaluateJSStringFunctionActivity(position);

@@ -12,7 +12,9 @@ import com.example.anan.AAChartCore.AAChartCoreLib.AAChartConfiger.AAChartView;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartConfiger.AASeriesElement;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartAnimationType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAPie;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AATooltip;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAWaterfall;
+import com.example.anan.AAChartCore.AAChartCoreLib.AATools.AAColor;
 import com.example.anan.AAChartCore.AAChartCoreLib.AATools.AAGradientColor;
 import com.example.anan.AAChartCore.R;
 
@@ -57,6 +59,7 @@ public class SpecialChartActivity extends AppCompatActivity {
             case AAChartType.Waterfall: return configureWaterfallChart();
             case AAChartType.Pyramid: return configurePyramidChart();
             case AAChartType.Funnel: return configureFunnelChart();
+            case AAChartType.Errorbar: return configureErrobarChart();
             default:
                 break;
         }
@@ -944,10 +947,30 @@ public class SpecialChartActivity extends AppCompatActivity {
     }
 
 
-
-
-
-
-
+    AAChartModel configureErrobarChart() {
+        return new AAChartModel()
+                .yAxisTitle("")
+                .categories(new String[]{
+                        "一月", "二月", "三月", "四月", "五月", "六月",
+                        "七月", "八月", "九月", "十月", "十一月", "十二月"
+                })
+                .series(new Object[]{
+                        new AASeriesElement()
+                                .name("降水")
+                                .type(AAChartType.Column)
+                                .color("#06caf4")
+                                .data(new Object[]{49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4})
+                        ,
+                        new AASeriesElement()
+                                .name("降雨误差")
+                                .type(AAChartType.Errorbar)
+                                .lineWidth(2.5f)
+                                .color(AAColor.redColor())
+                                .data(new Object[][]{{48, 51}, {68, 73}, {92, 110}, {128, 136}, {140, 150}, {171, 179}, {135, 143},
+                                        {142, 149}, {204, 220}, {189, 199}, {95, 110}, {52, 56}})
+                                .tooltip(new AATooltip()
+                                .pointFormat("(误差范围: {point.low}-{point.high} mm)<br/>"))
+                });
+    }
 
 }
