@@ -18,4 +18,6 @@ public interface AAChartType {
     String Boxplot         = "boxplot";
     String Waterfall       = "waterfall";
     String Polygon         = "polygon";
+    String Gauge           = "gauge";
+    String Errorbar        = "errorbar";
 }
