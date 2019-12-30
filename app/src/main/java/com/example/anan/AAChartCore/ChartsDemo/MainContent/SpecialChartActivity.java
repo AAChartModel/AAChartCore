@@ -59,7 +59,7 @@ public class SpecialChartActivity extends AppCompatActivity {
             case AAChartType.Waterfall: return configureWaterfallChart();
             case AAChartType.Pyramid: return configurePyramidChart();
             case AAChartType.Funnel: return configureFunnelChart();
-            case AAChartType.Errorbar: return configureErrobarChart();
+            case AAChartType.Errorbar: return configureErrorbarChart();
             default:
                 break;
         }
@@ -947,7 +947,7 @@ public class SpecialChartActivity extends AppCompatActivity {
     }
 
 
-    AAChartModel configureErrobarChart() {
+    AAChartModel configureErrorbarChart() {
         return new AAChartModel()
                 .yAxisTitle("")
                 .categories(new String[]{
