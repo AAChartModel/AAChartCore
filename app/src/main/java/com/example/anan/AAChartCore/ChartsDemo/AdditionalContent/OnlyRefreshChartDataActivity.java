@@ -79,8 +79,8 @@ public class OnlyRefreshChartDataActivity extends AppCompatActivity {
         int max = 38, min = 1;
         int random = (int) (Math.random() * (max - min) + min);
         for (int i = 0; i < maxRange; i++) {
-            y1 = Math.sin((random) * (i * Math.PI / 180)) + i * 2 * 0.01;
-            y2 = Math.cos((random) * (i * Math.PI / 180)) + i * 3 * 0.01;
+            y1 = Math.sin(random * (i * Math.PI / 180)) + i * 2 * 0.01;
+            y2 = Math.cos(random * (i * Math.PI / 180)) + i * 3 * 0.01;
             numberArr1[i] = y1;
             numberArr2[i] = y2;
         }
