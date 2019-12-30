@@ -13,6 +13,7 @@ import com.example.anan.AAChartCore.ChartsDemo.AdditionalContent.JSFormatterFunc
 import com.example.anan.AAChartCore.ChartsDemo.AdditionalContent.DrawChartWithAAOptionsActivity;
 import com.example.anan.AAChartCore.ChartsDemo.AdditionalContent.EvaluateJSStringFunctionActivity;
 import com.example.anan.AAChartCore.ChartsDemo.AdditionalContent.HideOrShowChartSeriesActivity;
+import com.example.anan.AAChartCore.ChartsDemo.AdditionalContent.OnlyRefreshChartDataActivity;
 import com.example.anan.AAChartCore.R;
 
 public class MainActivity extends AppCompatActivity {
@@ -86,8 +87,8 @@ public class MainActivity extends AppCompatActivity {
             "configureDoubleYAxesAndColumnLineMixedChart",
             "configureDoubleYAxesMarketDepthChart",
             "customAreaChartTooltipStyleLikeHTMLTable",
-            /*隐藏或显示内容*/
-            "/*隐藏或显示内容*/Column Chart---柱形图--------------",
+            /*及时刷新📈📊图表数据*/
+            "/*及时刷新📈📊图表数据*/Column Chart---柱形图--------------",
             "Bar Chart---条形图",
             "Area Chart---折线填充图",
             "Areaspline Chart---曲线填充图",
@@ -95,6 +96,7 @@ public class MainActivity extends AppCompatActivity {
             "Step Line Chart--- 直方折线图",
             "Line Chart---折线图",
             "Spline Chart---曲线图",
+            "Scatter Chart---散点图",
             /*自定义 formatter 函数*/
             "/*自定义 formatter 函数*/简单字符串拼接-----------------",
             "自定义不同单位后缀",
@@ -182,7 +184,7 @@ public class MainActivity extends AppCompatActivity {
             "configureDoubleYAxesAndColumnLineMixedChart",
             "configureDoubleYAxesMarketDepthChart",
             "customAreaChartTooltipStyleLikeHTMLTable",
-            /*隐藏或显示内容*/
+            /*及时刷新📈📊图表数据*/
             AAChartType.Column,
             AAChartType.Bar,
             AAChartType.Area,
@@ -191,6 +193,7 @@ public class MainActivity extends AppCompatActivity {
             AAChartType.Line,
             AAChartType.Line,
             AAChartType.Spline,
+            AAChartType.Scatter,
             /*自定义 formatter 函数*/
             "formatterFunction1",
             "formatterFunction2",
@@ -218,7 +221,7 @@ public class MainActivity extends AppCompatActivity {
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(
                 MainActivity.this, android.R.layout.simple_list_item_1, data);
-        ListView listView = (ListView) findViewById(R.id.list);
+        ListView listView = findViewById(R.id.list);
         listView.setAdapter(adapter);
 
 
@@ -238,9 +241,9 @@ public class MainActivity extends AppCompatActivity {
                     goToCustomStyleChartActivity(position);
                 } else if (position <= 63){/*使用AAOptions绘制图表*/
                     goToDrawChartWithAAOptionsActivity(position);
-                } else if (position <= 70 ) { /*隐藏或显示内容*/
-                    goToHideOrShowChartSeriesActivity(position);
-                } else if (position <= 81) {/*formatter js function*/
+                } else if (position <= 72 ) { /*及时刷新📈📊图表数据*/
+                    goToOnlyRefreshChartDataActivity(position);
+                } else if (position <= 83) {/*formatter js function*/
                     goToCustomTooltipWithJSFunctionActivity(position);
                 } else { /*eval JS Function*/
                     goToEvaluateJSStringFunctionActivity(position);
@@ -286,8 +289,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    void goToHideOrShowChartSeriesActivity(int position) {
-        Intent intent = new Intent(this, HideOrShowChartSeriesActivity.class);
+    void goToOnlyRefreshChartDataActivity(int position) {
+        Intent intent = new Intent(this, OnlyRefreshChartDataActivity.class);
         intent.putExtra("chartType", chartTypeArr[position]);
 
         startActivity(intent);
@@ -307,7 +310,12 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    void goToHideOrShowChartSeriesActivity(int position) {
+        Intent intent = new Intent(this, HideOrShowChartSeriesActivity.class);
+        intent.putExtra("chartType", chartTypeArr[position]);
 
+        startActivity(intent);
+    }
 
     }
 
