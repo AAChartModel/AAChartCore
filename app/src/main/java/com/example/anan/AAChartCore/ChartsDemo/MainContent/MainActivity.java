@@ -254,7 +254,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     void goToCommonChartActivity(int position) {
-        Intent intent = new Intent(this, CommonChartActivity.class);
+        Intent intent = new Intent(this, BasicChartActivity.class);
         intent.putExtra("chartType", chartTypeArr[position]);
         intent.putExtra("position",position);
 

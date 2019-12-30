@@ -24,7 +24,7 @@ import com.google.gson.Gson;
 import java.util.Map;
 
 
-public class CommonChartActivity extends AppCompatActivity
+public class BasicChartActivity extends AppCompatActivity
         implements
         RadioGroup.OnCheckedChangeListener,
         CompoundButton.OnCheckedChangeListener,

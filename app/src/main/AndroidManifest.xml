@@ -23,7 +23,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ChartsDemo.MainContent.CommonChartActivity"
+            android:name=".ChartsDemo.MainContent.BasicChartActivity"
             android:label="@string/title_activity_common_chart"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
