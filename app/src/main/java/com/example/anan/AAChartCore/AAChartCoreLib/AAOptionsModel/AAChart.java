@@ -10,8 +10,13 @@ public class AAChart {
     public Boolean polar;
     public AAAnimation animation;
     public Boolean inverted;
-    public Float marginLeft;
-    public Float marginRight;
+    /*图表外边缘和绘图区域之间的边距。 数组中的数字分别表示顶部，右侧，底部和左侧 ([👆,👉,👇,👈])。
+    也可以使用 marginTop，marginRight，marginBottom 和 marginLeft 来设置某一个方向的边距*/
+    public Float[] margin;
+    public Float marginTop; //👆
+    public Float marginRight; //👉
+    public Float marginBottom; //👇
+    public Float marginLeft; //👈
 
     public AAChart type(String prop) {
         type = prop;
@@ -58,8 +63,13 @@ public class AAChart {
         return this;
     }
 
-    public AAChart marginLeft(Float prop) {
-        marginLeft = prop;
+    public AAChart margin(Float[] prop) {
+        margin = prop;
+        return this;
+    }
+
+    public AAChart marginTop(Float prop) {
+        marginTop = prop;
         return this;
     }
 
@@ -67,5 +77,17 @@ public class AAChart {
         marginRight = prop;
         return this;
     }
+
+    public AAChart marginBottom(Float prop) {
+        marginBottom = prop;
+        return this;
+    }
+
+    public AAChart marginLeft(Float prop) {
+        marginLeft = prop;
+        return this;
+    }
+
+
 
 }
