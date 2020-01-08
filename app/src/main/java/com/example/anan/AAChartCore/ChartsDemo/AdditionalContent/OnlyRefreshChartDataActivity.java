@@ -9,6 +9,7 @@ import com.example.anan.AAChartCore.AAChartCoreLib.AAChartConfiger.AAChartModel;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartConfiger.AAChartView;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartConfiger.AAOptionsConstructor;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartConfiger.AASeriesElement;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartStackingType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAOptions;
 import com.example.anan.AAChartCore.AAChartCoreLib.AATools.AAGradientColor;
@@ -66,7 +67,9 @@ public class OnlyRefreshChartDataActivity extends AppCompatActivity {
                 .yAxisVisible(false)
                 .title("")
                 .yAxisTitle("摄氏度")
-                .colorsTheme(new Object[]{"#1e90ff","#dc143c"});
+                .colorsTheme(new Object[]{"#1e90ff","#dc143c"})
+                .stacking(AAChartStackingType.Normal)
+                ;
     }
 
     private AASeriesElement[] configureChartSeriesArray() {
@@ -110,6 +113,6 @@ public class OnlyRefreshChartDataActivity extends AppCompatActivity {
             }
         };
 
-        mHandler.postDelayed(r, 1000);//延时1000毫秒
+        mHandler.postDelayed(r, 2000);//延时2000毫秒
     }
 }
