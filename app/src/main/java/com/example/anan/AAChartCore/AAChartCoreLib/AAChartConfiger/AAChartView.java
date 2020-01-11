@@ -180,13 +180,17 @@ public class AAChartView extends WebView {
     }
 
 
-    public void aa_onlyRefreshTheChartDataWithChartOptionsSeriesArray(AASeriesElement[] seriesElementsArr) {
+    public void aa_onlyRefreshTheChartDataWithChartOptionsSeriesArray(
+            AASeriesElement[] seriesElementsArr
+    ) {
         aa_onlyRefreshTheChartDataWithChartOptionsSeriesArray(seriesElementsArr,true);
     }
 
-    public void aa_onlyRefreshTheChartDataWithChartOptionsSeriesArray(AASeriesElement[] seriesElementsArr, Boolean animation) {
-        Gson gson = new Gson();
-        String seriesArr = gson.toJson(seriesElementsArr);
+    public void aa_onlyRefreshTheChartDataWithChartOptionsSeriesArray(
+            AASeriesElement[] seriesElementsArr,
+            Boolean animation
+    ) {
+        String seriesArr = new Gson().toJson(seriesElementsArr);
         String javaScriptStr = "onlyRefreshTheChartDataWithSeries('"
                 + seriesArr + "','" + animation + "')";
         this.safeEvaluateJavaScriptString(javaScriptStr);
