@@ -67,7 +67,12 @@ public class OnlyRefreshChartDataActivity extends AppCompatActivity {
                 .yAxisVisible(false)
                 .title("")
                 .yAxisTitle("摄氏度")
-                .colorsTheme(new Object[]{"#1e90ff","#dc143c"})
+                .colorsTheme(new Object[]{
+                        AAGradientColor.sanguineColor(),
+                        AAGradientColor.deepSeaColor(),
+                        AAGradientColor.neonGlowColor(),
+                        AAGradientColor.wroughtIronColor()
+                })
                 .stacking(AAChartStackingType.Normal)
                 ;
     }
@@ -91,11 +96,9 @@ public class OnlyRefreshChartDataActivity extends AppCompatActivity {
         return new AASeriesElement[]{
                 new AASeriesElement()
                         .name("2017")
-                        .color(AAGradientColor.sanguineColor())
                         .data(numberArr1),
                 new AASeriesElement()
                         .name("2018")
-                        .color(AAGradientColor.deepSeaColor())
                         .data(numberArr2)};
     }
 
