@@ -364,7 +364,8 @@ public class AAChartView extends WebView {
         eventMessageModel.y = (Double) messageBody.get("y");
         eventMessageModel.category = messageBody.get("category").toString();
         eventMessageModel.offset = (LinkedTreeMap) messageBody.get("offset");
-        eventMessageModel.index = (Double) messageBody.get("index");
+        Double index = (Double) messageBody.get("index");
+        eventMessageModel.index = index.intValue();
         return eventMessageModel;
     }
 

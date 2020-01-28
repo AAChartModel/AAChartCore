@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartType;
+import com.example.anan.AAChartCore.ChartsDemo.AdditionalContent.DoubleChartsLinkedWorkActivity;
 import com.example.anan.AAChartCore.ChartsDemo.AdditionalContent.JSFormatterFunctionActivity;
 import com.example.anan.AAChartCore.ChartsDemo.AdditionalContent.DrawChartWithAAOptionsActivity;
 import com.example.anan.AAChartCore.ChartsDemo.AdditionalContent.EvaluateJSStringFunctionActivity;
@@ -111,7 +112,9 @@ public class MainActivity extends AppCompatActivity {
             /*执行由 JavaScript 字符串映射转换成的 js function 函数*/
             "执行 js function 函数eval JS function 1--------------------",
             "eval JS function 2",
-            "eval JS function 3"
+            "eval JS function 3",
+            /*Double Charts Linked Work---双表联动*/
+            "doubleChartsLinkedWork----------------------------"
     };
 
     String[] chartTypeArr = {
@@ -208,7 +211,9 @@ public class MainActivity extends AppCompatActivity {
             /*执行由 JavaScript 字符串映射转换成的 js function 函数*/
             "evalJSFunction1",
             "evalJSFunction2",
-            "evalJSFunction3"
+            "evalJSFunction3",
+            /*Double Charts Linked Work---双表联动*/
+            "doubleChartsLinkedWork"
 
     };
 
@@ -245,8 +250,10 @@ public class MainActivity extends AppCompatActivity {
                     goToOnlyRefreshChartDataActivity(position);
                 } else if (position <= 83) {/*formatter js function*/
                     goToCustomTooltipWithJSFunctionActivity(position);
-                } else { /*eval JS Function*/
+                } else if (position <= 85)  { /*eval JS Function*/
                     goToEvaluateJSStringFunctionActivity(position);
+                } else { /*Double Charts Linked Work*/
+                    goToDoubleChartsLinkedWorkActivity(position);
                 }
             }
 
@@ -312,6 +319,13 @@ public class MainActivity extends AppCompatActivity {
 
     void goToHideOrShowChartSeriesActivity(int position) {
         Intent intent = new Intent(this, HideOrShowChartSeriesActivity.class);
+        intent.putExtra("chartType", chartTypeArr[position]);
+
+        startActivity(intent);
+    }
+
+    void goToDoubleChartsLinkedWorkActivity(int position) {
+        Intent intent = new Intent(this, DoubleChartsLinkedWorkActivity.class);
         intent.putExtra("chartType", chartTypeArr[position]);
 
         startActivity(intent);

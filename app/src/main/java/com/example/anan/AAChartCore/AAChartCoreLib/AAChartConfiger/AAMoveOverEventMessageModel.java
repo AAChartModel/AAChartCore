@@ -33,5 +33,5 @@ public class AAMoveOverEventMessageModel {
     public Double y;
     public String category;
     public LinkedTreeMap offset;
-    public Double index;
+    public Integer index;
 }
