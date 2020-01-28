@@ -13,7 +13,10 @@ import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartStackingTy
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAOptions;
 import com.example.anan.AAChartCore.AAChartCoreLib.AATools.AAGradientColor;
+import com.example.anan.AAChartCore.AAChartCoreLib.AATools.AALinearGradientDirection;
 import com.example.anan.AAChartCore.R;
+
+import java.util.Map;
 
 public class OnlyRefreshChartDataActivity extends AppCompatActivity {
 
@@ -53,13 +56,44 @@ public class OnlyRefreshChartDataActivity extends AppCompatActivity {
 
     private AAChartModel configureAAChartModel() {
        AAChartModel aaChartModel = configureChartBasicContent();
-        aaChartModel.series(this.configureChartSeriesArray());
+
+
+        Intent intent = getIntent();
+        String chartType = intent.getStringExtra("chartType");
+        AASeriesElement[] aaSeriesElementsArr = configureChartSeriesArray();
+
+        if (chartType.equals("stepArea") || chartType.equals("stepLine")) {
+            for (int i =0; i < aaSeriesElementsArr.length; i++ ) {
+                AASeriesElement aaSeriesElement = aaSeriesElementsArr[i];
+                aaSeriesElement.step(true);
+            }
+        }
+
+        aaChartModel.series(aaSeriesElementsArr);
         return aaChartModel;
     }
 
     private AAChartModel configureChartBasicContent() {
         Intent intent = getIntent();
         String chartType = intent.getStringExtra("chartType");
+        if (chartType.equals("stepArea") ) {
+            chartType = AAChartType.Area;
+        } else if (chartType.equals("stepLine")) {
+            chartType = AAChartType.Line;
+        }
+
+            Map gradientColorMap1 = AAGradientColor.linearGradient(
+                AALinearGradientDirection.ToBottom,
+        "rgba(138,43,226,1)",
+                "rgba(30,144,255,1)"
+        );
+
+        Map gradientColorMap2 = AAGradientColor.linearGradient(
+                AALinearGradientDirection.ToBottom,
+                "#00BFFF",
+                "#00FA9A"
+        );
+
 
         return new AAChartModel()
                 .chartType(chartType)
@@ -68,9 +102,9 @@ public class OnlyRefreshChartDataActivity extends AppCompatActivity {
                 .title("")
                 .yAxisTitle("摄氏度")
                 .colorsTheme(new Object[]{
+                        gradientColorMap1,
+                        gradientColorMap2,
                         AAGradientColor.sanguineColor(),
-                        AAGradientColor.deepSeaColor(),
-                        AAGradientColor.neonGlowColor(),
                         AAGradientColor.wroughtIronColor()
                 })
                 .stacking(AAChartStackingType.Normal)
@@ -93,13 +127,22 @@ public class OnlyRefreshChartDataActivity extends AppCompatActivity {
             numberArr2[i] = y2;
         }
 
-        return new AASeriesElement[]{
+        AASeriesElement[] aaSeriesElementsArr = new AASeriesElement[]{
                 new AASeriesElement()
                         .name("2017")
                         .data(numberArr1),
                 new AASeriesElement()
                         .name("2018")
-                        .data(numberArr2)};
+                        .data(numberArr2),
+                new AASeriesElement()
+                        .name("2019")
+                        .data(numberArr1),
+                new AASeriesElement()
+                        .name("2020")
+                        .data(numberArr2),
+        };
+
+        return aaSeriesElementsArr;
     }
 
     void repeatUpdateChartData() {
@@ -108,8 +151,9 @@ public class OnlyRefreshChartDataActivity extends AppCompatActivity {
 
             @Override
             public void run() {
-                AASeriesElement[] seriesArr = configureChartSeriesArray();
-                aaChartView.aa_onlyRefreshTheChartDataWithChartOptionsSeriesArray(seriesArr);
+                AASeriesElement[] aaSeriesElementsArr = configureChartSeriesArray();
+
+                aaChartView.aa_onlyRefreshTheChartDataWithChartOptionsSeriesArray(aaSeriesElementsArr);
 
                 //每隔1s循环执行run方法
                 mHandler.postDelayed(this, 1000);
