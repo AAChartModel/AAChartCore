@@ -77,6 +77,7 @@ public class BasicChartActivity extends AppCompatActivity
                 .categories(new String[]{"Java","Swift","Python","Ruby", "PHP","Go","C","C#","C++"})
                 .dataLabelsEnabled(false)
                 .yAxisGridLineWidth(0f)
+                .touchEventEnabled(true)
                 .series(new AASeriesElement[]{element1, element2, element3, element4});
 
 
