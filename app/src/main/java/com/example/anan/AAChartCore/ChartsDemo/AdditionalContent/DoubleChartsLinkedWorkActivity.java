@@ -141,8 +141,8 @@ public class DoubleChartsLinkedWorkActivity extends AppCompatActivity implements
                         new AASeriesElement()
                                 .name("Tokyo")
                                 .data(new Object[]{
-                                        149.9, 171.5, 106.4, 129.2, 144.0, 176.0, 135.6, 188.5, 276.4, 214.1, 95.6, 54.4,
-                                        149.9, 171.5, 106.4, 129.2, 144.0, 176.0, 135.6, 188.5, 276.4, 214.1, 95.6, 54.4})
+                                149.9, 171.5, 106.4, 129.2, 144.0, 176.0, 135.6, 188.5, 276.4, 214.1, 95.6, 54.4,
+                                149.9, 171.5, 106.4, 129.2, 144.0, 176.0, 135.6, 188.5, 276.4, 214.1, 95.6, 54.4})
 
                 });
         AAOptions aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
@@ -184,10 +184,10 @@ public class DoubleChartsLinkedWorkActivity extends AppCompatActivity implements
             @Override
             public void run() {
                 //已在主线程中，可以更新UI
-                        AASeriesElement[] aaSeriesElementsArr = new AASeriesElement[]{
-                new AASeriesElement()
-                        .data(configureSeriesDataArray())
-        };
+                AASeriesElement[] aaSeriesElementsArr = new AASeriesElement[]{
+                        new AASeriesElement()
+                                .data(configureSeriesDataArray())
+                };
                 aaChartView2.aa_onlyRefreshTheChartDataWithChartOptionsSeriesArray(aaSeriesElementsArr);
             }
         });
