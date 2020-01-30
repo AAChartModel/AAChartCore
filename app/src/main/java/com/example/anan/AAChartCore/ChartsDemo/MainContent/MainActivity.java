@@ -109,6 +109,8 @@ public class MainActivity extends AppCompatActivity {
             "自定义分组堆积柱状图tooltip内容",
             "双 X 轴镜像图表",
             "customArearangeChartTooltip---自定义折线范围图的tooltip",
+            "调整折线图的 X 轴左边距",
+            "通过来自外部的数据源来自定义 tooltip (而非常规的来自图表的 series)",
             /*执行由 JavaScript 字符串映射转换成的 js function 函数*/
             "执行 js function 函数eval JS function 1--------------------",
             "eval JS function 2",
@@ -208,6 +210,8 @@ public class MainActivity extends AppCompatActivity {
             "customStackedAndGroupedColumnChartTooltip",
             "customDoubleXAxesChart",
             "customArearangeChartTooltip",
+            "customLineChartOriginalPointPositionByConfiguringXAxisFormatterAndTooltipFormatter",
+            "customTooltipWhichDataSourceComeFromOutSideRatherThanSeries",
             /*执行由 JavaScript 字符串映射转换成的 js function 函数*/
             "evalJSFunction1",
             "evalJSFunction2",
@@ -248,9 +252,9 @@ public class MainActivity extends AppCompatActivity {
                     goToDrawChartWithAAOptionsActivity(position);
                 } else if (position <= 72 ) { /*及时刷新📈📊图表数据*/
                     goToOnlyRefreshChartDataActivity(position);
-                } else if (position <= 83) {/*formatter js function*/
+                } else if (position <= 85) {/*formatter js function*/
                     goToCustomTooltipWithJSFunctionActivity(position);
-                } else if (position <= 85)  { /*eval JS Function*/
+                } else if (position <= 87)  { /*eval JS Function*/
                     goToEvaluateJSStringFunctionActivity(position);
                 } else { /*Double Charts Linked Work*/
                     goToDoubleChartsLinkedWorkActivity(position);
