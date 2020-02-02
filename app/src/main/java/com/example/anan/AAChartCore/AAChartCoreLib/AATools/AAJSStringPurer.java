@@ -9,7 +9,6 @@ public class AAJSStringPurer {
         pureJSFunctionStr = pureJSFunctionStr.replace("\n", "");
         pureJSFunctionStr = pureJSFunctionStr.replace("\\", "\\\\");
         pureJSFunctionStr = pureJSFunctionStr.replace("\"", "\\\"");
-//        pureJSFunctionStr = pureJSFunctionStr.replace("\'", "\\\'");
         pureJSFunctionStr = pureJSFunctionStr.replace("\n", "\\n");
         pureJSFunctionStr = pureJSFunctionStr.replace("\r", "\\r");
         pureJSFunctionStr = pureJSFunctionStr.replace("\f", "\\f");
