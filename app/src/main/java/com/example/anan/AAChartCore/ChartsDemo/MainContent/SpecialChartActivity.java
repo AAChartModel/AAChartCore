@@ -11,6 +11,7 @@ import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartConfiger.AAChartView;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartConfiger.AASeriesElement;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartAnimationType;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AADataLabels;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAPie;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AATooltip;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAWaterfall;
@@ -98,6 +99,12 @@ public class SpecialChartActivity extends AppCompatActivity {
                       new AAPie()
                               .name("Language market shares")
                               .innerSize("20%")
+                              .size(150f)
+                              .dataLabels(new AADataLabels()
+                                      .enabled(true)
+                                      .useHTML(true)
+                                      .distance(5f)
+                                      .format("<b>{point.name}</b>: <br> {point.percentage:.1f} %"))
                               .data(new Object[][] {
                               {"Java"  ,67},
                               {"Swift",999},
@@ -109,6 +116,7 @@ public class SpecialChartActivity extends AppCompatActivity {
                       }
               );
     }
+
 
     AAChartModel configureBubbleChart() {
         AASeriesElement[] elements = {
