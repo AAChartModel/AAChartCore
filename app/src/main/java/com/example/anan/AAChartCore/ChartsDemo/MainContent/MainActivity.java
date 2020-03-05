@@ -88,8 +88,8 @@ public class MainActivity extends AppCompatActivity {
             "configureDoubleYAxesAndColumnLineMixedChart",
             "configureDoubleYAxesMarketDepthChart",
             "customAreaChartTooltipStyleLikeHTMLTable",
-            /*及时刷新📈📊图表数据*/
-            "/*及时刷新📈📊图表数据*/Column Chart---柱形图--------------",
+            /*即时刷新📈📊图表数据*/
+            "/*即时刷新📈📊图表数据*/Column Chart---柱形图--------------",
             "Bar Chart---条形图",
             "Area Chart---折线填充图",
             "Areaspline Chart---曲线填充图",
@@ -189,7 +189,7 @@ public class MainActivity extends AppCompatActivity {
             "configureDoubleYAxesAndColumnLineMixedChart",
             "configureDoubleYAxesMarketDepthChart",
             "customAreaChartTooltipStyleLikeHTMLTable",
-            /*及时刷新📈📊图表数据*/
+            /*即时刷新📈📊图表数据*/
             AAChartType.Column,
             AAChartType.Bar,
             AAChartType.Area,
@@ -250,7 +250,7 @@ public class MainActivity extends AppCompatActivity {
                     goToCustomStyleChartActivity(position);
                 } else if (position <= 63){/*使用AAOptions绘制图表*/
                     goToDrawChartWithAAOptionsActivity(position);
-                } else if (position <= 72 ) { /*及时刷新📈📊图表数据*/
+                } else if (position <= 72 ) { /*即时刷新📈📊图表数据*/
                     goToOnlyRefreshChartDataActivity(position);
                 } else if (position <= 85) {/*formatter js function*/
                     goToCustomTooltipWithJSFunctionActivity(position);
