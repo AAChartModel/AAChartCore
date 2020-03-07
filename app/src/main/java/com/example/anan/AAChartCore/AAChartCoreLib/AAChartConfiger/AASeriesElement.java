@@ -66,6 +66,7 @@ public class AASeriesElement {
     private AAShadow shadow;
     private String stack;
     private AATooltip tooltip;
+    private Boolean showInLegend;
 
 
     public AASeriesElement type(String prop) {
@@ -170,6 +171,11 @@ public class AASeriesElement {
 
     public AASeriesElement tooltip(AATooltip prop) {
         tooltip = prop;
+        return this;
+    }
+
+    public AASeriesElement showInLegend(Boolean prop) {
+        showInLegend = prop;
         return this;
     }
 
