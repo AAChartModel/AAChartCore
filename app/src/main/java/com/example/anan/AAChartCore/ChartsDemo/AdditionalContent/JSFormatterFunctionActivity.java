@@ -417,7 +417,7 @@ public class JSFormatterFunctionActivity extends AppCompatActivity {
 
     private AAOptions customStackedAndGroupedColumnChartTooltip() {
         AAChartModel aaChartModel = new AAChartModel()
-                .title("Total fruit consumtion, grouped by gender")
+                .title("Total fruit consumption, grouped by gender")
                 .subtitle("stacked and grouped")
                 .yAxisTitle("Number of fruits")
                 .chartType(AAChartType.Column)
