@@ -17,6 +17,7 @@ public class AAChart {
     public Float marginRight; //👉
     public Float marginBottom; //👇
     public Float marginLeft; //👈
+    public AAScrollablePlotArea scrollablePlotArea;
 
     public AAChart type(String prop) {
         type = prop;
@@ -85,6 +86,11 @@ public class AAChart {
 
     public AAChart marginLeft(Float prop) {
         marginLeft = prop;
+        return this;
+    }
+
+    public AAChart scrollablePlotArea(AAScrollablePlotArea prop) {
+        scrollablePlotArea = prop;
         return this;
     }
 

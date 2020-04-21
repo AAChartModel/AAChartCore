@@ -37,6 +37,8 @@ import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartStackingTy
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartSymbolStyleType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartZoomType;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAChart;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAScrollablePlotArea;
 
 public class AAChartModel {
 
@@ -91,6 +93,7 @@ public class AAChartModel {
     public Float   markerRadius;          //折线连接点的半径长度
     public Object[] series;
     public Boolean touchEventEnabled;     //是否支持用户触摸事件
+    public AAScrollablePlotArea scrollablePlotArea;
 
 
 
@@ -347,6 +350,11 @@ public class AAChartModel {
 
     public AAChartModel touchEventEnabled(Boolean prop) {
         touchEventEnabled = prop;
+        return this;
+    }
+
+    public AAChartModel scrollablePlotArea(AAScrollablePlotArea prop) {
+        scrollablePlotArea = prop;
         return this;
     }
 
