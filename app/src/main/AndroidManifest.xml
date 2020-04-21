@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ChartsDemo.AdditionalContent.DoubleChartsLinkedWorkActivity"></activity>
+        <activity android:name=".ChartsDemo.AdditionalContent.ScollableChartActivity"></activity>
+        <activity android:name=".ChartsDemo.AdditionalContent.DoubleChartsLinkedWorkActivity" />
         <activity android:name=".ChartsDemo.AdditionalContent.ScrollingUpdateDataActivity" />
         <activity android:name=".ChartsDemo.AdditionalContent.JSFormatterFunctionActivity" />
         <activity android:name=".ChartsDemo.AdditionalContent.EvaluateJSStringFunctionActivity" />

@@ -15,6 +15,7 @@ import com.example.anan.AAChartCore.ChartsDemo.AdditionalContent.DrawChartWithAA
 import com.example.anan.AAChartCore.ChartsDemo.AdditionalContent.EvaluateJSStringFunctionActivity;
 import com.example.anan.AAChartCore.ChartsDemo.AdditionalContent.HideOrShowChartSeriesActivity;
 import com.example.anan.AAChartCore.ChartsDemo.AdditionalContent.OnlyRefreshChartDataActivity;
+import com.example.anan.AAChartCore.ChartsDemo.AdditionalContent.ScollableChartActivity;
 import com.example.anan.AAChartCore.R;
 
 public class MainActivity extends AppCompatActivity {
@@ -116,7 +117,9 @@ public class MainActivity extends AppCompatActivity {
             "eval JS function 2",
             "eval JS function 3",
             /*Double Charts Linked Work---双表联动*/
-            "doubleChartsLinkedWork----------------------------"
+            "doubleChartsLinkedWork----------------------------",
+            /*Scrollable Chart---可滚动图表*/
+            "scrollable chart"
     };
 
     String[] chartTypeArr = {
@@ -217,7 +220,10 @@ public class MainActivity extends AppCompatActivity {
             "evalJSFunction2",
             "evalJSFunction3",
             /*Double Charts Linked Work---双表联动*/
-            "doubleChartsLinkedWork"
+            "doubleChartsLinkedWork",
+            /*Scrollable Chart---可滚动图表*/
+            "scrollableChart"
+
 
     };
 
@@ -256,8 +262,10 @@ public class MainActivity extends AppCompatActivity {
                     goToCustomTooltipWithJSFunctionActivity(position);
                 } else if (position <= 87)  { /*eval JS Function*/
                     goToEvaluateJSStringFunctionActivity(position);
-                } else { /*Double Charts Linked Work*/
+                } else if (position <= 88){ /*Double Charts Linked Work*/
                     goToDoubleChartsLinkedWorkActivity(position);
+                } else if (position <= 89) {/*Scrollable Chart---可滚动图表*/
+                    gotoScrollableChartActivity();
                 }
             }
 
@@ -332,6 +340,11 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, DoubleChartsLinkedWorkActivity.class);
         intent.putExtra("chartType", chartTypeArr[position]);
 
+        startActivity(intent);
+    }
+
+    void gotoScrollableChartActivity() {
+        Intent intent = new Intent(this, ScollableChartActivity.class);
         startActivity(intent);
     }
 
