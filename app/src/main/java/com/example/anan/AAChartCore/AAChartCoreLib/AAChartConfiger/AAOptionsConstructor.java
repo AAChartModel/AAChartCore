@@ -78,6 +78,7 @@ public class AAOptionsConstructor
                 .polar(aaChartModel.polar) //是否极化图表(开启极坐标模式)
                 .marginLeft(aaChartModel.marginLeft) //图表左边距
                 .marginRight(aaChartModel.marginRight) //图表右边距
+                .scrollablePlotArea(aaChartModel.scrollablePlotArea)
                 ;
 
         AATitle aaTitle = new AATitle()
