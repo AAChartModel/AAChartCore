@@ -119,7 +119,14 @@ public class MainActivity extends AppCompatActivity {
             /*Double Charts Linked Work---双表联动*/
             "doubleChartsLinkedWork----------------------------",
             /*Scrollable Chart---可滚动图表*/
-            "scrollable chart"
+            "/*Scrollable Chart---可滚动图表*/Column Chart---柱形图--------------",
+            "Bar Chart---条形图",
+            "Area Chart---折线填充图",
+            "Areaspline Chart---曲线填充图",
+            "Step Area Chart--- 直方折线填充图",
+            "Step Line Chart--- 直方折线图",
+            "Line Chart---折线图",
+            "Spline Chart---曲线图",
     };
 
     String[] chartTypeArr = {
@@ -222,7 +229,14 @@ public class MainActivity extends AppCompatActivity {
             /*Double Charts Linked Work---双表联动*/
             "doubleChartsLinkedWork",
             /*Scrollable Chart---可滚动图表*/
-            "scrollableChart"
+            AAChartType.Column,
+            AAChartType.Bar,
+            AAChartType.Area,
+            AAChartType.Areaspline,
+            AAChartType.Area,
+            AAChartType.Line,
+            AAChartType.Line,
+            AAChartType.Spline,
 
 
     };
@@ -264,8 +278,8 @@ public class MainActivity extends AppCompatActivity {
                     goToEvaluateJSStringFunctionActivity(position);
                 } else if (position <= 88){ /*Double Charts Linked Work*/
                     goToDoubleChartsLinkedWorkActivity(position);
-                } else if (position <= 89) {/*Scrollable Chart---可滚动图表*/
-                    gotoScrollableChartActivity();
+                } else if (position <= 96) {/*Scrollable Chart---可滚动图表*/
+                    gotoScrollableChartActivity(position);
                 }
             }
 
@@ -343,8 +357,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    void gotoScrollableChartActivity() {
+    void gotoScrollableChartActivity(int position) {
         Intent intent = new Intent(this, ScollableChartActivity.class);
+        intent.putExtra("chartType", chartTypeArr[position]);
+        intent.putExtra("position",position);
         startActivity(intent);
     }
 

@@ -1,6 +1,7 @@
 package com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel;
 
 public class AAXAxis {
+    public String type;
     public AAPlotBandsElement[] plotBands;
     public AAPlotLinesElement[] plotLines;
     public String[] categories;
@@ -26,6 +27,12 @@ public class AAXAxis {
     public Float tickLength;//坐标轴刻度线的长度。 默认是：10.
     public String tickPosition; //刻度线相对于轴线的位置，可用的值有 inside 和 outside，分别表示在轴线的内部和外部。 默认是：outside.
 
+
+
+    public AAXAxis type(String prop) {
+        type = prop;
+        return this;
+    }
 
     public AAXAxis plotBands(AAPlotBandsElement[] prop) {
         plotBands = prop;
