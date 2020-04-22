@@ -960,7 +960,7 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
 
         Object[] rateValuesArr = new Object[33];
 
-        for (int i =0; i< 33; i++) {
+        for (int i = 0; i < 33; i++) {
             Float goalValue = Float.valueOf((Integer) goalValuesArr[i]);
             Float realValue = Float.valueOf((Integer) realValuesArr[i]);
             Float rateValue = realValue / goalValue;
@@ -970,7 +970,7 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
         AAChart aaChart = new AAChart()
                 .backgroundColor("#191E40");
 
-        AATitle aaTitle =new AATitle()
+        AATitle aaTitle = new AATitle()
                 .text("");
 
         AALabels aaLabels = new AALabels()
