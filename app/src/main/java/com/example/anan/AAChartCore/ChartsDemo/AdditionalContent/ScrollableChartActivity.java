@@ -26,7 +26,7 @@ import com.example.anan.AAChartCore.R;
 
 import java.util.Map;
 
-public class ScollableChartActivity extends AppCompatActivity {
+public class ScrollableChartActivity extends AppCompatActivity {
     private AAChartView aaChartView1;
     private AAChartModel aaChartModel;
     private AAOptions aaOptions;

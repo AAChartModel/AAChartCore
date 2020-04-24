@@ -15,7 +15,7 @@ import com.example.anan.AAChartCore.ChartsDemo.AdditionalContent.DrawChartWithAA
 import com.example.anan.AAChartCore.ChartsDemo.AdditionalContent.EvaluateJSStringFunctionActivity;
 import com.example.anan.AAChartCore.ChartsDemo.AdditionalContent.HideOrShowChartSeriesActivity;
 import com.example.anan.AAChartCore.ChartsDemo.AdditionalContent.OnlyRefreshChartDataActivity;
-import com.example.anan.AAChartCore.ChartsDemo.AdditionalContent.ScollableChartActivity;
+import com.example.anan.AAChartCore.ChartsDemo.AdditionalContent.ScrollableChartActivity;
 import com.example.anan.AAChartCore.R;
 
 public class MainActivity extends AppCompatActivity {
@@ -358,7 +358,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     void gotoScrollableChartActivity(int position) {
-        Intent intent = new Intent(this, ScollableChartActivity.class);
+        Intent intent = new Intent(this, ScrollableChartActivity.class);
         intent.putExtra("chartType", chartTypeArr[position]);
         intent.putExtra("position",position);
         startActivity(intent);
