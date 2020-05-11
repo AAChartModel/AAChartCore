@@ -89,6 +89,8 @@ public class MainActivity extends AppCompatActivity {
             "configureDoubleYAxesAndColumnLineMixedChart",
             "configureDoubleYAxesMarketDepthChart",
             "customAreaChartTooltipStyleLikeHTMLTable",
+            "simpleGaugeChart",
+            "gaugeChartWithPlotBand",
             /*即时刷新📈📊图表数据*/
             "/*即时刷新📈📊图表数据*/Column Chart---柱形图--------------",
             "Bar Chart---条形图",
@@ -199,6 +201,8 @@ public class MainActivity extends AppCompatActivity {
             "configureDoubleYAxesAndColumnLineMixedChart",
             "configureDoubleYAxesMarketDepthChart",
             "customAreaChartTooltipStyleLikeHTMLTable",
+            "simpleGaugeChart",
+            "gaugeChartWithPlotBand",
             /*即时刷新📈📊图表数据*/
             AAChartType.Column,
             AAChartType.Bar,
@@ -268,17 +272,17 @@ public class MainActivity extends AppCompatActivity {
                     goToMixedChartActivity(position);
                 } else if (position <= 47)  {/*自定义样式图表*/
                     goToCustomStyleChartActivity(position);
-                } else if (position <= 63){/*使用AAOptions绘制图表*/
+                } else if (position <= 65){/*使用AAOptions绘制图表*/
                     goToDrawChartWithAAOptionsActivity(position);
-                } else if (position <= 72 ) { /*即时刷新📈📊图表数据*/
+                } else if (position <= 74 ) { /*即时刷新📈📊图表数据*/
                     goToOnlyRefreshChartDataActivity(position);
-                } else if (position <= 85) {/*formatter js function*/
+                } else if (position <= 87) {/*formatter js function*/
                     goToCustomTooltipWithJSFunctionActivity(position);
-                } else if (position <= 87)  { /*eval JS Function*/
+                } else if (position <= 89)  { /*eval JS Function*/
                     goToEvaluateJSStringFunctionActivity(position);
-                } else if (position <= 88){ /*Double Charts Linked Work*/
+                } else if (position <= 91){ /*Double Charts Linked Work*/
                     goToDoubleChartsLinkedWorkActivity(position);
-                } else if (position <= 96) {/*Scrollable Chart---可滚动图表*/
+                } else if (position <= 98) {/*Scrollable Chart---可滚动图表*/
                     gotoScrollableChartActivity(position);
                 }
             }

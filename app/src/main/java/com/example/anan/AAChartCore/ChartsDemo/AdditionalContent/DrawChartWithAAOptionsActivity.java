@@ -29,6 +29,7 @@ import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AALabels;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AALegend;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAMarker;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAOptions;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAPane;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAPlotBandsElement;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAPlotLinesElement;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAPlotOptions;
@@ -87,6 +88,8 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
             case "configureDoubleYAxesAndColumnLineMixedChart": return configureDoubleYAxesAndColumnLineMixedChart();
             case "configureDoubleYAxesMarketDepthChart": return configureDoubleYAxesMarketDepthChart();
             case "customAreaChartTooltipStyleLikeHTMLTable": return customAreaChartTooltipStyleLikeHTMLTable();
+            case "simpleGaugeChart": return simpleGaugeChart();
+            case "gaugeChartWithPlotBand": return gaugeChartWithPlotBand();
         }
         return configureAAPlotBandsForChart();
     }
@@ -1257,4 +1260,62 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
         return aaOptions;
     }
 
+    private AAOptions simpleGaugeChart() {
+        AAOptions aaOptions = new AAOptions()
+                .chart(new AAChart()
+                        .type(AAChartType.Gauge))
+                .pane(new AAPane()
+                        .startAngle(-150f)
+                        .endAngle(150f))
+                .yAxis(new AAYAxis()
+                        .min(0f)
+                        .max(100f)
+                        .plotBands(new AAPlotBandsElement[]{
+                                new AAPlotBandsElement()
+                                        .from(0f)
+                                        .to(60f)
+                                        .color("#FF0000")
+                        }))
+                .series(new AASeriesElement[]{
+                        new AASeriesElement()
+                                .data(new Object[]{80})
+                });
+            return aaOptions;
+    }
+
+    AAOptions gaugeChartWithPlotBand() {
+        AAOptions aaOptions2 = new AAOptions()
+                .chart(new AAChart()
+                        .type(AAChartType.Gauge))
+                .title(new AATitle()
+                        .text("速度仪"))
+                .pane(new AAPane()
+                        .startAngle(-150f)
+                        .endAngle(150f))
+                .yAxis(new AAYAxis()
+                        .min(0f)
+                        .max(200f)
+                        .title(new AATitle()
+                                .text("km/h"))
+                        .plotBands(new AAPlotBandsElement[]{
+                                new AAPlotBandsElement()
+                                        .from(0f)
+                                        .to(120f)
+                                        .color("#ffc069"),
+                                new AAPlotBandsElement()
+                                        .from(120f)
+                                        .to(160f)
+                                        .color("#fe117c"),
+                                new AAPlotBandsElement()
+                                        .from(160f)
+                                        .to(200f)
+                                        .color("#06caf4"),
+                        })
+                )
+                .series(new AASeriesElement[]{
+                        new AASeriesElement()
+                                .data(new Object[]{80})
+                });
+        return aaOptions2;
+    }
 }

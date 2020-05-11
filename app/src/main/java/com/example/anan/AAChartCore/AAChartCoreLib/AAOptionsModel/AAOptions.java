@@ -12,6 +12,7 @@ public class AAOptions {
     public AAPlotOptions plotOptions;
     public Object[] series;
     public AALegend legend;
+    public AAPane pane;
     public Object[] colors;
     public Boolean touchEventEnabled;
 
@@ -67,6 +68,11 @@ public class AAOptions {
 
     public AAOptions legend(AALegend prop) {
         legend = prop;
+        return this;
+    }
+
+    public AAOptions pane(AAPane prop) {
+        pane = prop;
         return this;
     }
 
