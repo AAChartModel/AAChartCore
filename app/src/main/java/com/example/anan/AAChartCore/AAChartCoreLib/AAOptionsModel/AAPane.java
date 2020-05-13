@@ -1,13 +1,13 @@
 package com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel;
 
 public class AAPane {
-    public Object background;
+    public AABackground background;
     public Object[] center;
     public Float endAngle;
     public Float size;
     public Float startAngle;
 
-    public AAPane background(Object prop) {
+    public AAPane background(AABackground prop) {
         background = prop;
         return this;
     }
