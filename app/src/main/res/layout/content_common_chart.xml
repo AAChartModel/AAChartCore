@@ -8,7 +8,7 @@
     tools:context="com.example.anan.AAChartCore.ChartsDemo.MainContent.MainContent.CommonChartActivity"
     tools:showIn="@layout/activity_common_chart">
 
-    <com.example.anan.AAChartCore.AAChartCoreLib.AAChartConfiger.AAChartView
+    <com.example.anan.AAChartCore.AAChartCoreLib.AAChartCreator.AAChartView
         android:id="@+id/AAChartView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

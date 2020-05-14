@@ -23,7 +23,7 @@
 
  */
 
-package com.example.anan.AAChartCore.AAChartCoreLib.AAChartConfiger;
+package com.example.anan.AAChartCore.AAChartCoreLib.AAChartCreator;
 
 import com.google.gson.internal.LinkedTreeMap;
 

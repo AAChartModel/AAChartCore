@@ -33,7 +33,7 @@
  */
 
 
-package com.example.anan.AAChartCore.AAChartCoreLib.AAChartConfiger;
+package com.example.anan.AAChartCore.AAChartCoreLib.AAChartCreator;
 
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartAnimationType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartSymbolStyleType;

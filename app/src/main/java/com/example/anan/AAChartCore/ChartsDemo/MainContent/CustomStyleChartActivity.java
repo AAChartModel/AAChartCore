@@ -4,13 +4,13 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.example.anan.AAChartCore.AAChartCoreLib.AAChartConfiger.AAChartModel;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAChartCreator.AAChartModel;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartStackingType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartSymbolStyleType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartSymbolType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartType;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAChartConfiger.AAChartView;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAChartConfiger.AASeriesElement;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAChartCreator.AAChartView;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAChartCreator.AASeriesElement;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartAnimationType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AADataElement;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAMarker;

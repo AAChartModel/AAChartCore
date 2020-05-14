@@ -1,21 +1,18 @@
 package com.example.anan.AAChartCore.ChartsDemo.AdditionalContent;
 
-import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.example.anan.AAChartCore.AAChartCoreLib.AAChartConfiger.AAChartModel;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAChartConfiger.AAChartView;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAChartConfiger.AAMoveOverEventMessageModel;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAChartConfiger.AAOptionsConstructor;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAChartConfiger.AASeriesElement;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartStackingType;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAChartCreator.AAChartModel;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAChartCreator.AAChartView;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAChartCreator.AAMoveOverEventMessageModel;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAChartCreator.AAOptionsConstructor;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAChartCreator.AASeriesElement;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AADataElement;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAOptions;
-import com.example.anan.AAChartCore.AAChartCoreLib.AATools.AAColor;
 import com.example.anan.AAChartCore.AAChartCoreLib.AATools.AAGradientColor;
 import com.example.anan.AAChartCore.R;
 

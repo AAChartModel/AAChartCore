@@ -30,7 +30,7 @@
 
  */
 
-package com.example.anan.AAChartCore.AAChartCoreLib.AAChartConfiger;
+package com.example.anan.AAChartCore.AAChartCoreLib.AAChartCreator;
 
 import android.app.AlertDialog;
 import android.content.Context;

@@ -9,7 +9,7 @@
     tools:showIn="@layout/activity_special_chart">
 
 
-    <com.example.anan.AAChartCore.AAChartCoreLib.AAChartConfiger.AAChartView
+    <com.example.anan.AAChartCore.AAChartCoreLib.AAChartCreator.AAChartView
         android:id="@+id/AAChartView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

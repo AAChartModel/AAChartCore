@@ -30,14 +30,12 @@
 
  */
 
-package com.example.anan.AAChartCore.AAChartCoreLib.AAChartConfiger;
+package com.example.anan.AAChartCore.AAChartCoreLib.AAChartCreator;
 
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AADataLabels;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAMarker;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAShadow;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AATooltip;
-
-import java.util.Dictionary;
 
 /**
  * Created by anan on 2018/4/16.
