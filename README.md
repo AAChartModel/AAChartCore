@@ -24,7 +24,7 @@
 ***
 ## Features
 
-* 🎂  **Environment friendly**. Support all Android platforms. Totally support `Java` language, and there are more types version such as  `Kotlin` language version [AAInfographics](https://github.com/AAChartModel/AAChartCore-Kotlin),`Swift` language version [AAChartKit-Swift](https://github.com/AAChartModel/AAChartKit-Swift) 、 `Objective-c` language version [AAChartKit](https://github.com/AAChartModel/AAChartKit) 、 . To get more details you can see the [source code links list](https://github.com/AAChartModel/AAChartCore#source-code).
+* 🎂  **Environment friendly**. Support all Android platforms. Totally support `Java` language, and there are more types version such as  `Kotlin` language version [AAInfographics](https://github.com/AAChartModel/AAChartCore-Kotlin)、`Swift` language version [AAChartKit-Swift](https://github.com/AAChartModel/AAChartKit-Swift) 、 `Objective-c` language version [AAChartKit](https://github.com/AAChartModel/AAChartKit) . To get more details you can see the [source code links list](https://github.com/AAChartModel/AAChartCore#source-code).
 
 * 🚀  **Powerful and easy to use**. It supports `column chart`, `bar chart`, `area chart`, `areaspline chart`, `line chart`, `spline chart`, `radar chart`, `polar chart`, `pie chart`, `bubble chart`, `pyramid chart`, `funnel chart`, `columnrange chart`, `arearange chart`, `mixed chart` and other graphics. Support for more chart types is planned.
 
@@ -32,7 +32,7 @@
 
 * 🎮  **Interactive and animated**. The charts `animation` effect is exquisite, delicate, smooth and beautiful.
 
-* ⛓  **Chain programming**.  Supports `chain programming syntax` .
+* ⛓  **Chain programming**.  Supports concise `chain programming syntax` .
 
 * 🦋  **Minimalist**. `AAChartView + AAChartModel = Chart`. The AAChartKit follows a minimalist formula: Chart view + Chart model = The chart you want, just like the powerful and beautiful charts lib [AAInfographics](https://github.com/AAChartModel/AAChartCore-Kotlin).
 
