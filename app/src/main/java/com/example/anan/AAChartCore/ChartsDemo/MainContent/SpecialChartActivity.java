@@ -11,8 +11,10 @@ import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartCreator.AAChartView;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartCreator.AASeriesElement;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartAnimationType;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartVerticalAlignType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AADataLabels;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAPie;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAStyle;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AATooltip;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAWaterfall;
 import com.example.anan.AAChartCore.AAChartCoreLib.AATools.AAColor;
@@ -943,6 +945,14 @@ public class SpecialChartActivity extends AppCompatActivity {
                .series(new AASeriesElement[]{
                        new AASeriesElement()
                                .name("2020")
+                               .dataLabels(new AADataLabels()
+                                       .enabled(true)
+                                       .inside(true)
+                                       .verticalAlign(AAChartVerticalAlignType.Middle)
+                                       .color(AAColor.blackColor())
+                                       .style(new AAStyle()
+                                               .fontSize(25f)
+                                               .textOutline("none")))
                                .data(new Object[][] {
                                {"swift",      11256},
                                {"Objective-C",12365},
