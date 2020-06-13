@@ -296,7 +296,7 @@ public class MixedChartActivity extends AppCompatActivity {
     }
     
     AAChartModel scatterMixedLine() {
-        Object[][] dataArr = {
+        Object[][] scatterDataArr = {
                 {0.067732, 3.176513},
                 {0.42781,  3.816464},
                 {0.995731, 4.550095},
@@ -499,6 +499,11 @@ public class MixedChartActivity extends AppCompatActivity {
                 {0.116163, 3.129283}
         };
 
+        Object[] lineDataArr = new Object[][] {
+                {0.014, 3.078},
+                {0.969, 4.655},
+        };
+
         return new AAChartModel()
                 .dataLabelsEnabled(false)//是否显示数字
                 .chartType(AAChartType.Scatter)
@@ -508,14 +513,13 @@ public class MixedChartActivity extends AppCompatActivity {
                 .series(new AASeriesElement[]{
                         new AASeriesElement()
                                 .name("Scatter")
-                                .data(dataArr)
+                                .data(scatterDataArr)
                                 .color("#0088FF")
                         ,
                         new AASeriesElement()
                                 .name("线性回归线")
                                 .type(AAChartType.Line)
-                                .data(new Object[][] {
-                                        {0.014, 3.078}, {0.969, 4.655},})
+                                .data(lineDataArr)
                                 .color("#FF0000")
                         ,
                 });
