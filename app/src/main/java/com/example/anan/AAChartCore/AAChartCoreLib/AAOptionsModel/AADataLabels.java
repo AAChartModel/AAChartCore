@@ -2,6 +2,7 @@ package com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel;
 
 public class AADataLabels {
     public Boolean enabled;
+    public Boolean inside;
     public AAStyle style;
     public String format;
     public Float rotation;
@@ -18,6 +19,11 @@ public class AADataLabels {
     public Float borderWidth;
     public String shape;
 
+
+    public AADataLabels inside(Boolean prop) {
+        inside = prop;
+        return this;
+    }
 
     public AADataLabels enabled(Boolean prop) {
         enabled = prop;

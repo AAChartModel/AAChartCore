@@ -5,7 +5,7 @@ public class AAStyle {
     public String color;
     public String fontSize;
     public String fontWeight;
-    public String textOutLine;
+    public String textOutline;
 
     public AAStyle color(String prop) {
         color = prop;
@@ -23,7 +23,7 @@ public class AAStyle {
     }
 
     public AAStyle textOutline(String prop) {
-        textOutLine = prop;
+        textOutline = prop;
         return this;
     }
 
