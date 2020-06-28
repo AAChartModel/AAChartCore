@@ -278,6 +278,26 @@ you can get the customized tooltip style chart like this👇
 * chart with value range segmentation `lines 🧶`
 ![plotLinesChart](https://raw.githubusercontent.com/AAChartModel/Gallery/master/AAChartKit/plotLinesChart.png)
 
+* chart with value range segmentation `zones 🧱`
+![seriesZonesChart](https://raw.githubusercontent.com/AAChartModel/Gallery/master/AAChartKit/seriesZonesChart.png)
+
+
+### Support scrolling update chart data
+
+<div align="center" >
+   <img src='https://raw.githubusercontent.com/AAChartModel/Gallery/master/AAChartKit/scrollingUpdateColumnChart.gif' width="100%" >
+   <img src='https://raw.githubusercontent.com/AAChartModel/Gallery/master/AAChartKit/scrollingUpdateLineChart.gif' width="100%" >
+   <img src='https://raw.githubusercontent.com/AAChartModel/Gallery/master/AAChartKit/scrollingUpdateStepAreaChart.gif' width="100%" >
+</div>
+
+### Support data sorting with animation effect
+
+<div  align="center">
+   <img src='https://raw.githubusercontent.com/AAChartModel/Gallery/master/AAChartKit/DataSortingColumnChart.gif' width="100%">
+   <img src='https://raw.githubusercontent.com/AAChartModel/Gallery/master/AAChartKit/DataSortingScatterChart.gif' width="100%">
+   <img src='https://raw.githubusercontent.com/AAChartModel/Gallery/master/AAChartKit/DataSortingBarChart.gif' >
+</div>
+
 ### Supported chart type for now
 
 ```java
