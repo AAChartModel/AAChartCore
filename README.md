@@ -486,8 +486,8 @@ public String  axisColor;
 
 Language Version | Project Name | Target Platform | Source Code Link |
 ------------ | ------------- |------------- | ------------- |
-Kotlin | AAInfographics | Android | https://github.com/AAChartModel/AAChartKit-Kotlin |
-Java | AAChartCore | Android | https://github.com/AAChartModel/AAChartKit |
+Kotlin | AAInfographics | Android | https://github.com/AAChartModel/AAChartCore-Kotlin |
+Java | AAChartCore | Android | https://github.com/AAChartModel/AAChartCore |
 Swift | AAInfographics |  iOS |https://github.com/AAChartModel/AAChartKit-Swift |
 Objective C | AAChartKit | iOS | https://github.com/AAChartModel/AAChartKit |
 

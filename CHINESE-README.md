@@ -497,8 +497,8 @@ public String  axisColor;             //x 轴和 y 轴文字颜色
 ## 源代码⛓
 语言版本 |  项目名称 | 适用平台| 源代码链接|
 ------------ | ------------- |------------- | ------------- |
-Kotlin | AAInfographics | Android | https://github.com/AAChartModel/AAChartKit-Kotlin |
-Java | AAChartCore | Android | https://github.com/AAChartModel/AAChartKit |
+Kotlin | AAInfographics | Android | https://github.com/AAChartModel/AAChartCore-Kotlin |
+Java | AAChartCore | Android | https://github.com/AAChartModel/AAChartCore |
 Swift | AAInfographics |  iOS |https://github.com/AAChartModel/AAChartKit-Swift |
 Objective C | AAChartKit | iOS | https://github.com/AAChartModel/AAChartKit |
 Dart | AACharts-Flutter | iOS/Android  | https://github.com/AAChartModel/AACharts-Flutter |

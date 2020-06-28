@@ -1,1 +1,1 @@
-# ChartCore-Slim
+# AAChartCore
