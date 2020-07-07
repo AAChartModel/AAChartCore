@@ -893,12 +893,12 @@ public class CustomStyleChartActivity extends AppCompatActivity {
                         new AASeriesElement()
                                 .name("2020")
                                 .reversed(true)
-                                .data(new Object[]{
-                                new Object[]{"Swift",      15654},
-                                new Object[]{"Objective-C", 4064},
-                                new Object[]{"JavaScript",  1987},
-                                new Object[]{"GO",           976},
-                                new Object[]{"Python",       846}
+                                .data(new Object[][]{
+                                {"Swift",      15654},
+                                {"Objective-C", 4064},
+                                {"JavaScript",  1987},
+                                {"GO",           976},
+                                {"Python",       846}
                         })
                 });
 }
@@ -918,12 +918,12 @@ public class CustomStyleChartActivity extends AppCompatActivity {
                                 .innerSize("30%")//内部圆环半径大小占比
                                 .borderWidth(0f)//描边的宽度
                                 .allowPointSelect(false)//是否允许在点击数据点标记(扇形图点击选中的块发生位移)
-                                .data(new Object[]{
-                                new Object[]{"Firefox Past",   3336.2},
-                                new Object[]{"Chrome Past",      26.8},
-                                new Object[]{"Safari Past",      88.5},
-                                new Object[]{"Opera Past",       46.0},
-                                new Object[]{"Others Past",     223.0},
+                                .data(new Object[][]{
+                                {"Firefox Past",   3336.2},
+                                {"Chrome Past",      26.8},
+                                {"Safari Past",      88.5},
+                                {"Opera Past",       46.0},
+                                {"Others Past",     223.0},
                         }),
 
                         new AASeriesElement()
@@ -932,12 +932,12 @@ public class CustomStyleChartActivity extends AppCompatActivity {
                                 .innerSize("70%")//内部圆环半径大小占比
                                 .borderWidth(0f)//描边的宽度
                                 .allowPointSelect(false)//是否允许在点击数据点标记(扇形图点击选中的块发生位移)
-                                .data(new Object[]{
-                                new Object[]{"Firefox Now",    336.2},
-                                new Object[]{"Chrome Now",    6926.8},
-                                new Object[]{"Safari Now",     388.5},
-                                new Object[]{"Opera Now",      446.0},
-                                new Object[]{"Others Now",     223.0},
+                                .data(new Object[][]{
+                                {"Firefox Now",    336.2},
+                                {"Chrome Now",    6926.8},
+                                {"Safari Now",     388.5},
+                                {"Opera Now",      446.0},
+                                {"Others Now",     223.0},
                         })
                 });
     }
@@ -978,7 +978,7 @@ public class CustomStyleChartActivity extends AppCompatActivity {
                 .chartType(AAChartType.Spline)
                 .yAxisVisible(false)
                 .stacking(AAChartStackingType.Normal)
-                .colorsTheme(new Object[]{"#1e90ff", "#ef476f", "#ffd066", "#04d69f"})
+                .colorsTheme(new String[]{"#1e90ff", "#ef476f", "#ffd066", "#04d69f"})
                 .markerSymbol(AAChartSymbolType.Circle)
                 .markerRadius(8.0f)
                 .markerSymbolStyle(AAChartSymbolStyleType.BorderBlank)
@@ -1036,7 +1036,7 @@ public class CustomStyleChartActivity extends AppCompatActivity {
                 .chartType(AAChartType.Line)
                 .yAxisVisible(false)
                 .stacking(AAChartStackingType.Normal)
-                .colorsTheme(new Object[]{"#1e90ff","#ef476f","#ffd066","#04d69f"})
+                .colorsTheme(new String[]{"#1e90ff","#ef476f","#ffd066","#04d69f"})
                 .markerSymbol(AAChartSymbolType.Circle)
                 .markerRadius(8.0f)
                 .markerSymbolStyle(AAChartSymbolStyleType.InnerBlank)
@@ -1080,9 +1080,9 @@ public class CustomStyleChartActivity extends AppCompatActivity {
     // GitHub issue https://github.com/AAChartModel/AAChartKit-Swift/issues/223
     AAChartModel configureColorfulGradientColorAndColorfulDataLabelsStepAreaChart() {
         Object[][] blueStopsArr = new Object[][]{
-                new Object[]{0.0, AAColor.rgbaColor(30, 144, 255, 1.0f)},//颜色字符串设置支持十六进制类型和 rgba 类型
-                new Object[]{0.5, AAColor.rgbaColor(30, 144, 255, 0.2f)},
-                new Object[]{1.0, AAColor.rgbaColor(30, 144, 255, 0.0f)}
+                {0.0, AAColor.rgbaColor(30, 144, 255, 1.0f)},//颜色字符串设置支持十六进制类型和 rgba 类型
+                {0.5, AAColor.rgbaColor(30, 144, 255, 0.2f)},
+                {1.0, AAColor.rgbaColor(30, 144, 255, 0.0f)}
         };
         HashMap gradientBlueColorDic = AAGradientColor.linearGradient(
                 AALinearGradientDirection.ToBottom,
@@ -1090,9 +1090,9 @@ public class CustomStyleChartActivity extends AppCompatActivity {
         );
 
         Object[][] redStopsArr = new Object[][]{
-                new Object[]{0.0, AAColor.rgbaColor(255, 0, 0, 1.0f)},//颜色字符串设置支持十六进制类型和 rgba 类型
-                new Object[]{0.5, AAColor.rgbaColor(255, 0, 0, 0.2f)},
-                new Object[]{1.0, AAColor.rgbaColor(255, 0, 0, 0.0f)}
+                {0.0, AAColor.rgbaColor(255, 0, 0, 1.0f)},//颜色字符串设置支持十六进制类型和 rgba 类型
+                {0.5, AAColor.rgbaColor(255, 0, 0, 0.2f)},
+                {1.0, AAColor.rgbaColor(255, 0, 0, 0.0f)}
         };
         HashMap gradientRedColorDic = AAGradientColor.linearGradient(
                 AALinearGradientDirection.ToBottom,
@@ -1100,9 +1100,9 @@ public class CustomStyleChartActivity extends AppCompatActivity {
         );
 
         Object[][] goldStopsArr = new Object[][]{
-                new Object[]{0.0, AAColor.rgbaColor(255, 215, 0, 1.0f)},//颜色字符串设置支持十六进制类型和 rgba 类型
-                new Object[]{0.5, AAColor.rgbaColor(255, 215, 0, 0.2f)},
-                new Object[]{1.0, AAColor.rgbaColor(255, 215, 0, 0.0f)}
+                {0.0, AAColor.rgbaColor(255, 215, 0, 1.0f)},//颜色字符串设置支持十六进制类型和 rgba 类型
+                {0.5, AAColor.rgbaColor(255, 215, 0, 0.2f)},
+                {1.0, AAColor.rgbaColor(255, 215, 0, 0.0f)}
         };
         HashMap gradientGoldColorDic = AAGradientColor.linearGradient(
                 AALinearGradientDirection.ToBottom,
@@ -1110,9 +1110,9 @@ public class CustomStyleChartActivity extends AppCompatActivity {
         );
 
         Object[][] greenStopsArr = new Object[][]{
-                new Object[]{0.0, AAColor.rgbaColor(50, 205, 50, 1.0f)},//颜色字符串设置支持十六进制类型和 rgba 类型
-                new Object[]{0.5, AAColor.rgbaColor(50, 205, 50, 0.2f)},
-                new Object[]{1.0, AAColor.rgbaColor(50, 205, 50, 0.0f)}
+                {0.0, AAColor.rgbaColor(50, 205, 50, 1.0f)},//颜色字符串设置支持十六进制类型和 rgba 类型
+                {0.5, AAColor.rgbaColor(50, 205, 50, 0.2f)},
+                {1.0, AAColor.rgbaColor(50, 205, 50, 0.0f)}
         };
         HashMap gradientGreenColorDic = AAGradientColor.linearGradient(
                 AALinearGradientDirection.ToBottom,
@@ -1123,7 +1123,7 @@ public class CustomStyleChartActivity extends AppCompatActivity {
                 .chartType(AAChartType.Area)
                 .yAxisVisible(false)
                 .stacking(AAChartStackingType.Normal)
-                .colorsTheme(new Object[]{"#1e90ff", "#ef476f", "#ffd066", "#04d69f"})
+                .colorsTheme(new String[]{"#1e90ff", "#ef476f", "#ffd066", "#04d69f"})
                 .markerSymbol(AAChartSymbolType.Circle)
                 .markerRadius(5f)
                 .dataLabelsEnabled(false)
