@@ -1121,7 +1121,7 @@ public class CustomStyleChartActivity extends AppCompatActivity {
         };
         HashMap gradientGoldColorDic = AAGradientColor.linearGradient(
                 AALinearGradientDirection.ToBottom,
-                blueStopsArr
+                goldStopsArr
         );
 
         Object[][] greenStopsArr = new Object[][]{
@@ -1131,14 +1131,14 @@ public class CustomStyleChartActivity extends AppCompatActivity {
         };
         HashMap gradientGreenColorDic = AAGradientColor.linearGradient(
                 AALinearGradientDirection.ToBottom,
-                redStopsArr
+                greenStopsArr
         );
 
         return new AAChartModel()
                 .chartType(AAChartType.Area)
                 .yAxisVisible(false)
                 .stacking(AAChartStackingType.Normal)
-                .colorsTheme(new Object[]{"#1e90ff","#ef476f","#ffd066","#04d69f"})
+                .colorsTheme(new Object[]{"#1e90ff", "#ef476f", "#ffd066", "#04d69f"})
                 .markerSymbol(AAChartSymbolType.Circle)
                 .markerRadius(5f)
                 .dataLabelsEnabled(false)
