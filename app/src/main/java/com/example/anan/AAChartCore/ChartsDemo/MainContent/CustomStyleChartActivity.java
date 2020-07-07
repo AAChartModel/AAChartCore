@@ -21,6 +21,8 @@ import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AADataLabels;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAHalo;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAHover;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAMarker;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAMarkerHover;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAMarkerStates;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AASelect;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAShadow;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAStates;
@@ -704,10 +706,10 @@ public class CustomStyleChartActivity extends AppCompatActivity {
                                 .color(AAColor.whiteColor())
                                 .fontSize(16f))
                         .y((-35f))
-//                        .align(AAChartAlignType.Center)
+                        .align(AAChartAlignType.Center)
                         .verticalAlign(AAChartVerticalAlignType.Top)
-//                        .overflow("none")
-//                        .crop(false)
+                        .overflow("none")
+                        .crop(false)
                 )
                 .y(26.5f);
 
@@ -738,19 +740,31 @@ public class CustomStyleChartActivity extends AppCompatActivity {
                 .series(new AASeriesElement[]{
                         new AASeriesElement()
                                 .name("ElementOne")
-                                .data(new Object[]{211,183,157,133,111,91,73,57,43,31,21,13,7,3})
-//                                .allowPointSelect(true)
-//                                .states(new AAStates()
-//                                .hover(new AAHover()
-//                                        .color("rgba(220,20,60,1)"))//猩红色, alpha 透明度 1
-//                                .select(new AASelect()
-//                                        .color(AAColor.redColor()))
+                                .data(new Object[]{211, 183, 157, 133, 111, 91, 73, 57, 43, 31, 21, 13, 7, 3})
+                                .allowPointSelect(true)
+                                .states(
+                                new AAStates()
+                                        .hover(new AAHover()
+                                                .color("rgba(220,20,60,1)"))//猩红色, alpha 透明度 1
+                                        .select(new AASelect()
+                                                .color(AAColor.redColor()))
+                        )
                 })
                 ;
 
     }
 
     AAChartModel customChartHoverAndSelectHaloStyle() {
+        HashMap hoverHaloAttributes = new HashMap<String, Object>();
+        hoverHaloAttributes.put("stroke-width", 50);
+        hoverHaloAttributes.put("fill", "#00BFFF");
+        hoverHaloAttributes.put("stroke", "#00FA9A");
+
+        HashMap selectHaloAttributes = new HashMap<String, Object>();
+        selectHaloAttributes.put("stroke-width", 150);
+        selectHaloAttributes.put("fill", AAColor.rgbaColor(138, 43, 226, 1f));
+        selectHaloAttributes.put("stroke", AAColor.rgbaColor(30, 144, 255, 1f));
+
         return new AAChartModel()
                 .chartType(AAChartType.Line)
                 .title("Custom Chart Hover And Select Halo Style")
@@ -761,30 +775,25 @@ public class CustomStyleChartActivity extends AppCompatActivity {
                 .series(new AASeriesElement[]{
                         new AASeriesElement()
                                 .name("ElementOne")
-                                .data(new Object[]{211,183,157,133,111,91,73,57,43,31,21,13,7,3})
-//                                .allowPointSelect(true)
-//                                .states(new AAStates()
-//                                .hover(new AAHover()
-//                                        .halo(new AAHalo()
-//                                                .size(130f)
-//                                                .opacity(0.8f)
-//                                                .attributes({
-//                                                        "stroke-width":50,
-//                "fill":"#00BFFF",
-//                "stroke":"#00FA9A"
-//                                                     }))
-//                             )
-//                   .select(new AASelect()
-//                .halo(AAHalo()
-//                        .size(130)
-//                        .opacity(1.0)
-//                        .attributes({
-//                                "stroke-width":150,
-//                "fill":"rgba(138,43,226,1)",
-//                "stroke":"rgba(30,144,255,1)"
-//                                                      }))
-//                              ))
-               });
+                                .data(new Object[]{211, 183, 157, 133, 111, 91, 73, 57, 43, 31, 21, 13, 7, 3})
+                                .allowPointSelect(true)
+                                .states(
+                                new AAStates()
+                                        .hover(new AAHover()
+                                                .halo(new AAHalo()
+                                                        .size(130f)
+                                                        .opacity(0.8f)
+                                                        .attributes(hoverHaloAttributes)
+                                                )
+                                        )
+                                        .select(new AASelect()
+                                                .halo(new AAHalo()
+                                                        .size(130f)
+                                                        .opacity(1.0f)
+                                                        .attributes(selectHaloAttributes)
+                                                )
+                                        ))
+                });
     }
 
     AAChartModel customSplineChartMarkerStatesHoverStyle() {
@@ -802,15 +811,15 @@ public class CustomStyleChartActivity extends AppCompatActivity {
                                 .name("Tokyo Hot")
                                 .lineWidth(5.0f)
                                 .color("rgba(220,20,60,1)")//猩红色, alpha 透明度 1
-//                                .marker(new AAMarker()
-//                                        .states(new AAMarkerStates()
-//                                                .hover(new AAMarkerHover()
-//                                                        .fillColor(AAColor.whiteColor())
-//                                                        .radius(40)
-//                                                        .lineColor(AAColor.greenColor())
-//                                                        .lineWidth(20))
-//                                        )
-//                                )
+                                .marker(new AAMarker()
+                                        .states(new AAMarkerStates()
+                                                .hover(new AAMarkerHover()
+                                                        .fillColor(AAColor.whiteColor())
+                                                        .radius(40f)
+                                                        .lineColor(AAColor.greenColor())
+                                                        .lineWidth(20f))
+                                        )
+                                )
                                 .data(new Object[]{7.0, 6.9, 2.5, 14.5, 18.2, 21.5, 5.2, 26.5, 23.3, 45.3, 13.9, 9.6}),
                 });
     }
@@ -890,13 +899,13 @@ public class CustomStyleChartActivity extends AppCompatActivity {
                 .series(new AASeriesElement[]{
                         new AASeriesElement()
                                 .name("2020")
-//                                .reversed(true)
+                                .reversed(true)
                                 .data(new Object[]{
-                                new Object[]{"Swift", 15654},
+                                new Object[]{"Swift",      15654},
                                 new Object[]{"Objective-C", 4064},
-                                new Object[]{"JavaScript", 1987},
-                                new Object[]{"GO", 976},
-                                new Object[]{"Python", 846}
+                                new Object[]{"JavaScript",  1987},
+                                new Object[]{"GO",           976},
+                                new Object[]{"Python",       846}
                         })
                 });
 }
@@ -912,10 +921,10 @@ public class CustomStyleChartActivity extends AppCompatActivity {
                 .series(new AASeriesElement[]{
                         new AASeriesElement()
                                 .name("Past")
-//                                .size("40%")//尺寸大小
-//                                .innerSize("30%")//内部圆环半径大小占比
+                                .size("40%")//尺寸大小
+                                .innerSize("30%")//内部圆环半径大小占比
                                 .borderWidth(0f)//描边的宽度
-//                                .allowPointSelect(false)//是否允许在点击数据点标记(扇形图点击选中的块发生位移)
+                                .allowPointSelect(false)//是否允许在点击数据点标记(扇形图点击选中的块发生位移)
                                 .data(new Object[]{
                                 new Object[]{"Firefox Past",   3336.2},
                                 new Object[]{"Chrome Past",      26.8},
@@ -926,10 +935,10 @@ public class CustomStyleChartActivity extends AppCompatActivity {
 
                         new AASeriesElement()
                                 .name("Now")
-//                                .size((id)"80%")//尺寸大小
-//                                .innerSize("70%")//内部圆环半径大小占比
+                                .size("80%")//尺寸大小
+                                .innerSize("70%")//内部圆环半径大小占比
                                 .borderWidth(0f)//描边的宽度
-//                                .allowPointSelect(false)//是否允许在点击数据点标记(扇形图点击选中的块发生位移)
+                                .allowPointSelect(false)//是否允许在点击数据点标记(扇形图点击选中的块发生位移)
                                 .data(new Object[]{
                                 new Object[]{"Firefox Now",    336.2},
                                 new Object[]{"Chrome Now",    6926.8},
@@ -944,7 +953,7 @@ public class CustomStyleChartActivity extends AppCompatActivity {
     AAChartModel disableSomeOfLinesMouseTrackingEffect() {
         return new AAChartModel()
                 .chartType(AAChartType.Line)//图表类型
-//                .tooltipValueSuffix("万元")//设置浮动提示框单位后缀
+                .tooltipValueSuffix("万元")//设置浮动提示框单位后缀
                 .yAxisTitle("万元")//设置 Y 轴标题
                 .categories(new String[]{
                         "一月", "二月", "三月", "四月", "五月", "六月",
@@ -956,15 +965,15 @@ public class CustomStyleChartActivity extends AppCompatActivity {
                                 .data(new Object[]{7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6}),
                         new AASeriesElement()
                                 .name("2018")
-//                                .enableMouseTracking(false)
+                                .enableMouseTracking(false)
                                 .data(new Object[]{0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5}),
                         new AASeriesElement()
                                 .name("2019")
-//                                .enableMouseTracking(false)
+                                .enableMouseTracking(false)
                                 .data(new Object[]{0.9, 0.6, 3.5, 8.4, 13.5, 17.0, 18.6, 17.9, 14.3, 9.0, 3.9, 1.0}),
                         new AASeriesElement()
                                 .name("2020")
-//                                .enableMouseTracking(false)
+                                .enableMouseTracking(false)
                                 .data(new Object[]{3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8}),
                 });
     }
@@ -1201,11 +1210,11 @@ public class CustomStyleChartActivity extends AppCompatActivity {
                                 .lineWidth(5.0f)
                                 .color("rgba(220,20,60,1)")//猩红色, alpha 透明度 1
                                 .marker(new AAMarker()
-//                                        .states(AAMarkerStates()
-//                                                .hover(AAMarkerHover()
-//                                                        .enabled(false)
-//                                                )
-//                                        )
+                                        .states(new AAMarkerStates()
+                                                .hover(new AAMarkerHover()
+                                                        .enabled(false)
+                                                )
+                                        )
                                 )
                                 .data(new Object[]{7.0, 6.9, 2.5, 14.5, 18.2, 21.5, 5.2, 26.5, 23.3, 45.3, 13.9, 9.6}),
                 });

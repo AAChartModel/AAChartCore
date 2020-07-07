@@ -201,7 +201,7 @@ public class AAChartModel {
         return this;
     }
 
-    public AAChartModel tooltipValueSuffixSet(String prop) {
+    public AAChartModel tooltipValueSuffix(String prop) {
         tooltipValueSuffix = prop;
         return this;
     }

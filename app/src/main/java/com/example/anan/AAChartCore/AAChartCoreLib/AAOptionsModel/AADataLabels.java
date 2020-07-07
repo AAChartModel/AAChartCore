@@ -1,7 +1,10 @@
 package com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel;
 
+import java.util.Map;
+
 public class AADataLabels {
     public Boolean enabled;
+    public String align;
     public Boolean inside;
     public AAStyle style;
     public String format;
@@ -18,17 +21,27 @@ public class AADataLabels {
     public Float borderRadius;
     public Float borderWidth;
     public String shape;
+    public Boolean crop;
+    public String overflow;
+    public Boolean softConnector;
+    public Object textPath;
+    public Object filter;
 
+    public AADataLabels enabled(Boolean prop) {
+        enabled = prop;
+        return this;
+    }
+
+    public AADataLabels align(String prop) {
+        align = prop;
+        return this;
+    }
 
     public AADataLabels inside(Boolean prop) {
         inside = prop;
         return this;
     }
 
-    public AADataLabels enabled(Boolean prop) {
-        enabled = prop;
-        return this;
-    }
 
     public AADataLabels style(AAStyle prop) {
         style = prop;
@@ -102,6 +115,31 @@ public class AADataLabels {
 
     public AADataLabels shape(String prop) {
         shape = prop;
+        return this;
+    }
+
+    public AADataLabels crop(Boolean prop) {
+        crop = prop;
+        return this;
+    }
+
+    public AADataLabels overflow(String prop) {
+        overflow = prop;
+        return this;
+    }
+
+    public AADataLabels softConnector(Boolean prop) {
+        softConnector = prop;
+        return this;
+    }
+
+    public AADataLabels textPath(Object prop) {
+        textPath = prop;
+        return this;
+    }
+
+    public AADataLabels filter(Object prop) {
+        filter = prop;
         return this;
     }
 }

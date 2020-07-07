@@ -44,6 +44,7 @@ import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AATooltip;
 public class AASeriesElement {
 
     private String type;
+    private Boolean allowPointSelect;
     private String name;
     private Object[] data;
     private Float lineWidth;//折线图、曲线图、直方折线图、折线填充图、曲线填充图、直方折线填充图的线条宽度
@@ -54,11 +55,14 @@ public class AASeriesElement {
     private Float threshold;//The threshold, also called zero level or base level. For line type series this is only used in conjunction with negativeColor. default：0.
     private String negativeColor;// The color for the parts of the graph or points that are below the threshold
     private Object negativeFillColor;
+    private Object size;
+    private Object innerSize;
     private String dashStyle;
     private Integer yAxis;
     private AADataLabels dataLabels;
     private AAMarker marker;
     private Object step;
+    private Object states;
     private Boolean colorByPoint;
     private Integer zIndex;
     private Object[] zones;
@@ -66,10 +70,17 @@ public class AASeriesElement {
     private String stack;
     private AATooltip tooltip;
     private Boolean showInLegend;
+    private Boolean enableMouseTracking;
+    private Boolean reversed;
 
 
     public AASeriesElement type(String prop) {
         type = prop;
+        return this;
+    }
+
+    public AASeriesElement allowPointSelect(Boolean prop) {
+        allowPointSelect = prop;
         return this;
     }
 
@@ -123,6 +134,16 @@ public class AASeriesElement {
         return this;
     }
 
+    public AASeriesElement size(Object prop) {
+        size = prop;
+        return this;
+    }
+
+    public AASeriesElement innerSize(Object prop) {
+        innerSize = prop;
+        return this;
+    }
+
     public AASeriesElement dashStyle(String prop) {
         dashStyle = prop;
         return this;
@@ -145,6 +166,11 @@ public class AASeriesElement {
 
     public AASeriesElement step(Object prop) {
         step = prop;
+        return this;
+    }
+
+    public AASeriesElement states(Object prop) {
+        states = prop;
         return this;
     }
 
@@ -180,6 +206,16 @@ public class AASeriesElement {
 
     public AASeriesElement showInLegend(Boolean prop) {
         showInLegend = prop;
+        return this;
+    }
+
+    public AASeriesElement enableMouseTracking(Boolean prop) {
+        enableMouseTracking = prop;
+        return this;
+    }
+
+    public AASeriesElement reversed(Boolean prop) {
+        reversed = prop;
         return this;
     }
 
