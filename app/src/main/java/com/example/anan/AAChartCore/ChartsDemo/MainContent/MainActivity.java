@@ -18,7 +18,10 @@ import com.example.anan.AAChartCore.ChartsDemo.AdditionalContent.OnlyRefreshChar
 import com.example.anan.AAChartCore.ChartsDemo.AdditionalContent.ScrollableChartActivity;
 import com.example.anan.AAChartCore.R;
 
+
 public class MainActivity extends AppCompatActivity {
+    private static final String  kChartTypeKey = "chartType";
+
     private String[] data = {
             /*基础类型图表*/
             "/*基础类型图表*/Column Chart---柱形图--------------",
@@ -244,7 +247,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     };
-
+    private String chartType;
 
 
     @Override
@@ -292,7 +295,7 @@ public class MainActivity extends AppCompatActivity {
 
     void goToCommonChartActivity(int position) {
         Intent intent = new Intent(this, BasicChartActivity.class);
-        intent.putExtra("chartType", chartTypeArr[position]);
+        intent.putExtra(chartType, chartTypeArr[position]);
         intent.putExtra("position",position);
 
         startActivity(intent);
@@ -300,70 +303,70 @@ public class MainActivity extends AppCompatActivity {
 
     void goToSpecialChartActivity(int position) {
         Intent intent = new Intent(this, SpecialChartActivity.class);
-        intent.putExtra("chartType", chartTypeArr[position]);
+        intent.putExtra(kChartTypeKey, chartTypeArr[position]);
 
         startActivity(intent);
     }
 
     void goToCustomStyleChartActivity(int position) {
         Intent intent = new Intent(this, CustomStyleChartActivity.class);
-        intent.putExtra("chartType", chartTypeArr[position]);
+        intent.putExtra(kChartTypeKey, chartTypeArr[position]);
 
         startActivity(intent);
     }
 
     void goToMixedChartActivity(int position) {
         Intent intent = new Intent(this, MixedChartActivity.class);
-        intent.putExtra("chartType", chartTypeArr[position]);
+        intent.putExtra(kChartTypeKey, chartTypeArr[position]);
 
         startActivity(intent);
     }
 
     void goToDrawChartWithAAOptionsActivity(int position) {
         Intent intent = new Intent(this, DrawChartWithAAOptionsActivity.class);
-        intent.putExtra("chartType", chartTypeArr[position]);
+        intent.putExtra(kChartTypeKey, chartTypeArr[position]);
 
         startActivity(intent);
     }
 
     void goToOnlyRefreshChartDataActivity(int position) {
         Intent intent = new Intent(this, OnlyRefreshChartDataActivity.class);
-        intent.putExtra("chartType", chartTypeArr[position]);
+        intent.putExtra(kChartTypeKey, chartTypeArr[position]);
 
         startActivity(intent);
     }
 
     void goToCustomTooltipWithJSFunctionActivity(int position) {
         Intent intent = new Intent(this, JSFormatterFunctionActivity.class);
-        intent.putExtra("chartType", chartTypeArr[position]);
+        intent.putExtra(kChartTypeKey, chartTypeArr[position]);
 
         startActivity(intent);
     }
 
     void goToEvaluateJSStringFunctionActivity(int position) {
         Intent intent = new Intent(this, EvaluateJSStringFunctionActivity.class);
-        intent.putExtra("chartType", chartTypeArr[position]);
+        intent.putExtra(kChartTypeKey, chartTypeArr[position]);
 
         startActivity(intent);
     }
 
     void goToHideOrShowChartSeriesActivity(int position) {
         Intent intent = new Intent(this, HideOrShowChartSeriesActivity.class);
-        intent.putExtra("chartType", chartTypeArr[position]);
+        intent.putExtra(kChartTypeKey, chartTypeArr[position]);
 
         startActivity(intent);
     }
 
     void goToDoubleChartsLinkedWorkActivity(int position) {
         Intent intent = new Intent(this, DoubleChartsLinkedWorkActivity.class);
-        intent.putExtra("chartType", chartTypeArr[position]);
+        intent.putExtra(kChartTypeKey, chartTypeArr[position]);
 
         startActivity(intent);
     }
 
     void gotoScrollableChartActivity(int position) {
         Intent intent = new Intent(this, ScrollableChartActivity.class);
-        intent.putExtra("chartType", chartTypeArr[position]);
+        intent.putExtra(kChartTypeKey, chartTypeArr[position]);
         intent.putExtra("position",position);
         startActivity(intent);
     }
