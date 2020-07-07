@@ -1,6 +1,7 @@
 package com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel;
 
 public class AAPie {
+    public String type;
     public String name;
     public Object[] data;
     public AADataLabels dataLabels;
@@ -12,7 +13,12 @@ public class AAPie {
     public Float startAngle;
     public Float endAngle;
     public Float depth;
-    public Float center;
+    public Object center;
+
+    public AAPie type(String prop) {
+        type = prop;
+        return this;
+    }
 
     public AAPie name(String prop) {
         name = prop;
@@ -69,7 +75,7 @@ public class AAPie {
         return this;
     }
 
-    public AAPie center(Float prop) {
+    public AAPie center(Object prop) {
         center = prop;
         return this;
     }

@@ -53,6 +53,7 @@ public class AASeriesElement {
     private Float fillOpacity;//折线填充图、曲线填充图、直方折线填充图等填充图类型的填充颜色透明度
     private Float threshold;//The threshold, also called zero level or base level. For line type series this is only used in conjunction with negativeColor. default：0.
     private String negativeColor;// The color for the parts of the graph or points that are below the threshold
+    private Object negativeFillColor;
     private String dashStyle;
     private Integer yAxis;
     private AADataLabels dataLabels;
@@ -114,6 +115,11 @@ public class AASeriesElement {
 
     public AASeriesElement negativeColor(String prop) {
         negativeColor = prop;
+        return this;
+    }
+
+    public AASeriesElement negativeFillColor(Object prop) {
+        negativeFillColor = prop;
         return this;
     }
 

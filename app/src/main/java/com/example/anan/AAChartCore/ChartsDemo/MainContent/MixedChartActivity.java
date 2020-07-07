@@ -12,11 +12,18 @@ import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartSymbolType
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartCreator.AAChartView;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartCreator.AASeriesElement;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AADataElement;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AADataLabels;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAMarker;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAPie;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAStyle;
 import com.example.anan.AAChartCore.AAChartCoreLib.AATools.AAColor;
 import com.example.anan.AAChartCore.AAChartCoreLib.AATools.AAGradientColor;
+import com.example.anan.AAChartCore.AAChartCoreLib.AATools.AALinearGradientDirection;
 import com.example.anan.AAChartCore.R;
+
+import java.util.Dictionary;
+import java.util.HashMap;
 
 public class MixedChartActivity extends AppCompatActivity {
     private AAChartModel aaChartModel;
@@ -661,6 +668,123 @@ public class MixedChartActivity extends AppCompatActivity {
                                 .type(AAChartType.Area)
                                 .data(new Object[] {1, 8, 2, 7, 3, 6, 4, 5})
                         ,
+                });
+    }
+
+    AAChartModel configurePieMixedLineMixedColumnChart() {
+        AASeriesElement columnElement1 = new AASeriesElement()
+                .name("Anna")
+                .type(AAChartType.Column)
+                .data(new Object[]{ 3, 2, 1, 3, 4});
+
+        AASeriesElement columnElement2 = new AASeriesElement()
+                .name("Babara")
+                .type(AAChartType.Column)
+                .data(new Object[]{2, 3, 5, 7, 6});
+
+        AASeriesElement columnElement3 = new AASeriesElement()
+                .name("Coco")
+                .type(AAChartType.Column)
+                .data(new Object[]{4, 3, 3, 9, 0});
+
+        AASeriesElement lineElement = new AASeriesElement()
+                .name("average value")
+                .type(AAChartType.Line)
+                .data(new Object[]{3, 2.67, 3, 6.33, 3.33})
+                .marker(new AAMarker()
+                        .fillColor("#1E90FF")
+                        .lineWidth(2.0f)
+                        .lineColor(AAColor.whiteColor())
+                );
+
+        AAPie pieElement = new AAPie()
+                .type(AAChartType.Pie)
+                .center(new Object[]{ 100,80})
+                .size(100f)
+                .showInLegend(true)
+                .dataLabels(
+                        new AADataLabels()
+                                .enabled(false))
+                .data(new AADataElement[]{
+                        new AADataElement()
+                                .name("Ada")
+                                .y(13.0f)
+                                .color(AAGradientColor.oceanBlueColor())
+                        ,
+                        new AADataElement()
+                                .name("Bob")
+                                .y(13.0f)
+                                .color(AAGradientColor.sanguineColor())
+                        ,
+                        new AADataElement()
+                                .name("Coco")
+                                .y(13.0f)
+                                .color(AAGradientColor.purpleLakeColor())
+                });
+
+        return new AAChartModel()
+                .stacking(AAChartStackingType.Normal)
+                .colorsTheme(new Object[]{
+                        AAGradientColor.oceanBlueColor(),
+                        AAGradientColor.sanguineColor(),
+                        AAGradientColor.purpleLakeColor()
+                })
+                .dataLabelsEnabled(false)
+                .series(new Object[]{
+                        columnElement1,
+                        columnElement2,
+                        columnElement3,
+                        lineElement,
+                        pieElement,
+                });
+    }
+
+
+    //GitHub issue https://github.com/AAChartModel/AAChartKit/issues/921
+    private AAChartModel configureNegativeColorMixedAreasplineChart() {
+        Object[][] blueStopsArr = new Object[][]{
+                new Object[]{0.0, AAColor.rgbaColor(30, 144, 255, 0.0f)},//颜色字符串设置支持十六进制类型和 rgba 类型
+                new Object[]{0.5, AAColor.rgbaColor(30, 144, 255, 0.0f)},
+                new Object[]{1.0, AAColor.rgbaColor(30, 144, 255, 0.6f)}
+        };
+
+        HashMap gradientBlueColorDic = AAGradientColor.linearGradient(
+                AALinearGradientDirection.ToTop,
+                blueStopsArr
+        );
+
+        Object[][] redStopsArr = new Object[][]{
+                new Object[]{0.0, AAColor.rgbaColor(255, 0, 0, 0.6f)},//颜色字符串设置支持十六进制类型和 rgba 类型
+                new Object[]{0.5, AAColor.rgbaColor(255, 0, 0, 0.0f)},
+                new Object[]{1.0, AAColor.rgbaColor(255, 0, 0, 0.0f)}
+        };
+
+        HashMap gradientRedColorDic = AAGradientColor.linearGradient(
+                AALinearGradientDirection.ToTop,
+                redStopsArr
+        );
+
+        return new AAChartModel()
+                .chartType(AAChartType.Area)
+                .legendEnabled(false)
+                .dataLabelsEnabled(false)
+                .markerRadius(5f)
+                .markerSymbolStyle(AAChartSymbolStyleType.InnerBlank)
+                .yAxisGridLineWidth(0f)
+                .series(new AASeriesElement[]{
+                        new AASeriesElement()
+                                .name("Column")
+                                .data(new Object[]{
+                                        7.0, 6.9, 2.5, 14.5, 18.2, 21.5, 5.2, 26.5, 23.3, 45.3, 13.9, 9.6,
+                                        -7.0, -6.9, -2.5, -14.5, -18.2, -21.5, -5.2, -26.5, -23.3, -45.3, -13.9, -9.6,
+                                })
+                                .lineWidth(5f)
+                                .color(AAColor.rgbaColor(30, 144, 255, 1.0f))
+                                .negativeColor(AAColor.rgbaColor(255, 0, 0, 1.0f))
+                                .fillColor(gradientBlueColorDic)
+                                .negativeFillColor(gradientRedColorDic)
+                                .threshold(0f)//default:0
+
                 });
     }
 
