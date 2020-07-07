@@ -783,16 +783,12 @@ public class CustomStyleChartActivity extends AppCompatActivity {
                                                 .halo(new AAHalo()
                                                         .size(130f)
                                                         .opacity(0.8f)
-                                                        .attributes(hoverHaloAttributes)
-                                                )
-                                        )
+                                                        .attributes(hoverHaloAttributes)))
                                         .select(new AASelect()
                                                 .halo(new AAHalo()
                                                         .size(130f)
                                                         .opacity(1.0f)
-                                                        .attributes(selectHaloAttributes)
-                                                )
-                                        ))
+                                                        .attributes(selectHaloAttributes))))
                 });
     }
 
@@ -817,9 +813,7 @@ public class CustomStyleChartActivity extends AppCompatActivity {
                                                         .fillColor(AAColor.whiteColor())
                                                         .radius(40f)
                                                         .lineColor(AAColor.greenColor())
-                                                        .lineWidth(20f))
-                                        )
-                                )
+                                                        .lineWidth(20f))))
                                 .data(new Object[]{7.0, 6.9, 2.5, 14.5, 18.2, 21.5, 5.2, 26.5, 23.3, 45.3, 13.9, 9.6}),
                 });
     }
@@ -862,7 +856,6 @@ public class CustomStyleChartActivity extends AppCompatActivity {
                         .borderWidth(1f)
                 )
                 .data(new Object[]{7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6});
-
 
         AASeriesElement element2 = new AASeriesElement()
                 .name("2018")
@@ -1000,8 +993,7 @@ public class CustomStyleChartActivity extends AppCompatActivity {
                                         .offsetY(15.0f)
                                         .opacity(0.2f)
                                         .width(8.0f)
-                                        .color("#1e90ff")
-                        ),
+                                        .color("#1e90ff")),
                         new AASeriesElement()
                                 .name("2018")
                                 .lineWidth(5f)
@@ -1012,8 +1004,7 @@ public class CustomStyleChartActivity extends AppCompatActivity {
                                         .offsetY(15.0f)
                                         .opacity(0.2f)
                                         .width(8.0f)
-                                        .color("#ef476f")
-                        ),
+                                        .color("#ef476f")),
                         new AASeriesElement()
                                 .name("2019")
                                 .lineWidth(5f)
@@ -1024,8 +1015,7 @@ public class CustomStyleChartActivity extends AppCompatActivity {
                                         .offsetY(15.0f)
                                         .opacity(0.2f)
                                         .width(8.0f)
-                                        .color("#ffd066")
-                        ),
+                                        .color("#ffd066")),
                         new AASeriesElement()
                                 .name("2020")
                                 .lineWidth(5f)
@@ -1036,8 +1026,7 @@ public class CustomStyleChartActivity extends AppCompatActivity {
                                         .offsetY(15.0f)
                                         .opacity(0.2f)
                                         .width(8.0f)
-                                        .color("#04d69f")
-                        ),
+                                        .color("#04d69f")),
                 });
     }
 
@@ -1058,8 +1047,7 @@ public class CustomStyleChartActivity extends AppCompatActivity {
                                 .dataLabels(new AADataLabels()
                                         .style(new AAStyle()
                                                 .color("#1e90ff")
-                                                .fontSize(11f)
-                                        ))
+                                                .fontSize(11f)))
                                 .data(new Object[]{2.10, 2.54, 2.78, 3.62, 4.41, 4.09, 3.83, 4.47, 4.20, 3.94, 3.80, 3.58, 3.19, 4.30, 3.69, 3.52, 3.02, 3.30}),
                         new AASeriesElement()
                                 .name("2018")
@@ -1067,8 +1055,7 @@ public class CustomStyleChartActivity extends AppCompatActivity {
                                 .dataLabels(new AADataLabels()
                                         .style(new AAStyle()
                                                 .color("#ef476f")
-                                                .fontSize(11f)
-                                        ))
+                                                .fontSize(11f)))
                                 .data(new Object[]{1.56, 1.91, 2.45, 3.87, 3.24, 4.90, 4.61, 4.10, 4.17, 3.85, 4.17, 3.46, 3.46, 3.55, 3.50, 4.13, 2.58, 2.28}),
                         new AASeriesElement()
                                 .name("2019")
@@ -1076,8 +1063,7 @@ public class CustomStyleChartActivity extends AppCompatActivity {
                                 .dataLabels(new AADataLabels()
                                         .style(new AAStyle()
                                                 .color("#ffd066")
-                                                .fontSize(11f)
-                                        ))
+                                                .fontSize(11f)))
                                 .data(new Object[]{1.16, 1.67, 2.64, 2.86, 3.00, 3.21, 4.14, 4.07, 3.68, 3.11, 3.41, 3.25, 3.32, 3.07, 3.92, 3.05, 2.18, 3.24}),
                         new AASeriesElement()
                                 .name("2020")
@@ -1085,8 +1071,7 @@ public class CustomStyleChartActivity extends AppCompatActivity {
                                 .dataLabels(new AADataLabels()
                                         .style(new AAStyle()
                                                 .color("#04d69f")
-                                                .fontSize(11f)
-                                        ))
+                                                .fontSize(11f)))
                                 .data(new Object[]{5.59, 3.09, 4.09, 6.14, 5.33, 6.05, 5.71, 6.22, 6.56, 4.75, 5.27, 6.02, 5.22, 5.77, 6.19, 5.68, 4.33, 5.48}),
                 });
     }
@@ -1152,8 +1137,7 @@ public class CustomStyleChartActivity extends AppCompatActivity {
                                 .dataLabels(new AADataLabels()
                                         .style(new AAStyle()
                                                 .color("#1e90ff")
-                                                .fontSize(11f)
-                                        ))
+                                                .fontSize(11f)))
                                 .data(new Object[]{2.10, 2.54, 2.78, 3.62, 4.41, 4.09, 3.83, 4.47, 4.20, 3.94, 3.80, 3.58, 3.19, 4.30, 3.69, 3.52, 3.02, 3.30}),
                         new AASeriesElement()
                                 .name("2018")
@@ -1163,8 +1147,7 @@ public class CustomStyleChartActivity extends AppCompatActivity {
                                 .dataLabels(new AADataLabels()
                                         .style(new AAStyle()
                                                 .color("#ef476f")
-                                                .fontSize(11f)
-                                        ))
+                                                .fontSize(11f)))
                                 .data(new Object[]{1.56, 1.91, 2.45, 3.87, 3.24, 4.90, 4.61, 4.10, 4.17, 3.85, 4.17, 3.46, 3.46, 3.55, 3.50, 4.13, 2.58, 2.28}),
                         new AASeriesElement()
                                 .name("2019")
@@ -1174,8 +1157,7 @@ public class CustomStyleChartActivity extends AppCompatActivity {
                                 .dataLabels(new AADataLabels()
                                         .style(new AAStyle()
                                                 .color("#ffd066")
-                                                .fontSize(11f)
-                                        ))
+                                                .fontSize(11f)))
                                 .data(new Object[]{1.16, 1.67, 2.64, 2.86, 3.00, 3.21, 4.14, 4.07, 3.68, 3.11, 3.41, 3.25, 3.32, 3.07, 3.92, 3.05, 2.18, 3.24}),
                         new AASeriesElement()
                                 .name("2020")
@@ -1185,8 +1167,7 @@ public class CustomStyleChartActivity extends AppCompatActivity {
                                 .dataLabels(new AADataLabels()
                                         .style(new AAStyle()
                                                 .color("#04d69f")
-                                                .fontSize(11f)
-                                        ))
+                                                .fontSize(11f)))
                                 .data(new Object[]{5.59, 3.09, 4.09, 6.14, 5.33, 6.05, 5.71, 6.22, 6.56, 4.75, 5.27, 6.02, 5.22, 5.77, 6.19, 5.68, 4.33, 5.48}),
                 });
 }
@@ -1198,8 +1179,7 @@ public class CustomStyleChartActivity extends AppCompatActivity {
                 .title("Disable Spline Chart Marker Hover Effect")
                 .categories(new String[]{
                         "一月", "二月", "三月", "四月", "五月", "六月",
-                        "七月", "八月", "九月", "十月", "十一月", "十二月"
-                })
+                        "七月", "八月", "九月", "十月", "十一月", "十二月"})
                 .markerRadius(0f)//marker点半径为0个像素
                 .yAxisLineWidth(0f)
                 .yAxisGridLineWidth(0f)
@@ -1212,10 +1192,7 @@ public class CustomStyleChartActivity extends AppCompatActivity {
                                 .marker(new AAMarker()
                                         .states(new AAMarkerStates()
                                                 .hover(new AAMarkerHover()
-                                                        .enabled(false)
-                                                )
-                                        )
-                                )
+                                                        .enabled(false))))
                                 .data(new Object[]{7.0, 6.9, 2.5, 14.5, 18.2, 21.5, 5.2, 26.5, 23.3, 45.3, 13.9, 9.6}),
                 });
     }
