@@ -7,22 +7,22 @@ public class AAPosition {
     public Number y;
 
     public AAPosition align(String prop) {
-        this.align = prop;
+        align = prop;
         return this;
     }
 
     public AAPosition verticalAlign(String prop) {
-        this.verticalAlign = prop;
+        verticalAlign = prop;
         return this;
     }
 
     public AAPosition align(Number prop) {
-        this.x = prop;
+        x = prop;
         return this;
     }
 
     public AAPosition y(Number prop) {
-        this.y = prop;
+        y = prop;
         return this;
     }
 

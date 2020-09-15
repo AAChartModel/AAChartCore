@@ -8,17 +8,17 @@ public class AAResetZoomButton {
     public Map theme;
 
     public AAResetZoomButton position(AAPosition prop) {
-        this.position = prop;
+        position = prop;
         return this;
     }
 
     public AAResetZoomButton relativeTo(String prop) {
-        this.relativeTo = prop;
+        relativeTo = prop;
         return this;
     }
 
     public AAResetZoomButton theme(Map prop) {
-        this.theme = prop;
+        theme = prop;
         return this;
     }
 
