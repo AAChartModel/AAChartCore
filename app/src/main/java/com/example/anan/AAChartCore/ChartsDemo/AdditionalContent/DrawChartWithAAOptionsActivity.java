@@ -33,6 +33,7 @@ import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAPane;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAPlotBandsElement;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAPlotLinesElement;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAPlotOptions;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAResetZoomButton;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AASeries;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAStyle;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AASubtitle;
@@ -321,6 +322,12 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
                 );
         AAOptions aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
         aaOptions.tooltip(aaTooltip);
+
+        aaOptions.chart
+                .resetZoomButton(new AAResetZoomButton()
+                        .theme((Map)new HashMap()
+                                .put("display","none")//隐藏图表缩放后的默认显示的缩放按钮
+                        ));
         return aaOptions;
     }
 
