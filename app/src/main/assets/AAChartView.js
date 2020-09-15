@@ -18,13 +18,17 @@
                 aaOptions.yAxis = aaOptions.yAxisArray
                 }
 
-
             aaOptions.credits = {enabled:false};
+
+            if (aaOptions.defaultOptions) {
+                Highcharts.setOptions({
+                 lang: aaOptions.defaultOptions
+                   });
+                 }
 
             if (aaOptions.plotOptions) {
                 configurePlotOptions(aaOptions);
                 }
-
 
             aaGlobalChart = Highcharts.chart('container', aaOptions);
            //全局配置(可通过全局配置设置主题)https://api.hcharts.cn/highcharts#Highcharts.setOptions

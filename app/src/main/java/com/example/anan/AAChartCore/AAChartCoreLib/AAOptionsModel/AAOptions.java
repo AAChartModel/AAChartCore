@@ -14,6 +14,7 @@ public class AAOptions {
     public AALegend legend;
     public AAPane pane;
     public Object[] colors;
+    public AALang defaultOptions;
     public Boolean touchEventEnabled;
 
     public AAOptions chart(AAChart prop) {
@@ -78,6 +79,11 @@ public class AAOptions {
 
     public AAOptions colors(Object[] prop) {
         colors = prop;
+        return this;
+    }
+
+    public AAOptions defaultOptions(AALang prop) {
+        defaultOptions = prop;
         return this;
     }
 

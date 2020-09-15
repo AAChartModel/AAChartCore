@@ -18,6 +18,7 @@ import com.example.anan.AAChartCore.AAChartCoreLib.AAChartCreator.AAChartView;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartCreator.AAOptionsConstructor;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartCreator.AASeriesElement;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartVerticalAlignType;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartZoomType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAAnimation;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAChart;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAColumn;
@@ -26,6 +27,7 @@ import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AADataLabels;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAItemStyle;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AALabel;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AALabels;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AALang;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AALegend;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAMarker;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAOptions;
@@ -120,6 +122,7 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
                 .dataLabelsEnabled(false)
                 .yAxisGridLineWidth(0f)
                 .yAxisTitle("percent values")
+                .zoomType(AAChartZoomType.X)
                 .stacking(AAChartStackingType.Normal)
                 .colorsTheme(new String[]{"mediumspringgreen", "deepskyblue", "red", "sandybrown"})
                 .series(new AASeriesElement[]{element1, element2, element3, element4});
@@ -135,6 +138,11 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
         ;
 
         aaOptions.yAxis.labels.format = "{value} %";//给y轴添加单位
+
+        aaOptions.defaultOptions = new AALang()
+                .resetZoom("重置缩放比例")
+                .thousandsSep(",");
+
         return aaOptions;
     }
 
