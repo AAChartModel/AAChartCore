@@ -34,7 +34,8 @@ public class AAStyle {
 
     public static AAStyle style(
             String color,
-            Float fontSize) {
+            Float fontSize
+    ) {
         return AAStyle.style(color,fontSize,null);
     }
 

@@ -38,20 +38,17 @@ import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartSymbolStyl
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartZoomType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAScrollablePlotArea;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAStyle;
 
 public class AAChartModel {
 
     public String  animationType;         //动画类型
     public Integer animationDuration;     //动画时间
     public String  title;                 //标题内容
-    public String  titleFontColor;        //标题字体颜色
-    public Float   titleFontSize;         //标题字体大小
-    public String  titleFontWeight;       //标题字体粗细
+    public AAStyle titleStyle;
     public String  subtitle;              //副标题内容
     public String  subtitleAlign;
-    public String  subtitleFontColor;     //副标题字体颜色
-    public Float   subtitleFontSize;      //副标题字体大小
-    public String  subtitleFontWeight;    //副标题字体粗细
+    public AAStyle subtitleStyle;
     public String  axesTextColor;         //x 轴和 y 轴文字颜色
     public String  chartType;             //图表类型
     public String  stacking;              //堆积样式
@@ -69,9 +66,7 @@ public class AAChartModel {
     public Float   marginLeft;
     public Float   marginRight;
     public Boolean dataLabelsEnabled;      //是否显示数据
-    public String  dataLabelsFontColor;
-    public Float   dataLabelsFontSize;
-    public String  dataLabelsFontWeight;
+    public AAStyle dataLabelsStyle;
     public Boolean xAxisLabelsEnabled;    //x轴是否显示数据
     public Integer xAxisTickInterval;
     public String[]categories;            //x轴是否显示数据
@@ -111,18 +106,8 @@ public class AAChartModel {
         return this;
     }
 
-    public AAChartModel titleFontColor(String prop) {
-        titleFontColor = prop;
-        return this;
-    }
-
-    public AAChartModel titleFontSize(Float prop) {
-        titleFontSize = prop;
-        return this;
-    }
-
-    public AAChartModel titleFontWeight(String prop) {
-        titleFontWeight = prop;
+    public AAChartModel titleStyle(AAStyle prop) {
+        titleStyle = prop;
         return this;
     }
 
@@ -136,18 +121,8 @@ public class AAChartModel {
         return this;
     }
 
-    public AAChartModel subtitleFontColor(String prop) {
-        subtitleFontColor = prop;
-        return this;
-    }
-
-    public AAChartModel subtitleFontSize(Float prop) {
-        subtitleFontSize = prop;
-        return this;
-    }
-
-    public AAChartModel subtitleFontWeight(String prop) {
-        subtitleFontWeight = prop;
+    public AAChartModel subtitleStyle(AAStyle prop) {
+        subtitleStyle = prop;
         return this;
     }
 
@@ -236,18 +211,8 @@ public class AAChartModel {
         return this;
     }
 
-    public AAChartModel dataLabelsFontColor(String prop) {
-        dataLabelsFontColor = prop;
-        return this;
-    }
-
-    public AAChartModel dataLabelsFontSize(Float prop) {
-        dataLabelsFontSize = prop;
-        return this;
-    }
-
-    public AAChartModel dataLabelsFontWeight(String prop) {
-        dataLabelsFontWeight = prop;
+    public AAChartModel dataLabelsStyle(AAStyle prop) {
+        dataLabelsStyle = prop;
         return this;
     }
 
@@ -380,15 +345,6 @@ public class AAChartModel {
         backgroundColor       = "#ffffff";
         borderRadius          = 0f;//柱状图长条图头部圆角半径(可用于设置头部的形状,仅对条形图,柱状图有效,设置为1000时,柱形图或者条形图头部为楔形)
         markerRadius          = 6f;//折线连接点的半径长度,如果值设置为0,这样就相当于不显示了
-        titleFontColor        = "#000000";//标题字体颜色为黑色
-        titleFontWeight       = "regular";//常规字体
-        titleFontSize         = 11f;
-        subtitleFontColor     = "#000000";//副标题字体颜色为黑色
-        subtitleFontWeight    = "regular";//常规字体
-        subtitleFontSize      = 9f;
-        dataLabelsFontColor   = "#000000";//数据标签默认颜色为黑色
-        dataLabelsFontWeight  = "bold";//图表的数据字体为粗体
-        dataLabelsFontSize    = 10f;
 
     }
 

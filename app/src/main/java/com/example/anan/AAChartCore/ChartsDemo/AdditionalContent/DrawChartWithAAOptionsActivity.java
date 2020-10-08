@@ -897,10 +897,11 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
                 .colorsTheme(new String[]{"#465DBC"})
                 //title标题
                 .title("最近三十分钟数据展示")
-                //title字体大小
-                .titleFontSize(20f)
-                //title字体颜色
-                .titleFontColor("#0F0F0F")
+                .titleStyle(AAStyle.style("#0F0F0F", 20f))
+//                //title字体大小
+//                .titleFontSize(20f)
+//                //title字体颜色
+//                .titleFontColor("#0F0F0F")
                 //坐标轴字体颜色
                 .axesTextColor("#0F0F0F")
                 //背景颜色

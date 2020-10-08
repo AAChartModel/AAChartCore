@@ -83,21 +83,13 @@ public class AAOptionsConstructor
 
         AATitle aaTitle = new AATitle()
                 .text(aaChartModel.title) //标题文本内容
-                .style(new AAStyle()
-                        .color(aaChartModel.titleFontColor) //Title font color
-                        .fontSize(aaChartModel.titleFontSize) //Title font size
-                        .fontWeight(aaChartModel.titleFontWeight) //Title font weight
-                )
+                .style(aaChartModel.titleStyle)
                 ;
 
         AASubtitle aaSubtitle = new AASubtitle()
                 .text(aaChartModel.subtitle) //副标题内容
                 .align(aaChartModel.subtitleAlign) //图表副标题文本水平对齐方式。可选的值有 “left”，”center“和“right”。 默认是：center.
-                .style(new AAStyle()
-                        .color(aaChartModel.subtitleFontColor) //Subtitle font color
-                        .fontSize(aaChartModel.subtitleFontSize) //Subtitle font size
-                        .fontWeight(aaChartModel.subtitleFontWeight) //Subtitle font weight
-                )
+                .style(aaChartModel.subtitleStyle)
                 ;
 
         AATooltip aaTooltip = new AATooltip()
@@ -189,11 +181,7 @@ public class AAOptionsConstructor
                 .enabled(aaChartModel.dataLabelsEnabled);
         if (aaChartModel.dataLabelsEnabled) {
             aaDataLabels = aaDataLabels
-                    .style(new AAStyle()
-                            .color(aaChartModel.dataLabelsFontColor)
-                            .fontSize(aaChartModel.dataLabelsFontSize)
-                            .fontWeight(aaChartModel.dataLabelsFontWeight)
-                    );
+                    .style(aaChartModel.dataLabelsStyle);
         }
 
         switch (chartType) {
