@@ -12,6 +12,7 @@ public class AASeries {
     public Boolean connectNulls;//设置折线是否断点重连
     public Map events;
     public AAShadow shadow;
+    public AADataLabels dataLabels;
 
     public AASeries borderRadius(Float prop) {
         borderRadius = prop;
@@ -55,6 +56,11 @@ public class AASeries {
 
     public AASeries shadow(AAShadow prop) {
         shadow = prop;
+        return this;
+    }
+
+    public AASeries dataLabels(AADataLabels prop) {
+        dataLabels = prop;
         return this;
     }
 

@@ -39,9 +39,6 @@ import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartAnimationT
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartSymbolStyleType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAAnimation;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAArea;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAArearange;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAAreaspline;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AABar;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAChart;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAColumn;
@@ -50,13 +47,11 @@ import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AADataLabels;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAItemStyle;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AALabels;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AALegend;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AALine;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAMarker;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAOptions;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAPie;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAPlotOptions;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AASeries;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AASpline;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAStyle;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AASubtitle;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AATitle;
@@ -179,7 +174,7 @@ public class AAOptionsConstructor
         AADataLabels aaDataLabels = new AADataLabels()
                 .enabled(aaChartModel.dataLabelsEnabled);
         if (aaChartModel.dataLabelsEnabled) {
-            aaDataLabels = aaDataLabels
+            aaDataLabels
                     .style(aaChartModel.dataLabelsStyle);
         }
 
@@ -187,8 +182,7 @@ public class AAOptionsConstructor
             case AAChartType.Column:
                 AAColumn aaColumn = new AAColumn()
                         .borderWidth(0f)
-                        .borderRadius(aaChartModel.borderRadius)
-                        .dataLabels(aaDataLabels);
+                        .borderRadius(aaChartModel.borderRadius);
                 if (aaChartModel.polar) {
                     aaColumn.pointPadding(0f)
                             .groupPadding(0.005f);
@@ -196,27 +190,15 @@ public class AAOptionsConstructor
                 aaPlotOptions.column(aaColumn);
                 break;
             case AAChartType.Bar:
-                AABar aaBar = (new AABar()
+                AABar aaBar = new AABar()
                         .borderWidth(0f)
                         .borderRadius(aaChartModel.borderRadius)
-                        .dataLabels(aaDataLabels));
+                       ;
                 if (aaChartModel.polar) {
                     aaBar.pointPadding(0f)
                             .groupPadding(0.005f);
                 }
                 aaPlotOptions.bar(aaBar);
-                break;
-            case AAChartType.Area:
-                aaPlotOptions.area(new AAArea().dataLabels(aaDataLabels));
-                break;
-            case AAChartType.Areaspline:
-                aaPlotOptions.areaspline(new AAAreaspline().dataLabels(aaDataLabels));
-                break;
-            case AAChartType.Line:
-                aaPlotOptions.line(new AALine().dataLabels(aaDataLabels));
-                break;
-            case AAChartType.Spline:
-                aaPlotOptions.spline(new AASpline().dataLabels(aaDataLabels));
                 break;
             case AAChartType.Pie:
                 AAPie aaPie = new AAPie()
@@ -226,22 +208,18 @@ public class AAOptionsConstructor
                 if (aaChartModel.dataLabelsEnabled) {
                     aaDataLabels.format("<b>{point.name}</b>: {point.percentage:.1f} %");
                 }
-                aaPie.dataLabels(aaDataLabels);
                 aaPlotOptions.pie(aaPie);
                 break;
             case AAChartType.Columnrange:
                 AAColumnrange aaColumnrange = new AAColumnrange()
                         .borderRadius(0f) //The color of the border surrounding each column or bar
                         .borderWidth(0f) //The corner radius of the border surrounding each column or bar. default：0
-                        .dataLabels(aaDataLabels);
+                        ;
                 aaPlotOptions.columnrange(aaColumnrange);
                 break;
-            case AAChartType.Arearange:
-                AAArearange aaArearange = new AAArearange()
-                        .dataLabels(aaDataLabels);
-                aaPlotOptions.arearange(aaArearange);
-                break;
         }
+        aaPlotOptions.series.dataLabels(aaDataLabels);
+
     }
 
     private static void configureAxisContentAndStyle (
