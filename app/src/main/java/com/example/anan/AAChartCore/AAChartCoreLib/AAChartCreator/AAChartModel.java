@@ -63,8 +63,9 @@ public class AAChartModel {
     public Boolean tooltipCrosshairs;     //是否显示准星线(默认显示)
     public Boolean gradientColorEnable;   //是否要为渐变色
     public Boolean polar;                 //是否极化图形(变为雷达图)
-    public Float   marginLeft;
-    public Float   marginRight;
+    public Float[] margin;
+//    public Float   marginLeft;
+//    public Float   marginRight;
     public Boolean dataLabelsEnabled;      //是否显示数据
     public AAStyle dataLabelsStyle;
     public Boolean xAxisLabelsEnabled;    //x轴是否显示数据
@@ -196,13 +197,8 @@ public class AAChartModel {
         return this;
     }
 
-    public AAChartModel marginLeft(Float prop) {
-        marginLeft = prop;
-        return this;
-    }
-
-    public AAChartModel marginRight(Float prop) {
-        marginRight = prop;
+    public AAChartModel margin(Float[] prop) {
+        margin = prop;
         return this;
     }
 
