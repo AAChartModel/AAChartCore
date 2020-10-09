@@ -1,9 +1,9 @@
 /**
-//  AAOptionsConstructor.java
-//  AAChartCore
-//
-//  Created by AnAn on 2018/12/08.
-//  Copyright © 2018年 An An. All rights reserved.
+ //  AAOptionsConstructor.java
+ //  AAChartCore
+ //
+ //  Created by AnAn on 2018/12/08.
+ //  Copyright © 2018年 An An. All rights reserved.
  /**
  * ◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉ ...... SOURCE CODE ......◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉◉
  * ◉◉◉...................................................       ◉◉◉
@@ -193,7 +193,7 @@ public class AAOptionsConstructor
                 AABar aaBar = new AABar()
                         .borderWidth(0f)
                         .borderRadius(aaChartModel.borderRadius)
-                       ;
+                        ;
                 if (aaChartModel.polar) {
                     aaBar.pointPadding(0f)
                             .groupPadding(0.005f);
@@ -236,8 +236,8 @@ public class AAOptionsConstructor
             AALabels aaXAxisLabels = new AALabels()
                     .enabled(aaXAxisLabelsEnabled);//设置 x 轴是否显示文字
             if (aaXAxisLabelsEnabled) {
-                aaXAxisLabels.style( new AAStyle()
-                                .color(aaChartModel.axesTextColor)
+                aaXAxisLabels.style(new AAStyle()
+                        .color(aaChartModel.axesTextColor)
                 );
             }
 
@@ -255,7 +255,7 @@ public class AAOptionsConstructor
                     .enabled(aaChartModel.yAxisLabelsEnabled);
             if (aaYAxisLabelsEnabled) {
                 aaYAxisLabels.style(new AAStyle()
-                                .color(aaChartModel.axesTextColor)
+                        .color(aaChartModel.axesTextColor)
                 );
             }
 
@@ -269,14 +269,14 @@ public class AAOptionsConstructor
                     .title(new AATitle()
                             .text(aaChartModel.yAxisTitle)
                             .style(new AAStyle()
-                            .color(aaChartModel.axesTextColor))
+                                    .color(aaChartModel.axesTextColor))
                     ) //y 轴标题
                     .lineWidth(aaChartModel.yAxisLineWidth) //设置 y轴轴线的宽度,为0即是隐藏 y轴轴线
                     .visible(aaChartModel.yAxisVisible)
                     ;
 
             aaOptions.xAxis(aaXAxis)
-                     .yAxis(aaYAxis);
+                    .yAxis(aaYAxis);
         }
     }
 
