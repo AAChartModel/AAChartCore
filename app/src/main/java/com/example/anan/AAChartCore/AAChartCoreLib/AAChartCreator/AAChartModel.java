@@ -64,8 +64,6 @@ public class AAChartModel {
     public Boolean gradientColorEnable;   //是否要为渐变色
     public Boolean polar;                 //是否极化图形(变为雷达图)
     public Float[] margin;
-//    public Float   marginLeft;
-//    public Float   marginRight;
     public Boolean dataLabelsEnabled;      //是否显示数据
     public AAStyle dataLabelsStyle;
     public Boolean xAxisLabelsEnabled;    //x轴是否显示数据
