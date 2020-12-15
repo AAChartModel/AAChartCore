@@ -104,8 +104,8 @@ public class OnlyRefreshChartDataActivity extends AppCompatActivity {
                 .colorsTheme(new Object[]{
                         gradientColorMap1,
                         gradientColorMap2,
-                        AAGradientColor.sanguineColor(),
-                        AAGradientColor.wroughtIronColor()
+                        AAGradientColor.Sanguine,
+                        AAGradientColor.WroughtIron
                 })
                 .stacking(AAChartStackingType.Normal)
                 ;

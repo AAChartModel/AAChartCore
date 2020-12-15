@@ -47,12 +47,12 @@ private String chartType;
                 .yAxisTitle("")
                 .dataLabelsEnabled(true)
                 .tooltipEnabled(true)
-                .backgroundColor(AAGradientColor.oceanBlueColor())
+                .backgroundColor(AAGradientColor.OceanBlue)
                 .series(new AASeriesElement[]{
                         new AASeriesElement()
                                 .name("Tokyo")
                                 .data(new Object[]{29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4})
-                                .color(AAGradientColor.deepSeaColor())
+                                .color(AAGradientColor.DeepSea)
 
                 });
     }
@@ -66,7 +66,7 @@ private String chartType;
                         new AADataLabels()
                                 .enabled(true)
                                 .style(new AAStyle()
-                                        .color(AAColor.redColor())
+                                        .color(AAColor.Red)
                                         .fontSize(11f)
                                 )
                 )
@@ -104,9 +104,9 @@ private String chartType;
                 .stacking(AAChartStackingType.Normal)
                 .legendEnabled(true)
                 .colorsTheme(new Object[] {
-                        AAGradientColor.oceanBlueColor(),
-                        AAGradientColor.sanguineColor(),
-                        AAGradientColor.lusciousLimeColor(),
+                        AAGradientColor.OceanBlue,
+                        AAGradientColor.Sanguine,
+                        AAGradientColor.LusciousLime,
                 })
                 .series(aaSeriesArr);
     }

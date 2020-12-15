@@ -286,7 +286,7 @@ public class JSFormatterFunctionActivity extends AppCompatActivity {
                         new AASeriesElement()
                                 .name("Observed Data")
                                 .color("#ef476f")
-                                .fillColor(AAGradientColor.deepSeaColor())
+                                .fillColor(AAGradientColor.DeepSea)
                                 .data( new Object[][] {
                                 {760, 801, 848, 895, 965},
                                 {733, 853, 939, 980, 1080},
@@ -385,7 +385,7 @@ public class JSFormatterFunctionActivity extends AppCompatActivity {
                 .style(new AAStyle()
                         .fontSize(10f)
                         .fontWeight(AAChartFontWeightType.Bold)
-                        .color(AAColor.grayColor())
+                        .color(AAColor.Gray)
                 )
                 .formatter("function () {\n" +
                         "        let yValue = this.value;\n" +
@@ -407,7 +407,7 @@ public class JSFormatterFunctionActivity extends AppCompatActivity {
                 .opposite(true)
                 .tickWidth(2f)
                 .lineWidth(1.5f)//Y轴轴线颜色
-                .lineColor(AAColor.lightGrayColor())//Y轴轴线颜色
+                .lineColor(AAColor.LightGray)//Y轴轴线颜色
                 .gridLineWidth(0f)//Y轴网格线宽度
                 .tickPositions(new Object[]{0,2500,5000,7500,10000})
                 .labels(aaYAxisLabels);

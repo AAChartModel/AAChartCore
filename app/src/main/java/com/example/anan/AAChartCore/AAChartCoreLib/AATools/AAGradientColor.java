@@ -1,7 +1,5 @@
 package com.example.anan.AAChartCore.AAChartCoreLib.AATools;
 
-import com.example.anan.AAChartCore.AAChartCoreLib.AATools.AALinearGradientDirection;
-
 import java.util.HashMap;
 import java.util.Map;
 

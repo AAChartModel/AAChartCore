@@ -21,9 +21,7 @@ import com.example.anan.AAChartCore.AAChartCoreLib.AATools.AAColor;
 import com.example.anan.AAChartCore.AAChartCoreLib.AATools.AAGradientColor;
 import com.example.anan.AAChartCore.AAChartCoreLib.AATools.AALinearGradientDirection;
 import com.example.anan.AAChartCore.R;
-
-import java.util.Dictionary;
-import java.util.HashMap;
+import java.util.Map;
 
 public class MixedChartActivity extends AppCompatActivity {
     private AAChartModel aaChartModel;
@@ -201,7 +199,7 @@ public class MixedChartActivity extends AppCompatActivity {
                         new AADataLabels()
                                 .enabled(true)
                                 .style(new AAStyle()
-                                        .color(AAColor.redColor())
+                                        .color(AAColor.Red)
                                         .fontSize(11f)
                                 )
                 )
@@ -239,9 +237,9 @@ public class MixedChartActivity extends AppCompatActivity {
                 .stacking(AAChartStackingType.Normal)
                 .legendEnabled(true)
                 .colorsTheme(new Object[] {
-                        AAGradientColor.oceanBlueColor(),
-                        AAGradientColor.sanguineColor(),
-                        AAGradientColor.lusciousLimeColor(),
+                        AAGradientColor.OceanBlue,
+                        AAGradientColor.Sanguine,
+                        AAGradientColor.LusciousLime,
                 })
                 .series(aaSeriesArr);
     }
@@ -694,7 +692,7 @@ public class MixedChartActivity extends AppCompatActivity {
                 .marker(new AAMarker()
                         .fillColor("#1E90FF")
                         .lineWidth(2.0f)
-                        .lineColor(AAColor.whiteColor())
+                        .lineColor(AAColor.White)
                 );
 
         AAPie pieElement = new AAPie()
@@ -709,25 +707,25 @@ public class MixedChartActivity extends AppCompatActivity {
                         new AADataElement()
                                 .name("Ada")
                                 .y(13.0f)
-                                .color(AAGradientColor.oceanBlueColor())
+                                .color(AAGradientColor.OceanBlue)
                         ,
                         new AADataElement()
                                 .name("Bob")
                                 .y(13.0f)
-                                .color(AAGradientColor.sanguineColor())
+                                .color(AAGradientColor.Sanguine)
                         ,
                         new AADataElement()
                                 .name("Coco")
                                 .y(13.0f)
-                                .color(AAGradientColor.purpleLakeColor())
+                                .color(AAGradientColor.PurpleLake)
                 });
 
         return new AAChartModel()
                 .stacking(AAChartStackingType.Normal)
                 .colorsTheme(new Object[]{
-                        AAGradientColor.oceanBlueColor(),
-                        AAGradientColor.sanguineColor(),
-                        AAGradientColor.purpleLakeColor()
+                        AAGradientColor.OceanBlue,
+                        AAGradientColor.Sanguine,
+                        AAGradientColor.PurpleLake
                 })
                 .dataLabelsEnabled(false)
                 .series(new Object[]{
@@ -748,7 +746,7 @@ public class MixedChartActivity extends AppCompatActivity {
                 new Object[]{1.0, AAColor.rgbaColor(30, 144, 255, 0.6f)}
         };
 
-        HashMap gradientBlueColorDic = AAGradientColor.linearGradient(
+        Map gradientBlueColorDic = AAGradientColor.linearGradient(
                 AALinearGradientDirection.ToTop,
                 blueStopsArr
         );
@@ -759,7 +757,7 @@ public class MixedChartActivity extends AppCompatActivity {
                 new Object[]{1.0, AAColor.rgbaColor(255, 0, 0, 0.0f)}
         };
 
-        HashMap gradientRedColorDic = AAGradientColor.linearGradient(
+        Map gradientRedColorDic = AAGradientColor.linearGradient(
                 AALinearGradientDirection.ToTop,
                 redStopsArr
         );

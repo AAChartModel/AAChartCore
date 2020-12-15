@@ -118,7 +118,7 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
                 .subtitle("LEGEND ON THE TOP_RIGHT SIDE WITH VERTICAL STYLE")
                 .subtitleAlign(AAChartAlignType.Left)
                 .markerRadius(0f)
-                .backgroundColor(AAColor.whiteColor())
+                .backgroundColor(AAColor.White)
                 .dataLabelsEnabled(false)
                 .yAxisGridLineWidth(0f)
                 .yAxisTitle("percent values")
@@ -156,7 +156,7 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
                         new AASeriesElement()
                                 .name("Tokyo")
                                 .data(new Object[]{7.0, 6.9, 2.5, 14.5, 18.2, 21.5, 5.2, 26.5, 23.3, 45.3, 13.9, 9.6})
-                                .color(AAColor.whiteColor())
+                                .color(AAColor.White)
                                 .lineWidth(10.0f),
                 });
 
@@ -343,7 +343,7 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
         AASeriesElement[] aaSeriesElementsArr = {
                 new AASeriesElement()
                         .name("2020")
-                        .color(AAGradientColor.deepSeaColor())
+                        .color(AAGradientColor.DeepSea)
                         .data(new Object[][]{
                         {12464064, 21.5},
                         {12464928, 22.1},
@@ -385,7 +385,7 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
 
         AAOptions aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
         AACrosshair aaCrosshair = new AACrosshair()
-                .color(AAColor.redColor())
+                .color(AAColor.Red)
                 .width(1f)
                 .dashStyle(AAChartLineDashStyleType.LongDashDotDot);
         AAXAxis aaXAxis =  aaOptions.xAxis;
@@ -420,7 +420,7 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
                 .series(new AASeriesElement[] {
                         new AASeriesElement()
                                 .name("Berlin Hot")
-                                .color(AAGradientColor.mysticMauveColor())
+                                .color(AAGradientColor.MysticMauve)
                                 .data(new Object[]{7.0, 6.9, 2.5, 14.5, 18.2, 21.5, 5.2, 26.5, 23.3, 45.3, 13.9, 9.6})
                                 ,
                         }
@@ -458,7 +458,7 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
                 .series(new AASeriesElement[] {
                         new AASeriesElement()
                                 .name("Berlin Hot")
-                                .color(AAGradientColor.deepSeaColor())
+                                .color(AAGradientColor.DeepSea)
                                 .data(new Object[]{7.0, 6.9, 2.5, 14.5, 18.2, 21.5, 5.2, 26.5, 23.3, 45.3, 13.9, 9.6})
                                 ,
                         }
@@ -497,7 +497,7 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
                 .series(new AASeriesElement[]{
                         new AASeriesElement()
                                 .name("Berlin Hot")
-                                .color(AAColor.whiteColor())
+                                .color(AAColor.White)
                                 .lineWidth(7.f)
                                 .fillColor(fillColorGradientColor)
                                 .data(new Object[]{7.0, 6.9, 2.5, 14.5, 18.2, 21.5, 5.2, 26.5, 23.3, 45.3, 13.9, 9.6}),
@@ -507,7 +507,7 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
                 .dataLabels(new AADataLabels()
                         .enabled(true)
                         .style(new AAStyle()
-                                .color(AAColor.blackColor())
+                                .color(AAColor.Black)
                                 .fontSize(14.f)
                                 .fontWeight("thin")
                                 .textOutline("0px 0px contrast")//文字轮廓描边
@@ -516,7 +516,7 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
 
         AACrosshair aaCrosshair = new AACrosshair()
                 .dashStyle(AAChartLineDashStyleType.LongDashDot)
-                .color(AAColor.whiteColor())
+                .color(AAColor.White)
                 .width(1.f);
 
         AALabels aaLabels = new AALabels()
@@ -524,14 +524,14 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
                 .style(new AAStyle()
                         .fontSize(10.f)
                         .fontWeight("bold")
-                        .color(AAColor.whiteColor())//轴文字颜色
+                        .color(AAColor.White)//轴文字颜色
                 );
 
         aaOptions.yAxis
                 .opposite(true)
                 .tickWidth(2.f)
                 .lineWidth(1.5f)//Y轴轴线颜色
-                .lineColor(AAColor.whiteColor())//Y轴轴线颜色
+                .lineColor(AAColor.White)//Y轴轴线颜色
                 .gridLineWidth(0.f)//Y轴网格线宽度
                 .crosshair(aaCrosshair)
                 .labels(aaLabels);
@@ -539,7 +539,7 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
         aaOptions.xAxis
                 .tickWidth(2.f)//X轴刻度线宽度
                 .lineWidth(1.5f)//X轴轴线宽度
-                .lineColor(AAColor.whiteColor())//X轴轴线颜色
+                .lineColor(AAColor.White)//X轴轴线颜色
                 .crosshair(aaCrosshair)
                 .labels(aaLabels);
 
@@ -555,7 +555,7 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
 
         aaOptions.legend
                 .itemStyle(new AAItemStyle()
-                        .color(AAColor.whiteColor())//字体颜色
+                        .color(AAColor.White)//字体颜色
                         .fontSize(13.f)//字体大小
                         .fontWeight("thin")//字体为细体字
 
@@ -657,7 +657,7 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
                 .title(new AATitle()
                         .text("正负镜像柱形图")
                         .style(new AAStyle()
-                                .color(AAColor.whiteColor())
+                                .color(AAColor.White)
                                 .fontSize(18.f)))
                 .xAxis(new AAXAxis()
                         .categories(new String[]{"一月", "二月", "三月", "四月", "五月", "六月",
@@ -988,7 +988,7 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
         AALabels aaLabels = new AALabels()
                 .enabled(true)
                 .style(new AAStyle()
-                        .color(AAColor.lightGrayColor()));
+                        .color(AAColor.LightGray));
 
         AAXAxis aaXAxis = new AAXAxis()
                 .visible(true)
@@ -1037,7 +1037,7 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
         AALegend aaLegend = new AALegend()
                 .enabled(true)
                 .itemStyle(new AAItemStyle()
-                        .color(AAColor.lightGrayColor()))
+                        .color(AAColor.LightGray))
                 .floating(true)
                 .layout(AAChartLayoutType.Horizontal)
                 .align(AAChartAlignType.Left)
@@ -1105,7 +1105,7 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
                 .visible(true)
                 .plotLines(new AAPlotLinesElement[]{
                         new AAPlotLinesElement()
-                                .color(AAColor.redColor())
+                                .color(AAColor.Red)
                                 .value(0.1523f)
                                 .width(1.5f)
                                 .label(new AALabel()

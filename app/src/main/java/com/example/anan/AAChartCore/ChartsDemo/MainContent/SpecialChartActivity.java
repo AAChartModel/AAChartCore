@@ -852,7 +852,7 @@ public class SpecialChartActivity extends AppCompatActivity {
                       new AASeriesElement()
                               .name("Observed Data")
                               .color("#ef476f")
-                              .fillColor(AAGradientColor.deepSeaColor())
+                              .fillColor(AAGradientColor.DeepSea)
                               .data( new Object[][] {
                               {760, 801, 848, 895, 965},
                               {733, 853, 939, 980, 1080},
@@ -949,7 +949,7 @@ public class SpecialChartActivity extends AppCompatActivity {
                                        .enabled(true)
                                        .inside(true)
                                        .verticalAlign(AAChartVerticalAlignType.Middle)
-                                       .color(AAColor.blackColor())
+                                       .color(AAColor.Black)
                                        .style(new AAStyle()
                                                .fontSize(25f)
                                                .textOutline("none")))
@@ -983,7 +983,7 @@ public class SpecialChartActivity extends AppCompatActivity {
                                 .name("降雨误差")
                                 .type(AAChartType.Errorbar)
                                 .lineWidth(2.5f)
-                                .color(AAColor.redColor())
+                                .color(AAColor.Red)
                                 .data(new Object[][]{{48, 51}, {68, 73}, {92, 110}, {128, 136}, {140, 150}, {171, 179}, {135, 143},
                                         {142, 149}, {204, 220}, {189, 199}, {95, 110}, {52, 56}})
                                 .tooltip(new AATooltip()
