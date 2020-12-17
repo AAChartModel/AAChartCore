@@ -119,7 +119,7 @@ public class JSFormatterFunctionActivity extends AppCompatActivity {
                         .color("#FFD700")
                         .fontSize(12.f)
                 );
-        AAOptions aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
+        AAOptions aaOptions = aaChartModel.aa_toAAOptions();
         aaOptions.tooltip(aaTooltip);
         return aaOptions;
     }
@@ -159,7 +159,7 @@ public class JSFormatterFunctionActivity extends AppCompatActivity {
                         "        return s;\n" +
                         "    }")
                 ;
-        AAOptions aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
+        AAOptions aaOptions = aaChartModel.aa_toAAOptions();
         aaOptions.tooltip(aaTooltip);
         return aaOptions;
     }
@@ -213,7 +213,7 @@ public class JSFormatterFunctionActivity extends AppCompatActivity {
                         "        return wholeContentString;\n" +
                         "    }")
                 ;
-        AAOptions aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
+        AAOptions aaOptions = aaChartModel.aa_toAAOptions();
         aaOptions.tooltip(aaTooltip);
         return aaOptions;
     }
@@ -271,7 +271,7 @@ public class JSFormatterFunctionActivity extends AppCompatActivity {
                 .backgroundColor("#050505")
                 .borderColor("#050505")
                 ;
-        AAOptions aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
+        AAOptions aaOptions = aaChartModel.aa_toAAOptions();
         aaOptions.tooltip(aaTooltip);
         return aaOptions;
     }
@@ -316,7 +316,7 @@ public class JSFormatterFunctionActivity extends AppCompatActivity {
                         .color("#1e90ff")
                         .fontSize(12.f)
                 );
-        AAOptions aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
+        AAOptions aaOptions = aaChartModel.aa_toAAOptions();
         aaOptions.tooltip(aaTooltip);
         return aaOptions;
     }
@@ -356,7 +356,7 @@ public class JSFormatterFunctionActivity extends AppCompatActivity {
                         "        }\n" +
                         "    }");
 
-        AAOptions aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
+        AAOptions aaOptions = aaChartModel.aa_toAAOptions();
         aaOptions.yAxis.labels(aaYAxisLabels);
 
         return aaOptions;
@@ -402,7 +402,7 @@ public class JSFormatterFunctionActivity extends AppCompatActivity {
                         "        }\n" +
                         "    }");
 
-        AAOptions aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
+        AAOptions aaOptions = aaChartModel.aa_toAAOptions();
         aaOptions.yAxis
                 .opposite(true)
                 .tickWidth(2f)
@@ -450,7 +450,7 @@ public class JSFormatterFunctionActivity extends AppCompatActivity {
                 );
 
         /*Custom Tooltip Style --- 自定义图表浮动提示框样式及内容*/
-        AAOptions aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
+        AAOptions aaOptions = aaChartModel.aa_toAAOptions();
         aaOptions.tooltip
                 .shared(false)
                 .formatter("function () {\n" +
@@ -614,7 +614,7 @@ public class JSFormatterFunctionActivity extends AppCompatActivity {
                         ,
                 });
 
-        AAOptions aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
+        AAOptions aaOptions = aaChartModel.aa_toAAOptions();
         aaOptions.tooltip
                 .useHTML(true)
                 .formatter(" function () {\n" +
@@ -680,7 +680,7 @@ public class JSFormatterFunctionActivity extends AppCompatActivity {
                 .touchEventEnabled(true)
                 .series(new AASeriesElement[]{element1, element2, element3, element4});
 
-        AAOptions aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
+        AAOptions aaOptions = aaChartModel.aa_toAAOptions();
 
         aaOptions.tooltip
                 .useHTML(true)
@@ -794,7 +794,7 @@ public class JSFormatterFunctionActivity extends AppCompatActivity {
         jsFormatterStr = jsFormatterStr.replace("(停止次数JS数组)",停止次数JS数组);
         jsFormatterStr = jsFormatterStr.replace("(干预次数JS数组)",干预次数JS数组);
 
-        AAOptions aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
+        AAOptions aaOptions = aaChartModel.aa_toAAOptions();
 
         aaOptions.tooltip
                 //‼️以 this.point.index 这种方式获取选中的点的索引必须设置 tooltip 的 shared 为 false

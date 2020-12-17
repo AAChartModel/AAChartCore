@@ -36,7 +36,7 @@ public class ScrollableChartActivity extends AppCompatActivity {
 
         AAChartModel aaChartModel = configureChartModel();
         if (aaOptions == null) {
-            aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
+            aaOptions = aaChartModel.aa_toAAOptions();
         }
 
         aaChartView1.aa_drawChartWithChartOptions(aaOptions);

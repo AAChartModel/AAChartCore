@@ -157,12 +157,12 @@ public class AAChartView extends WebView {
 
 
     public void aa_drawChartWithChartModel(final AAChartModel chartModel) {
-        AAOptions aaOptions = AAOptionsConstructor.configureChartOptions(chartModel);
+        AAOptions aaOptions = chartModel.aa_toAAOptions();
         this.aa_drawChartWithChartOptions(aaOptions);
     }
 
     public void aa_refreshChartWithChartModel(AAChartModel chartModel) {
-        AAOptions aaOptions = AAOptionsConstructor.configureChartOptions(chartModel);
+        AAOptions aaOptions = chartModel.aa_toAAOptions();
         this.aa_refreshChartWithChartOptions(aaOptions);
     }
 

@@ -118,7 +118,7 @@ public class DoubleChartsLinkedWorkActivity extends AppCompatActivity implements
                                 .colorByPoint(true)
                 });
 
-        AAOptions aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
+        AAOptions aaOptions = aaChartModel.aa_toAAOptions();
         aaOptions.plotOptions.column.groupPadding = 0f;
 
         return aaOptions;
@@ -140,7 +140,7 @@ public class DoubleChartsLinkedWorkActivity extends AppCompatActivity implements
                                 149.9, 171.5, 106.4, 129.2, 144.0, 176.0, 135.6, 188.5, 276.4, 214.1, 95.6, 54.4})
 
                 });
-        AAOptions aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
+        AAOptions aaOptions = aaChartModel.aa_toAAOptions();
         aaOptions.plotOptions.column.groupPadding = 0f;
         return aaOptions;
     }

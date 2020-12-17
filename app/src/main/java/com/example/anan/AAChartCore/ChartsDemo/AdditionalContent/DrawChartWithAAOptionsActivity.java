@@ -127,7 +127,7 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
                 .colorsTheme(new String[]{"mediumspringgreen", "deepskyblue", "red", "sandybrown"})
                 .series(new AASeriesElement[]{element1, element2, element3, element4});
 
-        AAOptions aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
+        AAOptions aaOptions = aaChartModel.aa_toAAOptions();
         aaOptions.xAxis.tickWidth = 1f;
 
         aaOptions.legend
@@ -160,7 +160,7 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
                                 .lineWidth(10.0f),
                 });
 
-        AAOptions aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
+        AAOptions aaOptions = aaChartModel.aa_toAAOptions();
         AAPlotBandsElement[] aaPlotBandsElementArr = {
                 new AAPlotBandsElement()
                         .from(0.f)
@@ -226,7 +226,7 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
                                 .zones(zonesArr)
                 });
 
-        AAOptions aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
+        AAOptions aaOptions = aaChartModel.aa_toAAOptions();
         AAPlotLinesElement[] aaPlotLinesElementsArr = {
                 new AAPlotLinesElement()
                         .color("#1e90ff")//颜色值(16进制)
@@ -328,7 +328,7 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
                         .color("#FFD700")
                         .fontSize(12.f)
                 );
-        AAOptions aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
+        AAOptions aaOptions = aaChartModel.aa_toAAOptions();
         aaOptions.tooltip(aaTooltip);
 
         aaOptions.chart
@@ -383,7 +383,7 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
                 .chartType(AAChartType.Line)//图表类型
                 .series(aaSeriesElementsArr);
 
-        AAOptions aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
+        AAOptions aaOptions = aaChartModel.aa_toAAOptions();
         AACrosshair aaCrosshair = new AACrosshair()
                 .color(AAColor.Red)
                 .width(1f)
@@ -426,7 +426,7 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
                         }
                 );
 
-        AAOptions aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
+        AAOptions aaOptions = aaChartModel.aa_toAAOptions();
         aaOptions.xAxis.labels.useHTML(true);
         return aaOptions;
     }
@@ -464,7 +464,7 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
                         }
                 );
 
-        AAOptions aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
+        AAOptions aaOptions = aaChartModel.aa_toAAOptions();
         aaOptions.xAxis.labels.useHTML(true);
 
         return aaOptions;
@@ -502,7 +502,7 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
                                 .fillColor(fillColorGradientColor)
                                 .data(new Object[]{7.0, 6.9, 2.5, 14.5, 18.2, 21.5, 5.2, 26.5, 23.3, 45.3, 13.9, 9.6}),
                 });
-        AAOptions aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
+        AAOptions aaOptions = aaChartModel.aa_toAAOptions();
         aaOptions.plotOptions.areaspline
                 .dataLabels(new AADataLabels()
                         .enabled(true)
@@ -590,7 +590,7 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
                 });
 
 
-        AAOptions aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
+        AAOptions aaOptions = aaChartModel.aa_toAAOptions();
         AAPlotBandsElement[] aaPlotBandsElementArr = {
                 new AAPlotBandsElement()
                         .from(-0.25f)//值域颜色带X轴起始值
@@ -925,7 +925,7 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
                                 .data(new Object[]{44.0999, 44.8880, 44.7770, 43.0066, 43.6660, 43.5550, }),
                 });
 
-        AAOptions aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
+        AAOptions aaOptions = aaChartModel.aa_toAAOptions();
         aaOptions.plotOptions.line.dataLabels.format = "{point.y:.4f} ℃"; //保留 Y 轴值的小数点后 4 位
         return aaOptions;
     }
@@ -1256,7 +1256,7 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
                                 .data(new Object[]{0.60, 0.51, 0.52, 0.53, 0.64, 0.84, 0.65, 0.68, 0.63, 0.47, 0.72, 0.60, 0.65, 0.74, 0.66, 0.65, 0.71, 0.59, 0.65, 0.77, 0.52, 0.53, 0.58, 0.53}),
                 });
 
-        AAOptions aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
+        AAOptions aaOptions = aaChartModel.aa_toAAOptions();
         aaOptions.tooltip
                 .shared(true)
                 .useHTML(true)

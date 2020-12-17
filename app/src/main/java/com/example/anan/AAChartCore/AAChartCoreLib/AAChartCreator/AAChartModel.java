@@ -37,6 +37,7 @@ import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartStackingTy
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartSymbolStyleType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartZoomType;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAOptions;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAScrollablePlotArea;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAStyle;
 
@@ -314,6 +315,10 @@ public class AAChartModel {
     public AAChartModel scrollablePlotArea(AAScrollablePlotArea prop) {
         scrollablePlotArea = prop;
         return this;
+    }
+
+    public AAOptions aa_toAAOptions() {
+        return AAOptionsConstructor.configureChartOptions(this);
     }
 
     public AAChartModel() {

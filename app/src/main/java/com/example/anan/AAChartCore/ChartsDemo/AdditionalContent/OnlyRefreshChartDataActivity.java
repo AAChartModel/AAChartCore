@@ -37,7 +37,7 @@ public class OnlyRefreshChartDataActivity extends AppCompatActivity {
         aaChartView = findViewById(R.id.AAChartView);
         aaChartModel = configureAAChartModel();
 
-        AAOptions aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
+        AAOptions aaOptions = aaChartModel.aa_toAAOptions();
         if (aaChartModel.chartType.equals(AAChartType.Column)) {
             aaOptions.plotOptions.column
                     .groupPadding(0f)
