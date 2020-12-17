@@ -16,7 +16,6 @@ import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AADataLabels;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAPie;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAStyle;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AATooltip;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAWaterfall;
 import com.example.anan.AAChartCore.AAChartCoreLib.AATools.AAColor;
 import com.example.anan.AAChartCore.AAChartCoreLib.AATools.AAGradientColor;
 import com.example.anan.AAChartCore.R;
@@ -82,11 +81,8 @@ public class SpecialChartActivity extends AppCompatActivity {
                         new AASeriesElement()
                                 .name("2018")
                                 .data(new Object[] {
-                                7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6}
-                        )
-                        }
-
-                );
+                                7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6})
+                        });
     }
 
     AAChartModel configurePieChart() {
@@ -895,25 +891,26 @@ public class SpecialChartActivity extends AppCompatActivity {
         dataElement7.put("isSum",true);
         dataElement7.put("color","#04d69f");
 
-       return new AAChartModel()
-               .chartType(AAChartType.Waterfall)
-               .title("WATERFALL CHART")
-               .subtitle("virtual data")
-               .series(new AASeriesElement[]{
-                       new AAWaterfall()
-                               .upColor("#9b43b4")
-                               .color("#ef476f")
-                       .borderWidth(0f)
-                       .data(new Map[]{
-                               dataElement1,
-                               dataElement2,
-                               dataElement3,
-                               dataElement4,
-                               dataElement5,
-                               dataElement6,
-                               dataElement7
-                       }),
-        });
+        Map[] dataElementArr = new Map[]{
+                dataElement1,
+                dataElement2,
+                dataElement3,
+                dataElement4,
+                dataElement5,
+                dataElement6,
+                dataElement7
+        };
+
+        return new AAChartModel()
+                .chartType(AAChartType.Waterfall)
+                .title("WATERFALL CHART")
+                .subtitle("virtual data")
+                .series(new AASeriesElement[]{
+                        new AASeriesElement()
+                                .color("#ef476f")
+                                .borderWidth(0f)
+                                .data(dataElementArr),
+                });
     }
 
     AAChartModel configurePyramidChart() {
