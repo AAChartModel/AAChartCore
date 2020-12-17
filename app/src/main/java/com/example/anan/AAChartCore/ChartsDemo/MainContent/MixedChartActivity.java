@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartCreator.AAChartModel;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartFontWeightType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartLineDashStyleType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartStackingType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartSymbolStyleType;
@@ -225,7 +226,7 @@ public class MixedChartActivity extends AppCompatActivity {
                                 .style(new AAStyle()
                                         .color("#000000")
                                         .fontSize(15f)
-                                        .fontWeight("bold")
+                                        .fontWeight(AAChartFontWeightType.Bold)
                                 )
                 )
                 ,

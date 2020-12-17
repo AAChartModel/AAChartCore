@@ -9,6 +9,7 @@ import com.example.anan.AAChartCore.AAChartCoreLib.AAChartCreator.AAChartModel;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartCreator.AAChartView;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartCreator.AAMoveOverEventMessageModel;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartCreator.AASeriesElement;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartFontWeightType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartStackingType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AADataLabels;
@@ -92,7 +93,7 @@ private String chartType;
                                 .style(new AAStyle()
                                         .color("#000000")
                                         .fontSize(15f)
-                                        .fontWeight("bold")
+                                        .fontWeight(AAChartFontWeightType.Bold)
                                 )
                 )
                 ,

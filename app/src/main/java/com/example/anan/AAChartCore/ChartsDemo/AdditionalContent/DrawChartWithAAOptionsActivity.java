@@ -238,7 +238,7 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
                         .text("PLOT LINES ONE")
                         .style(new AAStyle()
                                 .color("#1e90ff")
-                                .fontWeight("bold")
+                                .fontWeight(AAChartFontWeightType.Bold)
                         )
                 )
                 ,
@@ -252,7 +252,7 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
                         .text("PLOT LINES TWO")
                         .style(new AAStyle()
                                 .color("#ef476f")
-                                .fontWeight("bold")
+                                .fontWeight(AAChartFontWeightType.Bold)
                         )
                 )
                 ,
@@ -266,7 +266,7 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
                         .text("PLOT LINES THREE")
                         .style(new AAStyle()
                                 .color("#04d69f")
-                                .fontWeight("bold")
+                                .fontWeight(AAChartFontWeightType.Bold)
                         )
                 )
                 ,
@@ -523,7 +523,7 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
                 .useHTML(true)
                 .style(new AAStyle()
                         .fontSize(10.f)
-                        .fontWeight("bold")
+                        .fontWeight(AAChartFontWeightType.Bold)
                         .color(AAColor.White)//轴文字颜色
                 );
 
