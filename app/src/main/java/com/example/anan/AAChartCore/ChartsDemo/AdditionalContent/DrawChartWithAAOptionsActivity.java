@@ -509,7 +509,7 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
                         .style(new AAStyle()
                                 .color(AAColor.Black)
                                 .fontSize(14.f)
-                                .fontWeight("thin")
+                                .fontWeight(AAChartFontWeightType.Thin)
                                 .textOutline("0px 0px contrast")//文字轮廓描边
                         ));
 
@@ -570,8 +570,10 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
                 .chartType(AAChartType.Areaspline)
                 .title("")
                 .subtitle("")
-                .categories(new String[] {"一月", "二月", "三月", "四月", "五月", "六月",
-                        "七月", "八月", "九月", "十月", "十一月", "十二月"})
+                .categories(new String[] {
+                        "一月", "二月", "三月", "四月", "五月", "六月",
+                        "七月", "八月", "九月", "十月", "十一月", "十二月"
+                })
                 .yAxisTitle("")
                 .yAxisGridLineWidth(0f)
                 .markerRadius(8f)
@@ -697,7 +699,8 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
                 .min(0f)
                 .categories(new String[]{
                         "Java", "Swift", "Python", "Ruby", "PHP", "Go","C",
-                        "C#", "C++", "Perl", "R", "MATLAB", "SQL"});
+                        "C#", "C++", "Perl", "R", "MATLAB", "SQL"
+                });
 
         AAStyle aaYAxisTitleStyle = new AAStyle()
                 .color("#1e90ff")//Title font color

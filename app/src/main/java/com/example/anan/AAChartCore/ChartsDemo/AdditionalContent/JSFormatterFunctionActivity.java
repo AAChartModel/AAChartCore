@@ -718,8 +718,7 @@ public class JSFormatterFunctionActivity extends AppCompatActivity {
         Object[] 总时长数组 = new Object[12];
 
         for (int i =0; i< 12; i++) {
-            Float 单个总时长 =
-                    Float.valueOf((Integer)看近时长数组[i])
+            Float 单个总时长 = Float.valueOf((Integer)看近时长数组[i])
                             + Float.valueOf((Integer)看中时长数组[i])
                             + Float.valueOf((Integer)看远时长数组[i]);
 
