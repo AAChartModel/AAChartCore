@@ -49,11 +49,11 @@ public class JSFormatterFunctionActivity extends AppCompatActivity {
 
     AAOptions configureTheChartOptions(String chartType) {
         switch (chartType) {
-            case "formatterFunction1": return customAreaChartTooltipStyleWithFormatterFunction1();
-            case "formatterFunction2": return customAreaChartTooltipStyleWithFormatterFunction2();
-            case "formatterFunction3": return customAreaChartTooltipStyleWithFormatterFunction3();
-            case "formatterFunction4": return customAreaChartTooltipStyleWithFormatterFunction4();
-            case "formatterFunction5": return customBoxplotTooltipContent();
+            case "customAreaChartTooltipStyleWithSimpleFormatString" : return customAreaChartTooltipStyleWithSimpleFormatString();//简单字符串拼接
+            case "customAreaChartTooltipStyleWithDifferentUnitSuffix" : return customAreaChartTooltipStyleWithDifferentUnitSuffix();//自定义不同单位后缀
+            case "customAreaChartTooltipStyleWithColorfulHtmlLabels" : return customAreaChartTooltipStyleWithColorfulHtmlLabels();//自定义多彩颜色文字
+            case "customLineChartTooltipStyleWhenValueBeZeroDoNotShow" : return customLineChartTooltipStyleWhenValueBeZeroDoNotShow();//值为0时,在tooltip中不显示
+            case "customBoxplotTooltipContent": return customBoxplotTooltipContent();
             case "customYAxisLabels": return customYAxisLabels();
             case "customYAxisLabels2": return customYAxisLabels2();
             case "customStackedAndGroupedColumnChartTooltip": return customStackedAndGroupedColumnChartTooltip();
@@ -65,10 +65,10 @@ public class JSFormatterFunctionActivity extends AppCompatActivity {
                 return customTooltipWhichDataSourceComeFromOutSideRatherThanSeries();
 
         }
-        return customAreaChartTooltipStyleWithFormatterFunction1();
+        return customAreaChartTooltipStyleWithSimpleFormatString();
     }
 
-    private AAOptions customAreaChartTooltipStyleWithFormatterFunction1() {
+    private AAOptions customAreaChartTooltipStyleWithSimpleFormatString() {
         AAChartModel aaChartModel = new AAChartModel()
                 .chartType(AAChartType.Area)//图形类型
                 .title("近三个月金价起伏周期图")//图表主标题
@@ -124,7 +124,7 @@ public class JSFormatterFunctionActivity extends AppCompatActivity {
         return aaOptions;
     }
 
-    private AAOptions customAreaChartTooltipStyleWithFormatterFunction2() {
+    private AAOptions customAreaChartTooltipStyleWithDifferentUnitSuffix() {
         AASeriesElement element1 = new AASeriesElement()
                 .name("🐶狗子")
                 .lineWidth(5f)
@@ -164,7 +164,7 @@ public class JSFormatterFunctionActivity extends AppCompatActivity {
         return aaOptions;
     }
 
-    private AAOptions customAreaChartTooltipStyleWithFormatterFunction3() {
+    private AAOptions customAreaChartTooltipStyleWithColorfulHtmlLabels() {
         AASeriesElement[] seriesElements = {
                 new AASeriesElement()
                         .name("上市")
@@ -218,7 +218,7 @@ public class JSFormatterFunctionActivity extends AppCompatActivity {
         return aaOptions;
     }
 
-    private AAOptions customAreaChartTooltipStyleWithFormatterFunction4() {
+    private AAOptions customLineChartTooltipStyleWhenValueBeZeroDoNotShow() {
         AASeriesElement element1 = new AASeriesElement()
                 .name("Predefined symbol")
                 .data(new Object[]{0.45, 0.43, 0.50, 0.55, 0.58, 0.62, 0.83, 0.39, 0.56, 0.67, 0.50, 0.34, 0.50, 0.67, 0.58, 0.29, 0.46, 0.23, 0.47, 0.46, 0.38, 0.56, 0.48, 0.36});
