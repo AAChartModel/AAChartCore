@@ -164,61 +164,8 @@ public class JSFormatterFunctionActivity extends AppCompatActivity {
         return aaOptions;
     }
 
+
     private AAOptions customAreaChartTooltipStyleWithColorfulHtmlLabels() {
-        AASeriesElement[] seriesElements = {
-                new AASeriesElement()
-                        .name("上市")
-                        .data(new Object[]{0,0,7}),
-                new AASeriesElement()
-                        .name("中止")
-                        .data(new Object[]{4,5,1}),
-                new AASeriesElement()
-                        .name("无进展")
-                        .data(new Object[]{2,0,1}),
-                new AASeriesElement()
-                        .name("进行中")
-                        .data(new Object[]{3,5,2}),
-
-        };
-
-        AAChartModel aaChartModel = new AAChartModel()
-                .chartType(AAChartType.Area)//图形类型
-                .title("2014 ~ 2020 汪星人生存指数")//图表主标题
-                .subtitle("数据来源：www.无任何可靠依据.com")//图表副标题
-                .markerSymbolStyle(AAChartSymbolStyleType.BorderBlank)//折线连接点样式为外边缘空白
-                .dataLabelsEnabled(false)
-                .categories(new String[]{"临床一期","临床二期","临床三期"})
-                .series(seriesElements);
-
-        AATooltip aaTooltip = new AATooltip()
-                .useHTML(true)
-                .formatter("function () {\n" +
-                        "        var colorDot0 = '<span style=\\\"' + 'color:red; font-size:13px\\\"' + '>◉</span> ';\n" +
-                        "        var colorDot1 = '<span style=\\\"' + 'color:mediumspringgreen; font-size:13px\\\"' + '>◉</span> ';\n" +
-                        "        var colorDot2 = '<span style=\\\"' + 'color:deepskyblue; font-size:13px\\\"' + '>◉</span> ';\n" +
-                        "        var colorDot3 = '<span style=\\\"' + 'color:sandybrown; font-size:13px\\\"' + '>◉</span> ';\n" +
-                        "        var colorDotArr = [];\n" +
-                        "        colorDotArr.push(colorDot0);\n" +
-                        "        colorDotArr.push(colorDot1);\n" +
-                        "        colorDotArr.push(colorDot2);\n" +
-                        "        colorDotArr.push(colorDot3);\n" +
-                        "        var wholeContentString = this.points[0].x + '<br/>';\n" +
-                        "        for (var i = 0;i < 4;i++) {\n" +
-                        "            var yValue = this.points[i].y;\n" +
-                        "            if (yValue != 0) {\n" +
-                        "                var prefixStr = colorDotArr[i];\n" +
-                        "                wholeContentString += prefixStr + this.points[i].series.name + ': ' + this.points[i].y + '<br/>';\n" +
-                        "            }\n" +
-                        "        }\n" +
-                        "        return wholeContentString;\n" +
-                        "    }")
-                ;
-        AAOptions aaOptions = aaChartModel.aa_toAAOptions();
-        aaOptions.tooltip(aaTooltip);
-        return aaOptions;
-    }
-
-    private AAOptions customLineChartTooltipStyleWhenValueBeZeroDoNotShow() {
         AASeriesElement element1 = new AASeriesElement()
                 .name("Predefined symbol")
                 .data(new Object[]{0.45, 0.43, 0.50, 0.55, 0.58, 0.62, 0.83, 0.39, 0.56, 0.67, 0.50, 0.34, 0.50, 0.67, 0.58, 0.29, 0.46, 0.23, 0.47, 0.46, 0.38, 0.56, 0.48, 0.36});
@@ -251,25 +198,69 @@ public class JSFormatterFunctionActivity extends AppCompatActivity {
         AATooltip aaTooltip = new AATooltip()
                 .useHTML(true)
                 .formatter("function () {\n" +
-                        "        var colorsArr = [];\n" +
-                        "        colorsArr.push(\"mediumspringgreen\");\n" +
-                        "        colorsArr.push(\"deepskyblue\");\n" +
-                        "        colorsArr.push(\"red\");\n" +
-                        "        colorsArr.push(\"sandybrown\");\n" +
-                        "        var wholeContentString ='<span style=\\\"' + 'color:lightGray; font-size:13px\\\"' + '>◉ Time: ' + this.x + ' year</span><br/>';\n" +
-                        "        for (var i = 0;i < 4;i++) {\n" +
-                        "            var thisPoint = this.points[i];\n" +
-                        "            var yValue = thisPoint.y;\n" +
+                        "        let wholeContentStr ='<span style=\\\"' + 'color:lightGray; font-size:13px\\\"' + '>◉ Time: ' + this.x + ' year</span><br/>';\n" +
+                        "        let length = this.points.length;\n" +
+                        "        for (let i = 0; i < length; i++) {\n" +
+                        "            let thisPoint = this.points[i];\n" +
+                        "            let yValue = thisPoint.y;\n" +
                         "            if (yValue != 0) {\n" +
-                        "                var spanStyleStartStr = '<span style=\\\"' + 'color:'+ colorsArr[i] + '; font-size:13px\\\"' + '>◉ ';\n" +
-                        "                var spanStyleEndStr = '</span> <br/>';\n" +
-                        "                wholeContentString += spanStyleStartStr + thisPoint.series.name + ': ' + thisPoint.y + '℃' + spanStyleEndStr;\n" +
+                        "                let spanStyleStartStr = '<span style=\\\"' + 'color:'+ thisPoint.color + '; font-size:13px\\\"' + '>◉ ';\n" +
+                        "                let spanStyleEndStr = '</span> <br/>';\n" +
+                        "                wholeContentStr += spanStyleStartStr + thisPoint.series.name + ': ' + thisPoint.y + '℃' + spanStyleEndStr;\n" +
                         "            }\n" +
                         "        }\n" +
-                        "        return wholeContentString;\n" +
+                        "        return wholeContentStr;\n" +
                         "    }")
                 .backgroundColor("#050505")
                 .borderColor("#050505")
+                ;
+        AAOptions aaOptions = aaChartModel.aa_toAAOptions();
+        aaOptions.tooltip(aaTooltip);
+        return aaOptions;
+    }
+
+
+    private AAOptions customLineChartTooltipStyleWhenValueBeZeroDoNotShow() {
+        AASeriesElement[] seriesElements = {
+                new AASeriesElement()
+                        .name("上市")
+                        .data(new Object[]{0,0,7}),
+                new AASeriesElement()
+                        .name("中止")
+                        .data(new Object[]{4,5,1}),
+                new AASeriesElement()
+                        .name("无进展")
+                        .data(new Object[]{2,0,1}),
+                new AASeriesElement()
+                        .name("进行中")
+                        .data(new Object[]{3,5,2}),
+
+        };
+
+        AAChartModel aaChartModel = new AAChartModel()
+                .chartType(AAChartType.Area)//图形类型
+                .title("2014 ~ 2020 汪星人生存指数")//图表主标题
+                .subtitle("数据来源：www.无任何可靠依据.com")//图表副标题
+                .markerSymbolStyle(AAChartSymbolStyleType.BorderBlank)//折线连接点样式为外边缘空白
+                .dataLabelsEnabled(false)
+                .categories(new String[]{"临床一期","临床二期","临床三期"})
+                .series(seriesElements);
+
+        AATooltip aaTooltip = new AATooltip()
+                .useHTML(true)
+                .formatter("function () {\n" +
+                        "        let wholeContentStr = this.points[0].x + '<br/>';\n" +
+                        "        let length = this.points.length;\n" +
+                        "        for (let i = 0; i < length; i++) {\n" +
+                        "            let thisPoint = this.points[i];\n" +
+                        "            let yValue = thisPoint.y;\n" +
+                        "            if (yValue != 0) {\n" +
+                        "                let prefixStr = '<span style=\\\"' + 'color:'+ thisPoint.color + '; font-size:13px\\\"' + '>◉ ';\n" +
+                        "                wholeContentStr += prefixStr + thisPoint.series.name + ': ' + yValue + '<br/>';\n" +
+                        "            }\n" +
+                        "        }\n" +
+                        "        return wholeContentStr;\n" +
+                        "    }")
                 ;
         AAOptions aaOptions = aaChartModel.aa_toAAOptions();
         aaOptions.tooltip(aaTooltip);
