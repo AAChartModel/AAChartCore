@@ -4,9 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.ExpandableListView;
-import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartType;
@@ -18,11 +16,6 @@ import com.example.anan.AAChartCore.ChartsDemo.AdditionalContent.HideOrShowChart
 import com.example.anan.AAChartCore.ChartsDemo.AdditionalContent.OnlyRefreshChartDataActivity;
 import com.example.anan.AAChartCore.ChartsDemo.AdditionalContent.ScrollableChartActivity;
 import com.example.anan.AAChartCore.R;
-
-import java.security.acl.Group;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -84,7 +77,22 @@ public class MainActivity extends AppCompatActivity {
                     "TriangleRadarChart",
                     "QuadrangleRadarChart",
                     "PentagonRadarChart",
-                    "HexagonRadarChart",},
+                    "HexagonRadarChart",
+                    "adjustYAxisMaxAndMinValues---调整 X 轴和 Y 轴最大值",
+                    "custom Special Style DataLabel Of Single Data Element Chart---指定单个数据元素的 DataLabel 为特殊样式",
+                    "custom Bar Chart Hover Color and Select Colorc---自定义条形图手指滑动颜色和单个长条被选中颜色",
+                    "custom Line Chart Chart Hover And Select Halo Style---自定义直线图手指略过和选中的 Halo 样式",
+                    "custom Spline Chart Marker States Hover Style---自定义曲线图手指略过时的 Marker 样式",
+                    "customNormalStackingChartDataLabelsContentAndStyle---自定义堆积柱状图 DataLabels 的内容及样式",
+                    "upsideDownPyramidChart---倒立的金字塔图",
+                    "doubleLayerPieChart---双层嵌套扇形图",
+                    "disableSomeOfLinesMouseTrackingEffect---针对部分数据列关闭鼠标或手指跟踪行为",
+                    "configureColorfulShadowChart---彩色阴影效果的曲线图",
+                    "configureColorfulDataLabelsStepLineChart---彩色 DataLabels 的直方折线图",
+                    "configureColorfulGradientColorAndColorfulDataLabelsStepAreaChart---彩色渐变效果且彩色 DataLabels 的直方折线填充图",
+                    "disableSplineChartMarkerHoverEffect---禁用曲线图的手指滑动 marker 点的光圈变化放大的效果",
+                    "Top Rounded Corners Stacking Column Chart---顶部为圆角的堆积柱状图"
+            },
             /*使用AAOptions绘制图表*/
             {
                     "customLegendStyle",
@@ -210,6 +218,20 @@ public class MainActivity extends AppCompatActivity {
                     "QuadrangleRadarChart",
                     "PentagonRadarChart",
                     "HexagonRadarChart",
+                    "adjustYAxisMaxAndMinValues",
+                    "customSpecialStyleDataLabelOfSingleDataElementChart",
+                    "customBarChartHoverColorAndSelectColor",
+                    "customChartHoverAndSelectHaloStyle",
+                    "customSplineChartMarkerStatesHoverStyle",
+                    "customNormalStackingChartDataLabelsContentAndStyle",
+                    "upsideDownPyramidChart",
+                    "doubleLayerPieChart",
+                    "disableSomeOfLinesMouseTrackingEffect",
+                    "configureColorfulShadowSplineChart",
+                    "configureColorfulDataLabelsStepLineChart",
+                    "configureColorfulGradientColorAndColorfulDataLabelsStepAreaChart",
+                    "disableSplineChartMarkerHoverEffect",
+                    "topRoundedCornersStackingColumnChart",
             },
 
             {
