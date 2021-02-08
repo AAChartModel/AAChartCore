@@ -128,8 +128,8 @@ public class MainActivity extends AppCompatActivity {
             {
                     "简单字符串拼接",
                     "自定义不同单位后缀",
-                    "值为0时,在tooltip中不显示",
                     "自定义多彩颜色文字",
+                    "值为0时,在tooltip中不显示",
                     "自定义箱线图的浮动提示框头部内容",
                     "自定义Y轴文字",
                     "自定义Y轴文字2",
