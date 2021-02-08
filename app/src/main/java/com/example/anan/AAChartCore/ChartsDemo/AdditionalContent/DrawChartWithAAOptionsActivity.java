@@ -130,6 +130,11 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
         AAOptions aaOptions = aaChartModel.aa_toAAOptions();
         aaOptions.xAxis.tickWidth = 1f;
 
+        Map buttonTheme = new HashMap();
+        buttonTheme.put("display","none");
+
+        aaOptions.chart.resetZoomButton.theme = buttonTheme;
+
         aaOptions.legend
                 .enabled(true)
                 .verticalAlign(AAChartVerticalAlignType.Top)
