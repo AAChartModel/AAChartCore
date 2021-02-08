@@ -10,16 +10,13 @@ import android.widget.TextView;
 
 import com.example.anan.AAChartCore.R;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class MyBaseExpandableListAdapter extends BaseExpandableListAdapter {
 
-    private ArrayList<String> gData;
+    private String[] gData;
     private String[][] iData;
     private Context mContext;
 
-    public MyBaseExpandableListAdapter(ArrayList<String> gData, String[][] iData, Context mContext) {
+    public MyBaseExpandableListAdapter(String[] gData, String[][] iData, Context mContext) {
         this.gData = gData;
         this.iData = iData;
         this.mContext = mContext;
@@ -27,7 +24,7 @@ public class MyBaseExpandableListAdapter extends BaseExpandableListAdapter {
 
     @Override
     public int getGroupCount() {
-        return gData.size();
+        return gData.length;
     }
 
     @Override
@@ -37,7 +34,7 @@ public class MyBaseExpandableListAdapter extends BaseExpandableListAdapter {
 
     @Override
     public String getGroup(int groupPosition) {
-       return gData.get(groupPosition);
+       return gData[groupPosition];
     }
 
     @Override
@@ -74,7 +71,7 @@ public class MyBaseExpandableListAdapter extends BaseExpandableListAdapter {
         }else{
             groupHolder = (ViewHolderGroup) convertView.getTag();
         }
-        groupHolder.tv_group_name.setText(gData.get(groupPosition));
+        groupHolder.tv_group_name.setText(gData[groupPosition]);
         return convertView;
     }
 

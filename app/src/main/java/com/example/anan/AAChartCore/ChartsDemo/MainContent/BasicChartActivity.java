@@ -171,6 +171,7 @@ public class BasicChartActivity extends AppCompatActivity
 
     private void configureLineChartAndSplineChartStyle(String chartType) {
         aaChartModel
+                .chartType(chartType)
                 .markerSymbolStyle(AAChartSymbolStyleType.BorderBlank)//设置折线连接点样式为:边缘白色
                 .markerRadius(6f);
         if (chartType.equals(AAChartType.Spline)) {
