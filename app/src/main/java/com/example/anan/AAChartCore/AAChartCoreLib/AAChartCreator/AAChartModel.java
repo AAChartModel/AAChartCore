@@ -61,7 +61,6 @@ public class AAChartModel {
     public Boolean yAxisReversed;         //y 轴翻转
     public Boolean tooltipEnabled;        //是否显示浮动提示框(默认显示)
     public String  tooltipValueSuffix;    //浮动提示框单位后缀
-    public Boolean tooltipCrosshairs;     //是否显示准星线(默认显示)
     public Boolean gradientColorEnable;   //是否要为渐变色
     public Boolean polar;                 //是否极化图形(变为雷达图)
     public Float[] margin;                //图表外边缘和绘图区域之间的边距
@@ -178,11 +177,6 @@ public class AAChartModel {
 
     public AAChartModel tooltipValueSuffix(String prop) {
         tooltipValueSuffix = prop;
-        return this;
-    }
-
-    public AAChartModel tooltipCrosshairs(Boolean prop) {
-        tooltipCrosshairs = prop;
         return this;
     }
 
@@ -333,7 +327,6 @@ public class AAChartModel {
         dataLabelsEnabled     = false;
         markerSymbolStyle     = AAChartSymbolStyleType.Normal;
         colorsTheme           = new String[]{"#fe117c","#ffc069","#06caf4","#7dffc0"};//默认的颜色数组(必须要添加默认数组,否则就会出错)
-        tooltipCrosshairs     = true;
         gradientColorEnable   = false;
         polar                 = false;
         xAxisLabelsEnabled    = true;
