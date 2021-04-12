@@ -1,6 +1,7 @@
 package com.example.anan.AAChartCore.ChartsDemo.MainContent;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +16,27 @@ public class MyBaseExpandableListAdapter extends BaseExpandableListAdapter {
     private String[] gData;
     private String[][] iData;
     private Context mContext;
+    private String[] colorsArr = new String[]{
+            "#5470c6",
+            "#91cc75",
+            "#fac858",
+            "#ee6666",
+            "#73c0de",
+            "#3ba272",
+            "#fc8452",
+            "#9a60b4",
+            "#ea7ccc",
+
+            "#5470c6",
+            "#91cc75",
+            "#fac858",
+            "#ee6666",
+            "#73c0de",
+            "#3ba272",
+            "#fc8452",
+            "#9a60b4",
+            "#ea7ccc",
+    };
 
     public MyBaseExpandableListAdapter(String[] gData, String[][] iData, Context mContext) {
         this.gData = gData;
@@ -83,14 +105,16 @@ public class MyBaseExpandableListAdapter extends BaseExpandableListAdapter {
             convertView = LayoutInflater.from(mContext).inflate(
                     R.layout.item_exlist_item, parent, false);
             itemHolder = new ViewHolderItem();
-            itemHolder.img_icon = (ImageView) convertView.findViewById(R.id.img_icon);
+            itemHolder.tv_color_dot = (TextView) convertView.findViewById(R.id.tv_color_dot);
             itemHolder.tv_name = (TextView) convertView.findViewById(R.id.tv_name);
             convertView.setTag(itemHolder);
         }else{
             itemHolder = (ViewHolderItem) convertView.getTag();
         }
-//        itemHolder.img_icon.setImageResource(iData.get(groupPosition).get(childPosition).get);
+        String colorStr = colorsArr[groupPosition];
+        itemHolder.tv_color_dot.setTextColor(Color.parseColor(colorStr));
         itemHolder.tv_name.setText(iData[groupPosition][childPosition]);
+
         return convertView;
     }
 
@@ -106,7 +130,7 @@ public class MyBaseExpandableListAdapter extends BaseExpandableListAdapter {
     }
 
     private static class ViewHolderItem{
-        private ImageView img_icon;
+        private TextView tv_color_dot;
         private TextView tv_name;
     }
 
