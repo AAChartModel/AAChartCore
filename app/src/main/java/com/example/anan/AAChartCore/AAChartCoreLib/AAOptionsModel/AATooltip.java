@@ -16,7 +16,6 @@ public class AATooltip {
     public String footerFormat;
     public Integer valueDecimals;
     public Boolean shared;
-    public Boolean crosshairs;
     public String valueSuffix;
 
     public AATooltip backgroundColor(String prop) {
@@ -86,11 +85,6 @@ public class AATooltip {
         return this;
     }
 
-    public AATooltip crosshairs(Boolean prop) {
-        crosshairs = prop;
-        return this;
-    }
-
     public AATooltip valueSuffix(String prop) {
         valueSuffix = prop;
         return this;
@@ -99,7 +93,6 @@ public class AATooltip {
     public AATooltip() {
         enabled = true;
         shared = true;
-        crosshairs = true;
     }
 
 

@@ -89,7 +89,6 @@ public class AAOptionsConstructor
         AATooltip aaTooltip = new AATooltip()
                 .enabled(aaChartModel.tooltipEnabled) //启用浮动提示框
                 .shared(true) //多组数据共享一个浮动提示框
-                .crosshairs(true) //启用准星线
                 .valueSuffix(aaChartModel.tooltipValueSuffix) //浮动提示框的单位名称后缀
                 ;
 
