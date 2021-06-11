@@ -769,12 +769,12 @@ public class CustomStyleChartActivity extends AppCompatActivity {
     }
 
     AAChartModel customChartHoverAndSelectHaloStyle() {
-        Map hoverHaloAttributes = new HashMap<String, Object>();
+        HashMap<String, Object> hoverHaloAttributes = new HashMap();
         hoverHaloAttributes.put("stroke-width", 50);
         hoverHaloAttributes.put("fill", "#00BFFF");
         hoverHaloAttributes.put("stroke", "#00FA9A");
 
-        Map selectHaloAttributes = new HashMap<String, Object>();
+        HashMap<String, Object> selectHaloAttributes = new HashMap();
         selectHaloAttributes.put("stroke-width", 150);
         selectHaloAttributes.put("fill", AAColor.rgbaColor(138, 43, 226, 1f));
         selectHaloAttributes.put("stroke", AAColor.rgbaColor(30, 144, 255, 1f));

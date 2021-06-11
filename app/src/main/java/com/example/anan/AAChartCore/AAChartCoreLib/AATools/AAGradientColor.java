@@ -243,7 +243,7 @@ public class AAGradientColor {
             AALinearGradientDirection direction,
             Object[][] stopsArr
     ) {
-        Map linearGradientColorMap = new HashMap<String, Object>();
+        Map<String, Object> linearGradientColorMap = new HashMap<>();
         linearGradientColorMap.put("linearGradient", linearGradientMap(direction));
         linearGradientColorMap.put("stops", stopsArr);
         return linearGradientColorMap;
@@ -281,7 +281,7 @@ public class AAGradientColor {
     }
 
     private static Map linearGradientMap(int x1, int y1, int x2, int y2) {
-        Map linearGradientMap = new HashMap<String, Integer>();
+        Map<String, Integer> linearGradientMap = new HashMap<>();
         linearGradientMap.put("x1", x1);
         linearGradientMap.put("y1", y1);
         linearGradientMap.put("x2", x2);
