@@ -221,30 +221,26 @@ public class JSFormatterFunctionActivity extends AppCompatActivity {
 
 
     private AAOptions customLineChartTooltipStyleWhenValueBeZeroDoNotShow() {
-        AASeriesElement[] seriesElements = {
-                new AASeriesElement()
-                        .name("上市")
-                        .data(new Object[]{0,0,7}),
-                new AASeriesElement()
-                        .name("中止")
-                        .data(new Object[]{4,5,1}),
-                new AASeriesElement()
-                        .name("无进展")
-                        .data(new Object[]{2,0,1}),
-                new AASeriesElement()
-                        .name("进行中")
-                        .data(new Object[]{3,5,2}),
-
-        };
-
         AAChartModel aaChartModel = new AAChartModel()
                 .chartType(AAChartType.Area)//图形类型
-                .title("2014 ~ 2020 汪星人生存指数")//图表主标题
-                .subtitle("数据来源：www.无任何可靠依据.com")//图表副标题
                 .markerSymbolStyle(AAChartSymbolStyleType.BorderBlank)//折线连接点样式为外边缘空白
                 .dataLabelsEnabled(false)
                 .categories(new String[]{"临床一期","临床二期","临床三期"})
-                .series(seriesElements);
+                .series(new AASeriesElement[]{
+                        new AASeriesElement()
+                                .name("上市")
+                                .data(new Object[]{0, 0, 7}),
+                        new AASeriesElement()
+                                .name("中止")
+                                .data(new Object[]{4, 5, 1}),
+                        new AASeriesElement()
+                                .name("无进展")
+                                .data(new Object[]{2, 0, 1}),
+                        new AASeriesElement()
+                                .name("进行中")
+                                .data(new Object[]{3, 5, 2}),
+
+                });
 
         AATooltip aaTooltip = new AATooltip()
                 .useHTML(true)
