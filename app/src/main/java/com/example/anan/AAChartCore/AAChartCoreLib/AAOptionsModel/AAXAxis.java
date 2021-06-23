@@ -12,6 +12,19 @@ public class AAXAxis {
     public String lineColor; //x轴轴线线颜色
     public Float max; //x轴最大值
     public Float min;//x轴最小值（设置为0就不会有负数）
+    public Integer minRange;
+    public Integer minTickInterval; //The minimum tick interval allowed in axis values. For example on zooming in on an axis with daily data, this can be used to prevent the axis from showing hours. Defaults to the closest distance between two points on the axis.
+    public String minorGridLineColor; //Color of the minor, secondary grid lines.
+    public String minorGridLineDashStyle; //The dash or dot style of the minor grid lines.
+    public Float minorGridLineWidth; //Width of the minor, secondary grid lines.
+    public String minorTickColor; //Color for the minor tick marks.
+    public Object minorTickInterval; /*Specific tick interval in axis units for the minor ticks. On a linear axis, if "auto", the minor tick interval is calculated as a fifth of the tickInterval. If null or undefined, minor ticks are not shown.
+     On logarithmic axes, the unit is the power of the value. For example, setting the minorTickInterval to 1 puts one tick on each of 0.1, 1, 10, 100 etc. Setting the minorTickInterval to 0.1 produces 9 ticks between 1 and 10, 10 and 100 etc.
+    If user settings dictate minor ticks to become too dense, they don't make sense, and will be ignored to prevent performance problems.*/
+    public Float minorTickLength; //The pixel length of the minor tick marks.
+    public String minorTickPosition; //The position of the minor tick marks relative to the axis line. Can be one of inside and outside. Defaults to outside.
+    public Float minorTickWidth; //The pixel width of the minor tick mark.
+
     public String tickColor; //x轴轴线下方刻度线颜色
     public Float gridLineWidth; //x轴网格线宽度
     public String gridLineColor; //x轴网格线颜色
@@ -81,6 +94,56 @@ public class AAXAxis {
 
     public AAXAxis min(Float prop) {
         min = prop;
+        return this;
+    }
+
+    public AAXAxis minRange(Integer prop) {
+        minRange = prop;
+        return this;
+    }
+
+    public AAXAxis minTickInterval(Integer prop) {
+        minTickInterval = prop;
+        return this;
+    }
+
+    public AAXAxis minorGridLineColor(String prop) {
+        minorGridLineColor = prop;
+        return this;
+    }
+
+    public AAXAxis minorGridLineDashStyle(String prop) {
+        minorGridLineDashStyle = prop;
+        return this;
+    }
+
+    public AAXAxis minorGridLineWidth(Float prop) {
+        minorGridLineWidth = prop;
+        return this;
+    }
+
+    public AAXAxis minorTickColor(String prop) {
+        minorTickColor = prop;
+        return this;
+    }
+
+    public AAXAxis minorTickInterval(Object prop) {
+        minorTickInterval = prop;
+        return this;
+    }
+
+    public AAXAxis minorTickLength(Float prop) {
+        minorTickLength = prop;
+        return this;
+    }
+
+    public AAXAxis minorTickPosition(String prop) {
+        minorTickPosition = prop;
+        return this;
+    }
+
+    public AAXAxis minorTickWidth(Float prop) {
+        minorTickWidth = prop;
         return this;
     }
 

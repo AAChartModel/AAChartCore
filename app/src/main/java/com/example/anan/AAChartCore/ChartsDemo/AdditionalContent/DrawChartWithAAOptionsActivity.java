@@ -129,11 +129,28 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
 
         AAOptions aaOptions = aaChartModel.aa_toAAOptions();
         aaOptions.xAxis.tickWidth = 1f;
+        aaOptions.yAxis.labels.format = "{value} %";//给y轴添加单位
+
 
         Map buttonTheme = new HashMap();
         buttonTheme.put("display","none");
 
         aaOptions.chart.resetZoomButton.theme = buttonTheme;
+
+        //https://github.com/AAChartModel/AAChartKit-Swift/issues/306
+        aaOptions.xAxis
+                .gridLineColor(AAColor.DarkGray)
+                .gridLineWidth(1f)
+                .minorGridLineColor(AAColor.LightGray)
+                .minorGridLineWidth(0.5f)
+                .minorTickInterval("auto");
+
+        aaOptions.yAxis
+                .gridLineColor(AAColor.DarkGray)
+                .gridLineWidth(1f)
+                .minorGridLineColor(AAColor.LightGray)
+                .minorGridLineWidth(0.5f)
+                .minorTickInterval("auto");
 
         aaOptions.legend
                 .enabled(true)
@@ -142,7 +159,6 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
                 .align(AAChartAlignType.Right)
         ;
 
-        aaOptions.yAxis.labels.format = "{value} %";//给y轴添加单位
 
         aaOptions.defaultOptions = new AALang()
                 .resetZoom("重置缩放比例")
