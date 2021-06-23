@@ -131,12 +131,6 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
         aaOptions.xAxis.tickWidth = 1f;
         aaOptions.yAxis.labels.format = "{value} %";//给y轴添加单位
 
-
-        Map buttonTheme = new HashMap();
-        buttonTheme.put("display","none");
-
-        aaOptions.chart.resetZoomButton.theme = buttonTheme;
-
         //https://github.com/AAChartModel/AAChartKit-Swift/issues/306
         aaOptions.xAxis
                 .gridLineColor(AAColor.DarkGray)

@@ -18,6 +18,7 @@ import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAChart;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AALabels;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAOptions;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAPlotOptions;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAResetZoomButton;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AASeries;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAStyle;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AATitle;
@@ -29,6 +30,7 @@ import com.example.anan.AAChartCore.AAChartCoreLib.AATools.AAGradientColor;
 import com.example.anan.AAChartCore.AAChartCoreLib.AATools.AALinearGradientDirection;
 import com.example.anan.AAChartCore.R;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class JSFormatterFunctionActivity extends AppCompatActivity {
@@ -100,6 +102,7 @@ public class JSFormatterFunctionActivity extends AppCompatActivity {
                                 2.18, 3.24, 3.23, 3.15, 2.90, 1.81, 2.11, 2.43, 5.59, 3.09, 4.09, 6.14, 5.33, 6.05,
                                 5.71, 6.22, 6.56, 4.75, 5.27, 6.02, 5.48})
                 });
+        AAOptions aaOptions = aaChartModel.aa_toAAOptions();
 
         AATooltip aaTooltip = new AATooltip()
                 .useHTML(true)
@@ -119,8 +122,14 @@ public class JSFormatterFunctionActivity extends AppCompatActivity {
                         .color("#FFD700")
                         .fontSize(12.f)
                 );
-        AAOptions aaOptions = aaChartModel.aa_toAAOptions();
         aaOptions.tooltip(aaTooltip);
+
+        aaOptions.chart
+                .resetZoomButton(new AAResetZoomButton()
+                        .theme((Map) new HashMap()
+                                .put("display","none")) //隐藏图表缩放后的默认显示的缩放按钮
+                );
+
         return aaOptions;
     }
 
