@@ -71,8 +71,6 @@ public class BasicChartActivity extends AppCompatActivity
 
         AAChartModel aaChartModel = new AAChartModel()
                 .chartType(AAChartType.Area)
-                .title("THE HEAT OF PROGRAMMING LANGUAGE")
-                .subtitle("Virtual Data")
                 .backgroundColor("#4b2b7f")
                 .categories(new String[]{"Java","Swift","Python","Ruby", "PHP","Go","C","C#","C++"})
                 .dataLabelsEnabled(false)

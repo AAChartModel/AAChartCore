@@ -41,6 +41,7 @@ import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAOptions;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAScrollablePlotArea;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAStyle;
 
+
 public class AAChartModel {
 
     public String  animationType;         //动画类型
@@ -317,6 +318,8 @@ public class AAChartModel {
 
     public AAChartModel() {
         chartType             = AAChartType.Line;
+        title                 = "";
+        yAxisTitle            = "";
         animationDuration     = 500;//以毫秒为单位
         animationType         = AAChartAnimationType.Linear;
         inverted              = false;
