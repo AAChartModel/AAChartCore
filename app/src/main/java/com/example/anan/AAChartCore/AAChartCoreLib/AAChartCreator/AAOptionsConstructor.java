@@ -58,6 +58,7 @@ import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AATitle;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AATooltip;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAXAxis;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAYAxis;
+import com.example.anan.AAChartCore.AAChartCoreLib.AATools.AAColor;
 
 public class AAOptionsConstructor
 {
@@ -151,7 +152,7 @@ public class AAOptionsConstructor
                         .symbol(aaChartModel.markerSymbol); //曲线点类型："circle", "square", "diamond", "triangle","triangle-down"，默认是"circle"
 
                 if (aaChartModel.markerSymbolStyle.equals(AAChartSymbolStyleType.InnerBlank)) {
-                    aaMarker.fillColor("#ffffff") //点的填充色(用来设置折线连接点的填充色)
+                    aaMarker.fillColor(AAColor.White) //点的填充色(用来设置折线连接点的填充色)
                             .lineWidth(2f) //外沿线的宽度(用来设置折线连接点的轮廓描边的宽度)
                             .lineColor(""); //外沿线的颜色(用来设置折线连接点的轮廓描边颜色，当值为空字符串时，默认取数据点或数据列的颜色)
                 } else if (aaChartModel.markerSymbolStyle.equals(AAChartSymbolStyleType.BorderBlank)) {
