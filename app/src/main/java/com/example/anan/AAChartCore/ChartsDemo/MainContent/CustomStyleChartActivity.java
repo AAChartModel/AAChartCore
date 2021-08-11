@@ -66,19 +66,32 @@ public class CustomStyleChartActivity extends AppCompatActivity {
             case "HexagonRadarChart":
                 return configureHexagonRadarChart();
 
-            case "adjustYAxisMaxAndMinValues": return adjustYAxisMaxAndMinValues();
-            case "customSpecialStyleDataLabelOfSingleDataElementChart": return customSpecialStyleDataLabelOfSingleDataElementChart();
-            case "customBarChartHoverColorAndSelectColor": return customBarChartHoverColorAndSelectColor();
-            case "customChartHoverAndSelectHaloStyle": return customChartHoverAndSelectHaloStyle();
-            case "customSplineChartMarkerStatesHoverStyle": return customSplineChartMarkerStatesHoverStyle();
-            case "customNormalStackingChartDataLabelsContentAndStyle": return customNormalStackingChartDataLabelsContentAndStyle();
-            case "upsideDownPyramidChart": return upsideDownPyramidChart();
-            case "doubleLayerPieChart": return doubleLayerPieChart();
-            case "disableSomeOfLinesMouseTrackingEffect": return disableSomeOfLinesMouseTrackingEffect();
-            case "configureColorfulShadowSplineChart": return configureColorfulShadowSplineChart();
-            case "configureColorfulDataLabelsStepLineChart": return configureColorfulDataLabelsStepLineChart();
-            case "configureColorfulGradientColorAndColorfulDataLabelsStepAreaChart": return configureColorfulGradientColorAndColorfulDataLabelsStepAreaChart();
-            case "disableSplineChartMarkerHoverEffect": return disableSplineChartMarkerHoverEffect();
+            case "adjustYAxisMaxAndMinValues":
+                return adjustYAxisMaxAndMinValues();
+            case "customSpecialStyleDataLabelOfSingleDataElementChart":
+                return customSpecialStyleDataLabelOfSingleDataElementChart();
+            case "customBarChartHoverColorAndSelectColor":
+                return customBarChartHoverColorAndSelectColor();
+            case "customChartHoverAndSelectHaloStyle":
+                return customChartHoverAndSelectHaloStyle();
+            case "customSplineChartMarkerStatesHoverStyle":
+                return customSplineChartMarkerStatesHoverStyle();
+            case "customNormalStackingChartDataLabelsContentAndStyle":
+                return customNormalStackingChartDataLabelsContentAndStyle();
+            case "upsideDownPyramidChart":
+                return upsideDownPyramidChart();
+            case "doubleLayerPieChart":
+                return doubleLayerPieChart();
+            case "disableSomeOfLinesMouseTrackingEffect":
+                return disableSomeOfLinesMouseTrackingEffect();
+            case "configureColorfulShadowSplineChart":
+                return configureColorfulShadowSplineChart();
+            case "configureColorfulDataLabelsStepLineChart":
+                return configureColorfulDataLabelsStepLineChart();
+            case "configureColorfulGradientColorAndColorfulDataLabelsStepAreaChart":
+                return configureColorfulGradientColorAndColorfulDataLabelsStepAreaChart();
+            case "disableSplineChartMarkerHoverEffect":
+                return disableSplineChartMarkerHoverEffect();
         }
         return configureColorfulChart();
     }
