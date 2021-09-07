@@ -82,9 +82,9 @@ public class OnlyRefreshChartDataActivity extends AppCompatActivity {
             chartType = AAChartType.Line;
         }
 
-            Map gradientColorMap1 = AAGradientColor.linearGradient(
+        Map gradientColorMap1 = AAGradientColor.linearGradient(
                 AALinearGradientDirection.ToBottom,
-        "rgba(138,43,226,1)",
+                "rgba(138,43,226,1)",
                 "rgba(30,144,255,1)"
         );
 
