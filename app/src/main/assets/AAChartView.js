@@ -51,7 +51,7 @@
                             name: this.series.name,
                             y :this.y,
                             x: this.x,
-                            category: this.category,
+                            category: this.category ? this.category:"",
                             offset: {plotX:this.plotX,plotY:this.plotY},
                             index: this.index,
                         };
