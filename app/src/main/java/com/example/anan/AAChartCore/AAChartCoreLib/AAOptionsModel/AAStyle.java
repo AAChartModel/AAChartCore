@@ -42,7 +42,9 @@ public class AAStyle {
     }
 
     public AAStyle borderRadius(Number prop) {
-        borderRadius = prop + "px";
+        if (prop != null) {
+            borderRadius = prop + "px";
+        }
         return this;
     }
 
@@ -62,7 +64,9 @@ public class AAStyle {
     }
 
     public AAStyle fontSize(Number prop) {
-        fontSize = prop + "px";
+        if (prop != null) {
+            fontSize = prop + "px";
+        }
         return this;
     }
 
@@ -89,8 +93,10 @@ public class AAStyle {
         return this;
     }
 
-    public AAStyle padding(String prop) {
-        padding = prop;
+    public AAStyle padding(Number prop) {
+        if (prop != null) {
+            padding = prop + "px";
+        }
         return this;
     }
 
