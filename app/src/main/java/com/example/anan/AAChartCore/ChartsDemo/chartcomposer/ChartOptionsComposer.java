@@ -194,6 +194,26 @@ public class ChartOptionsComposer {
                 });
 
         AAOptions aaOptions = aaChartModel.aa_toAAOptions();
+
+        AAStyle aaStyle = new AAStyle()
+                .color("#FFD700")//#FFD700(纯金色)
+                .backgroundColor(AAColor.Black)
+                .borderRadius(5)
+                .border("6px solid #000000")
+                .opacity(1.0)
+                .fontWeight(AAChartFontWeightType.Bold);
+
+        AAStyle aaStyle1 = new AAStyle()
+                .color(AAColor.Red)//#FFD700(纯金色)
+                .backgroundColor(AAColor.Black)
+                .borderRadius(5)
+                .border("2px solid red")
+                .opacity(1.0)
+                .fontWeight(AAChartFontWeightType.Bold)
+                .padding("6px")
+                .fontSize(16);
+
+
         AAPlotLinesElement[] aaPlotLinesElementsArr = {
                 new AAPlotLinesElement()
                         .color("#1e90ff")//颜色值(16进制)
@@ -202,12 +222,9 @@ public class ChartOptionsComposer {
                         .value((12f)) //所在位置
                         .zIndex((1)) //层叠,标示线在图表中显示的层叠级别，值越大，显示越向前
                         .label(new AALabel()
-                        .text("PLOT LINES ONE")
-                        .style(new AAStyle()
-                                .color("#1e90ff")
-                                .fontWeight(AAChartFontWeightType.Bold)
-                        )
-                )
+                        .useHTML(true)
+                        .text("PLOT LINES 000001")
+                        .style(aaStyle1))
                 ,
                 new AAPlotLinesElement()
                         .color("#ef476f")//颜色值(16进制)
@@ -216,12 +233,9 @@ public class ChartOptionsComposer {
                         .value((24f)) //所在位置
                         .zIndex((1)) //层叠,标示线在图表中显示的层叠级别，值越大，显示越向前
                         .label(new AALabel()
-                        .text("PLOT LINES TWO")
-                        .style(new AAStyle()
-                                .color("#ef476f")
-                                .fontWeight(AAChartFontWeightType.Bold)
-                        )
-                )
+                        .useHTML(true)
+                        .text("PLOT LINES 000002")
+                        .style(aaStyle))
                 ,
                 new AAPlotLinesElement()
                         .color("#1e90ff")//颜色值(16进制)
@@ -230,12 +244,9 @@ public class ChartOptionsComposer {
                         .value((36f)) //所在位置
                         .zIndex((1)) //层叠,标示线在图表中显示的层叠级别，值越大，显示越向前
                         .label(new AALabel()
-                        .text("PLOT LINES THREE")
-                        .style(new AAStyle()
-                                .color("#04d69f")
-                                .fontWeight(AAChartFontWeightType.Bold)
-                        )
-                )
+                        .useHTML(true)
+                        .text("PLOT LINES 000003")
+                        .style(aaStyle))
                 ,
         };
 
