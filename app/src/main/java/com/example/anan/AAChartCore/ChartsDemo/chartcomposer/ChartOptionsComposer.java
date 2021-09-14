@@ -1089,7 +1089,7 @@ public class ChartOptionsComposer {
                                 .color(AAColor.Red)
                                 .value(0.1523f)
                                 .width(1.5f)
-                                .dashStyle(AAChartLineDashStyleType.ShortDashDotDot)
+                                .dashStyle(AAChartLineDashStyleType.LongDashDotDot)
                                 .label(new AALabel()
                                         .text("实际价格")
                                         .rotation(90))
