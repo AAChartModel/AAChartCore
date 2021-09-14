@@ -7,7 +7,7 @@ public class AALabel {
     public String  textAlign;//文字对齐
     public Boolean useHTML;//HTML渲染
     public String  verticalAlign;//竖直对齐
-    public Object style;//轴标签的 CSS 样式
+    public AAStyle style;//轴标签的 CSS 样式
     public Number  x;//水平偏移
     public Number  y;// 竖直偏移
 
@@ -41,7 +41,7 @@ public class AALabel {
         return this;
     }
 
-    public AALabel style(Object prop) {
+    public AALabel style(AAStyle prop) {
         style = prop;
         return this;
     }
