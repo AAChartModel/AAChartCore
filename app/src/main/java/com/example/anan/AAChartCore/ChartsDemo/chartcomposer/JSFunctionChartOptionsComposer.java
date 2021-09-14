@@ -14,6 +14,7 @@ import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAOptions;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAPlotOptions;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAResetZoomButton;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AASeries;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AASeriesEvents;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAStyle;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AATitle;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AATooltip;
@@ -128,6 +129,11 @@ public class JSFunctionChartOptionsComposer {
                 ;
         AAOptions aaOptions = aaChartModel.aa_toAAOptions();
         aaOptions.tooltip(aaTooltip);
+
+        aaOptions.plotOptions.series.events = new AASeriesEvents()
+                .legendItemClick("function() {\n" +
+                        "             return false;\n" +
+                        "         }");
         return aaOptions;
     }
 
