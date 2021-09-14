@@ -1,7 +1,5 @@
 package com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel;
 
-import java.util.Map;
-
 public class AASeries {
     public Float borderRadius;
     public AAMarker marker;
