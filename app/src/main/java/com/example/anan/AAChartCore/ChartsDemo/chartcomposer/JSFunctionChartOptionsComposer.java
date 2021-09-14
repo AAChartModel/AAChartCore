@@ -9,12 +9,14 @@ import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartSymbolStyl
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAAnimation;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAChart;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAInactive;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AALabels;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAOptions;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAPlotOptions;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAResetZoomButton;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AASeries;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AASeriesEvents;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAStates;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAStyle;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AATitle;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AATooltip;
@@ -411,6 +413,11 @@ public class JSFunctionChartOptionsComposer {
 
         /*Custom Tooltip Style --- 自定义图表浮动提示框样式及内容*/
         AAOptions aaOptions = aaChartModel.aa_toAAOptions();
+
+        aaOptions.plotOptions.series.states = new AAStates()
+                .inactive(new AAInactive()
+                        .enabled(false));
+
         aaOptions.tooltip
                 .shared(false)
                 .formatter("function () {\n" +

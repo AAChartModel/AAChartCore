@@ -11,6 +11,7 @@ public class AASeries {
     public AASeriesEvents events;
     public AAShadow shadow;
     public AADataLabels dataLabels;
+    public AAStates states;
 
     public AASeries borderRadius(Float prop) {
         borderRadius = prop;
@@ -59,6 +60,11 @@ public class AASeries {
 
     public AASeries dataLabels(AADataLabels prop) {
         dataLabels = prop;
+        return this;
+    }
+
+    public AASeries states(AAStates prop) {
+        states = prop;
         return this;
     }
 
