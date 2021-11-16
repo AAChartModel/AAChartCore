@@ -80,6 +80,9 @@ public class ChartOptionsComposer {
                 .series(new AASeriesElement[]{element1, element2, element3, element4});
 
         AAOptions aaOptions = aaChartModel.aa_toAAOptions();
+
+        aaOptions.chart.animation = false;// disable animation
+
         aaOptions.xAxis.tickWidth = 1f;
         aaOptions.yAxis.labels.format = "{value} %";//给y轴添加单位
 

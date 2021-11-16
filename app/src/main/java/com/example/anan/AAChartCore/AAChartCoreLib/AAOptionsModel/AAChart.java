@@ -8,7 +8,7 @@ public class AAChart {
     public Boolean panning;
     public String panKey;
     public Boolean polar;
-    public AAAnimation animation;
+    public Object animation; //AAAnimation | Boolean
     public Boolean inverted;
     /*图表外边缘和绘图区域之间的边距。 数组中的数字分别表示顶部，右侧，底部和左侧 ([👆,👉,👇,👈])。
     也可以使用 marginTop，marginRight，marginBottom 和 marginLeft 来设置某一个方向的边距*/
@@ -56,7 +56,7 @@ public class AAChart {
         return this;
     }
 
-    public AAChart animation(AAAnimation prop) {
+    public AAChart animation(Object prop) {
         animation = prop;
         return this;
     }
