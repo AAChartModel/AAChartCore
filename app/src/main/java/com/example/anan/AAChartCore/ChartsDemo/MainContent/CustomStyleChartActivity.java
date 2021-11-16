@@ -8,6 +8,7 @@ import com.example.anan.AAChartCore.AAChartCoreLib.AAChartCreator.AAChartModel;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartCreator.AAChartView;
 import com.example.anan.AAChartCore.R;
 import static com.example.anan.AAChartCore.ChartsDemo.chartcomposer.CustomStyleChartComposer.*;
+import static com.example.anan.AAChartCore.ChartsDemo.chartcomposer.CustomStyleChartComposer.configureColorfulChart;
 
 public class CustomStyleChartActivity extends AppCompatActivity {
 
@@ -92,6 +93,10 @@ public class CustomStyleChartActivity extends AppCompatActivity {
                 return configureColorfulGradientColorAndColorfulDataLabelsStepAreaChart();
             case "disableSplineChartMarkerHoverEffect":
                 return disableSplineChartMarkerHoverEffect();
+            case "configureMaxAndMinDataLabelsForChart":
+                return configureMaxAndMinDataLabelsForChart();
+            case "customVerticalXAxisCategoriesLabelsByHTMLBreakLineTag":
+                return customVerticalXAxisCategoriesLabelsByHTMLBreakLineTag();
         }
         return configureColorfulChart();
     }
