@@ -1311,5 +1311,51 @@ public class ChartOptionsComposer {
         return aaOptions2;
     }
 
+    //Issue: https://github.com/AAChartModel/AAChartKit/issues/888
+    public static AAOptions doubleLayerHalfPieChart() {
+        AAChartModel aaChartModel = new AAChartModel()
+                .chartType(AAChartType.Pie)
+                .title("浏览器市场占比历史对比")
+                .subtitle("无任何可靠依据的虚拟数据")
+                .dataLabelsEnabled(false)//是否直接显示扇形图数据
+                .yAxisTitle("摄氏度")
+                .series(new AASeriesElement[]{
+                        new AASeriesElement()
+                                .name("Past")
+                                .size("40%")//尺寸大小
+                                .innerSize("30%")//内部圆环半径大小占比
+                                .borderWidth(0f)//描边的宽度
+                                .allowPointSelect(false)//是否允许在点击数据点标记(扇形图点击选中的块发生位移)
+                                .data(new Object[][]{
+                                {"Firefox Past",   3336.2},
+                                {"Chrome Past",      26.8},
+                                {"Safari Past",      88.5},
+                                {"Opera Past",       46.0},
+                                {"Others Past",     223.0},
+                        }),
+
+                        new AASeriesElement()
+                                .name("Now")
+                                .size("80%")//尺寸大小
+                                .innerSize("70%")//内部圆环半径大小占比
+                                .borderWidth(0f)//描边的宽度
+                                .allowPointSelect(false)//是否允许在点击数据点标记(扇形图点击选中的块发生位移)
+                                .data(new Object[][]{
+                                {"Firefox Now",    336.2},
+                                {"Chrome Now",    6926.8},
+                                {"Safari Now",     388.5},
+                                {"Opera Now",      446.0},
+                                {"Others Now",     223.0},
+                        })
+                });
+
+        AAOptions aaOptions = aaChartModel.aa_toAAOptions();
+        aaOptions.plotOptions.pie
+                .startAngle(-90f)
+                .endAngle(90f);
+
+        return aaOptions;
+    }
+
 
 }
