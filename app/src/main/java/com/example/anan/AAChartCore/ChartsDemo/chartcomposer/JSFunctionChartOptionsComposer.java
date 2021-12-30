@@ -121,10 +121,10 @@ public class JSFunctionChartOptionsComposer {
                 .useHTML(true)
                 .formatter("function () {\n" +
                         "        var s = '第' + '<b>' +  this.x + '</b>' + '年' + '<br/>';\n" +
-                        "        var colorDot1 = '<span style=\\\"' + 'color:red; font-size:13px\\\"' + '>◉</span> ';\n" +
-                        "        var colorDot2 = '<span style=\\\"' + 'color:blue; font-size:13px\\\"' + '>◉</span> ';\n" +
-                        "        var s1 = colorDot1  + this.points[0].series.name + ': ' + this.points[0].y + '只' + '<br/>';\n" +
-                        "        var s2 =  colorDot2 + this.points[1].series.name + ': ' + this.points[1].y + '棵';\n" +
+                        "        let colorDot1 = '<span style=\\\"' + 'color:#1e90ff; font-size:13px\\\"' + '>◉</span> ';\n" +
+                        "        let colorDot2 = '<span style=\\\"' + 'color:#ef476f; font-size:13px\\\"' + '>◉</span> ';\n" +
+                        "        let s1 = colorDot1  + this.points[0].series.name + ': ' + this.points[0].y + '只' + '<br/>';\n" +
+                        "        let s2 =  colorDot2 + this.points[1].series.name + ': ' + this.points[1].y + '棵';\n" +
                         "        s += s1 + s2;\n" +
                         "        return s;\n" +
                         "    }")
