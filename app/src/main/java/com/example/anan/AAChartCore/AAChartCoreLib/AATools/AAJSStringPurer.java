@@ -2,18 +2,18 @@ package com.example.anan.AAChartCore.AAChartCoreLib.AATools;
 
 public class AAJSStringPurer {
 
-    public static String pureJavaScriptFunctionString(String jsFunctionStr)  {
-        String pureJSFunctionStr = jsFunctionStr;
-        pureJSFunctionStr = pureJSFunctionStr.replace("'", "\"");
-        pureJSFunctionStr = pureJSFunctionStr.replace("\0", "");
-        pureJSFunctionStr = pureJSFunctionStr.replace("\n", "");
-        pureJSFunctionStr = pureJSFunctionStr.replace("\\", "\\\\");
-        pureJSFunctionStr = pureJSFunctionStr.replace("\"", "\\\"");
-        pureJSFunctionStr = pureJSFunctionStr.replace("\n", "\\n");
-        pureJSFunctionStr = pureJSFunctionStr.replace("\r", "\\r");
-        pureJSFunctionStr = pureJSFunctionStr.replace("\f", "\\f");
-        pureJSFunctionStr = pureJSFunctionStr.replace("\u2028", "\\u2028");
-        pureJSFunctionStr = pureJSFunctionStr.replace("\u2029","\\u2029" );
-        return pureJSFunctionStr;
+    public static String pureJavaScriptFunctionString(String JSStr)  {
+        String pureJSStr = JSStr;
+        pureJSStr = pureJSStr.replace("'", "\"");
+        pureJSStr = pureJSStr.replace("\0", "");
+        pureJSStr = pureJSStr.replace("\n", "");
+        pureJSStr = pureJSStr.replace("\\", "\\\\");
+        pureJSStr = pureJSStr.replace("\"", "\\\"");
+        pureJSStr = pureJSStr.replace("\n", "\\n");
+        pureJSStr = pureJSStr.replace("\r", "\\r");
+        pureJSStr = pureJSStr.replace("\f", "\\f");
+        pureJSStr = pureJSStr.replace("\u2028", "\\u2028");
+        pureJSStr = pureJSStr.replace("\u2029","\\u2029" );
+        return pureJSStr;
     }
 }
