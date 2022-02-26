@@ -436,13 +436,13 @@ public class JSFunctionChartOptionsComposer {
     }
 
     public static AAOptions customDoubleXAxesChart() {
-        Map gradientColorDic1 = AAGradientColor.linearGradient(
+        Map<String, Object> gradientColorDic1 = AAGradientColor.linearGradient(
                 AALinearGradientDirection.ToTop,
                 "#7052f4",
                 "#00b0ff"//颜色字符串设置支持十六进制类型和 rgba 类型
         );
 
-        Map gradientColorDic2 = AAGradientColor.linearGradient(
+        Map<String, Object> gradientColorDic2 = AAGradientColor.linearGradient(
                 AALinearGradientDirection.ToTop,
                 "#EF71FF",
                 "#4740C8"//颜色字符串设置支持十六进制类型和 rgba 类型
@@ -685,7 +685,8 @@ public class JSFunctionChartOptionsComposer {
         Object[] 总时长数组 = new Object[12];
 
         for (int i =0; i< 12; i++) {
-            Float 单个总时长 = Float.valueOf((Integer)看近时长数组[i])
+            Float 单个总时长 =
+                      Float.valueOf((Integer)看近时长数组[i])
                     + Float.valueOf((Integer)看中时长数组[i])
                     + Float.valueOf((Integer)看远时长数组[i]);
 
@@ -790,9 +791,8 @@ public class JSFunctionChartOptionsComposer {
 
     private static String javaScriptArrayStringWithJavaArray(Object[] javaArray) {
         String originalJsArrStr = "";
-        for (int i = 0; i< javaArray.length; i++) {
-            Object element = javaArray[i];
-            originalJsArrStr = originalJsArrStr + "'" + element.toString() +  "',";
+        for (Object element : javaArray) {
+            originalJsArrStr = originalJsArrStr + "'" + element.toString() + "',";
         }
 
         String finalJSArrStr = "[" + originalJsArrStr + "]";
