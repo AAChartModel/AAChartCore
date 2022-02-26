@@ -59,3 +59,6 @@ ChartCoreSlim/.idea/encodings.xml
 .gradle/6.5/fileChanges/last-build.bin
 .idea/gradle.xml
 .idea/runConfigurations.xml
+*.bin
+*.lock
+local.properties
