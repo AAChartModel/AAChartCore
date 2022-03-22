@@ -1,7 +1,13 @@
 package com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel;
 
 public class AASeries {
-    public Float borderRadius;
+    public String borderColor;
+    public Float  borderWidth;
+    public Float  borderRadius;
+    public Object borderRadiusTopLeft;
+    public Object borderRadiusTopRight;
+    public Object borderRadiusBottomLeft;
+    public Object borderRadiusBottomRight;
     public AAMarker marker;
     public String stacking;
     public AAAnimation animation;
@@ -13,8 +19,39 @@ public class AASeries {
     public AADataLabels dataLabels;
     public AAStates states;
 
+
+    public AASeries borderColor(String prop) {
+        borderColor = prop;
+        return this;
+    }
+    
+    public AASeries borderWidth(Float prop) {
+        borderWidth = prop;
+        return this;
+    }
+
     public AASeries borderRadius(Float prop) {
         borderRadius = prop;
+        return this;
+    }
+
+    public AASeries borderRadiusTopLeft(Object prop) {
+        borderRadiusTopLeft = prop;
+        return this;
+    }
+
+    public AASeries borderRadiusTopRight(Object prop) {
+        borderRadiusTopRight = prop;
+        return this;
+    }
+
+    public AASeries borderRadiusBottomLeft(Object prop) {
+        borderRadiusBottomLeft = prop;
+        return this;
+    }
+
+    public AASeries borderRadiusBottomRight(Object prop) {
+        borderRadiusBottomRight = prop;
         return this;
     }
 
