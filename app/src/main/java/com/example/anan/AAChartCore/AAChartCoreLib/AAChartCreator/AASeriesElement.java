@@ -49,6 +49,12 @@ public class AASeriesElement {
     private Object[] data;
     private Float lineWidth;//折线图、曲线图、直方折线图、折线填充图、曲线填充图、直方折线填充图的线条宽度
     private Float borderWidth;
+    private String borderColor;
+    private Float borderRadius;
+    private Object borderRadiusTopLeft;
+    private Object borderRadiusTopRight;
+    private Object borderRadiusBottomLeft;
+    private Object borderRadiusBottomRight;
     private Object color;
     private Object fillColor;
     private Float fillOpacity;//折线填充图、曲线填充图、直方折线填充图等填充图类型的填充颜色透明度
@@ -104,7 +110,37 @@ public class AASeriesElement {
         return this;
     }
 
-    public AASeriesElement  color(Object prop) {
+    public AASeriesElement borderColor(String prop) {
+        borderColor = prop;
+        return this;
+    }
+
+    public AASeriesElement borderRadius(Float prop) {
+        borderRadius = prop;
+        return this;
+    }
+
+    public AASeriesElement borderRadiusTopLeft(Object prop) {
+        borderRadiusTopLeft = prop;
+        return this;
+    }
+
+    public AASeriesElement borderRadiusTopRight(Object prop) {
+        borderRadiusTopRight = prop;
+        return this;
+    }
+
+    public AASeriesElement borderRadiusBottomLeft(Object prop) {
+        borderRadiusBottomLeft = prop;
+        return this;
+    }
+
+    public AASeriesElement borderRadiusBottomRight(Object prop) {
+        borderRadiusBottomRight = prop;
+        return this;
+    }
+
+    public AASeriesElement color(Object prop) {
         color = prop;
         return this;
     }
