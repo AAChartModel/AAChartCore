@@ -97,6 +97,15 @@ public class CustomStyleChartActivity extends AppCompatActivity {
                 return configureMaxAndMinDataLabelsForChart();
             case "customVerticalXAxisCategoriesLabelsByHTMLBreakLineTag":
                 return customVerticalXAxisCategoriesLabelsByHTMLBreakLineTag();
+
+            case "noMoreGroupingAndOverlapEachOtherColumnChart":
+                return noMoreGroupingAndOverlapEachOtherColumnChart();
+            case "noMoreGroupingAndNestedColumnChart":
+                return noMoreGroupingAndNestedColumnChart();
+            case "topRoundedCornersStackingColumnChart":
+                return topRoundedCornersStackingColumnChart();
+            case "freeStyleRoundedCornersStackingColumnChart":
+                return freeStyleRoundedCornersStackingColumnChart();
         }
         return configureColorfulChart();
     }
