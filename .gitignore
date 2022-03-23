@@ -1,64 +1,33 @@
-.idea/AAChartCore.iml
-.idea/encodings.xml
-.idea/modules.xml
-.idea/workspace.xml
-ChartCoreSlim/.idea/encodings.xml
-.gradle/5.4.1/executionHistory/executionHistory.bin
-.gradle/5.4.1/executionHistory/executionHistory.lock
-.gradle/5.4.1/fileChanges/last-build.bin
-.gradle/5.4.1/fileContent/fileContent.lock
-.gradle/5.4.1/fileHashes/fileHashes.lock
-.gradle/5.4.1/fileHashes/resourceHashesCache.bin
-.gradle/5.4.1/javaCompile/classAnalysis.bin
-.gradle/5.4.1/javaCompile/jarAnalysis.bin
-.gradle/5.4.1/javaCompile/javaCompile.lock
-.gradle/buildOutputCleanup/buildOutputCleanup.lock
-.idea/caches/gradle_models.ser
-.idea/libraries
-.gradle/5.4.1/fileHashes/fileHashes.bin
-.gradle/buildOutputCleanup/cache.properties
-.gradle/buildOutputCleanup/outputFiles.bin
-.idea/libraries/Gradle____local_aars_____app_libs_gson_2_7_jar_unspecified_jar.xml
-/.gradle/5.6.4/fileChanges/last-build.bin
-/.gradle/5.6.4/fileHashes/fileHashes.lock
-/.gradle/5.6.4/fileHashes/fileHashes.bin
-.gradle/5.6.4/fileContent/fileContent.lock
-.idea/jarRepositories.xml
-.idea/libraries/Gradle____app_libs_gson_2_7_jar.xml
-.idea/modules/app/Users-ios-fn-AAChartCore-app~1.iml
-.gradle/6.1.1/executionHistory/executionHistory.bin
-.gradle/6.1.1/executionHistory/executionHistory.lock
-.gradle/6.1.1/fileChanges/last-build.bin
-.gradle/6.1.1/fileHashes/fileHashes.bin
-.gradle/6.1.1/fileHashes/fileHashes.lock
-.gradle/6.1.1/fileHashes/resourceHashesCache.bin
-.gradle/6.1.1/javaCompile/classAnalysis.bin
-.gradle/6.1.1/javaCompile/jarAnalysis.bin
-.gradle/6.1.1/javaCompile/javaCompile.lock
-.gradle/checksums/checksums.lock
-.gradle/checksums/md5-checksums.bin
-.gradle/checksums/sha1-checksums.bin
-.idea/libraries/Gradle__com_google_code_gson_gson_2_8_5_jar.xml
-.idea/modules/aachartcore/aachartcore.iml
-.gradle/6.1.1/fileContent/fileContent.lock
-.idea/compiler.xml
-.idea/gradle.xml
-.idea/libraries/
-.idea/modules/app/AAChartCore.app.iml
-.idea/gradle.xml
+# Gradle files
+.gradle/
+build/
 
-.idea/vcs.xml
-.idea/runConfigurations.xml
-.idea/misc.xml
-.idea/gradle.xml
-.idea/deploymentTargetDropDown.xml
-.gradle/vcs-1/gc.properties
-.gradle/6.5/gc.properties
-.gradle/6.5/fileHashes/fileHashes.lock
-.gradle/6.5/fileContent/fileContent.lock
-.gradle/6.5/fileChanges/last-build.bin
-.idea/gradle.xml
-.idea/runConfigurations.xml
-*.bin
-*.lock
+# Local configuration file (sdk path, etc)
 local.properties
+
+# Log/OS Files
+*.log
+
+# Android Studio generated files and folders
+captures/
+.externalNativeBuild/
+.cxx/
+*.apk
+output.json
+
+# IntelliJ
+*.iml
+.idea/
+misc.xml
+deploymentTargetDropDown.xml
+render.experimental.xml
+
+# Keystore files
+*.jks
+*.keystore
+
+# Google Services (e.g. APIs or Firebase)
+google-services.json
+
+# Android Profiling
+*.hprof
