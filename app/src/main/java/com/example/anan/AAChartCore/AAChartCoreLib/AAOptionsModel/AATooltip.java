@@ -18,7 +18,11 @@ public class AATooltip {
     public Boolean shared;
     public String valueSuffix;
     public Boolean followTouchMove;//https://api.highcharts.com.cn/highcharts#chart.panning
-
+    public Boolean shadow;
+    public Float padding;
+    public String pointFormatter;
+    public String positioner;
+    public AADateTimeLabelFormats dateTimeLabelFormats;
 
     public AATooltip backgroundColor(String prop) {
         backgroundColor = prop;
@@ -94,6 +98,31 @@ public class AATooltip {
 
     public AATooltip followTouchMove(Boolean prop) {
         followTouchMove = prop;
+        return this;
+    }
+
+    public AATooltip shadow(Boolean prop) {
+        shadow = prop;
+        return this;
+    }
+
+    public AATooltip padding(Float prop) {
+        padding = prop;
+        return this;
+    }
+
+    public AATooltip pointFormatter(String prop) {
+        pointFormatter = prop;
+        return this;
+    }
+
+    public AATooltip positioner(String prop) {
+        positioner = prop;
+        return this;
+    }
+
+    public AATooltip dateTimeLabelFormats(AADateTimeLabelFormats prop) {
+        dateTimeLabelFormats = prop;
         return this;
     }
 
