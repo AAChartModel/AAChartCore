@@ -1,6 +1,8 @@
 package com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel;
 
 public class AAXAxis {
+    public Object alternateGridColor;
+    public AATitle title;
     public String type;
     public AADateTimeLabelFormats dateTimeLabelFormats;
     public AAPlotBandsElement[] plotBands;
@@ -42,6 +44,15 @@ public class AAXAxis {
     public String tickPosition; //刻度线相对于轴线的位置，可用的值有 inside 和 outside，分别表示在轴线的内部和外部。 默认是：outside.
     public Object[] tickPositions; // Custom x-axis coordinates
 
+    public AAXAxis alternateGridColor(Object prop) {
+        alternateGridColor = prop;
+        return this;
+    }
+
+    public AAXAxis title(AATitle prop) {
+        title = prop;
+        return this;
+    }
 
     public AAXAxis type(String prop) {
         type = prop;
