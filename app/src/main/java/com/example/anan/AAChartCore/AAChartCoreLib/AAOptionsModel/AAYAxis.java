@@ -1,6 +1,7 @@
 package com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel;
 
 public class AAYAxis {
+    public Object alternateGridColor;//backcolor of every other grid line area
     public AATitle title;
     public String type;
     public AADateTimeLabelFormats dateTimeLabelFormats;
@@ -11,7 +12,6 @@ public class AAYAxis {
     public Float gridLineWidth;// y 轴网格线宽度
     public String gridLineColor;  // y 轴网格线颜色
     public String gridLineDashStyle; //网格线线条样式，所有可用的线条样式参考：Highcharts线条样式
-    public String alternateGridColor;  //backcolor of every other grid line area
     public String gridLineInterpolation; //Polar charts only. Whether the grid lines should draw as a polygon with straight lines between categories, or as circles. Can be either circle or polygon. 默认是：null.
     public AALabels labels;//用于设置 y 轴文字相关的
     public Float lineWidth; // y 轴线宽度
@@ -44,6 +44,10 @@ public class AAYAxis {
     public Float tickLength;//坐标轴刻度线的长度。 默认是：10.
     public String tickPosition; //刻度线相对于轴线的位置，可用的值有 inside 和 outside，分别表示在轴线的内部和外部。 默认是：outside.
 
+    public AAYAxis alternateGridColor(Object prop) {
+        alternateGridColor = prop;
+        return this;
+    }
 
     public AAYAxis title(AATitle prop) {
         title = prop;
@@ -92,11 +96,6 @@ public class AAYAxis {
 
     public AAYAxis gridLineDashStyle(String prop) {
         gridLineDashStyle = prop;
-        return this;
-    }
-
-    public AAYAxis alternateGridColor(String prop) {
-        alternateGridColor = prop;
         return this;
     }
 
