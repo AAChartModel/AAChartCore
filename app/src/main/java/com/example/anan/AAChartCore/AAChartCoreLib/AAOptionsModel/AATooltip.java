@@ -17,6 +17,8 @@ public class AATooltip {
     public Integer valueDecimals;
     public Boolean shared;
     public String valueSuffix;
+    public Boolean followTouchMove;//https://api.highcharts.com.cn/highcharts#chart.panning
+
 
     public AATooltip backgroundColor(String prop) {
         backgroundColor = prop;
@@ -87,6 +89,11 @@ public class AATooltip {
 
     public AATooltip valueSuffix(String prop) {
         valueSuffix = prop;
+        return this;
+    }
+
+    public AATooltip followTouchMove(Boolean prop) {
+        followTouchMove = prop;
         return this;
     }
 
