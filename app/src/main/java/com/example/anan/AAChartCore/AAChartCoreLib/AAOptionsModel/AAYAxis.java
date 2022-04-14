@@ -2,6 +2,7 @@ package com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel;
 
 public class AAYAxis {
     public AATitle title;
+    public String type;
     public AADateTimeLabelFormats dateTimeLabelFormats;
     public AAPlotBandsElement[] plotBands;
     public AAPlotLinesElement[] plotLines;
@@ -46,6 +47,11 @@ public class AAYAxis {
 
     public AAYAxis title(AATitle prop) {
         title = prop;
+        return this;
+    }
+
+    public AAYAxis type(String prop) {
+        type = prop;
         return this;
     }
 
