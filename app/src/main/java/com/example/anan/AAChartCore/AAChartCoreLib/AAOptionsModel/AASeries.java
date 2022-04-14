@@ -18,7 +18,10 @@ public class AASeries {
     public AAShadow shadow;
     public AADataLabels dataLabels;
     public AAStates states;
-
+    public Integer pointInterval;
+    public String pointIntervalUnit;
+    public Object pointPlacement;
+    public Float pointStart;
 
     public AASeries borderColor(String prop) {
         borderColor = prop;
@@ -102,6 +105,26 @@ public class AASeries {
 
     public AASeries states(AAStates prop) {
         states = prop;
+        return this;
+    }
+
+    public AASeries pointInterval(Integer prop) {
+        pointInterval = prop;
+        return this;
+    }
+
+    public AASeries pointIntervalUnit(String prop) {
+        pointIntervalUnit = prop;
+        return this;
+    }
+
+    public AASeries pointPlacement(Object prop) {
+        pointPlacement = prop;
+        return this;
+    }
+
+    public AASeries pointStart(Float prop) {
+        pointStart = prop;
         return this;
     }
 
