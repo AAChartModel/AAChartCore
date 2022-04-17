@@ -1,9 +1,18 @@
 package com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel;
 
 public class AAXAxis extends AAAxis {
+    public AAXAxis allowDecimals(Boolean prop) {
+        allowDecimals = prop;
+        return this;
+    }
 
     public AAXAxis alternateGridColor(Object prop) {
         alternateGridColor = prop;
+        return this;
+    }
+
+    public AAXAxis crosshair(AACrosshair prop) {
+        crosshair = prop;
         return this;
     }
 
@@ -122,11 +131,6 @@ public class AAXAxis extends AAAxis {
         return this;
     }
 
-    public AAXAxis tickColor(String prop) {
-        tickColor = prop;
-        return this;
-    }
-
     public AAXAxis gridLineWidth(Float prop) {
         gridLineWidth = prop;
         return this;
@@ -139,6 +143,11 @@ public class AAXAxis extends AAAxis {
 
     public AAXAxis gridLineDashStyle(String prop) {
         gridLineDashStyle = prop;
+        return this;
+    }
+
+    public AAXAxis gridLineInterpolation(String prop) {
+        gridLineInterpolation = prop;
         return this;
     }
 
@@ -162,13 +171,13 @@ public class AAXAxis extends AAAxis {
         return this;
     }
 
-    public AAXAxis tickInterval(Integer prop) {
-        tickInterval = prop;
+    public AAXAxis tickColor(String prop) {
+        tickColor = prop;
         return this;
     }
 
-    public AAXAxis crosshair(AACrosshair prop) {
-        crosshair = prop;
+    public AAXAxis tickInterval(Integer prop) {
+        tickInterval = prop;
         return this;
     }
 
