@@ -2,9 +2,24 @@ package com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel;
 
 public class AAYAxis extends AAAxis {
     public Object stackLabels;
+    public AAYAxis stackLabels(String prop) {
+        stackLabels = prop;
+        return this;
+    }
+    ///////////////////////////////////////////
+
+    public AAYAxis allowDecimals(Boolean prop) {
+        allowDecimals = prop;
+        return this;
+    }
 
     public AAYAxis alternateGridColor(Object prop) {
         alternateGridColor = prop;
+        return this;
+    }
+
+    public AAYAxis crosshair(AACrosshair prop) {
+        crosshair = prop;
         return this;
     }
 
@@ -38,33 +53,18 @@ public class AAYAxis extends AAAxis {
         return this;
     }
 
+    public AAYAxis linkedTo(Integer prop) {
+        linkedTo = prop;
+        return this;
+    }
+
     public AAYAxis reversed(Boolean prop) {
         reversed = prop;
         return this;
     }
 
-    public AAYAxis gridLineWidth(Float prop) {
-        gridLineWidth = prop;
-        return this;
-    }
-
-    public AAYAxis gridLineColor(String prop) {
-        gridLineColor = prop;
-        return this;
-    }
-
-    public AAYAxis gridLineDashStyle(String prop) {
-        gridLineDashStyle = prop;
-        return this;
-    }
-
-    public AAYAxis gridLineInterpolation(String prop) {
-        gridLineInterpolation = prop;
-        return this;
-    }
-
-    public AAYAxis labels(AALabels prop) {
-        labels = prop;
+    public AAYAxis opposite(Boolean prop) {
+        opposite = prop;
         return this;
     }
 
@@ -75,16 +75,6 @@ public class AAYAxis extends AAAxis {
 
     public AAYAxis lineColor(String prop) {
         lineColor = prop;
-        return this;
-    }
-
-    public AAYAxis off(Float prop) {
-        off = prop;
-        return this;
-    }
-
-    public AAYAxis allowDecimals(Boolean prop) {
-        allowDecimals = prop;
         return this;
     }
 
@@ -148,8 +138,33 @@ public class AAYAxis extends AAAxis {
         return this;
     }
 
-    public AAYAxis tickPositions(Object[] prop) {
-        tickPositions = prop;
+    public AAYAxis gridLineWidth(Float prop) {
+        gridLineWidth = prop;
+        return this;
+    }
+
+    public AAYAxis gridLineColor(String prop) {
+        gridLineColor = prop;
+        return this;
+    }
+
+    public AAYAxis gridLineDashStyle(String prop) {
+        gridLineDashStyle = prop;
+        return this;
+    }
+
+    public AAYAxis gridLineInterpolation(String prop) {
+        gridLineInterpolation = prop;
+        return this;
+    }
+
+    public AAYAxis off(Float prop) {
+        off = prop;
+        return this;
+    }
+
+    public AAYAxis labels(AALabels prop) {
+        labels = prop;
         return this;
     }
 
@@ -158,8 +173,13 @@ public class AAYAxis extends AAAxis {
         return this;
     }
 
-    public AAYAxis opposite(Boolean prop) {
-        opposite = prop;
+    public AAYAxis startOnTick(Boolean prop) {
+        startOnTick = prop;
+        return this;
+    }
+
+    public AAYAxis tickColor(String prop) {
+        tickColor = prop;
         return this;
     }
 
@@ -168,8 +188,8 @@ public class AAYAxis extends AAAxis {
         return this;
     }
 
-    public AAYAxis crosshair(AACrosshair prop) {
-        crosshair = prop;
+    public AAYAxis tickmarkPlacement(String prop) {
+        tickmarkPlacement = prop;
         return this;
     }
 
@@ -188,8 +208,8 @@ public class AAYAxis extends AAAxis {
         return this;
     }
 
-    public AAYAxis stackLabels(String prop) {
-        stackLabels = prop;
+    public AAYAxis tickPositions(Object[] prop) {
+        tickPositions = prop;
         return this;
     }
 
