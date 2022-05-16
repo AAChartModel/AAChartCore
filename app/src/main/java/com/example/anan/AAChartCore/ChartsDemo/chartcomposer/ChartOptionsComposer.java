@@ -37,6 +37,7 @@ import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AATitle;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AATooltip;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAXAxis;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAYAxis;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAZonesElement;
 import com.example.anan.AAChartCore.AAChartCoreLib.AATools.AAColor;
 import com.example.anan.AAChartCore.AAChartCoreLib.AATools.AAGradientColor;
 import com.example.anan.AAChartCore.AAChartCoreLib.AATools.AALinearGradientDirection;
@@ -170,20 +171,6 @@ public class ChartOptionsComposer {
     }
 
     public static AAOptions configureAAPlotLinesForChart() {
-
-        Map map1 = new HashMap();
-        map1.put("value",12);
-        map1.put("color","#1e90ff");
-        Map map2 = new HashMap();
-        map2.put("value",24);
-        map2.put("color","#ef476f");
-        Map map3 = new HashMap();
-        map3.put("value",36);
-        map3.put("color","#04d69f");
-        Map map4 = new HashMap();
-        map4.put("color","#ffd066");
-        Map[] zonesArr = new Map[]{map1,map2,map3,map4};
-
         AAChartModel aaChartModel = new  AAChartModel()
                 .chartType(AAChartType.Areaspline)//图形类型
                 .dataLabelsEnabled(false)
@@ -193,7 +180,19 @@ public class ChartOptionsComposer {
                                 .data(new Object[] {7.0, 6.9, 2.5, 14.5, 18.2, 21.5, 5.2, 26.5, 23.3, 45.3, 13.9, 9.6})
                                 .fillOpacity(0.5f)
                                 .lineWidth(10f)
-                                .zones(zonesArr)
+                                .zones(new AAZonesElement[]{
+                                new AAZonesElement()
+                                        .value(12)
+                                        .color("#1e90ff"),
+                                new AAZonesElement()
+                                        .value(24)
+                                        .color("#ef476f"),
+                                new AAZonesElement()
+                                        .value(36)
+                                        .color("#04d69f"),
+                                new AAZonesElement()
+                                        .color("#ffd066"),
+                        })
                 });
 
         AAOptions aaOptions = aaChartModel.aa_toAAOptions();
