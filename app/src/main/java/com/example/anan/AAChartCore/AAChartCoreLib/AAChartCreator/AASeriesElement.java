@@ -36,6 +36,7 @@ import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AADataLabels;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAMarker;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAShadow;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AATooltip;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAZonesElement;
 
 /**
  * Created by anan on 2018/4/16.
@@ -71,7 +72,7 @@ public class AASeriesElement {
     private Object states;
     private Boolean colorByPoint;
     private Integer zIndex;
-    private Object[] zones;
+    private AAZonesElement[] zones;
     private AAShadow shadow;
     private String stack;
     private AATooltip tooltip;
@@ -220,7 +221,7 @@ public class AASeriesElement {
         return this;
     }
 
-    public AASeriesElement zones(Object[] prop) {
+    public AASeriesElement zones(AAZonesElement[] prop) {
         zones = prop;
         return this;
     }
