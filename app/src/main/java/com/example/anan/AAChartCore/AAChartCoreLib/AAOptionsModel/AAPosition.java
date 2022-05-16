@@ -16,7 +16,7 @@ public class AAPosition {
         return this;
     }
 
-    public AAPosition align(Number prop) {
+    public AAPosition x(Number prop) {
         x = prop;
         return this;
     }
