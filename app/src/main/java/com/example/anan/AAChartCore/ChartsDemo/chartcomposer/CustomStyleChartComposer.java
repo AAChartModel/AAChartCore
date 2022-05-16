@@ -38,7 +38,7 @@ import java.util.Map;
 public class CustomStyleChartComposer {
 
 
-   public static AAChartModel configureColorfulChart() {
+    public static AAChartModel configureColorfulChart() {
         String[] colorsNameArr = {
                 "red",
                 "orange",
@@ -90,7 +90,7 @@ public class CustomStyleChartComposer {
 
     }
 
-   public static AAChartModel configureColorfulGradientColorChart() {
+    public static AAChartModel configureColorfulGradientColorChart() {
         String[] gradientColorNamesArr = {
                 "oceanBlue",
                 "sanguine",
@@ -164,7 +164,7 @@ public class CustomStyleChartComposer {
 
     }
 
-   public static AAChartModel configureDiscontinuousDataChart() {
+    public static AAChartModel configureDiscontinuousDataChart() {
         return new AAChartModel()
                 .chartType(AAChartType.Column)
                 .title("Discontinuous Data Chart")
@@ -181,7 +181,7 @@ public class CustomStyleChartComposer {
 
     }
 
-   public static AAChartModel configureColorfulColumnChart() {
+    public static AAChartModel configureColorfulColumnChart() {
         return new AAChartModel()
                 .chartType(AAChartType.Column)
                 .title("Colorful Column Chart")
@@ -195,7 +195,7 @@ public class CustomStyleChartComposer {
                 });
     }
 
-   public static AAChartModel configureNightingaleRoseChart() {
+    public static AAChartModel configureNightingaleRoseChart() {
         return new AAChartModel()
                 .title("南丁格尔玫瑰图")
                 .subtitle("极地图中的一种")
@@ -217,7 +217,7 @@ public class CustomStyleChartComposer {
                 ;
     }
 
-   public static AAChartModel configureChartWithShadowStyle() {
+    public static AAChartModel configureChartWithShadowStyle() {
         return new AAChartModel()
                 .chartType(AAChartType.Spline)
                 .title("")
@@ -244,14 +244,14 @@ public class CustomStyleChartComposer {
                 });
     }
 
-   public static AAChartModel configureColorfulGradientAreaChart() {
+    public static AAChartModel configureColorfulGradientAreaChart() {
         Object[][] stopsArr = {
                 {0.00, "#febc0f"},
                 {0.50, "#FF14d4"},
                 {1.00, "#0bf8f5"},
         };//颜色字符串设置支持十六进制类型和 rgba 类型
 
-        Map linearGradientColor = AAGradientColor.linearGradient(
+        Map<String, Object> linearGradientColor = AAGradientColor.linearGradient(
                 AALinearGradientDirection.ToLeft,
                 stopsArr
         );//颜色字符串设置支持十六进制类型和 rgba 类型
@@ -278,7 +278,7 @@ public class CustomStyleChartComposer {
     }
 
 
-   public static AAChartModel configureColorfulGradientSplineChart() {
+    public static AAChartModel configureColorfulGradientSplineChart() {
         Object[][] stopsArr = {
                 {0.00, "#febc0f"},
                 {0.25, "#FF14d4"},
@@ -287,7 +287,7 @@ public class CustomStyleChartComposer {
                 {1.00, "#1904dd"},
         };//颜色字符串设置支持十六进制类型和 rgba 类型
 
-        Map linearGradientColor = AAGradientColor.linearGradient(
+        Map<String, Object> linearGradientColor = AAGradientColor.linearGradient(
                 AALinearGradientDirection.ToLeft,
                 stopsArr
         );//颜色字符串设置支持十六进制类型和 rgba 类型
@@ -314,8 +314,8 @@ public class CustomStyleChartComposer {
     }
 
 
-   public static AAChartModel configureGradientColorAreasplineChart() {
-        Map linearGradientColor = AAGradientColor.linearGradient(
+    public static AAChartModel configureGradientColorAreasplineChart() {
+        Map<String, Object> linearGradientColor = AAGradientColor.linearGradient(
                 AALinearGradientDirection.ToBottom,
                 "rgba(2255,20,147,1)",//深粉色, alpha 透明度 1
                 "rgba(255,105,180,0.1)"//热情的粉红, alpha 透明度 0.1
@@ -346,7 +346,7 @@ public class CustomStyleChartComposer {
     }
 
 
-   public static AAChartModel configureSpecialStyleMarkerOfSingleDataElementChart() {
+    public static AAChartModel configureSpecialStyleMarkerOfSingleDataElementChart() {
         Object[][] stopsArr = {
                 {0.00, "#febc0f"},
                 {0.25, "#FF14d4"},
@@ -355,7 +355,7 @@ public class CustomStyleChartComposer {
                 {1.00, "#1904dd"},
         };//颜色字符串设置支持十六进制类型和 rgba 类型
 
-        Map gradientColorDic1 = AAGradientColor.linearGradient(
+        Map<String, Object> gradientColorDic1 = AAGradientColor.linearGradient(
                 AALinearGradientDirection.ToRight,
                 stopsArr
         );
@@ -389,7 +389,7 @@ public class CustomStyleChartComposer {
                 });
     }
 
-   public static AAChartModel configureSpecialStyleColumnOfSingleDataElementChart() {
+    public static AAChartModel configureSpecialStyleColumnOfSingleDataElementChart() {
         AADataElement singleSpecialData = new AADataElement()
                 .color(AAGradientColor.FreshPapaya)
                 .y(49.5f);
@@ -412,8 +412,8 @@ public class CustomStyleChartComposer {
                 });
     }
 
-   public static AAChartModel configureAreaChartThreshold() {
-        Map gradientColorDic1 = AAGradientColor.linearGradient(
+    public static AAChartModel configureAreaChartThreshold() {
+        Map<String, Object> gradientColorDic1 = AAGradientColor.linearGradient(
                 AALinearGradientDirection.ToBottom,
                 "rgba(30, 144, 255,1)",//DodgerBlue, alpha 透明度 1
                 "rgba(30, 144, 255,0.1)"//DodgerBlue, alpha 透明度 0.1
@@ -441,8 +441,7 @@ public class CustomStyleChartComposer {
     }
 
     //refer to online sample https://jshare.com.cn/github/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-marker-symbol/
-   public static AAChartModel customScatterChartMarkerSymbolContent() {
-
+    public static AAChartModel customScatterChartMarkerSymbolContent() {
         AASeriesElement element1 = new AASeriesElement()
                 .name("Predefined symbol")
                 .data(new Object[]{0.45, 0.43, 0.50, 0.55, 0.58, 0.62, 0.83, 0.39, 0.56, 0.67, 0.50, 0.34, 0.50, 0.67, 0.58, 0.29, 0.46, 0.23, 0.47, 0.46, 0.38, 0.56, 0.48, 0.36})
@@ -487,7 +486,7 @@ public class CustomStyleChartComposer {
     }
 
     //三角形雷达图
-   public static AAChartModel configureTriangleRadarChart() {
+    public static AAChartModel configureTriangleRadarChart() {
         return new AAChartModel()
                 .chartType(AAChartType.Area)
                 .title("")
@@ -511,7 +510,7 @@ public class CustomStyleChartComposer {
     }
 
     //四边形雷达图
-   public static AAChartModel configureQuadrangleRadarChart() {
+    public static AAChartModel configureQuadrangleRadarChart() {
         return new AAChartModel()
                 .chartType(AAChartType.Area)
                 .title("")
@@ -535,7 +534,7 @@ public class CustomStyleChartComposer {
     }
 
     //五边形雷达图
-   public static AAChartModel configurePentagonRadarChart() {
+    public static AAChartModel configurePentagonRadarChart() {
         return new AAChartModel()
                 .chartType(AAChartType.Area)
                 .title("")
@@ -559,7 +558,7 @@ public class CustomStyleChartComposer {
     }
 
     //六边形雷达图
-   public static AAChartModel configureHexagonRadarChart() {
+    public static AAChartModel configureHexagonRadarChart() {
         return new AAChartModel()
                 .chartType(AAChartType.Area)
                 .title("")
@@ -582,7 +581,7 @@ public class CustomStyleChartComposer {
                 });
     }
 
-   public static AAChartModel adjustYAxisMaxAndMinValues() {
+    public static AAChartModel adjustYAxisMaxAndMinValues() {
         String[] categoriesArr = {
                 "孤岛危机",
                 "使命召唤",
@@ -618,14 +617,14 @@ public class CustomStyleChartComposer {
                 ;
     }
 
-   public static AAChartModel customSpecialStyleDataLabelOfSingleDataElementChart() {
+    public static AAChartModel customSpecialStyleDataLabelOfSingleDataElementChart() {
         Object[][] redStopsArr = new Object[][]{
                 new Object[]{0.0, AAColor.rgbaColor(255, 0, 0, 0.6f)},//颜色字符串设置支持十六进制类型和 rgba 类型
                 new Object[]{0.5, AAColor.rgbaColor(255, 0, 0, 0.0f)},
                 new Object[]{1.0, AAColor.rgbaColor(255, 0, 0, 0.0f)}
         };
 
-        Map gradientColorDic1 = AAGradientColor.linearGradient(
+        Map<String, Object> gradientColorDic1 = AAGradientColor.linearGradient(
                 AALinearGradientDirection.ToTop,
                 AAColor.rgbaColor(255, 215, 0, 0.1f),
                 AAColor.rgbaColor(255, 215, 0, 0.6f)
@@ -672,7 +671,7 @@ public class CustomStyleChartComposer {
                 });
     }
 
-   public static AAChartModel customBarChartHoverColorAndSelectColor() {
+    public static AAChartModel customBarChartHoverColorAndSelectColor() {
         return new AAChartModel()
                 .chartType(AAChartType.Bar)
                 .title("Custom Bar Chart select color")
@@ -695,7 +694,7 @@ public class CustomStyleChartComposer {
 
     }
 
-   public static AAChartModel customChartHoverAndSelectHaloStyle() {
+    public static AAChartModel customChartHoverAndSelectHaloStyle() {
         HashMap<String, Object> hoverHaloAttributes = new HashMap();
         hoverHaloAttributes.put("stroke-width", 50);
         hoverHaloAttributes.put("fill", "#00BFFF");
@@ -733,7 +732,7 @@ public class CustomStyleChartComposer {
                 });
     }
 
-   public static AAChartModel customSplineChartMarkerStatesHoverStyle() {
+    public static AAChartModel customSplineChartMarkerStatesHoverStyle() {
         return new AAChartModel()
                 .chartType(AAChartType.Areaspline)
                 .title("Custom Spline Chart Marker States Hover Style")
@@ -761,7 +760,7 @@ public class CustomStyleChartComposer {
 
 
     //Issue: https://github.com/AAChartModel/AAChartKit/issues/827
-   public static AAChartModel customNormalStackingChartDataLabelsContentAndStyle() {
+    public static AAChartModel customNormalStackingChartDataLabelsContentAndStyle() {
         String[] categories = {
                 "孤岛危机",
                 "使命召唤",
@@ -824,7 +823,7 @@ public class CustomStyleChartComposer {
 
     //Issue: https://github.com/AAChartModel/AAChartKit-Swift/issues/190
 //API Doc: https://api.highcharts.com.cn/highcharts#series%3Cpyramid%3E.reversed
-   public static AAChartModel upsideDownPyramidChart() {
+    public static AAChartModel upsideDownPyramidChart() {
         return new AAChartModel()
                 .chartType(AAChartType.Pyramid)
                 .yAxisTitle("摄氏度")
@@ -845,7 +844,7 @@ public class CustomStyleChartComposer {
     }
 
     //Issue: https://github.com/AAChartModel/AAChartKit/issues/888
-   public static AAChartModel doubleLayerPieChart() {
+    public static AAChartModel doubleLayerPieChart() {
         return new AAChartModel()
                 .chartType(AAChartType.Pie)
                 .title("浏览器市场占比历史对比")
@@ -884,7 +883,7 @@ public class CustomStyleChartComposer {
     }
 
     //GitHub issue https://github.com/AAChartModel/AAChartKit/issues/903
-   public static AAChartModel disableSomeOfLinesMouseTrackingEffect() {
+    public static AAChartModel disableSomeOfLinesMouseTrackingEffect() {
         return new AAChartModel()
                 .chartType(AAChartType.Line)//图表类型
                 .tooltipValueSuffix("万元")//设置浮动提示框单位后缀
@@ -914,7 +913,7 @@ public class CustomStyleChartComposer {
 
 
     // GitHub issue https://github.com/AAChartModel/AAChartKit/issues/904
-   public static AAChartModel configureColorfulShadowSplineChart() {
+    public static AAChartModel configureColorfulShadowSplineChart() {
         return new AAChartModel()
                 .chartType(AAChartType.Spline)
                 .yAxisVisible(false)
@@ -972,7 +971,7 @@ public class CustomStyleChartComposer {
     }
 
     // GitHub issue https://github.com/AAChartModel/AAChartKit/issues/905
-   public static AAChartModel configureColorfulDataLabelsStepLineChart() {
+    public static AAChartModel configureColorfulDataLabelsStepLineChart() {
         return new AAChartModel()
                 .chartType(AAChartType.Line)
                 .yAxisVisible(false)
@@ -1019,13 +1018,13 @@ public class CustomStyleChartComposer {
 
 
     // GitHub issue https://github.com/AAChartModel/AAChartKit-Swift/issues/223
-   public static AAChartModel configureColorfulGradientColorAndColorfulDataLabelsStepAreaChart() {
+    public static AAChartModel configureColorfulGradientColorAndColorfulDataLabelsStepAreaChart() {
         Object[][] blueStopsArr = new Object[][]{
                 {0.0, AAColor.rgbaColor(30, 144, 255, 1.0f)},//颜色字符串设置支持十六进制类型和 rgba 类型
                 {0.5, AAColor.rgbaColor(30, 144, 255, 0.2f)},
                 {1.0, AAColor.rgbaColor(30, 144, 255, 0.0f)}
         };
-        Map gradientBlueColorDic = AAGradientColor.linearGradient(
+        Map<String, Object> gradientBlueColorDic = AAGradientColor.linearGradient(
                 AALinearGradientDirection.ToBottom,
                 blueStopsArr
         );
@@ -1035,7 +1034,7 @@ public class CustomStyleChartComposer {
                 {0.5, AAColor.rgbaColor(255, 0, 0, 0.2f)},
                 {1.0, AAColor.rgbaColor(255, 0, 0, 0.0f)}
         };
-        Map gradientRedColorDic = AAGradientColor.linearGradient(
+        Map<String, Object> gradientRedColorDic = AAGradientColor.linearGradient(
                 AALinearGradientDirection.ToBottom,
                 redStopsArr
         );
@@ -1045,7 +1044,7 @@ public class CustomStyleChartComposer {
                 {0.5, AAColor.rgbaColor(255, 215, 0, 0.2f)},
                 {1.0, AAColor.rgbaColor(255, 215, 0, 0.0f)}
         };
-        Map gradientGoldColorDic = AAGradientColor.linearGradient(
+        Map<String, Object> gradientGoldColorDic = AAGradientColor.linearGradient(
                 AALinearGradientDirection.ToBottom,
                 goldStopsArr
         );
@@ -1055,7 +1054,7 @@ public class CustomStyleChartComposer {
                 {0.5, AAColor.rgbaColor(50, 205, 50, 0.2f)},
                 {1.0, AAColor.rgbaColor(50, 205, 50, 0.0f)}
         };
-        Map gradientGreenColorDic = AAGradientColor.linearGradient(
+        Map<String, Object> gradientGreenColorDic = AAGradientColor.linearGradient(
                 AALinearGradientDirection.ToBottom,
                 greenStopsArr
         );
@@ -1107,7 +1106,7 @@ public class CustomStyleChartComposer {
     }
 
     // Refer to https://api.highcharts.com.cn/highcharts#plotOptions.spline.marker.states.hover.enabled
-   public static AAChartModel disableSplineChartMarkerHoverEffect() {
+    public static AAChartModel disableSplineChartMarkerHoverEffect() {
         return new AAChartModel()
                 .chartType(AAChartType.Spline)
                 .title("Disable Spline Chart Marker Hover Effect")
@@ -1342,14 +1341,7 @@ public class CustomStyleChartComposer {
                                 .borderRadiusTopLeft("50%")
                                 .borderRadiusTopRight("50%")
                                 .data(new Object[]{1.56, 1.91, 2.45, 3.87, 3.24, 4.90, 4.61, 4.10, 4.17, 3.85, 4.17, 3.46, 3.46, 3.55, 3.50, 4.13, 2.58, 2.28}),
-
-
                 });
     }
-
-
-
-
-
 
 }
