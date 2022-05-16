@@ -145,7 +145,7 @@ public class AAChartView extends WebView {
     @JavascriptInterface
     public String androidMethod(String message) {
         Gson gson = new Gson();
-        Map messageBody = new HashMap<String, Object>();
+        Map<String, Object> messageBody = new HashMap<>();
         messageBody = gson.fromJson(message, messageBody.getClass());
         AAMoveOverEventMessageModel eventMessageModel = getEventMessageModel(messageBody);
         if (callBack != null) {
@@ -210,7 +210,7 @@ public class AAChartView extends WebView {
         classNameStr = classNameStr.substring(1);
         String finalClassName = lowercaseFirstStr + classNameStr;
 
-        Map finalOptionsMap = new HashMap();
+        Map<String, Object> finalOptionsMap = new HashMap();
         finalOptionsMap.put(finalClassName,options);
 
         String optionsStr = new Gson().toJson(finalOptionsMap);
