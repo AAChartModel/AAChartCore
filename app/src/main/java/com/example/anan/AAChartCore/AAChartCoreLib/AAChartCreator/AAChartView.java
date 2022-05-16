@@ -357,7 +357,7 @@ public class AAChartView extends WebView {
         });
     }
 
-    private AAMoveOverEventMessageModel getEventMessageModel(Map messageBody) {
+    private AAMoveOverEventMessageModel getEventMessageModel(Map<String, Object> messageBody) {
         AAMoveOverEventMessageModel eventMessageModel =  new AAMoveOverEventMessageModel();
         eventMessageModel.name = messageBody.get("name").toString();
         eventMessageModel.x = (Double) messageBody.get("x");
