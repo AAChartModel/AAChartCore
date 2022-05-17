@@ -89,7 +89,7 @@ public class BasicChartComposer {
                 .markerSymbolStyle(AAChartSymbolStyleType.InnerBlank);
 
         if (chartType.equals(AAChartType.Areaspline)) {
-            Map gradientColorDic = AAGradientColor.linearGradient(
+            Map<String, Object> gradientColorDic = AAGradientColor.linearGradient(
                     AALinearGradientDirection.ToBottomRight,
                     "rgba(138,43,226,1)",
                     "rgba(30,144,255,1)" //颜色字符串设置支持十六进制类型和 rgba 类型
