@@ -451,7 +451,7 @@ public class ChartOptionsComposer {
     }
 
     public static AAOptions configure_DataLabels_XAXis_YAxis_Legend_Style() {
-        Map backgroundColorGradientColor = AAGradientColor.linearGradient(
+        Map<String, Object> backgroundColorGradientColor = AAGradientColor.linearGradient(
                 AALinearGradientDirection.ToBottom,
                 "#4F00BC",
                 "#29ABE2"//颜色字符串设置支持十六进制类型和 rgba 类型
@@ -601,13 +601,13 @@ public class ChartOptionsComposer {
     }
 
     public static AAOptions configureTheMirrorColumnChart() {
-        Map gradientColorDic1 = AAGradientColor.linearGradient(
+        Map<String, Object> gradientColorDic1 = AAGradientColor.linearGradient(
                 AALinearGradientDirection.ToTop,
                 "#7052f4",
                 "#00b0ff"//颜色字符串设置支持十六进制类型和 rgba 类型
         );
 
-        Map gradientColorDic2 = AAGradientColor.linearGradient(
+        Map<String, Object> gradientColorDic2 = AAGradientColor.linearGradient(
                 AALinearGradientDirection.ToTop,
                 "#EF71FF",
                 "#4740C8"//颜色字符串设置支持十六进制类型和 rgba 类型
@@ -920,11 +920,11 @@ public class ChartOptionsComposer {
                 {1.0, "rgba(156,107,211,0)"}
         };
 
-        Map gradientColorDic1 = AAGradientColor.linearGradient(
+        Map<String, Object> gradientColorDic1 = AAGradientColor.linearGradient(
                 AALinearGradientDirection.ToBottom,
                 stopsArr);
 
-        Map gradientColorDic2 = AAGradientColor.linearGradient(
+        Map<String, Object> gradientColorDic2 = AAGradientColor.linearGradient(
                 AALinearGradientDirection.ToBottom,
                 "#956FD4",
                 "#3EACE5"//颜色字符串设置支持十六进制类型和 rgba 类型
@@ -958,7 +958,7 @@ public class ChartOptionsComposer {
         for (int i = 0; i < 33; i++) {
             Float goalValue = Float.valueOf((Integer) goalValuesArr[i]);
             Float realValue = Float.valueOf((Integer) realValuesArr[i]);
-            Float rateValue = realValue / goalValue;
+            float rateValue = realValue / goalValue;
             rateValuesArr[i] = rateValue;
         }
 
