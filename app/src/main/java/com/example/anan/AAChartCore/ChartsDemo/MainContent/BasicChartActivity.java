@@ -24,8 +24,8 @@ public class BasicChartActivity extends AppCompatActivity
         CompoundButton.OnCheckedChangeListener,
         AAChartView.AAChartViewCallBack
 {
-    private AAChartModel aaChartModel;
-    private AAChartView aaChartView;
+    public AAChartModel aaChartModel;
+    public AAChartView aaChartView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

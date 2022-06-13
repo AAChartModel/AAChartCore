@@ -8,6 +8,7 @@ import android.widget.ExpandableListView;
 import android.widget.Toast;
 
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartType;
+import com.example.anan.AAChartCore.ChartsDemo.AdditionalContent.AdvancedUpdatingFeatureActivity;
 import com.example.anan.AAChartCore.ChartsDemo.AdditionalContent.DoubleChartsLinkedWorkActivity;
 import com.example.anan.AAChartCore.ChartsDemo.AdditionalContent.JSFormatterFunctionActivity;
 import com.example.anan.AAChartCore.ChartsDemo.AdditionalContent.DrawChartWithAAOptionsActivity;
@@ -129,6 +130,16 @@ public class MainActivity extends AppCompatActivity {
                     "Line Chart---折线图",
                     "Spline Chart---曲线图",
                     "Scatter Chart---散点图",},
+            /*图表高级更新功能*/
+            {
+                    "Column Chart---柱形图",
+                    "Bar Chart---条形图",
+                    "Area Chart---折线填充图",
+                    "Areaspline Chart---曲线填充图",
+                    "Step Area Chart--- 直方折线填充图",
+                    "Step Line Chart--- 直方折线图",
+                    "Line Chart---折线图",
+                    "Spline Chart---曲线图",},
             /*自定义 formatter 函数*/
             {
                     "简单字符串拼接",
@@ -278,6 +289,17 @@ public class MainActivity extends AppCompatActivity {
                     AAChartType.Scatter,
             },
             {
+                    /*图表高级更新功能*/
+                    AAChartType.Column,
+                    AAChartType.Bar,
+                    AAChartType.Area,
+                    AAChartType.Areaspline,
+                    AAChartType.Area,
+                    AAChartType.Line,
+                    AAChartType.Line,
+                    AAChartType.Spline,
+            },
+            {
                     /*自定义 formatter 函数*/
                     "customAreaChartTooltipStyleWithSimpleFormatString",
                     "customAreaChartTooltipStyleWithDifferentUnitSuffix",
@@ -336,6 +358,7 @@ public class MainActivity extends AppCompatActivity {
 
                 "Draw Chart With AAOptions---通过Options绘图",
                 "Only Refresh data ---即时刷新图表数据",
+                "Chart Options Advanced Updating---图表高级更新",
                 "JS Function For AAOptionns ---通过带有 JS 函数的 Options 绘图",
                 "Evaluate JS String Function---执行js函数",
                 "Double Charts Linked Work---双表联动",
@@ -367,19 +390,22 @@ public class MainActivity extends AppCompatActivity {
                     case 4: /*使用AAOptions绘制图表*/
                         goToDrawChartWithAAOptionsActivity(chartType);
                         break;
-                    case 5:  /*即时刷新📈📊图表数据*/
+                    case 5: /*即时刷新📈📊图表数据*/
                         goToOnlyRefreshChartDataActivity(chartType);
                         break;
-                    case 6: /*formatter js function*/
+                    case 6: /*图表高级更新功能*/
+                        goToAdvancedUpdatingFeatureActivity(chartType,childPosition);
+                        break;
+                    case 7: /*formatter js function*/
                         goToCustomTooltipWithJSFunctionActivity(chartType);
                         break;
-                    case 7:  /*eval JS Function*/
+                    case 8:  /*eval JS Function*/
                         goToEvaluateJSStringFunctionActivity(chartType);
                         break;
-                    case 8:  /*Double Charts Linked Work*/
+                    case 9:  /*Double Charts Linked Work*/
                         goToDoubleChartsLinkedWorkActivity(chartType);
                         break;
-                    case 9: /*Scrollable Chart---可滚动图表*/
+                    case 10: /*Scrollable Chart---可滚动图表*/
                         gotoScrollableChartActivity(chartType,childPosition);
                         break;
                 }
@@ -425,6 +451,13 @@ public class MainActivity extends AppCompatActivity {
     void goToOnlyRefreshChartDataActivity(String chartType) {
         Intent intent = new Intent(this, OnlyRefreshChartDataActivity.class);
         intent.putExtra(kChartTypeKey, chartType);
+        startActivity(intent);
+    }
+
+    void goToAdvancedUpdatingFeatureActivity(String chartType, int position) {
+        Intent intent = new Intent(this, AdvancedUpdatingFeatureActivity.class);
+        intent.putExtra(kChartTypeKey, chartType);
+        intent.putExtra("position",position);
         startActivity(intent);
     }
 
