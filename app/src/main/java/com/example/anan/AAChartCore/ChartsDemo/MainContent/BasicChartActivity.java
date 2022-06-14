@@ -121,21 +121,7 @@ public class BasicChartActivity extends AppCompatActivity
      */
     @Override
     public void onCheckedChanged(RadioGroup group, int checkedId) {
-        if (group.getId() == R.id.cornerStyleTypeRadioGroup) {
-            //根据不同ID 弹出不同的吐司
-            switch (group.getCheckedRadioButtonId()) {
-                case R.id.squareCornersRadio:
-                    aaChartModel.borderRadius(0f);
-                    break;
-                case R.id.roundedCornersRadio:
-                    aaChartModel.borderRadius(10f);
-                    break;
-                case R.id.wedgeRadio:
-                    aaChartModel.borderRadius(100f);
-                    break;
-            }
-        } else if (group.getId() == R.id.stackingTypeRadioGroup) {
-            //根据不同ID 弹出不同的吐司
+        if (group.getId() == R.id.stackingTypeRadioGroup) {
             switch (group.getCheckedRadioButtonId()) {
                 case R.id.noStackingRadio:
                     aaChartModel.stacking(AAChartStackingType.False);
@@ -145,6 +131,18 @@ public class BasicChartActivity extends AppCompatActivity
                     break;
                 case R.id.percentStackingRadio:
                     aaChartModel.stacking(AAChartStackingType.Percent);
+                    break;
+            }
+        } else if (group.getId() == R.id.cornerStyleTypeRadioGroup) {
+            switch (group.getCheckedRadioButtonId()) {
+                case R.id.squareCornersRadio:
+                    aaChartModel.borderRadius(0f);
+                    break;
+                case R.id.roundedCornersRadio:
+                    aaChartModel.borderRadius(10f);
+                    break;
+                case R.id.wedgeRadio:
+                    aaChartModel.borderRadius(100f);
                     break;
             }
         } else {
