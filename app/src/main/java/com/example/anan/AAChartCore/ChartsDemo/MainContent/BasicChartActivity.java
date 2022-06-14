@@ -27,6 +27,7 @@ public class BasicChartActivity extends AppCompatActivity
 {
     public AAChartModel aaChartModel;
     public AAChartView aaChartView;
+    public String chartType;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +48,7 @@ public class BasicChartActivity extends AppCompatActivity
 
     AAChartModel configureAAChartModel() {
         Intent intent = getIntent();
-        String chartType = intent.getStringExtra("chartType");
+        chartType = intent.getStringExtra("chartType");
         int position = intent.getIntExtra("position",0);
 
         aaChartModel = BasicChartComposer.configureAreaChart();
