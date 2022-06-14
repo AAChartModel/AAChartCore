@@ -136,13 +136,13 @@ public class BasicChartActivity extends AppCompatActivity
         } else if (group.getId() == R.id.stackingTypeRadioGroup) {
             //根据不同ID 弹出不同的吐司
             switch (group.getCheckedRadioButtonId()) {
-                case R.id.stacking1:
+                case R.id.noStackingRadio:
                     aaChartModel.stacking(AAChartStackingType.False);
                     break;
-                case R.id.stacking2:
+                case R.id.normalStackingRadio:
                     aaChartModel.stacking(AAChartStackingType.Normal);
                     break;
-                case R.id.stacking3:
+                case R.id.percentStackingRadio:
                     aaChartModel.stacking(AAChartStackingType.Percent);
                     break;
             }

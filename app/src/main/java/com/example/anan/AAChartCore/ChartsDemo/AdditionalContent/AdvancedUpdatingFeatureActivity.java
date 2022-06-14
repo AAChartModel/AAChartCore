@@ -25,13 +25,13 @@ public class AdvancedUpdatingFeatureActivity extends BasicChartActivity {
         if (group.getId() == R.id.stackingTypeRadioGroup) {
             String stackingType = "";
             switch (group.getCheckedRadioButtonId()) {
-                case R.id.stacking1:
+                case R.id.noStackingRadio:
                     stackingType = AAChartStackingType.False;
                     break;
-                case R.id.stacking2:
+                case R.id.normalStackingRadio:
                     stackingType = AAChartStackingType.Normal;
                     break;
-                case R.id.stacking3:
+                case R.id.percentStackingRadio:
                     stackingType = AAChartStackingType.Percent;
                     break;
             }

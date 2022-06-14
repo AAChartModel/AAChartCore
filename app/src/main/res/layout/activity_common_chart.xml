@@ -22,15 +22,15 @@
             android:orientation="horizontal">
 
             <RadioButton
-                android:id="@+id/stacking1"
+                android:id="@+id/noStackingRadio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:textColor="@color/lightGray"
-                android:text="no stacking" />
+                android:text="noStacking" />
 
             <RadioButton
-                android:id="@+id/stacking2"
+                android:id="@+id/normalStackingRadio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -38,7 +38,7 @@
                 android:text="normalStacking" />
 
             <RadioButton
-                android:id="@+id/stacking3"
+                android:id="@+id/percentStackingRadio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -89,7 +89,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:textColor="@color/lightGray"
-                android:text="1" />
+                android:text="◉" />
 
             <RadioButton
                 android:id="@+id/symbol2"
@@ -97,7 +97,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:textColor="@color/lightGray"
-                android:text="2" />
+                android:text="■" />
 
             <RadioButton
                 android:id="@+id/symbol3"
@@ -105,7 +105,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:textColor="@color/lightGray"
-                android:text="3" />
+                android:text="◆" />
 
             <RadioButton
                 android:id="@+id/symbol4"
@@ -113,7 +113,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:textColor="@color/lightGray"
-                android:text="4" />
+                android:text="▲" />
 
             <RadioButton
                 android:id="@+id/symbol5"
@@ -121,7 +121,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:textColor="@color/lightGray"
-                android:text="5" />
+                android:text="▼" />
         </RadioGroup>
 
         <LinearLayout
