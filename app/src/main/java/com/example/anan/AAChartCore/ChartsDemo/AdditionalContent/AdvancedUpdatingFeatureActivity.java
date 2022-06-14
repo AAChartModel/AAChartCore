@@ -6,6 +6,9 @@ import android.widget.RadioGroup;
 
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartStackingType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartSymbolType;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartType;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AABar;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAColumn;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAMarker;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAPlotOptions;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AASeries;
@@ -38,6 +41,31 @@ public class AdvancedUpdatingFeatureActivity extends BasicChartActivity {
             AAPlotOptions aaPlotOptions = new AAPlotOptions()
                     .series(new AASeries()
                             .stacking(stackingType));
+            options = aaPlotOptions;
+        } else if (group.getId() == R.id.cornerStyleTypeRadioGroup) {
+            Float borderRadius = null;
+            switch (group.getCheckedRadioButtonId()) {
+                case R.id.squareCornersRadio:
+                    borderRadius = 0f;
+                    break;
+                case R.id.roundedCornersRadio:
+                    borderRadius = 10f;
+                    break;
+                case R.id.wedgeRadio:
+                    borderRadius = 100f;
+                    break;
+            }
+
+            AAPlotOptions aaPlotOptions;
+            if (chartType.equals(AAChartType.Column)) {
+                aaPlotOptions = new AAPlotOptions()
+                        .column(new AAColumn()
+                                .borderRadius(borderRadius));
+            } else {
+                aaPlotOptions = new AAPlotOptions()
+                        .bar(new AABar()
+                                .borderRadius(borderRadius));
+            }
             options = aaPlotOptions;
         } else {
             String markerSymbol = "";
