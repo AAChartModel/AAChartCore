@@ -1,6 +1,5 @@
 package com.example.anan.AAChartCore.ChartsDemo.AdditionalContent;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.CompoundButton;
 import android.widget.RadioGroup;
@@ -23,7 +22,7 @@ public class AdvancedUpdatingFeatureActivity extends BasicChartActivity {
     @Override
     public void onCheckedChanged(RadioGroup group, int checkedId) {
         Object options = new Object();
-        if (group.getId() == R.id.radioGroup1) {
+        if (group.getId() == R.id.stackingTypeRadioGroup) {
             String stackingType = "";
             switch (group.getCheckedRadioButtonId()) {
                 case R.id.stacking1:

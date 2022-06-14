@@ -20,7 +20,7 @@
         <RadioGroup
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/radioGroup1"
+            android:id="@+id/stackingTypeRadioGroup"
             android:orientation="horizontal">
 
             <RadioButton
@@ -56,7 +56,7 @@
         <RadioGroup
             android:layout_width="match_parent"
             android:layout_height="38dp"
-            android:id="@+id/radioGroup2"
+            android:id="@+id/markerSymbolTypeRadioGroup"
             android:orientation="horizontal">
 
             <RadioButton

@@ -121,10 +121,10 @@ public class HideOrShowChartSeriesActivity extends AppCompatActivity
 
         void setUpRadioButtonsAndSwitches() {
 
-            RadioGroup radioGroup1 = findViewById(R.id.radioGroup1);
+            RadioGroup radioGroup1 = findViewById(R.id.stackingTypeRadioGroup);
             radioGroup1.setOnCheckedChangeListener(this);
 
-            RadioGroup radioGroup2 = findViewById(R.id.radioGroup2);
+            RadioGroup radioGroup2 = findViewById(R.id.markerSymbolTypeRadioGroup);
             radioGroup2.setOnCheckedChangeListener(this);
 
 
@@ -151,7 +151,7 @@ public class HideOrShowChartSeriesActivity extends AppCompatActivity
          */
         @Override
         public void onCheckedChanged(RadioGroup group, int checkedId) {
-            if (group.getId() == R.id.radioGroup1) {
+            if (group.getId() == R.id.stackingTypeRadioGroup) {
                 //根据不同ID 弹出不同的吐司
                 switch (group.getCheckedRadioButtonId()) {
                     case R.id.hide1: aaChartView.aa_hideTheSeriesElementContent(0);

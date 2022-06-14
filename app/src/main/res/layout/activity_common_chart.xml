@@ -18,7 +18,7 @@
         <RadioGroup
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/radioGroup1"
+            android:id="@+id/stackingTypeRadioGroup"
             android:orientation="horizontal">
 
             <RadioButton
@@ -48,8 +48,39 @@
 
         <RadioGroup
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/cornerStyleTypeRadioGroup"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/squareCornersRadio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/lightGray"
+                android:text="squareCorners" />
+
+            <RadioButton
+                android:id="@+id/roundedCornersRadio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/lightGray"
+                android:text="roundedCorners" />
+
+            <RadioButton
+                android:id="@+id/wedgeRadio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/lightGray"
+                android:text="wedge" />
+        </RadioGroup>
+
+        <RadioGroup
+            android:layout_width="match_parent"
             android:layout_height="38dp"
-            android:id="@+id/radioGroup2"
+            android:id="@+id/markerSymbolTypeRadioGroup"
             android:orientation="horizontal">
 
             <RadioButton

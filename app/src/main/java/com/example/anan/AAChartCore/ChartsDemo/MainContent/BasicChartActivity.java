@@ -3,6 +3,7 @@ package com.example.anan.AAChartCore.ChartsDemo.MainContent;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.RadioGroup;
 import android.widget.Switch;
@@ -51,6 +52,7 @@ public class BasicChartActivity extends AppCompatActivity
 
         aaChartModel = BasicChartComposer.configureAreaChart();
         configureTheStyleForDifferentTypeChart(chartType,position);
+        configureViewsVisibility(chartType);
 
         return aaChartModel;
     }
@@ -60,22 +62,39 @@ public class BasicChartActivity extends AppCompatActivity
                 && (position == 4 || position == 5)) {
            aaChartModel = BasicChartComposer.configureStepAreaChartAndStepLineChart();
         } else if (chartType.equals(AAChartType.Column) || chartType.equals(AAChartType.Bar)) {
+
            aaChartModel = BasicChartComposer.configureColumnChartAndBarChart();
         } else if (chartType.equals(AAChartType.Area) || chartType.equals(AAChartType.Areaspline)) {
             aaChartModel = BasicChartComposer.configureAreaChartAndAreasplineChartStyle(chartType);
         } else if (chartType.equals(AAChartType.Line) || chartType.equals(AAChartType.Spline)) {
             aaChartModel = BasicChartComposer.configureLineChartAndSplineChartStyle(chartType);
         }
+        aaChartModel.chartType = chartType;
+    }
 
+    void configureViewsVisibility(String chartType) {
+        if (chartType.equals(AAChartType.Column) || chartType.equals(AAChartType.Bar)) {
+            RadioGroup squareCornersRadio = findViewById(R.id.cornerStyleTypeRadioGroup);
+            squareCornersRadio.setVisibility(View.VISIBLE);
+            RadioGroup markerSymbolTypeRadioGroup = findViewById(R.id.markerSymbolTypeRadioGroup);
+            markerSymbolTypeRadioGroup.setVisibility(View.GONE);
+        } else {
+            RadioGroup squareCornersRadio = findViewById(R.id.cornerStyleTypeRadioGroup);
+            squareCornersRadio.setVisibility(View.GONE);
+            RadioGroup markerSymbolTypeRadioGroup = findViewById(R.id.markerSymbolTypeRadioGroup);
+            markerSymbolTypeRadioGroup.setVisibility(View.VISIBLE);
+        }
     }
 
     void setUpRadioButtonsAndSwitches() {
+        RadioGroup stackingTypeRadioGroup = findViewById(R.id.stackingTypeRadioGroup);
+        stackingTypeRadioGroup.setOnCheckedChangeListener(this);
 
-        RadioGroup radioGroup1 = findViewById(R.id.radioGroup1);
-        radioGroup1.setOnCheckedChangeListener(this);
+        RadioGroup cornerStyleTypeRadioGroup = findViewById(R.id.cornerStyleTypeRadioGroup);
+        cornerStyleTypeRadioGroup.setOnCheckedChangeListener(this);
 
-        RadioGroup radioGroup2 = findViewById(R.id.radioGroup2);
-        radioGroup2.setOnCheckedChangeListener(this);
+        RadioGroup markerSymbolTypeRadioGroup = findViewById(R.id.markerSymbolTypeRadioGroup);
+        markerSymbolTypeRadioGroup.setOnCheckedChangeListener(this);
 
 
         Switch boolSwitch1 = findViewById(R.id.switch1);
@@ -101,7 +120,20 @@ public class BasicChartActivity extends AppCompatActivity
      */
     @Override
     public void onCheckedChanged(RadioGroup group, int checkedId) {
-        if (group.getId() == R.id.radioGroup1) {
+        if (group.getId() == R.id.cornerStyleTypeRadioGroup) {
+            //根据不同ID 弹出不同的吐司
+            switch (group.getCheckedRadioButtonId()) {
+                case R.id.squareCornersRadio:
+                    aaChartModel.borderRadius(0f);
+                    break;
+                case R.id.roundedCornersRadio:
+                    aaChartModel.borderRadius(10f);
+                    break;
+                case R.id.wedgeRadio:
+                    aaChartModel.borderRadius(100f);
+                    break;
+            }
+        } else if (group.getId() == R.id.stackingTypeRadioGroup) {
             //根据不同ID 弹出不同的吐司
             switch (group.getCheckedRadioButtonId()) {
                 case R.id.stacking1:
