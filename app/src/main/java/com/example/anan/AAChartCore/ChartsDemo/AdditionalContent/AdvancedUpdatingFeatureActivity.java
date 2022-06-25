@@ -129,7 +129,7 @@ public class AdvancedUpdatingFeatureActivity extends BasicChartActivity {
                 break;
             }
             case R.id.switch3: {
-                if (Objects.equals(this.aaChartModel.chartType, AAChartType.Bar)) {
+                if (this.aaChartModel.chartType.equals(AAChartType.Bar)) {
                     Log.d("", "⚠️⚠️⚠️inverted is useless for Bar Chart");
                 }
                 AAChart aaChart = new AAChart()
@@ -146,7 +146,7 @@ public class AdvancedUpdatingFeatureActivity extends BasicChartActivity {
                 options = aaChart;
 
                 if (this.aaChartModel.chartType.equals(AAChartType.Column)) {
-                    if (this.aaChartModel.polar == true) {
+                    if (this.aaChartModel.polar) {
                         options = new AAOptions()
                                 .chart(aaChart)
                                 .plotOptions(new AAPlotOptions()
@@ -162,7 +162,7 @@ public class AdvancedUpdatingFeatureActivity extends BasicChartActivity {
                                                 .groupPadding(0.2f)));
                     }
                 } else if (this.aaChartModel.chartType.equals(AAChartType.Bar)) {
-                    if (this.aaChartModel.polar == true) {
+                    if (this.aaChartModel.polar) {
                         options = new AAOptions()
                                 .chart(aaChart)
                                 .plotOptions(new AAPlotOptions()
