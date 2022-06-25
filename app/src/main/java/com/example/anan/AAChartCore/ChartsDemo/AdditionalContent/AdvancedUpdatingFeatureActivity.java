@@ -25,72 +25,79 @@ public class AdvancedUpdatingFeatureActivity extends BasicChartActivity {
     @Override
     public void onCheckedChanged(RadioGroup group, int checkedId) {
         Object options = new Object();
-        if (group.getId() == R.id.stackingTypeRadioGroup) {
-            String stackingType = "";
-            switch (group.getCheckedRadioButtonId()) {
-                case R.id.noStackingRadio:
-                    stackingType = AAChartStackingType.False;
-                    break;
-                case R.id.normalStackingRadio:
-                    stackingType = AAChartStackingType.Normal;
-                    break;
-                case R.id.percentStackingRadio:
-                    stackingType = AAChartStackingType.Percent;
-                    break;
+        switch (group.getId()) {
+            case R.id.stackingTypeRadioGroup: {
+                String stackingType = "";
+                switch (group.getCheckedRadioButtonId()) {
+                    case R.id.noStackingRadio:
+                        stackingType = AAChartStackingType.False;
+                        break;
+                    case R.id.normalStackingRadio:
+                        stackingType = AAChartStackingType.Normal;
+                        break;
+                    case R.id.percentStackingRadio:
+                        stackingType = AAChartStackingType.Percent;
+                        break;
+                }
+                AAPlotOptions aaPlotOptions = new AAPlotOptions()
+                        .series(new AASeries()
+                                .stacking(stackingType));
+                options = aaPlotOptions;
+                break;
             }
-            AAPlotOptions aaPlotOptions = new AAPlotOptions()
-                    .series(new AASeries()
-                            .stacking(stackingType));
-            options = aaPlotOptions;
-        } else if (group.getId() == R.id.cornerStyleTypeRadioGroup) {
-            Float borderRadius = null;
-            switch (group.getCheckedRadioButtonId()) {
-                case R.id.squareCornersRadio:
-                    borderRadius = 0f;
-                    break;
-                case R.id.roundedCornersRadio:
-                    borderRadius = 10f;
-                    break;
-                case R.id.wedgeRadio:
-                    borderRadius = 100f;
-                    break;
-            }
+            case R.id.cornerStyleTypeRadioGroup: {
+                Float borderRadius = null;
+                switch (group.getCheckedRadioButtonId()) {
+                    case R.id.squareCornersRadio:
+                        borderRadius = 0f;
+                        break;
+                    case R.id.roundedCornersRadio:
+                        borderRadius = 10f;
+                        break;
+                    case R.id.wedgeRadio:
+                        borderRadius = 100f;
+                        break;
+                }
 
-            AAPlotOptions aaPlotOptions;
-            if (chartType.equals(AAChartType.Column)) {
-                aaPlotOptions = new AAPlotOptions()
-                        .column(new AAColumn()
-                                .borderRadius(borderRadius));
-            } else {
-                aaPlotOptions = new AAPlotOptions()
-                        .bar(new AABar()
-                                .borderRadius(borderRadius));
+                AAPlotOptions aaPlotOptions;
+                if (chartType.equals(AAChartType.Column)) {
+                    aaPlotOptions = new AAPlotOptions()
+                            .column(new AAColumn()
+                                    .borderRadius(borderRadius));
+                } else {
+                    aaPlotOptions = new AAPlotOptions()
+                            .bar(new AABar()
+                                    .borderRadius(borderRadius));
+                }
+                options = aaPlotOptions;
+                break;
             }
-            options = aaPlotOptions;
-        } else {
-            String markerSymbol = "";
-            switch (group.getCheckedRadioButtonId()) {
-                case R.id.symbol1:
-                    markerSymbol = AAChartSymbolType.Circle;
-                    break;
-                case R.id.symbol2:
-                    markerSymbol = AAChartSymbolType.Diamond;
-                    break;
-                case R.id.symbol3:
-                    markerSymbol = AAChartSymbolType.Square;
-                    break;
-                case R.id.symbol4:
-                    markerSymbol = AAChartSymbolType.Triangle;
-                    break;
-                case R.id.symbol5:
-                    markerSymbol = AAChartSymbolType.Triangle_down;
-                    break;
+            default: {
+                String markerSymbol = "";
+                switch (group.getCheckedRadioButtonId()) {
+                    case R.id.symbol1:
+                        markerSymbol = AAChartSymbolType.Circle;
+                        break;
+                    case R.id.symbol2:
+                        markerSymbol = AAChartSymbolType.Diamond;
+                        break;
+                    case R.id.symbol3:
+                        markerSymbol = AAChartSymbolType.Square;
+                        break;
+                    case R.id.symbol4:
+                        markerSymbol = AAChartSymbolType.Triangle;
+                        break;
+                    case R.id.symbol5:
+                        markerSymbol = AAChartSymbolType.Triangle_down;
+                        break;
+                }
+                AAPlotOptions aaPlotOptions = new AAPlotOptions()
+                        .series(new AASeries()
+                                .marker(new AAMarker()
+                                        .symbol(markerSymbol)));
+                options = aaPlotOptions;
+                break;
             }
-            AAPlotOptions aaPlotOptions = new AAPlotOptions()
-                    .series(new AASeries()
-                            .marker(new AAMarker()
-                                    .symbol(markerSymbol)));
-            options = aaPlotOptions;
         }
 
         aaChartView.aa_updateChartWithOptions(options, true);
