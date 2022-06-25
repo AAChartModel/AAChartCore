@@ -1,6 +1,7 @@
 package com.example.anan.AAChartCore.ChartsDemo.AdditionalContent;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.CompoundButton;
 import android.widget.RadioGroup;
 
@@ -8,12 +9,19 @@ import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartStackingTy
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartSymbolType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AABar;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAChart;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAColumn;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AADataLabels;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAMarker;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAOptions;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAPlotOptions;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AASeries;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAXAxis;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAYAxis;
 import com.example.anan.AAChartCore.ChartsDemo.MainContent.BasicChartActivity;
 import com.example.anan.AAChartCore.R;
+
+import java.util.Objects;
 
 public class AdvancedUpdatingFeatureActivity extends BasicChartActivity {
 
@@ -105,19 +113,99 @@ public class AdvancedUpdatingFeatureActivity extends BasicChartActivity {
 
     @Override
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+        Object options = new Object();
+        boolean isOn = isChecked;
         switch (buttonView.getId()) {
-            case R.id.switch1: aaChartModel.xAxisReversed(isChecked);
+            case R.id.switch1: {
+                AAXAxis aaXAxis = new AAXAxis()
+                        .reversed(isOn);
+                options = aaXAxis;
                 break;
-            case R.id.switch2: aaChartModel.yAxisReversed(isChecked);
+            }
+            case R.id.switch2: {
+                AAYAxis aaYAxis = new AAYAxis()
+                        .reversed(isOn);
+                options = aaYAxis;
                 break;
-            case R.id.switch3: aaChartModel.inverted(isChecked);
+            }
+            case R.id.switch3: {
+                if (Objects.equals(this.aaChartModel.chartType, AAChartType.Bar)) {
+                    Log.d("", "⚠️⚠️⚠️inverted is useless for Bar Chart");
+                }
+                AAChart aaChart = new AAChart()
+                        .inverted(isOn)
+                        .polar(this.aaChartModel.polar);
+                options = aaChart;
                 break;
-            case R.id.switch4: aaChartModel.polar(isChecked);
+            }
+            case R.id.switch4: {
+                this.aaChartModel.polar = isOn;
+                AAChart aaChart = new AAChart()
+                        .polar(isOn)
+                        .inverted(this.aaChartModel.inverted);
+                options = aaChart;
+
+                if (this.aaChartModel.chartType.equals(AAChartType.Column)) {
+                    if (this.aaChartModel.polar == true) {
+                        options = new AAOptions()
+                                .chart(aaChart)
+                                .plotOptions(new AAPlotOptions()
+                                        .column(new AAColumn()
+                                                .pointPadding(0f)
+                                                .groupPadding(0.005f)));
+                    } else {
+                        options = new AAOptions()
+                                .chart(aaChart)
+                                .plotOptions(new AAPlotOptions()
+                                        .column(new AAColumn()
+                                                .pointPadding(0.1f)
+                                                .groupPadding(0.2f)));
+                    }
+                } else if (this.aaChartModel.chartType.equals(AAChartType.Bar)) {
+                    if (this.aaChartModel.polar == true) {
+                        options = new AAOptions()
+                                .chart(aaChart)
+                                .plotOptions(new AAPlotOptions()
+                                        .bar(new AABar()
+                                                .pointPadding(0f)
+                                                .groupPadding(0.005f)));
+                    } else {
+                        options = new AAOptions()
+                                .chart(aaChart)
+                                .plotOptions(new AAPlotOptions()
+                                        .bar(new AABar()
+                                                .pointPadding(0.1f)
+                                                .groupPadding(0.2f)));
+                    }
+
+                }
                 break;
-            case R.id.switch5: aaChartModel.dataLabelsEnabled(isChecked);
+            }
+            case R.id.switch5: {
+                AAPlotOptions aaPlotOptions = new AAPlotOptions()
+                        .series(new AASeries()
+                                .dataLabels(new AADataLabels()
+                                        .enabled(isOn)));
+                options = aaPlotOptions;
                 break;
+            }
+            case R.id.switch6: {
+                AAMarker aaMarker = isOn ?
+                        new AAMarker()
+                                .enabled(false)
+                        :
+                        new AAMarker()
+                                .enabled(true)
+                                .radius(5f);
+
+                AAPlotOptions aaPlotOptions = new AAPlotOptions()
+                        .series(new AASeries()
+                                .marker(aaMarker));
+                options = aaPlotOptions;
+                break;
+            }
         }
 
-        aaChartView.aa_refreshChartWithChartModel(aaChartModel);
+        aaChartView.aa_updateChartWithOptions(options, true);
     }
 }
