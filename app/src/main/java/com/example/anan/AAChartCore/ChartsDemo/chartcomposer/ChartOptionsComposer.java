@@ -391,8 +391,6 @@ public class ChartOptionsComposer {
 
         AAChartModel aaChartModel = new AAChartModel()
                 .chartType(AAChartType.Areaspline)
-                .title("")
-                .subtitle("")
                 .stacking(AAChartStackingType.Normal)
                 .categories(categories)
                 .dataLabelsEnabled(false)
