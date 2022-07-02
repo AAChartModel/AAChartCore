@@ -633,7 +633,7 @@ public class ChartOptionsComposer {
                 .title(new AATitle()
                         .text("支出"));
 
-        AAOptions aaOptions = new AAOptions()
+        return new AAOptions()
                 .chart(new AAChart()
                         .type(AAChartType.Column))
                 .title(new AATitle()
@@ -665,8 +665,6 @@ public class ChartOptionsComposer {
                                 .data(new Object[]{-20.1, -14.1, -8.6, -2.5, -0.8, -5.7, -11.3, -17.0, -22.0, -24.8, -24.1, -20.1, -14.1, -8.6, -2.5})
 
                 });
-
-        return aaOptions;
 
     }
 
@@ -717,13 +715,13 @@ public class ChartOptionsComposer {
                 .enabled(true)
                 .shared(true);
 
-        Map gradientColorDic1 = AAGradientColor.linearGradient(
+        Map<String, Object> gradientColorDic1 = AAGradientColor.linearGradient(
                 AALinearGradientDirection.ToTop,
                 "#f54ea2",
                 "#ff7676"//颜色字符串设置支持十六进制类型和 rgba 类型
         );
 
-        Map gradientColorDic2 = AAGradientColor.linearGradient(
+        Map<String, Object> gradientColorDic2 = AAGradientColor.linearGradient(
                 AALinearGradientDirection.ToTop,
                 "#17ead9",
                 "#6078ea"//颜色字符串设置支持十六进制类型和 rgba 类型
@@ -752,14 +750,12 @@ public class ChartOptionsComposer {
                 .yAxis(0)
                 .data(new Object[]{7.0, 6.9, 2.5, 14.5, 18.2, 21.5, 5.2, 26.5, 23.3, 45.3, 13.9, 9.6});
 
-        AAOptions aaOptions = new AAOptions()
+        return new AAOptions()
                 .title(aaTitle)
                 .xAxis(aaXAxis)
                 .yAxisArray(new AAYAxis[]{yAxisOne,yAxisTwo})
                 .tooltip(aaTooltip)
                 .series(new AASeriesElement[]{element1,element2});
-
-        return aaOptions;
     }
 
     public static AAOptions configureTripleYAxesMixedChart()  {
@@ -860,7 +856,7 @@ public class ChartOptionsComposer {
                 .tooltip(new AATooltip()
                         .valueSuffix(" ℃"));
 
-        AAOptions aaOptions = new AAOptions()
+        return new AAOptions()
                 .title(aaTitle)
                 .subtitle(aaSubtitle)
                 .colors(colorsThemeArr)
@@ -869,8 +865,6 @@ public class ChartOptionsComposer {
                 .tooltip(aaTooltip)
                 .legend(aaLegend)
                 .series(new AASeriesElement[]{element1,element2,element3,});
-
-        return aaOptions;
     }
 
     public static AAOptions customLineChartDataLabelsFormat() {
@@ -1058,7 +1052,7 @@ public class ChartOptionsComposer {
                 .yAxis(1)
                 .data(rateValuesArr);
 
-        AAOptions aaOptions = new AAOptions()
+        return new AAOptions()
                 .chart(aaChart)
                 .title(aaTitle)
                 .xAxis(aaXAxis)
@@ -1070,8 +1064,6 @@ public class ChartOptionsComposer {
                         goalValuesElement,
                         realValuesElement,
                         rateValuesElement});
-
-        return aaOptions;
     }
 
     public static AAOptions configureDoubleYAxesMarketDepthChart() {
@@ -1192,7 +1184,7 @@ public class ChartOptionsComposer {
                         {0.1522, 3.76317}
                 });
 
-        AAOptions aaOptions = new AAOptions()
+        return new AAOptions()
                 .chart(aaChart)
                 .title(aaTitle)
                 .subtitle(aaSubtitle)
@@ -1200,9 +1192,7 @@ public class ChartOptionsComposer {
                 .yAxisArray(new AAYAxis[]{yAxis1,yAxis2})
                 .tooltip(aaTooltip)
                 .legend(aaLegend)
-                .series(new AASeriesElement[]{element1,element2})
-                ;
-        return aaOptions;
+                .series(new AASeriesElement[]{element1,element2});
     }
 
     public static AAOptions customAreaChartTooltipStyleLikeHTMLTable() {
@@ -1252,7 +1242,7 @@ public class ChartOptionsComposer {
     }
 
     public static AAOptions simpleGaugeChart() {
-        AAOptions aaOptions = new AAOptions()
+        return new AAOptions()
                 .chart(new AAChart()
                         .type(AAChartType.Gauge))
                 .pane(new AAPane()
@@ -1271,43 +1261,41 @@ public class ChartOptionsComposer {
                         new AASeriesElement()
                                 .data(new Object[]{80})
                 });
-        return aaOptions;
     }
 
    public static AAOptions gaugeChartWithPlotBand() {
-        AAOptions aaOptions2 = new AAOptions()
-                .chart(new AAChart()
-                        .type(AAChartType.Gauge))
-                .title(new AATitle()
-                        .text("速度仪"))
-                .pane(new AAPane()
-                        .startAngle(-150f)
-                        .endAngle(150f))
-                .yAxis(new AAYAxis()
-                        .min(0f)
-                        .max(200f)
-                        .title(new AATitle()
-                                .text("km/h"))
-                        .plotBands(new AAPlotBandsElement[]{
-                                new AAPlotBandsElement()
-                                        .from(0f)
-                                        .to(120f)
-                                        .color("#ffc069"),
-                                new AAPlotBandsElement()
-                                        .from(120f)
-                                        .to(160f)
-                                        .color("#fe117c"),
-                                new AAPlotBandsElement()
-                                        .from(160f)
-                                        .to(200f)
-                                        .color("#06caf4"),
-                        })
-                )
-                .series(new AASeriesElement[]{
-                        new AASeriesElement()
-                                .data(new Object[]{80})
-                });
-        return aaOptions2;
+       return new AAOptions()
+               .chart(new AAChart()
+                       .type(AAChartType.Gauge))
+               .title(new AATitle()
+                       .text("速度仪"))
+               .pane(new AAPane()
+                       .startAngle(-150f)
+                       .endAngle(150f))
+               .yAxis(new AAYAxis()
+                       .min(0f)
+                       .max(200f)
+                       .title(new AATitle()
+                               .text("km/h"))
+                       .plotBands(new AAPlotBandsElement[]{
+                               new AAPlotBandsElement()
+                                       .from(0f)
+                                       .to(120f)
+                                       .color("#ffc069"),
+                               new AAPlotBandsElement()
+                                       .from(120f)
+                                       .to(160f)
+                                       .color("#fe117c"),
+                               new AAPlotBandsElement()
+                                       .from(160f)
+                                       .to(200f)
+                                       .color("#06caf4"),
+                       })
+               )
+               .series(new AASeriesElement[]{
+                       new AASeriesElement()
+                               .data(new Object[]{80})
+               });
     }
 
     //Issue: https://github.com/AAChartModel/AAChartKit/issues/888

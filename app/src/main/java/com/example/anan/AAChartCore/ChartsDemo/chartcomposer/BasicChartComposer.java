@@ -14,12 +14,11 @@ import java.util.Map;
 public class BasicChartComposer {
 
     public static AAChartModel configureBasicOptions() {
-        AAChartModel aaChartModel = new AAChartModel()
+        return new AAChartModel()
                 .backgroundColor("#4b2b7f")
                 .dataLabelsEnabled(false)
                 .yAxisGridLineWidth(0f)
                 .touchEventEnabled(true);
-        return aaChartModel;
     }
 
    public static AAChartModel configureAreaChart() {
@@ -36,12 +35,10 @@ public class BasicChartComposer {
                 .name("Berlin")
                 .data(new Object[]{3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8});
 
-        AAChartModel aaChartModel = configureBasicOptions()
-                .chartType(AAChartType.Area)
-                .categories(new String[]{"Java","Swift","Python","Ruby", "PHP","Go","C","C#","C++"})
-                .series(new AASeriesElement[]{element1, element2, element3, element4});
-
-        return aaChartModel;
+       return configureBasicOptions()
+               .chartType(AAChartType.Area)
+               .categories(new String[]{"Java","Swift","Python","Ruby", "PHP","Go","C","C#","C++"})
+               .series(new AASeriesElement[]{element1, element2, element3, element4});
     }
 
     public static AAChartModel configureStepAreaChartAndStepLineChart() {
@@ -60,24 +57,21 @@ public class BasicChartComposer {
                 .step(true)
                 .data(new Object[]{48.9, 38.8, 19.3, 41.4, 47.0, 28.3, 59.0, 69.6, 52.4, 65.2, 53.3, 72.2});
 
-        AAChartModel aaChartModel = configureBasicOptions()
+        return configureBasicOptions()
                 .chartType(AAChartType.Area)
                 .series(new AASeriesElement[]{element1, element2, element3,});
-        return aaChartModel;
     }
 
     public static AAChartModel configureColumnChartAndBarChart() {
-       AAChartModel aaChartModel = configureAreaChart()
-                .categories(new String[]{
-                        "Jan", "Feb", "Mar", "Apr", "May", "Jun",
-                        "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
-                })
-                .legendEnabled(true)
-                .colorsTheme(new String[]{"#fe117c","#ffc069","#06caf4","#7dffc0"})
-                .animationType(AAChartAnimationType.EaseOutCubic)
-                .animationDuration(1200);
-
-       return aaChartModel;
+        return configureAreaChart()
+                 .categories(new String[]{
+                         "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+                         "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+                 })
+                 .legendEnabled(true)
+                 .colorsTheme(new String[]{"#fe117c","#ffc069","#06caf4","#7dffc0"})
+                 .animationType(AAChartAnimationType.EaseOutCubic)
+                 .animationDuration(1200);
     }
 
     public static AAChartModel configureAreaChartAndAreasplineChartStyle(String chartType) {

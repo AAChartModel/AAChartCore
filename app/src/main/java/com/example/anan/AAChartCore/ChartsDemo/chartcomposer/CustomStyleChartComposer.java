@@ -695,12 +695,12 @@ public class CustomStyleChartComposer {
     }
 
     public static AAChartModel customChartHoverAndSelectHaloStyle() {
-        HashMap<String, Object> hoverHaloAttributes = new HashMap();
+        HashMap<String, Object> hoverHaloAttributes = new HashMap<>();
         hoverHaloAttributes.put("stroke-width", 50);
         hoverHaloAttributes.put("fill", "#00BFFF");
         hoverHaloAttributes.put("stroke", "#00FA9A");
 
-        HashMap<String, Object> selectHaloAttributes = new HashMap();
+        HashMap<String, Object> selectHaloAttributes = new HashMap<>();
         selectHaloAttributes.put("stroke-width", 150);
         selectHaloAttributes.put("fill", AAColor.rgbaColor(138, 43, 226, 1f));
         selectHaloAttributes.put("stroke", AAColor.rgbaColor(30, 144, 255, 1f));

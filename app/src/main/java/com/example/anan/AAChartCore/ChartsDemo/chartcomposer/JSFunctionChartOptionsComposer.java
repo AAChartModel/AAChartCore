@@ -519,7 +519,7 @@ public class JSFunctionChartOptionsComposer {
                         3360596, 3493473, 3050775, 2759560, 2304444, 2426504, 2568938, 1785638,
                         1447162, 1005011, 330870, 130632, 21208});
 
-        AAOptions aaOptions = new AAOptions()
+        return new AAOptions()
                 .chart(aaChart)
                 .title(aaTitle)
                 .xAxisArray(new AAXAxis[]{aaXAxis1,aaXAxis2})
@@ -527,8 +527,6 @@ public class JSFunctionChartOptionsComposer {
                 .plotOptions(aaPlotOptions)
                 .tooltip(aaTooltip)
                 .series(new Object[]{aaSeriesElement1,aaSeriesElement2});
-
-        return aaOptions;
     }
 
     public static AAOptions customArearangeChartTooltip() {
@@ -786,19 +784,16 @@ public class JSFunctionChartOptionsComposer {
 
     private static int randomNumber() {
         int max = 38, min = 1;
-        int random = (int) (Math.random() * (max - min) + min);
-        return random;
+        return (int) (Math.random() * (max - min) + min);
     }
 
     private static String javaScriptArrayStringWithJavaArray(Object[] javaArray) {
-        String originalJsArrStr = "";
+        StringBuilder originalJsArrStr = new StringBuilder();
         for (Object element : javaArray) {
-            originalJsArrStr = originalJsArrStr + "'" + element.toString() + "',";
+            originalJsArrStr.append("'").append(element.toString()).append("',");
         }
 
-        String finalJSArrStr = "[" + originalJsArrStr + "]";
-
-        return finalJSArrStr;
+        return "[" + originalJsArrStr + "]";
     }
 
 

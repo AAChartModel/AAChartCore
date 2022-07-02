@@ -808,37 +808,37 @@ public class SpecialChartComposer {
     }
 
     public static AAChartModel configureWaterfallChart() {
-        Map dataElement1 = new HashMap<String,Object>();
+        Map<String, Object> dataElement1 = new HashMap<>();
         dataElement1.put("name","启动资金");
         dataElement1.put("y",120000);
 
-        Map dataElement2 = new HashMap<String,Object>();
+        Map<String, Object> dataElement2 = new HashMap<>();
         dataElement2.put("name","产品收入");
         dataElement2.put("y",569000);
 
-        Map dataElement3 = new HashMap<String,Object>();
+        Map<String, Object> dataElement3 = new HashMap<>();
         dataElement3.put("name","服务收入");
         dataElement3.put("y",231000);
 
-        Map dataElement4 = new HashMap<String,Object>();
+        Map<String, Object> dataElement4 = new HashMap<>();
         dataElement4.put("name","正平衡");
         dataElement4.put("isIntermediateSum",true);
         dataElement4.put("color","#ffd066");
 
-        Map dataElement5 = new HashMap<String,Object>();
+        Map<String, Object> dataElement5 = new HashMap<>();
         dataElement5.put("name","固定成本");
         dataElement5.put("y",-342000);
 
-        Map dataElement6 = new HashMap<String,Object>();
+        Map<String, Object> dataElement6 = new HashMap<>();
         dataElement6.put("name","可变成本");
         dataElement6.put("y",-233000);
 
-        Map dataElement7 = new HashMap<String,Object>();
+        Map<String, Object> dataElement7 = new HashMap<>();
         dataElement7.put("name","余额");
         dataElement7.put("isSum",true);
         dataElement7.put("color","#04d69f");
 
-        Map[] dataElementArr = new Map[]{
+        Map<String, Object>[] dataElementArr = new Map[]{
                 dataElement1,
                 dataElement2,
                 dataElement3,
