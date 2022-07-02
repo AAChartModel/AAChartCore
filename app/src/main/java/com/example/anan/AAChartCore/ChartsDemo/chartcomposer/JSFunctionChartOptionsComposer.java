@@ -160,8 +160,6 @@ public class JSFunctionChartOptionsComposer {
 
         AAChartModel aaChartModel = new AAChartModel()
                 .chartType(AAChartType.Areaspline)//图形类型
-                .title("")//图表主标题
-                .subtitle("")//图表副标题
                 .markerSymbolStyle(AAChartSymbolStyleType.BorderBlank)//折线连接点样式为外边缘空白
                 .dataLabelsEnabled(false)
                 .colorsTheme(new Object[]{"#04d69f","#1e90ff","#ef476f","#ffd066",})
@@ -286,8 +284,6 @@ public class JSFunctionChartOptionsComposer {
     public static AAOptions customYAxisLabels() {
         AAChartModel aaChartModel = new AAChartModel()
                 .chartType(AAChartType.Line)//图形类型
-                .title("")//图表主标题
-                .subtitle("")//图表副标题
                 .markerSymbolStyle(AAChartSymbolStyleType.BorderBlank)//折线连接点样式为外边缘空白
                 .dataLabelsEnabled(false)
                 .colorsTheme(new String[]{"#04d69f","#1e90ff","#ef476f","#ffd066",})
@@ -327,8 +323,6 @@ public class JSFunctionChartOptionsComposer {
     public static AAOptions customYAxisLabels2() {
         AAChartModel aaChartModel = new AAChartModel()
                 .chartType(AAChartType.Line)//图形类型
-                .title("")//图表主标题
-                .subtitle("")//图表副标题
                 .markerSymbolStyle(AAChartSymbolStyleType.BorderBlank)//折线连接点样式为外边缘空白
                 .dataLabelsEnabled(false)
                 .colorsTheme(new String[]{"#04d69f","#1e90ff","#ef476f","#ffd066",})
@@ -661,8 +655,6 @@ public class JSFunctionChartOptionsComposer {
     public static AAOptions customTooltipWhichDataSourceComeFromOutSideRatherThanSeries() {
         AAChartModel aaChartModel = new AAChartModel()
                 .chartType(AAChartType.Column)//图表类型
-                .title("")
-                .yAxisTitle("")//设置 Y 轴标题
                 .yAxisLineWidth(1f)//Y轴轴线线宽为0即是隐藏Y轴轴线
                 .yAxisGridLineWidth(1f)//y轴横向分割线宽度为1(为0即是隐藏分割线)
                 .xAxisGridLineWidth(1f)//x轴横向分割线宽度为1(为0即是隐藏分割线)
