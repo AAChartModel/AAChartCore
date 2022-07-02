@@ -387,8 +387,6 @@ public class CustomStyleChartComposer {
 
         return new AAChartModel()
                 .chartType(AAChartType.Column)
-                .title("")
-                .yAxisTitle("")//设置Y轴标题
                 .dataLabelsEnabled(false)//是否显示值
                 .tooltipEnabled(false)
                 .markerRadius(0f)
@@ -412,8 +410,6 @@ public class CustomStyleChartComposer {
 
         return new AAChartModel()
                 .chartType(AAChartType.Area)
-                .title("")
-                .yAxisTitle("")//设置Y轴标题
                 .yAxisGridLineWidth(0f)
                 .categories(new String[]{"Jan", "Feb", "Mar", "Apr", "May", "Jun", "July", "Aug", "Spe", "Oct", "Nov", "Dec"})
                 .dataLabelsEnabled(false)//是否显示值
