@@ -220,8 +220,6 @@ public class CustomStyleChartComposer {
     public static AAChartModel configureChartWithShadowStyle() {
         return new AAChartModel()
                 .chartType(AAChartType.Spline)
-                .title("")
-                .subtitle("")
                 .categories(new String[]{"一月", "二月", "三月", "四月", "五月", "六月",
                         "七月", "八月", "九月", "十月", "十一月", "十二月"})
                 .yAxisTitle("")
@@ -258,8 +256,6 @@ public class CustomStyleChartComposer {
 
         return new AAChartModel()
                 .chartType(AAChartType.Areaspline)
-                .title("")
-                .subtitle("")
                 .categories(new String[]{"一月", "二月", "三月", "四月", "五月", "六月",
                         "七月", "八月", "九月", "十月", "十一月", "十二月"})
                 .yAxisTitle("")
@@ -294,8 +290,6 @@ public class CustomStyleChartComposer {
 
         return new AAChartModel()
                 .chartType(AAChartType.Spline)
-                .title("")
-                .subtitle("")
                 .categories(new String[]{"一月", "二月", "三月", "四月", "五月", "六月",
                         "七月", "八月", "九月", "十月", "十一月", "十二月"})
                 .yAxisTitle("")
@@ -323,8 +317,6 @@ public class CustomStyleChartComposer {
 
         return new AAChartModel()
                 .chartType(AAChartType.Areaspline)
-                .title("")
-                .subtitle("")
                 .categories(new String[]{"一月", "二月", "三月", "四月", "五月", "六月",
                         "七月", "八月", "九月", "十月", "十一月", "十二月"})
                 .yAxisTitle("")
@@ -372,7 +364,6 @@ public class CustomStyleChartComposer {
 
         return new AAChartModel()
                 .chartType(AAChartType.Spline)
-                .title("")
                 .backgroundColor("#4b2b7f")
                 .yAxisTitle("")//设置Y轴标题
                 .dataLabelsEnabled(false)//是否显示值
@@ -468,8 +459,6 @@ public class CustomStyleChartComposer {
 
         return new AAChartModel()
                 .chartType(AAChartType.Scatter)
-                .title("")
-                .subtitle("")
                 .yAxisTitle("")
                 .yAxisMax(3.5f)
                 .yAxisGridLineWidth(0f)
@@ -489,8 +478,6 @@ public class CustomStyleChartComposer {
     public static AAChartModel configureTriangleRadarChart() {
         return new AAChartModel()
                 .chartType(AAChartType.Area)
-                .title("")
-                .subtitle("")
                 .yAxisTitle("")
                 .yAxisMax(15.0f)
                 .yAxisGridLineWidth(0f)
@@ -513,8 +500,6 @@ public class CustomStyleChartComposer {
     public static AAChartModel configureQuadrangleRadarChart() {
         return new AAChartModel()
                 .chartType(AAChartType.Area)
-                .title("")
-                .subtitle("")
                 .yAxisTitle("")
                 .yAxisMax(15.0f)
                 .yAxisGridLineWidth(0f)
@@ -537,8 +522,6 @@ public class CustomStyleChartComposer {
     public static AAChartModel configurePentagonRadarChart() {
         return new AAChartModel()
                 .chartType(AAChartType.Area)
-                .title("")
-                .subtitle("")
                 .yAxisTitle("")
                 .yAxisMax(15.0f)
                 .yAxisGridLineWidth(0f)
@@ -561,8 +544,6 @@ public class CustomStyleChartComposer {
     public static AAChartModel configureHexagonRadarChart() {
         return new AAChartModel()
                 .chartType(AAChartType.Area)
-                .title("")
-                .subtitle("")
                 .yAxisTitle("")
                 .yAxisMax(15.0f)
                 .yAxisGridLineWidth(0f)
