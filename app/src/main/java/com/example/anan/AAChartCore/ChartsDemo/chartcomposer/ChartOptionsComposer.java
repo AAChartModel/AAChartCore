@@ -464,7 +464,6 @@ public class ChartOptionsComposer {
                 .chartType(AAChartType.Areaspline)
                 .backgroundColor(backgroundColorGradientColor)
                 .yAxisVisible(true)
-                .yAxisTitle("")
                 .categories(new String[] {"一月", "二月", "三月", "四月", "五月", "六月",
                         "七月", "八月", "九月", "十月", "十一月", "十二月"})
                 .markerRadius(0f)
@@ -546,7 +545,6 @@ public class ChartOptionsComposer {
                         "一月", "二月", "三月", "四月", "五月", "六月",
                         "七月", "八月", "九月", "十月", "十一月", "十二月"
                 })
-                .yAxisTitle("")
                 .yAxisGridLineWidth(0f)
                 .markerRadius(8f)
                 .markerSymbolStyle(AAChartSymbolStyleType.InnerBlank)
@@ -1192,7 +1190,6 @@ public class ChartOptionsComposer {
                 .chartType(AAChartType.Areaspline)//图表类型
                 .colorsTheme(new String[]{"#04d69f","#1e90ff","#ef476f","#ffd066",})
                 .stacking(AAChartStackingType.Normal)
-                .yAxisTitle("")//设置 Y 轴标题
                 .yAxisVisible(false)
                 .markerRadius(0f)
                 .series(new AASeriesElement[]{
