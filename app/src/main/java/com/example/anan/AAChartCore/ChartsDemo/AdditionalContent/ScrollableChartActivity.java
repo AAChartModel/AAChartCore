@@ -50,8 +50,6 @@ public class ScrollableChartActivity extends AppCompatActivity {
 
         AAChartModel aaChartModel = new AAChartModel()
                 .chartType(chartType)
-                .title("")
-                .yAxisTitle("")
                 .legendEnabled(false)
                 .yAxisGridLineWidth(0f)
                 .scrollablePlotArea(

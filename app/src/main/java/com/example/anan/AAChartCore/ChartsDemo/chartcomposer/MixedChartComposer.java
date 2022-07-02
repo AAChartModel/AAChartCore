@@ -146,8 +146,6 @@ public class MixedChartComposer {
         return new AAChartModel()
                 .colorsTheme(new Object[] {
                         "#1e90ff","#EA007B", "#49C1B6", "#FDC20A", "#F78320", "#068E81",})//主题颜色数组
-                .title("")//图形标题
-                .subtitle("")//图形副标题
                 .chartType(AAChartType.Line)
                 .dataLabelsEnabled(false)
                 .markerSymbolStyle(AAChartSymbolStyleType.BorderBlank)

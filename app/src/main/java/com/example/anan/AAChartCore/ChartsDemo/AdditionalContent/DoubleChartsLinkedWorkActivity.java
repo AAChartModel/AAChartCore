@@ -101,8 +101,6 @@ public class DoubleChartsLinkedWorkActivity extends AppCompatActivity implements
 
         AAChartModel aaChartModel = new AAChartModel()
                 .chartType(AAChartType.Column)
-                .title("")
-                .yAxisTitle("")
                 .categories(gradientColorNamesArr)
                 .colorsTheme(gradientColorArr)
                 .xAxisReversed(true)
@@ -128,8 +126,6 @@ public class DoubleChartsLinkedWorkActivity extends AppCompatActivity implements
     private  AAOptions configureChartOptions2() {
         AAChartModel aaChartModel = new AAChartModel()
                 .chartType(AAChartType.Column)
-                .title("")
-                .yAxisTitle("")
                 .legendEnabled(false)
                 .yAxisGridLineWidth(0f)
                 .series(new AASeriesElement[]{

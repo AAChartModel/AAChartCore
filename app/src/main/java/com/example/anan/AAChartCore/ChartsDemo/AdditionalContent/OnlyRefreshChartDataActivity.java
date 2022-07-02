@@ -99,7 +99,6 @@ public class OnlyRefreshChartDataActivity extends AppCompatActivity {
                 .chartType(chartType)
                 .xAxisVisible(true)
                 .yAxisVisible(false)
-                .title("")
                 .yAxisTitle("摄氏度")
                 .colorsTheme(new Object[]{
                         gradientColorMap1,

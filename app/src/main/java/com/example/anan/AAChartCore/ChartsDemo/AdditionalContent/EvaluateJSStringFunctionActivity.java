@@ -44,8 +44,6 @@ private String chartType;
 
         return new AAChartModel()
                 .chartType(AAChartType.Line)
-                .title("")
-                .yAxisTitle("")
                 .dataLabelsEnabled(true)
                 .tooltipEnabled(true)
                 .backgroundColor(AAGradientColor.OceanBlue)
