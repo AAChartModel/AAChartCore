@@ -429,8 +429,6 @@ public class ChartOptionsComposer {
 
         AAChartModel aaChartModel = new AAChartModel()
                 .chartType(AAChartType.Areaspline)
-                .title("")
-                .subtitle("")
                 .stacking(AAChartStackingType.Normal)
                 .categories(categories)
                 .dataLabelsEnabled(false)
@@ -466,8 +464,6 @@ public class ChartOptionsComposer {
 
         AAChartModel aaChartModel = new AAChartModel()
                 .chartType(AAChartType.Areaspline)
-                .title("")
-                .subtitle("")
                 .backgroundColor(backgroundColorGradientColor)
                 .yAxisVisible(true)
                 .yAxisTitle("")
