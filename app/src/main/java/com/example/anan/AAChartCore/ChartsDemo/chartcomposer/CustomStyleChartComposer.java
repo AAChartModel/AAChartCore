@@ -360,7 +360,6 @@ public class CustomStyleChartComposer {
         return new AAChartModel()
                 .chartType(AAChartType.Spline)
                 .backgroundColor("#4b2b7f")
-                .yAxisTitle("")//设置Y轴标题
                 .dataLabelsEnabled(false)//是否显示值
                 .tooltipEnabled(true)
                 .markerRadius(0f)
