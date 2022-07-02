@@ -542,8 +542,6 @@ public class ChartOptionsComposer {
     public static AAOptions configureXAxisPlotBand() {
         AAChartModel aaChartModel = new AAChartModel()
                 .chartType(AAChartType.Areaspline)
-                .title("")
-                .subtitle("")
                 .categories(new String[] {
                         "一月", "二月", "三月", "四月", "五月", "六月",
                         "七月", "八月", "九月", "十月", "十一月", "十二月"
@@ -1192,8 +1190,6 @@ public class ChartOptionsComposer {
     public static AAOptions customAreaChartTooltipStyleLikeHTMLTable() {
         AAChartModel aaChartModel = new AAChartModel()
                 .chartType(AAChartType.Areaspline)//图表类型
-                .title("")//图表主标题
-                .subtitle("")//图表副标题
                 .colorsTheme(new String[]{"#04d69f","#1e90ff","#ef476f","#ffd066",})
                 .stacking(AAChartStackingType.Normal)
                 .yAxisTitle("")//设置 Y 轴标题
