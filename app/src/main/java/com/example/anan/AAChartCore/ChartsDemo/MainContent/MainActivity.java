@@ -98,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
                     "noMoreGroupingAndNestedColumnChart---不分组的嵌套柱状图📊",
                     "topRoundedCornersStackingColumnChart---顶部为圆角的堆积柱状图📊",
                     "freeStyleRoundedCornersStackingColumnChart---各个圆角自由独立设置的堆积柱状图📊",
+                    "customColumnChartBorderStyleAndStatesHoverColor---自定义柱状图 border 样式及手指掠过图表 series 元素时的柱形颜色",
             },
             /*使用AAOptions绘制图表*/
             {
@@ -253,6 +254,7 @@ public class MainActivity extends AppCompatActivity {
                     "noMoreGroupingAndNestedColumnChart",
                     "topRoundedCornersStackingColumnChart",
                     "freeStyleRoundedCornersStackingColumnChart",
+                    "customColumnChartBorderStyleAndStatesHoverColor",
             },
 
             {
