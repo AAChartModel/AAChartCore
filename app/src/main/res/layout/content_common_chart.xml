@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.anan.AAChartCore.ChartsDemo.MainContent.MainContent.CommonChartActivity"
-    tools:showIn="@layout/activity_common_chart">
+    tools:showIn="@layout/activity_basic_chart">
 
     <com.example.anan.AAChartCore.AAChartCoreLib.AAChartCreator.AAChartView
         android:id="@+id/AAChartView"
