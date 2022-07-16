@@ -89,7 +89,7 @@
                 android:layout_weight="1"
                 android:textColor="@color/lightGray"
                 android:textSize="22dp"
-                android:text="⬤" />
+                android:text="⬤⬤" />
 
             <RadioButton
                 android:id="@+id/squareSymbolRadio"
@@ -98,7 +98,7 @@
                 android:layout_weight="1"
                 android:textColor="@color/lightGray"
                 android:textSize="22dp"
-                android:text="■" />
+                android:text="■■" />
 
             <RadioButton
                 android:id="@+id/diamondSymbolRadio"
@@ -107,7 +107,7 @@
                 android:layout_weight="1"
                 android:textColor="@color/lightGray"
                 android:textSize="22dp"
-                android:text="◆" />
+                android:text="◆◆" />
 
             <RadioButton
                 android:id="@+id/triangleSymbolRadio"
@@ -116,7 +116,7 @@
                 android:layout_weight="1"
                 android:textColor="@color/lightGray"
                 android:textSize="22dp"
-                android:text="▲" />
+                android:text="▲▲" />
 
             <RadioButton
                 android:id="@+id/triangleDownSymbolRadio"
@@ -125,7 +125,7 @@
                 android:layout_weight="1"
                 android:textColor="@color/lightGray"
                 android:textSize="22dp"
-                android:text="▼" />
+                android:text="▼▼" />
         </RadioGroup>
 
         <LinearLayout
