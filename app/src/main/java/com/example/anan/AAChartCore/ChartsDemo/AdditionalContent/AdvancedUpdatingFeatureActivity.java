@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.CompoundButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartStackingType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartSymbolType;
@@ -128,6 +129,10 @@ public class AdvancedUpdatingFeatureActivity extends BasicChartActivity {
             }
             case R.id.xInvertedSwitch : {
                 if (this.aaChartModel.chartType.equals(AAChartType.Bar)) {
+                    Toast.makeText(this,
+                            "⚠️⚠️⚠️inverted is useless for Bar Chart",
+                            Toast.LENGTH_SHORT)
+                            .show();
                     Log.d("", "⚠️⚠️⚠️inverted is useless for Bar Chart");
                 }
                 AAChart aaChart = new AAChart()
