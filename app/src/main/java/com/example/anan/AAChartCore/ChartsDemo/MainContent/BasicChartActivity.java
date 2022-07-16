@@ -144,7 +144,7 @@ public class BasicChartActivity extends AppCompatActivity
         } else if (group.getId() == R.id.cornerStyleTypeRadioGroup) {
             switch (group.getCheckedRadioButtonId()) {
                 case R.id.squareCornersRadio:
-                    aaChartModel.borderRadius(0f);
+                    aaChartModel.borderRadius(1f);
                     break;
                 case R.id.roundedCornersRadio:
                     aaChartModel.borderRadius(10f);
