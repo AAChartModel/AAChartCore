@@ -201,20 +201,30 @@ public class AAChartView extends WebView {
             Object options,
             Boolean redraw
     ) {
-        String classNameStr = options.getClass().getSimpleName();
-        classNameStr = classNameStr.replace("AA","");
+        Boolean isAAOptionsClass = options instanceof AAOptions;
+        String finalOptionsMapStr;
 
-        //convert fist character to be lowercase string
-        String firstChar = classNameStr.substring(0,1);
-        String lowercaseFirstStr = firstChar.toLowerCase();
-        classNameStr = classNameStr.substring(1);
-        String finalClassName = lowercaseFirstStr + classNameStr;
+        if (isAAOptionsClass) {
+            String aaOptionsMapStr = new Gson().toJson(options);
+            finalOptionsMapStr = aaOptionsMapStr;
+        } else {
+            String classNameStr = options.getClass().getSimpleName();
+            classNameStr = classNameStr.replace("AA","");
 
-        Map<String, Object> finalOptionsMap = new HashMap();
-        finalOptionsMap.put(finalClassName,options);
+            //convert fist character to be lowercase string
+            String firstChar = classNameStr.substring(0,1);
+            String lowercaseFirstStr = firstChar.toLowerCase();
+            classNameStr = classNameStr.substring(1);
+            String finalClassName = lowercaseFirstStr + classNameStr;
 
-        String optionsStr = new Gson().toJson(finalOptionsMap);
-        String javaScriptStr = "updateChart('" + optionsStr + "','" + redraw + "')";
+            Map<String, Object> finalOptionsMap = new HashMap();
+            finalOptionsMap.put(finalClassName,options);
+
+            String optionsStr = new Gson().toJson(finalOptionsMap);
+            finalOptionsMapStr = optionsStr;
+        }
+
+        String javaScriptStr = "updateChart('" + finalOptionsMapStr + "','" + redraw + "')";
         this.safeEvaluateJavaScriptString(javaScriptStr);
     }
 
