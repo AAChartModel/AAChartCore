@@ -56,7 +56,7 @@ public class AdvancedUpdatingFeatureActivity extends BasicChartActivity {
                 Float borderRadius = null;
                 switch (group.getCheckedRadioButtonId()) {
                     case R.id.squareCornersRadio:
-                        borderRadius = 0f;
+                        borderRadius = 1f;
                         break;
                     case R.id.roundedCornersRadio:
                         borderRadius = 10f;
