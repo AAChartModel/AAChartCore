@@ -98,19 +98,19 @@ public class BasicChartActivity extends AppCompatActivity
         markerSymbolTypeRadioGroup.setOnCheckedChangeListener(this);
 
 
-        Switch boolSwitch1 = findViewById(R.id.switch1);
+        Switch boolSwitch1 = findViewById(R.id.xReversedSwitch);
         boolSwitch1.setOnCheckedChangeListener(this);
 
-        Switch boolSwitch2 = findViewById(R.id.switch2);
+        Switch boolSwitch2 = findViewById(R.id.yReversedSwitch);
         boolSwitch2.setOnCheckedChangeListener(this);
 
-        Switch boolSwitch3 = findViewById(R.id.switch3);
+        Switch boolSwitch3 = findViewById(R.id.polarSwitch);
         boolSwitch3.setOnCheckedChangeListener(this);
 
-        Switch boolSwitch4 = findViewById(R.id.switch4);
+        Switch boolSwitch4 = findViewById(R.id.invertedSwitch);
         boolSwitch4.setOnCheckedChangeListener(this);
 
-        Switch boolSwitch5 = findViewById(R.id.switch5);
+        Switch boolSwitch5 = findViewById(R.id.dataShowSwitch);
         boolSwitch5.setOnCheckedChangeListener(this);
     }
 
@@ -171,15 +171,15 @@ public class BasicChartActivity extends AppCompatActivity
     @Override
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
         switch (buttonView.getId()) {
-            case R.id.switch1: aaChartModel.xAxisReversed(isChecked);
+            case R.id.xReversedSwitch: aaChartModel.xAxisReversed(isChecked);
                 break;
-            case R.id.switch2: aaChartModel.yAxisReversed(isChecked);
+            case R.id.yReversedSwitch: aaChartModel.yAxisReversed(isChecked);
                 break;
-            case R.id.switch3: aaChartModel.inverted(isChecked);
+            case R.id.polarSwitch: aaChartModel.inverted(isChecked);
                 break;
-            case R.id.switch4: aaChartModel.polar(isChecked);
+            case R.id.invertedSwitch: aaChartModel.polar(isChecked);
                 break;
-            case R.id.switch5: aaChartModel.dataLabelsEnabled(isChecked);
+            case R.id.dataShowSwitch: aaChartModel.dataLabelsEnabled(isChecked);
                 break;
         }
 

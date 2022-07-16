@@ -114,19 +114,19 @@ public class AdvancedUpdatingFeatureActivity extends BasicChartActivity {
         Object options = new Object();
         boolean isOn = isChecked;
         switch (buttonView.getId()) {
-            case R.id.switch1: {
+            case R.id.xReversedSwitch: {
                 AAXAxis aaXAxis = new AAXAxis()
                         .reversed(isOn);
                 options = aaXAxis;
                 break;
             }
-            case R.id.switch2: {
+            case R.id.yReversedSwitch: {
                 AAYAxis aaYAxis = new AAYAxis()
                         .reversed(isOn);
                 options = aaYAxis;
                 break;
             }
-            case R.id.switch3: {
+            case R.id.polarSwitch: {
                 if (this.aaChartModel.chartType.equals(AAChartType.Bar)) {
                     Log.d("", "⚠️⚠️⚠️inverted is useless for Bar Chart");
                 }
@@ -136,7 +136,7 @@ public class AdvancedUpdatingFeatureActivity extends BasicChartActivity {
                 options = aaChart;
                 break;
             }
-            case R.id.switch4: {
+            case R.id.invertedSwitch: {
                 this.aaChartModel.polar = isOn;
                 AAChart aaChart = new AAChart()
                         .polar(isOn)
@@ -175,11 +175,10 @@ public class AdvancedUpdatingFeatureActivity extends BasicChartActivity {
                                                 .pointPadding(0.1f)
                                                 .groupPadding(0.2f)));
                     }
-
                 }
                 break;
             }
-            case R.id.switch5: {
+            case R.id.dataShowSwitch: {
                 AAPlotOptions aaPlotOptions = new AAPlotOptions()
                         .series(new AASeries()
                                 .dataLabels(new AADataLabels()
@@ -187,7 +186,7 @@ public class AdvancedUpdatingFeatureActivity extends BasicChartActivity {
                 options = aaPlotOptions;
                 break;
             }
-            case R.id.switch6: {
+            case R.id.hideMarkerSwitch: {
                 AAMarker aaMarker = isOn ?
                         new AAMarker()
                                 .enabled(false)
