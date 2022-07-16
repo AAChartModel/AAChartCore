@@ -78,7 +78,7 @@ public class BasicChartComposer {
        AAChartModel aaChartModel = configureAreaChart()
                 .animationType(AAChartAnimationType.EaseOutQuart)
                 .legendEnabled(true)
-                .markerRadius(5f)
+                .markerRadius(6f)
                 .markerSymbol(AAChartSymbolType.Circle)
                 .markerSymbolStyle(AAChartSymbolStyleType.InnerBlank);
 

@@ -198,7 +198,7 @@ public class AdvancedUpdatingFeatureActivity extends BasicChartActivity {
                         :
                         new AAMarker()
                                 .enabled(true)
-                                .radius(5f);
+                                .radius(6f);
 
                 AAPlotOptions aaPlotOptions = new AAPlotOptions()
                         .series(new AASeries()

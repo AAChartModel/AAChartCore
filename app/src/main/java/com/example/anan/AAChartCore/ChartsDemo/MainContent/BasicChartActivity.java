@@ -117,6 +117,9 @@ public class BasicChartActivity extends AppCompatActivity
 
         Switch boolSwitch5 = findViewById(R.id.dataShowSwitch);
         boolSwitch5.setOnCheckedChangeListener(this);
+
+        Switch boolSwitch6 = findViewById(R.id.markerHideSwitch);
+        boolSwitch6.setOnCheckedChangeListener(this);
     }
 
     /**
@@ -155,11 +158,11 @@ public class BasicChartActivity extends AppCompatActivity
                 case R.id.circleSymbolRadio:
                     aaChartModel.markerSymbol(AAChartSymbolType.Circle);
                     break;
-                case R.id.diamondSymbolRadio:
-                    aaChartModel.markerSymbol(AAChartSymbolType.Diamond);
-                    break;
                 case R.id.squareSymbolRadio:
                     aaChartModel.markerSymbol(AAChartSymbolType.Square);
+                    break;
+                case R.id.diamondSymbolRadio:
+                    aaChartModel.markerSymbol(AAChartSymbolType.Diamond);
                     break;
                 case R.id.triangleSymbolRadio:
                     aaChartModel.markerSymbol(AAChartSymbolType.Triangle);
@@ -186,7 +189,7 @@ public class BasicChartActivity extends AppCompatActivity
                 break;
             case R.id.dataShowSwitch: aaChartModel.dataLabelsEnabled(isChecked);
                 break;
-            case R.id.markerHideSwitch: aaChartModel.markerRadius(0f);
+            case R.id.markerHideSwitch: aaChartModel.markerRadius(isChecked ? 0f : 6f);
         }
 
         aaChartView.aa_refreshChartWithChartModel(aaChartModel);
