@@ -107,7 +107,7 @@ public class BasicChartActivity extends AppCompatActivity
         Switch boolSwitch3 = findViewById(R.id.polarSwitch);
         boolSwitch3.setOnCheckedChangeListener(this);
 
-        Switch boolSwitch4 = findViewById(R.id.invertedSwitch);
+        Switch boolSwitch4 = findViewById(R.id.xInvertedSwitch);
         boolSwitch4.setOnCheckedChangeListener(this);
 
         Switch boolSwitch5 = findViewById(R.id.dataShowSwitch);
@@ -175,12 +175,13 @@ public class BasicChartActivity extends AppCompatActivity
                 break;
             case R.id.yReversedSwitch: aaChartModel.yAxisReversed(isChecked);
                 break;
-            case R.id.polarSwitch: aaChartModel.inverted(isChecked);
+            case R.id.xInvertedSwitch: aaChartModel.inverted(isChecked);
                 break;
-            case R.id.invertedSwitch: aaChartModel.polar(isChecked);
+            case R.id.polarSwitch: aaChartModel.polar(isChecked);
                 break;
             case R.id.dataShowSwitch: aaChartModel.dataLabelsEnabled(isChecked);
                 break;
+            case R.id.markerHideSwitch: aaChartModel.markerRadius(0f);
         }
 
         aaChartView.aa_refreshChartWithChartModel(aaChartModel);

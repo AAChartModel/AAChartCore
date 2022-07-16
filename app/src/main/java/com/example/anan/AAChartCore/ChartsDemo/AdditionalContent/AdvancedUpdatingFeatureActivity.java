@@ -136,7 +136,7 @@ public class AdvancedUpdatingFeatureActivity extends BasicChartActivity {
                 options = aaChart;
                 break;
             }
-            case R.id.invertedSwitch: {
+            case R.id.xInvertedSwitch: {
                 this.aaChartModel.polar = isOn;
                 AAChart aaChart = new AAChart()
                         .polar(isOn)
@@ -186,7 +186,7 @@ public class AdvancedUpdatingFeatureActivity extends BasicChartActivity {
                 options = aaPlotOptions;
                 break;
             }
-            case R.id.hideMarkerSwitch: {
+            case R.id.markerHideSwitch: {
                 AAMarker aaMarker = isOn ?
                         new AAMarker()
                                 .enabled(false)

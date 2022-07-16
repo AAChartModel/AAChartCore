@@ -14,7 +14,6 @@
         android:background="#4b2b7f"
         android:orientation="vertical">
 
-
         <RadioGroup
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -142,13 +141,13 @@
                 android:layout_weight="1" />
 
             <Switch
-                android:id="@+id/polarSwitch"
+                android:id="@+id/xInvertedSwitch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
 
             <Switch
-                android:id="@+id/invertedSwitch"
+                android:id="@+id/polarSwitch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
@@ -158,11 +157,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
+
             <Switch
-                android:id="@+id/hideMarkerSwitch"
+                android:id="@+id/markerHideSwitch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -218,9 +219,6 @@
                 android:textColor="@color/lightGray"
                 android:text="markerHide" />
         </LinearLayout>
-
-
-
 
     </LinearLayout>
 
