@@ -75,10 +75,11 @@ public class BasicChartActivity extends AppCompatActivity
     }
 
     void configureViewsVisibility(String chartType) {
+        RadioGroup squareCornersRadio = findViewById(R.id.cornerStyleTypeRadioGroup);
+        RadioGroup markerSymbolTypeRadioGroup = findViewById(R.id.markerSymbolTypeRadioGroup);
+
         if (chartType.equals(AAChartType.Column) || chartType.equals(AAChartType.Bar)) {
-            RadioGroup squareCornersRadio = findViewById(R.id.cornerStyleTypeRadioGroup);
             squareCornersRadio.setVisibility(View.VISIBLE);
-            RadioGroup markerSymbolTypeRadioGroup = findViewById(R.id.markerSymbolTypeRadioGroup);
             markerSymbolTypeRadioGroup.setVisibility(View.GONE);
 
             Switch markerHideSwitch = findViewById(R.id.markerHideSwitch);
@@ -86,9 +87,7 @@ public class BasicChartActivity extends AppCompatActivity
             TextView markerHideTextView = findViewById(R.id.markerHideTextView);
             markerHideTextView.setVisibility(View.GONE);
         } else {
-            RadioGroup squareCornersRadio = findViewById(R.id.cornerStyleTypeRadioGroup);
             squareCornersRadio.setVisibility(View.GONE);
-            RadioGroup markerSymbolTypeRadioGroup = findViewById(R.id.markerSymbolTypeRadioGroup);
             markerSymbolTypeRadioGroup.setVisibility(View.VISIBLE);
         }
     }
