@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.RadioGroup;
 import android.widget.Switch;
+import android.widget.TextView;
 
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartCreator.AAChartModel;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartStackingType;
@@ -79,6 +80,11 @@ public class BasicChartActivity extends AppCompatActivity
             squareCornersRadio.setVisibility(View.VISIBLE);
             RadioGroup markerSymbolTypeRadioGroup = findViewById(R.id.markerSymbolTypeRadioGroup);
             markerSymbolTypeRadioGroup.setVisibility(View.GONE);
+
+            Switch markerHideSwitch = findViewById(R.id.markerHideSwitch);
+            markerHideSwitch.setVisibility(View.GONE);
+            TextView markerHideTextView = findViewById(R.id.markerHideTextView);
+            markerHideTextView.setVisibility(View.GONE);
         } else {
             RadioGroup squareCornersRadio = findViewById(R.id.cornerStyleTypeRadioGroup);
             squareCornersRadio.setVisibility(View.GONE);
