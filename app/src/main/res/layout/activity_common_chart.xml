@@ -69,7 +69,7 @@
                 android:text="roundedCorners" />
 
             <RadioButton
-                android:id="@+id/wedgeRadio"
+                android:id="@+id/wedgeCornersRadio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -84,7 +84,7 @@
             android:orientation="horizontal">
 
             <RadioButton
-                android:id="@+id/symbol1"
+                android:id="@+id/circleSymbolRadio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -92,7 +92,7 @@
                 android:text="◉" />
 
             <RadioButton
-                android:id="@+id/symbol2"
+                android:id="@+id/diamondSymbolRadio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -100,7 +100,7 @@
                 android:text="■" />
 
             <RadioButton
-                android:id="@+id/symbol3"
+                android:id="@+id/squareSymbolRadio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -108,7 +108,7 @@
                 android:text="◆" />
 
             <RadioButton
-                android:id="@+id/symbol4"
+                android:id="@+id/triangleSymbolRadio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -116,7 +116,7 @@
                 android:text="▲" />
 
             <RadioButton
-                android:id="@+id/symbol5"
+                android:id="@+id/triangleDownSymbolRadio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"

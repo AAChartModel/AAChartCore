@@ -21,8 +21,6 @@ import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAYAxis;
 import com.example.anan.AAChartCore.ChartsDemo.MainContent.BasicChartActivity;
 import com.example.anan.AAChartCore.R;
 
-import java.util.Objects;
-
 public class AdvancedUpdatingFeatureActivity extends BasicChartActivity {
 
     @Override
@@ -62,7 +60,7 @@ public class AdvancedUpdatingFeatureActivity extends BasicChartActivity {
                     case R.id.roundedCornersRadio:
                         borderRadius = 10f;
                         break;
-                    case R.id.wedgeRadio:
+                    case R.id.wedgeCornersRadio:
                         borderRadius = 100f;
                         break;
                 }
@@ -83,19 +81,19 @@ public class AdvancedUpdatingFeatureActivity extends BasicChartActivity {
             default: {
                 String markerSymbol = "";
                 switch (group.getCheckedRadioButtonId()) {
-                    case R.id.symbol1:
+                    case R.id.circleSymbolRadio:
                         markerSymbol = AAChartSymbolType.Circle;
                         break;
-                    case R.id.symbol2:
+                    case R.id.diamondSymbolRadio:
                         markerSymbol = AAChartSymbolType.Diamond;
                         break;
-                    case R.id.symbol3:
+                    case R.id.squareSymbolRadio:
                         markerSymbol = AAChartSymbolType.Square;
                         break;
-                    case R.id.symbol4:
+                    case R.id.triangleSymbolRadio:
                         markerSymbol = AAChartSymbolType.Triangle;
                         break;
-                    case R.id.symbol5:
+                    case R.id.triangleDownSymbolRadio:
                         markerSymbol = AAChartSymbolType.Triangle_down;
                         break;
                 }

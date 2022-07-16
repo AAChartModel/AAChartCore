@@ -141,25 +141,25 @@ public class BasicChartActivity extends AppCompatActivity
                 case R.id.roundedCornersRadio:
                     aaChartModel.borderRadius(10f);
                     break;
-                case R.id.wedgeRadio:
+                case R.id.wedgeCornersRadio:
                     aaChartModel.borderRadius(100f);
                     break;
             }
         } else {
             switch (group.getCheckedRadioButtonId()) {
-                case R.id.symbol1:
+                case R.id.circleSymbolRadio:
                     aaChartModel.markerSymbol(AAChartSymbolType.Circle);
                     break;
-                case R.id.symbol2:
+                case R.id.diamondSymbolRadio:
                     aaChartModel.markerSymbol(AAChartSymbolType.Diamond);
                     break;
-                case R.id.symbol3:
+                case R.id.squareSymbolRadio:
                     aaChartModel.markerSymbol(AAChartSymbolType.Square);
                     break;
-                case R.id.symbol4:
+                case R.id.triangleSymbolRadio:
                     aaChartModel.markerSymbol(AAChartSymbolType.Triangle);
                     break;
-                case R.id.symbol5:
+                case R.id.triangleDownSymbolRadio:
                     aaChartModel.markerSymbol(AAChartSymbolType.Triangle_down);
                     break;
             }
