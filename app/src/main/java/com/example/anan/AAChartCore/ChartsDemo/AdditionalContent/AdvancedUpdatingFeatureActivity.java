@@ -126,7 +126,7 @@ public class AdvancedUpdatingFeatureActivity extends BasicChartActivity {
                 options = aaYAxis;
                 break;
             }
-            case R.id.polarSwitch: {
+            case R.id.xInvertedSwitch : {
                 if (this.aaChartModel.chartType.equals(AAChartType.Bar)) {
                     Log.d("", "⚠️⚠️⚠️inverted is useless for Bar Chart");
                 }
@@ -136,7 +136,7 @@ public class AdvancedUpdatingFeatureActivity extends BasicChartActivity {
                 options = aaChart;
                 break;
             }
-            case R.id.xInvertedSwitch: {
+            case R.id.polarSwitch: {
                 this.aaChartModel.polar = isOn;
                 AAChart aaChart = new AAChart()
                         .polar(isOn)
