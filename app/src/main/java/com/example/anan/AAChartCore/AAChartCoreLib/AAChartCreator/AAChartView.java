@@ -201,7 +201,7 @@ public class AAChartView extends WebView {
             Object options,
             Boolean redraw
     ) {
-        Boolean isAAOptionsClass = options instanceof AAOptions;
+        boolean isAAOptionsClass = options instanceof AAOptions;
         String finalOptionsMapStr;
 
         if (isAAOptionsClass) {
