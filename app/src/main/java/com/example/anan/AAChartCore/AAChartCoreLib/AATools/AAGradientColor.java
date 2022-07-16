@@ -258,7 +258,7 @@ public class AAGradientColor {
      |                   |
      (0,1) ----------- (1,1)
      */
-    private static Map linearGradientMap(AALinearGradientDirection direction) {
+    private static Map<String, Integer> linearGradientMap(AALinearGradientDirection direction) {
         switch (direction)    {
             case ToTop:
                 return linearGradientMap(0, 1, 0, 0);
@@ -280,7 +280,7 @@ public class AAGradientColor {
         }
     }
 
-    private static Map linearGradientMap(int x1, int y1, int x2, int y2) {
+    private static Map<String, Integer> linearGradientMap(int x1, int y1, int x2, int y2) {
         Map<String, Integer> linearGradientMap = new HashMap<>();
         linearGradientMap.put("x1", x1);
         linearGradientMap.put("y1", y1);
