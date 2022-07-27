@@ -1,6 +1,7 @@
 package com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel;
 
-import java.util.Map;
+import com.example.anan.AAChartCore.AAChartCoreLib.AATools.AAJSStringPurer;
+
 
 public class AADataLabels {
     public Boolean enabled;
@@ -8,6 +9,7 @@ public class AADataLabels {
     public Boolean inside;
     public AAStyle style;
     public String format;
+    public String formatter;
     public Float rotation;
     public Boolean allowOverlap;
     public Boolean useHTML;
@@ -50,6 +52,13 @@ public class AADataLabels {
 
     public AADataLabels format(String prop) {
         format = prop;
+        return this;
+    }
+
+    public AADataLabels formatter(String prop) {
+        String pureJSFunctionStr = "(" + prop + ")";
+        pureJSFunctionStr = AAJSStringPurer.pureJavaScriptFunctionString(pureJSFunctionStr);
+        formatter = pureJSFunctionStr;
         return this;
     }
 
