@@ -60,20 +60,20 @@ public class AAChartView extends WebView {
         );
     }
 
-    public Float contentWidth;
-    public Float contentHeight;
+    public Number contentWidth;
+    public Number contentHeight;
     public Boolean chartSeriesHidden;
     public Boolean isClearBackgroundColor;
     public AAChartViewCallBack callBack;
 
-    public void setContentWidth(Float contentWidth) {
+    public void setContentWidth(Number contentWidth) {
         this.contentWidth = contentWidth;
         String jsStr = "setTheChartViewContentWidth('"
                 + this.contentWidth + "')";
         safeEvaluateJavaScriptString(jsStr);
     }
 
-    public void setContentHeight(Float contentHeight) {
+    public void setContentHeight(Number contentHeight) {
         this.contentHeight = contentHeight;
         String jsStr = "setTheChartViewContentHeight('"
                 + this.contentHeight + "')";
