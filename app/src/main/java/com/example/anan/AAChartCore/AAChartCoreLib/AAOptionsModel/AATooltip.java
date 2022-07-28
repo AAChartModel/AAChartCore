@@ -5,8 +5,8 @@ import com.example.anan.AAChartCore.AAChartCoreLib.AATools.AAJSStringPurer;
 public class AATooltip {
     public Object backgroundColor;
     public String borderColor;
-    public Float borderRadius;
-    public Float borderWidth;
+    public Number borderRadius;
+    public Number borderWidth;
     public AAStyle style;
     public Boolean enabled;
     public Boolean useHTML;
@@ -19,7 +19,7 @@ public class AATooltip {
     public String valueSuffix;
     public Boolean followTouchMove;//https://api.highcharts.com.cn/highcharts#chart.panning
     public Boolean shadow;
-    public Float padding;
+    public Number padding;
     public String pointFormatter;
     public String positioner;
     public AADateTimeLabelFormats dateTimeLabelFormats;
@@ -34,12 +34,12 @@ public class AATooltip {
         return this;
     }
 
-    public AATooltip borderRadius(Float prop) {
+    public AATooltip borderRadius(Number prop) {
         borderRadius = prop;
         return this;
     }
 
-    public AATooltip borderWidth(Float prop) {
+    public AATooltip borderWidth(Number prop) {
         borderWidth = prop;
         return this;
     }
@@ -106,7 +106,7 @@ public class AATooltip {
         return this;
     }
 
-    public AATooltip padding(Float prop) {
+    public AATooltip padding(Number prop) {
         padding = prop;
         return this;
     }

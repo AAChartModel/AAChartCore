@@ -4,8 +4,8 @@ public class AAScrollablePlotArea {
     public Integer minHeight;
     public Integer minWidth;
     public Float opacity;
-    public Float scrollPositionX;
-    public Float scrollPositionY;
+    public Number scrollPositionX;
+    public Number scrollPositionY;
 
     public AAScrollablePlotArea minHeight(Integer prop) {
         minHeight = prop;
@@ -22,12 +22,12 @@ public class AAScrollablePlotArea {
         return this;
     }
 
-    public AAScrollablePlotArea scrollPositionX(Float prop) {
+    public AAScrollablePlotArea scrollPositionX(Number prop) {
         scrollPositionX = prop;
         return this;
     }
 
-    public AAScrollablePlotArea scrollPositionY(Float prop) {
+    public AAScrollablePlotArea scrollPositionY(Number prop) {
         scrollPositionY = prop;
         return this;
     }

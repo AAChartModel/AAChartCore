@@ -7,8 +7,8 @@ public class AASubtitle {
     public AAStyle style;
     public String align;
     public String verticalAlign;
-    public Float x;
-    public Float y;
+    public Number x;
+    public Number y;
     public Boolean userHTML;
 
     public AASubtitle text(String prop) {
@@ -31,12 +31,12 @@ public class AASubtitle {
         return this;
     }
 
-    public AASubtitle x(Float prop) {
+    public AASubtitle x(Number prop) {
         x = prop;
         return this;
     }
 
-    public AASubtitle y(Float prop) {
+    public AASubtitle y(Number prop) {
         y = prop;
         return this;
     }

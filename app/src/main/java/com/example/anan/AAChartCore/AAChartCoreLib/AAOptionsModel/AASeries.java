@@ -2,8 +2,8 @@ package com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel;
 
 public class AASeries {
     public String borderColor;
-    public Float  borderWidth;
-    public Float  borderRadius;
+    public Number  borderWidth;
+    public Number  borderRadius;
     public Object borderRadiusTopLeft;
     public Object borderRadiusTopRight;
     public Object borderRadiusBottomLeft;
@@ -21,19 +21,19 @@ public class AASeries {
     public Integer pointInterval;
     public String pointIntervalUnit;
     public Object pointPlacement;
-    public Float pointStart;
+    public Number pointStart;
 
     public AASeries borderColor(String prop) {
         borderColor = prop;
         return this;
     }
     
-    public AASeries borderWidth(Float prop) {
+    public AASeries borderWidth(Number prop) {
         borderWidth = prop;
         return this;
     }
 
-    public AASeries borderRadius(Float prop) {
+    public AASeries borderRadius(Number prop) {
         borderRadius = prop;
         return this;
     }
@@ -123,7 +123,7 @@ public class AASeries {
         return this;
     }
 
-    public AASeries pointStart(Float prop) {
+    public AASeries pointStart(Number prop) {
         pointStart = prop;
         return this;
     }
