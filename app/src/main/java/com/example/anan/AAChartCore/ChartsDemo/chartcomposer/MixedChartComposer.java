@@ -67,8 +67,8 @@ public class MixedChartComposer {
                         .name("Range")
                         .color("#1E90FF")
                         .type(AAChartType.Arearange)
-                        .lineWidth(0f)
-                        .fillOpacity(0.3f)
+                        .lineWidth(0)
+                        .fillOpacity(0.3)
                         .data(new Object[][] {
                                 {12464064, 14.3, 27.7},
                                 {12464928, 14.5, 27.8},
@@ -162,7 +162,7 @@ public class MixedChartComposer {
                                 .enabled(true)
                                 .style(new AAStyle()
                                         .color(AAColor.Red)
-                                        .fontSize(11f)
+                                        .fontSize(11)
                                 )
                 )
                 ,
@@ -174,7 +174,7 @@ public class MixedChartComposer {
                                 .enabled(true)
                                 .style(new AAStyle()
                                         .color("#000000")
-                                        .fontSize(11f)
+                                        .fontSize(11)
                                 )
                 ),
                 new AASeriesElement()
@@ -186,7 +186,7 @@ public class MixedChartComposer {
                                 .enabled(true)
                                 .style(new AAStyle()
                                         .color("#000000")
-                                        .fontSize(15f)
+                                        .fontSize(15)
                                         .fontWeight(AAChartFontWeightType.Bold)
                                 )
                 )
@@ -210,26 +210,26 @@ public class MixedChartComposer {
         AASeriesElement[] aaSeriesData = {
                 new AASeriesElement()
                         .name("SolidLine")
-                        .lineWidth(3f)
+                        .lineWidth(3)
                         .data(new Object[] {50, 320, 230, 370, 230, 400,320}),
                 new AASeriesElement()
                         .name("Dash")
-                        .lineWidth(3f)
+                        .lineWidth(3)
                         .dashStyle(AAChartLineDashStyleType.Dash)
                         .data(new Object[] {50, 320, 230, 370, 230, 400,320}),
                 new AASeriesElement()
                         .name("DashDot")
-                        .lineWidth(3f)
+                        .lineWidth(3)
                         .dashStyle(AAChartLineDashStyleType.DashDot)
                         .data(new Object[] {50, 320, 230, 370, 230, 400,320}),
                 new AASeriesElement()
                         .name("LongDash")
-                        .lineWidth(3f)
+                        .lineWidth(3)
                         .dashStyle(AAChartLineDashStyleType.LongDash)
                         .data(new Object[] {50, 320, 230, 370, 230, 400,320}),
                 new AASeriesElement()
                         .name("LongDashDot")
-                        .lineWidth(3f)
+                        .lineWidth(3)
                         .dashStyle(AAChartLineDashStyleType.LongDashDot)
                         .data(new Object[] {50, 320, 230, 370, 230, 400,320})
                 ,
@@ -239,7 +239,7 @@ public class MixedChartComposer {
                 .chartType(AAChartType.Spline)//图形类型
                 .dataLabelsEnabled(false)//是否显示数字
                 .stacking(AAChartStackingType.Normal)
-                .markerRadius(0f)
+                .markerRadius(0)
                 .series(aaSeriesData);
     }
 
@@ -254,7 +254,7 @@ public class MixedChartComposer {
                                 -6.4, -5.2, -3.0, 0.2, 2.3, 5.5, 8.4, 8.3, 5.1, 0.9, -1.1, -4.0,})
                         .color("#0088FF")
                         .negativeColor("#FF0000")
-                        .threshold(4f)//default:0
+                        .threshold(4)//default:0
                 ,
         };
         return new AAChartModel()
@@ -476,7 +476,7 @@ public class MixedChartComposer {
                 .chartType(AAChartType.Scatter)
                 .markerSymbolStyle(AAChartSymbolStyleType.InnerBlank)
                 .markerSymbol(AAChartSymbolType.Circle)
-                .markerRadius(8f)
+                .markerRadius(8)
                 .series(new AASeriesElement[]{
                         new AASeriesElement()
                                 .name("Scatter")
@@ -525,7 +525,7 @@ public class MixedChartComposer {
                                 .data(dataArr)
                                 .color("#0088FF")
                                 .negativeColor("#FF0000")
-                                .threshold(4f)//default:0
+                                .threshold(4)//default:0
                         ,
                 });
     }
@@ -653,14 +653,14 @@ public class MixedChartComposer {
                 .data(new Object[]{3, 2.67, 3, 6.33, 3.33})
                 .marker(new AAMarker()
                         .fillColor("#1E90FF")
-                        .lineWidth(2.0f)
+                        .lineWidth(2.0)
                         .lineColor(AAColor.White)
                 );
 
         AAPie pieElement = new AAPie()
                 .type(AAChartType.Pie)
                 .center(new Object[]{ 100,80})
-                .size(100f)
+                .size(100)
                 .showInLegend(true)
                 .dataLabels(
                         new AADataLabels()
@@ -668,17 +668,17 @@ public class MixedChartComposer {
                 .data(new AADataElement[]{
                         new AADataElement()
                                 .name("Ada")
-                                .y(13.0f)
+                                .y(13.0)
                                 .color(AAGradientColor.OceanBlue)
                         ,
                         new AADataElement()
                                 .name("Bob")
-                                .y(13.0f)
+                                .y(13.0)
                                 .color(AAGradientColor.Sanguine)
                         ,
                         new AADataElement()
                                 .name("Coco")
-                                .y(13.0f)
+                                .y(13.0)
                                 .color(AAGradientColor.PurpleLake)
                 });
 
@@ -728,9 +728,9 @@ public class MixedChartComposer {
                 .chartType(AAChartType.Area)
                 .legendEnabled(false)
                 .dataLabelsEnabled(false)
-                .markerRadius(5f)
+                .markerRadius(5)
                 .markerSymbolStyle(AAChartSymbolStyleType.InnerBlank)
-                .yAxisGridLineWidth(0f)
+                .yAxisGridLineWidth(0)
                 .series(new AASeriesElement[]{
                         new AASeriesElement()
                                 .name("Column")
@@ -738,12 +738,12 @@ public class MixedChartComposer {
                                         7.0, 6.9, 2.5, 14.5, 18.2, 21.5, 5.2, 26.5, 23.3, 45.3, 13.9, 9.6,
                                         -7.0, -6.9, -2.5, -14.5, -18.2, -21.5, -5.2, -26.5, -23.3, -45.3, -13.9, -9.6,
                                 })
-                                .lineWidth(5f)
+                                .lineWidth(5)
                                 .color(AAColor.rgbaColor(30, 144, 255, 1.0f))
                                 .negativeColor(AAColor.rgbaColor(255, 0, 0, 1.0f))
                                 .fillColor(gradientBlueColorDic)
                                 .negativeFillColor(gradientRedColorDic)
-                                .threshold(0f)//default:0
+                                .threshold(0)//default:0
 
                 });
     }

@@ -51,9 +51,9 @@ public class JSFunctionChartOptionsComposer {
                 .series(new AASeriesElement[]{
                         new AASeriesElement()
                                 .name("2020")
-                                .lineWidth(3f)
+                                .lineWidth(3)
                                 .color("#FFD700"/*纯金色*/)
-                                .fillOpacity(0.5f)
+                                .fillOpacity(0.5)
                                 .data(new Object[]{
                                 1.51, 6.7, 0.94, 1.44, 1.6, 1.63, 1.56, 1.91, 2.45, 3.87, 3.24, 4.90, 4.61, 4.10,
                                 4.17, 3.85, 4.17, 3.46, 3.46, 3.55, 3.50, 4.13, 2.58, 2.28, 1.51, 12.7, 0.94, 1.44,
@@ -81,7 +81,7 @@ public class JSFunctionChartOptionsComposer {
                 .borderColor("#000000")
                 .style(new AAStyle()
                         .color("#FFD700")
-                        .fontSize(12.f)
+                        .fontSize(12.)
                 );
         aaOptions.tooltip(aaTooltip);
 
@@ -97,13 +97,13 @@ public class JSFunctionChartOptionsComposer {
     public static AAOptions customAreaChartTooltipStyleWithDifferentUnitSuffix() {
         AASeriesElement element1 = new AASeriesElement()
                 .name("🐶狗子")
-                .lineWidth(5f)
-                .fillOpacity(0.5f)
+                .lineWidth(5)
+                .fillOpacity(0.5)
                 .data(new Object[]{0.45, 0.43, 0.50, 0.55, 0.58, 0.62, 0.83, 0.39, 0.56, 0.67, 0.50, 0.34, 0.50, 0.67, 0.58, 0.29, 0.46, 0.23, 0.47, 0.46, 0.38, 0.56, 0.48, 0.36});
         AASeriesElement element2 = new AASeriesElement()
                 .name("🌲树木")
-                .lineWidth(5f)
-                .fillOpacity(0.5f)
+                .lineWidth(5)
+                .fillOpacity(0.5)
                 .data(new Object[]{0.38, 0.31, 0.32, 0.32, 0.64, 0.66, 0.86, 0.47, 0.52, 0.75, 0.52, 0.56, 0.54, 0.60, 0.46, 0.63, 0.54, 0.51, 0.58, 0.64, 0.60, 0.45, 0.36, 0.67});
 
         AAChartModel aaChartModel = new AAChartModel()
@@ -164,7 +164,7 @@ public class JSFunctionChartOptionsComposer {
                 .dataLabelsEnabled(false)
                 .colorsTheme(new Object[]{"#04d69f","#1e90ff","#ef476f","#ffd066",})
                 .stacking(AAChartStackingType.Normal)
-                .markerRadius(0f)
+                .markerRadius(0)
                 .series(new AASeriesElement[]{element1, element2, element3, element4});
 
 
@@ -274,7 +274,7 @@ public class JSFunctionChartOptionsComposer {
                 .borderColor("#000000")
                 .style(new AAStyle()
                         .color("#1e90ff")
-                        .fontSize(12.f)
+                        .fontSize(12.)
                 );
         AAOptions aaOptions = aaChartModel.aa_toAAOptions();
         aaOptions.tooltip(aaTooltip);
@@ -288,12 +288,12 @@ public class JSFunctionChartOptionsComposer {
                 .dataLabelsEnabled(false)
                 .colorsTheme(new String[]{"#04d69f","#1e90ff","#ef476f","#ffd066",})
                 .stacking(AAChartStackingType.Normal)
-                .markerRadius(8f)
+                .markerRadius(8)
                 .series(new AASeriesElement[]{
                         new AASeriesElement()
                                 .name("Tokyo Hot")
-                                .lineWidth(5.0f)
-                                .fillOpacity(0.4f)
+                                .lineWidth(5.0)
+                                .fillOpacity(0.4)
                                 .data(new Object[]{29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4})
                         ,
                 });
@@ -327,19 +327,19 @@ public class JSFunctionChartOptionsComposer {
                 .dataLabelsEnabled(false)
                 .colorsTheme(new String[]{"#04d69f","#1e90ff","#ef476f","#ffd066",})
                 .stacking(AAChartStackingType.Normal)
-                .markerRadius(8f)
+                .markerRadius(8)
                 .series(new AASeriesElement[]{
                         new AASeriesElement()
                                 .name("Tokyo Hot")
-                                .lineWidth(5.0f)
-                                .fillOpacity(0.4f)
+                                .lineWidth(5.0)
+                                .fillOpacity(0.4)
                                 .data(new Object[]{229.9, 771.5, 1106.4, 1129.2, 6644.0, 1176.0, 8835.6, 148.5, 8816.4, 6694.1, 7795.6, 9954.4})
                         ,
                 });
 
         AALabels aaYAxisLabels = new AALabels()
                 .style(new AAStyle()
-                        .fontSize(10f)
+                        .fontSize(10)
                         .fontWeight(AAChartFontWeightType.Bold)
                         .color(AAColor.Gray)
                 )
@@ -361,10 +361,10 @@ public class JSFunctionChartOptionsComposer {
         AAOptions aaOptions = aaChartModel.aa_toAAOptions();
         aaOptions.yAxis
                 .opposite(true)
-                .tickWidth(2f)
-                .lineWidth(1.5f)//Y轴轴线颜色
+                .tickWidth(2)
+                .lineWidth(1.5)//Y轴轴线颜色
                 .lineColor(AAColor.LightGray)//Y轴轴线颜色
-                .gridLineWidth(0f)//Y轴网格线宽度
+                .gridLineWidth(0)//Y轴网格线宽度
                 .tickPositions(new Object[]{0,2500,5000,7500,10000})
                 .labels(aaYAxisLabels);
 
@@ -449,7 +449,7 @@ public class JSFunctionChartOptionsComposer {
                 .text("2015 年德国人口金字塔")
                 .style(new AAStyle()
                         .color("#000000")
-                        .fontSize(12.0f));
+                        .fontSize(12.0));
 
         String[] aaCategories = new String[]{"0-4", "5-9", "10-14", "15-19",
                 "20-24", "25-29", "30-34", "35-39", "40-44",
@@ -473,15 +473,15 @@ public class JSFunctionChartOptionsComposer {
                         .step(1));
 
         AAYAxis aaYAxis = new AAYAxis()
-                .gridLineWidth(0f)// Y 轴网格线宽度
+                .gridLineWidth(0)// Y 轴网格线宽度
                 .title(new AATitle()
                         .text(""))//Y 轴标题
                 .labels(new AALabels()
                         .formatter("function () {\n" +
                                 "    return (Math.abs(this.value) / 1000000) + 'M';\n" +
                                 "}"))
-                .min(-4000000f)
-                .max(4000000f);
+                .min(-4000000)
+                .max(4000000);
 
         AAPlotOptions aaPlotOptions = new AAPlotOptions()
                 .series(new AASeries()
@@ -534,8 +534,8 @@ public class JSFunctionChartOptionsComposer {
                                 .name("Range")
                                 .color("#1E90FF")
                                 .type(AAChartType.Arearange)
-                                .lineWidth(0.f)
-                                .fillOpacity(0.3f)
+                                .lineWidth(0.)
+                                .fillOpacity(0.3)
                                 .data(new Object[][] {
                                         /* 2014-06-01 */
                                         {140158080, 5.1, 20.6},
@@ -592,7 +592,7 @@ public class JSFunctionChartOptionsComposer {
                 .borderColor("#000000")
                 .style(new AAStyle()
                         .color("#FFD700")
-                        .fontSize(12f)
+                        .fontSize(12)
                 );
 
         return aaOptions;
@@ -635,7 +635,7 @@ public class JSFunctionChartOptionsComposer {
                 .title("THE HEAT OF PROGRAMMING LANGUAGE")
                 .subtitle("Virtual Data")
                 .dataLabelsEnabled(false)
-                .yAxisGridLineWidth(0f)
+                .yAxisGridLineWidth(0)
                 .touchEventEnabled(true)
                 .series(new AASeriesElement[]{element1, element2, element3, element4});
 
@@ -655,13 +655,13 @@ public class JSFunctionChartOptionsComposer {
     public static AAOptions customTooltipWhichDataSourceComeFromOutSideRatherThanSeries() {
         AAChartModel aaChartModel = new AAChartModel()
                 .chartType(AAChartType.Column)//图表类型
-                .yAxisLineWidth(1f)//Y轴轴线线宽为0即是隐藏Y轴轴线
-                .yAxisGridLineWidth(1f)//y轴横向分割线宽度为1(为0即是隐藏分割线)
-                .xAxisGridLineWidth(1f)//x轴横向分割线宽度为1(为0即是隐藏分割线)
+                .yAxisLineWidth(1)//Y轴轴线线宽为0即是隐藏Y轴轴线
+                .yAxisGridLineWidth(1)//y轴横向分割线宽度为1(为0即是隐藏分割线)
+                .xAxisGridLineWidth(1)//x轴横向分割线宽度为1(为0即是隐藏分割线)
                 .colorsTheme(new String[]{"#FFD700"/*纯金色*/})
                 .categories(new String[]{"一月", "二月", "三月", "四月", "五月", "六月",
                         "七月", "八月", "九月", "十月", "十一月", "十二月"})
-                .yAxisMax(110f)
+                .yAxisMax(110)
                 .series(new AASeriesElement[]{
                         new AASeriesElement()
                                 .name("2017")
@@ -765,7 +765,7 @@ public class JSFunctionChartOptionsComposer {
                 .borderColor("#FFD700")//边缘颜色纯金色
                 .style(new AAStyle()
                         .color("#FFD700")//文字颜色纯金色
-                        .fontSize(12f)
+                        .fontSize(12)
                 );
 
         return aaOptions;

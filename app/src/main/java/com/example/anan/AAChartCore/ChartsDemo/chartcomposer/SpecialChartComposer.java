@@ -46,11 +46,11 @@ public class SpecialChartComposer {
                         new AAPie()
                                 .name("Language market shares")
                                 .innerSize("20%")
-                                .size(150f)
+                                .size(150)
                                 .dataLabels(new AADataLabels()
                                         .enabled(true)
                                         .useHTML(true)
-                                        .distance(5f)
+                                        .distance(5)
                                         .format("<b>{point.name}</b>: <br> {point.percentage:.1f} %"))
                                 .data(new Object[][] {
                                 {"Java"  ,67},
@@ -247,7 +247,7 @@ public class SpecialChartComposer {
                 .chartType(AAChartType.Scatter)
                 .title("Height and weight distribution by sex")
                 .yAxisTitle("kg")
-                .markerRadius(8f)
+                .markerRadius(8)
                 .markerSymbolStyle(AAChartSymbolStyleType.InnerBlank)
                 .series(seriesElements);
     }
@@ -731,7 +731,7 @@ public class SpecialChartComposer {
                 .subtitle("2020/08/08")//图形副标题
                 .dataLabelsEnabled(false)//是否显示数字
                 .markerSymbolStyle(AAChartSymbolStyleType.BorderBlank)//折线连接点样式
-                .markerRadius(7f)//折线连接点半径长度,为0时相当于没有折线连接点
+                .markerRadius(7)//折线连接点半径长度,为0时相当于没有折线连接点
                 .series(new AASeriesElement[]{
                         new AASeriesElement()
                                 .name("Berlin")
@@ -762,7 +762,7 @@ public class SpecialChartComposer {
                 .subtitle("2049/08/08")//图形副标题
                 .dataLabelsEnabled(false)//是否显示数字
                 .markerSymbolStyle(AAChartSymbolStyleType.InnerBlank)//折线连接点样式
-                .markerRadius(0f)//折线连接点半径长度,为0时相当于没有折线连接点
+                .markerRadius(0)//折线连接点半径长度,为0时相当于没有折线连接点
                 .series(new AASeriesElement[]{
                         new AASeriesElement()
                                 .name("Berlin")
@@ -855,7 +855,7 @@ public class SpecialChartComposer {
                 .series(new AASeriesElement[]{
                         new AASeriesElement()
                                 .color("#ef476f")
-                                .borderWidth(0f)
+                                .borderWidth(0)
                                 .data(dataElementArr),
                 });
     }
@@ -895,7 +895,7 @@ public class SpecialChartComposer {
                                         .verticalAlign(AAChartVerticalAlignType.Middle)
                                         .color(AAColor.Black)
                                         .style(new AAStyle()
-                                                .fontSize(25f)
+                                                .fontSize(25)
                                                 .textOutline("none")))
                                 .data(new Object[][] {
                                 {"swift",      11256},
@@ -925,7 +925,7 @@ public class SpecialChartComposer {
                         new AASeriesElement()
                                 .name("降雨误差")
                                 .type(AAChartType.Errorbar)
-                                .lineWidth(2.5f)
+                                .lineWidth(2.5)
                                 .color(AAColor.Red)
                                 .data(new Object[][]{{48, 51}, {68, 73}, {92, 110}, {128, 136}, {140, 150}, {171, 179}, {135, 143},
                                         {142, 149}, {204, 220}, {189, 199}, {95, 110}, {52, 56}})

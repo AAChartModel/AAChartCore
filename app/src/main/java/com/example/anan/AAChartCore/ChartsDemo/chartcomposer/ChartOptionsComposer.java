@@ -70,10 +70,10 @@ public class ChartOptionsComposer {
                 .title("CUSTOM LEGEND STYLE")
                 .subtitle("LEGEND ON THE TOP_RIGHT SIDE WITH VERTICAL STYLE")
                 .subtitleAlign(AAChartAlignType.Left)
-                .markerRadius(0f)
+                .markerRadius(0)
                 .backgroundColor(AAColor.White)
                 .dataLabelsEnabled(false)
-                .yAxisGridLineWidth(0f)
+                .yAxisGridLineWidth(0)
                 .yAxisTitle("percent values")
                 .zoomType(AAChartZoomType.X)
                 .stacking(AAChartStackingType.Normal)
@@ -93,16 +93,16 @@ public class ChartOptionsComposer {
         //https://github.com/AAChartModel/AAChartKit-Swift/issues/306
         aaOptions.xAxis
                 .gridLineColor(AAColor.DarkGray)
-                .gridLineWidth(1f)
+                .gridLineWidth(1)
                 .minorGridLineColor(AAColor.LightGray)
-                .minorGridLineWidth(0.5f)
+                .minorGridLineWidth(0.5)
                 .minorTickInterval("auto");
 
         aaOptions.yAxis
                 .gridLineColor(AAColor.DarkGray)
-                .gridLineWidth(1f)
+                .gridLineWidth(1)
                 .minorGridLineColor(AAColor.LightGray)
-                .minorGridLineWidth(0.5f)
+                .minorGridLineWidth(0.5)
                 .minorTickInterval("auto");
 
         aaOptions.legend
@@ -124,46 +124,46 @@ public class ChartOptionsComposer {
         AAChartModel aaChartModel = new AAChartModel()
                 .chartType(AAChartType.Spline)//图形类型
                 .dataLabelsEnabled(false)
-                .markerRadius(0f)
-                .yAxisMax(40f)
+                .markerRadius(0)
+                .yAxisMax(40)
                 .series(new AASeriesElement[]{
                         new AASeriesElement()
                                 .name("Tokyo")
                                 .data(new Object[]{7.0, 6.9, 2.5, 14.5, 18.2, 21.5, 5.2, 26.5, 23.3, 45.3, 13.9, 9.6})
                                 .color(AAColor.White)
-                                .lineWidth(10.0f),
+                                .lineWidth(10),
                 });
 
         AAOptions aaOptions = aaChartModel.aa_toAAOptions();
         AAPlotBandsElement[] aaPlotBandsElementArr = {
                 new AAPlotBandsElement()
-                        .from(0.f)
-                        .to(5.f)
+                        .from(0)
+                        .to(5)
                         .color("#BC2B44")
                 ,
                 new AAPlotBandsElement()
-                        .from(5.f)
-                        .to(10.f)
+                        .from(5)
+                        .to(10)
                         .color("#EC6444")
                 ,
                 new AAPlotBandsElement()
-                        .from(10.f)
-                        .to(15.f)
+                        .from(10)
+                        .to(15)
                         .color("#f19742")
                 ,
                 new AAPlotBandsElement()
-                        .from(15.f)
-                        .to(20.f)
+                        .from(15)
+                        .to(20)
                         .color("#f3da60")
                 ,
                 new AAPlotBandsElement()
-                        .from(20.f)
-                        .to(25.f)
+                        .from(20)
+                        .to(25)
                         .color("#9bd040")
                 ,
                 new AAPlotBandsElement()
-                        .from(25.f)
-                        .to(50.f)
+                        .from(25)
+                        .to(50)
                         .color("#acf08f")
                 ,
         };
@@ -181,8 +181,8 @@ public class ChartOptionsComposer {
                         new AASeriesElement()
                                 .name("Tokyo")
                                 .data(new Object[] {7.0, 6.9, 2.5, 14.5, 18.2, 21.5, 5.2, 26.5, 23.3, 45.3, 13.9, 9.6})
-                                .fillOpacity(0.5f)
-                                .lineWidth(10f)
+                                .fillOpacity(0.5)
+                                .lineWidth(10)
                                 .zones(new AAZonesElement[]{
                                 new AAZonesElement()
                                         .value(12)
@@ -223,8 +223,8 @@ public class ChartOptionsComposer {
                 new AAPlotLinesElement()
                         .color("#1e90ff")//颜色值(16进制)
                         .dashStyle(AAChartLineDashStyleType.LongDashDotDot)//样式：Dash,Dot,Solid等,默认Solid
-                        .width((1f)) //标示线粗细
-                        .value((12f)) //所在位置
+                        .width((1)) //标示线粗细
+                        .value((12)) //所在位置
                         .zIndex((1)) //层叠,标示线在图表中显示的层叠级别，值越大，显示越向前
                         .label(new AALabel()
                         .useHTML(true)
@@ -234,8 +234,8 @@ public class ChartOptionsComposer {
                 new AAPlotLinesElement()
                         .color("#ef476f")//颜色值(16进制)
                         .dashStyle(AAChartLineDashStyleType.LongDashDot)//样式：Dash,Dot,Solid等,默认Solid
-                        .width((1f)) //标示线粗细
-                        .value((24f)) //所在位置
+                        .width((1)) //标示线粗细
+                        .value((24)) //所在位置
                         .zIndex((1)) //层叠,标示线在图表中显示的层叠级别，值越大，显示越向前
                         .label(new AALabel()
                         .useHTML(true)
@@ -245,8 +245,8 @@ public class ChartOptionsComposer {
                 new AAPlotLinesElement()
                         .color("#1e90ff")//颜色值(16进制)
                         .dashStyle(AAChartLineDashStyleType.LongDash)//样式：Dash,Dot,Solid等,默认Solid
-                        .width((1f)) //标示线粗细
-                        .value((36f)) //所在位置
+                        .width((1)) //标示线粗细
+                        .value((36)) //所在位置
                         .zIndex((1)) //层叠,标示线在图表中显示的层叠级别，值越大，显示越向前
                         .label(new AALabel()
                         .useHTML(true)
@@ -280,9 +280,9 @@ public class ChartOptionsComposer {
                 .series(new AASeriesElement[]{
                         new AASeriesElement()
                                 .name("2020")
-                                .lineWidth(3f)
+                                .lineWidth(3)
                                 .color("#FFD700"/*纯金色*/)
-                                .fillOpacity(0.5f)
+                                .fillOpacity(0.5)
                                 .data(new Object[]{
                                 1.51, 6.7, 0.94, 1.44, 1.6, 1.63, 1.56, 1.91, 2.45, 3.87, 3.24, 4.90, 4.61, 4.10,
                                 4.17, 3.85, 4.17, 3.46, 3.46, 3.55, 3.50, 4.13, 2.58, 2.28, 1.51, 12.7, 0.94, 1.44,
@@ -309,7 +309,7 @@ public class ChartOptionsComposer {
                 .borderColor("#000000")
                 .style(new AAStyle()
                         .color("#FFD700")
-                        .fontSize(12.f)
+                        .fontSize(12)
                 );
         AAOptions aaOptions = aaChartModel.aa_toAAOptions();
         aaOptions.tooltip(aaTooltip);
@@ -369,7 +369,7 @@ public class ChartOptionsComposer {
         AAOptions aaOptions = aaChartModel.aa_toAAOptions();
         AACrosshair aaCrosshair = new AACrosshair()
                 .color(AAColor.Red)
-                .width(1f)
+                .width(1)
                 .dashStyle(AAChartLineDashStyleType.LongDashDotDot);
         AAXAxis aaXAxis =  aaOptions.xAxis;
         aaXAxis.crosshair(aaCrosshair);
@@ -397,7 +397,7 @@ public class ChartOptionsComposer {
                 .stacking(AAChartStackingType.Normal)
                 .categories(categories)
                 .dataLabelsEnabled(false)
-                .markerRadius(0f)
+                .markerRadius(0)
                 .series(new AASeriesElement[] {
                                 new AASeriesElement()
                                         .name("Berlin Hot")
@@ -433,7 +433,7 @@ public class ChartOptionsComposer {
                 .stacking(AAChartStackingType.Normal)
                 .categories(categories)
                 .dataLabelsEnabled(false)
-                .markerRadius(0f)
+                .markerRadius(0)
                 .series(new AASeriesElement[] {
                                 new AASeriesElement()
                                         .name("Berlin Hot")
@@ -469,12 +469,12 @@ public class ChartOptionsComposer {
                 .yAxisVisible(true)
                 .categories(new String[] {"一月", "二月", "三月", "四月", "五月", "六月",
                         "七月", "八月", "九月", "十月", "十一月", "十二月"})
-                .markerRadius(0f)
+                .markerRadius(0)
                 .series(new AASeriesElement[]{
                         new AASeriesElement()
                                 .name("Berlin Hot")
                                 .color(AAColor.White)
-                                .lineWidth(7.f)
+                                .lineWidth(7)
                                 .fillColor(fillColorGradientColor)
                                 .data(new Object[]{7.0, 6.9, 2.5, 14.5, 18.2, 21.5, 5.2, 26.5, 23.3, 45.3, 13.9, 9.6}),
                 });
@@ -484,7 +484,7 @@ public class ChartOptionsComposer {
                         .enabled(true)
                         .style(new AAStyle()
                                 .color(AAColor.Black)
-                                .fontSize(14.f)
+                                .fontSize(14)
                                 .fontWeight(AAChartFontWeightType.Thin)
                                 .textOutline("0px 0px contrast")//文字轮廓描边
                         ));
@@ -493,28 +493,28 @@ public class ChartOptionsComposer {
         AACrosshair aaCrosshair = new AACrosshair()
                 .dashStyle(AAChartLineDashStyleType.LongDashDot)
                 .color(AAColor.White)
-                .width(1.f);
+                .width(1);
 
         AALabels aaLabels = new AALabels()
                 .useHTML(true)
                 .style(new AAStyle()
-                        .fontSize(10.f)
+                        .fontSize(10)
                         .fontWeight(AAChartFontWeightType.Bold)
                         .color(AAColor.White)//轴文字颜色
                 );
 
         aaOptions.yAxis
                 .opposite(true)
-                .tickWidth(2.f)
-                .lineWidth(1.5f)//Y轴轴线颜色
+                .tickWidth(2)
+                .lineWidth(1.5)//Y轴轴线颜色
                 .lineColor(AAColor.White)//Y轴轴线颜色
-                .gridLineWidth(0.f)//Y轴网格线宽度
+                .gridLineWidth(0)//Y轴网格线宽度
                 .crosshair(aaCrosshair)
                 .labels(aaLabels);
 
         aaOptions.xAxis
-                .tickWidth(2.f)//X轴刻度线宽度
-                .lineWidth(1.5f)//X轴轴线宽度
+                .tickWidth(2)//X轴刻度线宽度
+                .lineWidth(1.5)//X轴轴线宽度
                 .lineColor(AAColor.White)//X轴轴线颜色
                 .crosshair(aaCrosshair)
                 .labels(aaLabels);
@@ -532,8 +532,8 @@ public class ChartOptionsComposer {
         aaOptions.legend
                 .itemStyle(new AAItemStyle()
                         .color(AAColor.White)//字体颜色
-                        .fontSize(13.f)//字体大小
-                        .fontWeight("thin")//字体为细体字
+                        .fontSize(13)//字体大小
+                        .fontWeight(AAChartFontWeightType.Thin)//字体为细体字
 
                 );
 
@@ -548,13 +548,13 @@ public class ChartOptionsComposer {
                         "一月", "二月", "三月", "四月", "五月", "六月",
                         "七月", "八月", "九月", "十月", "十一月", "十二月"
                 })
-                .yAxisGridLineWidth(0f)
-                .markerRadius(8f)
+                .yAxisGridLineWidth(0)
+                .markerRadius(8)
                 .markerSymbolStyle(AAChartSymbolStyleType.InnerBlank)
                 .series(new AASeriesElement[] {
                         new AASeriesElement()
                                 .name("New York Hot")
-                                .lineWidth(5.0f)
+                                .lineWidth(5)
                                 .color("rgba(220,20,60,1)")////猩红色, alpha 透明度 1
                                 .data(new Object[]{7.0, 6.9, 2.5, 14.5, 18.2, 21.5, 5.2, 26.5, 23.3, 45.3, 13.9, 9.6}),
                         new AASeriesElement()
@@ -568,20 +568,20 @@ public class ChartOptionsComposer {
         AAOptions aaOptions = aaChartModel.aa_toAAOptions();
         AAPlotBandsElement[] aaPlotBandsElementArr = {
                 new AAPlotBandsElement()
-                        .from(-0.25f)//值域颜色带X轴起始值
-                        .to(4.75f)//值域颜色带X轴结束值
+                        .from(-0.25)//值域颜色带X轴起始值
+                        .to(4.75)//值域颜色带X轴结束值
                         .color("#06caf4")//值域颜色带填充色
                         .zIndex(0)//层叠,标示线在图表中显示的层叠级别，值越大，显示越向前
                 ,
                 new AAPlotBandsElement()
-                        .from(4.75f)
-                        .to(8.25f)
+                        .from(4.75)
+                        .to(8.25)
                         .color("#ffd066")
                         .zIndex(0)
                 ,
                 new AAPlotBandsElement()
-                        .from(8.25f)
-                        .to(11.25f)
+                        .from(8.25)
+                        .to(11.25)
                         .color("#04d69f")
                         .zIndex(0)
                 ,
@@ -613,10 +613,10 @@ public class ChartOptionsComposer {
                         .format("{value:.,0f}$")//让y轴的值完整显示 而不是100000显示为100k,同时单位后缀为°C
                         .style(new AAStyle()
                                 .color("#ff0000")//yAxis Label font color
-                                .fontSize(15f)//yAxis Label font size
+                                .fontSize(15)//yAxis Label font size
                                 .fontWeight(AAChartFontWeightType.Bold)//yAxis Label font weight
                         ))
-                .gridLineWidth(0f)// Y 轴网格线宽度
+                .gridLineWidth(0)// Y 轴网格线宽度
                 .title(new AATitle()
                         .text("收入"));//Y 轴标题
 
@@ -633,7 +633,7 @@ public class ChartOptionsComposer {
                         .text("正负镜像柱形图")
                         .style(new AAStyle()
                                 .color(AAColor.White)
-                                .fontSize(18.f)))
+                                .fontSize(18)))
                 .xAxis(new AAXAxis()
                         .categories(new String[]{"一月", "二月", "三月", "四月", "五月", "六月",
                                 "七月", "八月", "九月", "十月", "十一月", "十二月"}))
@@ -645,8 +645,8 @@ public class ChartOptionsComposer {
                                         .easing(AAChartAnimationType.EaseInCirc)))
                         .column(new AAColumn()
                                 .grouping(false)
-                                .borderWidth(0f)
-                                .borderRadius(5f)))
+                                .borderWidth(0)
+                                .borderRadius(5)))
                 .series(new AASeriesElement[]{
                         new AASeriesElement()
                                 .name("收入")
@@ -667,7 +667,7 @@ public class ChartOptionsComposer {
 
         AAXAxis aaXAxis = new AAXAxis()
                 .visible(true)
-                .min(0f)
+                .min(0)
                 .categories(new String[]{
                         "Java", "Swift", "Python", "Ruby", "PHP", "Go","C",
                         "C#", "C++", "Perl", "R", "MATLAB", "SQL"
@@ -675,7 +675,7 @@ public class ChartOptionsComposer {
 
         AAStyle aaYAxisTitleStyle = new AAStyle()
                 .color("#1e90ff")//Title font color
-                .fontSize(14f)//Title font size
+                .fontSize(14)//Title font size
                 .fontWeight(AAChartFontWeightType.Bold)//Title font weight
                 .textOutline("0px 0px contrast");
 
@@ -684,7 +684,7 @@ public class ChartOptionsComposer {
                 .format("{value:.,0f}mm")//让y轴的值完整显示 而不是100000显示为100k,同时单位后缀为°C
                 .style(new AAStyle()
                         .color("#ff0000")//yAxis Label font color
-                        .fontSize(15f)//yAxis Label font size
+                        .fontSize(15)//yAxis Label font size
                         .fontWeight(AAChartFontWeightType.Bold)//yAxis Label font weight
                 );
 
@@ -721,10 +721,10 @@ public class ChartOptionsComposer {
         );
 
         AAMarker aaMarker = new AAMarker()
-                .radius(7f)//曲线连接点半径，默认是4
+                .radius(7)//曲线连接点半径，默认是4
                 .symbol(AAChartSymbolType.Circle)//曲线点类型："circle", "square", "diamond", "triangle","triangle-down"，默认是"circle"
                 .fillColor("#ffffff")//点的填充色(用来设置折线连接点的填充色)
-                .lineWidth(3f)//外沿线的宽度(用来设置折线连接点的轮廓描边的宽度)
+                .lineWidth(3)//外沿线的宽度(用来设置折线连接点的轮廓描边的宽度)
                 .lineColor("");//外沿线的颜色(用来设置折线连接点的轮廓描边颜色，当值为空字符串时，默认取数据点或数据列的颜色)
 
         AASeriesElement element1 = new AASeriesElement()
@@ -762,13 +762,13 @@ public class ChartOptionsComposer {
 
         AAXAxis aaXAxis = new AAXAxis()
                 .visible(true)
-                .min(0f)
+                .min(0)
                 .categories(new String[]{"一月", "二月", "三月", "四月", "五月", "六月",
                         "七月", "八月", "九月", "十月", "十一月", "十二月"});
 
         AAYAxis yAxis1 = new AAYAxis()
                 .visible(true)
-                .gridLineWidth(0f)
+                .gridLineWidth(0)
                 .labels(new AALabels()
                         .enabled(true)//设置 y 轴是否显示数字
                         .format("{value}°C")
@@ -783,7 +783,7 @@ public class ChartOptionsComposer {
 
         AAYAxis yAxis2 = new AAYAxis()
                 .visible(true)
-                .gridLineWidth(0f)
+                .gridLineWidth(0)
                 .labels(new AALabels()
                         .enabled(true)//设置 y 轴是否显示数字
                         .format("{value}°mm")
@@ -797,7 +797,7 @@ public class ChartOptionsComposer {
 
         AAYAxis yAxis3 = new AAYAxis()
                 .visible(true)
-                .gridLineWidth(0f)
+                .gridLineWidth(0)
                 .labels(new AALabels()
                         .enabled(true)//设置 y 轴是否显示数字
                         .format("{value}°mb")
@@ -820,9 +820,9 @@ public class ChartOptionsComposer {
                 .floating(true)
                 .layout(AAChartLayoutType.Vertical)
                 .align(AAChartAlignType.Left)
-                .x(80f)
+                .x(80)
                 .verticalAlign(AAChartVerticalAlignType.Top)
-                .y(55f);
+                .y(55);
 
         AASeriesElement element1 = new AASeriesElement()
                 .name("降雨量")
@@ -867,7 +867,7 @@ public class ChartOptionsComposer {
                 .colorsTheme(new String[]{"#465DBC"})
                 //title标题
                 .title("最近三十分钟数据展示")
-                .titleStyle(AAStyle.style("#0F0F0F", 20f))
+                .titleStyle(AAStyle.style("#0F0F0F", 20))
                 //坐标轴字体颜色
                 .axesTextColor("#0F0F0F")
                 //背景颜色
@@ -884,9 +884,9 @@ public class ChartOptionsComposer {
                 //y轴标题
                 .yAxisTitle("湿度%")
                 //y轴最大值
-                .yAxisMax(100.0f)
+                .yAxisMax(100)
                 //y轴最小值
-                .yAxisMin(0.0f)
+                .yAxisMin(0)
                 .yAxisAllowDecimals(true)
                 //y轴数据
                 .series(new AASeriesElement[]{
@@ -963,19 +963,19 @@ public class ChartOptionsComposer {
         AAXAxis aaXAxis = new AAXAxis()
                 .visible(true)
                 .labels(aaLabels)
-                .min(0f)
+                .min(0)
                 .categories(category);
 
         AAStyle aaYAxisTitleStyle = new AAStyle()
                 .color("#1e90ff")//Title font color
-                .fontSize(14f)//Title font size
+                .fontSize(14)//Title font size
                 .fontWeight(AAChartFontWeightType.Bold)//Title font weight
                 .textOutline("0px 0px contrast");
 
         AAYAxis yAxis1 = new AAYAxis()
                 .visible(true)
                 .labels(aaLabels)
-                .gridLineWidth(0f)
+                .gridLineWidth(0)
                 .title(new AATitle()
                         .text("已贯通 / 计划贯通")
                         .style(aaYAxisTitleStyle));
@@ -983,7 +983,7 @@ public class ChartOptionsComposer {
         AAYAxis yAxis2 = new AAYAxis()
                 .visible(true)
                 .labels(aaLabels)
-                .gridLineWidth(0f)
+                .gridLineWidth(0)
                 .title(new AATitle()
                         .text("贯通率")
                         .style(aaYAxisTitleStyle))
@@ -1011,14 +1011,14 @@ public class ChartOptionsComposer {
                 .floating(true)
                 .layout(AAChartLayoutType.Horizontal)
                 .align(AAChartAlignType.Left)
-                .x(30f)
+                .x(30)
                 .verticalAlign(AAChartVerticalAlignType.Top)
-                .y(10f);
+                .y(10);
 
         AASeriesElement goalValuesElement = new AASeriesElement()
                 .name("计划贯通")
                 .type(AAChartType.Column)
-                .borderWidth(0f)
+                .borderWidth(0)
                 .color(gradientColorDic1)
                 .yAxis(0)
                 .data(goalValuesArr);
@@ -1026,7 +1026,7 @@ public class ChartOptionsComposer {
         AASeriesElement realValuesElement = new AASeriesElement()
                 .name("已贯通")
                 .type(AAChartType.Column)
-                .borderWidth(0f)
+                .borderWidth(0)
                 .color(gradientColorDic2)
                 .yAxis(0)
                 .data(realValuesArr);
@@ -1035,10 +1035,10 @@ public class ChartOptionsComposer {
                 .name("贯通率")
                 .type(AAChartType.Line)
                 .marker(new AAMarker()
-                        .radius(7f)//曲线连接点半径，默认是4
+                        .radius(7)//曲线连接点半径，默认是4
                         .symbol(AAChartSymbolType.Circle)//曲线点类型："circle", "square", "diamond", "triangle","triangle-down"，默认是"circle"
                         .fillColor("#ffffff")//点的填充色(用来设置折线连接点的填充色)
-                        .lineWidth(3f)//外沿线的宽度(用来设置折线连接点的轮廓描边的宽度)
+                        .lineWidth(3)//外沿线的宽度(用来设置折线连接点的轮廓描边的宽度)
                         .lineColor("")//外沿线的颜色(用来设置折线连接点的轮廓描边颜色，当值为空字符串时，默认取数据点或数据列的颜色)
                 )
                 .color("#F02FC2")
@@ -1074,8 +1074,8 @@ public class ChartOptionsComposer {
                 .plotLines(new AAPlotLinesElement[]{
                         new AAPlotLinesElement()
                                 .color(AAColor.Red)
-                                .value(0.1523f)
-                                .width(1.5f)
+                                .value(0.1523)
+                                .width(1.5)
                                 .dashStyle(AAChartLineDashStyleType.LongDashDotDot)
                                 .label(new AALabel()
                                         .text("实际价格")
@@ -1085,33 +1085,33 @@ public class ChartOptionsComposer {
 
         AAYAxis yAxis1 = new AAYAxis()
                 .visible(true)
-                .lineWidth(1f)
+                .lineWidth(1)
                 .title(new AATitle()
                         .text(""))
-                .tickWidth(1f)
-                .tickLength(5f)
+                .tickWidth(1)
+                .tickLength(5)
                 .tickPosition("inside")
-                .gridLineWidth(1f)
+                .gridLineWidth(1)
                 .labels(new AALabels()
                         .enabled(true)//设置 y 轴是否显示数字
                         .align(AAChartAlignType.Left)
-                        .x(8f)
+                        .x(8)
                 );
 
         AAYAxis yAxis2 = new AAYAxis()
                 .opposite(true)
                 .visible(true)
-                .lineWidth(1f)
+                .lineWidth(1)
                 .title(new AATitle()
                         .text(""))
-                .tickWidth(1f)
-                .tickLength(5f)
+                .tickWidth(1)
+                .tickLength(5)
                 .tickPosition("inside")
-                .gridLineWidth(0f)
+                .gridLineWidth(0)
                 .labels(new AALabels()
                         .enabled(true)//设置 y 轴是否显示数字
                         .align(AAChartAlignType.Right)
-                        .x(-8f)
+                        .x(-8)
                 );
 
         AATooltip aaTooltip = new AATooltip()
@@ -1194,27 +1194,27 @@ public class ChartOptionsComposer {
                 .colorsTheme(new String[]{"#04d69f","#1e90ff","#ef476f","#ffd066",})
                 .stacking(AAChartStackingType.Normal)
                 .yAxisVisible(false)
-                .markerRadius(0f)
+                .markerRadius(0)
                 .series(new AASeriesElement[]{
                         new AASeriesElement()
                                 .name("TokyoHot")
-                                .lineWidth(5.0f)
-                                .fillOpacity(0.4f)
+                                .lineWidth(5)
+                                .fillOpacity(0.4)
                                 .data(new Object[]{0.45, 0.43, 0.50, 0.55, 0.58, 0.62, 0.83, 0.39, 0.56, 0.67, 0.50, 0.34, 0.50, 0.67, 0.58, 0.29, 0.46, 0.23, 0.47, 0.46, 0.38, 0.56, 0.48, 0.36}),
                         new AASeriesElement()
                                 .name("BerlinHot")
-                                .lineWidth(5.0f)
-                                .fillOpacity(0.4f)
+                                .lineWidth(5)
+                                .fillOpacity(0.4)
                                 .data(new Object[]{0.38, 0.31, 0.32, 0.32, 0.64, 0.66, 0.86, 0.47, 0.52, 0.75, 0.52, 0.56, 0.54, 0.60, 0.46, 0.63, 0.54, 0.51, 0.58, 0.64, 0.60, 0.45, 0.36, 0.67}),
                         new AASeriesElement()
                                 .name("LondonHot")
-                                .lineWidth(5.0f)
-                                .fillOpacity(0.4f)
+                                .lineWidth(5)
+                                .fillOpacity(0.4)
                                 .data(new Object[]{0.46, 0.32, 0.53, 0.58, 0.86, 0.68, 0.85, 0.73, 0.69, 0.71, 0.91, 0.74, 0.60, 0.50, 0.39, 0.67, 0.55, 0.49, 0.65, 0.45, 0.64, 0.47, 0.63, 0.64}),
                         new AASeriesElement()
                                 .name("NewYorkHot")
-                                .lineWidth(5.0f)
-                                .fillOpacity(0.4f)
+                                .lineWidth(5)
+                                .fillOpacity(0.4)
                                 .data(new Object[]{0.60, 0.51, 0.52, 0.53, 0.64, 0.84, 0.65, 0.68, 0.63, 0.47, 0.72, 0.60, 0.65, 0.74, 0.66, 0.65, 0.71, 0.59, 0.65, 0.77, 0.52, 0.53, 0.58, 0.53}),
                 });
 
@@ -1236,15 +1236,15 @@ public class ChartOptionsComposer {
                 .chart(new AAChart()
                         .type(AAChartType.Gauge))
                 .pane(new AAPane()
-                        .startAngle(-150f)
-                        .endAngle(150f))
+                        .startAngle(-150)
+                        .endAngle(150))
                 .yAxis(new AAYAxis()
-                        .min(0f)
-                        .max(100f)
+                        .min(0)
+                        .max(100)
                         .plotBands(new AAPlotBandsElement[]{
                                 new AAPlotBandsElement()
-                                        .from(0f)
-                                        .to(60f)
+                                        .from(0)
+                                        .to(60)
                                         .color("#FF0000")
                         }))
                 .series(new AASeriesElement[]{
@@ -1260,25 +1260,25 @@ public class ChartOptionsComposer {
                .title(new AATitle()
                        .text("速度仪"))
                .pane(new AAPane()
-                       .startAngle(-150f)
-                       .endAngle(150f))
+                       .startAngle(-150)
+                       .endAngle(150))
                .yAxis(new AAYAxis()
-                       .min(0f)
-                       .max(200f)
+                       .min(0)
+                       .max(200)
                        .title(new AATitle()
                                .text("km/h"))
                        .plotBands(new AAPlotBandsElement[]{
                                new AAPlotBandsElement()
-                                       .from(0f)
-                                       .to(120f)
+                                       .from(0)
+                                       .to(120)
                                        .color("#ffc069"),
                                new AAPlotBandsElement()
-                                       .from(120f)
-                                       .to(160f)
+                                       .from(120)
+                                       .to(160)
                                        .color("#fe117c"),
                                new AAPlotBandsElement()
-                                       .from(160f)
-                                       .to(200f)
+                                       .from(160)
+                                       .to(200)
                                        .color("#06caf4"),
                        })
                )
@@ -1301,7 +1301,7 @@ public class ChartOptionsComposer {
                                 .name("Past")
                                 .size("40%")//尺寸大小
                                 .innerSize("30%")//内部圆环半径大小占比
-                                .borderWidth(0f)//描边的宽度
+                                .borderWidth(0)//描边的宽度
                                 .allowPointSelect(false)//是否允许在点击数据点标记(扇形图点击选中的块发生位移)
                                 .data(new Object[][]{
                                 {"Firefox Past",   3336.2},
@@ -1315,7 +1315,7 @@ public class ChartOptionsComposer {
                                 .name("Now")
                                 .size("80%")//尺寸大小
                                 .innerSize("70%")//内部圆环半径大小占比
-                                .borderWidth(0f)//描边的宽度
+                                .borderWidth(0)//描边的宽度
                                 .allowPointSelect(false)//是否允许在点击数据点标记(扇形图点击选中的块发生位移)
                                 .data(new Object[][]{
                                 {"Firefox Now",    336.2},
@@ -1328,8 +1328,8 @@ public class ChartOptionsComposer {
 
         AAOptions aaOptions = aaChartModel.aa_toAAOptions();
         aaOptions.plotOptions.pie
-                .startAngle(-90f)
-                .endAngle(90f);
+                .startAngle(-90)
+                .endAngle(90);
 
         return aaOptions;
     }

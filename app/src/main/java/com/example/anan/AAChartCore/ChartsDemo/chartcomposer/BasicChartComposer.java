@@ -17,7 +17,7 @@ public class BasicChartComposer {
         return new AAChartModel()
                 .backgroundColor("#4b2b7f")
                 .dataLabelsEnabled(false)
-                .yAxisGridLineWidth(0f)
+                .yAxisGridLineWidth(0)
                 .touchEventEnabled(true);
     }
 
@@ -78,7 +78,7 @@ public class BasicChartComposer {
        AAChartModel aaChartModel = configureAreaChart()
                 .animationType(AAChartAnimationType.EaseOutQuart)
                 .legendEnabled(true)
-                .markerRadius(6f)
+                .markerRadius(6)
                 .markerSymbol(AAChartSymbolType.Circle)
                 .markerSymbolStyle(AAChartSymbolStyleType.InnerBlank);
 
@@ -118,26 +118,26 @@ public class BasicChartComposer {
         AAChartModel aaChartModel = configureAreaChart()
                 .chartType(chartType)
                 .markerSymbolStyle(AAChartSymbolStyleType.BorderBlank)//设置折线连接点样式为:边缘白色
-                .markerRadius(6f);
+                .markerRadius(6);
         if (chartType.equals(AAChartType.Spline)) {
             AASeriesElement element1 = new AASeriesElement()
                     .name("Tokyo")
-                    .lineWidth(7f)
+                    .lineWidth(7)
                     .data(new Object[]{50, 320, 230, 370, 230, 400,});
 
             AASeriesElement element2 = new AASeriesElement()
                     .name("Berlin")
-                    .lineWidth(7f)
+                    .lineWidth(7)
                     .data(new Object[]{80, 390, 210, 340, 240, 350,});
 
             AASeriesElement element3 = new AASeriesElement()
                     .name("New York")
-                    .lineWidth(7f)
+                    .lineWidth(7)
                     .data(new Object[]{100, 370, 180, 280, 260, 300,});
 
             AASeriesElement element4 = new AASeriesElement()
                     .name("London")
-                    .lineWidth(7f)
+                    .lineWidth(7)
                     .data(new Object[]{130, 350, 160, 310, 250, 268,});
 
             aaChartModel
