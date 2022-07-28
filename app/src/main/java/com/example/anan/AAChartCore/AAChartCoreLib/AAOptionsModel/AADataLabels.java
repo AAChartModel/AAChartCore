@@ -10,18 +10,18 @@ public class AADataLabels {
     public AAStyle style;
     public String format;
     public String formatter;
-    public Float rotation;
+    public Number rotation;
     public Boolean allowOverlap;
     public Boolean useHTML;
-    public Float distance;
+    public Number distance;
     public String verticalAlign;
-    public Float x;
-    public Float y;
+    public Number x;
+    public Number y;
     public String color;
     public String backgroundColor;
     public String borderColor;
-    public Float borderRadius;
-    public Float borderWidth;
+    public Number borderRadius;
+    public Number borderWidth;
     public String shape;
     public Boolean crop;
     public String overflow;
@@ -62,7 +62,7 @@ public class AADataLabels {
         return this;
     }
 
-    public AADataLabels rotation(Float prop) {
+    public AADataLabels rotation(Number prop) {
         rotation = prop;
         return this;
     }
@@ -77,7 +77,7 @@ public class AADataLabels {
         return this;
     }
 
-    public AADataLabels distance(Float prop) {
+    public AADataLabels distance(Number prop) {
         distance = prop;
         return this;
     }
@@ -87,12 +87,12 @@ public class AADataLabels {
         return this;
     }
 
-    public AADataLabels x(Float prop) {
+    public AADataLabels x(Number prop) {
         x = prop;
         return this;
     }
 
-    public AADataLabels y(Float prop) {
+    public AADataLabels y(Number prop) {
         y = prop;
         return this;
     }
@@ -112,12 +112,12 @@ public class AADataLabels {
         return this;
     }
 
-    public AADataLabels borderRadius(Float prop) {
+    public AADataLabels borderRadius(Number prop) {
         borderRadius = prop;
         return this;
     }
 
-    public AADataLabels borderWidth(Float prop) {
+    public AADataLabels borderWidth(Number prop) {
         borderWidth = prop;
         return this;
     }

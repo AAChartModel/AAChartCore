@@ -2,22 +2,22 @@ package com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel;
 
 public class AAShadow {
     public String color;
-    public Float offsetX;
-    public Float offsetY;
+    public Number offsetX;
+    public Number offsetY;
     public Float opacity;
-    public Float width;
+    public Number width;
 
     public AAShadow color(String prop) {
         color = prop;
         return this;
     }
 
-    public AAShadow offsetX(Float prop) {
+    public AAShadow offsetX(Number prop) {
         offsetX = prop;
         return this;
     }
 
-    public AAShadow offsetY(Float prop) {
+    public AAShadow offsetY(Number prop) {
         offsetY = prop;
         return this;
     }
@@ -27,7 +27,7 @@ public class AAShadow {
         return this;
     }
 
-    public AAShadow width(Float prop) {
+    public AAShadow width(Number prop) {
         width = prop;
         return this;
     }

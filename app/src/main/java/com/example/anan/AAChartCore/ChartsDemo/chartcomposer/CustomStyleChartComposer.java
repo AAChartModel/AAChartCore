@@ -221,21 +221,21 @@ public class CustomStyleChartComposer {
                 .chartType(AAChartType.Spline)
                 .categories(new String[]{"一月", "二月", "三月", "四月", "五月", "六月",
                         "七月", "八月", "九月", "十月", "十一月", "十二月"})
-                .markerRadius(0f)
-                .yAxisLineWidth(0f)
-                .yAxisGridLineWidth(0f)
+                .markerRadius(0)
+                .yAxisLineWidth(0)
+                .yAxisGridLineWidth(0)
                 .legendEnabled(false)
                 .series(new AASeriesElement[]{
                         new AASeriesElement()
                                 .name("Tokyo Hot")
-                                .lineWidth(8.0f)
+                                .lineWidth(8.0)
                                 .data(new Object[]{7.0, 6.9, 2.5, 14.5, 18.2, 21.5, 5.2, 26.5, 23.3, 45.3, 13.9, 9.6})
                                 .shadow(
                                 new AAShadow()
-                                        .offsetX(15.0f)
-                                        .offsetY(15.0f)
+                                        .offsetX(15.0)
+                                        .offsetY(15.0)
                                         .opacity(0.2f)
-                                        .width(8.0f)
+                                        .width(8.0)
                                         .color(AAColor.Red))
                 });
     }
@@ -256,14 +256,14 @@ public class CustomStyleChartComposer {
                 .chartType(AAChartType.Areaspline)
                 .categories(new String[]{"一月", "二月", "三月", "四月", "五月", "六月",
                         "七月", "八月", "九月", "十月", "十一月", "十二月"})
-                .markerRadius(0f)
-                .yAxisLineWidth(0f)
-                .yAxisGridLineWidth(0f)
+                .markerRadius(0)
+                .yAxisLineWidth(0)
+                .yAxisGridLineWidth(0)
                 .legendEnabled(false)
                 .series(new AASeriesElement[]{
                                 new AASeriesElement()
                                         .name("Tokyo Hot")
-                                        .lineWidth(3f)
+                                        .lineWidth(3)
                                         .color(linearGradientColor)
                                         .data(new Object[]{7.0, 6.9, 2.5, 14.5, 18.2, 21.5, 5.2, 26.5, 23.3, 45.3, 13.9, 9.6}),
                         }
@@ -289,14 +289,14 @@ public class CustomStyleChartComposer {
                 .chartType(AAChartType.Spline)
                 .categories(new String[]{"一月", "二月", "三月", "四月", "五月", "六月",
                         "七月", "八月", "九月", "十月", "十一月", "十二月"})
-                .markerRadius(0f)
-                .yAxisLineWidth(0f)
-                .yAxisGridLineWidth(0f)
+                .markerRadius(0)
+                .yAxisLineWidth(0)
+                .yAxisGridLineWidth(0)
                 .legendEnabled(false)
                 .series(new AASeriesElement[]{
                                 new AASeriesElement()
                                         .name("Tokyo Hot")
-                                        .lineWidth(15.0f)
+                                        .lineWidth(15.0)
                                         .color(linearGradientColor)
                                         .data(new Object[]{7.0, 6.9, 2.5, 14.5, 18.2, 21.5, 5.2, 26.5, 23.3, 45.3, 13.9, 9.6}),
                         }
@@ -315,17 +315,17 @@ public class CustomStyleChartComposer {
                 .chartType(AAChartType.Areaspline)
                 .categories(new String[]{"一月", "二月", "三月", "四月", "五月", "六月",
                         "七月", "八月", "九月", "十月", "十一月", "十二月"})
-                .markerRadius(8f)//marker点半径为8个像素
+                .markerRadius(8)//marker点半径为8个像素
                 .markerSymbolStyle(AAChartSymbolStyleType.InnerBlank)//marker点为空心效果
                 .markerSymbol(AAChartSymbolType.Circle)//marker点为圆形点○
-                .yAxisLineWidth(0f)
-                .yAxisGridLineWidth(0f)
+                .yAxisLineWidth(0)
+                .yAxisGridLineWidth(0)
                 .legendEnabled(false)
                 .series(new AASeriesElement[]{
                                 new AASeriesElement()
                                         .name("Tokyo Hot")
-                                        .lineWidth(5.0f)
-                                        .color(AAColor.rgbaColor(220, 20, 60, 1f))//猩红色, alpha 透明度 1
+                                        .lineWidth(5.0)
+                                        .color(AAColor.rgbaColor(220, 20, 60, 1.0f))//猩红色, alpha 透明度 1
                                         .fillColor(linearGradientColor)
                                         .data(new Object[]{7.0, 6.9, 2.5, 14.5, 18.2, 21.5, 5.2, 26.5, 23.3, 45.3, 13.9, 9.6}),
                         }
@@ -349,26 +349,26 @@ public class CustomStyleChartComposer {
 
         AADataElement singleSpecialData = new AADataElement()
                 .marker(new AAMarker()
-                        .radius(8f)//曲线连接点半径
+                        .radius(8)//曲线连接点半径
                         .symbol(AAChartSymbolType.Circle)//曲线点类型："circle", "square", "diamond", "triangle","triangle-down"，默认是"circle"
                         .fillColor("#FFFFFF")//点的填充色(用来设置折线连接点的填充色)
-                        .lineWidth(5f)//外沿线的宽度(用来设置折线连接点的轮廓描边的宽度)
+                        .lineWidth(5)//外沿线的宽度(用来设置折线连接点的轮廓描边的宽度)
                         .lineColor("#FF0000")//外沿线的颜色(用来设置折线连接点的轮廓描边颜色，当值为空字符串时，默认取数据点或数据列的颜色)
                 )
-                .y(26.5f);
+                .y(26.5);
 
         return new AAChartModel()
                 .chartType(AAChartType.Spline)
                 .backgroundColor("#4b2b7f")
                 .dataLabelsEnabled(false)//是否显示值
                 .tooltipEnabled(true)
-                .markerRadius(0f)
+                .markerRadius(0)
                 .xAxisVisible(false)
                 .yAxisVisible(false)
                 .series(new AASeriesElement[]{
                         new AASeriesElement()
                                 .name("Virtual Data")
-                                .lineWidth(6f)
+                                .lineWidth(6)
                                 .data(new Object[]{7.0, 6.9, 2.5, 14.5, 18.2, singleSpecialData, 5.2, 26.5, 23.3, 45.3, 13.9, 9.6})
                                 .color(gradientColorDic1)
                 });
@@ -377,19 +377,19 @@ public class CustomStyleChartComposer {
     public static AAChartModel configureSpecialStyleColumnOfSingleDataElementChart() {
         AADataElement singleSpecialData = new AADataElement()
                 .color(AAGradientColor.FreshPapaya)
-                .y(49.5f);
+                .y(49.5);
 
         return new AAChartModel()
                 .chartType(AAChartType.Column)
                 .dataLabelsEnabled(false)//是否显示值
                 .tooltipEnabled(false)
-                .markerRadius(0f)
+                .markerRadius(0)
                 .xAxisVisible(false)
                 .yAxisVisible(false)
                 .series(new AASeriesElement[]{
                         new AASeriesElement()
                                 .name("Virtual Data")
-                                .lineWidth(6f)
+                                .lineWidth(6)
                                 .data(new Object[]{7.0, 6.9, 2.5, 14.5, 18.2, singleSpecialData, 5.2, 26.5, 23.3, 26.5, 13.9, 9.6})
                                 .color(AAGradientColor.OceanBlue)
                 });
@@ -404,18 +404,18 @@ public class CustomStyleChartComposer {
 
         return new AAChartModel()
                 .chartType(AAChartType.Area)
-                .yAxisGridLineWidth(0f)
+                .yAxisGridLineWidth(0)
                 .categories(new String[]{"Jan", "Feb", "Mar", "Apr", "May", "Jun", "July", "Aug", "Spe", "Oct", "Nov", "Dec"})
                 .dataLabelsEnabled(false)//是否显示值
-                .markerRadius(8f)
+                .markerRadius(8)
                 .markerSymbol(AAChartSymbolType.Circle)
                 .markerSymbolStyle(AAChartSymbolStyleType.InnerBlank)
                 .legendEnabled(false)
                 .series(new AASeriesElement[]{
                         new AASeriesElement()
-                                .threshold((-200f))
+                                .threshold((-200))
                                 .data(new Object[]{106.4, 129.2, 269.9, -100.5, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4})
-                                .lineWidth(6f)
+                                .lineWidth(6)
                                 .color("rgba(30, 144, 255,1)")
                                 .fillColor(gradientColorDic1)
                 });
@@ -449,10 +449,10 @@ public class CustomStyleChartComposer {
 
         return new AAChartModel()
                 .chartType(AAChartType.Scatter)
-                .yAxisMax(3.5f)
-                .yAxisGridLineWidth(0f)
+                .yAxisMax(3.5)
+                .yAxisGridLineWidth(0)
                 .stacking(AAChartStackingType.Normal)
-                .markerRadius(8f)
+                .markerRadius(8)
                 .series(new AASeriesElement[]{element1, element2, element3, element4});
     }
 
@@ -467,10 +467,10 @@ public class CustomStyleChartComposer {
     public static AAChartModel configureTriangleRadarChart() {
         return new AAChartModel()
                 .chartType(AAChartType.Area)
-                .yAxisMax(15.0f)
-                .yAxisGridLineWidth(0f)
+                .yAxisMax(15.0)
+                .yAxisGridLineWidth(0)
                 .xAxisVisible(false)
-                .markerRadius(0f)
+                .markerRadius(0)
                 .polar(true)//是否极化图形
                 .series(new AASeriesElement[]{
                         new AASeriesElement()
@@ -488,10 +488,10 @@ public class CustomStyleChartComposer {
     public static AAChartModel configureQuadrangleRadarChart() {
         return new AAChartModel()
                 .chartType(AAChartType.Area)
-                .yAxisMax(15.0f)
-                .yAxisGridLineWidth(0f)
+                .yAxisMax(15.0)
+                .yAxisGridLineWidth(0)
                 .xAxisVisible(false)
-                .markerRadius(0f)
+                .markerRadius(0)
                 .polar(true)//是否极化图形
                 .series(new AASeriesElement[]{
                         new AASeriesElement()
@@ -509,10 +509,10 @@ public class CustomStyleChartComposer {
     public static AAChartModel configurePentagonRadarChart() {
         return new AAChartModel()
                 .chartType(AAChartType.Area)
-                .yAxisMax(15.0f)
-                .yAxisGridLineWidth(0f)
+                .yAxisMax(15.0)
+                .yAxisGridLineWidth(0)
                 .xAxisVisible(false)
-                .markerRadius(0f)
+                .markerRadius(0)
                 .polar(true)//是否极化图形
                 .series(new AASeriesElement[]{
                         new AASeriesElement()
@@ -530,10 +530,10 @@ public class CustomStyleChartComposer {
     public static AAChartModel configureHexagonRadarChart() {
         return new AAChartModel()
                 .chartType(AAChartType.Area)
-                .yAxisMax(15.0f)
-                .yAxisGridLineWidth(0f)
+                .yAxisMax(15.0)
+                .yAxisGridLineWidth(0)
                 .xAxisVisible(false)
-                .markerRadius(0f)
+                .markerRadius(0)
                 .polar(true)//是否极化图形
                 .series(new AASeriesElement[]{
                         new AASeriesElement()
@@ -567,12 +567,12 @@ public class CustomStyleChartComposer {
                 .chartType(AAChartType.Areaspline)
                 .legendEnabled(false)
                 .yAxisVisible(true)
-                .markerRadius(6f)
+                .markerRadius(6)
                 .markerSymbolStyle(AAChartSymbolStyleType.InnerBlank)
                 .zoomType(AAChartZoomType.XY)
                 .categories(categoriesArr)
-                .yAxisMin(2.0f)
-                .yAxisMax(45.4f)
+                .yAxisMin(2.0)
+                .yAxisMax(45.4)
                 .xAxisTickInterval(2)
                 .series(new AASeriesElement[]{
                         new AASeriesElement()
@@ -610,27 +610,27 @@ public class CustomStyleChartComposer {
                         .style(new AAStyle()
                                 .fontWeight(AAChartFontWeightType.Bold)
                                 .color(AAColor.White)
-                                .fontSize(16f))
-                        .y((-35f))
+                                .fontSize(16))
+                        .y((-35))
                         .align(AAChartAlignType.Center)
                         .verticalAlign(AAChartVerticalAlignType.Top)
                         .overflow("none")
                         .crop(false)
                 )
-                .y(26.5f);
+                .y(26.5);
 
         return new AAChartModel()
                 .chartType(AAChartType.Areaspline)
                 .backgroundColor("#4b2b7f")
                 .dataLabelsEnabled(false)//是否显示值
                 .tooltipEnabled(true)
-                .markerRadius(0f)
+                .markerRadius(0)
                 .xAxisVisible(false)
                 .yAxisVisible(false)
                 .series(new AASeriesElement[]{
                         new AASeriesElement()
                                 .name("Virtual Data")
-                                .lineWidth(6f)
+                                .lineWidth(6)
                                 .color("rgba(255,215,0,1)")
                                 .fillColor(gradientColorDic1)// gold color, alpha: 1.0
                                 .data(new Object[]{7.0, 6.9, 2.5, 14.5, 18.2, singleSpecialData, 5.2, 26.5, 23.3, 45.3, 13.9, 9.6})
@@ -677,7 +677,7 @@ public class CustomStyleChartComposer {
                 .colorsTheme(new Object[]{AAColor.Red})
                 .yAxisReversed(true)
                 .xAxisReversed(true)
-                .markerRadius(20f)
+                .markerRadius(20)
                 .series(new AASeriesElement[]{
                         new AASeriesElement()
                                 .name("ElementOne")
@@ -687,13 +687,13 @@ public class CustomStyleChartComposer {
                                 new AAStates()
                                         .hover(new AAHover()
                                                 .halo(new AAHalo()
-                                                        .size(130f)
-                                                        .opacity(0.8f)
+                                                        .size(130)
+                                                        .opacity(0.8)
                                                         .attributes(hoverHaloAttributes)))
                                         .select(new AASelect()
                                                 .halo(new AAHalo()
-                                                        .size(130f)
-                                                        .opacity(1.0f)
+                                                        .size(130)
+                                                        .opacity(1.0)
                                                         .attributes(selectHaloAttributes))))
                 });
     }
@@ -704,22 +704,22 @@ public class CustomStyleChartComposer {
                 .title("Custom Spline Chart Marker States Hover Style")
                 .categories(new String[]{"一月", "二月", "三月", "四月", "五月", "六月",
                         "七月", "八月", "九月", "十月", "十一月", "十二月"})
-                .markerRadius(8.0f)//marker点半径为8个像素
-                .yAxisLineWidth(0f)
-                .yAxisGridLineWidth(0f)
+                .markerRadius(8.0)//marker点半径为8个像素
+                .yAxisLineWidth(0)
+                .yAxisGridLineWidth(0)
                 .legendEnabled(false)
                 .series(new AASeriesElement[]{
                         new AASeriesElement()
                                 .name("Tokyo Hot")
-                                .lineWidth(5.0f)
+                                .lineWidth(5.0)
                                 .color("rgba(220,20,60,1)")//猩红色, alpha 透明度 1
                                 .marker(new AAMarker()
                                         .states(new AAMarkerStates()
                                                 .hover(new AAMarkerHover()
                                                         .fillColor(AAColor.White)
-                                                        .radius(40f)
+                                                        .radius(40)
                                                         .lineColor(AAColor.Green)
-                                                        .lineWidth(20f))))
+                                                        .lineWidth(20))))
                                 .data(new Object[]{7.0, 6.9, 2.5, 14.5, 18.2, 21.5, 5.2, 26.5, 23.3, 45.3, 13.9, 9.6}),
                 });
     }
@@ -752,14 +752,14 @@ public class CustomStyleChartComposer {
         AASeriesElement element1 = new AASeriesElement()
                 .name("2017")
                 .dataLabels(new AADataLabels()
-                        .y(-10f)
+                        .y(-10)
                         .format("{total} mm")
                         .color(AAColor.Red)
                         .shape("callout")
                         .backgroundColor(AAColor.White)
                         .borderColor(AAColor.Red)
-                        .borderRadius(1f)
-                        .borderWidth(1f)
+                        .borderRadius(1)
+                        .borderWidth(1)
                 )
                 .data(new Object[]{7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6});
 
@@ -780,8 +780,8 @@ public class CustomStyleChartComposer {
         return new AAChartModel()
                 .chartType(AAChartType.Column)
                 .stacking(AAChartStackingType.Normal)
-                .yAxisGridLineWidth(0f)
-                .markerRadius(0f)
+                .yAxisGridLineWidth(0)
+                .markerRadius(0)
                 .categories(categories)
                 .colorsTheme(colorsTheme)
                 .series(series);
@@ -822,7 +822,7 @@ public class CustomStyleChartComposer {
                                 .name("Past")
                                 .size("40%")//尺寸大小
                                 .innerSize("30%")//内部圆环半径大小占比
-                                .borderWidth(0f)//描边的宽度
+                                .borderWidth(0)//描边的宽度
                                 .allowPointSelect(false)//是否允许在点击数据点标记(扇形图点击选中的块发生位移)
                                 .data(new Object[][]{
                                 {"Firefox Past",   3336.2},
@@ -836,7 +836,7 @@ public class CustomStyleChartComposer {
                                 .name("Now")
                                 .size("80%")//尺寸大小
                                 .innerSize("70%")//内部圆环半径大小占比
-                                .borderWidth(0f)//描边的宽度
+                                .borderWidth(0)//描边的宽度
                                 .allowPointSelect(false)//是否允许在点击数据点标记(扇形图点击选中的块发生位移)
                                 .data(new Object[][]{
                                 {"Firefox Now",    336.2},
@@ -886,52 +886,52 @@ public class CustomStyleChartComposer {
                 .stacking(AAChartStackingType.Normal)
                 .colorsTheme(new String[]{"#1e90ff", "#ef476f", "#ffd066", "#04d69f"})
                 .markerSymbol(AAChartSymbolType.Circle)
-                .markerRadius(8.0f)
+                .markerRadius(8.0)
                 .markerSymbolStyle(AAChartSymbolStyleType.BorderBlank)
                 .series(new AASeriesElement[]{
                         new AASeriesElement()
                                 .name("2017")
-                                .lineWidth(5f)
+                                .lineWidth(5)
                                 .data(new Object[]{0.45, 0.43, 0.50, 0.55, 0.58, 0.62, 0.83, 0.39, 0.56, 0.67, 0.50, 0.34, 0.50, 0.67, 0.58, 0.29, 0.46, 0.23, 0.47, 0.46, 0.38, 0.56, 0.48, 0.36})
                                 .shadow(
                                 new AAShadow()
-                                        .offsetX(15.0f)
-                                        .offsetY(15.0f)
+                                        .offsetX(15.0)
+                                        .offsetY(15.0)
                                         .opacity(0.2f)
-                                        .width(8.0f)
+                                        .width(8.0)
                                         .color("#1e90ff")),
                         new AASeriesElement()
                                 .name("2018")
-                                .lineWidth(5f)
+                                .lineWidth(5)
                                 .data(new Object[]{0.38, 0.31, 0.32, 0.32, 0.64, 0.66, 0.86, 0.47, 0.52, 0.75, 0.52, 0.56, 0.54, 0.60, 0.46, 0.63, 0.54, 0.51, 0.58, 0.64, 0.60, 0.45, 0.36, 0.67})
                                 .shadow(
                                 new AAShadow()
-                                        .offsetX(15.0f)
-                                        .offsetY(15.0f)
+                                        .offsetX(15.0)
+                                        .offsetY(15.0)
                                         .opacity(0.2f)
-                                        .width(8.0f)
+                                        .width(8.0)
                                         .color("#ef476f")),
                         new AASeriesElement()
                                 .name("2019")
-                                .lineWidth(5f)
+                                .lineWidth(5)
                                 .data(new Object[]{0.46, 0.32, 0.53, 0.58, 0.86, 0.68, 0.85, 0.73, 0.69, 0.71, 0.91, 0.74, 0.60, 0.50, 0.39, 0.67, 0.55, 0.49, 0.65, 0.45, 0.64, 0.47, 0.63, 0.64})
                                 .shadow(
                                 new AAShadow()
-                                        .offsetX(15.0f)
-                                        .offsetY(15.0f)
+                                        .offsetX(15.0)
+                                        .offsetY(15.0)
                                         .opacity(0.2f)
-                                        .width(8.0f)
+                                        .width(8.0)
                                         .color("#ffd066")),
                         new AASeriesElement()
                                 .name("2020")
-                                .lineWidth(5f)
+                                .lineWidth(5)
                                 .data(new Object[]{0.60, 0.51, 0.52, 0.53, 0.64, 0.84, 0.65, 0.68, 0.63, 0.47, 0.72, 0.60, 0.65, 0.74, 0.66, 0.65, 0.71, 0.59, 0.65, 0.77, 0.52, 0.53, 0.58, 0.53})
                                 .shadow(
                                 new AAShadow()
-                                        .offsetX(15.0f)
-                                        .offsetY(15.0f)
+                                        .offsetX(15.0)
+                                        .offsetY(15.0)
                                         .opacity(0.2f)
-                                        .width(8.0f)
+                                        .width(8.0)
                                         .color("#04d69f")),
                 });
     }
@@ -944,7 +944,7 @@ public class CustomStyleChartComposer {
                 .stacking(AAChartStackingType.Normal)
                 .colorsTheme(new String[]{"#1e90ff","#ef476f","#ffd066","#04d69f"})
                 .markerSymbol(AAChartSymbolType.Circle)
-                .markerRadius(8.0f)
+                .markerRadius(8.0)
                 .markerSymbolStyle(AAChartSymbolStyleType.InnerBlank)
                 .series(new AASeriesElement[]{
                         new AASeriesElement()
@@ -953,7 +953,7 @@ public class CustomStyleChartComposer {
                                 .dataLabels(new AADataLabels()
                                         .style(new AAStyle()
                                                 .color("#1e90ff")
-                                                .fontSize(11f)))
+                                                .fontSize(11)))
                                 .data(new Object[]{2.10, 2.54, 2.78, 3.62, 4.41, 4.09, 3.83, 4.47, 4.20, 3.94, 3.80, 3.58, 3.19, 4.30, 3.69, 3.52, 3.02, 3.30}),
                         new AASeriesElement()
                                 .name("2018")
@@ -961,7 +961,7 @@ public class CustomStyleChartComposer {
                                 .dataLabels(new AADataLabels()
                                         .style(new AAStyle()
                                                 .color("#ef476f")
-                                                .fontSize(11f)))
+                                                .fontSize(11)))
                                 .data(new Object[]{1.56, 1.91, 2.45, 3.87, 3.24, 4.90, 4.61, 4.10, 4.17, 3.85, 4.17, 3.46, 3.46, 3.55, 3.50, 4.13, 2.58, 2.28}),
                         new AASeriesElement()
                                 .name("2019")
@@ -969,7 +969,7 @@ public class CustomStyleChartComposer {
                                 .dataLabels(new AADataLabels()
                                         .style(new AAStyle()
                                                 .color("#ffd066")
-                                                .fontSize(11f)))
+                                                .fontSize(11)))
                                 .data(new Object[]{1.16, 1.67, 2.64, 2.86, 3.00, 3.21, 4.14, 4.07, 3.68, 3.11, 3.41, 3.25, 3.32, 3.07, 3.92, 3.05, 2.18, 3.24}),
                         new AASeriesElement()
                                 .name("2020")
@@ -977,7 +977,7 @@ public class CustomStyleChartComposer {
                                 .dataLabels(new AADataLabels()
                                         .style(new AAStyle()
                                                 .color("#04d69f")
-                                                .fontSize(11f)))
+                                                .fontSize(11)))
                                 .data(new Object[]{5.59, 3.09, 4.09, 6.14, 5.33, 6.05, 5.71, 6.22, 6.56, 4.75, 5.27, 6.02, 5.22, 5.77, 6.19, 5.68, 4.33, 5.48}),
                 });
     }
@@ -1031,42 +1031,42 @@ public class CustomStyleChartComposer {
                 .stacking(AAChartStackingType.Normal)
                 .colorsTheme(new String[]{"#1e90ff", "#ef476f", "#ffd066", "#04d69f"})
                 .markerSymbol(AAChartSymbolType.Circle)
-                .markerRadius(5f)
+                .markerRadius(5)
                 .dataLabelsEnabled(true)
                 .markerSymbolStyle(AAChartSymbolStyleType.InnerBlank)
                 .series(new AASeriesElement[]{
                         new AASeriesElement()
                                 .name("2017")
                                 .fillColor(gradientBlueColorDic)
-                                .lineWidth(6f)
+                                .lineWidth(6)
                                 .step((true))
                                 .dataLabels(new AADataLabels()
-                                        .style(AAStyle.style("#1e90ff",11f)))
+                                        .style(AAStyle.style("#1e90ff",11)))
                                 .data(new Object[]{2.10, 2.54, 2.78, 3.62, 4.41, 4.09, 3.83, 4.47, 4.20, 3.94, 3.80, 3.58, 3.19, 4.30, 3.69, 3.52, 3.02, 3.30}),
                         new AASeriesElement()
                                 .name("2018")
                                 .fillColor(gradientRedColorDic)
-                                .lineWidth(6f)
+                                .lineWidth(6)
                                 .step((true))
                                 .dataLabels(new AADataLabels()
-                                        .style(AAStyle.style("#ef476f",11f))
+                                        .style(AAStyle.style("#ef476f",11))
                                 )
                                 .data(new Object[]{1.56, 1.91, 2.45, 3.87, 3.24, 4.90, 4.61, 4.10, 4.17, 3.85, 4.17, 3.46, 3.46, 3.55, 3.50, 4.13, 2.58, 2.28}),
                         new AASeriesElement()
                                 .name("2019")
                                 .fillColor(gradientGoldColorDic)
-                                .lineWidth(6f)
+                                .lineWidth(6)
                                 .step((true))
                                 .dataLabels(new AADataLabels()
-                                        .style(AAStyle.style("#ffd066",11f)))
+                                        .style(AAStyle.style("#ffd066",11)))
                                 .data(new Object[]{1.16, 1.67, 2.64, 2.86, 3.00, 3.21, 4.14, 4.07, 3.68, 3.11, 3.41, 3.25, 3.32, 3.07, 3.92, 3.05, 2.18, 3.24}),
                         new AASeriesElement()
                                 .name("2020")
                                 .fillColor(gradientGreenColorDic)
-                                .lineWidth(6f)
+                                .lineWidth(6)
                                 .step((true))
                                 .dataLabels(new AADataLabels()
-                                        .style(AAStyle.style("#04d69f",11f)))
+                                        .style(AAStyle.style("#04d69f",11)))
                                 .data(new Object[]{5.59, 3.09, 4.09, 6.14, 5.33, 6.05, 5.71, 6.22, 6.56, 4.75, 5.27, 6.02, 5.22, 5.77, 6.19, 5.68, 4.33, 5.48}),
                 });
     }
@@ -1079,14 +1079,14 @@ public class CustomStyleChartComposer {
                 .categories(new String[]{
                         "一月", "二月", "三月", "四月", "五月", "六月",
                         "七月", "八月", "九月", "十月", "十一月", "十二月"})
-                .markerRadius(0f)//marker点半径为0个像素
-                .yAxisLineWidth(0f)
-                .yAxisGridLineWidth(0f)
+                .markerRadius(0)//marker点半径为0个像素
+                .yAxisLineWidth(0)
+                .yAxisGridLineWidth(0)
                 .legendEnabled(false)
                 .series(new AASeriesElement[]{
                         new AASeriesElement()
                                 .name("Tokyo Hot")
-                                .lineWidth(5.0f)
+                                .lineWidth(5.0)
                                 .color("rgba(220,20,60,1)")//猩红色, alpha 透明度 1
                                 .marker(new AAMarker()
                                         .states(new AAMarkerStates()
@@ -1105,28 +1105,28 @@ public class CustomStyleChartComposer {
                 .style(AAStyle.style(AAColor.Red, 15f, AAChartFontWeightType.Bold))
                 .backgroundColor(AAColor.White)// white color
                 .borderColor(AAColor.Red)// red color
-                .borderRadius(1.5f)
-                .borderWidth(1.3f);
+                .borderRadius(1.5)
+                .borderWidth(1.3);
 
         AADataElement minData = new AADataElement()
                 .dataLabels(aaDataLabels)
-                .y(2.5f);
+                .y(2.5);
 
         AADataElement maxData = new AADataElement()
                 .dataLabels(aaDataLabels)
-                .y(49.5f);
+                .y(49.5);
 
         return new AAChartModel()
                 .chartType(AAChartType.Spline)
                 .dataLabelsEnabled(false)//是否显示值
                 .tooltipEnabled(false)
-                .markerRadius(0f)
+                .markerRadius(0)
                 .xAxisVisible(false)
                 .yAxisVisible(false)
                 .series(new AASeriesElement[]{
                         new AASeriesElement()
                                 .name("Show The Max and Min values Data Labels")
-                                .lineWidth(7f)
+                                .lineWidth(7)
                                 .data(new Object[]{7.0, 6.9, minData, 14.5, 18.2, maxData, 5.2, 26.5, 23.3, 26.5, 13.9, 9.6})
                                 .color(AAGradientColor.OceanBlue)
                 });
@@ -1151,7 +1151,7 @@ public class CustomStyleChartComposer {
                         "忍<br>者<br>之<br>印"
                 })
                 .tooltipEnabled(false)
-                .borderRadius(3f)
+                .borderRadius(3)
                 .markerSymbolStyle(AAChartSymbolStyleType.InnerBlank)
                 .series(new AASeriesElement[]{
                         new AASeriesElement()
@@ -1175,9 +1175,9 @@ public class CustomStyleChartComposer {
                 .chartType(AAChartType.Column)
                 .categories(new String[]{"11/23", "11/24", "11/25", "11/26", "11/27", "11/28", "11/29"})
 //            .yAxisTickPositions([0, 10, 20, 30, 40, 50])
-                .yAxisMax(50f)
-                .yAxisMin(0f)
-                .borderRadius(5f)
+                .yAxisMax(50)
+                .yAxisMin(0)
+                .borderRadius(5)
                 .series(new AAColumn[]{
                         new AAColumn()
                                 .name("总做题")
@@ -1198,9 +1198,9 @@ public class CustomStyleChartComposer {
                 .chartType(AAChartType.Column)
                 .categories(new String[]{"11/23","11/24", "11/25","11/26","11/27","11/28","11/29"})
 //            .yAxisTickPositions([0, 10, 20, 30, 40, 50])
-                .yAxisMax(50f)
-                .yAxisMin(0f)
-                .borderRadius(5f)
+                .yAxisMax(50)
+                .yAxisMin(0)
+                .borderRadius(5)
                 .series(new Object[]{
                         new AAColumn()
                                 .name("总目标")
@@ -1251,7 +1251,7 @@ public class CustomStyleChartComposer {
                 .stacking(AAChartStackingType.Percent)
                 .title("Free-Style Rounded Corners Stacking Column Chart")
                 .xAxisVisible(false)
-                .yAxisGridLineWidth(0f)
+                .yAxisGridLineWidth(0)
                 .colorsTheme(new Object[]{
                         AAGradientColor.linearGradient(AAColor.rgbColor(128, 255, 165), AAColor.rgbColor(1  , 191, 236)),
                         AAGradientColor.linearGradient(AAColor.rgbColor(0  , 221, 255), AAColor.rgbColor(77 , 119, 255)),
@@ -1285,7 +1285,7 @@ public class CustomStyleChartComposer {
                                 .data(new Object[]{5.59, 3.09, 4.09, 6.14, 5.33, 6.05, 5.71, 6.22, 6.56, 4.75, 5.27, 6.02, 5.22, 5.77, 6.19, 5.68, 4.33, 5.48}),
 
                         new AASeriesElement()
-                                .borderRadius(20f)
+                                .borderRadius(20)
                                 .data(new Object[]{2.10, 2.54, 2.78, 3.62, 4.41, 4.09, 3.83, 4.47, 4.20, 3.94, 3.80, 3.58, 3.19, 4.30, 3.69, 3.52, 3.02, 3.30}),
 
                         new AASeriesElement()
@@ -1325,8 +1325,8 @@ public class CustomStyleChartComposer {
                         new AASeriesElement()
                                 .name("Berlin Hot")
                                 .borderColor(AAColor.White)
-                                .borderWidth(3f)
-                                .borderRadius(10f)
+                                .borderWidth(3)
+                                .borderRadius(10)
                                 .states(new AAStates()
                                         .hover(new AAHover()
                                                 .color(AAColor.Red)))
@@ -1335,8 +1335,8 @@ public class CustomStyleChartComposer {
                         new AASeriesElement()
                                 .name("Beijing Hot")
                                 .borderColor(AAColor.White)
-                                .borderWidth(3f)
-                                .borderRadius(10f)
+                                .borderWidth(3)
+                                .borderRadius(10)
                                 .states(new AAStates()
                                         .hover(new AAHover()
                                                 .color("dodgerblue")))// Dodgerblue／道奇藍／#1e90ff十六进制颜色代码

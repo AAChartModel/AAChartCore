@@ -4,20 +4,20 @@ import java.util.Map;
 
 public class AAHalo {
     public Map attributes;
-    public Float opacity;
-    public Float size;
+    public Number opacity;
+    public Number size;
 
     public AAHalo attributes(Map prop) {
         attributes = prop;
         return this;
     }
 
-    public AAHalo opacity(Float prop) {
+    public AAHalo opacity(Number prop) {
         opacity = prop;
         return this;
     }
 
-    public AAHalo size(Float prop) {
+    public AAHalo size(Number prop) {
         size = prop;
         return this;
     }

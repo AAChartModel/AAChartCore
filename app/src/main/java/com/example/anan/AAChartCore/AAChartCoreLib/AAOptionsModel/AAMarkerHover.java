@@ -5,10 +5,10 @@ public class AAMarkerHover {
     public Boolean enabled;
     public String fillColor;
     public String lineColor;
-    public Float lineWidth;
-    public Float lineWidthPlus;
-    public Float radius;
-    public Float radiusPlus;
+    public Number lineWidth;
+    public Number lineWidthPlus;
+    public Number radius;
+    public Number radiusPlus;
 
     public AAMarkerHover enabled(Boolean prop) {
         enabled = prop;
@@ -25,22 +25,22 @@ public class AAMarkerHover {
         return this;
     }
 
-    public AAMarkerHover lineWidth(Float prop) {
+    public AAMarkerHover lineWidth(Number prop) {
         lineWidth = prop;
         return this;
     }
 
-    public AAMarkerHover lineWidthPlus(Float prop) {
+    public AAMarkerHover lineWidthPlus(Number prop) {
         lineWidthPlus = prop;
         return this;
     }
 
-    public AAMarkerHover radius(Float prop) {
+    public AAMarkerHover radius(Number prop) {
         radius = prop;
         return this;
     }
 
-    public AAMarkerHover radiusPlus(Float prop) {
+    public AAMarkerHover radiusPlus(Number prop) {
         radiusPlus = prop;
         return this;
     }

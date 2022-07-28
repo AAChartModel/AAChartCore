@@ -2,7 +2,7 @@ package com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel;
 
 public class AADataElement {
     public String name;
-    public Float y;
+    public Number y;
     public Object color;
     public AADataLabels dataLabels;
     public AAMarker marker;
@@ -12,7 +12,7 @@ public class AADataElement {
         return this;
     }
 
-    public AADataElement y(Float prop) {
+    public AADataElement y(Number prop) {
         y = prop;
         return this;
     }
