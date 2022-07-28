@@ -23,7 +23,7 @@ public class AAItemStyle {
         return this;
     }
 
-    public AAItemStyle fontSize(Float prop) {
+    public AAItemStyle fontSize(Number prop) {
         fontSize = prop + "px";
         return this;
     }

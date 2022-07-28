@@ -1,11 +1,11 @@
 package com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel;
 
 public class AACrosshair {
-    public Float width;
+    public Number width;
     public String color;
     public String dashStyle;
 
-    public AACrosshair width(Float prop) {
+    public AACrosshair width(Number prop) {
         width = prop;
         return this;
     }

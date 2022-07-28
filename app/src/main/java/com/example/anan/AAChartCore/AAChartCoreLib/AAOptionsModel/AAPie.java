@@ -5,14 +5,14 @@ public class AAPie {
     public String name;
     public Object[] data;
     public AADataLabels dataLabels;
-    public Float size;
+    public Number size;
     public String innerSize;
     public Boolean allowPointSelect;
     public String cursor;
     public Boolean showInLegend;
-    public Float startAngle;
-    public Float endAngle;
-    public Float depth;
+    public Number startAngle;
+    public Number endAngle;
+    public Number depth;
     public Object center;
 
     public AAPie type(String prop) {
@@ -35,7 +35,7 @@ public class AAPie {
         return this;
     }
 
-    public AAPie size(Float prop) {
+    public AAPie size(Number prop) {
         size = prop;
         return this;
     }
@@ -60,17 +60,17 @@ public class AAPie {
         return this;
     }
 
-    public AAPie startAngle(Float prop) {
+    public AAPie startAngle(Number prop) {
         startAngle = prop;
         return this;
     }
 
-    public AAPie endAngle(Float prop) {
+    public AAPie endAngle(Number prop) {
         endAngle = prop;
         return this;
     }
 
-    public AAPie depth(Float prop) {
+    public AAPie depth(Number prop) {
         depth = prop;
         return this;
     }

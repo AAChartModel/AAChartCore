@@ -4,8 +4,8 @@ public class AAPlotLinesElement {
 
     public Object color;
     public String dashStyle;
-    public Float width;
-    public Float value;
+    public Number width;
+    public Number value;
     public Integer zIndex;
     public AALabel label;
 
@@ -19,12 +19,12 @@ public class AAPlotLinesElement {
         return this;
     }
 
-    public AAPlotLinesElement width(Float prop) {
+    public AAPlotLinesElement width(Number prop) {
         width = prop;
         return this;
     }
 
-    public AAPlotLinesElement value(Float prop) {
+    public AAPlotLinesElement value(Number prop) {
         value = prop;
         return this;
     }

@@ -1,21 +1,21 @@
 package com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel;
 
 public class AAPlotBandsElement {
-    public Float from;
-    public Float to;
+    public Number from;
+    public Number to;
     public Object color;
     public String borderColor;
-    public Float borderWidth;
+    public Number borderWidth;
     public String className;
     public AALabel label;
     public Integer zIndex;
 
-    public AAPlotBandsElement from(Float prop) {
+    public AAPlotBandsElement from(Number prop) {
         from = prop;
         return this;
     }
 
-    public AAPlotBandsElement to(Float prop) {
+    public AAPlotBandsElement to(Number prop) {
         to = prop;
         return this;
     }
@@ -30,7 +30,7 @@ public class AAPlotBandsElement {
         return this;
     }
 
-    public AAPlotBandsElement borderWidth(Float prop) {
+    public AAPlotBandsElement borderWidth(Number prop) {
         borderWidth = prop;
         return this;
     }

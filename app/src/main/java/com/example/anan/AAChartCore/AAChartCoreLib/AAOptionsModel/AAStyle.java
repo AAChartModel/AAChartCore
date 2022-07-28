@@ -162,14 +162,14 @@ public class AAStyle {
 
     public static AAStyle style(
             String color,
-            Float fontSize
+            Number fontSize
     ) {
         return AAStyle.style(color,fontSize,null);
     }
 
     public static AAStyle style(
             String color,
-            Float fontSize,
+            Number fontSize,
             String fontWeight
     ) {
         return AAStyle.style(color,fontSize,fontWeight,null);
@@ -177,7 +177,7 @@ public class AAStyle {
 
     public static AAStyle style(
             String color,
-            Float fontSize,
+            Number fontSize,
             String fontWeight,
             String textOutline
     ) {

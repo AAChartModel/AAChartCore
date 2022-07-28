@@ -6,11 +6,11 @@ public class AALegend {
     public String verticalAlign; //设定图例在图表区中的垂直对齐方式，合法值有 top，middle 和 bottom。垂直位置可以通过 y 选项做进一步设定。
     public Boolean enabled;
     public String borderColor;
-    public Float borderWidth;
-    public Float itemMarginTop; //图例的每一项的顶部外边距，单位px。 默认是：0.
+    public Number borderWidth;
+    public Number itemMarginTop; //图例的每一项的顶部外边距，单位px。 默认是：0.
     public AAItemStyle itemStyle;
-    public Float x;
-    public Float y;
+    public Number x;
+    public Number y;
     public Boolean floating;
 
     public AALegend layout(String prop) {
@@ -38,12 +38,12 @@ public class AALegend {
         return this;
     }
 
-    public AALegend BorderWidth(Float prop) {
+    public AALegend BorderWidth(Number prop) {
         borderWidth = prop;
         return this;
     }
 
-    public AALegend itemMarginTop(Float prop) {
+    public AALegend itemMarginTop(Number prop) {
         itemMarginTop = prop;
         return this;
     }
@@ -53,12 +53,12 @@ public class AALegend {
         return this;
     }
 
-    public AALegend x(Float prop) {
+    public AALegend x(Number prop) {
         x = prop;
         return this;
     }
 
-    public AALegend y(Float prop) {
+    public AALegend y(Number prop) {
         y = prop;
         return this;
     }
