@@ -13,7 +13,7 @@ public class AABar {
     public AADataLabels dataLabels;
     public String stacking;
     public Number borderRadius;
-    public Float yAxis;
+    public Integer yAxis;
 
     public AABar name(String prop) {
         name = prop;
@@ -75,7 +75,7 @@ public class AABar {
         return this;
     }
 
-    public AABar yAxis(Float prop) {
+    public AABar yAxis(Integer prop) {
         yAxis = prop;
         return this;
     }
