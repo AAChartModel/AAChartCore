@@ -8,8 +8,8 @@ public class AATitle {
     public AAStyle style;
     public String align;
     public String verticalAlign;
-    public Float x;
-    public Float y;
+    public Number x;
+    public Number y;
     public Boolean userHTML;
 
     public AATitle text(String prop) {
@@ -32,12 +32,12 @@ public class AATitle {
         return this;
     }
 
-    public AATitle x(Float prop) {
+    public AATitle x(Number prop) {
         x = prop;
         return this;
     }
 
-    public AATitle y(Float prop) {
+    public AATitle y(Number prop) {
         y = prop;
         return this;
     }
