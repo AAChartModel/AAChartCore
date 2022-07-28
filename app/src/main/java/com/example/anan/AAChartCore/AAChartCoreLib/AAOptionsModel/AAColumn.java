@@ -13,7 +13,7 @@ public class AAColumn {
     public AADataLabels dataLabels;
     public String stacking;
     public Number borderRadius;
-    public Float yAxis;
+    public Integer yAxis;
 
     public AAColumn name(String prop) {
         name = prop;
@@ -75,7 +75,7 @@ public class AAColumn {
         return this;
     }
 
-    public AAColumn yAxis(Float prop) {
+    public AAColumn yAxis(Integer prop) {
         yAxis = prop;
         return this;
     }
