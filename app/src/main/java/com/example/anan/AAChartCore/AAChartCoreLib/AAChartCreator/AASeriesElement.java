@@ -48,18 +48,18 @@ public class AASeriesElement {
     private Boolean allowPointSelect;
     private String name;
     private Object[] data;
-    private Float lineWidth;//折线图、曲线图、直方折线图、折线填充图、曲线填充图、直方折线填充图的线条宽度
+    private Number lineWidth;//折线图、曲线图、直方折线图、折线填充图、曲线填充图、直方折线填充图的线条宽度
     private String borderColor; //The border color, It is only valid for column, bar, pie, columnrange, pyramid and funnel chart types
-    private Float  borderWidth; //The border width, It is only valid for column, bar, pie, columnrange, pyramid and funnel chart types
-    private Float  borderRadius; //The corner radius of the border surrounding each column or bar.
+    private Number borderWidth; //The border width, It is only valid for column, bar, pie, columnrange, pyramid and funnel chart types
+    private Number borderRadius; //The corner radius of the border surrounding each column or bar.
     private Object borderRadiusTopLeft;
     private Object borderRadiusTopRight;
     private Object borderRadiusBottomLeft;
     private Object borderRadiusBottomRight;
     private Object color;
     private Object fillColor;
-    private Float fillOpacity;//折线填充图、曲线填充图、直方折线填充图等填充图类型的填充颜色透明度
-    private Float threshold;//The threshold, also called zero level or base level. For line type series this is only used in conjunction with negativeColor. default：0.
+    private Number fillOpacity;//折线填充图、曲线填充图、直方折线填充图等填充图类型的填充颜色透明度
+    private Number threshold;//The threshold, also called zero level or base level. For line type series this is only used in conjunction with negativeColor. default：0.
     private String negativeColor;// The color for the parts of the graph or points that are below the threshold
     private Object negativeFillColor;
     private Object size;
@@ -101,7 +101,7 @@ public class AASeriesElement {
         return this;
     }
 
-    public AASeriesElement lineWidth(Float prop) {
+    public AASeriesElement lineWidth(Number prop) {
         lineWidth = prop;
         return this;
     }
@@ -111,12 +111,12 @@ public class AASeriesElement {
         return this;
     }
 
-    public AASeriesElement borderWidth(Float prop) {
+    public AASeriesElement borderWidth(Number prop) {
         borderWidth = prop;
         return this;
     }
 
-    public AASeriesElement borderRadius(Float prop) {
+    public AASeriesElement borderRadius(Number prop) {
         borderRadius = prop;
         return this;
     }
@@ -151,12 +151,12 @@ public class AASeriesElement {
         return this;
     }
 
-    public AASeriesElement fillOpacity(Float prop) {
+    public AASeriesElement fillOpacity(Number prop) {
         fillOpacity = prop;
         return this;
     }
 
-    public AASeriesElement threshold(Float prop) {
+    public AASeriesElement threshold(Number prop) {
         threshold = prop;
         return this;
     }
