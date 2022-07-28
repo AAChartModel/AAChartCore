@@ -3,7 +3,7 @@ package com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel;
 import com.example.anan.AAChartCore.AAChartCoreLib.AATools.AAJSStringPurer;
 
 public class AATooltip {
-    public String backgroundColor;
+    public Object backgroundColor;
     public String borderColor;
     public Float borderRadius;
     public Float borderWidth;
@@ -24,7 +24,7 @@ public class AATooltip {
     public String positioner;
     public AADateTimeLabelFormats dateTimeLabelFormats;
 
-    public AATooltip backgroundColor(String prop) {
+    public AATooltip backgroundColor(Object prop) {
         backgroundColor = prop;
         return this;
     }

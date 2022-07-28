@@ -83,6 +83,9 @@ public class ChartOptionsComposer {
         AAOptions aaOptions = aaChartModel.aa_toAAOptions();
 
         aaOptions.chart.animation = false;// disable animation
+        aaOptions.tooltip
+                .backgroundColor(AAGradientColor.Firebrick)
+                .style(AAStyle.style(AAColor.White));
 
         aaOptions.xAxis.tickWidth = 1f;
         aaOptions.yAxis.labels.format = "{value} %";//给y轴添加单位
