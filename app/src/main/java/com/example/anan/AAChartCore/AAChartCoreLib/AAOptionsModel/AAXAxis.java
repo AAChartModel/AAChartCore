@@ -61,7 +61,7 @@ public class AAXAxis extends AAAxis {
         return this;
     }
 
-    public AAXAxis lineWidth(Float prop) {
+    public AAXAxis lineWidth(Number prop) {
         lineWidth = prop;
         return this;
     }
@@ -71,12 +71,12 @@ public class AAXAxis extends AAAxis {
         return this;
     }
 
-    public AAXAxis max(Float prop) {
+    public AAXAxis max(Number prop) {
         max = prop;
         return this;
     }
 
-    public AAXAxis min(Float prop) {
+    public AAXAxis min(Number prop) {
         min = prop;
         return this;
     }
@@ -101,7 +101,7 @@ public class AAXAxis extends AAAxis {
         return this;
     }
 
-    public AAXAxis minorGridLineWidth(Float prop) {
+    public AAXAxis minorGridLineWidth(Number prop) {
         minorGridLineWidth = prop;
         return this;
     }
@@ -116,7 +116,7 @@ public class AAXAxis extends AAAxis {
         return this;
     }
 
-    public AAXAxis minorTickLength(Float prop) {
+    public AAXAxis minorTickLength(Number prop) {
         minorTickLength = prop;
         return this;
     }
@@ -126,12 +126,12 @@ public class AAXAxis extends AAAxis {
         return this;
     }
 
-    public AAXAxis minorTickWidth(Float prop) {
+    public AAXAxis minorTickWidth(Number prop) {
         minorTickWidth = prop;
         return this;
     }
 
-    public AAXAxis gridLineWidth(Float prop) {
+    public AAXAxis gridLineWidth(Number prop) {
         gridLineWidth = prop;
         return this;
     }
@@ -151,7 +151,7 @@ public class AAXAxis extends AAAxis {
         return this;
     }
 
-    public AAXAxis off(Float prop) {
+    public AAXAxis off(Number prop) {
         off = prop;
         return this;
     }
@@ -186,12 +186,12 @@ public class AAXAxis extends AAAxis {
         return this;
     }
 
-    public AAXAxis tickWidth(Float prop) {
+    public AAXAxis tickWidth(Number prop) {
         tickWidth = prop;
         return this;
     }
 
-    public AAXAxis tickLength(Float prop) {
+    public AAXAxis tickLength(Number prop) {
         tickLength = prop;
         return this;
     }

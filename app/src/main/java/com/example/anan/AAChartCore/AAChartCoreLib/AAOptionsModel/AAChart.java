@@ -12,11 +12,11 @@ public class AAChart {
     public Boolean inverted;
     /*图表外边缘和绘图区域之间的边距。 数组中的数字分别表示顶部，右侧，底部和左侧 ([👆,👉,👇,👈])。
     也可以使用 marginTop，marginRight，marginBottom 和 marginLeft 来设置某一个方向的边距*/
-    public Float[] margin;
-    public Float marginTop; //👆
-    public Float marginRight; //👉
-    public Float marginBottom; //👇
-    public Float marginLeft; //👈
+    public Number[] margin;
+    public Number marginTop; //👆
+    public Number marginRight; //👉
+    public Number marginBottom; //👇
+    public Number marginLeft; //👈
     public AAScrollablePlotArea scrollablePlotArea;
     public AAResetZoomButton resetZoomButton;
 
@@ -66,27 +66,27 @@ public class AAChart {
         return this;
     }
 
-    public AAChart margin(Float[] prop) {
+    public AAChart margin(Number[] prop) {
         margin = prop;
         return this;
     }
 
-    public AAChart marginTop(Float prop) {
+    public AAChart marginTop(Number prop) {
         marginTop = prop;
         return this;
     }
 
-    public AAChart marginRight(Float prop) {
+    public AAChart marginRight(Number prop) {
         marginRight = prop;
         return this;
     }
 
-    public AAChart marginBottom(Float prop) {
+    public AAChart marginBottom(Number prop) {
         marginBottom = prop;
         return this;
     }
 
-    public AAChart marginLeft(Float prop) {
+    public AAChart marginLeft(Number prop) {
         marginLeft = prop;
         return this;
     }

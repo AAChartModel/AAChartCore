@@ -2,10 +2,10 @@ package com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel;
 
 public class AAMarker {
     public Boolean enabled;
-    public Float radius;
+    public Number radius;
     public String symbol;
     public String fillColor;//点的填充色(用来设置折线连接点的填充色)
-    public Float lineWidth;//外沿线的宽度(用来设置折线连接点的轮廓描边的宽度)
+    public Number lineWidth;//外沿线的宽度(用来设置折线连接点的轮廓描边的宽度)
     public Object lineColor;//外沿线的颜色(用来设置折线连接点的轮廓描边颜色，当值为空字符串时，默认取数据点或数据列的颜色。)
     public AAMarkerStates states;
 
@@ -14,7 +14,7 @@ public class AAMarker {
         return this;
     }
 
-    public AAMarker radius(Float prop) {
+    public AAMarker radius(Number prop) {
         radius = prop;
         return this;
     }
@@ -29,7 +29,7 @@ public class AAMarker {
         return this;
     }
 
-    public AAMarker lineWidth(Float prop) {
+    public AAMarker lineWidth(Number prop) {
         lineWidth = prop;
         return this;
     }
