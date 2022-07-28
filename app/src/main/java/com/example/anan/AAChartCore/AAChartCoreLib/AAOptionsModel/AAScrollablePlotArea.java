@@ -1,18 +1,18 @@
 package com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel;
 
 public class AAScrollablePlotArea {
-    public Integer minHeight;
-    public Integer minWidth;
+    public Number minHeight;
+    public Number minWidth;
     public Float opacity;
     public Number scrollPositionX;
     public Number scrollPositionY;
 
-    public AAScrollablePlotArea minHeight(Integer prop) {
+    public AAScrollablePlotArea minHeight(Number prop) {
         minHeight = prop;
         return this;
     }
 
-    public AAScrollablePlotArea minWidth(Integer prop) {
+    public AAScrollablePlotArea minWidth(Number prop) {
         minWidth = prop;
         return this;
     }
