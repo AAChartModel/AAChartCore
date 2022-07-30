@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
                     "HexagonRadarChart",
                     "adjustYAxisMaxAndMinValues---调整 X 轴和 Y 轴最大值",
                     "custom Special Style DataLabel Of Single Data Element Chart---指定单个数据元素的 DataLabel 为特殊样式",
-                    "custom Bar Chart Hover Color and Select Colorc---自定义条形图手指滑动颜色和单个长条被选中颜色",
+                    "custom Bar Chart Hover Color and Select Color---自定义条形图手指滑动颜色和单个长条被选中颜色",
                     "custom Line Chart Chart Hover And Select Halo Style---自定义直线图手指略过和选中的 Halo 样式",
                     "custom Spline Chart Marker States Hover Style---自定义曲线图手指略过时的 Marker 样式",
                     "customNormalStackingChartDataLabelsContentAndStyle---自定义堆积柱状图 DataLabels 的内容及样式",
@@ -99,6 +99,11 @@ public class MainActivity extends AppCompatActivity {
                     "topRoundedCornersStackingColumnChart---顶部为圆角的堆积柱状图📊",
                     "freeStyleRoundedCornersStackingColumnChart---各个圆角自由独立设置的堆积柱状图📊",
                     "customColumnChartBorderStyleAndStatesHoverColor---自定义柱状图 border 样式及手指掠过图表 series 元素时的柱形颜色",
+
+                    "customLineChartWithColorfulMarkersAndLines---彩色连接点和连接线的折线图📈",
+                    "customLineChartWithColorfulMarkersAndLines2---彩色连接点和连接线的多组折线的折线图📈",
+                    "drawLineChartWithPointsCoordinates---通过点坐标来绘制折线图",
+                    "configureSpecialStyleColumnForNegativeDataMixedPositiveData---为正负数混合的柱形图自定义特殊样式效果"
             },
             /*使用AAOptions绘制图表*/
             {
@@ -255,6 +260,11 @@ public class MainActivity extends AppCompatActivity {
                     "topRoundedCornersStackingColumnChart",
                     "freeStyleRoundedCornersStackingColumnChart",
                     "customColumnChartBorderStyleAndStatesHoverColor",
+
+                    "customLineChartWithColorfulMarkersAndLines",
+                    "customLineChartWithColorfulMarkersAndLines2",
+                    "drawLineChartWithPointsCoordinates",
+                    "configureSpecialStyleColumnForNegativeDataMixedPositiveData",
             },
 
             {

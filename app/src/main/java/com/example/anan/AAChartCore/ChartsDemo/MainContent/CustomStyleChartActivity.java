@@ -108,6 +108,16 @@ public class CustomStyleChartActivity extends AppCompatActivity {
                 return freeStyleRoundedCornersStackingColumnChart();
             case "customColumnChartBorderStyleAndStatesHoverColor":
                 return customColumnChartBorderStyleAndStatesHoverColor();
+
+            case "customLineChartWithColorfulMarkersAndLines":
+                return customLineChartWithColorfulMarkersAndLines();
+            case "customLineChartWithColorfulMarkersAndLines2":
+                return customLineChartWithColorfulMarkersAndLines2();
+            case "drawLineChartWithPointsCoordinates":
+                return drawLineChartWithPointsCoordinates();
+            case "configureSpecialStyleColumnForNegativeDataMixedPositiveData":
+                return configureSpecialStyleColumnForNegativeDataMixedPositiveData();
+
         }
         return configureColorfulChart();
     }

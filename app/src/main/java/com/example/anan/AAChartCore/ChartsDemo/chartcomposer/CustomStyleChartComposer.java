@@ -21,6 +21,7 @@ import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AADataElement;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AADataLabels;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAHalo;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAHover;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAInactive;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAMarker;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAMarkerHover;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAMarkerStates;
@@ -28,11 +29,14 @@ import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AASelect;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAShadow;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAStates;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAStyle;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAZonesElement;
 import com.example.anan.AAChartCore.AAChartCoreLib.AATools.AAColor;
 import com.example.anan.AAChartCore.AAChartCoreLib.AATools.AAGradientColor;
 import com.example.anan.AAChartCore.AAChartCoreLib.AATools.AALinearGradientDirection;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class CustomStyleChartComposer {
@@ -1310,7 +1314,6 @@ public class CustomStyleChartComposer {
                 });
     }
 
-
     //https://github.com/AAChartModel/AAChartKit-Swift/issues/365
     public static AAChartModel customColumnChartBorderStyleAndStatesHoverColor() {
         return new AAChartModel()
@@ -1341,6 +1344,301 @@ public class CustomStyleChartComposer {
                                         .hover(new AAHover()
                                                 .color("dodgerblue")))// Dodgerblue／道奇藍／#1e90ff十六进制颜色代码
                                 .data(new Object[]{0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5}),
+                });
+    }
+
+    //https://github.com/AAChartModel/AAChartKit/issues/1291
+    public static AAChartModel customLineChartWithColorfulMarkersAndLines() {
+        return new AAChartModel()
+                .chartType(AAChartType.Line)
+                .title("Custom Line Chart With Colorful Markers And Lines")
+                .markerRadius(18.0)//marker点半径为8个像素
+                .yAxisLineWidth(0)
+                .yAxisGridLineWidth(0)
+                .legendEnabled(false)
+                .series(new AASeriesElement[]{
+                        new AASeriesElement()
+                                .name("Tokyo Hot")
+                                .lineWidth(5.0)
+                                .marker(new AAMarker()
+                                        .states(new AAMarkerStates()
+                                                .hover(new AAMarkerHover()
+                                                        .radius(40)
+                                                        .lineWidth(5))))
+                                .data(new Object[]{
+                                        2, 4, 8, 16, 32, 64, 128,
+                                        new AADataElement()
+                                                .y(256.0)
+                                                .color(AAColor.Red)
+                                })
+                                .zoneAxis("x")
+                                .zones(new AAZonesElement[]{
+                                new AAZonesElement()
+                                        .value(1)
+                                        .color(AAColor.Red),
+                                new AAZonesElement()
+                                        .value(2)
+                                        .color(AAColor.Orange),
+                                new AAZonesElement()
+                                        .value(3)
+                                        .color(AAColor.Yellow),
+                                new AAZonesElement()
+                                        .value(4)
+                                        .color(AAColor.Green),
+                                new AAZonesElement()
+                                        .value(5)
+                                        .color(AAColor.Cyan),
+                                new AAZonesElement()
+                                        .value(6)
+                                        .color(AAColor.Blue),
+                                new AAZonesElement()
+                                        .value(7)
+                                        .color(AAColor.Purple),
+                        })
+                        ,
+                });
+    }
+
+    //https://github.com/AAChartModel/AAChartKit/issues/1291
+    //https://github.com/AAChartModel/AAChartKit/issues/1293
+    public static AAChartModel customLineChartWithColorfulMarkersAndLines2() {
+        return new AAChartModel()
+                .chartType(AAChartType.Line)
+                .title("Custom Line Chart With Colorful Markers And Lines")
+                .markerRadius(25.0)//marker点半径为8个像素
+                .markerSymbol(AAChartSymbolType.Circle)
+                .yAxisLineWidth(0)
+                .yAxisGridLineWidth(0)
+                .legendEnabled(true)
+                .stacking(AAChartStackingType.Normal)
+                .series(new AASeriesElement[]{
+                        new AASeriesElement()
+                                .name(AAColor.Blue)
+                                .lineWidth(20.0)
+                                .data(new Object[]{
+                                        2048, 1024, 1024, 1024, 1024,
+                                        new AADataElement()
+                                                .y(2048)
+                                                .color(AAColor.rgbaColor(30, 144, 255, 1.0f)),
+                                })
+                                .zoneAxis("x")
+                                .zones(new AAZonesElement[]{
+                                new AAZonesElement()
+                                        .value(1)
+                                        .color(AAColor.rgbaColor(30, 144, 255, 1.0f)),
+                                new AAZonesElement()
+                                        .value(2)
+                                        .color(AAColor.rgbaColor(30, 144, 255, 0.8f)),
+                                new AAZonesElement()
+                                        .value(3)
+                                        .color(AAColor.rgbaColor(30, 144, 255, 0.6f)),
+                                new AAZonesElement()
+                                        .value(4)
+                                        .color(AAColor.rgbaColor(30, 144, 255, 0.4f)),
+                                new AAZonesElement()
+                                        .value(5)
+                                        .color(AAColor.rgbaColor(30, 144, 255, 0.2f)),
+                        })
+                        ,
+                        new AASeriesElement()
+                                .name(AAColor.Red)
+                                .lineWidth(20.0)
+                                .data(new Object[]{
+                                        2048, 1024, 1024, 1024, 1024,
+                                        new AADataElement()
+                                                .y(2048)
+                                                .color(AAColor.rgbaColor(255, 0, 0, 1.0f)),
+                                })
+                                .zoneAxis("x")
+                                .zones(new AAZonesElement[]{
+                                new AAZonesElement()
+                                        .value(1)
+                                        .color(AAColor.rgbaColor(255, 0, 0, 1.0f)),
+                                new AAZonesElement()
+                                        .value(2)
+                                        .color(AAColor.rgbaColor(255, 0, 0, 0.8f)),
+                                new AAZonesElement()
+                                        .value(3)
+                                        .color(AAColor.rgbaColor(255, 0, 0, 0.6f)),
+                                new AAZonesElement()
+                                        .value(4)
+                                        .color(AAColor.rgbaColor(255, 0, 0, 0.4f)),
+                                new AAZonesElement()
+                                        .value(5)
+                                        .color(AAColor.rgbaColor(255, 0, 0, 0.2f)),
+                        })
+                        ,
+                        new AASeriesElement()
+                                .name(AAColor.Yellow)
+                                .lineWidth(20.0)
+                                .data(new Object[]{
+                                        2048, 1024, 1024, 1024, 1024,
+                                        new AADataElement()
+                                                .y(2048)
+                                                .color(AAColor.rgbaColor(255, 215, 0, 1.0f)),
+                                })
+                                .zoneAxis("x")
+                                .zones(new AAZonesElement[]{
+                                new AAZonesElement()
+                                        .value(1)
+                                        .color(AAColor.rgbaColor(255, 215, 0, 1.0f)),
+                                new AAZonesElement()
+                                        .value(2)
+                                        .color(AAColor.rgbaColor(255, 215, 0, 0.8f)),
+                                new AAZonesElement()
+                                        .value(3)
+                                        .color(AAColor.rgbaColor(255, 215, 0, 0.6f)),
+                                new AAZonesElement()
+                                        .value(4)
+                                        .color(AAColor.rgbaColor(255, 215, 0, 0.4f)),
+                                new AAZonesElement()
+                                        .value(5)
+                                        .color(AAColor.rgbaColor(255, 215, 0, 0.2f)),
+                        })
+                        ,
+                        new AASeriesElement()
+                                .name(AAColor.Green)
+                                .lineWidth(20.0)
+                                .data(new Object[]{
+                                        2048, 1024, 1024, 1024, 1024,
+                                        new AADataElement()
+                                                .y(2048)
+                                                .color(AAColor.rgbaColor(50, 205, 50, 1.0f)),
+                                })
+                                .zoneAxis("x")
+                                .zones(new AAZonesElement[]{
+                                new AAZonesElement()
+                                        .value(1)
+                                        .color(AAColor.rgbaColor(50, 205, 50, 1.0f)),
+                                new AAZonesElement()
+                                        .value(2)
+                                        .color(AAColor.rgbaColor(50, 205, 50, 0.8f)),
+                                new AAZonesElement()
+                                        .value(3)
+                                        .color(AAColor.rgbaColor(50, 205, 50, 0.6f)),
+                                new AAZonesElement()
+                                        .value(4)
+                                        .color(AAColor.rgbaColor(50, 205, 50, 0.4f)),
+                                new AAZonesElement()
+                                        .value(5)
+                                        .color(AAColor.rgbaColor(50, 205, 50, 0.2f)),
+                        })
+                        ,
+                        new AASeriesElement()
+                                .name(AAColor.Purple)
+                                .lineWidth(20.0)
+                                .data(new Object[]{
+                                        2048, 1024, 1024, 1024, 1024,
+                                        new AADataElement()
+                                                .y(2048)
+                                                .color(AAColor.rgbaColor(138, 43, 226, 1.0f)),
+                                })
+                                .zoneAxis("x")
+                                .zones(new AAZonesElement[]{
+                                new AAZonesElement()
+                                        .value(1)
+                                        .color(AAColor.rgbaColor(138, 43, 226, 1.0f)),
+                                new AAZonesElement()
+                                        .value(2)
+                                        .color(AAColor.rgbaColor(138, 43, 226, 0.8f)),
+                                new AAZonesElement()
+                                        .value(3)
+                                        .color(AAColor.rgbaColor(138, 43, 226, 0.6f)),
+                                new AAZonesElement()
+                                        .value(4)
+                                        .color(AAColor.rgbaColor(138, 43, 226, 0.4f)),
+                                new AAZonesElement()
+                                        .value(5)
+                                        .color(AAColor.rgbaColor(138, 43, 226, 0.2f)),
+                        })
+                        ,
+                });
+    }
+
+    //https://github.com/AAChartModel/AAChartKit/issues/1294
+    public static AAChartModel drawLineChartWithPointsCoordinates() {
+        Object[][] dataArr = new Object[][]{
+                {0, 200},
+                {0, 300},
+                {0, 400},
+                {1, 100},
+                {2, 120},
+                {3, 130}
+        };
+
+        return new AAChartModel()
+                .chartType(AAChartType.Scatter)
+                .title("Draw Line Chart With Points Coordinates")
+                .markerSymbol(AAChartSymbolType.Circle)
+                .markerSymbolStyle(AAChartSymbolStyleType.BorderBlank)
+                .markerRadius(8)
+                .colorsTheme(new String[]{AAColor.Red})
+                .series(new AASeriesElement[]{
+                        new AASeriesElement()
+                                .type(AAChartType.Line)
+                                .enableMouseTracking(false)
+                                .showInLegend(false)
+                                .marker(new AAMarker()
+                                        .enabled(false))
+                                .states(new AAStates()
+                                        .inactive(new AAInactive()
+                                                .enabled(false)))
+                                .data(dataArr),
+                        new AASeriesElement()
+                                .name("Red Dot")
+                                .type(AAChartType.Scatter)
+                                .data(dataArr),
+                });
+    }
+
+    //https://github.com/AAChartModel/AAChartKit/issues/1351
+    public static AAChartModel configureSpecialStyleColumnForNegativeDataMixedPositiveData() {
+        String[] categoriesArr = new String[]{
+                "立春", "雨水", "惊蛰", "春分", "清明", "谷雨", "立夏", "小满", "芒种", "夏至", "小暑", "大暑",
+                "立秋", "处暑", "白露", "秋分", "寒露", "霜降", "立冬", "小雪", "大雪", "冬至", "小寒", "大寒"
+        };
+
+        Integer[] dataArr = new Integer[]{
+                -70, -69, -25, -145, -182, -215, -52, -265, -233, -453, -139, -96,
+                +70, +69, +25, +145, +182, +215, +52, +265, +233, +453, +139, +96,
+        };
+        ArrayList<AADataElement> newDataArr = new ArrayList<>();
+
+        for (Integer dataElementValue : dataArr) {
+            AADataLabels aaDataLabels = new AADataLabels()
+                    .enabled(true)
+                    .verticalAlign(AAChartVerticalAlignType.Middle)
+                    .x(0)
+                    .y(-10);
+
+            if (dataElementValue < 0) {
+                AADataElement negativeDataElement = new AADataElement()
+                        .y((-dataElementValue))
+                        .color(AAColor.Green)
+                        .dataLabels(aaDataLabels
+                                .format("-{y} 美元")
+                                .style(AAStyle.style(AAColor.Green, 11, AAChartFontWeightType.Thin)));
+                newDataArr.add(negativeDataElement);
+            } else {
+                AADataElement positiveDataElement = new AADataElement()
+                        .y((dataElementValue))
+                        .color(AAColor.Red)
+                        .dataLabels(aaDataLabels
+                                .format("+{y} 美元")
+                                .style(AAStyle.style(AAColor.Red, 11, AAChartFontWeightType.Thin)));
+                newDataArr.add(positiveDataElement);
+            }
+        }
+
+        return new AAChartModel()
+                .chartType(AAChartType.Column)
+                .categories(categoriesArr)
+                .tooltipEnabled(false)
+                .yAxisVisible(false)
+                .series(new AASeriesElement[]{
+                        new AASeriesElement()
+                                .name("虚构数据")
+                                .data(newDataArr.toArray())
                 });
     }
 
