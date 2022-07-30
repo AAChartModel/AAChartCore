@@ -701,7 +701,7 @@ public class MixedChartComposer {
 
 
     //GitHub issue https://github.com/AAChartModel/AAChartKit/issues/921
-    private AAChartModel configureNegativeColorMixedAreasplineChart() {
+    public static AAChartModel configureNegativeColorMixedAreasplineChart() {
         Object[][] blueStopsArr = new Object[][]{
                 new Object[]{0.0, AAColor.rgbaColor(30, 144, 255, 0.0f)},//颜色字符串设置支持十六进制类型和 rgba 类型
                 new Object[]{0.5, AAColor.rgbaColor(30, 144, 255, 0.0f)},

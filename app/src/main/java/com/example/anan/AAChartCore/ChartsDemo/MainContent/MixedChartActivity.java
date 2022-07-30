@@ -49,6 +49,10 @@ public class MixedChartActivity extends AppCompatActivity {
                 return polygonMixedScatter();
             case "polarChartMixed":
                 return polarChartMixed();
+            case "configurePieMixedLineMixedColumnChart":
+                return configurePieMixedLineMixedColumnChart();
+            case "configureNegativeColorMixedAreasplineChart":
+                return configureNegativeColorMixedAreasplineChart();
         }
         return arearangeMixedLine();
     }

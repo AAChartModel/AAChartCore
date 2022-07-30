@@ -32,7 +32,8 @@ public class MainActivity extends AppCompatActivity {
                     "Step Area Chart--- 直方折线填充图",
                     "Step Line Chart--- 直方折线图",
                     "Line Chart---折线图",
-                    "Spline Chart---曲线图",},
+                    "Spline Chart---曲线图",
+            },
             /*特殊类型图表*/
             {
                     "Polar Chart---极地图图",
@@ -47,7 +48,8 @@ public class MainActivity extends AppCompatActivity {
                     "Waterfall Chart--- 瀑布图",
                     "Pyramid Chart---金字塔图",
                     "Funnel Chart---漏斗图",
-                    "Errorbar Chart---误差图",},
+                    "Errorbar Chart---误差图",
+            },
             /*Mixed Chart---混合图*/
             {
                     "arearangeMixedLine",
@@ -58,7 +60,10 @@ public class MainActivity extends AppCompatActivity {
                     "scatterMixedLine",
                     "negativeColorMixedBubble",
                     "polygonMixedScatter",
-                    "polarChartMixed",},
+                    "polarChartMixed",
+                    "configurePieMixedLineMixedColumnChart",
+                    "configureNegativeColorMixedAreasplineChart",
+            },
             /*自定义样式图表*/
             {
                     "colorfulChart",
@@ -219,6 +224,8 @@ public class MainActivity extends AppCompatActivity {
                     "negativeColorMixedBubble",
                     "polygonMixedScatter",
                     "polarChartMixed",
+                    "configurePieMixedLineMixedColumnChart",
+                    "configureNegativeColorMixedAreasplineChart",
             },
             {
                     /*自定义样式图表*/
