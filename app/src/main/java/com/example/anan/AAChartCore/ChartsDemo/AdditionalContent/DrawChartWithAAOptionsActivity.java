@@ -65,6 +65,9 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
                 return simpleGaugeChart();
             case "gaugeChartWithPlotBand":
                 return gaugeChartWithPlotBand();
+
+            case "doubleLayerHalfPieChart":
+                return doubleLayerHalfPieChart();
         }
         return configureAAPlotBandsForChart();
     }

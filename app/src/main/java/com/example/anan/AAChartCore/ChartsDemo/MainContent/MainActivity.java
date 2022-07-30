@@ -129,7 +129,9 @@ public class MainActivity extends AppCompatActivity {
                     "configureDoubleYAxesMarketDepthChart",
                     "customAreaChartTooltipStyleLikeHTMLTable",
                     "simpleGaugeChart",
-                    "gaugeChartWithPlotBand",},
+                    "gaugeChartWithPlotBand",
+                    "doubleLayerHalfPieChart",
+            },
             /*即时刷新📈📊图表数据*/
             {
                     "Column Chart---柱形图",
@@ -294,6 +296,7 @@ public class MainActivity extends AppCompatActivity {
                     "customAreaChartTooltipStyleLikeHTMLTable",
                     "simpleGaugeChart",
                     "gaugeChartWithPlotBand",
+                    "doubleLayerHalfPieChart",
             },
             {
                     /*即时刷新📈📊图表数据*/
