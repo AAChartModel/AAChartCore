@@ -73,6 +73,7 @@ public class AASeriesElement {
     private Boolean colorByPoint;
     private Integer zIndex;
     private AAZonesElement[] zones;
+    private String zoneAxis;
     private AAShadow shadow;
     private String stack;
     private AATooltip tooltip;
@@ -223,6 +224,11 @@ public class AASeriesElement {
 
     public AASeriesElement zones(AAZonesElement[] prop) {
         zones = prop;
+        return this;
+    }
+
+    public AASeriesElement zoneAxis(String prop) {
+        zoneAxis = prop;
         return this;
     }
 
