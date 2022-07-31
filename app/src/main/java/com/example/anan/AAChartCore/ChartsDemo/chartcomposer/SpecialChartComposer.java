@@ -111,9 +111,7 @@ public class SpecialChartComposer {
                                 {"OC"    ,11},
                                 {"Go"    ,30},
                         })
-                                ,
-                        }
-                );
+                });
     }
 
 
@@ -967,7 +965,7 @@ public class SpecialChartComposer {
                         "一月", "二月", "三月", "四月", "五月", "六月",
                         "七月", "八月", "九月", "十月", "十一月", "十二月"
                 })
-                .series(new Object[]{
+                .series(new AASeriesElement[]{
                         new AASeriesElement()
                                 .name("降水")
                                 .type(AAChartType.Column)
@@ -992,7 +990,7 @@ public class SpecialChartComposer {
                 .dataLabelsEnabled(false)
                 .markerSymbolStyle(AAChartSymbolStyleType.BorderBlank)
                 .markerRadius(8)
-                .series(new Object[]{
+                .series(new AASeriesElement[]{
                         new AASeriesElement()
                                 .name("目标")
                                 .type(AAChartType.Polygon)
