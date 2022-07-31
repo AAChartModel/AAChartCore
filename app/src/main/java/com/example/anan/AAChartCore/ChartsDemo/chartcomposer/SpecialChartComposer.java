@@ -18,7 +18,7 @@ import java.util.Map;
 
 public class SpecialChartComposer {
 
-    public static AAChartModel configureColumnChart() {
+    public static AAChartModel configurePolarColumnChart() {
         return new AAChartModel()
                 .chartType(AAChartType.Column)
                 .polar(true)
@@ -29,6 +29,58 @@ public class SpecialChartComposer {
                 .series(new AASeriesElement[]{
                         new AASeriesElement()
                                 .name("2018")
+                                .colorByPoint(true)
+                                .data(new Object[] {
+                                7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6})
+                });
+    }
+
+    public static AAChartModel configurePolarBarChart() {
+        return new AAChartModel()
+                .chartType(AAChartType.Bar)
+                .polar(true)
+                .dataLabelsEnabled(false)
+                .categories(new String[]{
+                        "January", "February", "March", "April", "May", "June",
+                        "July", "August", "September", "October", "November", "December"})
+                .series(new AASeriesElement[]{
+                        new AASeriesElement()
+                                .name("2018")
+                                .colorByPoint(true)
+                                .data(new Object[] {
+                                7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6})
+                });
+    }
+
+    public static AAChartModel configurePolarLineChart() {
+        return new AAChartModel()
+                .chartType(AAChartType.Line)
+                .polar(true)
+                .dataLabelsEnabled(false)
+                .categories(new String[]{
+                        "January", "February", "March", "April", "May", "June",
+                        "July", "August", "September", "October", "November", "December"})
+                .series(new AASeriesElement[]{
+                        new AASeriesElement()
+                                .name("2018")
+                                .colorByPoint(true)
+                                .data(new Object[] {
+                                7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6})
+                });
+    }
+
+    public static AAChartModel configurePolarAreaChart() {
+        return new AAChartModel()
+                .chartType(AAChartType.Area)
+                .polar(true)
+                .dataLabelsEnabled(false)
+                .categories(new String[]{
+                        "January", "February", "March", "April", "May", "June",
+                        "July", "August", "September", "October", "November", "December"})
+                .series(new AASeriesElement[]{
+                        new AASeriesElement()
+                                .name("2018")
+                                .colorByPoint(true)
                                 .data(new Object[] {
                                 7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6})
                 });
@@ -723,9 +775,9 @@ public class SpecialChartComposer {
                 );
     }
 
-    public static AAChartModel configureLineChart() {
+    public static AAChartModel configureStepLineChart() {
         return new AAChartModel()
-                .chartType(AAChartType.Line)//图形类型
+                .chartType(AAChartType.Spline)//图形类型
                 .animationType(AAChartAnimationType.Bounce)//图形渲染动画类型为"bounce"
                 .title("STEP LINE CHART")//图形标题
                 .subtitle("2020/08/08")//图形副标题
@@ -754,9 +806,9 @@ public class SpecialChartComposer {
                 });
     }
 
-    public static AAChartModel configureAreaChart() {
+    public static AAChartModel configureStepAreaChart() {
         return new AAChartModel()
-                .chartType(AAChartType.Area)//图形类型
+                .chartType(AAChartType.Areaspline)//图形类型
                 .animationType(AAChartAnimationType.Bounce)//图形渲染动画类型为"bounce"
                 .title("STEP AREA CHART")//图形标题
                 .subtitle("2049/08/08")//图形副标题
@@ -934,6 +986,33 @@ public class SpecialChartComposer {
                 });
     }
 
-
-
+    public static AAChartModel configureGaugeChart() {
+        return new AAChartModel()
+                .title("多边形图")
+                .dataLabelsEnabled(false)
+                .markerSymbolStyle(AAChartSymbolStyleType.BorderBlank)
+                .markerRadius(8)
+                .series(new Object[]{
+                        new AASeriesElement()
+                                .name("目标")
+                                .type(AAChartType.Polygon)
+                                .data(new Object[][]{
+                                        {153, 42}, {149, 46}, {149, 55},
+                                        {152, 60}, {159, 70}, {170, 77},
+                                        {180, 70}, {180, 60}, {173, 52},
+                                        {166, 45}
+                                })
+                                .lineWidth(6),
+                        new AASeriesElement()
+                                .name("实际完成")
+                                .type(AAChartType.Polygon)
+                                .data(new Object[][]{
+                                        {153 * 1.6, 42 * 1.6}, {149 * 1.6, 46 * 1.6}, {149 * 1.6, 55 * 1.6},
+                                        {152 * 1.6, 60 * 1.6}, {159 * 1.6, 70 * 1.6}, {170 * 1.6, 77 * 1.6},
+                                        {180 * 1.6, 70 * 1.6}, {180 * 1.6, 60 * 1.6}, {173 * 1.6, 52 * 1.6},
+                                        {166 * 1.6, 45 * 1.6}
+                                })
+                                .lineWidth(6),
+                });
+    }
 }

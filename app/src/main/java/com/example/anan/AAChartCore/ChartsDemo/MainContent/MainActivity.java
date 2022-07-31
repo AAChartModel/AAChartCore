@@ -36,19 +36,23 @@ public class MainActivity extends AppCompatActivity {
             },
             /*特殊类型图表*/
             {
-                    "Polar Chart---极地图图",
+                    "Polar Column Chart---玫瑰图",
+                    "Polar Bar Chart---径向条形图",
+                    "Polar Line Chart---蜘蛛图",
+                    "Polar Area Chart---雷达图",
+                    "Step Line Chart--- 直方折线图",
+                    "Step Area Chart--- 直方折线填充图",
                     "Pie Chart---扇形图",
                     "Bubble Chart---气泡图",
                     "Scatter Chart---散点图",
                     "Arearange Chart---区域范围图",
                     "Columnrange Chart--- 柱形范围图",
-                    "Step Line Chart--- 直方折线图",
-                    "Step Area Chart--- 直方折线填充图",
                     "Boxplot Chart--- 箱线图",
                     "Waterfall Chart--- 瀑布图",
                     "Pyramid Chart---金字塔图",
                     "Funnel Chart---漏斗图",
                     "Errorbar Chart---误差图",
+                    "Gauge Chart---仪表图",
             },
             /*Mixed Chart---混合图*/
             {
@@ -202,18 +206,22 @@ public class MainActivity extends AppCompatActivity {
             {
                     /*特殊类型图表*/
                     AAChartType.Column,
+                    AAChartType.Bar,
+                    AAChartType.Line,
+                    AAChartType.Area,
                     AAChartType.Pie,
                     AAChartType.Bubble,
                     AAChartType.Scatter,
                     AAChartType.Arearange,
                     AAChartType.Columnrange,
-                    AAChartType.Line,
-                    AAChartType.Area,
+                    AAChartType.Scatter,
+                    AAChartType.Areaspline,
                     AAChartType.Boxplot,
                     AAChartType.Waterfall,
                     AAChartType.Pyramid,
                     AAChartType.Funnel,
                     AAChartType.Errorbar,
+                    AAChartType.Gauge,
             },
             {
                     /*Mixed Chart---混合图*/

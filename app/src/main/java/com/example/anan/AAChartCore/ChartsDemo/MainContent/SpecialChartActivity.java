@@ -37,7 +37,13 @@ public class SpecialChartActivity extends AppCompatActivity {
     AAChartModel configureChartModelWithChartType(String chartType) {
         switch (chartType) {
             case AAChartType.Column:
-                return configureColumnChart();
+                return configurePolarColumnChart();
+            case AAChartType.Bar:
+                return configurePolarBarChart();
+            case AAChartType.Line:
+                return configurePolarLineChart();
+            case AAChartType.Area:
+                return configurePolarAreaChart();
             case AAChartType.Pie:
                 return configurePieChart();
             case AAChartType.Bubble:
@@ -50,10 +56,10 @@ public class SpecialChartActivity extends AppCompatActivity {
                 return configureAreasplinerangeChart();
             case AAChartType.Columnrange:
                 return configureColumnrangeChart();
-            case AAChartType.Line:
-                return configureLineChart();
-            case AAChartType.Area:
-                return configureAreaChart();
+            case AAChartType.Spline:
+                return configureStepLineChart();
+            case AAChartType.Areaspline:
+                return configureStepAreaChart();
             case AAChartType.Boxplot:
                 return configureBoxplotChart();
             case AAChartType.Waterfall:
@@ -64,10 +70,12 @@ public class SpecialChartActivity extends AppCompatActivity {
                 return configureFunnelChart();
             case AAChartType.Errorbar:
                 return configureErrorbarChart();
+            case AAChartType.Gauge:
+                return configureGaugeChart();
             default:
                 break;
         }
 
-        return configureColumnChart();
+        return configurePolarColumnChart();
     }
 }
