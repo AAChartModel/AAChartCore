@@ -706,7 +706,7 @@ public class MixedChartComposer {
                 new Object[]{1.0, AAColor.rgbaColor(30, 144, 255, 0.6f)}
         };
 
-        Map gradientBlueColorDic = AAGradientColor.linearGradient(
+        Map<String, Object> gradientBlueColorDic = AAGradientColor.linearGradient(
                 AALinearGradientDirection.ToTop,
                 blueStopsArr
         );
@@ -717,7 +717,7 @@ public class MixedChartComposer {
                 new Object[]{1.0, AAColor.rgbaColor(255, 0, 0, 0.0f)}
         };
 
-        Map gradientRedColorDic = AAGradientColor.linearGradient(
+        Map<String, Object> gradientRedColorDic = AAGradientColor.linearGradient(
                 AALinearGradientDirection.ToTop,
                 redStopsArr
         );
