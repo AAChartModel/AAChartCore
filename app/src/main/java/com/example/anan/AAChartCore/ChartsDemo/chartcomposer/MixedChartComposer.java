@@ -685,9 +685,7 @@ public class MixedChartComposer {
         return new AAChartModel()
                 .stacking(AAChartStackingType.Normal)
                 .colorsTheme(new Object[]{
-                        AAGradientColor.OceanBlue,
-                        AAGradientColor.Sanguine,
-                        AAGradientColor.PurpleLake
+                        "#fe117c", "#ffc069", "#06caf4", "#7dffc0"
                 })
                 .dataLabelsEnabled(false)
                 .series(new Object[]{
