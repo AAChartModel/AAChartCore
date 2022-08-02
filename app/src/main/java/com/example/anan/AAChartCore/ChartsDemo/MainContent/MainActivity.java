@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
                     "Funnel Chart---漏斗图",
                     "Errorbar Chart---误差图",
                     "Gauge Chart---仪表图",
+                    "Polygon Chart---多边形图"
             },
             /*Mixed Chart---混合图*/
             {

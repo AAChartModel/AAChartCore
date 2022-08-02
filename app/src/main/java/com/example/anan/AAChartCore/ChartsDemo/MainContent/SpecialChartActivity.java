@@ -72,6 +72,8 @@ public class SpecialChartActivity extends AppCompatActivity {
                 return configureErrorbarChart();
             case AAChartType.Gauge:
                 return configureGaugeChart();
+            case AAChartType.Polygon:
+                return configurePolygonChart();
             default:
                 break;
         }

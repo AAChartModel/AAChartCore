@@ -986,6 +986,24 @@ public class SpecialChartComposer {
 
     public static AAChartModel configureGaugeChart() {
         return new AAChartModel()
+                .title("速度仪")
+                .yAxisTitle("km/h")
+                .yAxisMin(0)
+                .yAxisMax(1000)
+                .yAxisGridLineWidth(0)
+                .series(new AASeriesElement[]{
+                        new AASeriesElement()
+                                .name("速度")
+                                .type(AAChartType.Gauge)
+                .data(new Object[]{888})
+                    .color(AAColor.Red)
+                .tooltip(new AATooltip()
+                        .valueSuffix("km/h"))
+            });
+    }
+
+    public static AAChartModel configurePolygonChart() {
+        return new AAChartModel()
                 .title("多边形图")
                 .dataLabelsEnabled(false)
                 .markerSymbolStyle(AAChartSymbolStyleType.BorderBlank)
