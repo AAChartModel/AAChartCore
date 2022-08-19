@@ -53,6 +53,8 @@ public class MixedChartActivity extends AppCompatActivity {
                 return configurePieMixedLineMixedColumnChart();
             case "configureNegativeColorMixedAreasplineChart":
                 return configureNegativeColorMixedAreasplineChart();
+            case "configureAerasplinerangeMixedColumnrangeMixedLineChart":
+                return configureAerasplinerangeMixedColumnrangeMixedLineChart();
         }
         return arearangeMixedLine();
     }

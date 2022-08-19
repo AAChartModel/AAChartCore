@@ -697,33 +697,9 @@ public class MixedChartComposer {
                 });
     }
 
-
-    //GitHub issue https://github.com/AAChartModel/AAChartKit/issues/921
     public static AAChartModel configureNegativeColorMixedAreasplineChart() {
-        Object[][] blueStopsArr = new Object[][]{
-                new Object[]{0.0, AAColor.rgbaColor(30, 144, 255, 0.0f)},//颜色字符串设置支持十六进制类型和 rgba 类型
-                new Object[]{0.5, AAColor.rgbaColor(30, 144, 255, 0.0f)},
-                new Object[]{1.0, AAColor.rgbaColor(30, 144, 255, 0.6f)}
-        };
-
-        Map<String, Object> gradientBlueColorDic = AAGradientColor.linearGradient(
-                AALinearGradientDirection.ToTop,
-                blueStopsArr
-        );
-
-        Object[][] redStopsArr = new Object[][]{
-                new Object[]{0.0, AAColor.rgbaColor(255, 0, 0, 0.6f)},//颜色字符串设置支持十六进制类型和 rgba 类型
-                new Object[]{0.5, AAColor.rgbaColor(255, 0, 0, 0.0f)},
-                new Object[]{1.0, AAColor.rgbaColor(255, 0, 0, 0.0f)}
-        };
-
-        Map<String, Object> gradientRedColorDic = AAGradientColor.linearGradient(
-                AALinearGradientDirection.ToTop,
-                redStopsArr
-        );
-
         return new AAChartModel()
-                .chartType(AAChartType.Area)
+                .chartType(AAChartType.Areaspline)
                 .legendEnabled(false)
                 .dataLabelsEnabled(false)
                 .markerRadius(5)
@@ -739,13 +715,100 @@ public class MixedChartComposer {
                                 .lineWidth(5)
                                 .color(AAColor.rgbaColor(30, 144, 255, 1.0f))
                                 .negativeColor(AAColor.rgbaColor(255, 0, 0, 1.0f))
-                                .fillColor(gradientBlueColorDic)
-                                .negativeFillColor(gradientRedColorDic)
+                                .fillColor(AAGradientColor.linearGradient(
+                                        AALinearGradientDirection.ToTop,
+                                        new Object[][]{
+                                                new Object[]{0.0, AAColor.rgbaColor(30, 144, 255, 0.0f)},//颜色字符串设置支持十六进制类型和 rgba 类型
+                                                new Object[]{0.5, AAColor.rgbaColor(30, 144, 255, 0.0f)},
+                                                new Object[]{1.0, AAColor.rgbaColor(30, 144, 255, 0.6f)},}
+                                ))
+                                .negativeFillColor(AAGradientColor.linearGradient(
+                                        AALinearGradientDirection.ToTop,
+                                        new Object[][]{
+                                                new Object[]{0.0, AAColor.rgbaColor(255, 0, 0, 0.6f)},//颜色字符串设置支持十六进制类型和 rgba 类型
+                                                new Object[]{0.5, AAColor.rgbaColor(255, 0, 0, 0.0f)},
+                                                new Object[]{1.0, AAColor.rgbaColor(255, 0, 0, 0.0f)},
+                                        }))
                                 .threshold(0)//default:0
-
                 });
     }
 
-
+    public static AAChartModel configureAerasplinerangeMixedColumnrangeMixedLineChart() {
+        return new AAChartModel()
+                .chartType(AAChartType.Line)
+                .dataLabelsEnabled(true)
+                .markerSymbol(AAChartSymbolType.Circle)
+                .markerSymbolStyle(AAChartSymbolStyleType.BorderBlank)
+                .borderRadius(10)
+                .categories(new String[]{
+                        "流水线",
+                        "机器加工",
+                        "冲床",
+                        "模具工",
+                        "机器加工",
+                        "仓库",
+                        "维修工",
+                        "质检员",
+                })
+                .series(new Object[]{
+                        new AASeriesElement()
+                                .name("工资变化曲线")
+                                .type(AAChartType.Areasplinerange)
+                                .data(new Object[]{
+                                new Object[]{3800, 5500},//流水线
+                                new Object[]{4000, 6500},//机器加工
+                                new Object[]{4000, 6800},//冲床
+                                new Object[]{4000, 7500},//模具工
+                                new Object[]{4200, 9000},//机器加工
+                                new Object[]{3800, 6800},//仓库
+                                new Object[]{5500, 7500},//维修工
+                                new Object[]{5000, 7200},//质检员
+                        })
+                        ,
+                        new AASeriesElement()
+                                .name("工资变化棱形")
+                                .color(AAGradientColor.OceanBlue)
+                                .type(AAChartType.Columnrange)
+                                .data(new Object[]{
+                                new Object[]{3800, 5500},//流水线
+                                new Object[]{4000, 6500},//机器加工
+                                new Object[]{4000, 6800},//冲床
+                                new Object[]{4000, 7500},//模具工
+                                new Object[]{4200, 9000},//机器加工
+                                new Object[]{3800, 6800},//仓库
+                                new Object[]{5500, 7500},//维修工
+                                new Object[]{5000, 7200},//质检员
+                        })
+                        ,
+                        new AASeriesElement()
+                                .name("八月份均值")
+                                .lineWidth(8)
+                                .data(new Object[]{
+                                4000,//流水线
+                                4400,//机器加工
+                                4600,//冲床
+                                5200,//模具工
+                                5800,//机器加工
+                                5000,//仓库
+                                5500,//维修工
+                                5000,//质检员
+                        })
+                        ,
+                        new AASeriesElement()
+                                .name("九月份均值")
+                                .lineWidth(8)
+                                .data(new Object[]{
+                                3868,//流水线
+                                4084,//机器加工
+                                4260,//冲床
+                                4586,//模具工
+                                5518,//机器加工
+                                5483,//仓库
+                                4962,//维修工
+                                5821,//质检员
+                        })
+                        ,
+                });
+    }
 
 }
