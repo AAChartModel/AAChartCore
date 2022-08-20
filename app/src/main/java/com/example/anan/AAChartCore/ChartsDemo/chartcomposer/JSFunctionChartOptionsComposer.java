@@ -9,18 +9,22 @@ import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartLayoutType
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartLineDashStyleType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartStackingType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartSymbolStyleType;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartSymbolType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartVerticalAlignType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAAnimation;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAChart;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAColumnrange;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AACrosshair;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AADataLabels;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAHover;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAInactive;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAItemStyle;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AALabels;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAOptions;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAPlotOptions;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAResetZoomButton;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AASelect;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AASeries;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AASeriesEvents;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAStates;
@@ -1115,6 +1119,319 @@ AAColor.rgbaColor(215, 0,   38, 1.f)
             return aaOptions;
         }
 
+    //https://github.com/AAChartModel/AAChartKit/issues/966
+    public static AAOptions customTooltipPostionerFunction() {
+        String[] categoriesArr = {
+                "孤岛危机",
+                "使命召唤",
+                "荣誉勋章",
+                "狙击精英",
+                "神秘海域",
+                "最后生还者",
+                "巫师3狂猎",
+                "对马之魂",
+                "蝙蝠侠阿甘骑士",
+                "地狱边境",
+                "闪客",
+                "忍者之印"
+        };
 
+        AAChartModel aaChartModel = new AAChartModel()
+                .chartType(AAChartType.Column)
+                .categories(categoriesArr)
+                .series(new AASeriesElement[]{
+                        new AASeriesElement()
+                                .name("单机大作")
+                                .color(AAColor.Red)
+                                .data(new Object[]{7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6})
+                });
+
+
+        AAOptions aaOptions = aaChartModel.aa_toAAOptions();
+
+//        aaOptions.tooltip
+//                .positioner(AAJSFunc(function (labelWidth, labelHeight, point) {
+//            let position = {};
+//            position["x"] = point.plotX;
+//            position["y"] = 20;
+//            return position;
+//        }));
+
+        return aaOptions;
+}
+
+        public static AAOptions fixedTooltipPositionByCustomPositionerFunction() {
+            AAOptions aaOptions = customTooltipPostionerFunction();
+//            aaOptions.tooltip
+//                    .positioner(AAJSFunc(function () {
+//                let position = {};
+//                position["x"] = 50;
+//                position["y"] = 50;
+//                return position;
+//            }));
+
+            return aaOptions;
+}
+
+//https://github.com/AAChartModel/AAChartKit/issues/1033
+            public static AAOptions customPlotAreaOutsideComlicatedTooltipStyle() {
+                String[] categoriesArr = {
+                        "11 月 01 日",
+                        "11 月 02 日",
+                        "11 月 03 日",
+                        "11 月 04 日",
+                        "11 月 05 日",
+                        "11 月 06 日",
+                        "11 月 07 日",
+                        "11 月 08 日",
+                        "11 月 09 日",
+
+                        "11 月 10 日",
+                        "11 月 11 日",
+                        "11 月 12 日",
+                        "11 月 13 日",
+                        "11 月 14 日",
+                        "11 月 15 日",
+                        "11 月 16 日",
+                        "11 月 17 日",
+                        "11 月 18 日",
+                        "11 月 19 日",
+
+                        "11 月 20 日",
+                        "11 月 21 日",
+                        "11 月 22 日",
+                        "11 月 23 日",
+                        "11 月 24 日",
+                        "11 月 25 日",
+                        "11 月 26 日",
+                        "11 月 27 日",
+                        "11 月 28 日",
+                        "11 月 29 日",
+                        "11 月 30 日",
+
+                        "12 月 01 日",
+                        "12 月 02 日",
+                        "12 月 03 日",
+                        "12 月 04 日",
+                        "12 月 05 日",
+                        "12 月 06 日",
+                        "12 月 07 日",
+                        "12 月 08 日",
+                        "12 月 09 日",
+
+                        "12 月 10 日",
+                        "12 月 11 日",
+                        "12 月 12 日",
+                        "12 月 13 日",
+                        "12 月 14 日",
+                        "12 月 15 日",
+                        "12 月 16 日",
+                        "12 月 17 日",
+                        "12 月 18 日",
+                        "12 月 19 日",
+
+                        "12 月 20 日",
+                        "12 月 21 日",
+                        "12 月 22 日",
+                        "12 月 23 日",
+                        "12 月 24 日",
+                        "12 月 25 日",
+                        "12 月 26 日",
+                        "12 月 27 日",
+                        "12 月 28 日",
+                        "12 月 29 日",
+                        "12 月 30 日",
+                        "12 月 31 日",
+                };
+
+                AAChartModel aaChartModel = new AAChartModel()
+                        .chartType(AAChartType.Column)
+                        .categories(categoriesArr)
+                        .series(new AASeriesElement[]{
+                                new AASeriesElement()
+                                        .name("个人徒步数据统计")
+                                        .color(AAColor.rgbaColor(235, 88, 40, 1.0f))
+                                        .borderRadiusTopLeft("50%")
+                                        .borderRadiusTopRight("50%")
+                                        .data(new Object[]{
+                                        1300.988, 900.699,1000.089, 1100.965, 1000.534, 1400.523,
+                                        1800.254, 1900.377, 2100.523, 2500.256, 2600.555, 2800.366,
+                                        1300.988, 900.699,1000.089, 1100.965, 1000.534, 1400.523,
+                                        1800.254, 1900.377, 2100.523, 2500.256, 2600.555, 2800.366,
+                                        1300.988, 900.699,1000.089, 1100.965, 1000.534, 1400.523,
+                                        1800.254, 1900.377, 2100.523, 2500.256, 2600.555, 2800.366,
+                                        1300.988, 900.699,1000.089, 1100.965, 1000.534, 1400.523,
+                                        1800.254, 1900.377, 2100.523, 2500.256, 2600.555, 2800.366,
+                                        1300.988, 900.699,1000.089, 1100.965, 1000.534, 1400.523,
+                                        1800.254, 1900.377, 2100.523, 2500.256, 2600.555, 2800.366,
+                                })
+                        });
+
+
+                AAOptions aaOptions = aaChartModel.aa_toAAOptions();
+
+                aaOptions.xAxis
+                        .crosshair(new AACrosshair()
+                                .color(AAColor.rgbaColor(209, 209, 209, 1.0f))
+                                .dashStyle(AAChartLineDashStyleType.LongDash)
+                                .width(3));
+
+
+//                aaOptions.yAxis
+//                        .top("30%")//https://api.highcharts.com/highcharts/yAxis.top
+//                        .height("70%")//https://api.highcharts.com/highcharts/yAxis.height
+
+
+//                CGFloat screenWidth = self.view.frame.size.width;
+//
+//                String positionerStr ={String stringWithFormat:AAJSFunc(function (labelWidth, labelHeight, point) {
+//                    let xPosition = point.plotX;
+//                    let maxXPosition = % - 268;
+//                    if (xPosition >= maxXPosition) {
+//                        xPosition = maxXPosition
+//                    }
+//                    let position = {};
+//                    position["x"] = xPosition;
+//                    position["y"] = 50;
+//                    return position;
+//                }), (screenWidth)];
+
+                aaOptions.tooltip
+                        .useHTML(true)
+                        .headerFormat("总计 ")
+                                        .pointFormat("{point.y}  步")
+                                                        .footerFormat("2020 年 {point.x} ")
+                                                        .valueDecimals(2)//设置取值精确到小数点后几位
+                                                        .backgroundColor(AAColor.rgbaColor(242, 242, 242, 1.0f))
+                                                        .borderWidth(0)
+//                                                        .shape("square")
+                                                        .style(AAStyle.style(AAColor.rgbaColor(132, 132, 132, 1.0f), 28))
+                                                        .positioner("positionerStr");
+
+                return aaOptions;
+}
+
+//https://github.com/AAChartModel/AAChartKit/issues/967
+                public static AAOptions disableColumnChartUnselectEventEffectBySeriesPointEventClickFunction() {
+                    AAChartModel aaChartModel = new AAChartModel()
+                            .chartType(AAChartType.Bar)
+                            .title("Custom Bar Chart select color")
+                            .yAxisReversed(true)
+                            .xAxisReversed(true)
+                            .series(new AASeriesElement[]{
+                                    new AASeriesElement()
+                                            .name("ElementOne")
+                                            .data(new Object[]{211,183,157,133,111,91,73,57,43,31,21,13,7,3})
+                                            .allowPointSelect(true)
+                                            .states(new AAStates()
+                                            .hover(new AAHover()
+                                                    .color(AAColor.Yellow))
+                                            .select(new AASelect()
+                                                    .color(AAColor.Red))
+                                    )
+                            });
+
+                    AAOptions aaOptions = aaChartModel.aa_toAAOptions();
+
+//                    AAPoint point = AAPoint.new
+//                            .events(AAPointEvents.new
+//                                    .click(AAJSFunc(function () {
+//                        if (this.selected == true) {
+//                            this.selected = false;
+//                        }
+//                        return;
+//                    })));
+//
+//                    aaOptions.plotOptions.series
+//                            .point("point");
+
+                    return aaOptions;
+                }
+
+//https://github.com/AAChartModel/AAChartKit/issues/970
+//通过自定义 div 的 css 样式来自定义复杂效果的 tooltip 浮动提示框
+                public static AAOptions customAreasplineChartTooltipStyleByDivWithCSS() {
+                    AAChartModel aaChartModel = new AAChartModel()
+                            .chartType(AAChartType.Areaspline)//图表类型
+                            .colorsTheme(new String[]{"#FFD700"/*(纯金色)*/,"#ffc069",})//设置主体颜色数组
+                            .markerSymbol(AAChartSymbolType.Circle)
+                            .markerSymbolStyle(AAChartSymbolStyleType.BorderBlank)//折线连接点样式为外边缘空白
+                            .xAxisTickInterval(3)//x轴刻度点间隔数(设置每隔几个点显示一个 X轴的内容)
+//                            .yAxisGridLineStyle([AALineStyle styleWithWidth:0})//y轴横向分割线宽度(为0即是隐藏分割线)
+    .stacking(AAChartStackingType.Normal)
+                        .categories(new String[]{
+                        "10-01", "10-02", "10-03", "10-04", "10-05", "10-06", "10-07", "10-08", "10-09", "10-10", "10-11",
+                        "10-12", "10-13", "10-14", "10-15", "10-16", "10-17", "10-18", "10-19", "10-20", "10-21", "10-22",
+                        "10-23", "10-24", "10-25", "10-26", "10-27", "10-28", "10-29", "10-30", "10-31", "11-01", "11-02",
+                        "11-03", "11-04", "11-05", "11-06", "11-07", "11-08", "11-09", "11-10", "11-11", "11-12", "11-13",
+                        "11-14", "11-15", "11-16", "11-17", "11-18", "11-19", "11-20", "11-21", "11-22", "11-23", "11-24",
+                        "11-25", "11-26", "11-27", "11-28", "11-29", "11-30", "12-01", "12-02", "12-03", "12-04", "12-05",
+                        "12-06", "12-07", "12-08", "12-09", "12-10", "12-11", "12-12", "12-13", "12-14", "12-15", "12-16",
+                        "12-17", "12-18", "12-19", "12-20", "12-21", "12-22", "12-23", "12-24", "12-25", "12-26", "12-27",
+                        "12-28", "12-29", "12-30"
+    })
+    .series(new AASeriesElement[]{
+                        new AASeriesElement()
+                                .lineWidth(1.5)
+                                .fillOpacity(0.4)
+                                .name("黄金上涨")
+                                .data(new Object[]{
+                                1.51, 6.70, 0.94, 1.44, 1.60, 1.63, 1.56, 1.91, 2.45, 3.87, 3.24, 4.90, 4.61, 4.10,
+                                4.17, 3.85, 4.17, 3.46, 3.46, 3.55, 3.50, 4.13, 2.58, 2.28, 1.51, 12.7, 0.94, 1.44,
+                                18.6, 1.63, 1.56, 1.91, 2.45, 3.87, 3.24, 4.90, 4.61, 4.10, 4.17, 3.85, 4.17, 3.46,
+                                3.46, 3.55, 3.50, 4.13, 2.58, 2.28, 1.33, 4.68, 1.31, 1.10, 13.9, 1.10, 1.16, 1.67,
+                                2.64, 2.86, 3.00, 3.21, 4.14, 4.07, 3.68, 3.11, 3.41, 3.25, 3.32, 3.07, 3.92, 3.05,
+                                2.18, 3.24, 3.23, 3.15, 2.90, 1.81, 2.11, 2.43, 5.59, 3.09, 4.09, 6.14, 5.33, 6.05,
+                                5.71, 6.22, 6.56, 4.75, 5.27, 6.02, 5.48
+                        }),
+                        new AASeriesElement()
+                                .lineWidth(1.5)
+                                .fillOpacity(0.4)
+                                .name("房价下跌")
+                                .data(new Object[]{
+                                1.51, 6.70, 0.94, 1.44, 1.60, 1.63, 1.56, 1.91, 2.45, 3.87, 3.24, 4.90, 4.61, 4.10,
+                                4.17, 3.85, 4.17, 3.46, 3.46, 3.55, 3.50, 4.13, 2.58, 2.28, 1.51, 12.7, 0.94, 1.44,
+                                18.6, 1.63, 1.56, 1.91, 2.45, 3.87, 3.24, 4.90, 4.61, 4.10, 4.17, 3.85, 4.17, 3.46,
+                                3.46, 3.55, 3.50, 4.13, 2.58, 2.28, 1.33, 4.68, 1.31, 1.10, 13.9, 1.10, 1.16, 1.67,
+                                2.64, 2.86, 3.00, 3.21, 4.14, 4.07, 3.68, 3.11, 3.41, 3.25, 3.32, 3.07, 3.92, 3.05,
+                                2.18, 3.24, 3.23, 3.15, 2.90, 1.81, 2.11, 2.43, 5.59, 3.09, 4.09, 6.14, 5.33, 6.05,
+                                5.71, 6.22, 6.56, 4.75, 5.27, 6.02, 5.48
+                        }),
+                });
+
+
+                //https://zhidao.baidu.com/question/301691908.html
+                //https://jshare.com.cn/highcharts/hhhhGc
+                AAOptions aaOptions = aaChartModel.aa_toAAOptions();
+                aaOptions.tooltip
+                        .shared(true)
+                        .useHTML(true)
+                        .padding(0)
+                        .borderWidth(0)
+//                        .formatter(AAJSFunc(function () {
+//                    var box1Text = "  2021-" + this.x + this.points[0].series.name + this.y;
+//                    var box2Text = "  2021-" + this.x + this.points[1].series.name + this.y;
+//
+//                    return '\
+//                    '
+//                            +
+//                            '' + box1Text + ''
+//                            +
+//                            '' + box2Text + ''
+//                            +
+//                            '';
+//                }))
+    ;
+
+                //禁用图例点击事件
+                aaOptions.plotOptions.series.events = new AASeriesEvents()
+//                        .legendItemClick(AAJSFunc(function() {
+//                    return false;
+//                })
+//    )
+    ;
+
+                return aaOptions;
+            }
 
     }
