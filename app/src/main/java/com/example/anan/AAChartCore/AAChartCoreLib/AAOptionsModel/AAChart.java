@@ -1,5 +1,7 @@
 package com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel;
 
+import com.example.anan.AAChartCore.AAChartCoreLib.AAChartCreator.AAChartEvents;
+
 public class AAChart {
     public String type;
     public Object backgroundColor;
@@ -19,7 +21,9 @@ public class AAChart {
     public Number marginLeft; //👈
     public AAScrollablePlotArea scrollablePlotArea;
     public AAResetZoomButton resetZoomButton;
-
+    public String zoomType;
+    public AAChartEvents events;
+    public Number height;
 
     public AAChart type(String prop) {
         type = prop;
@@ -101,6 +105,19 @@ public class AAChart {
         return this;
     }
 
+    public AAChart zoomType(String zoomType) {
+        this.zoomType = zoomType;
+        return this;
+    }
 
+    public AAChart events(AAChartEvents events) {
+        this.events = events;
+        return this;
+    }
+
+    public AAChart height(Number height) {
+        this.height = height;
+        return this;
+    }
 
 }
