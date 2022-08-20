@@ -1,5 +1,6 @@
 package com.example.anan.AAChartCore.ChartsDemo.chartcomposer;
 
+import com.example.anan.AAChartCore.AAChartCoreLib.AAChartCreator.AAChartEvents;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartCreator.AAChartModel;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartCreator.AASeriesElement;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartAlignType;
@@ -1994,18 +1995,409 @@ public static AAOptions setCrosshairAndTooltipToTheDefaultPositionAfterLoadingCh
     return aaOptions;
 }
 
-//    public static AAOptions generalDrawingChart() {
-//        return new AAOptions()
-//                .chart(new AAChart()
-//                        .backgroundColor(AAColor.White)
-//                        .events(AAChartEvents.new
-//
-//        }
+    public static AAOptions generalDrawingChart() {
+        return new AAOptions()
+                .chart(new AAChart()
+                        .backgroundColor(AAColor.White)
+                        .events(new AAChartEvents()
+                                .load("function () {\n" +
+                                        "                var ren = this.renderer,\n" +
+                                        "                    colors = Highcharts.getOptions().colors,\n" +
+                                        "                    rightArrow = ['M', 0, 0, 'L', 100, 0, 'L', 95, 5, 'M', 100, 0, 'L', 95, -5],\n" +
+                                        "                    leftArrow = ['M', 100, 0, 'L', 0, 0, 'L', 5, 5, 'M', 0, 0, 'L', 5, -5];\n" +
+                                        "\n" +
+                                        "\n" +
+                                        "                ren.path(['M', 120, 40, 'L', 120, 330])\n" +
+                                        "                    .attr({\n" +
+                                        "                        'stroke-width': 2,\n" +
+                                        "                        stroke: 'silver',\n" +
+                                        "                        dashstyle: 'dash'\n" +
+                                        "                    })\n" +
+                                        "                    .add();\n" +
+                                        "\n" +
+                                        "                ren.path(['M', 420, 40, 'L', 420, 330])\n" +
+                                        "                    .attr({\n" +
+                                        "                        'stroke-width': 2,\n" +
+                                        "                        stroke: 'silver',\n" +
+                                        "                        dashstyle: 'dash'\n" +
+                                        "                    })\n" +
+                                        "                    .add();\n" +
+                                        "\n" +
+                                        "                ren.label('Web client', 20, 40)\n" +
+                                        "                    .css({\n" +
+                                        "                        fontWeight: 'bold'\n" +
+                                        "                    })\n" +
+                                        "                    .add();\n" +
+                                        "                ren.label('Web service / CLI', 220, 40)\n" +
+                                        "                    .css({\n" +
+                                        "                        fontWeight: 'bold'\n" +
+                                        "                    })\n" +
+                                        "                    .add();\n" +
+                                        "                ren.label('Command line client', 440, 40)\n" +
+                                        "                    .css({\n" +
+                                        "                        fontWeight: 'bold'\n" +
+                                        "                    })\n" +
+                                        "                    .add();\n" +
+                                        "\n" +
+                                        "                ren.label('SaaS client<br/>(browser or<br/>script)', 10, 82)\n" +
+                                        "                    .attr({\n" +
+                                        "                        fill: colors[0],\n" +
+                                        "                        stroke: 'white',\n" +
+                                        "                        'stroke-width': 2,\n" +
+                                        "                        padding: 5,\n" +
+                                        "                        r: 5\n" +
+                                        "                    })\n" +
+                                        "                    .css({\n" +
+                                        "                        color: 'white'\n" +
+                                        "                    })\n" +
+                                        "                    .add()\n" +
+                                        "                    .shadow(true);\n" +
+                                        "\n" +
+                                        "                ren.path(rightArrow)\n" +
+                                        "                    .attr({\n" +
+                                        "                        'stroke-width': 2,\n" +
+                                        "                        stroke: colors[3]\n" +
+                                        "                    })\n" +
+                                        "                    .translate(95, 95)\n" +
+                                        "                    .add();\n" +
+                                        "\n" +
+                                        "                ren.label('POST options in JSON', 90, 75)\n" +
+                                        "                    .css({\n" +
+                                        "                        fontSize: '10px',\n" +
+                                        "                        color: colors[3]\n" +
+                                        "                    })\n" +
+                                        "                    .add();\n" +
+                                        "\n" +
+                                        "                ren.label('PhantomJS', 210, 82)\n" +
+                                        "                    .attr({\n" +
+                                        "                        r: 5,\n" +
+                                        "                        width: 100,\n" +
+                                        "                        fill: colors[1]\n" +
+                                        "                    })\n" +
+                                        "                    .css({\n" +
+                                        "                        color: 'white',\n" +
+                                        "                        fontWeight: 'bold'\n" +
+                                        "                    })\n" +
+                                        "                    .add();\n" +
+                                        "\n" +
+                                        "                ren.path(['M', 250, 110, 'L', 250, 185, 'L', 245, 180, 'M', 250, 185, 'L', 255, 180])\n" +
+                                        "                    .attr({\n" +
+                                        "                        'stroke-width': 2,\n" +
+                                        "                        stroke: colors[3]\n" +
+                                        "                    })\n" +
+                                        "                    .add();\n" +
+                                        "\n" +
+                                        "                ren.label('SVG', 255, 120)\n" +
+                                        "                    .css({\n" +
+                                        "                        color: colors[3],\n" +
+                                        "                        fontSize: '10px'\n" +
+                                        "                    })\n" +
+                                        "                    .add();\n" +
+                                        "\n" +
+                                        "                ren.label('Batik', 210, 200)\n" +
+                                        "                    .attr({\n" +
+                                        "                        r: 5,\n" +
+                                        "                        width: 100,\n" +
+                                        "                        fill: colors[1]\n" +
+                                        "                    })\n" +
+                                        "                    .css({\n" +
+                                        "                        color: 'white',\n" +
+                                        "                        fontWeight: 'bold'\n" +
+                                        "                    })\n" +
+                                        "                    .add();\n" +
+                                        "\n" +
+                                        "                ren\n" +
+                                        "                    .path([\n" +
+                                        "                        'M', 235, 185,\n" +
+                                        "                        'L', 235, 155,\n" +
+                                        "                        'C', 235, 130, 235, 130, 215, 130,\n" +
+                                        "                        'L', 95, 130,\n" +
+                                        "                        'L', 100, 125,\n" +
+                                        "                        'M', 95, 130,\n" +
+                                        "                        'L', 100, 135\n" +
+                                        "                    ])\n" +
+                                        "                    .attr({\n" +
+                                        "                        'stroke-width': 2,\n" +
+                                        "                        stroke: colors[3]\n" +
+                                        "                    })\n" +
+                                        "                    .add();\n" +
+                                        "\n" +
+                                        "                ren.label('Rasterized image', 100, 110)\n" +
+                                        "                    .css({\n" +
+                                        "                        color: colors[3],\n" +
+                                        "                        fontSize: '10px'\n" +
+                                        "                    })\n" +
+                                        "                    .add();\n" +
+                                        "\n" +
+                                        "                ren.label('Browser<br/>running<br/>Highcharts', 10, 180)\n" +
+                                        "                    .attr({\n" +
+                                        "                        fill: colors[0],\n" +
+                                        "                        stroke: 'white',\n" +
+                                        "                        'stroke-width': 2,\n" +
+                                        "                        padding: 5,\n" +
+                                        "                        r: 5\n" +
+                                        "                    })\n" +
+                                        "                    .css({\n" +
+                                        "                        color: 'white',\n" +
+                                        "                        width: '100px'\n" +
+                                        "                    })\n" +
+                                        "                    .add()\n" +
+                                        "                    .shadow(true);\n" +
+                                        "\n" +
+                                        "\n" +
+                                        "                ren.path(rightArrow)\n" +
+                                        "                    .attr({\n" +
+                                        "                        'stroke-width': 2,\n" +
+                                        "                        stroke: colors[1]\n" +
+                                        "                    })\n" +
+                                        "                    .translate(95, 205)\n" +
+                                        "                    .add();\n" +
+                                        "\n" +
+                                        "                ren.label('POST SVG', 110, 185)\n" +
+                                        "                    .css({\n" +
+                                        "                        color: colors[1],\n" +
+                                        "                        fontSize: '10px'\n" +
+                                        "                    })\n" +
+                                        "                    .add();\n" +
+                                        "\n" +
+                                        "                ren.path(leftArrow)\n" +
+                                        "                    .attr({\n" +
+                                        "                        'stroke-width': 2,\n" +
+                                        "                        stroke: colors[1]\n" +
+                                        "                    })\n" +
+                                        "                    .translate(95, 215)\n" +
+                                        "                    .add();\n" +
+                                        "\n" +
+                                        "                ren.label('Rasterized image', 100, 215)\n" +
+                                        "                    .css({\n" +
+                                        "                        color: colors[1],\n" +
+                                        "                        fontSize: '10px'\n" +
+                                        "                    })\n" +
+                                        "                    .add();\n" +
+                                        "\n" +
+                                        "                ren.label('Script', 450, 82)\n" +
+                                        "                    .attr({\n" +
+                                        "                        fill: colors[2],\n" +
+                                        "                        stroke: 'white',\n" +
+                                        "                        'stroke-width': 2,\n" +
+                                        "                        padding: 5,\n" +
+                                        "                        r: 5\n" +
+                                        "                    })\n" +
+                                        "                    .css({\n" +
+                                        "                        color: 'white',\n" +
+                                        "                        width: '100px'\n" +
+                                        "                    })\n" +
+                                        "                    .add()\n" +
+                                        "                    .shadow(true);\n" +
+                                        "\n" +
+                                        "                ren.path(leftArrow)\n" +
+                                        "                    .attr({\n" +
+                                        "                        'stroke-width': 2,\n" +
+                                        "                        stroke: colors[2]\n" +
+                                        "                    })\n" +
+                                        "                    .translate(330, 90)\n" +
+                                        "                    .add();\n" +
+                                        "\n" +
+                                        "                ren.label('Command', 340, 70)\n" +
+                                        "                    .css({\n" +
+                                        "                        color: colors[2],\n" +
+                                        "                        fontSize: '10px'\n" +
+                                        "                    })\n" +
+                                        "                    .add();\n" +
+                                        "\n" +
+                                        "                ren.path(rightArrow)\n" +
+                                        "                    .attr({\n" +
+                                        "                        'stroke-width': 2,\n" +
+                                        "                        stroke: colors[2]\n" +
+                                        "                    })\n" +
+                                        "                    .translate(330, 100)\n" +
+                                        "                    .add();\n" +
+                                        "\n" +
+                                        "                ren.label('Rasterized image', 330, 100)\n" +
+                                        "                    .css({\n" +
+                                        "                        color: colors[2],\n" +
+                                        "                        fontSize: '10px'\n" +
+                                        "                    })\n" +
+                                        "                    .add();\n" +
+                                        "            }")))
+                .title(new AATitle()
+                        .text("Highcharts export server overview")
+                        .style(AAStyle.style(AAColor.Black)));
+
+        }
 
     public static AAOptions advancedTimeLineChart() {
         return new AAOptions()
                 .chart(new AAChart()
-                        .backgroundColor(AAColor.Red))
+                        .backgroundColor(AAColor.Red)
+                        .events(new AAChartEvents()
+                                .load("function () {\n" +
+                                        "                        var centerX = 140;\n" +
+                                        "                        var centerY = 110;\n" +
+                                        "                        var path = [];\n" +
+                                        "                        var angle;\n" +
+                                        "                        var radius;\n" +
+                                        "                        var badgeColor = Highcharts.color(Highcharts.getOptions().colors[0]).brighten(-0.2).get();\n" +
+                                        "                        var spike;\n" +
+                                        "                        var empImage;\n" +
+                                        "                        var big5;\n" +
+                                        "                        var label;\n" +
+                                        "                        var left;\n" +
+                                        "                        var right;\n" +
+                                        "                        var years;\n" +
+                                        "                        var renderer;\n" +
+                                        "\n" +
+                                        "                        if (this.chartWidth < 530) {\n" +
+                                        "                            return;\n" +
+                                        "                        }\n" +
+                                        "\n" +
+                                        "                        for (angle = 0; angle < 2 * Math.PI; angle += Math.PI / 24) {\n" +
+                                        "                            radius = spike ? 80 : 70;\n" +
+                                        "                            path.push(\n" +
+                                        "                                'L',\n" +
+                                        "                                centerX + radius * Math.cos(angle),\n" +
+                                        "                                centerY + radius * Math.sin(angle)\n" +
+                                        "                            );\n" +
+                                        "                            spike = !spike;\n" +
+                                        "                        }\n" +
+                                        "                        path[0] = 'M';\n" +
+                                        "                        path.push('z');\n" +
+                                        "                        this.renderer.path(path)\n" +
+                                        "                            .attr({\n" +
+                                        "                                fill: badgeColor,\n" +
+                                        "                                zIndex: 6\n" +
+                                        "                            })\n" +
+                                        "                            .add();\n" +
+                                        "\n" +
+                                        "                        empImage = this.renderer.path(path)\n" +
+                                        "                            .attr({\n" +
+                                        "                                zIndex: 7,\n" +
+                                        "                                opacity: 0,\n" +
+                                        "                                stroke: badgeColor,\n" +
+                                        "                                'stroke-width': 1\n" +
+                                        "                            })\n" +
+                                        "                            .add();\n" +
+                                        "\n" +
+                                        "                        big5 = this.renderer.text('5')\n" +
+                                        "                            .attr({\n" +
+                                        "                                zIndex: 6\n" +
+                                        "                            })\n" +
+                                        "                            .css({\n" +
+                                        "                                color: 'white',\n" +
+                                        "                                fontSize: '100px',\n" +
+                                        "                                fontStyle: 'italic',\n" +
+                                        "                                fontFamily: '\\'Brush Script MT\\', sans-serif'\n" +
+                                        "                            })\n" +
+                                        "                            .add();\n" +
+                                        "                        big5.attr({\n" +
+                                        "                            x: centerX - big5.getBBox().width / 2,\n" +
+                                        "                            y: centerY + 14\n" +
+                                        "                        });\n" +
+                                        "\n" +
+                                        "                        label = this.renderer.text('Highcharts Anniversary')\n" +
+                                        "                            .attr({\n" +
+                                        "                                zIndex: 6\n" +
+                                        "                            })\n" +
+                                        "                            .css({\n" +
+                                        "                                color: '#FFFFFF'\n" +
+                                        "                            })\n" +
+                                        "                            .add();\n" +
+                                        "\n" +
+                                        "                        left = centerX - label.getBBox().width / 2;\n" +
+                                        "                        right = centerX + label.getBBox().width / 2;\n" +
+                                        "\n" +
+                                        "                        label.attr({\n" +
+                                        "                            x: left,\n" +
+                                        "                            y: centerY + 44\n" +
+                                        "                        });\n" +
+                                        "\n" +
+                                        "                        left = centerX - 90;\n" +
+                                        "                        right = centerX + 90;\n" +
+                                        "                        this.renderer\n" +
+                                        "                            .path([\n" +
+                                        "                                'M', left, centerY + 30,\n" +
+                                        "                                'L', right, centerY + 30,\n" +
+                                        "                                right, centerY + 50,\n" +
+                                        "                                left, centerY + 50,\n" +
+                                        "                                'z',\n" +
+                                        "                                'M', left, centerY + 40,\n" +
+                                        "                                'L', left - 20, centerY + 40,\n" +
+                                        "                                left - 10, centerY + 50,\n" +
+                                        "                                left - 20, centerY + 60,\n" +
+                                        "                                left + 10, centerY + 60,\n" +
+                                        "                                left, centerY + 50,\n" +
+                                        "                                left + 10, centerY + 60,\n" +
+                                        "                                left + 10, centerY + 50,\n" +
+                                        "                                left, centerY + 50,\n" +
+                                        "                                'z',\n" +
+                                        "                                'M', right, centerY + 40,\n" +
+                                        "                                'L', right + 20, centerY + 40,\n" +
+                                        "                                right + 10, centerY + 50,\n" +
+                                        "                                right + 20, centerY + 60,\n" +
+                                        "                                right - 10, centerY + 60,\n" +
+                                        "                                right, centerY + 50,\n" +
+                                        "                                right - 10, centerY + 60,\n" +
+                                        "                                right - 10, centerY + 50,\n" +
+                                        "                                right, centerY + 50,\n" +
+                                        "                                'z'\n" +
+                                        "                            ])\n" +
+                                        "                            .attr({\n" +
+                                        "                                fill: badgeColor,\n" +
+                                        "                                stroke: '#FFFFFF',\n" +
+                                        "                                'stroke-width': 1,\n" +
+                                        "                                zIndex: 5\n" +
+                                        "                            })\n" +
+                                        "                            .add();\n" +
+                                        "\n" +
+                                        "                        years = this.renderer.text('2009-2014')\n" +
+                                        "                            .attr({\n" +
+                                        "                                zIndex: 6\n" +
+                                        "                            })\n" +
+                                        "                            .css({\n" +
+                                        "                                color: '#FFFFFF',\n" +
+                                        "                                fontStyle: 'italic',\n" +
+                                        "                                fontSize: '10px'\n" +
+                                        "                            })\n" +
+                                        "                            .add();\n" +
+                                        "                        years.attr({\n" +
+                                        "                            x: centerX - years.getBBox().width / 2,\n" +
+                                        "                            y: centerY + 62\n" +
+                                        "                        });\n" +
+                                        "\n" +
+                                        "                        renderer = this.renderer;\n" +
+                                        "                        if (renderer.defs) {\n" +
+                                        "                            this.get('employees').points.forEach(point => {\n" +
+                                        "                                let pattern;\n" +
+                                        "                                if (point.image) {\n" +
+                                        "                                    pattern = renderer.createElement('pattern').attr({\n" +
+                                        "                                        id: 'pattern-' + point.image,\n" +
+                                        "                                        patternUnits: 'userSpaceOnUse',\n" +
+                                        "                                        width: 400,\n" +
+                                        "                                        height: 400\n" +
+                                        "                                    }).add(renderer.defs);\n" +
+                                        "                                    renderer.image(\n" +
+                                        "                                        'https://www.highcharts.com/images/employees2014/' + point.image + '.jpg',\n" +
+                                        "                                        centerX - 80,\n" +
+                                        "                                        centerY - 80,\n" +
+                                        "                                        160,\n" +
+                                        "                                        213\n" +
+                                        "                                    ).add(pattern);\n" +
+                                        "\n" +
+                                        "                                    Highcharts.addEvent(point, 'mouseOver', function () {\n" +
+                                        "                                        empImage\n" +
+                                        "                                            .attr({\n" +
+                                        "                                                fill: 'url(#pattern-' + point.image + ')'\n" +
+                                        "                                            })\n" +
+                                        "                                            .animate({ opacity: 1 }, { duration: 500 });\n" +
+                                        "                                    });\n" +
+                                        "                                    Highcharts.addEvent(point, 'mouseOut', function () {\n" +
+                                        "                                        empImage.animate({ opacity: 0 }, { duration: 500 });\n" +
+                                        "                                    });\n" +
+                                        "                                }\n" +
+                                        "                            });\n" +
+                                        "                        }\n" +
+                                        "                    }")
+                               ))
 //
                 .xAxis(new AAXAxis()
                         .type(AAChartAxisType.Datetime)
