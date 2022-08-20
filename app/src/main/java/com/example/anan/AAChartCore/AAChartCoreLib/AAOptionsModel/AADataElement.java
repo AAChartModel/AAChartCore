@@ -2,6 +2,7 @@ package com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel;
 
 public class AADataElement {
     public String name;
+    public Number x;
     public Number y;
     public Object color;
     public AADataLabels dataLabels;
@@ -9,6 +10,11 @@ public class AADataElement {
 
     public AADataElement name(String prop) {
         name = prop;
+        return this;
+    }
+
+    public AADataElement x(Number prop) {
+        x = prop;
         return this;
     }
 
