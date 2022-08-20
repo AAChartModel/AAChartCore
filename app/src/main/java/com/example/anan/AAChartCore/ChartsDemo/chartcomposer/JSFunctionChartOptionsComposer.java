@@ -2,14 +2,21 @@ package com.example.anan.AAChartCore.ChartsDemo.chartcomposer;
 
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartCreator.AAChartModel;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartCreator.AASeriesElement;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartAlignType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartAnimationType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartFontWeightType;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartLayoutType;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartLineDashStyleType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartStackingType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartSymbolStyleType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartType;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartVerticalAlignType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAAnimation;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAChart;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAColumnrange;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AADataLabels;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAInactive;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAItemStyle;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AALabels;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAOptions;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAPlotOptions;
@@ -789,4 +796,325 @@ public class JSFunctionChartOptionsComposer {
     }
 
 
+
+
+
+    //https://github.com/AAChartModel/AAChartKit/issues/852 自定义蜘蛛🕷图样式
+    public static AAOptions customSpiderChartStyle() {
+        String[] categoryArr = {
+                "周转天数(天)",
+                "订单满足率",
+                "订单履约时效",
+                "动销率",
+                "畅销商品缺货率",
+                "高库存金额占比",
+                "不动销金额占比",
+                "停采金额占比",
+        };
+
+//        String categoryJSArrStr = {categoryArr aa_toJSArray];
+//
+//        String xAxisLabelsFormatter ={String stringWithFormat:(AAJSFunc(function () {
+//            return %[this.value];
+//        })),categoryJSArrStr];
+
+        String categoryJSArrStr = javaScriptArrayStringWithJavaArray(categoryArr);
+
+        String xAxisLabelsFormatter = String.format("return %s", categoryJSArrStr);
+
+        AAChartModel aaChartModel = new AAChartModel()
+                .chartType(AAChartType.Line)//图表类型
+                .title("健康体检表")//图表主标题
+                .colorsTheme(new String[]{"#fe117c","#ffc069",})//设置主体颜色数组
+                .yAxisLineWidth(0)
+//                .yAxisGridLineStyle([AALineStyle styleWithWidth:0})
+//    .yAxisTickPositions([0, 5, 10, 15, 20, 25, 30, 35})
+    .markerRadius(5)
+//                .markerSymbol(AAChartSymbolType.Circle)
+                .polar(true)
+                .series(new AASeriesElement[]{
+                        new AASeriesElement()
+                                .name("本月得分")
+                                .data(new Object[]{7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5,}),
+                        new AASeriesElement()
+                                .name("上月得分")
+                                .data(new Object[]{0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, }),
+                });
+
+        AAOptions aaOptions = aaChartModel.aa_toAAOptions();
+
+        aaOptions.chart
+                .marginLeft(80)
+                .marginRight(80);
+
+        aaOptions.xAxis
+                .lineWidth(0)//避免多边形外环之外有额外套了一层无用的外环
+                .labels.style(AAStyle.style(AAColor.Black))
+                .formatter(xAxisLabelsFormatter);
+
+        aaOptions.yAxis
+//                .gridLineInterpolation(AAChartYAxisGridLineInterpolationType.Polygon)//设置蜘蛛网🕸图表的网线为多边形
+                .labels.style(AAStyle.style(AAColor.Black));
+
+
+                //设定图例项的CSS样式。只支持有关文本的CSS样式设定。
+//                /默认是：{
+//            "color": "#333333",
+//                    "cursor": "pointer",
+//                    "fontSize": "12px",
+//                    "fontWeight": "bold"
+//        }
+//     /
+        AAItemStyle aaItemStyle = new AAItemStyle()
+                .color(AAColor.Gray)//字体颜色
+                .cursor("pointer")//(在移动端这个属性没什么意义,其实不用设置)指定鼠标滑过数据列时鼠标的形状。当绑定了数据列点击事件时，可以将此参数设置为 "pointer"，用来提醒用户改数据列是可以点击的。
+                .fontSize(14)//字体大小
+                .fontWeight(AAChartFontWeightType.Thin);//字体为细体字
+
+
+        aaOptions.legend
+                .enabled(true)
+                .align(AAChartAlignType.Center)//设置图例位于水平方向上的右侧
+                .layout(AAChartLayoutType.Horizontal)//设置图例排列方式为垂直排布
+                .verticalAlign(AAChartVerticalAlignType.Top)//设置图例位于竖直方向上的顶部
+                .itemStyle(aaItemStyle);
+
+
+        return aaOptions;
 }
+
+// Refer to the issue https://github.com/AAChartModel/AAChartKit/issues/589
+        public static AAOptions customizeEveryDataLabelSinglelyByDataLabelsFormatter() {
+            AAChartModel aaChartModel = new AAChartModel()
+                    .chartType(AAChartType.Areaspline)//图表类型
+                    .dataLabelsEnabled(true)
+                    .tooltipEnabled(false)
+                    .colorsTheme(new Object[]{AAGradientColor.FizzyPeach})
+                    .markerRadius(0)
+                    .legendEnabled(false)
+                    .categories(new String[]{"美国🇺🇸","欧洲🇪🇺","中国🇨🇳","日本🇯🇵","韩国🇰🇷","越南🇻🇳","中国香港🇭🇰",})
+    .series(new AASeriesElement[]{
+                new AASeriesElement()
+                        .data(new Object[]{7.0, 6.9, 2.5, 14.5, 18.2, 21.5, 5.2}),
+        });
+
+        AAOptions aaOptions = aaChartModel.aa_toAAOptions();
+        aaOptions.yAxis.gridLineDashStyle = AAChartLineDashStyleType.LongDash;//设置Y轴的网格线样式为 AAChartLineDashStyleType.LongDash
+
+        String[] unitArr ={"美元", "欧元", "人民币", "日元", "韩元", "越南盾", "港币", };
+//        String unitJSArrStr = {unitArr aa_toJSArray];
+     String unitJSArrStr = javaScriptArrayStringWithJavaArray(unitArr);
+//        String dataLabelsFormatter ={String stringWithFormat:(AAJSFunc(function () {
+//            return this.y + %[this.point.index];  //单组 serie 图表, 获取选中的点的索引是 this.point.index ,多组并且共享提示框,则是this.points[0].index
+//        })),unitJSArrStr];
+        String dataLabelsFormatter = "";
+
+        AADataLabels aaDatalabels = aaOptions.plotOptions.series.dataLabels;
+        aaDatalabels
+//                .style(AAStyleColorSizeWeightOutline(AAColor.redColor, 10, AAChartFontWeightType.Bold, "1px 1px contrast"))
+                .style(AAStyle.style(AAColor.Red, 10, AAChartFontWeightType.Bold, "1px 1px contrast"))
+                .formatter(dataLabelsFormatter)
+                .backgroundColor(AAColor.White)// white color
+                .borderColor(AAColor.Red)// red color
+                .borderRadius(1.5)
+                .borderWidth(1.3)
+                .x(3).y(-20)
+                .verticalAlign(AAChartVerticalAlignType.Middle);
+
+        return aaOptions;
+}
+
+    // Refer to GitHub issue: https://github.com/AAChartModel/AAChartKit/issues/938
+// Refer to online chart sample: https://www.highcharts.com/demo/column-comparison
+    public static AAOptions customXAxisLabelsBeImages() {
+        String[] nameArr = {
+                "South Korea",
+                "Japan",
+                "Australia",
+                "Germany",
+                "Russia",
+                "China",
+                "Great Britain",
+                "United States"
+        };
+
+        String[] colorArr = {
+AAColor.rgbaColor(201, 36,  39, 1.f),
+AAColor.rgbaColor(201, 36,  39, 1.f),
+AAColor.rgbaColor(0,   82,  180, 1.f),
+AAColor.rgbaColor(0,   0,   0, 1.f),
+AAColor.rgbaColor(240, 240, 240, 1.f),
+AAColor.rgbaColor(255, 217, 68, 1.f),
+AAColor.rgbaColor(0,   82,  180, 1.f),
+AAColor.rgbaColor(215, 0,   38, 1.f)
+        };
+
+
+        String[] imageLinkFlagArr = {
+                "197582",
+                "197604",
+                "197507",
+                "197571",
+                "197408",
+                "197375",
+                "197374",
+                "197484"
+        };
+
+        AAChartModel aaChartModel = new AAChartModel()
+                .chartType(AAChartType.Column)
+                .title("Custom X Axis Labels Be Images")
+                .subtitle("use HTML")
+                .categories(nameArr)
+                .colorsTheme(colorArr)
+                .borderRadius(5)
+                .series(new AASeriesElement[]{
+                        new AASeriesElement()
+                                .name("AD 2020")
+                                .data(new Object[]{9.0, 9.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5})
+                                .colorByPoint(true)
+                                .borderRadiusTopLeft("50%")
+                                .borderRadiusTopRight("50%")
+                });
+
+        String imageLinkFlagJSArrStr = javaScriptArrayStringWithJavaArray(imageLinkFlagArr);
+//        String xLabelsFormatter ={String stringWithFormat:(AAJSFunc(function () {
+//            let imageFlag = %[this.pos];
+//            let imageLink = "
+//            ";
+//            return imageLink;
+//        })),imageLinkFlagJSArrStr];
+        String xLabelsFormatter = "";
+
+        //    https://api.highcharts.com.cn/highcharts#xAxis.labels.formatter
+        AAOptions aaOptions = aaChartModel.aa_toAAOptions();
+        aaOptions.xAxis.labels
+                .useHTML(true)
+                .formatter(xLabelsFormatter);
+
+
+        aaOptions.plotOptions.column.groupPadding(0.005f);
+
+//    /Custom tooltip style/
+//                String tooltipFormatter ={String stringWithFormat:(AAJSFunc(function () {
+//            let imageFlag = %[this.point.index];
+//            let imageLink = "
+//            ";
+//            return imageLink
+//                    + " 🌕 🌖 🌗 🌘 🌑 🌒 🌓 🌔
+//            "
+//                    + " Support JavaScript Function Just Right Now !!!
+//            "
+//                    + " The Gold Price For 2020 "
+//                    +  this.x
+//                    + "  Is  "
+//                    +  this.y
+//                    + "  Dollars ";
+//        })),imageLinkFlagJSArrStr];
+
+        aaOptions.tooltip
+                .shared(false)
+                .useHTML(true)
+                .formatter("tooltipFormatter");
+
+
+        return aaOptions;
+}
+
+//https://bbs.hcharts.cn/article-109-1.html
+//图表自带的图例点击事件是：
+//点击某个显示/隐藏的图例，该图例对应的serie就隐藏/显示。
+//个人觉得不合理，正常来说，有多条折线(或其他类型的图表)，点击某个图例是想只看该图例对应的数据；
+//于是修改了图例点击事件。
+//
+//实现的效果是(以折线图为例)：
+//1. 当某条折线隐藏时，点击该折线的图例 --> 该折线显示；
+//2. 当全部折线都显示时，点击某个图例 --> 该图例对应的折线显示，其他折线均隐藏；
+//3. 当只有一条折线显示时，点击该折线的图例 --> 全部折线均显示；
+//4. 其他情况，按默认处理：
+//显示 --> 隐藏；
+//隐藏 --> 显示；
+//Customized legengItemClick Event online: http://code.hcharts.cn/rencht/hhhhLv/share
+        public static AAOptions customLegendItemClickEvent() {
+            AAChartModel aaChartModel = new AAChartModel()
+                    .chartType(AAChartType.Column)
+                    .stacking(AAChartStackingType.Normal)
+                    .colorsTheme(new String[]{"#fe117c","#ffc069","#06caf4","#7dffc0"})//设置主题颜色数组
+                    .markerRadius(0)
+                    .series(new AASeriesElement[]{
+                            new AASeriesElement()
+                                    .name("2017")
+                                    .data(new Object[]{7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6}),
+                            new AASeriesElement()
+                                    .name("2018")
+                                    .data(new Object[]{0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5}),
+                            new AASeriesElement()
+                                    .name("2019")
+                                    .data(new Object[]{0.9, 0.6, 3.5, 8.4, 13.5, 17.0, 18.6, 17.9, 14.3, 9.0, 3.9, 1.0}),
+                            new AASeriesElement()
+                                    .name("2020")
+                                    .data(new Object[]{3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8}),
+                    });
+
+
+            AAOptions aaOptions = aaChartModel.aa_toAAOptions();
+
+            aaOptions.legend
+                    .enabled(true)
+                    .align(AAChartAlignType.Right)//设置图例位于水平方向上的右侧
+                    .layout(AAChartLayoutType.Vertical)//设置图例排列方式为垂直排布
+                    .verticalAlign(AAChartVerticalAlignType.Top);//设置图例位于竖直方向上的顶部
+
+
+            //自定义图例点击事件
+            aaOptions.plotOptions.series.events = new AASeriesEvents()
+                    .legendItemClick("function(event) {\n" +
+                            "        function getVisibleMode(series, serieName) {\n" +
+                            "            var allVisible = true;\n" +
+                            "            var allHidden = true;\n" +
+                            "            for (var i = 0; i < series.length; i++) {\n" +
+                            "                if (series[i].name == serieName)\n" +
+                            "                    continue;\n" +
+                            "                allVisible &= series[i].visible;\n" +
+                            "                allHidden &= (!series[i].visible);\n" +
+                            "            }\n" +
+                            "            if (allVisible && !allHidden)\n" +
+                            "                return 'all-visible';\n" +
+                            "            if (allHidden && !allVisible)\n" +
+                            "                return 'all-hidden';\n" +
+                            "            return 'other-cases';\n" +
+                            "        }\n" +
+                            "        \n" +
+                            "        var series = this.chart.series;\n" +
+                            "        var mode = getVisibleMode(series, this.name);\n" +
+                            "        var enableDefault = false;\n" +
+                            "        if (!this.visible) {\n" +
+                            "            enableDefault = true;\n" +
+                            "        }\n" +
+                            "        else if (mode == 'all-visible') {\n" +
+                            "            var seriesLength = series.length;\n" +
+                            "            for (var i = 0; i < seriesLength; i++) {\n" +
+                            "                var serie = series[i];\n" +
+                            "                serie.hide();\n" +
+                            "            }\n" +
+                            "            this.show();\n" +
+                            "        }\n" +
+                            "        else if (mode == 'all-hidden') {\n" +
+                            "            var seriesLength = series.length;\n" +
+                            "            for (var i = 0; i < seriesLength; i++) {\n" +
+                            "                var serie = series[i];\n" +
+                            "                serie.show();\n" +
+                            "            }\n" +
+                            "        }\n" +
+                            "        else {\n" +
+                            "            enableDefault = true;\n" +
+                            "        }\n" +
+                            "        return enableDefault;\n" +
+                            "    }");
+
+            return aaOptions;
+        }
+
+
+
+    }
