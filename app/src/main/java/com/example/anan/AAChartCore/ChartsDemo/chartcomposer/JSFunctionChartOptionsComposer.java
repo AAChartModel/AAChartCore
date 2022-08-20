@@ -4,6 +4,7 @@ import com.example.anan.AAChartCore.AAChartCoreLib.AAChartCreator.AAChartModel;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartCreator.AASeriesElement;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartAlignType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartAnimationType;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartAxisType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartFontWeightType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartLayoutType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartLineDashStyleType;
@@ -20,9 +21,11 @@ import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AADataLabels;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAHover;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAInactive;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAItemStyle;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AALabel;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AALabels;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAMarker;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAOptions;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAPlotBandsElement;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAPlotOptions;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAResetZoomButton;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AASelect;
@@ -38,8 +41,12 @@ import com.example.anan.AAChartCore.AAChartCoreLib.AATools.AAColor;
 import com.example.anan.AAChartCore.AAChartCoreLib.AATools.AAGradientColor;
 import com.example.anan.AAChartCore.AAChartCoreLib.AATools.AALinearGradientDirection;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.TimeZone;
 
 public class JSFunctionChartOptionsComposer {
 
@@ -1938,5 +1945,324 @@ public static AAOptions setCrosshairAndTooltipToTheDefaultPositionAfterLoadingCh
 
         return aaOptions;
         }
+
+
+    //https://github.com/AAChartModel/AAChartKit-Swift/issues/365
+//https://api.highcharts.com/highcharts/tooltip.formatter
+//Callback function to format the text of the tooltip from scratch. In case of single or shared tooltips,
+//a string should be returned. In case of split tooltips, it should return an array where the first item
+//is the header, and subsequent items are mapped to the points. Return `false` to disable tooltip for a
+//specific point on series.
+    public static AAOptions customColumnChartBorderStyleAndStatesHoverColor() {
+        AAChartModel aaChartModel = new AAChartModel()
+                .chartType(AAChartType.Column)
+                .stacking(AAChartStackingType.Normal)
+                .colorsTheme(new String[]{AAColor.DarkGray, AAColor.LightGray})//Colors theme
+                .categories(new String[]{
+                "January", "February", "March", "April", "May", "June",
+                "July", "August", "September", "October", "November", "December"
+    })
+            .series(new AASeriesElement[]{
+        new AASeriesElement()
+                .name("Berlin Hot")
+                .borderColor(AAColor.White)
+                .borderWidth(3)
+                .borderRadius(10)
+                .states(new AAStates()
+                        .hover(new AAHover()
+                                .color(AAColor.Red)))
+                .data(new Object[]{7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6}),
+
+                new AASeriesElement()
+                        .name("Beijing Hot")
+                        .borderColor(AAColor.White)
+                        .borderWidth(3)
+                        .borderRadius(10)
+                        .states(new AAStates()
+                                .hover(new AAHover()
+                                        .color("dodgerblue")))// Dodgerblue／道奇藍／#1e90ff十六进制颜色代码
+                        .data(new Object[]{0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5}),
+    });
+
+    AAOptions aaOptions = aaChartModel.aa_toAAOptions();
+//    aaOptions.tooltip
+//            .formatter(AAJSFunc(function () {
+//        return false;
+//    }));
+
+    return aaOptions;
+}
+
+//    public static AAOptions generalDrawingChart() {
+//        return new AAOptions()
+//                .chart(new AAChart()
+//                        .backgroundColor(AAColor.White)
+//                        .events(AAChartEvents.new
+//
+//        }
+
+    public static AAOptions advancedTimeLineChart() {
+        return new AAOptions()
+                .chart(new AAChart()
+                        .backgroundColor(AAColor.Red))
+//
+        .xAxis(new AAXAxis()
+        .type(AAChartAxisType.Datetime)
+        .minTickInterval(315360000)
+        .labels(new AALabels()
+        .align(AAChartAlignType.Left))
+        .plotBands(new AAPlotBandsElement[]{
+        new AAPlotBandsElement()
+        .from(1259280000)
+        .to(1291161600)
+        .color("#EFFFFF")
+        .label(new AALabel()
+        .text("办事处:Torstein的地下室")
+        .style(new AAStyle()
+        .color("#999999"))
+        .y(180)),
+        new AAPlotBandsElement()
+        .from(1291161600)
+        .to(1380585600)
+        .color("#FFFFEF")
+        .label(new AALabel()
+        .text("办事处:Tomtebu")
+        .style(new AAStyle()
+        .color("#999999"))
+        .y(30)),
+        new AAPlotBandsElement()
+        .from(1380585600)
+        .to(1417046400)
+        .color("#FFEFFF")
+        .label(new AALabel()
+        .text("办事处:VikØrsta")
+        .style(new AAStyle()
+        .color("#999999"))
+        .y(30))
+        }))
+        .title(new AATitle()
+        .text("Highsoft 公司发展历程"))
+        .tooltip(new AATooltip()
+        .style(new AAStyle()
+        .width(250)))
+        .yAxisArray(new AAYAxis[]{
+        new AAYAxis()
+        .max(100)
+        .labels(new AALabels()
+        .enabled(false))
+        .title(new AATitle()
+        .text(""))
+        .gridLineColor("rgba(0, 0, 0, 0.07)"),
+        new AAYAxis()
+        .allowDecimals(false)
+        .max(15)
+        .labels(new AALabels()
+        .style(new AAStyle()
+        .color("#90ed7d")))
+                .title(new AATitle()
+        .text("雇员")
+        .style(new AAStyle()
+        .color("#90ed7d")))
+        .opposite(true)
+        .gridLineWidth(0)
+        })
+        .plotOptions(new AAPlotOptions()
+        .series(new AASeries()
+        .marker(new AAMarker()
+        .enabled(false)
+        .symbol(AAChartSymbolType.Circle)
+        .radius(2))
+//                .fillOpacity(0.5)
+        )
+//            .flags(AAFlags.new
+//                .tooltip(new AATooltip()
+//                    .xDateFormat("%B %e, %Y")))
+        )
+        .series(new AASeriesElement[]{
+        new AASeriesElement()
+        .type(AAChartType.Line)
+//                .id("google-trends")
+        .dashStyle(AAChartLineDashStyleType.LongDashDotDot)
+        .name("Google search for highcharts")
+        .data(new Object[]{
+//        {"x": 1258322400000, /* November 2009 */ "y": 0},
+//        {"x": 1260961200000, "y":  5},
+//        {"x": 1263639600000, "y":  7},
+//        {"x": 1266188400000, "y":  5},
+//        {"x": 1268740800000, "y":  6},
+//        {"x": 1271368800000, "y":  8},
+//        {"x": 1274004000000, "y": 11},
+//        {"x": 1276639200000, "y":  9},
+//        {"x": 1279274400000, "y": 12},
+//        {"x": 1281952800000, "y": 13},
+//        {"x": 1284588000000, "y": 17},
+//        {"x": 1287223200000, "y": 17},
+//        {"x": 1289858400000, "y": 18},
+//        {"x": 1292497200000, "y": 20},
+//        {"x": 1295175600000, "y": 20},
+//        {"x": 1297724400000, "y": 27},
+//        {"x": 1300276800000, "y": 32},
+//        {"x": 1302904800000, "y": 29},
+//        {"x": 1305540000000, "y": 34},
+//        {"x": 1308175200000, "y": 34},
+//        {"x": 1310810400000, "y": 36},
+//        {"x": 1313488800000, "y": 43},
+//        {"x": 1316124000000, "y": 44},
+//        {"x": 1318759200000, "y": 42},
+//        {"x": 1321394400000, "y": 47},
+//        {"x": 1324033200000, "y": 46},
+//        {"x": 1326711600000, "y": 50},
+//        {"x": 1329303600000, "y": 57},
+//        {"x": 1331899200000, "y": 54},
+//        {"x": 1334527200000, "y": 59},
+//        {"x": 1337162400000, "y": 62},
+//        {"x": 1339797600000, "y": 66},
+//        {"x": 1342432800000, "y": 61},
+//        {"x": 1345111200000, "y": 68},
+//        {"x": 1347746400000, "y": 67},
+//        {"x": 1350381600000, "y": 73},
+//        {"x": 1353016800000, "y": 63},
+//        {"x": 1355655600000, "y": 54},
+//        {"x": 1358334000000, "y": 67},
+//        {"x": 1360882800000, "y": 74},
+//        {"x": 1363435200000, "y": 81},
+//        {"x": 1366063200000, "y": 89},
+//        {"x": 1368698400000, "y": 83},
+//        {"x": 1371333600000, "y": 88},
+//        {"x": 1373968800000, "y": 86},
+//        {"x": 1376647200000, "y": 81},
+//        {"x": 1379282400000, "y": 83},
+//        {"x": 1381917600000, "y": 95},
+//        {"x": 1384552800000, "y": 86},
+//        {"x": 1387191600000, "y": 83},
+//        {"x": 1389870000000, "y": 89},
+//        {"x": 1392418800000, "y": 90},
+//        {"x": 1394971200000, "y": 94},
+//        {"x": 1397599200000, "y":100},
+//        {"x": 1400234400000, "y":100},
+//        {"x": 1402869600000, "y": 99},
+//        {"x": 1405504800000, "y": 99},
+//        {"x": 1408183200000, "y": 93},
+//        {"x": 1410818400000, "y": 97},
+//        {"x": 1413453600000, "y": 98}
+        })
+//                .tooltip(new AATooltip()
+//                    .xDateFormat("%B %Y")
+//                    .valueSuffix(" % of best month"))
+        ,
+        new AASeriesElement()
+        .name("收入")
+//                .id("revenue")
+        .type(AAChartType.Area)
+        .data(new Object[][]{
+//        {1257033600000,  2},
+//        {1259625600000,  3},
+//        {1262304000000,  2},
+//        {1264982400000,  3},
+//        {1267401600000,  4},
+//        {1270080000000,  4},
+//        {1272672000000,  4},
+//        {1275350400000,  4},
+//        {1277942400000,  5},
+//        {1280620800000,  7},
+//        {1283299200000,  6},
+//        {1285891200000,  9},
+//        {1288569600000, 10},
+//        {1291161600000,  8},
+//        {1293840000000, 10},
+//        {1296518400000, 13},
+//        {1298937600000, 15},
+//        {1301616000000, 14},
+//        {1304208000000, 15},
+//        {1306886400000, 16},
+//        {1309478400000, 22},
+//        {1312156800000, 19},
+//        {1314835200000, 20},
+//        {1317427200000, 32},
+//        {1320105600000, 34},
+//        {1322697600000, 36},
+//        {1325376000000, 34},
+//        {1328054400000, 40},
+//        {1330560000000, 37},
+//        {1333238400000, 35},
+//        {1335830400000, 40},
+//        {1338508800000, 38},
+//        {1341100800000, 39},
+//        {1343779200000, 43},
+//        {1346457600000, 49},
+//        {1349049600000, 43},
+//        {1351728000000, 54},
+//        {1354320000000, 44},
+//        {1356998400000, 43},
+//        {1359676800000, 43},
+//        {1362096000000, 52},
+//        {1364774400000, 52},
+//        {1367366400000, 56},
+//        {1370044800000, 62},
+//        {1372636800000, 66},
+//        {1375315200000, 62},
+//        {1377993600000, 63},
+//        {1380585600000, 60},
+//        {1383264000000, 60},
+//        {1385856000000, 58},
+//        {1388534400000, 65},
+//        {1391212800000, 52},
+//        {1393632000000, 72},
+//        {1396310400000, 57},
+//        {1398902400000, 70},
+//        {1401580800000, 63},
+//        {1404172800000, 65},
+//        {1406851200000, 65},
+//        {1409529600000, 89},
+//        {1412121600000,100}
+        })
+//                .tooltip(new AATooltip()
+//                    .xDateFormat("%B %Y")
+//                    .valueSuffix(" % of best month")
+//            )
+        ,
+        new AASeriesElement()
+        .yAxis(1)
+        .name("Highsoft 员工")
+//                .id("employees")
+        .type(AAChartType.Area)
+        .step("left")
+                .tooltip(new AATooltip()
+                    .headerFormat("{point.x:%B %e, %Y}")
+                    .pointFormat("{point.name}{point.y}")
+                    .valueSuffix(" employees"))
+        .data(new Object[]{
+//        {"x": AADateUTC(2009, 10,  1), "y": 1,  "name": "Torstein 一个人工作", "image": "Torstein" },
+//        {"x": AADateUTC(2010, 10, 20), "y": 2,  "name": "Grethe 加入", "image": "Grethe" },
+//        {"x": AADateUTC(2011, 3,   1), "y": 3,  "name": "Erik 加入", "image": null },
+//        {"x": AADateUTC(2011, 7,   1), "y": 4,  "name": "Gert 加入", "image": "Gert" },
+//        {"x": AADateUTC(2011, 7,  15), "y": 5,  "name": "Hilde 加入", "image": "Hilde" },
+//        {"x": AADateUTC(2012, 5,   1), "y": 6,  "name": "Guro 加入", "image": "Guro" },
+//        {"x": AADateUTC(2012, 8,   1), "y": 5,  "name": "Erik left", "image": NSNull.new },
+//        {"x": AADateUTC(2012, 8,  15), "y": 6,  "name": "Anne Jorunn 加入", "image": "AnneJorunn" },
+//        {"x": AADateUTC(2013, 0,   1), "y": 7,  "name": "Hilde T. 加入", "image": NSNull.new },
+//        {"x": AADateUTC(2013, 7,   1), "y": 8,  "name": "Jon Arild 加入", "image": "JonArild" },
+//        {"x": AADateUTC(2013, 7,  20), "y": 9,  "name": "Øystein 加入", "image": "Oystein" },
+//        {"x": AADateUTC(2013, 9,   1), "y": 10, "name": "Stephane 加入", "image": "Stephane" },
+//        {"x": AADateUTC(2014, 9,   1), "y": 11, "name": "Anita 加入", "image": "Anita" },
+//        {"x": AADateUTC(2014, 10, 27), "y": 11, "name": "", "image": NSNull.new}
+        })
+        });
+
+        }
+
+//   get UTC number from date
+    private static long AADateUTC(int year, int month, int day) {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        sdf.setTimeZone(TimeZone.getTimeZone("UTC"));
+        Date date = null;
+        try {
+            date = sdf.parse(year + "-" + month + "-" + day);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return date.getTime();
+    }
+
 
     }
