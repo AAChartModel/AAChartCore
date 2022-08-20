@@ -925,7 +925,6 @@ public class JSFunctionChartOptionsComposer {
 
         AADataLabels aaDatalabels = aaOptions.plotOptions.series.dataLabels;
         aaDatalabels
-//                .style(AAStyleColorSizeWeightOutline(AAColor.redColor, 10, AAChartFontWeightType.Bold, "1px 1px contrast"))
                 .style(AAStyle.style(AAColor.Red, 10, AAChartFontWeightType.Bold, "1px 1px contrast"))
                 .formatter(dataLabelsFormatter)
                 .backgroundColor(AAColor.White)// white color
