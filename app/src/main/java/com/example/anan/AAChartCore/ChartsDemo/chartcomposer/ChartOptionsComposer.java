@@ -4,6 +4,7 @@ import com.example.anan.AAChartCore.AAChartCoreLib.AAChartCreator.AAChartModel;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartCreator.AASeriesElement;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartAlignType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartAnimationType;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartAxisType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartFontWeightType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartLayoutType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartLineDashStyleType;
@@ -18,6 +19,7 @@ import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAChart;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAColumn;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AACrosshair;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AADataLabels;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AADateTimeLabelFormats;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAItemStyle;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AALabel;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AALabels;
@@ -31,6 +33,7 @@ import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAPlotLinesEle
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAPlotOptions;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAResetZoomButton;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AASeries;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AASeriesEvents;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAStyle;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AASubtitle;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AATitle;
@@ -42,8 +45,12 @@ import com.example.anan.AAChartCore.AAChartCoreLib.AATools.AAColor;
 import com.example.anan.AAChartCore.AAChartCoreLib.AATools.AAGradientColor;
 import com.example.anan.AAChartCore.AAChartCoreLib.AATools.AALinearGradientDirection;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.TimeZone;
 
 public class ChartOptionsComposer {
 
@@ -1334,5 +1341,428 @@ public class ChartOptionsComposer {
         return aaOptions;
     }
 
+    public static AAOptions customAreasplineChartTooltipContentWithHeaderFormat() {
+        AAChartModel aaChartModel = new AAChartModel()
+                .chartType(AAChartType.Areaspline)//图表类型
+                .colorsTheme(new String[]{"#04d69f", "#1e90ff", "#ef476f", "#ffd066",})
+                .stacking(AAChartStackingType.Normal)
+                .markerRadius(0)
+                .categories(new String[]{"01", "02", "03", "04", "05", "06", "07", "08", "09", "10",
+                        "11", "12", "13", "14", "15", "16", "17", "18", "19", "20",
+                        "21", "22", "23", "24", "25", "26", "27", "28", "29", "30",
+                        "31"})
+                .yAxisVisible(false)
+                .markerRadius(0)
+                .series(new AASeriesElement[]{
+                        new AASeriesElement()
+                                .name("客流")
+                                .lineWidth(5.0)
+                                .fillOpacity(0.4)
+                                .data(new Object[]{
+                                26, 27, 53, 41, 35, 55, 33, 42, 33, 63,
+                                40, 43, 36, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                                0
+                        })
+                });
 
-}
+        String title = "<span style=\"color:red;font-size:17px;font-weight:bold;\">客流</span><br>";
+        String week = "周一";
+        String time = "时间: 8.{point.x}" + " (" + week + ")<br>";
+        String headerFormat = title + time;
+
+        AAOptions aaOptions = aaChartModel.aa_toAAOptions();
+        aaOptions.tooltip
+                .useHTML(true)
+                .headerFormat(headerFormat)
+                .style(new AAStyle()
+                        .color(AAColor.White)
+                        .fontSize(14))
+                .backgroundColor("#050505")
+                .borderColor("#050505");
+
+        //禁用图例点击事件
+        aaOptions.plotOptions.series.events = new AASeriesEvents()
+                .legendItemClick("function() {\n" +
+                        "            return false;\n" +
+                        "        }");
+
+        return aaOptions;
+    }
+
+//    //https://github.com/AAChartModel/AAChartKit/issues/1125
+//    private func customAreaChartTooltipStyleWithTotalValueHeader() -> AAOptions {
+//        let goldStopsArr = [
+//            [0.0, AARgba(255, 215, 0, 1.0)],//颜色字符串设置支持十六进制类型和 rgba 类型
+//            [0.6, AARgba(255, 215, 0, 0.2)],
+//            [1.0, AARgba(255, 215, 0, 0.0)]
+//        ]
+//        let gradientGoldColorDic = AAGradientColor.linearGradient(
+//                direction: .toBottom,
+//                stops: goldStopsArr
+//        )
+//
+//        let greenStopsArr = [
+//            [0.0, AARgba(50, 205, 50, 1.0)],//颜色字符串设置支持十六进制类型和 rgba 类型
+//            [0.6, AARgba(50, 205, 50, 0.2)],
+//            [1.0, AARgba(50, 205, 50, 0.0)]
+//        ]
+//        let gradientGreenColorDic = AAGradientColor.linearGradient(
+//                direction: .toBottom,
+//                stops: greenStopsArr
+//        )
+//
+//        let aaChartModel = AAChartModel()
+//                .chartType(.area)//图表类型
+//            .title("2021 年 10 月上海市猫与狗生存调查")//图表主标题
+//                .subtitle("数据来源：www.无任何可靠依据.com")//图表副标题
+//                .colorsTheme([
+//                AARgba(255, 215, 0, 1.0),
+//                AARgba(50, 205, 50, 1.0),
+//            ])
+//            .markerSymbolStyle(.innerBlank)//折线连接点样式为内部白色
+//            .stacking(.normal)
+//            .categories(["10-01","10-02","10-03","10-04","10-05","10-06","10-07","10-08",])
+//            .series([
+//                AASeriesElement()
+//                        .lineWidth(6)
+//                        .fillColor(gradientGoldColorDic)
+//                        .name("🐶狗")
+//                        .data([43934, 52503, 57177, 69658, 97031, 119931, 137133, 154175]),
+//        AASeriesElement()
+//                .lineWidth(6)
+//                .fillColor(gradientGreenColorDic)
+//                .name("🐱猫")
+//                .data([24916, 24064, 29742, 29851, 32490, 30282, 38121, 40434]),
+//            ])
+//
+//        let aaOptions = aaChartModel.aa_toAAOptions()
+//        aaOptions.tooltip?
+//            .useHTML(true)
+//                .headerFormat("狗和猫的总数为:{point.total}<br/>")
+//
+//
+//        return aaOptions
+//    }
+
+    public static AAOptions customAreaChartTooltipStyleWithTotalValueHeader() {
+        Object[][] goldStopsArr = new Object[][]{
+                new Object[]{0.0, AAColor.rgbaColor(255, 215, 0, 1.0f)},//颜色字符串设置支持十六进制类型和 rgba 类型
+                new Object[]{0.6, AAColor.rgbaColor(255, 215, 0, 0.2f)},
+                new Object[]{1.0, AAColor.rgbaColor(255, 215, 0, 0.0f)}
+        };
+        Map<String, Object> gradientGoldColorDic = AAGradientColor.linearGradient(AALinearGradientDirection.ToBottom, goldStopsArr);
+
+        Object[][] greenStopsArr = new Object[][]{
+                new Object[]{0.0, AAColor.rgbaColor(50, 205, 50, 1.0f)},//颜色字符串设置支持十六进制类型和 rgba 类型
+                new Object[]{0.6, AAColor.rgbaColor(50, 205, 50, 0.2f)},
+                new Object[]{1.0, AAColor.rgbaColor(50, 205, 50, 0.0f)}
+        };
+        Map<String, Object> gradientGreenColorDic = AAGradientColor.linearGradient(AALinearGradientDirection.ToBottom, greenStopsArr);
+
+        AAChartModel aaChartModel = new AAChartModel()
+                .chartType(AAChartType.Area)//图表类型
+                .title("2021 年 10 月上海市猫与狗生存调查")//图表主标题
+                .subtitle("数据来源：www.无任何可靠依据.com")//图表副标题
+                .colorsTheme(new Object[]{
+                        AAColor.rgbaColor(255, 215, 0, 1.0f),
+                        AAColor.rgbaColor(50, 205, 50, 1.0f)
+                })
+                .markerSymbolStyle(AAChartSymbolStyleType.InnerBlank)//折线连接点样式为内部白色
+                .stacking(AAChartStackingType.Normal)
+                .categories(new String[]{"10-01","10-02","10-03","10-04","10-05","10-06","10-07","10-08",})
+                .series(new AASeriesElement[]{
+                        new AASeriesElement()
+                                .lineWidth(6)
+                                .fillColor(gradientGoldColorDic)
+                                .name("🐶狗")
+                                .data(new Object[]{43934, 52503, 57177, 69658, 97031, 119931, 137133, 154175}),
+                        new AASeriesElement()
+                                .lineWidth(6)
+                                .fillColor(gradientGreenColorDic)
+                                .name("🐱猫")
+                                .data(new Object[]{24916, 24064, 29742, 29851, 32490, 30282, 38121, 40434}),
+                });
+
+        AAOptions aaOptions = aaChartModel.aa_toAAOptions();
+        aaOptions.tooltip
+                .useHTML(true)
+                .headerFormat("狗和猫的总数为:{point.total}<br/>");
+
+        return aaOptions;
+    }
+
+
+    private static AAOptions configureYAxisLabelsNumericSymbolsMagnitudeOfAerasplineChart() {
+        Map<String, Object> gradientColorDic1 = AAGradientColor.linearGradient(
+                AALinearGradientDirection.ToBottom,
+               "#FC354C",
+                "#0ABFBC"
+        );
+
+        AAChartModel aaChartModel = new AAChartModel()
+                .chartType(AAChartType.Areaspline)//图表类型
+                .title("Numeric symbols magnitude")//图表主标题
+                .subtitle("Chinese and Japanese uses ten thousands (万) as numeric symbol")//图表副标题
+                .categories(new String[]{"Jan", "Feb", "Mar", "Apr", "May", "Jun", "July", "Aug", "Spe", "Oct", "Nov", "Dec"})
+                .markerRadius(8.0)//marker点半径为8个像素
+                .markerSymbolStyle(AAChartSymbolStyleType.InnerBlank)//marker点为空心效果
+                .markerSymbol(AAChartSymbolType.Circle)//marker点为圆形点○
+                .yAxisLineWidth(0)
+                .legendEnabled(false)
+                .series(new AASeriesElement[]{
+                        new AASeriesElement()
+                                .name("Tokyo Hot")
+                                .lineWidth(7.0)
+                                .color(AAColor.Red)//猩红色, alpha 透明度 1
+                                .fillColor(gradientColorDic1)
+                                .data(new Object[]{70000.0, 60000.9, 20000.5, 140000.5, 180000.2, 210000.5, 50000.2, 260000.5, 230000.3, 450000.3, 130000.9, 90000.6}),
+                });
+
+        AAOptions aaOptions = aaChartModel.aa_toAAOptions();
+        aaOptions.defaultOptions = new AALang()
+                .numericSymbolMagnitude(10000) //国际单位符基数
+                .numericSymbols(new String[]{"万","億"}) //国际单位符
+        ;
+
+        return aaOptions;
+    }
+
+// get UTC number from date
+   private static long AADateUTC(int year, int month, int day) {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        sdf.setTimeZone(TimeZone.getTimeZone("UTC"));
+        Date date = null;
+        try {
+            date = sdf.parse(year + "-" + month + "-" + day);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return date.getTime();
+    }
+
+
+
+    //X 轴时间不连续的折线图
+    public static AAOptions timeDataWithIrregularIntervalsChart() {
+        AAChartModel aaChartModel = new AAChartModel()
+                .chartType(AAChartType.Line)//图形类型
+                .title("Snow depth at Vikjafjellet, Norway")//图形标题
+                .subtitle("Irregular time data in AAChartKit")//图形副标题
+                .colorsTheme(new String[]{"#fe117c","#ffc069","#06caf4",})
+                .dataLabelsEnabled(false)//是否显示数字
+                .markerSymbolStyle(AAChartSymbolStyleType.InnerBlank)//折线连接点样式
+                .markerRadius(7)//折线连接点半径长度,为0时相当于没有折线连接点
+                .series(new AASeriesElement[]{
+                        new AASeriesElement()
+                                .name("Winter 2014-2015")
+                                .data(new Object[][]{
+                                {AADateUTC(1970, 10, 25),    0},
+                                {AADateUTC(1970, 11,  6), 0.25},
+                                {AADateUTC(1970, 11, 20), 1.41},
+                                {AADateUTC(1970, 11, 25), 1.64},
+                                {AADateUTC(1971, 0,  4),   1.6},
+                                {AADateUTC(1971, 0, 17),  2.55},
+                                {AADateUTC(1971, 0, 24),  2.62},
+                                {AADateUTC(1971, 1,  4),   2.5},
+                                {AADateUTC(1971, 1, 14),  2.42},
+                                {AADateUTC(1971, 2,  6),  2.74},
+                                {AADateUTC(1971, 2, 14),  2.62},
+                                {AADateUTC(1971, 2, 24),   2.6},
+                                {AADateUTC(1971, 3,  1),  2.81},
+                                {AADateUTC(1971, 3, 11),  2.63},
+                                {AADateUTC(1971, 3, 27),  2.77},
+                                {AADateUTC(1971, 4,  4),  2.68},
+                                {AADateUTC(1971, 4,  9),  2.56},
+                                {AADateUTC(1971, 4, 14),  2.39},
+                                {AADateUTC(1971, 4, 19),   2.3},
+                                {AADateUTC(1971, 5,  4),     2},
+                                {AADateUTC(1971, 5,  9),  1.85},
+                                {AADateUTC(1971, 5, 14),  1.49},
+                                {AADateUTC(1971, 5, 19),  1.27},
+                                {AADateUTC(1971, 5, 24),  0.99},
+                                {AADateUTC(1971, 5, 29),  0.67},
+                                {AADateUTC(1971, 6,  3),  0.18},
+                                {AADateUTC(1971, 6,  4),     0}
+                        }),
+                        new AASeriesElement()
+                                .name("Winter 2015-2016")
+                                .data(new Object[][]{
+                                {AADateUTC(1970, 10,  9),    0},
+                                {AADateUTC(1970, 10, 15), 0.23},
+                                {AADateUTC(1970, 10, 20), 0.25},
+                                {AADateUTC(1970, 10, 25), 0.23},
+                                {AADateUTC(1970, 10, 30), 0.39},
+                                {AADateUTC(1970, 11,  5), 0.41},
+                                {AADateUTC(1970, 11, 10), 0.59},
+                                {AADateUTC(1970, 11, 15), 0.73},
+                                {AADateUTC(1970, 11, 20), 0.41},
+                                {AADateUTC(1970, 11, 25), 1.07},
+                                {AADateUTC(1970, 11, 30), 0.88},
+                                {AADateUTC(1971, 0,  5),  0.85},
+                                {AADateUTC(1971, 0, 11),  0.89},
+                                {AADateUTC(1971, 0, 17),  1.04},
+                                {AADateUTC(1971, 0, 20),  1.02},
+                                {AADateUTC(1971, 0, 25),  1.03},
+                                {AADateUTC(1971, 0, 30),  1.39},
+                                {AADateUTC(1971, 1,  5),  1.77},
+                                {AADateUTC(1971, 1, 26),  2.12},
+                                {AADateUTC(1971, 3, 19),   2.1},
+                                {AADateUTC(1971, 4,  9),   1.7},
+                                {AADateUTC(1971, 4, 29),  0.85},
+                                {AADateUTC(1971, 5,  7),     0}
+                        }),
+                        new AASeriesElement()
+                                .name("Winter 2016-2017")
+                                .data(new Object[][]{
+                                {AADateUTC(1970, 9, 15),     0},
+                                {AADateUTC(1970, 9, 31),  0.09},
+                                {AADateUTC(1970, 10,  7), 0.17},
+                                {AADateUTC(1970, 10, 10),  0.1},
+                                {AADateUTC(1970, 11, 10),  0.1},
+                                {AADateUTC(1970, 11, 13),  0.1},
+                                {AADateUTC(1970, 11, 16), 0.11},
+                                {AADateUTC(1970, 11, 19), 0.11},
+                                {AADateUTC(1970, 11, 22), 0.08},
+                                {AADateUTC(1970, 11, 25), 0.23},
+                                {AADateUTC(1970, 11, 28), 0.37},
+                                {AADateUTC(1971, 0, 16),  0.68},
+                                {AADateUTC(1971, 0, 19),  0.55},
+                                {AADateUTC(1971, 0, 22),   0.4},
+                                {AADateUTC(1971, 0, 25),   0.4},
+                                {AADateUTC(1971, 0, 28),  0.37},
+                                {AADateUTC(1971, 0, 31),  0.43},
+                                {AADateUTC(1971, 1,  4),  0.42},
+                                {AADateUTC(1971, 1,  7),  0.39},
+                                {AADateUTC(1971, 1, 10),  0.39},
+                                {AADateUTC(1971, 1, 13),  0.39},
+                                {AADateUTC(1971, 1, 16),  0.39},
+                                {AADateUTC(1971, 1, 19),  0.35},
+                                {AADateUTC(1971, 1, 22),  0.45},
+                                {AADateUTC(1971, 1, 25),  0.62},
+                                {AADateUTC(1971, 1, 28),  0.68},
+                                {AADateUTC(1971, 2,  4),  0.68},
+                                {AADateUTC(1971, 2,  7),  0.65},
+                                {AADateUTC(1971, 2, 10),  0.65},
+                                {AADateUTC(1971, 2, 13),  0.75},
+                                {AADateUTC(1971, 2, 16),  0.86},
+                                {AADateUTC(1971, 2, 19),  1.14},
+                                {AADateUTC(1971, 2, 22),   1.2},
+                                {AADateUTC(1971, 2, 25),  1.27},
+                                {AADateUTC(1971, 2, 27),  1.12},
+                                {AADateUTC(1971, 2, 30),  0.98},
+                                {AADateUTC(1971, 3,  3),  0.85},
+                                {AADateUTC(1971, 3,  6),  1.04},
+                                {AADateUTC(1971, 3,  9),  0.92},
+                                {AADateUTC(1971, 3, 12),  0.96},
+                                {AADateUTC(1971, 3, 15),  0.94},
+                                {AADateUTC(1971, 3, 18),  0.99},
+                                {AADateUTC(1971, 3, 21),  0.96},
+                                {AADateUTC(1971, 3, 24),  1.15},
+                                {AADateUTC(1971, 3, 27),  1.18},
+                                {AADateUTC(1971, 3, 30),  1.12},
+                                {AADateUTC(1971, 4,  3),  1.06},
+                                {AADateUTC(1971, 4,  6),  0.96},
+                                {AADateUTC(1971, 4,  9),  0.87},
+                                {AADateUTC(1971, 4, 12),  0.88},
+                                {AADateUTC(1971, 4, 15),  0.79},
+                                {AADateUTC(1971, 4, 18),  0.54},
+                                {AADateUTC(1971, 4, 21),  0.34},
+                                {AADateUTC(1971, 4, 25),     0}
+                        }),
+                });
+
+        AAOptions aaOptions = aaChartModel.aa_toAAOptions();
+
+        aaOptions.xAxis
+                .type(AAChartAxisType.Datetime)
+                .dateTimeLabelFormats(new AADateTimeLabelFormats()
+                        .month("%e. %b")
+                        .year("%b")
+                );
+
+        return aaOptions;
+    }
+
+    public static AAOptions logarithmicAxisLineChart() {
+        return new AAOptions()
+                .title(new AATitle()
+                        .text("Logarithmic Axis Chart"))
+                .chart(new AAChart()
+                        .type(AAChartType.Line))
+                .xAxis(new AAXAxis()
+                        .type(AAChartAxisType.Logarithmic)
+                        .gridLineWidth(0.6))
+                .yAxis(new AAYAxis()
+                        .type(AAChartAxisType.Logarithmic)
+                        .minorTickInterval(0.1))
+                .tooltip(new AATooltip()
+                        .enabled(true)
+                        .headerFormat("{series.name}")
+                        .pointFormat("x = {point.x}, y = {point.y}"))
+                .series(new AASeriesElement[]{
+                        new AASeriesElement()
+                                .name("Tokyo Hot")
+                                .data(new Object[]{1, 2, 4, 8, 16, 32, 64, 128, 256, 512})
+                });
+    }
+
+    public static AAOptions logarithmicAxisScatterChart() {
+        AAMarker aaMarker = new AAMarker()
+                .radius(8)
+                .symbol(AAChartSymbolType.Circle)
+                .fillColor(AAColor.White)
+                .lineWidth(3)
+                .lineColor(AAColor.Red);
+
+        Object[][] scatterData = new Object[][] {
+                {550, 870},{738, 362},{719, 711},{547, 665},{595, 197},{332, 144},
+                {581, 555},{196, 862},{6,   837},{400, 924},{888, 148},{785, 730},
+                {374, 358},{440,  69},{704, 318},{646, 506},{238, 662},{233,  56},
+                {622, 572},{563, 903},{744, 672},{904, 646},{390, 325},{536, 491},
+                {676, 186},{467, 145},{790, 114},{437, 793},{853, 243},{947, 196},
+                {395, 728},{527, 148},{516, 675},{632, 562},{52,  552},{605, 580},
+                {790, 865},{156, 87}, {584, 290},{339, 921},{383, 633},{106, 373},
+                {762, 863},{424, 149},{608, 959},{574, 711},{468, 664},{268,  77},
+                {894, 850},{171, 102},{203, 565},{592, 549},{86,  486},{526, 244},
+                {323, 575},{488, 842},{401, 618},{148,  43},{828, 314},{554, 711},
+                {685, 868},{387, 435},{469, 828},{623, 506},{436, 184},{450, 156},
+                {805, 517},{465, 997},{728, 802},{231, 438},{935, 438},{519, 856},
+                {378, 579},{73,  765},{223, 219},{359, 317},{686, 742},{17,  790},
+                {20,   35},{410, 644},{984, 325},{503, 882},{900, 187},{578, 968},
+                {27,  718},{355, 704},{395, 332},{641, 548},{964, 374},{215, 472},
+                {323,  66},{882, 542},{671, 327},{650, 193},{828, 632},{760, 929},
+                {607, 335},{928, 826},{462, 598},{631, 411}
+        };
+
+        return new AAOptions()
+                .title(new AATitle()
+                        .text("Logarithmic Axis Scatter Chart"))
+                .chart(new AAChart()
+                        .type(AAChartType.Scatter))
+                .xAxis(new AAXAxis()
+                        .type(AAChartAxisType.Logarithmic)
+                        .min(1)
+                        .max(1000)
+//                            .endOnTick(true)
+                        .tickInterval(1)
+                        .minorTickInterval(0.1)
+                        .gridLineWidth(1))
+                .yAxis(new AAYAxis()
+                        .type(AAChartAxisType.Logarithmic)
+                        .min(1)
+                        .max(1000)
+                        .tickInterval(1)
+                        .minorTickInterval(0.1)
+                        .gridLineWidth(1)
+                        .title(null))
+                .series(new AASeriesElement[]{
+                        new AASeriesElement()
+                                .marker(aaMarker)
+                                .data(scatterData)
+                });
+    }
+
+
+    }
+
