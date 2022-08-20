@@ -18,8 +18,11 @@ import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAAnimation;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAChart;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAColumn;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AACrosshair;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AADataElement;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AADataLabels;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AADateTimeLabelFormats;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAHover;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAInactive;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAItemStyle;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AALabel;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AALabels;
@@ -34,6 +37,7 @@ import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAPlotOptions;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAResetZoomButton;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AASeries;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AASeriesEvents;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAStates;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAStyle;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AASubtitle;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AATitle;
@@ -1762,6 +1766,465 @@ public class ChartOptionsComposer {
                                 .data(scatterData)
                 });
     }
+
+
+    //https://github.com/AAChartModel/AAChartKit-Swift/issues/230
+    public static AAOptions disableMixedChartInactiveAnimationEffect() {
+        AAChartModel aaChartModel = new AAChartModel()
+                .chartType(AAChartType.Line)
+            .colorsTheme(new String[]{"#1e90ff","#ef476f","#ffd066","#04d69f","#25547c",})//Colors theme
+                .series(new AASeriesElement[]{
+                        new AASeriesElement()
+                                .name("New York")
+                                .type(AAChartType.Line)
+                .data(new Object[]{0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5})
+                ,
+                new AASeriesElement()
+                        .name("Berlin")
+                        .type(AAChartType.Line)
+                    .data(new Object[]{0.9, 0.6, 3.5, 8.4, 13.5, 17.0, 18.6, 17.9, 14.3, 9.0, 3.9, 1.0})
+                ,
+                new AASeriesElement()
+                        .name("London")
+                        .type(AAChartType.Area)
+                    .data(new Object[]{3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8})
+                ,
+            });
+
+        AAOptions aaOptions = aaChartModel.aa_toAAOptions();
+
+        aaOptions.tooltip.shared(false);
+
+        aaOptions.plotOptions.series
+            .states(new AAStates()
+                .inactive(new AAInactive()
+                        .enabled(false)));
+
+        return aaOptions;
+    }
+
+    //https://github.com/AAChartModel/AAChartKit-Swift/issues/242
+    public static AAOptions adjustBubbleChartMinAndMax() {
+        AAChartModel aaChartModel = new AAChartModel()
+                .chartType(AAChartType.Bubble)
+            .title("AACHARTKIT BUBBLES")
+                .subtitle("JUST FOR FUN")
+                .yAxisTitle("℃")
+                .yAxisGridLineWidth(0)
+                .colorsTheme(new String[]{"#0c9674","#7dffc0","#d11b5f","#facd32","#ffffa0","#EA007B"})
+                .series(new AASeriesElement[]{
+                        new AASeriesElement()
+                                .name("BubbleOne")
+                                .data(new Object[][]{
+                                {97, 36, 50},
+                                {94, 74, 50},
+                                {68, 76, 50},
+                                {64, 87, 50},
+                                {68, 27, 49},
+                                {74, 99, 51},
+                                {71, 93, 55},
+                                {51, 69, 60},
+                                {38, 23, 50},
+                                {57, 86, 50},
+                                {33, 24, 51}
+                    })
+            });
+
+        AAOptions aaOptions = aaChartModel.aa_toAAOptions();
+
+//        aaOptions.plotOptions
+//            .bubble(new AABubble()
+//                .minSize(0)
+//                .maxSize(100)
+//                .zMin(0)
+//                .zMax(100))
+
+        return aaOptions;
+    }
+
+//        //https://github.com/AAChartModel/AAChartKit-Swift/issues/260
+//        public static AAOptions customLineChartDataLabelsFormat() {
+//            AAChartModel aaChartModel = new AAChartModel()
+//                    .dataLabelsEnabled(true)
+//                    .series(new AASeriesElement[]{
+//                            new AASeriesElement()
+//                                    .data(new Object[][]{
+//                                    {"测试 1", 100},
+//                                    {"测试 2", 130},
+//                                    {"测试 3", 120},
+//                            })
+//                    });
+//
+//            AAOptions aaOptions = aaChartModel.aa_toAAOptions();
+//            aaOptions.plotOptions.series.dataLabels
+//            .format("{point.name}");
+//
+//            return aaOptions;
+//        }
+
+        //A more simple way to custom line chart dataLabels format
+        //https://github.com/AAChartModel/AAChartKit-Swift/issues/260
+        public static AAOptions customLineChartDataLabelsFormat2(){
+            AAChartModel aaChartModel = new AAChartModel()
+                    .dataLabelsEnabled(true)
+                    .categories(new String[]{"测试 1", "测试 2", "测试 3", })
+            .series(new AASeriesElement[]{
+                new AASeriesElement()
+                        .data(new Object[]{100, 130, 120})
+        });
+
+        AAOptions aaOptions = aaChartModel.aa_toAAOptions();
+        aaOptions.plotOptions.series.dataLabels
+            .format("{x}");
+
+        return aaOptions;
+    }
+
+    public static AAOptions complicatedScatterChart() {
+        AAChartModel aaChartModel = new AAChartModel()
+                .subtitle("Multiplier between base rate and charge rate")
+                .subtitleAlign(AAChartAlignType.Left)
+            .chartType(AAChartType.Scatter)
+            .yAxisGridLineWidth(0)
+//                .markerSymbol(AAChartMarker.circle)
+            .markerRadius(8)
+//                .markerSymbolStyle(.borderBlank)
+            .dataLabelsEnabled(true)
+                .colorsTheme(new String[]{AAColor.Red, AAColor.Orange, AAColor.Green, AAColor.Blue})
+                .series(new AASeriesElement[]{
+            new AASeriesElement()
+                    .name("Yingyun-SH")
+                    .data(new Object[]{
+                            new AADataElement()
+                                    .x(33).y(1.37)
+                                    .dataLabels(
+                                    new AADataLabels()
+                                            .enabled(true)
+                                            .format("Package")
+                                            .x(3)
+                                            .verticalAlign(AAChartVerticalAlignType.Middle)
+                    )
+                    ,
+
+                    new AADataElement()
+                            .x(35).y(1.36)
+                            .dataLabels(
+                                    new AADataLabels()
+                                            .enabled(true)
+                                            .format("Assembly worker")
+                                            .x(3)
+                                            .verticalAlign(AAChartVerticalAlignType.Middle)
+                            )
+                            ,
+
+            new AADataElement()
+                    .x(38).y(1.32)
+                    .dataLabels(
+                            new AADataLabels()
+                                    .enabled(true)
+                                    .format("Others")
+                                    .x(3)
+                                    .verticalAlign(AAChartVerticalAlignType.Middle)
+                            )
+                            ,
+
+            new AADataElement()
+                    .x(35).y(1.32)
+                    .dataLabels(
+                            new AADataLabels()
+                                    .enabled(true)
+                                    .format("QC")
+                                    .x(3)
+                                    .verticalAlign(AAChartVerticalAlignType.Middle)
+                            )
+                            ,
+
+            new AADataElement()
+                    .x(47).y(1.19)
+                    .dataLabels(
+                            new AADataLabels()
+                                    .enabled(true)
+                                    .format("Welder")
+                                    .x(3)
+                                    .verticalAlign(AAChartVerticalAlignType.Middle)
+                            )
+                            ,
+
+//            { 33, 1.37},
+//            { 35, 1.36},
+//            { 38, 1.32},
+//            { 35, 1.32},
+//            { 47, 1.19},
+                    })
+                ,
+
+            new AASeriesElement()
+                    .name("GI-SZ")
+                    .data(new Object[]{
+                            new AADataElement()
+                                    .x(38).y(1.37)
+                                    .dataLabels(
+                                    new AADataLabels()
+                                            .enabled(true)
+                                            .format("Grinder")
+                                            .x(3)
+                                            .verticalAlign(AAChartVerticalAlignType.Middle)
+                    )
+                    ,
+
+                    new AADataElement()
+                            .x(38).y(1.37)
+                            .dataLabels(
+                                    new AADataLabels()
+                                            .enabled(true)
+                                            .format("Paint/Blast worker")
+                                            .x(123)
+                            )
+                    ,
+
+//                    { 38, 1.37},
+//                    { 38, 1.37},
+                    })
+                ,
+
+            new AASeriesElement()
+                    .name("Engma-SZ")
+                    .data(new Object[]{
+                            new AADataElement()
+                                    .x(43).y(1.30)
+                                    .dataLabels(
+                                    new AADataLabels()
+                                            .enabled(true)
+                                            .format("Welder")
+                                            .x(3)
+                                            .verticalAlign(AAChartVerticalAlignType.Middle)
+                    )
+                    ,
+
+                    new AADataElement()
+                            .x(40).y(1.33)
+                            .dataLabels(
+                                    new AADataLabels()
+                                            .enabled(true)
+                                            .format("Grinder")
+                                            .x(3)
+                                            .verticalAlign(AAChartVerticalAlignType.Middle)
+                            )
+                            ,
+
+            new AADataElement()
+                    .x(40).y(1.33)
+                    .dataLabels(
+                            new AADataLabels()
+                                    .enabled(true)
+                                    .format("Paint/Blast worker")
+                                    .x(123)
+                                    .verticalAlign(AAChartVerticalAlignType.Middle)
+                            )
+                            ,
+
+            new AADataElement()
+                    .x(42).y(1.31)
+                    .dataLabels(
+                            new AADataLabels()
+                                    .enabled(true)
+                                    .format("Pipe Fitter")
+                                    .x(3)
+                                    .verticalAlign(AAChartVerticalAlignType.Middle)
+                            )
+                            ,
+
+            new AADataElement()
+                    .x(40).y(1.35)
+                    .dataLabels(
+                            new AADataLabels()
+                                    .enabled(true)
+                                    .format("OH2 Operator")
+                                    .x(3)
+                                    .verticalAlign(AAChartVerticalAlignType.Middle)
+                            )
+                            ,
+
+//            { 43, 1.30},
+//            { 40, 1.33},
+//            { 40, 1.33},
+//            { 42, 1.31},
+//            { 40, 1.35},
+                    })
+                ,
+
+            new AASeriesElement()
+                    .name("Weifu-SZ")
+                    .data(new Object[]{
+                            new AADataElement()
+                                    .x(41).y(1.15)
+                                    .dataLabels(
+                                    new AADataLabels()
+                                            .enabled(true)
+                                            .format("Grinder")
+                                            .x(3)
+                                            .verticalAlign(AAChartVerticalAlignType.Middle)
+                    )
+                    ,
+
+                    new AADataElement()
+                            .x(44).y(1.11)
+                            .dataLabels(
+                                    new AADataLabels()
+                                            .enabled(true)
+                                            .format("Paint/Blast worker")
+                                            .x(3)
+                                            .verticalAlign(AAChartVerticalAlignType.Middle)
+                            )
+                            ,
+
+            new AADataElement()
+                    .x(41).y(1.12)
+                    .dataLabels(
+                            new AADataLabels()
+                                    .enabled(true)
+                                    .format("Pipe Fitter")
+                                    .x(3)
+                                    .verticalAlign(AAChartVerticalAlignType.Middle)
+                            )
+                            ,
+//            { 41, 1.15},
+//            { 44, 1.11},
+//            { 41, 1.12},
+                    })
+                ,
+        });
+
+        AAOptions aaOptions = aaChartModel.aa_toAAOptions();
+
+        AAPlotLinesElement[] aaPlotLinesArr = new AAPlotLinesElement[]{
+                new AAPlotLinesElement()
+                        .color(AAColor.Green)//颜色值
+                        .dashStyle(AAChartLineDashStyleType.Solid)//样式：Dash,Dot,Solid等,默认Solid
+                        .width((4.0)) //标示线粗细
+                        .value((1.28)) //所在位置
+                        .zIndex((1)) //层叠,标示线在图表中显示の层叠级别，值越大，显示越向前
+                        .label(new AALabel()
+                        .text("Benchmark Mutiplier On Average (1.28)")
+                        .style(new AAStyle()
+                                .color(AAColor.Green)
+                                .fontWeight(AAChartFontWeightType.Bold)))
+                ,
+                new AAPlotLinesElement()
+                        .color(AAColor.Black)
+                        .dashStyle(AAChartLineDashStyleType.Solid)
+                        .width((4))
+                        .value((1.18))
+                        .label(new AALabel()
+                        .text("Current Multiplier on Average (1.18)")
+                        .style(new AAStyle()
+                                .color(AAColor.Black)
+                                .fontWeight(AAChartFontWeightType.Bold)))
+                ,
+
+        };
+
+        aaOptions.yAxis.plotLines(aaPlotLinesArr);
+
+        aaOptions.yAxis.labels.style(AAStyle.style(AAColor.Black));
+        aaOptions.xAxis.labels.style(AAStyle.style(AAColor.Black));
+
+        aaOptions.xAxis.tickWidth = 0;
+
+        aaOptions.yAxis
+//                .tickAmount(20)
+                .lineWidth(1)
+                .lineColor(AAColor.Black);
+
+        aaOptions.xAxis
+                .lineWidth(1)
+                .lineColor(AAColor.Black)
+                .min(10)
+                .max(50)
+                .tickInterval(5);
+
+        aaOptions.legend
+            .itemMarginTop(10)
+//                .symbolRadius(10)//图标圆角
+//                .symbolHeight(20)//标志高度
+//                .symbolWidth(20)//图标宽度
+                .align(AAChartAlignType.Right)
+            .layout(AAChartLayoutType.Vertical)
+            .verticalAlign(AAChartVerticalAlignType.Top);
+
+        return aaOptions;
+    }
+
+        //https://github.com/AAChartModel/AAChartKit-Swift/issues/365
+        public static AAOptions customColumnrangeChartGroupStyleAndSeriesStatesHoverColor() {
+            AAChartModel aaChartModel = new AAChartModel()
+                    .chartType(AAChartType.Columnrange)
+            .title("TEMPERATURE VARIATION BY MONTH")
+                    .subtitle("observed in Gotham city")
+                    .yAxisTitle("℃")
+                    .colorsTheme(new String[]{AAColor.DarkGray, AAColor.LightGray})//Colors theme
+                    .borderRadius(6)
+                    .categories(new String[]{
+                    "January", "February", "March", "April", "May", "June",
+                    "July", "August", "September", "October", "November", "December"
+        })
+            .series(new AASeriesElement[]{
+            new AASeriesElement()
+                    .name("temperature1")
+                    .data(new Object[][]{
+                            {-9.7,  9.4},
+                            {-8.7,  6.5},
+                            {-3.5,  9.4},
+                            {-1.4, 19.9},
+                            {0.0,  22.6},
+                            {2.9,  29.5},
+                            {-9.7,  9.4},
+                            {-8.7,  6.5},
+                            {-3.5,  9.4},
+                            {-1.4, 19.9},
+                            {0.0,  22.6},
+                            {2.9,  29.5},
+                    })
+                    .states(new AAStates()
+                            .hover(new AAHover()
+                                    .color(AAColor.Red)
+                            )),
+                    new AASeriesElement()
+                            .name("temperature2")
+                            .data(new Object[][]{
+                                    {9.2,  30.7},
+                                    {7.3,  26.5},
+                                    {4.4,  18.0},
+                                    {-3.1, 11.4},
+                                    {-5.2, 10.4},
+                                    {-13.5, 9.8},
+                                    {9.2,  30.7},
+                                    {7.3,  26.5},
+                                    {4.4,  18.0},
+                                    {-3.1, 11.4},
+                                    {-5.2, 10.4},
+                                    {-13.5, 9.8}
+                    })
+                    .states(new AAStates()
+                    .hover(new AAHover()
+                            .color("dodgerblue")// Dodgerblue／道奇藍／#1e90ff十六进制颜色代码
+                    )),
+            });
+
+            AAOptions aaOptions = aaChartModel.aa_toAAOptions();
+
+            //      关于 `pointPadding`
+            //https://api.highcharts.com.cn/highcharts#plotOptions.column.groupPadding
+            //
+            //     关于 `pointPadding`
+            //https://api.highcharts.com.cn/highcharts#plotOptions.column.pointPadding
+
+//            aaOptions.plotOptions.columnrange
+//                    .grouping(false)
+//                    .groupPadding(0.003);
+
+            return aaOptions;
+        }
 
 
     }
