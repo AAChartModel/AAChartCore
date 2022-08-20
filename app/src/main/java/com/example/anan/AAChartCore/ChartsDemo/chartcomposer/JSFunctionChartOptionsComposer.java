@@ -21,6 +21,7 @@ import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAHover;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAInactive;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAItemStyle;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AALabels;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAMarker;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAOptions;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAPlotOptions;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAResetZoomButton;
@@ -1433,5 +1434,509 @@ AAColor.rgbaColor(215, 0,   38, 1.f)
 
                 return aaOptions;
             }
+
+
+    //https://github.com/AAChartModel/AAChartKit/issues/901
+//https://github.com/AAChartModel/AAChartKit/issues/952
+    public static AAOptions configureTheAxesLabelsFormattersOfDoubleYAxesChart() {
+        AAChart aaChart = new AAChart()
+                .backgroundColor(AAColor.White);
+
+        AATitle aaTitle = new AATitle()
+                .text("");
+
+        AAXAxis aaXAxis = new AAXAxis()
+                .visible(true)
+                .min(0)
+                .categories(new String[]{
+                "Java", "Swift", "Python", "Ruby", "PHP", "Go","C",
+                "C#", "C++", "Perl", "R", "MATLAB", "SQL"
+    });
+
+    AAPlotOptions aaPlotOptions = new AAPlotOptions()
+            .series(new AASeries()
+                    .marker(new AAMarker()
+                            .radius(7)//曲线连接点半径，默认是4
+                            .symbol(AAChartSymbolType.Circle)//曲线点类型："circle", "square", "diamond", "triangle","triangle-down"，默认是"circle"
+                            .fillColor(AAColor.White)//点的填充色(用来设置折线连接点的填充色)
+                            .lineWidth(3)//外沿线的宽度(用来设置折线连接点的轮廓描边的宽度)
+                            .lineColor("")//外沿线的颜色(用来设置折线连接点的轮廓描边颜色，当值为空字符串时，默认取数据点或数据列的颜色)
+                    ));
+
+    AAYAxis yAxis1 = new AAYAxis()
+            .visible(true)
+            .lineWidth(1)
+            .tickPositions(new Object[]{0, 50, 100, 150, 200})
+//        .labels(new AALabels()
+//        .enabled(true)
+//        .style(new AAStyle()
+//        .color("DodgerBlue"))
+//        .formatter(AAJSFunc(function () {
+//        let yValue = this.value;
+//        if (yValue >= 200) {
+//        return "极佳";
+//        } else if (yValue >= 150 && yValue < 200) {
+//        return "非常棒";
+//        } else if (yValue >= 100 && yValue < 150) {
+//        return "相当棒";
+//        } else if (yValue >= 50 && yValue < 100) {
+//        return "还不错";
+//        } else {
+//        return "一般";
+//        }
+//        })))
+        .gridLineWidth(0)
+        .title(new AATitle()
+        .text("中文")
+        .style(AAStyle.style("DodgerBlue", 14, AAChartFontWeightType.Bold)));
+
+        AAYAxis yAxis2 = new AAYAxis()
+        .visible(true)
+        .lineWidth(1)
+        .tickPositions(new Object[]{0, 50, 100, 150, 200})
+//        .labels(new AALabels()
+//        .enabled(true)
+//        .style(new AAStyle()
+//        .color(AAColor.Red))
+//        .formatter(AAJSFunc(function () {
+//        let yValue = this.value;
+//        if (yValue >= 200) {
+//        return "Awesome";
+//        } else if (yValue >= 150 && yValue < 200) {
+//        return "Great";
+//        } else if (yValue >= 100 && yValue < 150) {
+//        return "Very Good";
+//        } else if (yValue >= 50 && yValue < 100) {
+//        return "Not Bad";
+//        } else {
+//        return "Just So So";
+//        }
+//        })))
+        .gridLineWidth(0)
+        .title(new AATitle()
+        .text("ENGLISH")
+        .style(AAStyle.style(AAColor.Red, 14, AAChartFontWeightType.Bold)))
+        .opposite(true);
+
+        AATooltip aaTooltip = new AATooltip()
+        .enabled(true)
+        .shared(true);
+
+        AASeriesElement[] seriesArr = {
+                new AASeriesElement()
+                        .name("2020")
+                        .type(AAChartType.Spline)
+                        .lineWidth(7)
+                        .color(AAGradientColor.DeepSea)
+                        .borderRadius(4)
+                        .yAxis(1)
+                        .data(new Object[]{
+                        0, 71.5, 106.4, 129.2, 144.0, 176.0,
+                        135.6, 148.5, 216.4, 194.1, 95.6, 54.4
+                }),
+                new AASeriesElement()
+                        .name("2021")
+                        .type(AAChartType.Spline)
+                        .lineWidth(7)
+                        .color(AAGradientColor.Sanguine)
+                        .yAxis(0)
+                        .data(new Object[]{
+                        135.6, 148.5, 216.4, 194.1, 95.6, 54.4,
+                        0, 71.5, 106.4, 129.2, 144.0, 176.0
+                })
+        };
+
+        AAOptions aaOptions = new AAOptions()
+        .chart(aaChart)
+        .title(aaTitle)
+        .plotOptions(aaPlotOptions)
+        .xAxis(aaXAxis)
+//        .yAxis((id)[yAxis1,yAxis2})
+        .tooltip(aaTooltip)
+        .series(seriesArr);
+
+        return aaOptions;
+        }
+
+//https://github.com/AAChartModel/AAChartKit/issues/1324
+public static AAOptions configureTheAxesLabelsFormattersOfDoubleYAxesChart2() {
+        AAChart aaChart = new AAChart()
+        .backgroundColor(AAColor.White);
+
+        AATitle aaTitle = new AATitle()
+        .text("");
+
+        AAXAxis aaXAxis = new AAXAxis()
+        .visible(true)
+        .min(0)
+        .categories(new String[]{
+        "Java", "Swift", "Python", "Ruby", "PHP", "Go","C",
+        "C#", "C++", "Perl", "R", "MATLAB", "SQL"
+        });
+
+        AAPlotOptions aaPlotOptions = new AAPlotOptions()
+        .series(new AASeries()
+        .marker(new AAMarker()
+        .radius(7)//曲线连接点半径，默认是4
+        .symbol(AAChartSymbolType.Circle)//曲线点类型："circle", "square", "diamond", "triangle","triangle-down"，默认是"circle"
+        .fillColor(AAColor.White)//点的填充色(用来设置折线连接点的填充色)
+        .lineWidth(3)//外沿线的宽度(用来设置折线连接点的轮廓描边的宽度)
+        .lineColor("")//外沿线的颜色(用来设置折线连接点的轮廓描边颜色，当值为空字符串时，默认取数据点或数据列的颜色)
+        ));
+
+        AAYAxis yAxis1 = new AAYAxis()
+        .visible(true)
+        .lineWidth(1)
+        .tickPositions(new Object[]{0, 50, 100, 150, 200})
+//        .labels(new AALabels()
+//        .enabled(true)
+//        .style(new AAStyle()
+//        .color("DodgerBlue"))
+//        .formatter(AAJSFunc(
+//        function () {
+//        var yValue = this.value;
+//        var formattedYValue = (yValue / 1000).toFixed(3) + '千';
+//        return formattedYValue;
+//        }
+//        )))
+        .gridLineWidth(0)
+        .title(new AATitle()
+        .text("以「千」为单位")
+        .style(AAStyle.style("DodgerBlue", 14, AAChartFontWeightType.Bold)));
+
+        AAYAxis yAxis2 = new AAYAxis()
+        .visible(true)
+        .lineWidth(1)
+        .tickPositions(new Object[]{0, 50, 100, 150, 200})
+//        .labels(new AALabels()
+//        .enabled(true)
+//        .style(new AAStyle()
+//        .color(AAColor.Red))
+//        .formatter(AAJSFunc(
+//        function () {
+//        var yValue = this.value;
+//        var formattedYValue = (yValue / 10000).toFixed(4) + '万';
+//        return formattedYValue;
+//        }
+//        )))
+        .gridLineWidth(0)
+        .title(new AATitle()
+        .text("以『万』为单位")
+        .style(AAStyle.style(AAColor.Red, 14, AAChartFontWeightType.Bold)))
+        .opposite(true);
+
+        AATooltip aaTooltip = new AATooltip()
+        .enabled(true)
+        .shared(true);
+
+    AASeriesElement[] seriesArr = {
+                new AASeriesElement()
+                        .name("2020")
+                        .type(AAChartType.Spline)
+                        .lineWidth(7)
+                        .color(AAGradientColor.DeepSea)
+                        .borderRadius(4)
+                        .yAxis(1)
+                        .data(new Object[]{
+                        0, 71.5, 106.4, 129.2, 144.0, 176.0,
+                        135.6, 148.5, 216.4, 194.1, 95.6, 54.4
+                }),
+                new AASeriesElement()
+                        .name("2021")
+                        .type(AAChartType.Spline)
+                        .lineWidth(7)
+                        .color(AAGradientColor.Sanguine)
+                        .yAxis(0)
+                        .data(new Object[]{
+                        135.6, 148.5, 216.4, 194.1, 95.6, 54.4,
+                        0, 71.5, 106.4, 129.2, 144.0, 176.0
+                })
+        };
+
+        AAOptions aaOptions = new AAOptions()
+        .chart(aaChart)
+        .title(aaTitle)
+        .plotOptions(aaPlotOptions)
+        .xAxis(aaXAxis)
+//        .yAxis((id)[yAxis1,yAxis2})
+        .tooltip(aaTooltip)
+        .series(seriesArr);
+
+        return aaOptions;
+        }
+
+//https://github.com/AAChartModel/AAChartKit/issues/1324
+//https://github.com/AAChartModel/AAChartKit/issues/1330
+public static AAOptions configureTheAxesLabelsFormattersOfDoubleYAxesChart3() {
+        AAChart aaChart = new AAChart()
+        .backgroundColor(AAColor.White);
+
+        AATitle aaTitle = new AATitle()
+        .text("");
+
+        AAXAxis aaXAxis = new AAXAxis()
+        .visible(true)
+        .min(0)
+        .categories(new String[]{
+        "Java", "Swift", "Python", "Ruby", "PHP", "Go","C",
+        "C#", "C++", "Perl", "R", "MATLAB", "SQL"
+        });
+
+        AAPlotOptions aaPlotOptions = new AAPlotOptions()
+        .series(new AASeries()
+        .marker(new AAMarker()
+        .radius(7)//曲线连接点半径，默认是4
+        .symbol(AAChartSymbolType.Circle)//曲线点类型："circle", "square", "diamond", "triangle","triangle-down"，默认是"circle"
+        .fillColor(AAColor.White)//点的填充色(用来设置折线连接点的填充色)
+        .lineWidth(3)//外沿线的宽度(用来设置折线连接点的轮廓描边的宽度)
+        .lineColor("")//外沿线的颜色(用来设置折线连接点的轮廓描边颜色，当值为空字符串时，默认取数据点或数据列的颜色)
+        ));
+
+        AAYAxis yAxis1 = new AAYAxis()
+        .visible(true)
+        .lineWidth(1)
+        .tickPositions(new Object[]{0, 50, 100, 150, 200})
+//        .labels(new AALabels()
+//        .enabled(true)
+//        .style(new AAStyle()
+//        .color("DodgerBlue"))
+//        .formatter(AAJSFunc(
+//        function () {
+//        var yValue = this.value;
+//        var unitStr = "千";
+//        if (yValue == 0) {
+//        unitStr = "";
+//        }
+//        var formattedYValue = (yValue / 1000).toFixed(3) + unitStr;
+//        return formattedYValue;
+//        }
+//        )))//Y轴文字数值为 0 的时候, 不显示单位
+        .gridLineWidth(0)
+        .title(new AATitle()
+        .text("以「千」为单位")
+        .style(AAStyle.style("DodgerBlue", 14, AAChartFontWeightType.Bold)));
+
+        AAYAxis yAxis2 = new AAYAxis()
+        .visible(true)
+        .lineWidth(1)
+        .tickPositions(new Object[]{0, 50, 100, 150, 200})
+//        .labels(new AALabels()
+//        .enabled(true)
+//        .style(new AAStyle()
+//        .color(AAColor.Red))
+//        .formatter(AAJSFunc(
+//        function () {
+//        var yValue = this.value;
+//        var unitStr = "万";
+//        if (yValue == 0) {
+//        unitStr = "";
+//        }
+//        var formattedYValue = (yValue / 10000).toFixed(4) + unitStr;
+//        return formattedYValue;
+//        }
+//        )))//Y轴文字数值为 0 的时候, 不显示单位
+        .gridLineWidth(0)
+        .title(new AATitle()
+        .text("以『万』为单位")
+        .style(AAStyle.style(AAColor.Red, 14, AAChartFontWeightType.Bold)))
+        .opposite(true)
+                ;
+
+        AATooltip aaTooltip = new AATooltip()
+        .enabled(true)
+        .shared(true);
+
+    AASeriesElement[] seriesArr = {
+                new AASeriesElement()
+                        .name("2020")
+                        .type(AAChartType.Spline)
+                        .lineWidth(7)
+                        .color(AAGradientColor.DeepSea)
+                        .borderRadius(4)
+                        .yAxis(1)
+                        .data(new Object[]{
+                        0, 71.5, 106.4, 129.2, 144.0, 176.0,
+                        135.6, 148.5, 216.4, 194.1, 95.6, 54.4
+                }),
+                new AASeriesElement()
+                        .name("2021")
+                        .type(AAChartType.Spline)
+                        .lineWidth(7)
+                        .color(AAGradientColor.Sanguine)
+                        .yAxis(0)
+                        .data(new Object[]{
+                        135.6, 148.5, 216.4, 194.1, 95.6, 54.4,
+                        0, 71.5, 106.4, 129.2, 144.0, 176.0
+                })
+        };
+
+        AAOptions aaOptions = new AAOptions()
+//        .chart(aaChart)
+//        .title(aaTitle)
+        .plotOptions(aaPlotOptions)
+//        .xAxis(aaXAxis)
+//        .yAxis((id)[yAxis1,yAxis2})
+        .tooltip(aaTooltip)
+        .series(seriesArr);
+
+        return aaOptions;
+        }
+
+
+//https://github.com/AAChartModel/AAChartKit/issues/1042
+public static AAOptions makePieChartShow0Data() {
+        return new AAOptions()
+//        .title((id)NSNull.null)
+        .chart(new AAChart()
+        .type(AAChartType.Pie))
+        .series(new AASeriesElement[]{
+        new AASeriesElement()
+        .name("ZeroDataPie")
+        .data(new Object[]{
+//        {"y":1, "isZero":true, "name": "One"  },
+//        {"y":1, "isZero":true, "name": "Two"  },
+//        {"y":1, "isZero":true, "name": "Three"}
+        })
+//        .tooltip(new AATooltip()
+//        .shared(false)
+//        .pointFormatter(AAJSFunc(
+//        function() {
+//        return " ◉ "
+//        + this.series.name
+//        + ": "
+//        + (this.options.isZero ? 0 : this.y)
+//        + "
+//        ";
+//        })))
+        });
+
+        };
+
+//https://github.com/AAChartModel/AAChartKit/issues/1217
+public static AAOptions customColumnChartXAxisLabelsTextByInterceptTheFirstFourCharacters() {
+        AAChartModel aaChartModel = new AAChartModel()
+        .chartType(AAChartType.Bar)//图表类型
+        .title("春江花月夜")//图表主标题
+        .subtitle("张若虚")//图表副标题
+//        .yAxisGridLineStyle([AALineStyle styleWithWidth:0})//y轴横向分割线宽度(为0即是隐藏分割线)
+        .xAxisReversed(true)
+//        .xAxisLabelsStyle(AAStyleColor(AAColor.blackColor))
+        .legendEnabled(false)
+        .categories(new String[]{
+        "春江潮水连海平", "海上明月共潮生",
+        "滟滟随波千万里", "何处春江无月明",
+        "江流宛转绕芳甸", "月照花林皆似霰",
+        "空里流霜不觉飞", "汀上白沙看不见",
+        "江天一色无纤尘", "皎皎空中孤月轮",
+        "江畔何人初见月", "江月何年初照人",
+        "人生代代无穷已", "江月年年望相似",
+        "不知江月待何人", "但见长江送流水",
+        "白云一片去悠悠", "青枫浦上不胜愁",
+        "谁家今夜扁舟子", "何处相思明月楼",
+        "可怜楼上月裴回", "应照离人妆镜台",
+        "玉户帘中卷不去", "捣衣砧上拂还来",
+        "此时相望不相闻", "愿逐月华流照君",
+        "鸿雁长飞光不度", "鱼龙潜跃水成文",
+        "昨夜闲潭梦落花", "可怜春半不还家",
+        "江水流春去欲尽", "江潭落月复西斜",
+        "斜月沉沉藏海雾", "碣石潇湘无限路",
+        "不知乘月几人归", "落月摇情满江树",
+        })
+        .series(new AASeriesElement[]{
+        new AASeriesElement()
+        .lineWidth(1.5)
+        .color(AAGradientColor.DeepSea)
+        .name("2018")
+        .data(new Object[]{
+        1.51, 3.7, 0.94, 1.44, 1.6, 1.63, 1.56, 1.91, 2.45, 3.87, 3.24, 4.90, 4.61, 4.10,
+        4.17, 3.85, 4.17, 3.46, 3.46, 3.55, 3.50, 4.13, 2.58, 2.28,1.51, 2.7, 0.94, 1.44,
+        3.6, 1.63, 1.56, 1.91, 2.45, 3.87, 3.24, 4.90,
+        })
+        });
+
+        AAOptions aaOptions = aaChartModel.aa_toAAOptions();
+//        aaOptions.xAxis.labels
+//        .formatter(AAJSFunc(function () {
+//        let xAxisCategory = this.value;
+//        if (xAxisCategory.length > 4) {
+//        return xAxisCategory.substr(0, 4);
+//        } else {
+//        return xAxisCategory;
+//        }
+//        }))
+    ;
+
+
+        return aaOptions;
+        }
+
+//https://github.com/AAChartModel/AAChartKit-Swift/issues/345
+public static AAOptions setCrosshairAndTooltipToTheDefaultPositionAfterLoadingChart() {
+        AAChartModel aaChartModel = new AAChartModel()
+        .chartType(AAChartType.Areaspline)//图表类型
+        .colorsTheme(new String[]{"#04d69f","#1e90ff","#ef476f","#ffd066",})
+        .stacking(AAChartStackingType.Normal)
+        .yAxisVisible(false)
+        .markerRadius(0)
+        .series(new AASeriesElement[]{
+        new AASeriesElement()
+        .name("Tokyo Hot")
+        .lineWidth(5.0)
+        .fillOpacity(0.4)
+        .data(new Object[]{0.45, 0.43, 0.50, 0.55, 0.58, 0.62, 0.83, 0.39, 0.56, 0.67, 0.50, 0.34, 0.50, 0.67, 0.58, 0.29, 0.46, 0.23, 0.47, 0.46, 0.38, 0.56, 0.48, 0.36}),
+        new AASeriesElement()
+        .name("Berlin Hot")
+        .lineWidth(5.0)
+        .fillOpacity(0.4)
+        .data(new Object[]{0.38, 0.31, 0.32, 0.32, 0.64, 0.66, 0.86, 0.47, 0.52, 0.75, 0.52, 0.56, 0.54, 0.60, 0.46, 0.63, 0.54, 0.51, 0.58, 0.64, 0.60, 0.45, 0.36, 0.67}),
+        new AASeriesElement()
+        .name("London Hot")
+        .lineWidth(5.0)
+        .fillOpacity(0.4)
+        .data(new Object[]{0.46, 0.32, 0.53, 0.58, 0.86, 0.68, 0.85, 0.73, 0.69, 0.71, 0.91, 0.74, 0.60, 0.50, 0.39, 0.67, 0.55, 0.49, 0.65, 0.45, 0.64, 0.47, 0.63, 0.64}),
+        new AASeriesElement()
+        .name("NewYork Hot")
+        .lineWidth(5.0)
+        .fillOpacity(0.4)
+        .data(new Object[]{0.60, 0.51, 0.52, 0.53, 0.64, 0.84, 0.65, 0.68, 0.63, 0.47, 0.72, 0.60, 0.65, 0.74, 0.66, 0.65, 0.71, 0.59, 0.65, 0.77, 0.52, 0.53, 0.58, 0.53}),
+        });
+
+        AAOptions aaOptions = aaChartModel.aa_toAAOptions();
+
+        aaOptions.tooltip
+        .style(AAStyle.style(AAColor.White))
+        .backgroundColor("#050505")
+        .borderColor("#050505");
+
+        aaOptions.xAxis
+        .crosshair(new AACrosshair()
+        .color(AAColor.DarkGray)
+        .dashStyle(AAChartLineDashStyleType.LongDashDotDot)
+        .width(2));
+
+        //默认选中的位置索引
+        int defaultSelectedIndex = 5;
+
+        //https://api.highcharts.com/highcharts/chart.events.load
+        //https://www.highcharts.com/forum/viewtopic.php?t=36508
+//        aaOptions.chart
+//        .events(AAChartEvents.new
+//        .load([String stringWithFormat:AAJSFunc(function() {
+//        let points ={];
+//        let chart = this;
+//        let series = chart.series;
+//        let length = series.length;
+//
+//        for (let i = 0; i < length; i++) {
+//        let pointElement = series[i].data[%ld];
+//        points.push(pointElement);
+//        }
+//        chart.xAxis[0].drawCrosshair(null, points[0});
+//        chart.tooltip.refresh(points);
+//        }), defaultSelectedIndex}));
+
+
+        return aaOptions;
+        }
 
     }
