@@ -112,12 +112,16 @@ public class AATooltip {
     }
 
     public AATooltip pointFormatter(String prop) {
-        pointFormatter = prop;
+        String pureJSFunctionStr = "(" + prop + ")";
+        pureJSFunctionStr = AAJSStringPurer.pureJavaScriptFunctionString(pureJSFunctionStr);
+        pointFormatter = pureJSFunctionStr;
         return this;
     }
 
     public AATooltip positioner(String prop) {
-        positioner = prop;
+        String pureJSFunctionStr = "(" + prop + ")";
+        pureJSFunctionStr = AAJSStringPurer.pureJavaScriptFunctionString(pureJSFunctionStr);
+        positioner = pureJSFunctionStr;
         return this;
     }
 
