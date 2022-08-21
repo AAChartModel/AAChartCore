@@ -18,6 +18,7 @@ public class AASeries {
     public AAShadow shadow;
     public AADataLabels dataLabels;
     public AAStates states;
+    public AAPoint point;
     public Integer pointInterval;
     public String pointIntervalUnit;
     public Object pointPlacement;
@@ -105,6 +106,11 @@ public class AASeries {
 
     public AASeries states(AAStates prop) {
         states = prop;
+        return this;
+    }
+
+    public AASeries point(AAPoint prop) {
+        point = prop;
         return this;
     }
 
