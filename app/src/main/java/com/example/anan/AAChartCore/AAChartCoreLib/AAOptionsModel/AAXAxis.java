@@ -176,6 +176,11 @@ public class AAXAxis extends AAAxis {
         return this;
     }
 
+    public AAXAxis tickAmount(Integer prop) {
+        tickAmount = prop;
+        return this;
+    }
+
     public AAXAxis tickInterval(Integer prop) {
         tickInterval = prop;
         return this;

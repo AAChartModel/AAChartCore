@@ -183,6 +183,11 @@ public class AAYAxis extends AAAxis {
         return this;
     }
 
+    public AAYAxis tickAmount(Integer prop) {
+        tickAmount = prop;
+        return this;
+    }
+
     public AAYAxis tickInterval(Integer prop) {
         tickInterval = prop;
         return this;
