@@ -701,8 +701,7 @@ public class JSFunctionChartOptionsComposer {
         Object[] 总时长数组 = new Object[12];
 
         for (int i = 0; i < 12; i++) {
-            float 单个总时长 =
-                    Float.valueOf((Integer)看近时长数组[i])
+            float 单个总时长 =  Float.valueOf((Integer)看近时长数组[i])
                             + Float.valueOf((Integer)看中时长数组[i])
                             + Float.valueOf((Integer)看远时长数组[i]);
 
@@ -806,10 +805,6 @@ public class JSFunctionChartOptionsComposer {
         return "[" + originalJsArrStr + "]";
     }
 
-
-
-
-
     //https://github.com/AAChartModel/AAChartKit/issues/852 自定义蜘蛛🕷图样式
     public static AAOptions customSpiderChartStyle() {
         String[] categoryArr = {
@@ -885,14 +880,12 @@ public class JSFunctionChartOptionsComposer {
                 .fontSize(14)//字体大小
                 .fontWeight(AAChartFontWeightType.Thin);//字体为细体字
 
-
         aaOptions.legend
                 .enabled(true)
                 .align(AAChartAlignType.Center)//设置图例位于水平方向上的右侧
                 .layout(AAChartLayoutType.Horizontal)//设置图例排列方式为垂直排布
                 .verticalAlign(AAChartVerticalAlignType.Top)//设置图例位于竖直方向上的顶部
                 .itemStyle(aaItemStyle);
-
 
         return aaOptions;
     }
@@ -916,11 +909,7 @@ public class JSFunctionChartOptionsComposer {
         aaOptions.yAxis.gridLineDashStyle = AAChartLineDashStyleType.LongDash;//设置Y轴的网格线样式为 AAChartLineDashStyleType.LongDash
 
         String[] unitArr ={"美元", "欧元", "人民币", "日元", "韩元", "越南盾", "港币", };
-//        String unitJSArrStr = {unitArr aa_toJSArray];
         String unitJSArrStr = javaScriptArrayStringWithJavaArray(unitArr);
-//        String dataLabelsFormatter ={String stringWithFormat:(AAJSFunc(function () {
-//            return this.y + %[this.point.index];  //单组 serie 图表, 获取选中的点的索引是 this.point.index ,多组并且共享提示框,则是this.points[0].index
-//        })),unitJSArrStr];
         String dataLabelsFormatter = String.format("function () {\n" +
                 "        return this.y + %s[this.point.index];  \n" +  //单组 series 图表, 获取选中的点的索引是 this.point.index ,多组并且共享提示框,则是this.points[0].index
                 "    }", unitJSArrStr);
@@ -940,7 +929,7 @@ public class JSFunctionChartOptionsComposer {
     }
 
     // Refer to GitHub issue: https://github.com/AAChartModel/AAChartKit/issues/938
-// Refer to online chart sample: https://www.highcharts.com/demo/column-comparison
+    // Refer to online chart sample: https://www.highcharts.com/demo/column-comparison
     public static AAOptions customXAxisLabelsBeImages() {
         String[] nameArr = {
                 "South Korea",
@@ -993,12 +982,6 @@ public class JSFunctionChartOptionsComposer {
                 });
 
         String imageLinkFlagJSArrStr = javaScriptArrayStringWithJavaArray(imageLinkFlagArr);
-//        String xLabelsFormatter ={String stringWithFormat:(AAJSFunc(function () {
-//            let imageFlag = %[this.pos];
-//            let imageLink = "
-//            ";
-//            return imageLink;
-//        })),imageLinkFlagJSArrStr];
         String xLabelsFormatter = String.format("function () {\n" +
                 "        let imageFlag = %s[this.pos];\n" +
                 "        let imageLink = \"\";\n" +
@@ -1054,19 +1037,19 @@ public class JSFunctionChartOptionsComposer {
     }
 
     //https://bbs.hcharts.cn/article-109-1.html
-//图表自带的图例点击事件是：
-//点击某个显示/隐藏的图例，该图例对应的serie就隐藏/显示。
-//个人觉得不合理，正常来说，有多条折线(或其他类型的图表)，点击某个图例是想只看该图例对应的数据；
-//于是修改了图例点击事件。
-//
-//实现的效果是(以折线图为例)：
-//1. 当某条折线隐藏时，点击该折线的图例 --> 该折线显示；
-//2. 当全部折线都显示时，点击某个图例 --> 该图例对应的折线显示，其他折线均隐藏；
-//3. 当只有一条折线显示时，点击该折线的图例 --> 全部折线均显示；
-//4. 其他情况，按默认处理：
-//显示 --> 隐藏；
-//隐藏 --> 显示；
-//Customized legengItemClick Event online: http://code.hcharts.cn/rencht/hhhhLv/share
+    //图表自带的图例点击事件是：
+    //点击某个显示/隐藏的图例，该图例对应的serie就隐藏/显示。
+    //个人觉得不合理，正常来说，有多条折线(或其他类型的图表)，点击某个图例是想只看该图例对应的数据；
+    //于是修改了图例点击事件。
+    //
+    //实现的效果是(以折线图为例)：
+    //1. 当某条折线隐藏时，点击该折线的图例 --> 该折线显示；
+    //2. 当全部折线都显示时，点击某个图例 --> 该图例对应的折线显示，其他折线均隐藏；
+    //3. 当只有一条折线显示时，点击该折线的图例 --> 全部折线均显示；
+    //4. 其他情况，按默认处理：
+    //显示 --> 隐藏；
+    //隐藏 --> 显示；
+    //Customized legengItemClick Event online: http://code.hcharts.cn/rencht/hhhhLv/share
     public static AAOptions customLegendItemClickEvent() {
         AAChartModel aaChartModel = new AAChartModel()
                 .chartType(AAChartType.Column)
@@ -1333,7 +1316,7 @@ public class JSFunctionChartOptionsComposer {
                 .valueDecimals(2)//设置取值精确到小数点后几位
                 .backgroundColor(AAColor.rgbaColor(242, 242, 242, 1.0f))
                 .borderWidth(0)
-//                                                        .shape("square")
+                .shape("square")
                 .style(AAStyle.style(AAColor.rgbaColor(132, 132, 132, 1.0f), 28))
                 .positioner(positionerStr);
 
