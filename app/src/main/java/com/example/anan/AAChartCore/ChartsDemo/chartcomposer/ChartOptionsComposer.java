@@ -2132,7 +2132,7 @@ public class ChartOptionsComposer {
         aaOptions.xAxis.tickWidth = 0;
 
         aaOptions.yAxis
-//                .tickAmount(20)
+                .tickAmount(20)
                 .lineWidth(1)
                 .lineColor(AAColor.Black);
 
