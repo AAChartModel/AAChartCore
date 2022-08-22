@@ -178,6 +178,11 @@ public class AAYAxis extends AAAxis {
         return this;
     }
 
+    public AAYAxis endOnTick(Boolean prop) {
+        endOnTick = prop;
+        return this;
+    }
+
     public AAYAxis tickColor(String prop) {
         tickColor = prop;
         return this;

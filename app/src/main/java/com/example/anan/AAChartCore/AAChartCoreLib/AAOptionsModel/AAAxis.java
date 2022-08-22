@@ -37,7 +37,8 @@ public class AAAxis {
     public Number off;//坐标轴垂直偏移
     public AALabels labels; //用于设置坐标轴文字相关的
     public Boolean visible; //用于设置坐标轴以及坐标轴文字是否显示
-    public Boolean startOnTick; //Whether to force the axis to start on a tick. Use this option with the minPadding option to control the axis start. 默认是：false.
+    public Boolean startOnTick; // Whether to force the axis to start on a tick. Use this option with the minPadding option to control the axis start. The default is false.
+    public Boolean endOnTick; // Whether to force the axis to end on a tick. Use this option with the minPadding option to control the axis end. The default is false.
     public String tickColor; //坐标轴轴线下方刻度线颜色
     public Integer tickAmount;
     public Integer tickInterval;//坐标轴刻度点间隔数(设置每隔几个点显示一个 坐标轴的内容:
