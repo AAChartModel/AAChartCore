@@ -1886,9 +1886,9 @@ public class ChartOptionsComposer {
                 .subtitleAlign(AAChartAlignType.Left)
             .chartType(AAChartType.Scatter)
             .yAxisGridLineWidth(0)
-//                .markerSymbol(AAChartMarker.circle)
+                .markerSymbol(AAChartSymbolType.Circle)
             .markerRadius(8)
-//                .markerSymbolStyle(.borderBlank)
+                .markerSymbolStyle(AAChartSymbolStyleType.BorderBlank)
             .dataLabelsEnabled(true)
                 .colorsTheme(new String[]{AAColor.Red, AAColor.Orange, AAColor.Green, AAColor.Blue})
                 .series(new AASeriesElement[]{
@@ -2145,9 +2145,9 @@ public class ChartOptionsComposer {
 
         aaOptions.legend
             .itemMarginTop(10)
-//                .symbolRadius(10)//图标圆角
-//                .symbolHeight(20)//标志高度
-//                .symbolWidth(20)//图标宽度
+                .symbolRadius(10)//图标圆角
+                .symbolHeight(20)//标志高度
+                .symbolWidth(20)//图标宽度
                 .align(AAChartAlignType.Right)
             .layout(AAChartLayoutType.Vertical)
             .verticalAlign(AAChartVerticalAlignType.Top);
@@ -2219,9 +2219,9 @@ public class ChartOptionsComposer {
             //     关于 `pointPadding`
             //https://api.highcharts.com.cn/highcharts#plotOptions.column.pointPadding
 
-//            aaOptions.plotOptions.columnrange
-//                    .grouping(false)
-//                    .groupPadding(0.003);
+            aaOptions.plotOptions.columnrange
+                    .grouping(false)
+                    .groupPadding(0.003);
 
             return aaOptions;
         }
