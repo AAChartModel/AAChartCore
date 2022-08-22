@@ -742,19 +742,20 @@ public class JSFunctionChartOptionsComposer {
         String 停止次数JS数组 = javaScriptArrayStringWithJavaArray(停止次数数组);
         String 干预次数JS数组 = javaScriptArrayStringWithJavaArray(干预次数数组);
 
-        String jsFormatterStr =
-                "function () {\n" +
-                        "        let 总时长数组 = (总时长JS数组);\n" +
-                        "        let 有效时长数组 = (有效时长JS数组);\n" +
-                        "        let 看近时长数组 = (看近时长JS数组);\n" +
-                        "        let 看中时长数组 = (看中时长JS数组);\n" +
-                        "        let 看远时长数组 = (看远时长JS数组);\n" +
-                        "        let 切换次数数组 = (切换次数JS数组);\n" +
-                        "        let 停止次数数组 = (停止次数JS数组);\n" +
-                        "        let 干预次数数组 = (干预次数JS数组);\n" +
+        String jsFormatterStr = String.format("function () {\n" +
+                        "        let 总时长数组 = %s;\n" +
+                        "        let 有效时长数组 = %s;\n" +
+                        "        let 看近时长数组 = %s;\n" +
+                        "        let 看中时长数组 = %s;\n" +
+                        "        let 看远时长数组 = %s;\n" +
+                        "        let 切换次数数组 = %s;\n" +
+                        "        let 停止次数数组 = %s;\n" +
+                        "        let 干预次数数组 = %s;\n" +
+
                         "        let 时间单位后缀 = \"min<br/>\";\n" +
                         "        let 频率单位后缀 = \"次<br/>\";\n" +
                         "        \n" +
+
                         "        let 单个总时长字符串 = \"总时长: &nbsp &nbsp\" + 总时长数组[this.point.index] + 时间单位后缀;\n" +
                         "        let 单个有效时长字符串 = \"有效时长: &nbsp\" + 有效时长数组[this.point.index] + 时间单位后缀;\n" +
                         "        let 单个看近时长字符串 = \"看近时长: &nbsp\" + 看近时长数组[this.point.index] + 时间单位后缀;\n" +
@@ -767,15 +768,7 @@ public class JSFunctionChartOptionsComposer {
                         "        let wholeContentString =  单个总时长字符串 + 单个有效时长字符串 + 单个看近时长字符串 + 单个看中时长字符串 + 单个看远时长字符串 + 单个切换次数字符串 + 单个停止次数字符串 + 单个干预次数字符串;\n" +
                         "        \n" +
                         "        return wholeContentString;\n" +
-                        "        }";
-        jsFormatterStr = jsFormatterStr.replace("(总时长JS数组)",总时长JS数组);
-        jsFormatterStr = jsFormatterStr.replace("(有效时长JS数组)",有效时长JS数组);
-        jsFormatterStr = jsFormatterStr.replace("(看近时长JS数组)",看近时长JS数组);
-        jsFormatterStr = jsFormatterStr.replace("(看中时长JS数组)",看中时长JS数组);
-        jsFormatterStr = jsFormatterStr.replace("(看远时长JS数组)",看远时长JS数组);
-        jsFormatterStr = jsFormatterStr.replace("(切换次数JS数组)",切换次数JS数组);
-        jsFormatterStr = jsFormatterStr.replace("(停止次数JS数组)",停止次数JS数组);
-        jsFormatterStr = jsFormatterStr.replace("(干预次数JS数组)",干预次数JS数组);
+                        "        }",总时长JS数组,有效时长JS数组,看近时长JS数组,看中时长JS数组,看远时长JS数组,切换次数JS数组,停止次数JS数组,干预次数JS数组);
 
         AAOptions aaOptions = aaChartModel.aa_toAAOptions();
 
