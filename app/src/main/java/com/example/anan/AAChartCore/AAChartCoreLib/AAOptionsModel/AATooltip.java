@@ -23,6 +23,7 @@ public class AATooltip {
     public String pointFormatter;
     public String positioner;
     public AADateTimeLabelFormats dateTimeLabelFormats;
+    public String shape;
 
     public AATooltip backgroundColor(Object prop) {
         backgroundColor = prop;
@@ -127,6 +128,11 @@ public class AATooltip {
 
     public AATooltip dateTimeLabelFormats(AADateTimeLabelFormats prop) {
         dateTimeLabelFormats = prop;
+        return this;
+    }
+
+    public AATooltip shape(String prop) {
+        shape = prop;
         return this;
     }
 
