@@ -9,6 +9,10 @@ public class AALegend {
     public Number borderWidth;
     public Number itemMarginTop; //图例的每一项的顶部外边距，单位px。 默认是：0.
     public AAItemStyle itemStyle;
+    public Number symbolHeight;
+    public Number symbolPadding;
+    public Number symbolRadius;
+    public Number symbolWidth;
     public Number x;
     public Number y;
     public Boolean floating;
@@ -50,6 +54,26 @@ public class AALegend {
 
     public AALegend itemStyle(AAItemStyle prop) {
         itemStyle = prop;
+        return this;
+    }
+
+    public AALegend symbolHeight(Number prop) {
+        symbolHeight = prop;
+        return this;
+    }
+
+    public AALegend symbolPadding(Number prop) {
+        symbolPadding = prop;
+        return this;
+    }
+
+    public AALegend symbolRadius(Number prop) {
+        symbolRadius = prop;
+        return this;
+    }
+
+    public AALegend symbolWidth(Number prop) {
+        symbolWidth = prop;
         return this;
     }
 
