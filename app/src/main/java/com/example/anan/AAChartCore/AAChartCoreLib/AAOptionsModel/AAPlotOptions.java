@@ -8,6 +8,7 @@ public class AAPlotOptions {
     public AASpline spline;
     public AAArea area;
     public AAAreaspline areaspline;
+    public AABubble bubble;
     public AAColumnrange columnrange;
     public AAArearange arearange;
     public AASeries series;
@@ -45,6 +46,11 @@ public class AAPlotOptions {
 
     public AAPlotOptions areaspline(AAAreaspline prop) {
         areaspline = prop;
+        return this;
+    }
+
+    public AAPlotOptions bubble(AABubble prop) {
+        bubble = prop;
         return this;
     }
 
