@@ -1372,11 +1372,11 @@ public class JSFunctionChartOptionsComposer {
         AAPoint aaPoint = new AAPoint()
                 .events(new AAPointEvents()
                         .click("function () {\n" +
-                                "                   if (this.selected == true) {\n" +
-                                "                       this.selected = false;\n" +
-                                "                   }\n" +
-                                "                   return;\n" +
-                                "               }"));
+                          "         if (this.selected == true) {\n" +
+                          "             this.selected = false;\n" +
+                          "         }\n" +
+                          "         return;\n" +
+                          "     }"));
 
         aaOptions.plotOptions.series
                 .point(aaPoint);
@@ -1632,10 +1632,10 @@ public class JSFunctionChartOptionsComposer {
                         .style(new AAStyle()
                                 .color("DodgerBlue"))
                         .formatter("function () {\n" +
-                                "                   var yValue = this.value;\n" +
-                                "                   var formattedYValue = (yValue / 1000).toFixed(3) + '千';\n" +
-                                "                   return formattedYValue;\n" +
-                                "               }"))
+                                "       var yValue = this.value;\n" +
+                                "       var formattedYValue = (yValue / 1000).toFixed(3) + '千';\n" +
+                                "       return formattedYValue;\n" +
+                                "   }"))
                 .gridLineWidth(0)
                 .title(new AATitle()
                         .text("以「千」为单位")
@@ -1650,10 +1650,10 @@ public class JSFunctionChartOptionsComposer {
                         .style(new AAStyle()
                                 .color(AAColor.Red))
                         .formatter("function () {\n" +
-                                "                    var yValue = this.value;\n" +
-                                "                    var formattedYValue = (yValue / 10000).toFixed(4) + '万';\n" +
-                                "                    return formattedYValue;\n" +
-                                "                   }"))
+                                "       var yValue = this.value;\n" +
+                                "       var formattedYValue = (yValue / 10000).toFixed(4) + '万';\n" +
+                                "       return formattedYValue;\n" +
+                                "   }"))
                 .gridLineWidth(0)
                 .title(new AATitle()
                         .text("以『万』为单位")
@@ -1736,14 +1736,14 @@ public class JSFunctionChartOptionsComposer {
                         .style(new AAStyle()
                                 .color("DodgerBlue"))
                         .formatter("function () {\n" +
-                                "                    var yValue = this.value;\n" +
-                                "                    var unitStr = \"千\";\n" +
-                                "                    if (yValue == 0) {\n" +
-                                "                        unitStr = \"\";\n" +
-                                "                    }\n" +
-                                "                    var formattedYValue = (yValue / 1000).toFixed(3) + unitStr;\n" +
-                                "                    return formattedYValue;\n" +
-                                "                }"))//Y轴文字数值为 0 的时候, 不显示单位
+                                "       var yValue = this.value;\n" +
+                                "       var unitStr = \"千\";\n" +
+                                "       if (yValue == 0) {\n" +
+                                "           unitStr = \"\";\n" +
+                                "       }\n" +
+                                "       var formattedYValue = (yValue / 1000).toFixed(3) + unitStr;\n" +
+                                "       return formattedYValue;\n" +
+                                "   }"))//Y轴文字数值为 0 的时候, 不显示单位
                 .gridLineWidth(0)
                 .title(new AATitle()
                         .text("以「千」为单位")
@@ -1758,14 +1758,14 @@ public class JSFunctionChartOptionsComposer {
                         .style(new AAStyle()
                                 .color(AAColor.Red))
                         .formatter("function () {\n" +
-                                "                    var yValue = this.value;\n" +
-                                "                    var unitStr = \"万\";\n" +
-                                "                    if (yValue == 0) {\n" +
-                                "                        unitStr = \"\";\n" +
-                                "                    }\n" +
-                                "                    var formattedYValue = (yValue / 10000).toFixed(4) + unitStr;\n" +
-                                "                    return formattedYValue;\n" +
-                                "                }"))//Y轴文字数值为 0 的时候, 不显示单位
+                                "       var yValue = this.value;\n" +
+                                "       var unitStr = \"万\";\n" +
+                                "       if (yValue == 0) {\n" +
+                                "           unitStr = \"\";\n" +
+                                "       }\n" +
+                                "       var formattedYValue = (yValue / 10000).toFixed(4) + unitStr;\n" +
+                                "       return formattedYValue;\n" +
+                                "   }"))//Y轴文字数值为 0 的时候, 不显示单位
                 .gridLineWidth(0)
                 .title(new AATitle()
                         .text("以『万』为单位")
