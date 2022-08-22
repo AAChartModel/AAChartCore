@@ -15,6 +15,7 @@ import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartVerticalAlignType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartZoomType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAAnimation;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AABubble;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAChart;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAColumn;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AACrosshair;
@@ -1748,7 +1749,7 @@ public class ChartOptionsComposer {
                         .type(AAChartAxisType.Logarithmic)
                         .min(1)
                         .max(1000)
-//                            .endOnTick(true)
+                        .endOnTick(true)
                         .tickInterval(1)
                         .minorTickInterval(0.1)
                         .gridLineWidth(1))
@@ -1832,12 +1833,12 @@ public class ChartOptionsComposer {
 
         AAOptions aaOptions = aaChartModel.aa_toAAOptions();
 
-//        aaOptions.plotOptions
-//            .bubble(new AABubble()
-//                .minSize(0)
-//                .maxSize(100)
-//                .zMin(0)
-//                .zMax(100))
+        aaOptions.plotOptions
+            .bubble(new AABubble()
+                .minSize(0)
+                .maxSize(100)
+                .zMin(0)
+                .zMax(100));
 
         return aaOptions;
     }
