@@ -1197,13 +1197,13 @@ public class JSFunctionChartOptionsComposer {
 
     public static AAOptions fixedTooltipPositionByCustomPositionerFunction() {
         AAOptions aaOptions = customTooltipPostionerFunction();
-            aaOptions.tooltip
-                    .positioner("function () {\n" +
-                            "        let position = {};\n" +
-                            "        position[\"x\"] = 50;\n" +
-                            "        position[\"y\"] = 50;\n" +
-                            "        return position;\n" +
-                            "    }");
+        aaOptions.tooltip
+                .positioner("function () {\n" +
+                        "        let position = {};\n" +
+                        "        position[\"x\"] = 50;\n" +
+                        "        position[\"y\"] = 50;\n" +
+                        "        return position;\n" +
+                        "    }");
 
         return aaOptions;
     }
@@ -1369,17 +1369,17 @@ public class JSFunctionChartOptionsComposer {
 
         AAOptions aaOptions = aaChartModel.aa_toAAOptions();
 
-                    AAPoint aaPoint = new AAPoint()
-                            .events(new AAPointEvents()
-                                    .click("function () {\n" +
-                                            "                   if (this.selected == true) {\n" +
-                                            "                       this.selected = false;\n" +
-                                            "                   }\n" +
-                                            "                   return;\n" +
-                                            "               }"));
+        AAPoint aaPoint = new AAPoint()
+                .events(new AAPointEvents()
+                        .click("function () {\n" +
+                                "                   if (this.selected == true) {\n" +
+                                "                       this.selected = false;\n" +
+                                "                   }\n" +
+                                "                   return;\n" +
+                                "               }"));
 
-                    aaOptions.plotOptions.series
-                            .point(aaPoint);
+        aaOptions.plotOptions.series
+                .point(aaPoint);
 
         return aaOptions;
     }
@@ -1444,31 +1444,31 @@ public class JSFunctionChartOptionsComposer {
                 .useHTML(true)
                 .padding(0)
                 .borderWidth(0)
-                        .formatter("function () {\n" +
-                                "        var box1Text = \"&nbsp 2021-\" + this.x + this.points[0].series.name + this.y;\n" +
-                                "        var box2Text = \"&nbsp 2021-\" + this.x + this.points[1].series.name + this.y;\n" +
-                                "        \n" +
-                                "        return '<style>\\\n" +
-                                "        div{margin:0;padding:0}\\\n" +
-                                "        #container{width:300px;height:40px;border:80px;}\\\n" +
-                                "        #container .box1{width:150px;height:40px;float:left;background:red;line-height:40px;color:#fff}\\\n" +
-                                "        #container .box2{width:150px;height:40px;float:right;background:green;line-height:40px;color:#fff}\\\n" +
-                                "        </style>\\\n" +
-                                "        <div id=\\\"container\\\">'\n" +
-                                "        +\n" +
-                                "        '<div class=\\\"box1\\\">' + box1Text + '</div>'\n" +
-                                "        +\n" +
-                                "        '<div class=\\\"box2\\\">' + box2Text + '</div>'\n" +
-                                "        +\n" +
-                                "        '</div>';\n" +
-                                "    }")
+                .formatter("function () {\n" +
+                        "        var box1Text = \"&nbsp 2021-\" + this.x + this.points[0].series.name + this.y;\n" +
+                        "        var box2Text = \"&nbsp 2021-\" + this.x + this.points[1].series.name + this.y;\n" +
+                        "        \n" +
+                        "        return '<style>\\\n" +
+                        "        div{margin:0;padding:0}\\\n" +
+                        "        #container{width:300px;height:40px;border:80px;}\\\n" +
+                        "        #container .box1{width:150px;height:40px;float:left;background:red;line-height:40px;color:#fff}\\\n" +
+                        "        #container .box2{width:150px;height:40px;float:right;background:green;line-height:40px;color:#fff}\\\n" +
+                        "        </style>\\\n" +
+                        "        <div id=\\\"container\\\">'\n" +
+                        "        +\n" +
+                        "        '<div class=\\\"box1\\\">' + box1Text + '</div>'\n" +
+                        "        +\n" +
+                        "        '<div class=\\\"box2\\\">' + box2Text + '</div>'\n" +
+                        "        +\n" +
+                        "        '</div>';\n" +
+                        "    }")
         ;
 
         //禁用图例点击事件
         aaOptions.plotOptions.series.events = new AASeriesEvents()
-                        .legendItemClick("function() {\n" +
-                                "         return false;\n" +
-                                "     }");
+                .legendItemClick("function() {\n" +
+                        "         return false;\n" +
+                        "     }");
 
 
         return aaOptions;
@@ -1506,24 +1506,24 @@ public class JSFunctionChartOptionsComposer {
                 .visible(true)
                 .lineWidth(1)
                 .tickPositions(new Object[]{0, 50, 100, 150, 200})
-        .labels(new AALabels()
-        .enabled(true)
-        .style(new AAStyle()
-        .color("DodgerBlue"))
-        .formatter("function () {\n" +
-                "        let yValue = this.value;\n" +
-                "        if (yValue >= 200) {\n" +
-                "            return \"极佳\";\n" +
-                "        } else if (yValue >= 150 && yValue < 200) {\n" +
-                "            return \"非常棒\";\n" +
-                "        } else if (yValue >= 100 && yValue < 150) {\n" +
-                "            return \"相当棒\";\n" +
-                "        } else if (yValue >= 50 && yValue < 100) {\n" +
-                "            return \"还不错\";\n" +
-                "        } else {\n" +
-                "            return \"一般\";\n" +
-                "        }\n" +
-                "    }"))
+                .labels(new AALabels()
+                        .enabled(true)
+                        .style(new AAStyle()
+                                .color("DodgerBlue"))
+                        .formatter("function () {\n" +
+                                "        let yValue = this.value;\n" +
+                                "        if (yValue >= 200) {\n" +
+                                "            return \"极佳\";\n" +
+                                "        } else if (yValue >= 150 && yValue < 200) {\n" +
+                                "            return \"非常棒\";\n" +
+                                "        } else if (yValue >= 100 && yValue < 150) {\n" +
+                                "            return \"相当棒\";\n" +
+                                "        } else if (yValue >= 50 && yValue < 100) {\n" +
+                                "            return \"还不错\";\n" +
+                                "        } else {\n" +
+                                "            return \"一般\";\n" +
+                                "        }\n" +
+                                "    }"))
                 .gridLineWidth(0)
                 .title(new AATitle()
                         .text("中文")
@@ -1533,24 +1533,24 @@ public class JSFunctionChartOptionsComposer {
                 .visible(true)
                 .lineWidth(1)
                 .tickPositions(new Object[]{0, 50, 100, 150, 200})
-        .labels(new AALabels()
-        .enabled(true)
-        .style(new AAStyle()
-        .color(AAColor.Red))
-        .formatter("function () {\n" +
-                "        let yValue = this.value;\n" +
-                "        if (yValue >= 200) {\n" +
-                "            return \"Awesome\";\n" +
-                "        } else if (yValue >= 150 && yValue < 200) {\n" +
-                "            return \"Great\";\n" +
-                "        } else if (yValue >= 100 && yValue < 150) {\n" +
-                "            return \"Very Good\";\n" +
-                "        } else if (yValue >= 50 && yValue < 100) {\n" +
-                "            return \"Not Bad\";\n" +
-                "        } else {\n" +
-                "            return \"Just So So\";\n" +
-                "        }\n" +
-                "    }"))
+                .labels(new AALabels()
+                        .enabled(true)
+                        .style(new AAStyle()
+                                .color(AAColor.Red))
+                        .formatter("function () {\n" +
+                                "        let yValue = this.value;\n" +
+                                "        if (yValue >= 200) {\n" +
+                                "            return \"Awesome\";\n" +
+                                "        } else if (yValue >= 150 && yValue < 200) {\n" +
+                                "            return \"Great\";\n" +
+                                "        } else if (yValue >= 100 && yValue < 150) {\n" +
+                                "            return \"Very Good\";\n" +
+                                "        } else if (yValue >= 50 && yValue < 100) {\n" +
+                                "            return \"Not Bad\";\n" +
+                                "        } else {\n" +
+                                "            return \"Just So So\";\n" +
+                                "        }\n" +
+                                "    }"))
                 .gridLineWidth(0)
                 .title(new AATitle()
                         .text("ENGLISH")
@@ -1627,15 +1627,15 @@ public class JSFunctionChartOptionsComposer {
                 .visible(true)
                 .lineWidth(1)
                 .tickPositions(new Object[]{0, 50, 100, 150, 200})
-        .labels(new AALabels()
-        .enabled(true)
-        .style(new AAStyle()
-        .color("DodgerBlue"))
-        .formatter("function () {\n" +
-                "                   var yValue = this.value;\n" +
-                "                   var formattedYValue = (yValue / 1000).toFixed(3) + '千';\n" +
-                "                   return formattedYValue;\n" +
-                "               }"))
+                .labels(new AALabels()
+                        .enabled(true)
+                        .style(new AAStyle()
+                                .color("DodgerBlue"))
+                        .formatter("function () {\n" +
+                                "                   var yValue = this.value;\n" +
+                                "                   var formattedYValue = (yValue / 1000).toFixed(3) + '千';\n" +
+                                "                   return formattedYValue;\n" +
+                                "               }"))
                 .gridLineWidth(0)
                 .title(new AATitle()
                         .text("以「千」为单位")
@@ -1645,15 +1645,15 @@ public class JSFunctionChartOptionsComposer {
                 .visible(true)
                 .lineWidth(1)
                 .tickPositions(new Object[]{0, 50, 100, 150, 200})
-        .labels(new AALabels()
-        .enabled(true)
-        .style(new AAStyle()
-        .color(AAColor.Red))
-        .formatter("function () {\n" +
-                "                    var yValue = this.value;\n" +
-                "                    var formattedYValue = (yValue / 10000).toFixed(4) + '万';\n" +
-                "                    return formattedYValue;\n" +
-                "                   }"))
+                .labels(new AALabels()
+                        .enabled(true)
+                        .style(new AAStyle()
+                                .color(AAColor.Red))
+                        .formatter("function () {\n" +
+                                "                    var yValue = this.value;\n" +
+                                "                    var formattedYValue = (yValue / 10000).toFixed(4) + '万';\n" +
+                                "                    return formattedYValue;\n" +
+                                "                   }"))
                 .gridLineWidth(0)
                 .title(new AATitle()
                         .text("以『万』为单位")
@@ -1731,19 +1731,19 @@ public class JSFunctionChartOptionsComposer {
                 .visible(true)
                 .lineWidth(1)
                 .tickPositions(new Object[]{0, 50, 100, 150, 200})
-        .labels(new AALabels()
-        .enabled(true)
-        .style(new AAStyle()
-        .color("DodgerBlue"))
-        .formatter("function () {\n" +
-                "                    var yValue = this.value;\n" +
-                "                    var unitStr = \"千\";\n" +
-                "                    if (yValue == 0) {\n" +
-                "                        unitStr = \"\";\n" +
-                "                    }\n" +
-                "                    var formattedYValue = (yValue / 1000).toFixed(3) + unitStr;\n" +
-                "                    return formattedYValue;\n" +
-                "                }"))//Y轴文字数值为 0 的时候, 不显示单位
+                .labels(new AALabels()
+                        .enabled(true)
+                        .style(new AAStyle()
+                                .color("DodgerBlue"))
+                        .formatter("function () {\n" +
+                                "                    var yValue = this.value;\n" +
+                                "                    var unitStr = \"千\";\n" +
+                                "                    if (yValue == 0) {\n" +
+                                "                        unitStr = \"\";\n" +
+                                "                    }\n" +
+                                "                    var formattedYValue = (yValue / 1000).toFixed(3) + unitStr;\n" +
+                                "                    return formattedYValue;\n" +
+                                "                }"))//Y轴文字数值为 0 的时候, 不显示单位
                 .gridLineWidth(0)
                 .title(new AATitle()
                         .text("以「千」为单位")
@@ -1753,19 +1753,19 @@ public class JSFunctionChartOptionsComposer {
                 .visible(true)
                 .lineWidth(1)
                 .tickPositions(new Object[]{0, 50, 100, 150, 200})
-        .labels(new AALabels()
-        .enabled(true)
-        .style(new AAStyle()
-        .color(AAColor.Red))
-        .formatter("function () {\n" +
-                "                    var yValue = this.value;\n" +
-                "                    var unitStr = \"万\";\n" +
-                "                    if (yValue == 0) {\n" +
-                "                        unitStr = \"\";\n" +
-                "                    }\n" +
-                "                    var formattedYValue = (yValue / 10000).toFixed(4) + unitStr;\n" +
-                "                    return formattedYValue;\n" +
-                "                }"))//Y轴文字数值为 0 的时候, 不显示单位
+                .labels(new AALabels()
+                        .enabled(true)
+                        .style(new AAStyle()
+                                .color(AAColor.Red))
+                        .formatter("function () {\n" +
+                                "                    var yValue = this.value;\n" +
+                                "                    var unitStr = \"万\";\n" +
+                                "                    if (yValue == 0) {\n" +
+                                "                        unitStr = \"\";\n" +
+                                "                    }\n" +
+                                "                    var formattedYValue = (yValue / 10000).toFixed(4) + unitStr;\n" +
+                                "                    return formattedYValue;\n" +
+                                "                }"))//Y轴文字数值为 0 的时候, 不显示单位
                 .gridLineWidth(0)
                 .title(new AATitle()
                         .text("以『万』为单位")
@@ -1816,17 +1816,17 @@ public class JSFunctionChartOptionsComposer {
 
     //https://github.com/AAChartModel/AAChartKit/issues/1042
     public static AAOptions makePieChartShow0Data() {
-        Map data1 = new HashMap();
+        Map<String, Object> data1 = new HashMap<>();
         data1.put("y", 1);
         data1.put("isZero", true);
         data1.put("name", "One");
 
-        Map data2 = new HashMap();
+        Map<String, Object> data2 = new HashMap<>();
         data2.put("y", 1);
         data2.put("isZero", true);
         data2.put("name", "One");
 
-        Map data3 = new HashMap();
+        Map<String, Object> data3 = new HashMap<>();
         data3.put("y", 1);
         data3.put("isZero", true);
         data3.put("name", "One");
@@ -1839,16 +1839,16 @@ public class JSFunctionChartOptionsComposer {
                         new AASeriesElement()
                                 .name("ZeroDataPie")
                                 .data(new Object[]{data1, data2, data3
-                        })
-        .tooltip(new AATooltip()
-        .shared(false)
-        .pointFormatter("function() {\n" +
-                "            return \"<span style=\\'color:\" + this.color + \"\\'> ◉ </span>\"\n" +
-                "            + this.series.name\n" +
-                "            + \": <b>\"\n" +
-                "            + (this.options.isZero ? 0 : this.y)\n" +
-                "            + \"</b><br/>\";\n" +
-                "        }"))
+                                })
+                                .tooltip(new AATooltip()
+                                .shared(false)
+                                .pointFormatter("function() {\n" +
+                                        "            return \"<span style=\\'color:\" + this.color + \"\\'> ◉ </span>\"\n" +
+                                        "            + this.series.name\n" +
+                                        "            + \": <b>\"\n" +
+                                        "            + (this.options.isZero ? 0 : this.y)\n" +
+                                        "            + \"</b><br/>\";\n" +
+                                        "        }"))
                 });
 
     };
@@ -1897,14 +1897,14 @@ public class JSFunctionChartOptionsComposer {
 
         AAOptions aaOptions = aaChartModel.aa_toAAOptions();
         aaOptions.xAxis.labels
-        .formatter("function () {\n" +
-                "        let xAxisCategory = this.value;\n" +
-                "        if (xAxisCategory.length > 4) {\n" +
-                "            return xAxisCategory.substr(0, 4);\n" +
-                "        } else {\n" +
-                "            return xAxisCategory;\n" +
-                "        }\n" +
-                "    }");
+                .formatter("function () {\n" +
+                        "        let xAxisCategory = this.value;\n" +
+                        "        if (xAxisCategory.length > 4) {\n" +
+                        "            return xAxisCategory.substr(0, 4);\n" +
+                        "        } else {\n" +
+                        "            return xAxisCategory;\n" +
+                        "        }\n" +
+                        "    }");
         ;
 
 
@@ -1961,20 +1961,20 @@ public class JSFunctionChartOptionsComposer {
         //https://api.highcharts.com/highcharts/chart.events.load
         //https://www.highcharts.com/forum/viewtopic.php?t=36508
         aaOptions.chart
-        .events(new AAChartEvents()
-        .load(String.format("function() {\n" +
-                "                let points = [];\n" +
-                "                let chart = this;\n" +
-                "                let series = chart.series;\n" +
-                "                let length = series.length;\n" +
-                "                           \n" +
-                "                for (let i = 0; i < length; i++) {\n" +
-                "                    let pointElement = series[i].data[%s];\n" +
-                "                    points.push(pointElement);\n" +
-                "                }\n" +
-                "                chart.xAxis[0].drawCrosshair(null, points[0]);\n" +
-                "                chart.tooltip.refresh(points);\n" +
-                "                       }", defaultSelectedIndex)));
+                .events(new AAChartEvents()
+                        .load(String.format("function() {\n" +
+                                "                let points = [];\n" +
+                                "                let chart = this;\n" +
+                                "                let series = chart.series;\n" +
+                                "                let length = series.length;\n" +
+                                "                           \n" +
+                                "                for (let i = 0; i < length; i++) {\n" +
+                                "                    let pointElement = series[i].data[%s];\n" +
+                                "                    points.push(pointElement);\n" +
+                                "                }\n" +
+                                "                chart.xAxis[0].drawCrosshair(null, points[0]);\n" +
+                                "                chart.tooltip.refresh(points);\n" +
+                                "                       }", defaultSelectedIndex)));
 
 
         return aaOptions;
@@ -2019,10 +2019,10 @@ public class JSFunctionChartOptionsComposer {
                 });
 
         AAOptions aaOptions = aaChartModel.aa_toAAOptions();
-    aaOptions.tooltip
-            .formatter("function () {\n" +
-                    "               return false;\n" +
-                    "        }");
+        aaOptions.tooltip
+                .formatter("function () {\n" +
+                        "               return false;\n" +
+                        "        }");
 
         return aaOptions;
     }
