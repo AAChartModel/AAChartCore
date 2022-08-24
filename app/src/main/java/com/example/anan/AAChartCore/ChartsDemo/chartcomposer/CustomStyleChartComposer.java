@@ -25,6 +25,7 @@ import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAInactive;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAMarker;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAMarkerHover;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAMarkerStates;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AASVGAttributes;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AASelect;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAShadow;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAStates;
@@ -665,16 +666,6 @@ public class CustomStyleChartComposer {
     }
 
     public static AAChartModel customChartHoverAndSelectHaloStyle() {
-        HashMap<String, Object> hoverHaloAttributes = new HashMap<>();
-        hoverHaloAttributes.put("stroke-width", 50);
-        hoverHaloAttributes.put("fill", "#00BFFF");
-        hoverHaloAttributes.put("stroke", "#00FA9A");
-
-        HashMap<String, Object> selectHaloAttributes = new HashMap<>();
-        selectHaloAttributes.put("stroke-width", 150);
-        selectHaloAttributes.put("fill", AAColor.rgbaColor(138, 43, 226, 1f));
-        selectHaloAttributes.put("stroke", AAColor.rgbaColor(30, 144, 255, 1f));
-
         return new AAChartModel()
                 .chartType(AAChartType.Line)
                 .title("Custom Chart Hover And Select Halo Style")
@@ -693,13 +684,19 @@ public class CustomStyleChartComposer {
                                                 .halo(new AAHalo()
                                                         .size(130)
                                                         .opacity(0.8)
-                                                        .attributes(hoverHaloAttributes)))
+                                                        .attributes(new AASVGAttributes()
+                                                                .strokeWidth(50)
+                                                                .fill("#00BFFF")
+                                                                .stroke("#00FA9A"))))
                                         .select(new AASelect()
                                                 .halo(new AAHalo()
                                                         .size(130)
                                                         .opacity(1.0)
-                                                        .attributes(selectHaloAttributes))))
-                });
+                                                        .attributes(new AASVGAttributes()
+                                                                .strokeWidth(150)
+                                                                .fill(AAColor.rgbaColor(138, 43, 226, 1f))
+                                                                .stroke(AAColor.rgbaColor(30, 144, 255, 1f)))))
+                        )});
     }
 
     public static AAChartModel customSplineChartMarkerStatesHoverStyle() {
