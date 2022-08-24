@@ -3,12 +3,12 @@ package com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel;
 import java.util.Map;
 
 public class AAHalo {
-    public Map attributes;
+    public Map<String, Object> attributes;
     public Number opacity;
     public Number size;
 
-    public AAHalo attributes(Map prop) {
-        attributes = prop;
+    public AAHalo attributes(AASVGAttributes prop) {
+        attributes = prop.toDic();
         return this;
     }
 
