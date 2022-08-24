@@ -10,7 +10,7 @@
         android:id="@+id/tv_colorful_index"
         android:layout_width="48dp"
         android:layout_height="match_parent"
-        android:textSize="28dp"
+        android:textSize="20dp"
         android:text="◉"
         android:gravity="center_vertical|center"
         ></TextView>
