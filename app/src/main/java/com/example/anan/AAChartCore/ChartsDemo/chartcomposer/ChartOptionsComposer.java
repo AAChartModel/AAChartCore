@@ -1448,6 +1448,7 @@ public class ChartOptionsComposer {
 //        return aaOptions
 //    }
 
+    //https://github.com/AAChartModel/AAChartKit/issues/1125
     public static AAOptions customAreaChartTooltipStyleWithTotalValueHeader() {
         Object[][] goldStopsArr = new Object[][]{
                 new Object[]{0.0, AAColor.rgbaColor(255, 215, 0, 1.0f)},//颜色字符串设置支持十六进制类型和 rgba 类型
@@ -1951,12 +1952,11 @@ public class ChartOptionsComposer {
                                                 .verticalAlign(AAChartVerticalAlignType.Middle)
                                 )
                                 ,
-
-//            { 33, 1.37},
-//            { 35, 1.36},
-//            { 38, 1.32},
-//            { 35, 1.32},
-//            { 47, 1.19},
+                                new AADataElement().x(33).y(1.37),
+                                new AADataElement().x(35).y(1.36),
+                                new AADataElement().x(38).y(1.32),
+                                new AADataElement().x(35).y(1.32),
+                                new AADataElement().x(47).y(1.19)
                         })
                         ,
 
@@ -1984,8 +1984,8 @@ public class ChartOptionsComposer {
                                 )
                                 ,
 
-//                    { 38, 1.37},
-//                    { 38, 1.37},
+                                new AADataElement().x(38).y(1.37),
+                                new AADataElement().x(38).y(1.37),
                         })
                         ,
 
@@ -2046,12 +2046,11 @@ public class ChartOptionsComposer {
                                                 .verticalAlign(AAChartVerticalAlignType.Middle)
                                 )
                                 ,
-
-//            { 43, 1.30},
-//            { 40, 1.33},
-//            { 40, 1.33},
-//            { 42, 1.31},
-//            { 40, 1.35},
+                                new AADataElement().x(43).y(1.30),
+                                new AADataElement().x(40).y(1.33),
+                                new AADataElement().x(40).y(1.33),
+                                new AADataElement().x(42).y(1.31),
+                                new AADataElement().x(40).y(1.35),
                         })
                         ,
 
@@ -2090,9 +2089,9 @@ public class ChartOptionsComposer {
                                                 .verticalAlign(AAChartVerticalAlignType.Middle)
                                 )
                                 ,
-//            { 41, 1.15},
-//            { 44, 1.11},
-//            { 41, 1.12},
+                                new AADataElement().x(41).y(1.15),
+                                new AADataElement().x(44).y(1.11),
+                                new AADataElement().x(41).y(1.12),
                         })
                         ,
                 });
