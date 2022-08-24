@@ -7,7 +7,7 @@
     android:background="#ffffff">
 
     <TextView
-        android:id="@+id/tv_color_dot"
+        android:id="@+id/tv_colorful_index"
         android:layout_width="48dp"
         android:layout_height="match_parent"
         android:textSize="28dp"

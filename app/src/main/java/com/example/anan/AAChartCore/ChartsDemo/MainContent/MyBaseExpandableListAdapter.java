@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.anan.AAChartCore.R;
@@ -105,7 +104,7 @@ public class MyBaseExpandableListAdapter extends BaseExpandableListAdapter {
             convertView = LayoutInflater.from(mContext).inflate(
                     R.layout.item_exlist_item, parent, false);
             itemHolder = new ViewHolderItem();
-            itemHolder.tv_color_dot = (TextView) convertView.findViewById(R.id.tv_color_dot);
+            itemHolder.tv_color_dot = (TextView) convertView.findViewById(R.id.tv_colorful_index);
             itemHolder.tv_name = (TextView) convertView.findViewById(R.id.tv_name);
             convertView.setTag(itemHolder);
         }else{
@@ -113,6 +112,8 @@ public class MyBaseExpandableListAdapter extends BaseExpandableListAdapter {
         }
         String colorStr = colorsArr[groupPosition];
         itemHolder.tv_color_dot.setTextColor(Color.parseColor(colorStr));
+//        itemHolder.tv_color_dot.setBackgroundColor(Color.parseColor(colorStr));
+        itemHolder.tv_color_dot.setText((childPosition + 1) + "");
         itemHolder.tv_name.setText(iData[groupPosition][childPosition]);
 
         return convertView;
