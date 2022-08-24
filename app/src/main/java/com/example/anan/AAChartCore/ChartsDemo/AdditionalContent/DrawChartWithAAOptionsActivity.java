@@ -68,6 +68,33 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
 
             case "doubleLayerHalfPieChart":
                 return doubleLayerHalfPieChart();
+            case "customAreasplineChartTooltipContentWithHeaderFormat":
+                return customAreasplineChartTooltipContentWithHeaderFormat(); //通过 tooltip 的 headerFormat 属性来自定义 曲线填充图的 to
+            case "customAreaChartTooltipStyleWithTotalValueHeader":
+                return customAreaChartTooltipStyleWithTotalValueHeader(); //浮动提示框 header 显示总值信息
+            case "configureYAxisLabelsNumericSymbolsMagnitudeOfAerasplineChart":
+                return configureYAxisLabelsNumericSymbolsMagnitudeOfAerasplineChart(); //自定义 Y 轴的 Labels 国际单位符基数及国际单位符
+            case "timeDataWithIrregularIntervalsChart":
+                return timeDataWithIrregularIntervalsChart(); //X 轴时间不连续的折线图
+            case "logarithmicAxisLineChart":
+                return logarithmicAxisLineChart(); //对数轴折线图📈
+            case "logarithmicAxisScatterChart":
+                return logarithmicAxisScatterChart(); //对数轴散点图
+            case "disableMixedChartInactiveAnimationEffect":
+                return disableMixedChartInactiveAnimationEffect(); //禁用混合图表的 inactive 动画效果
+            case "adjustBubbleChartMinAndMax":
+                return adjustBubbleChartMinAndMax(); //调整气泡图的 min 和 max 相关属性
+            case "customLineChartDataLabelsFormat1":
+                return customLineChartDataLabelsFormat(); //自定义曲线图的 DataLabels 的 format 属性
+            case "customLineChartDataLabelsFormat2":
+                return customLineChartDataLabelsFormat2(); //自定义曲线图的 DataLabels 的 format 属性(更简易方法)
+            case "complicatedScatterChart":
+                return complicatedScatterChart(); //复杂的自定义散点图
+            case "customColumnrangeChartGroupStyleAndSeriesStatesHoverColor":
+                return customColumnrangeChartGroupStyleAndSeriesStatesHoverColor(); //自定义柱状图的 groupStyle 和 seriesStates hoverColor 属性
+
+
+
         }
         return configureAAPlotBandsForChart();
     }
