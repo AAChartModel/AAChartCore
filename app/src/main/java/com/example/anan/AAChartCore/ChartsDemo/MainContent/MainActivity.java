@@ -137,6 +137,18 @@ public class MainActivity extends AppCompatActivity {
                     "simpleGaugeChart",
                     "gaugeChartWithPlotBand",
                     "doubleLayerHalfPieChart",
+                    "customAreasplineChartTooltipContentWithHeaderFormat---通过 tooltip 的 headerFormat 属性来自定义 曲线填充图的 tooltip",
+                    "customAreaChartTooltipStyleWithTotalValueHeader---浮动提示框 header 显示总值信息",
+                    "configureYAxisLabelsNumericSymbolsMagnitudeOfAerasplineChart---自定义 Y 轴的 Labels 国际单位符基数及国际单位符",
+                    "timeDataWithIrregularIntervalsChart---X 轴时间不连续的折线图",
+                    "logarithmicAxisLineChart---对数轴折线图📈",
+                    "logarithmicAxisScatterChart---对数轴散点图",
+                    "disableMixedChartInactiveAnimationEffect---禁用混合图表的 inactive 动画效果",
+                    "adjustBubbleChartMinAndMax---调整气泡图的 min 和 max 相关属性",
+                    "customLineChartDataLabelsFormat---自定义曲线图的 DataLabels 的 format 属性",
+                    "customLineChartDataLabelsFormat2---自定义曲线图的 DataLabels 的 format 属性(更简易方法)",
+                    "complicatedScatterChart---复杂的自定义散点图",
+                    "customColumnrangeChartGroupStyleAndSeriesStatesHoverColor---自定义柱状图 group 样式及 series 元素时的柱形颜色"
             },
             /*即时刷新📈📊图表数据*/
             {
@@ -327,6 +339,18 @@ public class MainActivity extends AppCompatActivity {
                     "simpleGaugeChart",
                     "gaugeChartWithPlotBand",
                     "doubleLayerHalfPieChart",
+                    "customAreasplineChartTooltipContentWithHeaderFormat",
+                    "customAreaChartTooltipStyleWithTotalValueHeader",
+                    "configureYAxisLabelsNumericSymbolsMagnitudeOfAerasplineChart",
+                    "timeDataWithIrregularIntervalsChart",
+                    "logarithmicAxisLineChart",
+                    "logarithmicAxisScatterChart",
+                    "disableMixedChartInactiveAnimationEffect",
+                    "adjustBubbleChartMinAndMax",
+                    "customLineChartDataLabelsFormat",
+                    "customLineChartDataLabelsFormat2",
+                    "complicatedScatterChart",
+                    "customColumnrangeChartGroupStyleAndSeriesStatesHoverColor",
             },
             {
                     /*即时刷新📈📊图表数据*/
