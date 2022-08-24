@@ -446,18 +446,17 @@ public class MainActivity extends AppCompatActivity {
 
     void  setupExpandableListView() {
         String[] groupTitleArr = {
-                "Basic Type Chart --- 基础类型图表",
-                "Special Type Chart --- 特殊类型图表",
-                "Mixed Chart --- 混合图形",
-                "Custom Style Chart---一些自定义风格样式图表",
-
-                "Draw Chart With AAOptions---通过Options绘图",
-                "Only Refresh data ---即时刷新图表数据",
-                "Chart Options Advanced Updating---图表高级更新",
-                "JS Function For AAOptionns ---通过带有 JS 函数的 Options 绘图",
-                "Evaluate JS String Function---执行js函数",
-                "Double Charts Linked Work---双表联动",
-                "Scrollable chart ---可滚动の图表",
+                "Basic Type Chart | 基础类型图表",
+                "Special Type Chart | 特殊类型图表",
+                "Mixed Chart | 混合图形",
+                "Custom Style Chart | 一些自定义风格样式图表",
+                "Draw Chart With AAOptions | 通过Options绘图",
+                "Only Refresh data | 即时刷新图表数据",
+                "Chart Options Advanced Updating | 图表高级更新",
+                "JS Function For AAOptions | 通过带有 JS 函数的 Options 绘图",
+                "Evaluate JS String Function | 执行js函数",
+                "Double Charts Linked Work | 双表联动",
+                "Scrollable chart | 可滚动的图表",
         };
 
         ExpandableListView listView = (ExpandableListView) findViewById(R.id.exlist_lol);
