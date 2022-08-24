@@ -491,11 +491,11 @@ public class ChartOptionsComposer {
                                 .data(new Object[]{7.0, 6.9, 2.5, 14.5, 18.2, 21.5, 5.2, 26.5, 23.3, 45.3, 13.9, 9.6}),
                 });
         AAOptions aaOptions = aaChartModel.aa_toAAOptions();
-        aaOptions.plotOptions.areaspline
+        aaOptions.plotOptions.series
                 .dataLabels(new AADataLabels()
                         .enabled(true)
                         .style(new AAStyle()
-                                .color(AAColor.Black)
+                                .color(AAColor.White)
                                 .fontSize(14)
                                 .fontWeight(AAChartFontWeightType.Thin)
                                 .textOutline("0px 0px contrast")//文字轮廓描边
@@ -908,7 +908,7 @@ public class ChartOptionsComposer {
                 });
 
         AAOptions aaOptions = aaChartModel.aa_toAAOptions();
-        aaOptions.plotOptions.line.dataLabels.format = "{point.y:.4f} ℃"; //保留 Y 轴值的小数点后 4 位
+        aaOptions.plotOptions.series.dataLabels.format = "{point.y:.4f} ℃"; //保留 Y 轴值的小数点后 4 位
         return aaOptions;
     }
 
@@ -1496,7 +1496,7 @@ public class ChartOptionsComposer {
     }
 
 
-    private static AAOptions configureYAxisLabelsNumericSymbolsMagnitudeOfAerasplineChart() {
+    public static AAOptions configureYAxisLabelsNumericSymbolsMagnitudeOfAerasplineChart() {
         Map<String, Object> gradientColorDic1 = AAGradientColor.linearGradient(
                 AALinearGradientDirection.ToBottom,
                 "#FC354C",
