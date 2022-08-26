@@ -77,6 +77,8 @@ public class CustomStyleChartActivity extends AppCompatActivity {
                 return customChartHoverAndSelectHaloStyle();
             case "customSplineChartMarkerStatesHoverStyle":
                 return customSplineChartMarkerStatesHoverStyle();
+            case "splineChartHoverLineWithNoChangeAndCustomMarkerStatesHoverStyle":
+                return splineChartHoverLineWithNoChangeAndCustomMarkerStatesHoverStyle();
             case "customNormalStackingChartDataLabelsContentAndStyle":
                 return customNormalStackingChartDataLabelsContentAndStyle();
             case "upsideDownPyramidChart":
