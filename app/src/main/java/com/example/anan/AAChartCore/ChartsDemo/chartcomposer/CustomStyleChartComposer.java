@@ -721,39 +721,6 @@ public class CustomStyleChartComposer {
                 });
     }
 
-//    //Issue: https://github.com/AAChartModel/AAChartKit/issues/948
-//- (AAChartModel *)splineChartHoverLineWithNoChangeAndCustomMarkerStatesHoverStyle {
-//        return AAChartModel.new
-//                .chartTypeSet(AAChartTypeSpline)
-//                .titleSet(@"Spline Chart Hover Line Width No Change && Custom Marker States Hover Style")
-//    .categoriesSet(@[
-//        @"一月", @"二月", @"三月", @"四月", @"五月", @"六月",
-//        @"七月", @"八月", @"九月", @"十月", @"十一月", @"十二月"
-//                   ])
-//    .markerRadiusSet(@8.0)//marker点半径为8个像素
-//    .yAxisLineWidthSet(@0)
-//    .yAxisGridLineStyleSet([AALineStyle styleWithWidth:@0])
-//    .legendEnabledSet(false)
-//                .markerSymbolStyleSet(AAChartSymbolStyleTypeInnerBlank)
-//                .seriesSet(@[
-//        AASeriesElement.new
-//                .nameSet(@"Tokyo Hot")
-//        .lineWidthSet(@5.0)
-//        .colorSet(AAColor.redColor)
-//                .statesSet(AAStates.new
-//                        .hoverSet(AAHover.new
-//                                .enabledSet(true)
-//                                //手指盘旋或选中图表时,禁止线条变粗
-//                                .lineWidthPlusSet(@0)))
-//        .markerSet(AAMarker.new
-//                .statesSet(AAMarkerStates.new
-//                        .hoverSet(AAMarkerHover.new
-//                                .fillColorSet(AAColor.redColor)//设置手指选中点的颜色为红色
-//                                .radiusSet(@40))))
-//        .dataSet(@[@7.0, @6.9, @2.5, @14.5, @18.2, @21.5, @5.2, @26.5, @23.3, @45.3, @13.9, @9.6]),
-//               ]);
-//    }
-
     //Issue: https://github.com/AAChartModel/AAChartKit/issues/948
     public static AAChartModel splineChartHoverLineWithNoChangeAndCustomMarkerStatesHoverStyle() {
         return new AAChartModel()
@@ -784,7 +751,6 @@ public class CustomStyleChartComposer {
                                 .data(new Object[]{7.0, 6.9, 2.5, 14.5, 18.2, 21.5, 5.2, 26.5, 23.3, 45.3, 13.9, 9.6}),
                 });
     }
-
 
     //Issue: https://github.com/AAChartModel/AAChartKit/issues/827
     public static AAChartModel customNormalStackingChartDataLabelsContentAndStyle() {
