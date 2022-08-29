@@ -9,6 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity
+            android:name=".JSFunctionForAAChartEventsActivity"
+            android:exported="false" />
         <activity android:name=".ChartsDemo.AdditionalContent.AdvancedUpdatingFeatureActivity" />
         <activity android:name=".ChartsDemo.AdditionalContent.UpdateChartBackgroundColorActivity" />
         <activity android:name=".ChartsDemo.AdditionalContent.ScrollableChartActivity" />
