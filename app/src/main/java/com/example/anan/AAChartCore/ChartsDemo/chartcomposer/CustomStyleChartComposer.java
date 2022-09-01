@@ -1,5 +1,6 @@
 package com.example.anan.AAChartCore.ChartsDemo.chartcomposer;
 
+import static com.example.anan.AAChartCore.AAChartCoreLib.AATools.AAColor.AARgba;
 import static com.example.anan.AAChartCore.ChartsDemo.chartcomposer.AAChartSymbolConst.base64Symbol;
 import static com.example.anan.AAChartCore.ChartsDemo.chartcomposer.AAChartSymbolConst.imageSymbol;
 import static com.example.anan.AAChartCore.ChartsDemo.chartcomposer.AAChartSymbolConst.predefinedSymbol1;
@@ -329,7 +330,7 @@ public class CustomStyleChartComposer {
                                 new AASeriesElement()
                                         .name("Tokyo Hot")
                                         .lineWidth(5.0)
-                                        .color(AAColor.rgbaColor(220, 20, 60, 1.0f))//猩红色, alpha 透明度 1
+                                        .color(AARgba(220, 20, 60, 1.0f))//猩红色, alpha 透明度 1
                                         .fillColor(linearGradientColor)
                                         .data(new Object[]{7.0, 6.9, 2.5, 14.5, 18.2, 21.5, 5.2, 26.5, 23.3, 45.3, 13.9, 9.6}),
                         }
@@ -589,15 +590,15 @@ public class CustomStyleChartComposer {
 
     public static AAChartModel customSpecialStyleDataLabelOfSingleDataElementChart() {
         Object[][] redStopsArr = new Object[][]{
-                new Object[]{0.0, AAColor.rgbaColor(255, 0, 0, 0.6f)},//颜色字符串设置支持十六进制类型和 rgba 类型
-                new Object[]{0.5, AAColor.rgbaColor(255, 0, 0, 0.0f)},
-                new Object[]{1.0, AAColor.rgbaColor(255, 0, 0, 0.0f)}
+                new Object[]{0.0, AARgba(255, 0, 0, 0.6f)},//颜色字符串设置支持十六进制类型和 rgba 类型
+                new Object[]{0.5, AARgba(255, 0, 0, 0.0f)},
+                new Object[]{1.0, AARgba(255, 0, 0, 0.0f)}
         };
 
         Map<String, Object> gradientColorDic1 = AAGradientColor.linearGradient(
                 AALinearGradientDirection.ToTop,
-                AAColor.rgbaColor(255, 215, 0, 0.1f),
-                AAColor.rgbaColor(255, 215, 0, 0.6f)
+                AARgba(255, 215, 0, 0.1f),
+                AARgba(255, 215, 0, 0.6f)
         );
 
         String formatStr =
@@ -690,8 +691,8 @@ public class CustomStyleChartComposer {
                                                         .opacity(1.0)
                                                         .attributes(new AASVGAttributes()
                                                                 .strokeWidth(150)
-                                                                .fill(AAColor.rgbaColor(138, 43, 226, 1f))
-                                                                .stroke(AAColor.rgbaColor(30, 144, 255, 1f)))))
+                                                                .fill(AARgba(138, 43, 226, 1f))
+                                                                .stroke(AARgba(30, 144, 255, 1f)))))
                         )});
     }
 
@@ -1014,9 +1015,9 @@ public class CustomStyleChartComposer {
     // GitHub issue https://github.com/AAChartModel/AAChartKit-Swift/issues/223
     public static AAChartModel configureColorfulGradientColorAndColorfulDataLabelsStepAreaChart() {
         Object[][] blueStopsArr = new Object[][]{
-                {0.0, AAColor.rgbaColor(30, 144, 255, 1.0f)},//颜色字符串设置支持十六进制类型和 rgba 类型
-                {0.5, AAColor.rgbaColor(30, 144, 255, 0.2f)},
-                {1.0, AAColor.rgbaColor(30, 144, 255, 0.0f)}
+                {0.0, AARgba(30, 144, 255, 1.0f)},//颜色字符串设置支持十六进制类型和 rgba 类型
+                {0.5, AARgba(30, 144, 255, 0.2f)},
+                {1.0, AARgba(30, 144, 255, 0.0f)}
         };
         Map<String, Object> gradientBlueColorDic = AAGradientColor.linearGradient(
                 AALinearGradientDirection.ToBottom,
@@ -1024,9 +1025,9 @@ public class CustomStyleChartComposer {
         );
 
         Object[][] redStopsArr = new Object[][]{
-                {0.0, AAColor.rgbaColor(255, 0, 0, 1.0f)},//颜色字符串设置支持十六进制类型和 rgba 类型
-                {0.5, AAColor.rgbaColor(255, 0, 0, 0.2f)},
-                {1.0, AAColor.rgbaColor(255, 0, 0, 0.0f)}
+                {0.0, AARgba(255, 0, 0, 1.0f)},//颜色字符串设置支持十六进制类型和 rgba 类型
+                {0.5, AARgba(255, 0, 0, 0.2f)},
+                {1.0, AARgba(255, 0, 0, 0.0f)}
         };
         Map<String, Object> gradientRedColorDic = AAGradientColor.linearGradient(
                 AALinearGradientDirection.ToBottom,
@@ -1034,9 +1035,9 @@ public class CustomStyleChartComposer {
         );
 
         Object[][] goldStopsArr = new Object[][]{
-                {0.0, AAColor.rgbaColor(255, 215, 0, 1.0f)},//颜色字符串设置支持十六进制类型和 rgba 类型
-                {0.5, AAColor.rgbaColor(255, 215, 0, 0.2f)},
-                {1.0, AAColor.rgbaColor(255, 215, 0, 0.0f)}
+                {0.0, AARgba(255, 215, 0, 1.0f)},//颜色字符串设置支持十六进制类型和 rgba 类型
+                {0.5, AARgba(255, 215, 0, 0.2f)},
+                {1.0, AARgba(255, 215, 0, 0.0f)}
         };
         Map<String, Object> gradientGoldColorDic = AAGradientColor.linearGradient(
                 AALinearGradientDirection.ToBottom,
@@ -1044,9 +1045,9 @@ public class CustomStyleChartComposer {
         );
 
         Object[][] greenStopsArr = new Object[][]{
-                {0.0, AAColor.rgbaColor(50, 205, 50, 1.0f)},//颜色字符串设置支持十六进制类型和 rgba 类型
-                {0.5, AAColor.rgbaColor(50, 205, 50, 0.2f)},
-                {1.0, AAColor.rgbaColor(50, 205, 50, 0.0f)}
+                {0.0, AARgba(50, 205, 50, 1.0f)},//颜色字符串设置支持十六进制类型和 rgba 类型
+                {0.5, AARgba(50, 205, 50, 0.2f)},
+                {1.0, AARgba(50, 205, 50, 0.0f)}
         };
         Map<String, Object> gradientGreenColorDic = AAGradientColor.linearGradient(
                 AALinearGradientDirection.ToBottom,
@@ -1443,25 +1444,25 @@ public class CustomStyleChartComposer {
                                         2048, 1024, 1024, 1024, 1024,
                                         new AADataElement()
                                                 .y(2048)
-                                                .color(AAColor.rgbaColor(30, 144, 255, 1.0f)),
+                                                .color(AARgba(30, 144, 255, 1.0f)),
                                 })
                                 .zoneAxis("x")
                                 .zones(new AAZonesElement[]{
                                 new AAZonesElement()
                                         .value(1)
-                                        .color(AAColor.rgbaColor(30, 144, 255, 1.0f)),
+                                        .color(AARgba(30, 144, 255, 1.0f)),
                                 new AAZonesElement()
                                         .value(2)
-                                        .color(AAColor.rgbaColor(30, 144, 255, 0.8f)),
+                                        .color(AARgba(30, 144, 255, 0.8f)),
                                 new AAZonesElement()
                                         .value(3)
-                                        .color(AAColor.rgbaColor(30, 144, 255, 0.6f)),
+                                        .color(AARgba(30, 144, 255, 0.6f)),
                                 new AAZonesElement()
                                         .value(4)
-                                        .color(AAColor.rgbaColor(30, 144, 255, 0.4f)),
+                                        .color(AARgba(30, 144, 255, 0.4f)),
                                 new AAZonesElement()
                                         .value(5)
-                                        .color(AAColor.rgbaColor(30, 144, 255, 0.2f)),
+                                        .color(AARgba(30, 144, 255, 0.2f)),
                         })
                         ,
                         new AASeriesElement()
@@ -1471,25 +1472,25 @@ public class CustomStyleChartComposer {
                                         2048, 1024, 1024, 1024, 1024,
                                         new AADataElement()
                                                 .y(2048)
-                                                .color(AAColor.rgbaColor(255, 0, 0, 1.0f)),
+                                                .color(AARgba(255, 0, 0, 1.0f)),
                                 })
                                 .zoneAxis("x")
                                 .zones(new AAZonesElement[]{
                                 new AAZonesElement()
                                         .value(1)
-                                        .color(AAColor.rgbaColor(255, 0, 0, 1.0f)),
+                                        .color(AARgba(255, 0, 0, 1.0f)),
                                 new AAZonesElement()
                                         .value(2)
-                                        .color(AAColor.rgbaColor(255, 0, 0, 0.8f)),
+                                        .color(AARgba(255, 0, 0, 0.8f)),
                                 new AAZonesElement()
                                         .value(3)
-                                        .color(AAColor.rgbaColor(255, 0, 0, 0.6f)),
+                                        .color(AARgba(255, 0, 0, 0.6f)),
                                 new AAZonesElement()
                                         .value(4)
-                                        .color(AAColor.rgbaColor(255, 0, 0, 0.4f)),
+                                        .color(AARgba(255, 0, 0, 0.4f)),
                                 new AAZonesElement()
                                         .value(5)
-                                        .color(AAColor.rgbaColor(255, 0, 0, 0.2f)),
+                                        .color(AARgba(255, 0, 0, 0.2f)),
                         })
                         ,
                         new AASeriesElement()
@@ -1499,25 +1500,25 @@ public class CustomStyleChartComposer {
                                         2048, 1024, 1024, 1024, 1024,
                                         new AADataElement()
                                                 .y(2048)
-                                                .color(AAColor.rgbaColor(255, 215, 0, 1.0f)),
+                                                .color(AARgba(255, 215, 0, 1.0f)),
                                 })
                                 .zoneAxis("x")
                                 .zones(new AAZonesElement[]{
                                 new AAZonesElement()
                                         .value(1)
-                                        .color(AAColor.rgbaColor(255, 215, 0, 1.0f)),
+                                        .color(AARgba(255, 215, 0, 1.0f)),
                                 new AAZonesElement()
                                         .value(2)
-                                        .color(AAColor.rgbaColor(255, 215, 0, 0.8f)),
+                                        .color(AARgba(255, 215, 0, 0.8f)),
                                 new AAZonesElement()
                                         .value(3)
-                                        .color(AAColor.rgbaColor(255, 215, 0, 0.6f)),
+                                        .color(AARgba(255, 215, 0, 0.6f)),
                                 new AAZonesElement()
                                         .value(4)
-                                        .color(AAColor.rgbaColor(255, 215, 0, 0.4f)),
+                                        .color(AARgba(255, 215, 0, 0.4f)),
                                 new AAZonesElement()
                                         .value(5)
-                                        .color(AAColor.rgbaColor(255, 215, 0, 0.2f)),
+                                        .color(AARgba(255, 215, 0, 0.2f)),
                         })
                         ,
                         new AASeriesElement()
@@ -1527,25 +1528,25 @@ public class CustomStyleChartComposer {
                                         2048, 1024, 1024, 1024, 1024,
                                         new AADataElement()
                                                 .y(2048)
-                                                .color(AAColor.rgbaColor(50, 205, 50, 1.0f)),
+                                                .color(AARgba(50, 205, 50, 1.0f)),
                                 })
                                 .zoneAxis("x")
                                 .zones(new AAZonesElement[]{
                                 new AAZonesElement()
                                         .value(1)
-                                        .color(AAColor.rgbaColor(50, 205, 50, 1.0f)),
+                                        .color(AARgba(50, 205, 50, 1.0f)),
                                 new AAZonesElement()
                                         .value(2)
-                                        .color(AAColor.rgbaColor(50, 205, 50, 0.8f)),
+                                        .color(AARgba(50, 205, 50, 0.8f)),
                                 new AAZonesElement()
                                         .value(3)
-                                        .color(AAColor.rgbaColor(50, 205, 50, 0.6f)),
+                                        .color(AARgba(50, 205, 50, 0.6f)),
                                 new AAZonesElement()
                                         .value(4)
-                                        .color(AAColor.rgbaColor(50, 205, 50, 0.4f)),
+                                        .color(AARgba(50, 205, 50, 0.4f)),
                                 new AAZonesElement()
                                         .value(5)
-                                        .color(AAColor.rgbaColor(50, 205, 50, 0.2f)),
+                                        .color(AARgba(50, 205, 50, 0.2f)),
                         })
                         ,
                         new AASeriesElement()
@@ -1555,25 +1556,25 @@ public class CustomStyleChartComposer {
                                         2048, 1024, 1024, 1024, 1024,
                                         new AADataElement()
                                                 .y(2048)
-                                                .color(AAColor.rgbaColor(138, 43, 226, 1.0f)),
+                                                .color(AARgba(138, 43, 226, 1.0f)),
                                 })
                                 .zoneAxis("x")
                                 .zones(new AAZonesElement[]{
                                 new AAZonesElement()
                                         .value(1)
-                                        .color(AAColor.rgbaColor(138, 43, 226, 1.0f)),
+                                        .color(AARgba(138, 43, 226, 1.0f)),
                                 new AAZonesElement()
                                         .value(2)
-                                        .color(AAColor.rgbaColor(138, 43, 226, 0.8f)),
+                                        .color(AARgba(138, 43, 226, 0.8f)),
                                 new AAZonesElement()
                                         .value(3)
-                                        .color(AAColor.rgbaColor(138, 43, 226, 0.6f)),
+                                        .color(AARgba(138, 43, 226, 0.6f)),
                                 new AAZonesElement()
                                         .value(4)
-                                        .color(AAColor.rgbaColor(138, 43, 226, 0.4f)),
+                                        .color(AARgba(138, 43, 226, 0.4f)),
                                 new AAZonesElement()
                                         .value(5)
-                                        .color(AAColor.rgbaColor(138, 43, 226, 0.2f)),
+                                        .color(AARgba(138, 43, 226, 0.2f)),
                         })
                         ,
                 });
