@@ -1,5 +1,10 @@
 package com.example.anan.AAChartCore.ChartsDemo.chartcomposer;
 
+import static com.example.anan.AAChartCore.AAChartCoreLib.AATools.AADate.AADateUTC;
+
+import android.os.Build;
+import android.support.annotation.RequiresApi;
+
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartCreator.AAChartEvents;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartCreator.AAChartModel;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartCreator.AASeriesElement;
@@ -26,17 +31,13 @@ import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAXAxis;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAYAxis;
 import com.example.anan.AAChartCore.AAChartCoreLib.AATools.AAColor;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.TimeZone;
 
 public class JSFunctionForAAChartEventsComposer {
     //https://github.com/AAChartModel/AAChartKit-Swift/issues/345
     public static AAOptions setCrosshairAndTooltipToTheDefaultPositionAfterLoadingChart() {
         AAChartModel aaChartModel = new AAChartModel()
                 .chartType(AAChartType.Areaspline)//图表类型
-                .colorsTheme(new String[]{"#04d69f","#1e90ff","#ef476f","#ffd066",})
+                .colorsTheme(new String[]{"#04d69f", "#1e90ff", "#ef476f", "#ffd066",})
                 .stacking(AAChartStackingType.Normal)
                 .yAxisVisible(false)
                 .markerRadius(0)
@@ -332,6 +333,7 @@ public class JSFunctionForAAChartEventsComposer {
 
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     public static AAOptions advancedTimeLineChart() {
         return new AAOptions()
                 .chart(new AAChart()
@@ -654,20 +656,20 @@ public class JSFunctionForAAChartEventsComposer {
 //                .id("revenue")
                                 .type(AAChartType.Area)
                                 .data(new AADataElement[]{
-                                new AADataElement().x(1257033600).y( 2),
-                                new AADataElement().x(1259625600).y( 3),
-                                new AADataElement().x(1262304000).y( 2),
-                                new AADataElement().x(1264982400).y( 3),
-                                new AADataElement().x(1267401600).y( 4),
-                                new AADataElement().x(1270080000).y( 4),
-                                new AADataElement().x(1272672000).y( 4),
-                                new AADataElement().x(1275350400).y( 4),
-                                new AADataElement().x(1277942400).y( 5),
-                                new AADataElement().x(1280620800).y( 7),
-                                new AADataElement().x(1283299200).y( 6),
-                                new AADataElement().x(1285891200).y( 9),
+                                new AADataElement().x(1257033600).y(2),
+                                new AADataElement().x(1259625600).y(3),
+                                new AADataElement().x(1262304000).y(2),
+                                new AADataElement().x(1264982400).y(3),
+                                new AADataElement().x(1267401600).y(4),
+                                new AADataElement().x(1270080000).y(4),
+                                new AADataElement().x(1272672000).y(4),
+                                new AADataElement().x(1275350400).y(4),
+                                new AADataElement().x(1277942400).y(5),
+                                new AADataElement().x(1280620800).y(7),
+                                new AADataElement().x(1283299200).y(6),
+                                new AADataElement().x(1285891200).y(9),
                                 new AADataElement().x(1288569600).y(10),
-                                new AADataElement().x(1291161600).y( 8),
+                                new AADataElement().x(1291161600).y(8),
                                 new AADataElement().x(1293840000).y(10),
                                 new AADataElement().x(1296518400).y(13),
                                 new AADataElement().x(1298937600).y(15),
@@ -731,33 +733,80 @@ public class JSFunctionForAAChartEventsComposer {
                                         .pointFormat("{point.name}{point.y}")
                                         .valueSuffix(" employees"))
                                 .data(new Object[]{
-                                new AADataElement().x(AADateUTC(2009, 10,  1)).y(1).name("Torstein 一个人工作"),
+                                new AADataElement().x(AADateUTC(2009, 10, 1)).y(1).name("Torstein 一个人工作"),
                                 new AADataElement().x(AADateUTC(2010, 10, 20)).y(2).name("Grethe 加入"),
-                                new AADataElement().x(AADateUTC(2011, 3,   1)).y(3).name("Erik 加入"),
-                                new AADataElement().x(AADateUTC(2011, 7,   1)).y(4).name("Gert 加入"),
-                                new AADataElement().x(AADateUTC(2011, 7,  15)).y(5).name("Hilde 加入"),
-                                new AADataElement().x(AADateUTC(2012, 5,   1)).y(6).name("Guro 加入"),
-                                new AADataElement().x(AADateUTC(2012, 8,   1)).y(5).name("Erik left"),
-                                new AADataElement().x(AADateUTC(2012, 8,  15)).y(6).name("Anne Jorunn"),
-                                new AADataElement().x(AADateUTC(2013, 0,   1)).y(7).name("Hilde T"),
-                                new AADataElement().x(AADateUTC(2013, 7,   1)).y(8).name("Jon Arild"),
-                                new AADataElement().x(AADateUTC(2013, 7,  20)).y(9).name("Øystein 加入"),
-                                new AADataElement().x(AADateUTC(2013, 9,   1)).y(1).name("Stephane 加入"),
-                                new AADataElement().x(AADateUTC(2014, 9,   1)).y(1).name("Anita 加入"),
+                                new AADataElement().x(AADateUTC(2011, 3, 1)).y(3).name("Erik 加入"),
+                                new AADataElement().x(AADateUTC(2011, 7, 1)).y(4).name("Gert 加入"),
+                                new AADataElement().x(AADateUTC(2011, 7, 15)).y(5).name("Hilde 加入"),
+                                new AADataElement().x(AADateUTC(2012, 5, 1)).y(6).name("Guro 加入"),
+                                new AADataElement().x(AADateUTC(2012, 8, 1)).y(5).name("Erik left"),
+                                new AADataElement().x(AADateUTC(2012, 8, 15)).y(6).name("Anne Jorunn"),
+                                new AADataElement().x(AADateUTC(2013, 0, 1)).y(7).name("Hilde T"),
+                                new AADataElement().x(AADateUTC(2013, 7, 1)).y(8).name("Jon Arild"),
+                                new AADataElement().x(AADateUTC(2013, 7, 20)).y(9).name("Øystein 加入"),
+                                new AADataElement().x(AADateUTC(2013, 9, 1)).y(1).name("Stephane 加入"),
+                                new AADataElement().x(AADateUTC(2014, 9, 1)).y(1).name("Anita 加入"),
                                 new AADataElement().x(AADateUTC(2014, 10, 27)).y(1).name(""),
                         })});
     }
 
-    //   get UTC number from date
-    private static long AADateUTC(int year, int month, int day) {
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        sdf.setTimeZone(TimeZone.getTimeZone("UTC"));
-        Date date = null;
-        try {
-            date = sdf.parse(year + "-" + month + "-" + day);
-        } catch (ParseException e) {
-            e.printStackTrace();
+
+    //https://github.com/AAChartModel/AAChartKit/issues/1093
+    //https://github.com/highcharts/highcharts-ios/issues/97
+     public AAOptions automaticallyHideTooltipAfterItIsShown() {
+         AAChartModel aaChartModel = new AAChartModel()
+                 .chartType(AAChartType.Areaspline)//图表类型
+                 .colorsTheme(new String[]{"#04d69f", "#1e90ff", "#ef476f", "#ffd066",})
+                 .stacking(AAChartStackingType.Normal)
+                 .yAxisVisible(false)
+                 .markerRadius(0)
+                 .series(new AASeriesElement[]{
+                         new AASeriesElement()
+                                 .name("Tokyo")
+                                 .data(new Object[]{7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6}),
+                         new AASeriesElement()
+                                 .name("NewYork")
+                                 .data(new Object[]{0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5}),
+                         new AASeriesElement()
+                                 .name("London")
+                                 .data(new Object[]{0.9, 0.6, 3.5, 8.4, 13.5, 17.0, 18.6, 17.9, 14.3, 9.0, 3.9, 1.0}),
+                         new AASeriesElement()
+                                 .name("Berlin")
+                                 .data(new Object[]{3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8})
+                 });
+
+            AAOptions aaOptions = aaChartModel.aa_toAAOptions();
+
+            aaOptions.tooltip
+                    .style(AAStyle.style(AAColor.White))
+                    .backgroundColor("#050505")
+                    .borderColor("#050505");
+
+            aaOptions.xAxis
+                    .crosshair(new AACrosshair()
+                            .color(AAColor.DarkGray)
+                            .dashStyle(AAChartLineDashStyleType.LongDashDotDot)
+                            .width(2));
+
+            //https://api.highcharts.com/highcharts/chart.events.load
+            //https://www.highcharts.com/forum/viewtopic.php?t=36508
+            aaOptions.chart
+                    .events(new AAChartEvents()
+                            .load("function() {\n" +
+                                    "   const chart = this;\n" +
+                                    "   Highcharts.addEvent(\n" +
+                                    "       chart.tooltip,\n" +
+                                    "       'refresh',\n" +
+                                    "       function () {\n" +
+                                    "           chart.tooltip.hide(888);\n" + //设置 tooltip 自动隐藏的时间，单位为 ms
+                                    "   });\n" +
+                                    "}"));
+
+            return aaOptions;
         }
-        return date.getTime();
+
+
+
+
     }
-}
+
