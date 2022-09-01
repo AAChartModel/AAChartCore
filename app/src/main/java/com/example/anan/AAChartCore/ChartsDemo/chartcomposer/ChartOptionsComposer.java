@@ -1,5 +1,8 @@
 package com.example.anan.AAChartCore.ChartsDemo.chartcomposer;
 
+import static com.example.anan.AAChartCore.AAChartCoreLib.AATools.AAColor.AARgba;
+import static com.example.anan.AAChartCore.AAChartCoreLib.AATools.AADate.AADateUTC;
+
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartCreator.AAChartModel;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartCreator.AASeriesElement;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartAlignType;
@@ -1451,16 +1454,16 @@ public class ChartOptionsComposer {
     //https://github.com/AAChartModel/AAChartKit/issues/1125
     public static AAOptions customAreaChartTooltipStyleWithTotalValueHeader() {
         Object[][] goldStopsArr = new Object[][]{
-                new Object[]{0.0, AAColor.rgbaColor(255, 215, 0, 1.0f)},//颜色字符串设置支持十六进制类型和 rgba 类型
-                new Object[]{0.6, AAColor.rgbaColor(255, 215, 0, 0.2f)},
-                new Object[]{1.0, AAColor.rgbaColor(255, 215, 0, 0.0f)}
+                new Object[]{0.0, AARgba(255, 215, 0, 1.0f)},//颜色字符串设置支持十六进制类型和 rgba 类型
+                new Object[]{0.6, AARgba(255, 215, 0, 0.2f)},
+                new Object[]{1.0, AARgba(255, 215, 0, 0.0f)}
         };
         Map<String, Object> gradientGoldColorDic = AAGradientColor.linearGradient(AALinearGradientDirection.ToBottom, goldStopsArr);
 
         Object[][] greenStopsArr = new Object[][]{
-                new Object[]{0.0, AAColor.rgbaColor(50, 205, 50, 1.0f)},//颜色字符串设置支持十六进制类型和 rgba 类型
-                new Object[]{0.6, AAColor.rgbaColor(50, 205, 50, 0.2f)},
-                new Object[]{1.0, AAColor.rgbaColor(50, 205, 50, 0.0f)}
+                new Object[]{0.0, AARgba(50, 205, 50, 1.0f)},//颜色字符串设置支持十六进制类型和 rgba 类型
+                new Object[]{0.6, AARgba(50, 205, 50, 0.2f)},
+                new Object[]{1.0, AARgba(50, 205, 50, 0.0f)}
         };
         Map<String, Object> gradientGreenColorDic = AAGradientColor.linearGradient(AALinearGradientDirection.ToBottom, greenStopsArr);
 
@@ -1469,8 +1472,8 @@ public class ChartOptionsComposer {
                 .title("2021 年 10 月上海市猫与狗生存调查")//图表主标题
                 .subtitle("数据来源：www.无任何可靠依据.com")//图表副标题
                 .colorsTheme(new Object[]{
-                        AAColor.rgbaColor(255, 215, 0, 1.0f),
-                        AAColor.rgbaColor(50, 205, 50, 1.0f)
+                        AARgba(255, 215, 0, 1.0f),
+                        AARgba(50, 205, 50, 1.0f)
                 })
                 .markerSymbolStyle(AAChartSymbolStyleType.InnerBlank)//折线连接点样式为内部白色
                 .stacking(AAChartStackingType.Normal)
@@ -1530,19 +1533,6 @@ public class ChartOptionsComposer {
         ;
 
         return aaOptions;
-    }
-
-    // get UTC number from date
-    private static long AADateUTC(int year, int month, int day) {
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        sdf.setTimeZone(TimeZone.getTimeZone("UTC"));
-        Date date = null;
-        try {
-            date = sdf.parse(year + "-" + month + "-" + day);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-        return date.getTime();
     }
 
 
