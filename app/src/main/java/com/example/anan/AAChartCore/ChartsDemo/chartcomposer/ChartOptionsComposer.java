@@ -2227,6 +2227,56 @@ public class ChartOptionsComposer {
         return aaOptions;
     }
 
+    //customTitleStyle
+//    {
+//        chart:{
+//            marginBottom: 100
+//        },
+//
+//        title: {
+//            align: 'center',
+//                    /* x: -80, */
+//                    verticalAlign: 'bottom',
+//                    y: 10,
+//                    floating: true
+//        },
+//
+//        xAxis: {
+//            categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+//        },
+//        legend: {
+//            enabled: false
+//        },
+//
+//        series: [{
+//        data: [29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4]
+//    }]
+//    }
 
-}
+    //https://github.com/AAChartModel/AAChartCore-Kotlin/issues/134
+    public static AAOptions customTitleStyle() {
+        AAChartModel aaChartModel = new AAChartModel()
+                .legendEnabled(false)
+                .categories(new String[]{
+                        "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+                        "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+                })
+                .series(new AASeriesElement[]{
+                        new AASeriesElement()
+                                .data(new Object[]{149.9, 171.5, 106.4, 129.2, 144.0, 176.0, 135.6, 188.5, 276.4, 214.1, 95.6, 54.4})
+                });
+
+        AAOptions aaOptions = aaChartModel.aa_toAAOptions();
+
+        aaOptions.chart.marginBottom = 100;
+        aaOptions.title
+                .text("This is the custom title")
+                .align(AAChartAlignType.Center)
+                .verticalAlign(AAChartVerticalAlignType.Bottom)
+                .y(10);
+
+        return aaOptions;
+    }
+
+    }
 
