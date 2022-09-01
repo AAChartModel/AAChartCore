@@ -1,5 +1,7 @@
 package com.example.anan.AAChartCore.ChartsDemo.chartcomposer;
 
+import static com.example.anan.AAChartCore.AAChartCoreLib.AATools.AAColor.AARgba;
+
 import android.util.DisplayMetrics;
 
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartCreator.AAChartEvents;
@@ -943,14 +945,14 @@ public class JSFunctionChartOptionsComposer {
         };
 
         String[] colorArr = {
-                AAColor.rgbaColor(201, 36,  39, 1.f),
-                AAColor.rgbaColor(201, 36,  39, 1.f),
-                AAColor.rgbaColor(0,   82,  180, 1.f),
-                AAColor.rgbaColor(0,   0,   0, 1.f),
-                AAColor.rgbaColor(240, 240, 240, 1.f),
-                AAColor.rgbaColor(255, 217, 68, 1.f),
-                AAColor.rgbaColor(0,   82,  180, 1.f),
-                AAColor.rgbaColor(215, 0,   38, 1.f)
+                AARgba(201, 36,  39, 1.f),
+                AARgba(201, 36,  39, 1.f),
+                AARgba(0,   82,  180, 1.f),
+                AARgba(0,   0,   0, 1.f),
+                AARgba(240, 240, 240, 1.f),
+                AARgba(255, 217, 68, 1.f),
+                AARgba(0,   82,  180, 1.f),
+                AARgba(215, 0,   38, 1.f)
         };
 
 
@@ -1261,7 +1263,7 @@ public class JSFunctionChartOptionsComposer {
                 .series(new AASeriesElement[]{
                         new AASeriesElement()
                                 .name("个人徒步数据统计")
-                                .color(AAColor.rgbaColor(235, 88, 40, 1.0f))
+                                .color(AARgba(235, 88, 40, 1.0f))
                                 .borderRadiusTopLeft("50%")
                                 .borderRadiusTopRight("50%")
                                 .data(new Object[]{
@@ -1283,7 +1285,7 @@ public class JSFunctionChartOptionsComposer {
 
         aaOptions.xAxis
                 .crosshair(new AACrosshair()
-                        .color(AAColor.rgbaColor(209, 209, 209, 1.0f))
+                        .color(AARgba(209, 209, 209, 1.0f))
                         .dashStyle(AAChartLineDashStyleType.LongDash)
                         .width(3));
 
@@ -1314,10 +1316,10 @@ public class JSFunctionChartOptionsComposer {
                 .pointFormat("{point.y}  步")
                 .footerFormat("2020 年 {point.x} ")
                 .valueDecimals(2)//设置取值精确到小数点后几位
-                .backgroundColor(AAColor.rgbaColor(242, 242, 242, 1.0f))
+                .backgroundColor(AARgba(242, 242, 242, 1.0f))
                 .borderWidth(0)
                 .shape("square")
-                .style(AAStyle.style(AAColor.rgbaColor(132, 132, 132, 1.0f), 28))
+                .style(AAStyle.style(AARgba(132, 132, 132, 1.0f), 28))
                 .positioner(positionerStr);
 
         return aaOptions;
