@@ -22,13 +22,13 @@ public class AATitle {
         return this;
     }
 
-    public AATitle align(AAChartAlignType prop) {
-        align = prop.toString();
+    public AATitle align(String prop) {
+        align = prop;
         return this;
     }
 
-    public AATitle verticalAlign(AAChartVerticalAlignType prop) {
-        verticalAlign = prop.toString();
+    public AATitle verticalAlign(String prop) {
+        verticalAlign = prop;
         return this;
     }
 
