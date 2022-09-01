@@ -34,6 +34,23 @@ public class AAColor {
         return rgbaColor(red, green, blue, 1.0f);
     }
 
+    public static String AARgba(
+            Integer red,
+            Integer green,
+            Integer blue,
+            Float alpha
+    ) {
+        return "rgba(" + red +"," + green + "," + blue + "," + alpha + ")";
+    }
+
+    public static String AARgb(
+            Integer red,
+            Integer green,
+            Integer blue
+    ) {
+        return "rgba(" + red +"," + green + "," + blue + "," + 1.0f + ")";
+    }
+
 
     private static String blackColor() {
         return "black";
