@@ -18,6 +18,7 @@ import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartVerticalAlignType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartZoomType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAAnimation;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AABoxplot;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AABubble;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAChart;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAColumn;
@@ -2243,6 +2244,7 @@ public class ChartOptionsComposer {
     }
 
     //https://github.com/AAChartModel/AAChartKit/issues/1381
+    //https://github.com/AAChartModel/AAChartCore/issues/158
     public static AAOptions configureBoxplotChartWithSpecialStyle() {
         AAChartModel aaChartModel = new AAChartModel()
                 .chartType(AAChartType.Boxplot)//图表类型
@@ -2266,20 +2268,22 @@ public class ChartOptionsComposer {
 
         AAOptions aaOptions = aaChartModel.aa_toAAOptions();
 
-        aaOptions.plotOptions.boxplot
-                .boxDashStyle(AAChartLineDashStyleType.Dash)
-                .fillColor("#F0F0E0")
-                .lineWidth(2)
-                .medianColor("#0C5DA5")
-                .medianDashStyle(AAChartLineDashStyleType.ShortDot)
-                .medianWidth(3)
-                .stemColor("#A63400")
-                .stemDashStyle(AAChartLineDashStyleType.Dot)
-                .stemWidth(1)
-                .whiskerColor("#3D9200")
-                .whiskerDashStyle(AAChartLineDashStyleType.Solid)
-                .whiskerLength("60%")
-                .whiskerWidth(6);
+        aaOptions.plotOptions
+                .boxplot(new AABoxplot()
+                        .boxDashStyle(AAChartLineDashStyleType.Dash)
+                        .fillColor("#F0F0E0")
+                        .lineWidth(2)
+                        .medianColor("#0C5DA5")
+                        .medianDashStyle(AAChartLineDashStyleType.ShortDot)
+                        .medianWidth(3)
+                        .stemColor("#A63400")
+                        .stemDashStyle(AAChartLineDashStyleType.Dot)
+                        .stemWidth(1)
+                        .whiskerColor("#3D9200")
+                        .whiskerDashStyle(AAChartLineDashStyleType.Solid)
+                        .whiskerLength("60%")
+                        .whiskerWidth(6)
+                );
 
         aaOptions.plotOptions.series
                 .pointWidth(100);
