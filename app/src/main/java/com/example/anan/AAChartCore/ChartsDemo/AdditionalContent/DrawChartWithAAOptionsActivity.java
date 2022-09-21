@@ -92,7 +92,10 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
                 return complicatedScatterChart(); //复杂的自定义散点图
             case "customColumnrangeChartGroupStyleAndSeriesStatesHoverColor":
                 return customColumnrangeChartGroupStyleAndSeriesStatesHoverColor(); //自定义柱状图的 groupStyle 和 seriesStates hoverColor 属性
-
+            case "customTitleStyle":
+                return customTitleStyle(); //自定义标题样式
+            case "configureBoxplotChartWithSpecialStyle":
+                return configureBoxplotChartWithSpecialStyle(); //自定义盒须图样式
 
 
         }

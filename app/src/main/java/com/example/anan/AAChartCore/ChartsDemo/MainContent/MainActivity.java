@@ -149,7 +149,10 @@ public class MainActivity extends AppCompatActivity {
                     "customLineChartDataLabelsFormat---自定义曲线图的 DataLabels 的 format 属性",
                     "customLineChartDataLabelsFormat2---自定义曲线图的 DataLabels 的 format 属性(更简易方法)",
                     "complicatedScatterChart---复杂的自定义散点图",
-                    "customColumnrangeChartGroupStyleAndSeriesStatesHoverColor---自定义柱状图 group 样式及 series 元素时的柱形颜色"
+                    "customColumnrangeChartGroupStyleAndSeriesStatesHoverColor---自定义柱状图 group 样式及 series 元素时的柱形颜色",
+                    "customTitleStyle---自定义标题样式",
+                    "configureBoxplotChartWithSpecialStyle---自定义盒须图样式",
+
             },
             /*即时刷新📈📊图表数据*/
             {

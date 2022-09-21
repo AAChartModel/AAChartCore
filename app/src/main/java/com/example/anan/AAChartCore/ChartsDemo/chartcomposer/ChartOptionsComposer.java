@@ -2217,32 +2217,6 @@ public class ChartOptionsComposer {
         return aaOptions;
     }
 
-    //customTitleStyle
-//    {
-//        chart:{
-//            marginBottom: 100
-//        },
-//
-//        title: {
-//            align: 'center',
-//                    /* x: -80, */
-//                    verticalAlign: 'bottom',
-//                    y: 10,
-//                    floating: true
-//        },
-//
-//        xAxis: {
-//            categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-//        },
-//        legend: {
-//            enabled: false
-//        },
-//
-//        series: [{
-//        data: [29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4]
-//    }]
-//    }
-
     //https://github.com/AAChartModel/AAChartCore-Kotlin/issues/134
     public static AAOptions customTitleStyle() {
         AAChartModel aaChartModel = new AAChartModel()
@@ -2268,5 +2242,50 @@ public class ChartOptionsComposer {
         return aaOptions;
     }
 
+    //https://github.com/AAChartModel/AAChartKit/issues/1381
+    public static AAOptions configureBoxplotChartWithSpecialStyle() {
+        AAChartModel aaChartModel = new AAChartModel()
+                .chartType(AAChartType.Boxplot)//图表类型
+                .title("BOXPLOT CHART")//图表主标题
+                .subtitle("virtual data")//图表副标题
+                .yAxisTitle("℃")//设置 Y 轴标题
+                .yAxisVisible(true)//设置 Y 轴是否可见
+                .series(new AASeriesElement[]{
+                        new AASeriesElement()
+                                .name("Observed Data")
+                                .color("#ef476f")
+                                .fillColor("#04d69f")
+                                .data(new Object[][]{
+                                        {760, 801, 848, 895, 965},
+                                        {733, 853, 939, 980, 1080},
+                                        {714, 762, 817, 870, 918},
+                                        {724, 802, 806, 871, 950},
+                                        {834, 836, 864, 882, 910}
+                                }),
+                });
+
+        AAOptions aaOptions = aaChartModel.aa_toAAOptions();
+
+        aaOptions.plotOptions.boxplot
+                .boxDashStyle(AAChartLineDashStyleType.Dash)
+                .fillColor("#F0F0E0")
+                .lineWidth(2)
+                .medianColor("#0C5DA5")
+                .medianDashStyle(AAChartLineDashStyleType.ShortDot)
+                .medianWidth(3)
+                .stemColor("#A63400")
+                .stemDashStyle(AAChartLineDashStyleType.Dot)
+                .stemWidth(1)
+                .whiskerColor("#3D9200")
+                .whiskerDashStyle(AAChartLineDashStyleType.Solid)
+                .whiskerLength("60%")
+                .whiskerWidth(6);
+
+        aaOptions.plotOptions.series
+                .pointWidth(100);
+
+        return aaOptions;
     }
+
+}
 
