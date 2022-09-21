@@ -12,6 +12,7 @@ public class AAPlotOptions {
     public AAColumnrange columnrange;
     public AAArearange arearange;
     public AASeries series;
+    public AABoxplot boxplot;
 
 
     public AAPlotOptions column(AAColumn prop) {
@@ -66,6 +67,11 @@ public class AAPlotOptions {
 
     public AAPlotOptions series(AASeries prop) {
         series = prop;
+        return this;
+    }
+
+    public AAPlotOptions boxplot(AABoxplot prop) {
+        boxplot = prop;
         return this;
     }
 
