@@ -23,6 +23,12 @@ public class AASeries {
     public String pointIntervalUnit;
     public Object pointPlacement;
     public Number pointStart;
+    public Number pointWidth; //柱状图, 条形图, 柱形范围图, 瀑布图, 箱线图(盒须图)直接设置单个图形元素的宽度
+    public Number maxPointWidth; //柱状图, 条形图, 柱形范围图, 瀑布图, 箱线图(盒须图)直接设置单个图形元素的最大宽度
+    public Number minPointLength; //柱状图, 条形图, 柱形范围图, 瀑布图, 箱线图(盒须图)直接设置单个图形元素的最小高度
+
+
+
 
     public AASeries borderColor(String prop) {
         borderColor = prop;
@@ -131,6 +137,21 @@ public class AASeries {
 
     public AASeries pointStart(Number prop) {
         pointStart = prop;
+        return this;
+    }
+
+    public AASeries pointWidth(Number prop) {
+        pointWidth = prop;
+        return this;
+    }
+
+    public AASeries maxPointWidth(Number prop) {
+        maxPointWidth = prop;
+        return this;
+    }
+
+    public AASeries minPointLength(Number prop) {
+        minPointLength = prop;
         return this;
     }
 
