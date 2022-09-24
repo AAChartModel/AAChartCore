@@ -820,9 +820,9 @@ public class JSFunctionForAAChartEventsComposer {
                         .type(AAChartType.Spline)
                         .backgroundColor("#4b2b7f")
                         .events(new AAChartEvents()
-                                .load( String.format(Locale.CHINA, "function () {\n" +
+                                .load("function () {\n" +
                                         "                          const chart = this;\n" +
-                                        "                          const point = chart.series[0].points[%ld];\n" +
+                                        "                          const point = chart.series[0].points[11];\n" +
                                         "                          let big = true;\n" +
                                         "                          setInterval(() => {\n" +
                                         "                                 big = !big;\n" +
@@ -835,10 +835,10 @@ public class JSFunctionForAAChartEventsComposer {
                                         "                                      }\n" +
                                         "                                 })\n" +
                                         "                          }, 500)\n" +
-                                        "                     }", 11)
+                                        "                     }")
                                 )
                         )
-                )
+
                 .title(new AATitle()
                         .text("Special style single data element chart")
                 )
@@ -939,7 +939,7 @@ public class JSFunctionForAAChartEventsComposer {
                     });
 
         AAOptions aaOptions = aaChartModel.aa_toAAOptions();
-        aaOptions.chart.events
+        aaOptions.chart.events(new AAChartEvents()
                 .load("function() {\n" +
                         "                const chart = this;\n" +
                         "                const blinkScatterPointsArr = chart.series[0].points;\n" +
@@ -959,7 +959,7 @@ public class JSFunctionForAAChartEventsComposer {
                         "                            })\n" +
                         "                    }, 600)\n" +
                         "                }\n" +
-                        "            }");
+                        "            }"));
         return aaOptions;
         }
 

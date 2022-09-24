@@ -14,6 +14,7 @@ import com.example.anan.AAChartCore.ChartsDemo.AdditionalContent.JSFormatterFunc
 import com.example.anan.AAChartCore.ChartsDemo.AdditionalContent.DrawChartWithAAOptionsActivity;
 import com.example.anan.AAChartCore.ChartsDemo.AdditionalContent.EvaluateJSStringFunctionActivity;
 import com.example.anan.AAChartCore.ChartsDemo.AdditionalContent.HideOrShowChartSeriesActivity;
+import com.example.anan.AAChartCore.ChartsDemo.AdditionalContent.JSFunctionForAAChartEventsActivity;
 import com.example.anan.AAChartCore.ChartsDemo.AdditionalContent.OnlyRefreshChartDataActivity;
 import com.example.anan.AAChartCore.ChartsDemo.AdditionalContent.ScrollableChartActivity;
 import com.example.anan.AAChartCore.R;
@@ -226,7 +227,20 @@ public class MainActivity extends AppCompatActivity {
                     "Step Area Chart--- 直方折线填充图",
                     "Step Line Chart--- 直方折线图",
                     "Line Chart---折线图",
-                    "Spline Chart---曲线图",}
+                    "Spline Chart---曲线图",},
+
+            /*通过 JSFunction 自定义 AAChartEvents 的事件*/
+            {
+                    "setCrosshairAndTooltipToTheDefaultPositionAfterLoadingChart---图表加载完成后设置 crosshair 和 tooltip 到默认位置",
+                    "generalDrawingChart---普通绘图",
+                    "advancedTimeLineChart---高级时间轴绘图",
+                    "configureBlinkMarkerChart---配置闪烁特效的 marker 图表",
+                    "configureSpecialStyleMarkerOfSingleDataElementChartWithBlinkEffect---配置闪烁特效的 marker 图表2",
+                    "configureScatterChartWithBlinkEffect---配置闪烁特效的散点图",
+                    "automaticallyHideTooltipAfterItIsShown---在浮动提示框显示后自动隐藏",
+                    "dynamicHeightGridLineAreaChart---动态高度的网格线区域填充图",
+                    "customizeYAxisPlotLinesLabelBeSpecialStyle---自定义 Y 轴轴线上面的标签文字特殊样式",
+            }
     };
 
     String[][] chartTypeArr = {
@@ -436,6 +450,20 @@ public class MainActivity extends AppCompatActivity {
                     AAChartType.Spline,
             },
 
+            {
+                    /*通过 JSFunction 自定义 AAChartEvents 的事件*/
+                    "setCrosshairAndTooltipToTheDefaultPositionAfterLoadingChart",
+                    "generalDrawingChart",
+                    "advancedTimeLineChart",
+                    "configureBlinkMarkerChart",
+                    "configureSpecialStyleMarkerOfSingleDataElementChartWithBlinkEffect",
+                    "configureScatterChartWithBlinkEffect",
+                    "automaticallyHideTooltipAfterItIsShown",
+                    "dynamicHeightGridLineAreaChart",
+                    "customizeYAxisPlotLinesLabelBeSpecialStyle",
+
+            },
+
 
     };
 
@@ -462,6 +490,7 @@ public class MainActivity extends AppCompatActivity {
                 "Evaluate JS String Function | 执行js函数",
                 "Double Charts Linked Work | 双表联动",
                 "Scrollable chart | 可滚动的图表",
+                "JS Function For AAChartEvents---通过 JSFunction 自定义 AAChartEvents 的事件",
         };
 
         ExpandableListView listView = (ExpandableListView) findViewById(R.id.exlist_lol);
@@ -506,6 +535,9 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case 10: /*Scrollable Chart---可滚动图表*/
                         gotoScrollableChartActivity(chartType,childPosition);
+                        break;
+                    case 11: /*通过 AAOptions 自定义 X 轴 Y 轴的轴类型*/
+                        gotoJSFunctionForAAChartEventsActivity(chartType,childPosition);
                         break;
                 }
 
@@ -586,6 +618,13 @@ public class MainActivity extends AppCompatActivity {
 
     void gotoScrollableChartActivity(String chartType, int position) {
         Intent intent = new Intent(this, ScrollableChartActivity.class);
+        intent.putExtra(kChartTypeKey, chartType);
+        intent.putExtra("position",position);
+        startActivity(intent);
+    }
+
+    void gotoJSFunctionForAAChartEventsActivity(String chartType, int position) {
+        Intent intent = new Intent(this, JSFunctionForAAChartEventsActivity.class);
         intent.putExtra(kChartTypeKey, chartType);
         intent.putExtra("position",position);
         startActivity(intent);

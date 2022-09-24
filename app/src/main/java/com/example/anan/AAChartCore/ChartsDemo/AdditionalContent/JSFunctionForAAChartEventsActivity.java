@@ -2,9 +2,11 @@ package com.example.anan.AAChartCore.ChartsDemo.AdditionalContent;
 
 import static com.example.anan.AAChartCore.ChartsDemo.chartcomposer.JSFunctionForAAChartEventsComposer.*;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.example.anan.AAChartCore.AAChartCoreLib.AAChartCreator.AAChartView;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAOptions;
 import com.example.anan.AAChartCore.R;
 
@@ -13,7 +15,15 @@ public class JSFunctionForAAChartEventsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_jsfunction_for_aachart_events);
+        setContentView(R.layout.activity_custom_tooltip_with_jsfunction);
+
+        Intent intent = getIntent();
+        String chartType = intent.getStringExtra("chartType");
+
+        AAOptions aaOptions = configureTheChartOptions(chartType);
+
+        AAChartView aaChartView = findViewById(R.id.AAChartView);
+        aaChartView.aa_drawChartWithChartOptions(aaOptions);
     }
 
     AAOptions configureTheChartOptions(String chartType) {

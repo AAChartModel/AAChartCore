@@ -43,7 +43,6 @@ import java.util.Map;
 
 public class CustomStyleChartComposer {
 
-
     public static AAChartModel configureColorfulChart() {
         String[] colorsNameArr = {
                 "red",
