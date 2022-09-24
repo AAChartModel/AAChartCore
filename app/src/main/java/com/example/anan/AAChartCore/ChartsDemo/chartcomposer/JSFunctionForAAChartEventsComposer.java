@@ -340,7 +340,6 @@ public class JSFunctionForAAChartEventsComposer {
 
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.N)
     public static AAOptions advancedTimeLineChart() {
         return new AAOptions()
                 .chart(new AAChart()
@@ -760,7 +759,7 @@ public class JSFunctionForAAChartEventsComposer {
 
     //https://github.com/AAChartModel/AAChartKit-Swift/issues/394
 //https://www.highcharts.com/forum/viewtopic.php?t=44985
-    private AAOptions configureBlinkMarkerChart() {
+    public static AAOptions configureBlinkMarkerChart() {
         Double[] dataArr = new Double[]{7.0, 6.9, 2.5, 14.5, 18.2, 21.5, 5.2, 26.5, 23.3, 45.3, 13.9, 9.6};
         int selectedIndex = dataArr.length - 1;
         return new AAOptions()
@@ -795,7 +794,7 @@ public class JSFunctionForAAChartEventsComposer {
 
     //https://github.com/AAChartModel/AAChartKit-Swift/issues/394
 //https://www.highcharts.com/forum/viewtopic.php?t=44985
-    private AAOptions configureSpecialStyleMarkerOfSingleDataElementChartWithBlinkEffect() {
+    public static AAOptions configureSpecialStyleMarkerOfSingleDataElementChartWithBlinkEffect() {
         Object[] stopsArr = new Object[]{
                 new Object[]{0.00f, "#febc0f"},//颜色字符串设置支持十六进制类型和 rgba 类型
                 new Object[]{0.25f, "#FF14d4"},
@@ -866,7 +865,7 @@ public class JSFunctionForAAChartEventsComposer {
 
 //https://github.com/AAChartModel/AAChartKit-Swift/issues/394
 //https://echarts.apache.org/examples/zh/editor.html?c=scatter-effect
-    public AAOptions configureScatterChartWithBlinkEffect() {
+    public static AAOptions configureScatterChartWithBlinkEffect() {
         AAChartModel aaChartModel = new AAChartModel()
                     .chartType(AAChartType.Scatter)
                     .title("Height and weight distribution by sex")
@@ -969,7 +968,7 @@ public class JSFunctionForAAChartEventsComposer {
 
         //https://github.com/AAChartModel/AAChartKit/issues/1093
     //https://github.com/highcharts/highcharts-ios/issues/97
-     public AAOptions automaticallyHideTooltipAfterItIsShown() {
+     public static AAOptions automaticallyHideTooltipAfterItIsShown() {
          AAChartModel aaChartModel = new AAChartModel()
                  .chartType(AAChartType.Areaspline)//图表类型
                  .colorsTheme(new String[]{"#04d69f", "#1e90ff", "#ef476f", "#ffd066",})
@@ -1025,7 +1024,7 @@ public class JSFunctionForAAChartEventsComposer {
     //https://github.com/AAChartModel/AAChartKit/issues/1383
 //https://www.highcharts.com/forum/viewtopic.php?t=49409
 //    dynamicHeightGridLineAreaChart in Java
-    public AAOptions dynamicHeightGridLineAreaChart() {
+    public static AAOptions dynamicHeightGridLineAreaChart() {
         return new AAOptions()
                 .title(new AATitle()
                         .text("dynamicHeightGridLineAreaChart"))
@@ -1074,7 +1073,7 @@ public class JSFunctionForAAChartEventsComposer {
 
     //https://github.com/AAChartModel/AAChartKit-Swift-Pro/issues/3
 //https://www.highcharts.com/forum/viewtopic.php?f=9&t=49492
-public AAOptions customizeYAxisPlotLinesLabelBeSpecialStyle() {
+public static AAOptions customizeYAxisPlotLinesLabelBeSpecialStyle() {
         return new AAOptions()
                 .chart(new AAChart()
                         .events(new AAChartEvents()
@@ -1123,5 +1122,5 @@ public AAOptions customizeYAxisPlotLinesLabelBeSpecialStyle() {
 }
 
 
-    }
+
 
