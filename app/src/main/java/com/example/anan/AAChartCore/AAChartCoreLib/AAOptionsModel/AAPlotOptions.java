@@ -13,6 +13,7 @@ public class AAPlotOptions {
     public AAArearange arearange;
     public AASeries series;
     public AABoxplot boxplot;
+    public AAScatter scatter;
 
 
     public AAPlotOptions column(AAColumn prop) {
@@ -72,6 +73,11 @@ public class AAPlotOptions {
 
     public AAPlotOptions boxplot(AABoxplot prop) {
         boxplot = prop;
+        return this;
+    }
+
+    public AAPlotOptions scatter(AAScatter prop) {
+        scatter = prop;
         return this;
     }
 
