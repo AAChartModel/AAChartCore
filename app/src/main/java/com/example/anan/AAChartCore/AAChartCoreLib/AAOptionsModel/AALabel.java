@@ -10,6 +10,8 @@ public class AALabel {
     public AAStyle style;//轴标签的 CSS 样式
     public Number  x;//水平偏移
     public Number  y;// 竖直偏移
+    public String  format;//格式化字符串
+    public String  formatter;//格式化函数
 
     public AALabel align(String prop) {
         align = prop;
@@ -53,6 +55,16 @@ public class AALabel {
 
     public AALabel y(Number prop) {
         y = prop;
+        return this;
+    }
+
+    public AALabel format(String prop) {
+        format = prop;
+        return this;
+    }
+
+    public AALabel formatter(String prop) {
+        formatter = prop;
         return this;
     }
 }
