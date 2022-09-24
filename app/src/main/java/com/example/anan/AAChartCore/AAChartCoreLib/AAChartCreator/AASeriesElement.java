@@ -80,7 +80,7 @@ public class AASeriesElement {
     private Boolean showInLegend;
     private Boolean enableMouseTracking;
     private Boolean reversed;
-
+    private String id;
 
     public AASeriesElement type(String prop) {
         type = prop;
@@ -259,6 +259,11 @@ public class AASeriesElement {
 
     public AASeriesElement reversed(Boolean prop) {
         reversed = prop;
+        return this;
+    }
+
+    public AASeriesElement id(String prop) {
+        id = prop;
         return this;
     }
 
