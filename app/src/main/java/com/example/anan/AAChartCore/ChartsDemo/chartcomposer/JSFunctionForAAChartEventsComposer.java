@@ -588,7 +588,7 @@ public class JSFunctionForAAChartEventsComposer {
                 .series(new AASeriesElement[]{
                         new AASeriesElement()
                                 .type(AAChartType.Line)
-//                .id("google-trends")
+                .id("google-trends")
                                 .dashStyle(AAChartLineDashStyleType.LongDashDotDot)
                                 .name("Google search for highcharts")
                                 .data(new AADataElement[]{
@@ -653,13 +653,13 @@ public class JSFunctionForAAChartEventsComposer {
                                 new AADataElement().x(1410818400).y(97),
                                 new AADataElement().x(1413453600).y(9),
                         })
-//                .tooltip(new AATooltip()
+                .tooltip(new AATooltip()
 //                    .xDateFormat("%B %Y")
-//                    .valueSuffix(" % of best month"))
+                    .valueSuffix(" % of best month"))
                         ,
                         new AASeriesElement()
                                 .name("收入")
-//                .id("revenue")
+                .id("revenue")
                                 .type(AAChartType.Area)
                                 .data(new AADataElement[]{
                                 new AADataElement().x(1257033600).y(2),
@@ -723,15 +723,15 @@ public class JSFunctionForAAChartEventsComposer {
                                 new AADataElement().x(1409529600).y(89),
                                 new AADataElement().x(1412121600).y(00)
                         })
-//                .tooltip(new AATooltip()
+                .tooltip(new AATooltip()
 //                    .xDateFormat("%B %Y")
-//                    .valueSuffix(" % of best month")
-//            )
+                    .valueSuffix(" % of best month")
+            )
                         ,
                         new AASeriesElement()
                                 .yAxis(1)
                                 .name("Highsoft 员工")
-//                .id("employees")
+                .id("employees")
                                 .type(AAChartType.Area)
                                 .step("left")
                                 .tooltip(new AATooltip()
@@ -1108,8 +1108,7 @@ public static AAOptions customizeYAxisPlotLinesLabelBeSpecialStyle() {
                                         .label(new AALabel()
                                                 .useHTML(true)
                                                 .textAlign(AAChartAlignType.Center)
-                                                .x(0)
-                                                .y(2)
+                                                .x(0).y(2)
                                                 .formatter("function () {\n" +
                                                         "               return `<span style=\"padding: 2px 10px; display: block; color: white\">`+this.options.value+`</span>`\n" +
                                                         "               }"))
