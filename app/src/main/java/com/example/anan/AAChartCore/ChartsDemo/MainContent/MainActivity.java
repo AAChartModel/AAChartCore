@@ -536,7 +536,7 @@ public class MainActivity extends AppCompatActivity {
                     case 10: /*Scrollable Chart---可滚动图表*/
                         gotoScrollableChartActivity(chartType,childPosition);
                         break;
-                    case 11: /*通过 AAOptions 自定义 X 轴 Y 轴的轴类型*/
+                    case 11: /*JS Function For AAChartEvents---通过 JSFunction 自定义 AAChartEvents 的事件*/
                         gotoJSFunctionForAAChartEventsActivity(chartType,childPosition);
                         break;
                 }
