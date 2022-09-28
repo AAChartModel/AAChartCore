@@ -588,150 +588,150 @@ public class JSFunctionForAAChartEventsComposer {
                 .series(new AASeriesElement[]{
                         new AASeriesElement()
                                 .type(AAChartType.Line)
-                .id("google-trends")
+                                .id("google-trends")
                                 .dashStyle(AAChartLineDashStyleType.LongDashDotDot)
                                 .name("Google search for highcharts")
                                 .data(new AADataElement[]{
-                                new AADataElement().x(1258322400)/* November 2009 */.y(0),
-                                new AADataElement().x(1260961200).y(5),
-                                new AADataElement().x(1263639600).y(7),
-                                new AADataElement().x(1266188400).y(5),
-                                new AADataElement().x(1268740800).y(6),
-                                new AADataElement().x(1271368800).y(8),
-                                new AADataElement().x(1274004000).y(11),
-                                new AADataElement().x(1276639200).y(9),
-                                new AADataElement().x(1279274400).y(12),
-                                new AADataElement().x(1281952800).y(13),
-                                new AADataElement().x(1284588000).y(17),
-                                new AADataElement().x(1287223200).y(17),
-                                new AADataElement().x(1289858400).y(18),
-                                new AADataElement().x(1292497200).y(20),
-                                new AADataElement().x(1295175600).y(20),
-                                new AADataElement().x(1297724400).y(27),
-                                new AADataElement().x(1300276800).y(32),
-                                new AADataElement().x(1302904800).y(29),
-                                new AADataElement().x(1305540000).y(34),
-                                new AADataElement().x(1308175200).y(34),
-                                new AADataElement().x(1310810400).y(36),
-                                new AADataElement().x(1313488800).y(43),
-                                new AADataElement().x(1316124000).y(44),
-                                new AADataElement().x(1318759200).y(42),
-                                new AADataElement().x(1321394400).y(47),
-                                new AADataElement().x(1324033200).y(46),
-                                new AADataElement().x(1326711600).y(50),
-                                new AADataElement().x(1329303600).y(57),
-                                new AADataElement().x(1331899200).y(54),
-                                new AADataElement().x(1334527200).y(59),
-                                new AADataElement().x(1337162400).y(62),
-                                new AADataElement().x(1339797600).y(66),
-                                new AADataElement().x(1342432800).y(61),
-                                new AADataElement().x(1345111200).y(68),
-                                new AADataElement().x(1347746400).y(67),
-                                new AADataElement().x(1350381600).y(73),
-                                new AADataElement().x(1353016800).y(63),
-                                new AADataElement().x(1355655600).y(54),
-                                new AADataElement().x(1358334000).y(67),
-                                new AADataElement().x(1360882800).y(74),
-                                new AADataElement().x(1363435200).y(81),
-                                new AADataElement().x(1366063200).y(89),
-                                new AADataElement().x(1368698400).y(83),
-                                new AADataElement().x(1371333600).y(88),
-                                new AADataElement().x(1373968800).y(86),
-                                new AADataElement().x(1376647200).y(81),
-                                new AADataElement().x(1379282400).y(83),
-                                new AADataElement().x(1381917600).y(95),
-                                new AADataElement().x(1384552800).y(86),
-                                new AADataElement().x(1387191600).y(83),
-                                new AADataElement().x(1389870000).y(89),
-                                new AADataElement().x(1392418800).y(90),
-                                new AADataElement().x(1394971200).y(94),
-                                new AADataElement().x(1397599200).y(00),
-                                new AADataElement().x(1400234400).y(00),
-                                new AADataElement().x(1402869600).y(99),
-                                new AADataElement().x(1405504800).y(99),
-                                new AADataElement().x(1408183200).y(93),
-                                new AADataElement().x(1410818400).y(97),
-                                new AADataElement().x(1413453600).y(9),
-                        })
-                .tooltip(new AATooltip()
+                                        new AADataElement().x(1258322400)/* November 2009 */.y(0),
+                                        new AADataElement().x(1260961200).y(5),
+                                        new AADataElement().x(1263639600).y(7),
+                                        new AADataElement().x(1266188400).y(5),
+                                        new AADataElement().x(1268740800).y(6),
+                                        new AADataElement().x(1271368800).y(8),
+                                        new AADataElement().x(1274004000).y(11),
+                                        new AADataElement().x(1276639200).y(9),
+                                        new AADataElement().x(1279274400).y(12),
+                                        new AADataElement().x(1281952800).y(13),
+                                        new AADataElement().x(1284588000).y(17),
+                                        new AADataElement().x(1287223200).y(17),
+                                        new AADataElement().x(1289858400).y(18),
+                                        new AADataElement().x(1292497200).y(20),
+                                        new AADataElement().x(1295175600).y(20),
+                                        new AADataElement().x(1297724400).y(27),
+                                        new AADataElement().x(1300276800).y(32),
+                                        new AADataElement().x(1302904800).y(29),
+                                        new AADataElement().x(1305540000).y(34),
+                                        new AADataElement().x(1308175200).y(34),
+                                        new AADataElement().x(1310810400).y(36),
+                                        new AADataElement().x(1313488800).y(43),
+                                        new AADataElement().x(1316124000).y(44),
+                                        new AADataElement().x(1318759200).y(42),
+                                        new AADataElement().x(1321394400).y(47),
+                                        new AADataElement().x(1324033200).y(46),
+                                        new AADataElement().x(1326711600).y(50),
+                                        new AADataElement().x(1329303600).y(57),
+                                        new AADataElement().x(1331899200).y(54),
+                                        new AADataElement().x(1334527200).y(59),
+                                        new AADataElement().x(1337162400).y(62),
+                                        new AADataElement().x(1339797600).y(66),
+                                        new AADataElement().x(1342432800).y(61),
+                                        new AADataElement().x(1345111200).y(68),
+                                        new AADataElement().x(1347746400).y(67),
+                                        new AADataElement().x(1350381600).y(73),
+                                        new AADataElement().x(1353016800).y(63),
+                                        new AADataElement().x(1355655600).y(54),
+                                        new AADataElement().x(1358334000).y(67),
+                                        new AADataElement().x(1360882800).y(74),
+                                        new AADataElement().x(1363435200).y(81),
+                                        new AADataElement().x(1366063200).y(89),
+                                        new AADataElement().x(1368698400).y(83),
+                                        new AADataElement().x(1371333600).y(88),
+                                        new AADataElement().x(1373968800).y(86),
+                                        new AADataElement().x(1376647200).y(81),
+                                        new AADataElement().x(1379282400).y(83),
+                                        new AADataElement().x(1381917600).y(95),
+                                        new AADataElement().x(1384552800).y(86),
+                                        new AADataElement().x(1387191600).y(83),
+                                        new AADataElement().x(1389870000).y(89),
+                                        new AADataElement().x(1392418800).y(90),
+                                        new AADataElement().x(1394971200).y(94),
+                                        new AADataElement().x(1397599200).y(00),
+                                        new AADataElement().x(1400234400).y(00),
+                                        new AADataElement().x(1402869600).y(99),
+                                        new AADataElement().x(1405504800).y(99),
+                                        new AADataElement().x(1408183200).y(93),
+                                        new AADataElement().x(1410818400).y(97),
+                                        new AADataElement().x(1413453600).y(9),
+                                })
+                                .tooltip(new AATooltip()
 //                    .xDateFormat("%B %Y")
-                    .valueSuffix(" % of best month"))
+                                .valueSuffix(" % of best month"))
                         ,
                         new AASeriesElement()
                                 .name("收入")
-                .id("revenue")
+                                .id("revenue")
                                 .type(AAChartType.Area)
                                 .data(new AADataElement[]{
-                                new AADataElement().x(1257033600).y(2),
-                                new AADataElement().x(1259625600).y(3),
-                                new AADataElement().x(1262304000).y(2),
-                                new AADataElement().x(1264982400).y(3),
-                                new AADataElement().x(1267401600).y(4),
-                                new AADataElement().x(1270080000).y(4),
-                                new AADataElement().x(1272672000).y(4),
-                                new AADataElement().x(1275350400).y(4),
-                                new AADataElement().x(1277942400).y(5),
-                                new AADataElement().x(1280620800).y(7),
-                                new AADataElement().x(1283299200).y(6),
-                                new AADataElement().x(1285891200).y(9),
-                                new AADataElement().x(1288569600).y(10),
-                                new AADataElement().x(1291161600).y(8),
-                                new AADataElement().x(1293840000).y(10),
-                                new AADataElement().x(1296518400).y(13),
-                                new AADataElement().x(1298937600).y(15),
-                                new AADataElement().x(1301616000).y(14),
-                                new AADataElement().x(1304208000).y(15),
-                                new AADataElement().x(1306886400).y(16),
-                                new AADataElement().x(1309478400).y(22),
-                                new AADataElement().x(1312156800).y(19),
-                                new AADataElement().x(1314835200).y(20),
-                                new AADataElement().x(1317427200).y(32),
-                                new AADataElement().x(1320105600).y(34),
-                                new AADataElement().x(1322697600).y(36),
-                                new AADataElement().x(1325376000).y(34),
-                                new AADataElement().x(1328054400).y(40),
-                                new AADataElement().x(1330560000).y(37),
-                                new AADataElement().x(1333238400).y(35),
-                                new AADataElement().x(1335830400).y(40),
-                                new AADataElement().x(1338508800).y(38),
-                                new AADataElement().x(1341100800).y(39),
-                                new AADataElement().x(1343779200).y(43),
-                                new AADataElement().x(1346457600).y(49),
-                                new AADataElement().x(1349049600).y(43),
-                                new AADataElement().x(1351728000).y(54),
-                                new AADataElement().x(1354320000).y(44),
-                                new AADataElement().x(1356998400).y(43),
-                                new AADataElement().x(1359676800).y(43),
-                                new AADataElement().x(1362096000).y(52),
-                                new AADataElement().x(1364774400).y(52),
-                                new AADataElement().x(1367366400).y(56),
-                                new AADataElement().x(1370044800).y(62),
-                                new AADataElement().x(1372636800).y(66),
-                                new AADataElement().x(1375315200).y(62),
-                                new AADataElement().x(1377993600).y(63),
-                                new AADataElement().x(1380585600).y(60),
-                                new AADataElement().x(1383264000).y(60),
-                                new AADataElement().x(1385856000).y(58),
-                                new AADataElement().x(1388534400).y(65),
-                                new AADataElement().x(1391212800).y(52),
-                                new AADataElement().x(1393632000).y(72),
-                                new AADataElement().x(1396310400).y(57),
-                                new AADataElement().x(1398902400).y(70),
-                                new AADataElement().x(1401580800).y(63),
-                                new AADataElement().x(1404172800).y(65),
-                                new AADataElement().x(1406851200).y(65),
-                                new AADataElement().x(1409529600).y(89),
-                                new AADataElement().x(1412121600).y(00)
-                        })
-                .tooltip(new AATooltip()
+                                        new AADataElement().x(1257033600).y(2),
+                                        new AADataElement().x(1259625600).y(3),
+                                        new AADataElement().x(1262304000).y(2),
+                                        new AADataElement().x(1264982400).y(3),
+                                        new AADataElement().x(1267401600).y(4),
+                                        new AADataElement().x(1270080000).y(4),
+                                        new AADataElement().x(1272672000).y(4),
+                                        new AADataElement().x(1275350400).y(4),
+                                        new AADataElement().x(1277942400).y(5),
+                                        new AADataElement().x(1280620800).y(7),
+                                        new AADataElement().x(1283299200).y(6),
+                                        new AADataElement().x(1285891200).y(9),
+                                        new AADataElement().x(1288569600).y(10),
+                                        new AADataElement().x(1291161600).y(8),
+                                        new AADataElement().x(1293840000).y(10),
+                                        new AADataElement().x(1296518400).y(13),
+                                        new AADataElement().x(1298937600).y(15),
+                                        new AADataElement().x(1301616000).y(14),
+                                        new AADataElement().x(1304208000).y(15),
+                                        new AADataElement().x(1306886400).y(16),
+                                        new AADataElement().x(1309478400).y(22),
+                                        new AADataElement().x(1312156800).y(19),
+                                        new AADataElement().x(1314835200).y(20),
+                                        new AADataElement().x(1317427200).y(32),
+                                        new AADataElement().x(1320105600).y(34),
+                                        new AADataElement().x(1322697600).y(36),
+                                        new AADataElement().x(1325376000).y(34),
+                                        new AADataElement().x(1328054400).y(40),
+                                        new AADataElement().x(1330560000).y(37),
+                                        new AADataElement().x(1333238400).y(35),
+                                        new AADataElement().x(1335830400).y(40),
+                                        new AADataElement().x(1338508800).y(38),
+                                        new AADataElement().x(1341100800).y(39),
+                                        new AADataElement().x(1343779200).y(43),
+                                        new AADataElement().x(1346457600).y(49),
+                                        new AADataElement().x(1349049600).y(43),
+                                        new AADataElement().x(1351728000).y(54),
+                                        new AADataElement().x(1354320000).y(44),
+                                        new AADataElement().x(1356998400).y(43),
+                                        new AADataElement().x(1359676800).y(43),
+                                        new AADataElement().x(1362096000).y(52),
+                                        new AADataElement().x(1364774400).y(52),
+                                        new AADataElement().x(1367366400).y(56),
+                                        new AADataElement().x(1370044800).y(62),
+                                        new AADataElement().x(1372636800).y(66),
+                                        new AADataElement().x(1375315200).y(62),
+                                        new AADataElement().x(1377993600).y(63),
+                                        new AADataElement().x(1380585600).y(60),
+                                        new AADataElement().x(1383264000).y(60),
+                                        new AADataElement().x(1385856000).y(58),
+                                        new AADataElement().x(1388534400).y(65),
+                                        new AADataElement().x(1391212800).y(52),
+                                        new AADataElement().x(1393632000).y(72),
+                                        new AADataElement().x(1396310400).y(57),
+                                        new AADataElement().x(1398902400).y(70),
+                                        new AADataElement().x(1401580800).y(63),
+                                        new AADataElement().x(1404172800).y(65),
+                                        new AADataElement().x(1406851200).y(65),
+                                        new AADataElement().x(1409529600).y(89),
+                                        new AADataElement().x(1412121600).y(00)
+                                })
+                                .tooltip(new AATooltip()
 //                    .xDateFormat("%B %Y")
-                    .valueSuffix(" % of best month")
-            )
+                                        .valueSuffix(" % of best month")
+                        )
                         ,
                         new AASeriesElement()
                                 .yAxis(1)
                                 .name("Highsoft 员工")
-                .id("employees")
+                                .id("employees")
                                 .type(AAChartType.Area)
                                 .step("left")
                                 .tooltip(new AATooltip()
@@ -766,27 +766,27 @@ public class JSFunctionForAAChartEventsComposer {
                 .chart(new AAChart()
                         .events(new AAChartEvents()
                                 .load( String.format(Locale.CHINA, "function() {" +
-                                                        "const chart = this;" +
-                                                        "const point = chart.series[0].points[%d];" +
-                                                        "let big = true;" +
-                                                        "setInterval(() => {" +
-                                                        "big = !big;" +
-                                                        "point.update({" +
-                                                        "marker: {" +
-                                                        "radius: big ? 5 : 15" +
-                                                        "}" +
-                                                        "})" +
-                                                        "}, 500);" +
-                                                        "}",
-                                                selectedIndex)
+                                                "const chart = this;" +
+                                                "const point = chart.series[0].points[%d];" +
+                                                "let big = true;" +
+                                                "setInterval(() => {" +
+                                                "big = !big;" +
+                                                "point.update({" +
+                                                "marker: {" +
+                                                "radius: big ? 5 : 15" +
+                                                "}" +
+                                                "})" +
+                                                "}, 500);" +
+                                                "}",
+                                        selectedIndex)
                                 )))
                 .series(new AASeriesElement[]{
                         new AASeriesElement()
                                 .data(dataArr)
                                 .marker(new AAMarker()
-                                        .lineColor(AAColor.Red)
-                                        .lineWidth(3f)
-                                        .radius(10f))
+                                .lineColor(AAColor.Red)
+                                .lineWidth(3f)
+                                .radius(10f))
                 });
     }
 
@@ -836,8 +836,8 @@ public class JSFunctionForAAChartEventsComposer {
                                         "                                 })\n" +
                                         "                          }, 500)\n" +
                                         "                     }")
-                                )
                         )
+                )
 
                 .title(new AATitle()
                         .text("Special style single data element chart")
@@ -863,80 +863,80 @@ public class JSFunctionForAAChartEventsComposer {
     }
 
 
-//https://github.com/AAChartModel/AAChartKit-Swift/issues/394
+    //https://github.com/AAChartModel/AAChartKit-Swift/issues/394
 //https://echarts.apache.org/examples/zh/editor.html?c=scatter-effect
     public static AAOptions configureScatterChartWithBlinkEffect() {
         AAChartModel aaChartModel = new AAChartModel()
-                    .chartType(AAChartType.Scatter)
-                    .title("Height and weight distribution by sex")
-                    .yAxisTitle("kg")
-                    .markerRadius(8)
-                    .markerSymbolStyle(AAChartSymbolStyleType.InnerBlank)
-                    .series(new AASeriesElement[]{
-                            new AASeriesElement()
-                                    .name("Blink Scatter")
-                                    .color(AAColor.Green)
-                                    .data(new Object[]{
-                                            new Object[]{172.7, 105.2},
-                                            new Object[]{153.4, 42}
-                                    }),
-                            new AASeriesElement()
-                                    .name("Female")
-                                    .color("#ff0000")
-                                    .data(new Object[][] {
-                                    {161.2, 51.6}, {167.5, 59.0}, {159.5, 49.2}, {157.0, 63.0}, {155.8, 53.6},
-                                    {170.0, 59.0}, {159.1, 47.6}, {166.0, 69.8}, {176.2, 66.8}, {160.2, 75.2},
-                                    {172.5, 55.2}, {170.9, 54.2}, {172.9, 62.5}, {153.4, 42.0}, {160.0, 50.0},
-                                    {147.2, 49.8}, {168.2, 49.2}, {175.0, 73.2}, {157.0, 47.8}, {167.6, 68.8},
-                                    {159.5, 50.6}, {175.0, 82.5}, {166.8, 57.2}, {176.5, 87.8}, {170.2, 72.8},
-                                    {174.0, 54.5}, {173.0, 59.8}, {179.9, 67.3}, {170.5, 67.8}, {160.0, 47.0},
-                                    {154.4, 46.2}, {162.0, 55.0}, {176.5, 83.0}, {160.0, 54.4}, {152.0, 45.8},
-                                    {162.1, 53.6}, {170.0, 73.2}, {160.2, 52.1}, {161.3, 67.9}, {166.4, 56.6},
-                                    {168.9, 62.3}, {163.8, 58.5}, {167.6, 54.5}, {160.0, 50.2}, {161.3, 60.3},
-                                    {167.6, 58.3}, {165.1, 56.2}, {160.0, 50.2}, {170.0, 72.9}, {157.5, 59.8},
-                                    {167.6, 61.0}, {160.7, 69.1}, {163.2, 55.9}, {152.4, 46.5}, {157.5, 54.3},
-                                    {168.3, 54.8}, {180.3, 60.7}, {165.5, 60.0}, {165.0, 62.0}, {164.5, 60.3},
-                                    {156.0, 52.7}, {160.0, 74.3}, {163.0, 62.0}, {165.7, 73.1}, {161.0, 80.0},
-                                    {162.0, 54.7}, {166.0, 53.2}, {174.0, 75.7}, {172.7, 61.1}, {167.6, 55.7},
-                                    {151.1, 48.7}, {164.5, 52.3}, {163.5, 50.0}, {152.0, 59.3}, {169.0, 62.5},
-                                    {164.0, 55.7}, {161.2, 54.8}, {155.0, 45.9}, {170.0, 70.6}, {176.2, 67.2},
-                                    {170.0, 69.4}, {162.5, 58.2}, {170.3, 64.8}, {164.1, 71.6}, {169.5, 52.8},
-                                    {163.2, 59.8}, {154.5, 49.0}, {159.8, 50.0}, {173.2, 69.2}, {170.0, 55.9},
-                                    {161.4, 63.4}, {169.0, 58.2}, {166.2, 58.6}, {159.4, 45.7}, {162.5, 52.2},
-                                    {159.0, 48.6}, {162.8, 57.8}, {159.0, 55.6}, {179.8, 66.8}, {162.9, 59.4},
-                                    {161.0, 53.6}, {151.1, 73.2}, {168.2, 53.4}, {168.9, 69.0}, {173.2, 58.4},
-                                    {171.8, 56.2}, {178.0, 70.6}, {164.3, 59.8}, {163.0, 72.0}, {168.5, 65.2},
-                                    {166.8, 56.6}, {172.7, 88.8}, {163.5, 51.8}, {169.4, 63.4}, {167.8, 59.0},
-                                    {159.5, 47.6}, {167.6, 63.0}, {161.2, 55.2}, {160.0, 45.0}, {163.2, 54.0},
-                                    {162.2, 50.2}, {161.3, 60.2}, {149.5, 44.8}, {157.5, 58.8}, {163.2, 56.4},
-                                    {172.7, 62.0}, {155.0, 49.2}, {156.5, 67.2}, {164.0, 53.8}, {160.9, 54.4},
-                                    {162.8, 58.0}, {167.0, 59.8}, {160.0, 54.8}, {160.0, 43.2}, {168.9, 60.5},
-                                    {158.2, 46.4}, {156.0, 64.4}, {160.0, 48.8}, {167.1, 62.2}, {158.0, 55.5},
-                                    {167.6, 57.8}, {156.0, 54.6}, {162.1, 59.2}, {173.4, 52.7}, {159.8, 53.2},
-                                    {170.5, 64.5}, {159.2, 51.8}, {157.5, 56.0}, {161.3, 63.6}, {162.6, 63.2},
-                                    {160.0, 59.5}, {168.9, 56.8}, {165.1, 64.1}, {162.6, 50.0}, {165.1, 72.3},
-                                    {166.4, 55.0}, {160.0, 55.9}, {152.4, 60.4}, {170.2, 69.1}, {162.6, 84.5},
-                                    {170.2, 55.9}, {158.8, 55.5}, {172.7, 69.5}, {167.6, 76.4}, {162.6, 61.4},
-                                    {167.6, 65.9}, {156.2, 58.6}, {175.2, 66.8}, {172.1, 56.6}, {162.6, 58.6},
-                                    {160.0, 55.9}, {165.1, 59.1}, {182.9, 81.8}, {166.4, 70.7}, {165.1, 56.8},
-                                    {177.8, 60.0}, {165.1, 58.2}, {175.3, 72.7}, {154.9, 54.1}, {158.8, 49.1},
-                                    {172.7, 75.9}, {168.9, 55.0}, {161.3, 57.3}, {167.6, 55.0}, {165.1, 65.5},
-                                    {175.3, 65.5}, {157.5, 48.6}, {163.8, 58.6}, {167.6, 63.6}, {165.1, 55.2},
-                                    {165.1, 62.7}, {168.9, 56.6}, {162.6, 53.9}, {164.5, 63.2}, {176.5, 73.6},
-                                    {168.9, 62.0}, {175.3, 63.6}, {159.4, 53.2}, {160.0, 53.4}, {170.2, 55.0},
-                                    {162.6, 70.5}, {167.6, 54.5}, {162.6, 54.5}, {160.7, 55.9}, {160.0, 59.0},
-                                    {157.5, 63.6}, {162.6, 54.5}, {152.4, 47.3}, {170.2, 67.7}, {165.1, 80.9},
-                                    {172.7, 70.5}, {165.1, 60.9}, {170.2, 63.6}, {170.2, 54.5}, {170.2, 59.1},
-                                    {161.3, 70.5}, {167.6, 52.7}, {167.6, 62.7}, {165.1, 86.3}, {162.6, 66.4},
-                                    {152.4, 67.3}, {168.9, 63.0}, {170.2, 73.6}, {175.2, 62.3}, {175.2, 57.7},
-                                    {160.0, 55.4}, {165.1, 77.7}, {174.0, 55.5}, {170.2, 77.3}, {160.0, 80.5},
-                                    {167.6, 64.5}, {167.6, 72.3}, {167.6, 61.4}, {154.9, 58.2}, {162.6, 81.8},
-                                    {175.3, 63.6}, {171.4, 53.4}, {157.5, 54.5}, {165.1, 53.6}, {160.0, 60.0},
-                                    {174.0, 73.6}, {162.6, 61.4}, {174.0, 55.5}, {162.6, 63.6}, {161.3, 60.9},
-                                    {156.2, 60.0}, {149.9, 46.8}, {169.5, 57.3}, {160.0, 64.1}, {175.3, 63.6},
-                                    {169.5, 67.3}, {160.0, 75.5}, {172.7, 68.2}, {162.6, 61.4}, {157.5, 76.8},
-                                    {176.5, 71.8}, {164.4, 55.5}, {160.7, 48.6}, {174.0, 66.4}, {163.8, 67.3}})
-                    });
+                .chartType(AAChartType.Scatter)
+                .title("Height and weight distribution by sex")
+                .yAxisTitle("kg")
+                .markerRadius(8)
+                .markerSymbolStyle(AAChartSymbolStyleType.InnerBlank)
+                .series(new AASeriesElement[]{
+                        new AASeriesElement()
+                                .name("Blink Scatter")
+                                .color(AAColor.Green)
+                                .data(new Object[]{
+                                new Object[]{172.7, 105.2},
+                                new Object[]{153.4, 42}
+                        }),
+                        new AASeriesElement()
+                                .name("Female")
+                                .color("#ff0000")
+                                .data(new Object[][] {
+                                {161.2, 51.6}, {167.5, 59.0}, {159.5, 49.2}, {157.0, 63.0}, {155.8, 53.6},
+                                {170.0, 59.0}, {159.1, 47.6}, {166.0, 69.8}, {176.2, 66.8}, {160.2, 75.2},
+                                {172.5, 55.2}, {170.9, 54.2}, {172.9, 62.5}, {153.4, 42.0}, {160.0, 50.0},
+                                {147.2, 49.8}, {168.2, 49.2}, {175.0, 73.2}, {157.0, 47.8}, {167.6, 68.8},
+                                {159.5, 50.6}, {175.0, 82.5}, {166.8, 57.2}, {176.5, 87.8}, {170.2, 72.8},
+                                {174.0, 54.5}, {173.0, 59.8}, {179.9, 67.3}, {170.5, 67.8}, {160.0, 47.0},
+                                {154.4, 46.2}, {162.0, 55.0}, {176.5, 83.0}, {160.0, 54.4}, {152.0, 45.8},
+                                {162.1, 53.6}, {170.0, 73.2}, {160.2, 52.1}, {161.3, 67.9}, {166.4, 56.6},
+                                {168.9, 62.3}, {163.8, 58.5}, {167.6, 54.5}, {160.0, 50.2}, {161.3, 60.3},
+                                {167.6, 58.3}, {165.1, 56.2}, {160.0, 50.2}, {170.0, 72.9}, {157.5, 59.8},
+                                {167.6, 61.0}, {160.7, 69.1}, {163.2, 55.9}, {152.4, 46.5}, {157.5, 54.3},
+                                {168.3, 54.8}, {180.3, 60.7}, {165.5, 60.0}, {165.0, 62.0}, {164.5, 60.3},
+                                {156.0, 52.7}, {160.0, 74.3}, {163.0, 62.0}, {165.7, 73.1}, {161.0, 80.0},
+                                {162.0, 54.7}, {166.0, 53.2}, {174.0, 75.7}, {172.7, 61.1}, {167.6, 55.7},
+                                {151.1, 48.7}, {164.5, 52.3}, {163.5, 50.0}, {152.0, 59.3}, {169.0, 62.5},
+                                {164.0, 55.7}, {161.2, 54.8}, {155.0, 45.9}, {170.0, 70.6}, {176.2, 67.2},
+                                {170.0, 69.4}, {162.5, 58.2}, {170.3, 64.8}, {164.1, 71.6}, {169.5, 52.8},
+                                {163.2, 59.8}, {154.5, 49.0}, {159.8, 50.0}, {173.2, 69.2}, {170.0, 55.9},
+                                {161.4, 63.4}, {169.0, 58.2}, {166.2, 58.6}, {159.4, 45.7}, {162.5, 52.2},
+                                {159.0, 48.6}, {162.8, 57.8}, {159.0, 55.6}, {179.8, 66.8}, {162.9, 59.4},
+                                {161.0, 53.6}, {151.1, 73.2}, {168.2, 53.4}, {168.9, 69.0}, {173.2, 58.4},
+                                {171.8, 56.2}, {178.0, 70.6}, {164.3, 59.8}, {163.0, 72.0}, {168.5, 65.2},
+                                {166.8, 56.6}, {172.7, 88.8}, {163.5, 51.8}, {169.4, 63.4}, {167.8, 59.0},
+                                {159.5, 47.6}, {167.6, 63.0}, {161.2, 55.2}, {160.0, 45.0}, {163.2, 54.0},
+                                {162.2, 50.2}, {161.3, 60.2}, {149.5, 44.8}, {157.5, 58.8}, {163.2, 56.4},
+                                {172.7, 62.0}, {155.0, 49.2}, {156.5, 67.2}, {164.0, 53.8}, {160.9, 54.4},
+                                {162.8, 58.0}, {167.0, 59.8}, {160.0, 54.8}, {160.0, 43.2}, {168.9, 60.5},
+                                {158.2, 46.4}, {156.0, 64.4}, {160.0, 48.8}, {167.1, 62.2}, {158.0, 55.5},
+                                {167.6, 57.8}, {156.0, 54.6}, {162.1, 59.2}, {173.4, 52.7}, {159.8, 53.2},
+                                {170.5, 64.5}, {159.2, 51.8}, {157.5, 56.0}, {161.3, 63.6}, {162.6, 63.2},
+                                {160.0, 59.5}, {168.9, 56.8}, {165.1, 64.1}, {162.6, 50.0}, {165.1, 72.3},
+                                {166.4, 55.0}, {160.0, 55.9}, {152.4, 60.4}, {170.2, 69.1}, {162.6, 84.5},
+                                {170.2, 55.9}, {158.8, 55.5}, {172.7, 69.5}, {167.6, 76.4}, {162.6, 61.4},
+                                {167.6, 65.9}, {156.2, 58.6}, {175.2, 66.8}, {172.1, 56.6}, {162.6, 58.6},
+                                {160.0, 55.9}, {165.1, 59.1}, {182.9, 81.8}, {166.4, 70.7}, {165.1, 56.8},
+                                {177.8, 60.0}, {165.1, 58.2}, {175.3, 72.7}, {154.9, 54.1}, {158.8, 49.1},
+                                {172.7, 75.9}, {168.9, 55.0}, {161.3, 57.3}, {167.6, 55.0}, {165.1, 65.5},
+                                {175.3, 65.5}, {157.5, 48.6}, {163.8, 58.6}, {167.6, 63.6}, {165.1, 55.2},
+                                {165.1, 62.7}, {168.9, 56.6}, {162.6, 53.9}, {164.5, 63.2}, {176.5, 73.6},
+                                {168.9, 62.0}, {175.3, 63.6}, {159.4, 53.2}, {160.0, 53.4}, {170.2, 55.0},
+                                {162.6, 70.5}, {167.6, 54.5}, {162.6, 54.5}, {160.7, 55.9}, {160.0, 59.0},
+                                {157.5, 63.6}, {162.6, 54.5}, {152.4, 47.3}, {170.2, 67.7}, {165.1, 80.9},
+                                {172.7, 70.5}, {165.1, 60.9}, {170.2, 63.6}, {170.2, 54.5}, {170.2, 59.1},
+                                {161.3, 70.5}, {167.6, 52.7}, {167.6, 62.7}, {165.1, 86.3}, {162.6, 66.4},
+                                {152.4, 67.3}, {168.9, 63.0}, {170.2, 73.6}, {175.2, 62.3}, {175.2, 57.7},
+                                {160.0, 55.4}, {165.1, 77.7}, {174.0, 55.5}, {170.2, 77.3}, {160.0, 80.5},
+                                {167.6, 64.5}, {167.6, 72.3}, {167.6, 61.4}, {154.9, 58.2}, {162.6, 81.8},
+                                {175.3, 63.6}, {171.4, 53.4}, {157.5, 54.5}, {165.1, 53.6}, {160.0, 60.0},
+                                {174.0, 73.6}, {162.6, 61.4}, {174.0, 55.5}, {162.6, 63.6}, {161.3, 60.9},
+                                {156.2, 60.0}, {149.9, 46.8}, {169.5, 57.3}, {160.0, 64.1}, {175.3, 63.6},
+                                {169.5, 67.3}, {160.0, 75.5}, {172.7, 68.2}, {162.6, 61.4}, {157.5, 76.8},
+                                {176.5, 71.8}, {164.4, 55.5}, {160.7, 48.6}, {174.0, 66.4}, {163.8, 67.3}})
+                });
 
         AAOptions aaOptions = aaChartModel.aa_toAAOptions();
         aaOptions.chart.events(new AAChartEvents()
@@ -961,64 +961,64 @@ public class JSFunctionForAAChartEventsComposer {
                         "                }\n" +
                         "            }"));
         return aaOptions;
-        }
+    }
 
 
 
 
-        //https://github.com/AAChartModel/AAChartKit/issues/1093
+    //https://github.com/AAChartModel/AAChartKit/issues/1093
     //https://github.com/highcharts/highcharts-ios/issues/97
-     public static AAOptions automaticallyHideTooltipAfterItIsShown() {
-         AAChartModel aaChartModel = new AAChartModel()
-                 .chartType(AAChartType.Areaspline)//图表类型
-                 .colorsTheme(new String[]{"#04d69f", "#1e90ff", "#ef476f", "#ffd066",})
-                 .stacking(AAChartStackingType.Normal)
-                 .yAxisVisible(false)
-                 .markerRadius(0)
-                 .series(new AASeriesElement[]{
-                         new AASeriesElement()
-                                 .name("Tokyo")
-                                 .data(new Object[]{7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6}),
-                         new AASeriesElement()
-                                 .name("NewYork")
-                                 .data(new Object[]{0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5}),
-                         new AASeriesElement()
-                                 .name("London")
-                                 .data(new Object[]{0.9, 0.6, 3.5, 8.4, 13.5, 17.0, 18.6, 17.9, 14.3, 9.0, 3.9, 1.0}),
-                         new AASeriesElement()
-                                 .name("Berlin")
-                                 .data(new Object[]{3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8})
-                 });
+    public static AAOptions automaticallyHideTooltipAfterItIsShown() {
+        AAChartModel aaChartModel = new AAChartModel()
+                .chartType(AAChartType.Areaspline)//图表类型
+                .colorsTheme(new String[]{"#04d69f", "#1e90ff", "#ef476f", "#ffd066",})
+                .stacking(AAChartStackingType.Normal)
+                .yAxisVisible(false)
+                .markerRadius(0)
+                .series(new AASeriesElement[]{
+                        new AASeriesElement()
+                                .name("Tokyo")
+                                .data(new Object[]{7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6}),
+                        new AASeriesElement()
+                                .name("NewYork")
+                                .data(new Object[]{0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5}),
+                        new AASeriesElement()
+                                .name("London")
+                                .data(new Object[]{0.9, 0.6, 3.5, 8.4, 13.5, 17.0, 18.6, 17.9, 14.3, 9.0, 3.9, 1.0}),
+                        new AASeriesElement()
+                                .name("Berlin")
+                                .data(new Object[]{3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8})
+                });
 
-            AAOptions aaOptions = aaChartModel.aa_toAAOptions();
+        AAOptions aaOptions = aaChartModel.aa_toAAOptions();
 
-            aaOptions.tooltip
-                    .style(AAStyle.style(AAColor.White))
-                    .backgroundColor("#050505")
-                    .borderColor("#050505");
+        aaOptions.tooltip
+                .style(AAStyle.style(AAColor.White))
+                .backgroundColor("#050505")
+                .borderColor("#050505");
 
-            aaOptions.xAxis
-                    .crosshair(new AACrosshair()
-                            .color(AAColor.DarkGray)
-                            .dashStyle(AAChartLineDashStyleType.LongDashDotDot)
-                            .width(2));
+        aaOptions.xAxis
+                .crosshair(new AACrosshair()
+                        .color(AAColor.DarkGray)
+                        .dashStyle(AAChartLineDashStyleType.LongDashDotDot)
+                        .width(2));
 
-            //https://api.highcharts.com/highcharts/chart.events.load
-            //https://www.highcharts.com/forum/viewtopic.php?t=36508
-            aaOptions.chart
-                    .events(new AAChartEvents()
-                            .load("function() {\n" +
-                                    "   const chart = this;\n" +
-                                    "   Highcharts.addEvent(\n" +
-                                    "       chart.tooltip,\n" +
-                                    "       'refresh',\n" +
-                                    "       function () {\n" +
-                                    "           chart.tooltip.hide(888);\n" + //设置 tooltip 自动隐藏的时间，单位为 ms
-                                    "   });\n" +
-                                    "}"));
+        //https://api.highcharts.com/highcharts/chart.events.load
+        //https://www.highcharts.com/forum/viewtopic.php?t=36508
+        aaOptions.chart
+                .events(new AAChartEvents()
+                        .load("function() {\n" +
+                                "   const chart = this;\n" +
+                                "   Highcharts.addEvent(\n" +
+                                "       chart.tooltip,\n" +
+                                "       'refresh',\n" +
+                                "       function () {\n" +
+                                "           chart.tooltip.hide(888);\n" + //设置 tooltip 自动隐藏的时间，单位为 ms
+                                "   });\n" +
+                                "}"));
 
-            return aaOptions;
-        }
+        return aaOptions;
+    }
 
 
     //https://github.com/AAChartModel/AAChartKit/issues/1383
@@ -1066,14 +1066,14 @@ public class JSFunctionForAAChartEventsComposer {
                                 .color("#dbe751")
                                 .fillOpacity(0.4f)
                                 .marker(new AAMarker()
-                                        .enabled(false))
+                                .enabled(false))
                 });
     }
 
 
     //https://github.com/AAChartModel/AAChartKit-Swift-Pro/issues/3
 //https://www.highcharts.com/forum/viewtopic.php?f=9&t=49492
-public static AAOptions customizeYAxisPlotLinesLabelBeSpecialStyle() {
+    public static AAOptions customizeYAxisPlotLinesLabelBeSpecialStyle() {
         return new AAOptions()
                 .chart(new AAChart()
                         .events(new AAChartEvents()
@@ -1106,12 +1106,12 @@ public static AAOptions customizeYAxisPlotLinesLabelBeSpecialStyle() {
                                         .width(2)
                                         .dashStyle(AAChartLineDashStyleType.Dash)
                                         .label(new AALabel()
-                                                .useHTML(true)
-                                                .textAlign(AAChartAlignType.Center)
-                                                .x(0).y(2)
-                                                .formatter("function () {\n" +
-                                                        "               return `<span style=\"padding: 2px 10px; display: block; color: white\">`+this.options.value+`</span>`\n" +
-                                                        "               }"))
+                                        .useHTML(true)
+                                        .textAlign(AAChartAlignType.Center)
+                                        .x(0).y(2)
+                                        .formatter("function () {\n" +
+                                                "               return `<span style=\"padding: 2px 10px; display: block; color: white\">`+this.options.value+`</span>`\n" +
+                                                "               }"))
                         }))
                 .series(new AASeriesElement[]{
                         new AASeriesElement()
