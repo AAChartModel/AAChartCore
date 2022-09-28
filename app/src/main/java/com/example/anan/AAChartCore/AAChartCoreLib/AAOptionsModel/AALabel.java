@@ -1,5 +1,7 @@
 package com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel;
 
+import com.example.anan.AAChartCore.AAChartCoreLib.AATools.AAJSStringPurer;
+
 public class AALabel {
     public String  align;//标签的对齐方式，可用的值有 "left"、"center" 及 "right"。默认值是根据坐标轴的位置（在图表中的位置）即标签的旋转角度进行智能判断的。 默认是：center.
     public Number  rotation;//标签的旋转角度 默认是：0.
@@ -64,7 +66,9 @@ public class AALabel {
     }
 
     public AALabel formatter(String prop) {
-        formatter = prop;
+        String pureJSFunctionStr = "(" + prop + ")";
+        pureJSFunctionStr = AAJSStringPurer.pureJavaScriptFunctionString(pureJSFunctionStr);
+        formatter = pureJSFunctionStr;
         return this;
     }
 }
