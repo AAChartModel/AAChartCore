@@ -10,7 +10,7 @@ import android.widget.Toast;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartType;
 import com.example.anan.AAChartCore.ChartsDemo.AdditionalContent.AdvancedUpdatingFeatureActivity;
 import com.example.anan.AAChartCore.ChartsDemo.AdditionalContent.DoubleChartsLinkedWorkActivity;
-import com.example.anan.AAChartCore.ChartsDemo.AdditionalContent.JSFormatterFunctionActivity;
+import com.example.anan.AAChartCore.ChartsDemo.AdditionalContent.JSFunctionForAATooltipActivity;
 import com.example.anan.AAChartCore.ChartsDemo.AdditionalContent.DrawChartWithAAOptionsActivity;
 import com.example.anan.AAChartCore.ChartsDemo.AdditionalContent.EvaluateJSStringFunctionActivity;
 import com.example.anan.AAChartCore.ChartsDemo.AdditionalContent.HideOrShowChartSeriesActivity;
@@ -593,7 +593,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     void goToCustomTooltipWithJSFunctionActivity(String chartType) {
-        Intent intent = new Intent(this, JSFormatterFunctionActivity.class);
+        Intent intent = new Intent(this, JSFunctionForAATooltipActivity.class);
         intent.putExtra(kChartTypeKey, chartType);
         startActivity(intent);
     }

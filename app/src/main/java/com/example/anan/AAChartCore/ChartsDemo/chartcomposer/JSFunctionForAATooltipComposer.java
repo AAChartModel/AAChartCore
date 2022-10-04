@@ -4,34 +4,21 @@ import static com.example.anan.AAChartCore.AAChartCoreLib.AATools.AAColor.AARgba
 
 import android.util.DisplayMetrics;
 
-import com.example.anan.AAChartCore.AAChartCoreLib.AAChartCreator.AAChartEvents;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartCreator.AAChartModel;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartCreator.AASeriesElement;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartAlignType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartAnimationType;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartAxisType;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartFontWeightType;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartLayoutType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartLineDashStyleType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartStackingType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartSymbolStyleType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartSymbolType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartType;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartVerticalAlignType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAAnimation;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAChart;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAColumnrange;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AACrosshair;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AADataElement;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AADataLabels;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAHover;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAInactive;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAItemStyle;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AALabel;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AALabels;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAMarker;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAOptions;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAPlotBandsElement;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAPlotOptions;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAPoint;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAPointEvents;
@@ -49,14 +36,10 @@ import com.example.anan.AAChartCore.AAChartCoreLib.AATools.AAColor;
 import com.example.anan.AAChartCore.AAChartCoreLib.AATools.AAGradientColor;
 import com.example.anan.AAChartCore.AAChartCoreLib.AATools.AALinearGradientDirection;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.TimeZone;
 
-public class JSFunctionChartOptionsComposer {
+public class JSFunctionForAATooltipComposer {
 
     public static AAOptions customAreaChartTooltipStyleWithSimpleFormatString() {
         AAChartModel aaChartModel = new AAChartModel()

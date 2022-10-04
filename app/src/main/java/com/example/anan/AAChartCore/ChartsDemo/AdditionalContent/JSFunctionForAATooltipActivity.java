@@ -1,6 +1,6 @@
 package com.example.anan.AAChartCore.ChartsDemo.AdditionalContent;
 
-import static com.example.anan.AAChartCore.ChartsDemo.chartcomposer.JSFunctionChartOptionsComposer.*;
+import static com.example.anan.AAChartCore.ChartsDemo.chartcomposer.JSFunctionForAATooltipComposer.*;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -10,7 +10,7 @@ import com.example.anan.AAChartCore.AAChartCoreLib.AAChartCreator.AAChartView;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAOptions;
 import com.example.anan.AAChartCore.R;
 
-public class JSFormatterFunctionActivity extends AppCompatActivity {
+public class JSFunctionForAATooltipActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

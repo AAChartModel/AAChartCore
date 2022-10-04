@@ -15,7 +15,7 @@
         <activity android:name=".ChartsDemo.AdditionalContent.ScrollableChartActivity" />
         <activity android:name=".ChartsDemo.AdditionalContent.DoubleChartsLinkedWorkActivity" />
         <activity android:name=".ChartsDemo.AdditionalContent.ScrollingUpdateDataActivity" />
-        <activity android:name=".ChartsDemo.AdditionalContent.JSFormatterFunctionActivity" />
+        <activity android:name=".ChartsDemo.AdditionalContent.JSFunctionForAATooltipActivity" />
         <activity android:name=".ChartsDemo.AdditionalContent.EvaluateJSStringFunctionActivity" />
         <activity android:name=".ChartsDemo.AdditionalContent.OnlyRefreshChartDataActivity" />
         <activity android:name=".ChartsDemo.AdditionalContent.HideOrShowChartSeriesActivity" />
