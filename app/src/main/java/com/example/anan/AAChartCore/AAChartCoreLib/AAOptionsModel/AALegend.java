@@ -16,6 +16,7 @@ public class AALegend {
     public Number x;
     public Number y;
     public Boolean floating;
+    public String labelFormat;
 
     public AALegend layout(String prop) {
         layout = prop;
@@ -89,6 +90,11 @@ public class AALegend {
 
     public AALegend floating(Boolean prop) {
         floating = prop;
+        return this;
+    }
+
+    public AALegend labelFormat(String prop) {
+        labelFormat = prop;
         return this;
     }
 
