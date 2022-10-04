@@ -8,6 +8,7 @@ public class AAPointEvents {
     public String select; //选中
     public String unselect; //取消选中
     public String update; //更新
+    public String legendItemClick; //图例点击事件
 
     public AAPointEvents click(String prop) {
         click = prop;
@@ -41,6 +42,11 @@ public class AAPointEvents {
 
     public AAPointEvents update(String prop) {
         update = prop;
+        return this;
+    }
+
+    public AAPointEvents legendItemClick(String prop) {
+        legendItemClick = prop;
         return this;
     }
 
