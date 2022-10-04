@@ -28,6 +28,9 @@ import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAXAxis;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAYAxis;
 import com.example.anan.AAChartCore.AAChartCoreLib.AATools.AAColor;
 import com.example.anan.AAChartCore.AAChartCoreLib.AATools.AAGradientColor;
+import com.example.anan.AAChartCore.AAChartCoreLib.AATools.AALinearGradientDirection;
+
+import java.util.Map;
 
 public class JSFunctionForAAAxisComposer {
     public static AAOptions customYAxisLabels() {
@@ -119,6 +122,64 @@ public class JSFunctionForAAAxisComposer {
 
         return aaOptions;
     }
+
+    //Stupid method
+    public static AAOptions customAreaChartXAxisLabelsTextUnitSuffix1() {
+        Map<String, Object> gradientColorDic1 = AAGradientColor.linearGradient(
+                AALinearGradientDirection.ToTop,
+                "#7052f4",
+                "#00b0ff"
+        );
+
+        AAChartModel aaChartModel = new AAChartModel()
+                .chartType(AAChartType.Area)
+                .title("Custom X Axis Labels Text")
+                .subtitle("By Using JavaScript Formatter Function")
+                .markerSymbolStyle(AAChartSymbolStyleType.BorderBlank)
+                .yAxisGridLineWidth(0)
+                .series(new AASeriesElement[]{
+                        new AASeriesElement()
+                                .lineWidth(1.5)
+                                .color("#00b0ff")
+                                .fillColor(gradientColorDic1)
+                                .name("2018")
+                                .data(new Object[]{
+                                        1.51, 6.7, 0.94, 1.44, 1.6, 1.63, 1.56, 1.91, 2.45, 3.87, 3.24, 4.90, 4.61, 4.10,
+                                        4.17, 3.85, 4.17, 3.46, 3.46, 3.55, 3.50, 4.13, 2.58, 2.28, 1.51, 12.7, 0.94, 1.44,
+                                        18.6, 1.63, 1.56, 1.91, 2.45, 3.87, 3.24, 4.90, 4.61, 4.10, 4.17, 3.85, 4.17, 3.46,
+                                        3.46, 3.55, 3.50, 4.13, 2.58, 2.28, 1.33, 4.68, 1.31, 1.10, 13.9, 1.10, 1.16, 1.67,
+                                        2.64, 2.86, 3.00, 3.21, 4.14, 4.07, 3.68, 3.11, 3.41, 3, 3.32, 3.07, 3.92, 3.05,
+                                        2.18, 3.24, 3.23, 3.15, 2.90, 1.81, 2.11, 2.43, 5.59, 3.09, 4.09, 6.14, 5.33, 6.05,
+                                        5.71, 6.22, 6.56, 4.75, 5.27, 6.02, 5.48,
+                                })
+                });
+
+        AAOptions aaOptions = aaChartModel.aa_toAAOptions();
+        aaOptions.xAxis.labels
+                .formatter(
+                        "function () {" +
+                                "const xValue = this.value;" +
+                                "if (xValue%10 == 0) {" +
+                                "return xValue + \" sec\";" +
+                                "} else {" +
+                                "return \"\";" +
+                                "}" +
+                                "}"
+                );
+
+        return aaOptions;
+    }
+
+    //Smart method
+    public static AAOptions customAreaChartXAxisLabelsTextUnitSuffix2() {
+        AAOptions aaOptions = customAreaChartXAxisLabelsTextUnitSuffix1();
+        aaOptions.xAxis.labels
+                .step(10)
+                .format("{value} sec");
+
+        return aaOptions;
+    }
+
 
 
     //https://github.com/AAChartModel/AAChartKit/issues/901
