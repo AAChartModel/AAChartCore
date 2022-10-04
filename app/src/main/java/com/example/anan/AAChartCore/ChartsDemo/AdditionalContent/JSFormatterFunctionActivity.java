@@ -71,12 +71,6 @@ public class JSFormatterFunctionActivity extends AppCompatActivity {
                 return disableColumnChartUnselectEventEffectBySeriesPointEventClickFunction();//通过 Series 的 Point 的选中事件函数来禁用条形图反选效果
             case "customAreasplineChartTooltipStyleByDivWithCSS":
                 return customAreasplineChartTooltipStyleByDivWithCSS();//通过自定义 div 的 css 样式来自定义复杂效果的 tooltip 浮动提示框
-            case "configureTheAxesLabelsFormattersOfDoubleYAxesChart":
-                return configureTheAxesLabelsFormattersOfDoubleYAxesChart();//配置双 Y 轴图表的 Y 轴文字标签的 Formatter 函数 示例 1
-            case "configureTheAxesLabelsFormattersOfDoubleYAxesChart2":
-                return configureTheAxesLabelsFormattersOfDoubleYAxesChart2();//配置双 Y 轴图表的 Y 轴文字标签的 Formatter 函数 示例 2
-            case "configureTheAxesLabelsFormattersOfDoubleYAxesChart3":
-                return configureTheAxesLabelsFormattersOfDoubleYAxesChart3();//配置双 Y 轴图表的 Y 轴文字标签的 Formatter 函数 示例 3
             case "makePieChartShow0Data":
                 return makePieChartShow0Data();//使饼图显示为 0 的数据
             case "customColumnChartXAxisLabelsTextByInterceptTheFirstFourCharacters":
@@ -85,10 +79,6 @@ public class JSFormatterFunctionActivity extends AppCompatActivity {
                 return setCrosshairAndTooltipToTheDefaultPositionAfterLoadingChart();//图表加载完成后, 在指定位置默认显示 crosshair 和 tooltip
             case "customColumnChartBorderStyleAndStatesHoverColor":
                 return customColumnChartBorderStyleAndStatesHoverColor();//自定义📊柱状图的 border 样式和手指或鼠标 hover 时的显示效果
-            case "generalDrawingChart":
-                return generalDrawingChart();//自由绘图🎨
-            case "advancedTimeLineChart":
-                return advancedTimeLineChart();//高级时间线图
 
         }
         return customAreaChartTooltipStyleWithSimpleFormatString();
