@@ -67,8 +67,6 @@ public class JSFormatterFunctionActivity extends AppCompatActivity {
                 return customAreasplineChartTooltipStyleByDivWithCSS();//通过自定义 div 的 css 样式来自定义复杂效果的 tooltip 浮动提示框
             case "makePieChartShow0Data":
                 return makePieChartShow0Data();//使饼图显示为 0 的数据
-            case "setCrosshairAndTooltipToTheDefaultPositionAfterLoadingChart":
-                return setCrosshairAndTooltipToTheDefaultPositionAfterLoadingChart();//图表加载完成后, 在指定位置默认显示 crosshair 和 tooltip
             case "customColumnChartBorderStyleAndStatesHoverColor":
                 return customColumnChartBorderStyleAndStatesHoverColor();//自定义📊柱状图的 border 样式和手指或鼠标 hover 时的显示效果
 
