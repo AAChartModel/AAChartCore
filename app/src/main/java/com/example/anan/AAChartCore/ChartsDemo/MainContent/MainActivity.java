@@ -183,32 +183,21 @@ public class MainActivity extends AppCompatActivity {
                     "自定义多彩颜色文字",
                     "值为0时,在tooltip中不显示",
                     "自定义箱线图的浮动提示框头部内容",
-                    "自定义Y轴文字",
-                    "自定义Y轴文字2",
+
                     "自定义分组堆积柱状图tooltip内容",
-                    "双 X 轴镜像图表",
                     "customArearangeChartTooltip---自定义折线范围图的tooltip",
                     "调整折线图的 X 轴左边距",
                     "通过来自外部的数据源来自定义 tooltip (而非常规的来自图表的 series)",
-
-                    "customSpiderChartStyle---自定义蜘蛛🕷🕸图样式",
-                    "customizeEveryDataLabelSinglelyByDataLabelsFormatter---通过 DataLabels 的 formatter 函数来实现单个数据标签🏷自定义",
-                    "customXAxisLabelsBeImages---自定义 X轴 labels 为一组图片",
-                    "customLegendItemClickEvent---自定义图例点击事件🖱",
                     "customTooltipPostionerFunction---自定义浮动提示框 Positioner 函数",
+
                     "fixedTooltipPositionByCustomPositionerFunction---通过 Positioner 函数来实现一个位置固定的提示框",
                     "customPlotAreaOutsideComlicatedTooltipStyle---通过 Positioner 函数来实现绘图区外的复杂浮动提示框样式",
                     "disableColumnChartUnselectEventEffectBySeriesPointEventClickFunction---通过 Series 的 Point 的选中事件函数来禁用条形图反选效果",
                     "customAreasplineChartTooltipStyleByDivWithCSS---通过自定义 div 的 css 样式来自定义复杂效果的 tooltip 浮动提示框",
-                    "configureTheAxesLabelsFormattersOfDoubleYAxesChart---配置双 Y 轴图表的 Y 轴文字标签的 Formatter 函数 示例 1",
-                    "configureTheAxesLabelsFormattersOfDoubleYAxesChart2---配置双 Y 轴图表的 Y 轴文字标签的 Formatter 函数 示例 2",
-                    "configureTheAxesLabelsFormattersOfDoubleYAxesChart3---配置双 Y 轴图表的 Y 轴文字标签的 Formatter 函数 示例 3",
                     "makePieChartShow0Data---使饼图显示为 0 的数据",
-                    "customColumnChartXAxisLabelsTextByInterceptTheFirstFourCharacters---通过截取前四个字符来自定义 X 轴 labels",
+
                     "setCrosshairAndTooltipToTheDefaultPositionAfterLoadingChart---图表加载完成后, 在指定位置默认显示 crosshair 和 tooltip",
                     "customColumnChartBorderStyleAndStatesHoverColor---自定义📊柱状图的 border 样式和手指或鼠标 hover 时的显示效果",
-                    "generalDrawingChart---自由绘图🎨",
-                    "advancedTimeLineChart---高级时间线图",
             },
             /*执行由 JavaScript 字符串映射转换成的 js function 函数*/
             {
@@ -401,32 +390,21 @@ public class MainActivity extends AppCompatActivity {
                     "customAreaChartTooltipStyleWithColorfulHtmlLabels",
                     "customLineChartTooltipStyleWhenValueBeZeroDoNotShow",
                     "customBoxplotTooltipContent",
-                    "customYAxisLabels",
-                    "customYAxisLabels2",
+
                     "customStackedAndGroupedColumnChartTooltip",
-                    "customDoubleXAxesChart",
                     "customArearangeChartTooltip",
                     "customLineChartOriginalPointPositionByConfiguringXAxisFormatterAndTooltipFormatter",
                     "customTooltipWhichDataSourceComeFromOutSideRatherThanSeries",
-
-                    "customSpiderChartStyle",
-                    "customizeEveryDataLabelSinglelyByDataLabelsFormatter",
-                    "customXAxisLabelsBeImages",
-                    "customLegendItemClickEvent",
                     "customTooltipPostionerFunction",
+
                     "fixedTooltipPositionByCustomPositionerFunction",
                     "customPlotAreaOutsideComlicatedTooltipStyle",
                     "disableColumnChartUnselectEventEffectBySeriesPointEventClickFunction",
                     "customAreasplineChartTooltipStyleByDivWithCSS",
-                    "configureTheAxesLabelsFormattersOfDoubleYAxesChart",
-                    "configureTheAxesLabelsFormattersOfDoubleYAxesChart2",
-                    "configureTheAxesLabelsFormattersOfDoubleYAxesChart3",
                     "makePieChartShow0Data",
+
                     "customColumnChartXAxisLabelsTextByInterceptTheFirstFourCharacters",
-                    "setCrosshairAndTooltipToTheDefaultPositionAfterLoadingChart",
                     "customColumnChartBorderStyleAndStatesHoverColor",
-                    "generalDrawingChart",
-                    "advancedTimeLineChart",
             },
             {
                     /*执行由 JavaScript 字符串映射转换成的 js function 函数*/
