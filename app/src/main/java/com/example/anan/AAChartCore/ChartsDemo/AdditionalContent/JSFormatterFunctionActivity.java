@@ -40,8 +40,6 @@ public class JSFormatterFunctionActivity extends AppCompatActivity {
                 return customBoxplotTooltipContent();
             case "customStackedAndGroupedColumnChartTooltip":
                 return customStackedAndGroupedColumnChartTooltip();
-            case "customDoubleXAxesChart":
-                return customDoubleXAxesChart();
             case "customArearangeChartTooltip":
                 return customArearangeChartTooltip();
             case "customLineChartOriginalPointPositionByConfiguringXAxisFormatterAndTooltipFormatter":
@@ -49,12 +47,6 @@ public class JSFormatterFunctionActivity extends AppCompatActivity {
             case "customTooltipWhichDataSourceComeFromOutSideRatherThanSeries":
                 return customTooltipWhichDataSourceComeFromOutSideRatherThanSeries();
 
-            case "customSpiderChartStyle":
-                return customSpiderChartStyle();//自定义蜘蛛🕷🕸图样式
-            case "customizeEveryDataLabelSinglelyByDataLabelsFormatter":
-                return customizeEveryDataLabelSinglelyByDataLabelsFormatter();//通过 DataLabels 的 formatter 函数来实现单个数据标签🏷自定义
-            case "customXAxisLabelsBeImages":
-                return customXAxisLabelsBeImages();//自定义 X轴 labels 为一组图片
             case "customTooltipPostionerFunction":
                 return customTooltipPostionerFunction();//自定义浮动提示框 Positioner 函数
             case "fixedTooltipPositionByCustomPositionerFunction":
