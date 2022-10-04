@@ -38,10 +38,6 @@ public class JSFormatterFunctionActivity extends AppCompatActivity {
                 return customLineChartTooltipStyleWhenValueBeZeroDoNotShow();//值为0时,在tooltip中不显示
             case "customBoxplotTooltipContent":
                 return customBoxplotTooltipContent();
-            case "customYAxisLabels":
-                return customYAxisLabels();
-            case "customYAxisLabels2":
-                return customYAxisLabels2();
             case "customStackedAndGroupedColumnChartTooltip":
                 return customStackedAndGroupedColumnChartTooltip();
             case "customDoubleXAxesChart":
@@ -59,8 +55,6 @@ public class JSFormatterFunctionActivity extends AppCompatActivity {
                 return customizeEveryDataLabelSinglelyByDataLabelsFormatter();//通过 DataLabels 的 formatter 函数来实现单个数据标签🏷自定义
             case "customXAxisLabelsBeImages":
                 return customXAxisLabelsBeImages();//自定义 X轴 labels 为一组图片
-            case "customLegendItemClickEvent":
-                return customLegendItemClickEvent();//自定义图例点击事件🖱
             case "customTooltipPostionerFunction":
                 return customTooltipPostionerFunction();//自定义浮动提示框 Positioner 函数
             case "fixedTooltipPositionByCustomPositionerFunction":
@@ -73,8 +67,6 @@ public class JSFormatterFunctionActivity extends AppCompatActivity {
                 return customAreasplineChartTooltipStyleByDivWithCSS();//通过自定义 div 的 css 样式来自定义复杂效果的 tooltip 浮动提示框
             case "makePieChartShow0Data":
                 return makePieChartShow0Data();//使饼图显示为 0 的数据
-            case "customColumnChartXAxisLabelsTextByInterceptTheFirstFourCharacters":
-                return customColumnChartXAxisLabelsTextByInterceptTheFirstFourCharacters();//通过截取前四个字符来自定义 X 轴 labels
             case "setCrosshairAndTooltipToTheDefaultPositionAfterLoadingChart":
                 return setCrosshairAndTooltipToTheDefaultPositionAfterLoadingChart();//图表加载完成后, 在指定位置默认显示 crosshair 和 tooltip
             case "customColumnChartBorderStyleAndStatesHoverColor":
