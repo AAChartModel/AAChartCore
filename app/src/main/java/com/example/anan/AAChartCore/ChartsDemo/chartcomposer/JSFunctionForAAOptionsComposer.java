@@ -203,7 +203,57 @@ public class JSFunctionForAAOptionsComposer {
         return aaOptions;
     }
 
-    private static String javaScriptArrayStringWithJavaArray(Object[] javaArray) {
+    //https://github.com/AAChartModel/AAChartKit-Swift/issues/404
+    public static AAOptions configureColorfulDataLabelsForPieChart() {
+        AAOptions aaOptions = new AAOptions()
+                .chart(new AAChart()
+                        .marginLeft(120)
+                        .marginRight(120))
+                .title(new AATitle()
+                        .text("Colorful DataLabels For Pie Chart"))
+                .colors(new Object[]{
+                        "#0c9674", "#7dffc0", "#ff3333", "#facd32", "#ffffa0",
+                        "#EA007B", "#fe117c", "#ffc069", "#06caf4", "#7dffc0"
+                })
+                .series(new AASeriesElement[]{
+                        new AASeriesElement()
+                                .type(AAChartType.Pie)
+                                .name("语言热度值")
+                                .innerSize("20%")//内部圆环半径大小占比
+                                .borderWidth(0)//描边的宽度
+                                .allowPointSelect(true)//是否允许在点击数据点标记(扇形图点击选中的块发生位移)
+                                .states(new AAStates()
+                                        .hover(new AAHover()
+                                                .enabled(false)))//禁用点击区块之后出现的半透明遮罩层
+                                .dataLabels(new AADataLabels()
+                                        .allowOverlap(true)//允许字符重叠
+                                        .useHTML(true)
+                                        .formatter("function () {\n" +
+                                                "            const point = this.point;\n" +
+                                                "            return '<span style=\"color: ' + point.color + '\">' +\n" +
+                                                "            point.name + ': ' + point.y + '%</span>';\n" +
+                                                "        }"))
+                                .data(new Object[][]{
+                                        {"Firefox", 3336.2},
+                                        {"IE", 26.8},
+                                        {"Chrome", 666.8},
+                                        {"Safari", 88.5},
+                                        {"Opera", 46.0},
+                                        {"Others", 223.0},
+                                        {"Firefox", 3336.2},
+                                        {"IE", 26.8},
+                                        {"Chrome", 666.8},
+                                        {"Safari", 88.5},
+                                        {"Opera", 46.0},
+                                        {"Others", 223.0},
+                                })
+                });
+
+        return aaOptions;
+    }
+
+
+        private static String javaScriptArrayStringWithJavaArray(Object[] javaArray) {
         StringBuilder originalJsArrStr = new StringBuilder();
         for (Object element : javaArray) {
             originalJsArrStr.append("'").append(element.toString()).append("',");
