@@ -10,6 +10,9 @@ import android.widget.Toast;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartType;
 import com.example.anan.AAChartCore.ChartsDemo.AdditionalContent.AdvancedUpdatingFeatureActivity;
 import com.example.anan.AAChartCore.ChartsDemo.AdditionalContent.DoubleChartsLinkedWorkActivity;
+import com.example.anan.AAChartCore.ChartsDemo.AdditionalContent.JSFunctionForAAAxisActivity;
+import com.example.anan.AAChartCore.ChartsDemo.AdditionalContent.JSFunctionForAALegendActivity;
+import com.example.anan.AAChartCore.ChartsDemo.AdditionalContent.JSFunctionForAAOptionsActivity;
 import com.example.anan.AAChartCore.ChartsDemo.AdditionalContent.JSFunctionForAATooltipActivity;
 import com.example.anan.AAChartCore.ChartsDemo.AdditionalContent.DrawChartWithAAOptionsActivity;
 import com.example.anan.AAChartCore.ChartsDemo.AdditionalContent.EvaluateJSStringFunctionActivity;
@@ -218,7 +221,27 @@ public class MainActivity extends AppCompatActivity {
                     "Line Chart---折线图",
                     "Spline Chart---曲线图",},
 
-            /*通过 JSFunction 自定义 AAChartEvents 的事件*/
+            /*JS Function For AAAXis Labels*/
+            {
+                    "customYAxisLabels---自定义Y轴文字",
+                    "customYAxisLabels2---自定义Y轴文字2",
+                    "customAreaChartXAxisLabelsTextUnitSuffix1---自定义X轴文字单位后缀(通过 formatter 函数)",
+                    "customAreaChartXAxisLabelsTextUnitSuffix2---自定义X轴文字单位后缀(不通过 formatter 函数)",
+                    "configureTheAxesLabelsFormattersOfDoubleYAxesChart---配置双 Y 轴图表的 Y 轴文字标签的 Formatter 函数 示例 1",
+                    "configureTheAxesLabelsFormattersOfDoubleYAxesChart2---配置双 Y 轴图表的 Y 轴文字标签的 Formatter 函数 示例 2",
+                    "configureTheAxesLabelsFormattersOfDoubleYAxesChart3---配置双 Y 轴图表的 Y 轴文字标签的 Formatter 函数 示例 3",
+                    "customColumnChartXAxisLabelsTextByInterceptTheFirstFourCharacters---通过截取前四个字符来自定义 X 轴 labels",
+                    "customSpiderChartStyle---自定义蜘蛛🕷🕸图样式",
+                    "customizeEveryDataLabelSinglelyByDataLabelsFormatter---通过 DataLabels 的 formatter 函数来实现单个数据标签🏷自定义",
+                    "customXAxisLabelsBeImages---自定义 X轴 labels 为一组图片",
+            },
+            /*JS Function For AALegend*/
+            {
+                    "disableLegendClickEventForNormalChart---禁用常规图表 legend 点击事件",
+                    "disableLegendClickEventForPieChart---禁用饼图 legend 点击事件",
+                    "customLegendItemClickEvent---自定义图例 legend 的点击事件",
+            },
+            /*JS Function For AAChartEvents*/
             {
                     "setCrosshairAndTooltipToTheDefaultPositionAfterLoadingChart---图表加载完成后设置 crosshair 和 tooltip 到默认位置",
                     "generalDrawingChart---普通绘图",
@@ -229,7 +252,14 @@ public class MainActivity extends AppCompatActivity {
                     "automaticallyHideTooltipAfterItIsShown---在浮动提示框显示后自动隐藏",
                     "dynamicHeightGridLineAreaChart---动态高度的网格线区域填充图",
                     "customizeYAxisPlotLinesLabelBeSpecialStyle---自定义 Y 轴轴线上面的标签文字特殊样式",
-            }
+            },
+            /*JS Function For AAOptions*/
+            {
+                    "customDoubleXAxesChart---自定义双 X 轴图表",
+                    "disableColumnChartUnselectEventEffectBySeriesPointEventClickFunction---通过 Series 的 Point 的选中事件函数来禁用条形图反选效果",
+                    "customizeEveryDataLabelSinglelyByDataLabelsFormatter---通过 formatter 来自定义单个 dataLabels 元素",
+                    "configureColorfulDataLabelsForPieChart---为饼图配置多彩 dataLabels"
+            },
     };
 
     String[][] chartTypeArr = {
@@ -429,7 +459,29 @@ public class MainActivity extends AppCompatActivity {
             },
 
             {
-                    /*通过 JSFunction 自定义 AAChartEvents 的事件*/
+                    /*JS Function For AAAXis Labels*/
+                    "customYAxisLabels",
+                    "customYAxisLabels2",
+                    "customAreaChartXAxisLabelsTextUnitSuffix1",
+                    "customAreaChartXAxisLabelsTextUnitSuffix2",
+                    "configureTheAxesLabelsFormattersOfDoubleYAxesChart",
+                    "configureTheAxesLabelsFormattersOfDoubleYAxesChart2",
+                    "configureTheAxesLabelsFormattersOfDoubleYAxesChart3",
+                    "customColumnChartXAxisLabelsTextByInterceptTheFirstFourCharacters",
+                    "customSpiderChartStyle",
+                    "customizeEveryDataLabelSinglelyByDataLabelsFormatter",
+                    "customXAxisLabelsBeImages",
+            },
+
+            {
+                    /*JS Function For AALegend*/
+                    "disableLegendClickEventForNormalChart",
+                    "disableLegendClickEventForPieChart",
+                    "customLegendItemClickEvent",
+            },
+
+            {
+                    /*JS Function For AAChartEvents*/
                     "setCrosshairAndTooltipToTheDefaultPositionAfterLoadingChart",
                     "generalDrawingChart",
                     "advancedTimeLineChart",
@@ -439,9 +491,15 @@ public class MainActivity extends AppCompatActivity {
                     "automaticallyHideTooltipAfterItIsShown",
                     "dynamicHeightGridLineAreaChart",
                     "customizeYAxisPlotLinesLabelBeSpecialStyle",
-
             },
 
+            {
+                    /*JS Function For AAOptions*/
+                    "customDoubleXAxesChart",
+                    "disableColumnChartUnselectEventEffectBySeriesPointEventClickFunction",
+                    "customizeEveryDataLabelSinglelyByDataLabelsFormatter",
+                    "configureColorfulDataLabelsForPieChart"
+            },
 
     };
 
@@ -468,7 +526,10 @@ public class MainActivity extends AppCompatActivity {
                 "Evaluate JS String Function | 执行js函数",
                 "Double Charts Linked Work | 双表联动",
                 "Scrollable chart | 可滚动的图表",
+                "JS Function For AAAxis Labels | 通过带有 JS 函数的自定义 AAAxis 的文字标签",
+                "JS Function For AALegend | 通过带有 JS 函数的自定义 AALegend",
                 "JS Function For AAChartEvents---通过 JSFunction 自定义 AAChartEvents 的事件",
+                "JS Function For AAOptions---通过 JSFunction 自定义 AAOptions 内容",
         };
 
         ExpandableListView listView = (ExpandableListView) findViewById(R.id.exlist_lol);
@@ -514,9 +575,19 @@ public class MainActivity extends AppCompatActivity {
                     case 10: /*Scrollable Chart---可滚动图表*/
                         gotoScrollableChartActivity(chartType,childPosition);
                         break;
-                    case 11: /*JS Function For AAChartEvents---通过 JSFunction 自定义 AAChartEvents 的事件*/
+                    case 11: /*JJS Function For AAAxis Labels | 通过带有 JS 函数的自定义 AAAxis 的文字标签*/
+                        gotoJSFunctionForAAAxisActivity(chartType,childPosition);
+                        break;
+                    case 12: /*JS Function For AALegend | 通过带有 JS 函数的自定义 AALegend*/
+                        gotoJSFunctionForAALegendActivity(chartType,childPosition);
+                        break;
+                    case 13: /*JS Function For AAChartEvents---通过 JSFunction 自定义 AAChartEvents 的事件*/
                         gotoJSFunctionForAAChartEventsActivity(chartType,childPosition);
                         break;
+                    case 14: /*JS Function For AAOptions---通过 JSFunction 自定义 AAOptions 内容*/
+                        gotoJSFunctionForAAOptionsActivity(chartType,childPosition);
+                        break;
+
                 }
 
                 Toast.makeText(MainActivity.this, "你点击了：" + chartTypeNameArr[groupPosition][childPosition], Toast.LENGTH_SHORT).show();
@@ -601,8 +672,29 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    void gotoJSFunctionForAAAxisActivity(String chartType, int position) {
+        Intent intent = new Intent(this, JSFunctionForAAAxisActivity.class);
+        intent.putExtra(kChartTypeKey, chartType);
+        intent.putExtra("position",position);
+        startActivity(intent);
+    }
+
+    void gotoJSFunctionForAALegendActivity(String chartType, int position) {
+        Intent intent = new Intent(this, JSFunctionForAALegendActivity.class);
+        intent.putExtra(kChartTypeKey, chartType);
+        intent.putExtra("position",position);
+        startActivity(intent);
+    }
+
     void gotoJSFunctionForAAChartEventsActivity(String chartType, int position) {
         Intent intent = new Intent(this, JSFunctionForAAChartEventsActivity.class);
+        intent.putExtra(kChartTypeKey, chartType);
+        intent.putExtra("position",position);
+        startActivity(intent);
+    }
+
+    void gotoJSFunctionForAAOptionsActivity(String chartType, int position) {
+        Intent intent = new Intent(this, JSFunctionForAAOptionsActivity.class);
         intent.putExtra(kChartTypeKey, chartType);
         intent.putExtra("position",position);
         startActivity(intent);
