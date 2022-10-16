@@ -56,9 +56,7 @@ public class AADataLabels {
     }
 
     public AADataLabels formatter(String prop) {
-        String pureJSFunctionStr = "(" + prop + ")";
-        pureJSFunctionStr = AAJSStringPurer.pureJavaScriptFunctionString(pureJSFunctionStr);
-        formatter = pureJSFunctionStr;
+        formatter = AAJSStringPurer.pureAnonymousJSFunctionString(prop);
         return this;
     }
 

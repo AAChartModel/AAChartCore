@@ -13,42 +13,42 @@ public class AAPointEvents {
     public String legendItemClick; //图例点击事件
 
     public AAPointEvents click(String prop) {
-        click = AAJSStringPurer.pureJavaScriptAnonymousFunctionString(prop);
+        click = AAJSStringPurer.pureAnonymousJSFunctionString(prop);
         return this;
     }
 
     public AAPointEvents mouseOut(String prop) {
-        mouseOut = AAJSStringPurer.pureJavaScriptAnonymousFunctionString(prop);
+        mouseOut = AAJSStringPurer.pureAnonymousJSFunctionString(prop);
         return this;
     }
 
     public AAPointEvents mouseOver(String prop) {
-        mouseOver = AAJSStringPurer.pureJavaScriptAnonymousFunctionString(prop);
+        mouseOver = AAJSStringPurer.pureAnonymousJSFunctionString(prop);
         return this;
     }
 
     public AAPointEvents remove(String prop) {
-        remove = AAJSStringPurer.pureJavaScriptAnonymousFunctionString(prop);
+        remove = AAJSStringPurer.pureAnonymousJSFunctionString(prop);
         return this;
     }
 
     public AAPointEvents select(String prop) {
-        select = AAJSStringPurer.pureJavaScriptAnonymousFunctionString(prop);
+        select = AAJSStringPurer.pureAnonymousJSFunctionString(prop);
         return this;
     }
 
     public AAPointEvents unselect(String prop) {
-        unselect = AAJSStringPurer.pureJavaScriptAnonymousFunctionString(prop);
+        unselect = AAJSStringPurer.pureAnonymousJSFunctionString(prop);
         return this;
     }
 
     public AAPointEvents update(String prop) {
-        update = AAJSStringPurer.pureJavaScriptAnonymousFunctionString(prop);
+        update = AAJSStringPurer.pureAnonymousJSFunctionString(prop);
         return this;
     }
 
     public AAPointEvents legendItemClick(String prop) {
-        legendItemClick = AAJSStringPurer.pureJavaScriptAnonymousFunctionString(prop);
+        legendItemClick = AAJSStringPurer.pureAnonymousJSFunctionString(prop);
         return this;
     }
 

@@ -17,7 +17,7 @@ public class AAJSStringPurer {
         return pureJSStr;
     }
 
-    public static String pureJavaScriptAnonymousFunctionString(String JSStr)  {
+    public static String pureAnonymousJSFunctionString(String JSStr)  {
         String pureJSStr = "(" + JSStr + ")";
         pureJSStr = pureJavaScriptFunctionString(pureJSStr);
         return pureJSStr;
