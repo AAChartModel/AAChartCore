@@ -17,9 +17,9 @@ public class JSFunctionForAALegendActivity extends AppCompatActivity {
 
     AAOptions chartConfigurationWithSelectedIndex(String chartType) {
         switch (chartType) {
-            case "0": return disableLegendClickEventForNormalChart();//禁用普通图表的图例点击事件
-            case "1": return disableLegendClickEventForPieChart();//禁用饼图图表的图例点击事件
-            case "2": return customLegendItemClickEvent();//自定义图例点击事件
+            case "disableLegendClickEventForNormalChart": return disableLegendClickEventForNormalChart();//禁用普通图表的图例点击事件
+            case "disableLegendClickEventForPieChart": return disableLegendClickEventForPieChart();//禁用饼图图表的图例点击事件
+            case "customLegendItemClickEvent": return customLegendItemClickEvent();//自定义图例点击事件
             default:
                 return disableLegendClickEventForNormalChart();
         }
