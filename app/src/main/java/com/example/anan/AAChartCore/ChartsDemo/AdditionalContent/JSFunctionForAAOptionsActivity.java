@@ -15,6 +15,7 @@ public class JSFunctionForAAOptionsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_custom_tooltip_with_jsfunction);
         Intent intent = getIntent();
         String chartType = intent.getStringExtra("chartType");
 
