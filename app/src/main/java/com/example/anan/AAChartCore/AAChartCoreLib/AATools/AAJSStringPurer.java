@@ -17,6 +17,7 @@ public class AAJSStringPurer {
         return pureJSStr;
     }
 
+    //https://stackoverflow.com/questions/34334232/why-does-function-not-work-but-function-does-chrome-devtools-node
     public static String pureAnonymousJSFunctionString(String JSStr)  {
         String pureJSStr = "(" + JSStr + ")";
         pureJSStr = pureJavaScriptFunctionString(pureJSStr);
