@@ -23,7 +23,6 @@ public class JSFunctionForAATooltipActivity extends AppCompatActivity {
 
         AAChartView aaChartView = findViewById(R.id.AAChartView);
         aaChartView.aa_drawChartWithChartOptions(aaOptions);
-
     }
 
     AAOptions configureTheChartOptions(String chartType) {

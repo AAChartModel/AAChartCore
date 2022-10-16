@@ -2,16 +2,26 @@ package com.example.anan.AAChartCore.ChartsDemo.AdditionalContent;
 
 import static com.example.anan.AAChartCore.ChartsDemo.chartcomposer.JSFunctionForAAOptionsComposer.*;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.example.anan.AAChartCore.AAChartCoreLib.AAChartCreator.AAChartView;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAOptions;
+import com.example.anan.AAChartCore.R;
 
 public class JSFunctionForAAOptionsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Intent intent = getIntent();
+        String chartType = intent.getStringExtra("chartType");
+
+        AAOptions aaOptions = chartConfigurationWithSelectedIndex(chartType);
+
+        AAChartView aaChartView = findViewById(R.id.AAChartView);
+        aaChartView.aa_drawChartWithChartOptions(aaOptions);
     }
 
 
