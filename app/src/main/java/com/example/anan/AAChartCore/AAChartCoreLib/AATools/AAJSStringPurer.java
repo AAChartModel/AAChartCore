@@ -16,4 +16,10 @@ public class AAJSStringPurer {
         pureJSStr = pureJSStr.replace("\u2029","\\u2029" );
         return pureJSStr;
     }
+
+    public static String pureJavaScriptAnonymousFunctionString(String JSStr)  {
+        String pureJSStr = "(" + JSStr + ")";
+        pureJSStr = pureJavaScriptFunctionString(pureJSStr);
+        return pureJSStr;
+    }
 }
