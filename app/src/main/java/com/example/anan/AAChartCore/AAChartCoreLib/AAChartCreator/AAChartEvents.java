@@ -8,16 +8,12 @@ public class AAChartEvents {
 
 
     public AAChartEvents load(String prop) {
-        String pureJSFunctionStr = "(" + prop + ")";
-        pureJSFunctionStr = AAJSStringPurer.pureJavaScriptFunctionString(pureJSFunctionStr);
-        load = pureJSFunctionStr;
+        load = AAJSStringPurer.pureAnonymousJSFunctionString(prop);
         return this;
     }
 
     public AAChartEvents selection(String prop) {
-        String pureJSFunctionStr = "(" + prop + ")";
-        pureJSFunctionStr = AAJSStringPurer.pureJavaScriptFunctionString(pureJSFunctionStr);
-        selection = pureJSFunctionStr;
+        selection = AAJSStringPurer.pureAnonymousJSFunctionString(prop);
         return this;
     }
 }
