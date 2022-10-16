@@ -206,9 +206,6 @@ public class JSFunctionForAAOptionsComposer {
     //https://github.com/AAChartModel/AAChartKit-Swift/issues/404
     public static AAOptions configureColorfulDataLabelsForPieChart() {
         AAOptions aaOptions = new AAOptions()
-                .chart(new AAChart()
-                        .marginLeft(120)
-                        .marginRight(120))
                 .title(new AATitle()
                         .text("Colorful DataLabels For Pie Chart"))
                 .colors(new Object[]{
@@ -229,10 +226,10 @@ public class JSFunctionForAAOptionsComposer {
                                         .allowOverlap(true)//允许字符重叠
                                         .useHTML(true)
                                         .formatter("function () {\n" +
-                                                "            const point = this.point;\n" +
-                                                "            return '<span style=\"color: ' + point.color + '\">' +\n" +
-                                                "            point.name + ': ' + point.y + '%</span>';\n" +
-                                                "        }"))
+                                                "       const point = this.point;\n" +
+                                                "       return '<span style=\\\"color: ' + point.color + '\\\">' +\n" +
+                                                "           point.name + ': ' + point.y + '%</span>';\n" +
+                                                "   }"))
                                 .data(new Object[][]{
                                         {"Firefox", 3336.2},
                                         {"IE", 26.8},
