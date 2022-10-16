@@ -1,5 +1,7 @@
 package com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel;
 
+import com.example.anan.AAChartCore.AAChartCoreLib.AATools.AAJSStringPurer;
+
 public class AAPointEvents {
     public String click; //点击事件
     public String mouseOut; //鼠标划出
@@ -11,7 +13,9 @@ public class AAPointEvents {
     public String legendItemClick; //图例点击事件
 
     public AAPointEvents click(String prop) {
-        click = prop;
+        String pureJSFunctionStr = "(" + prop + ")";
+        pureJSFunctionStr = AAJSStringPurer.pureJavaScriptFunctionString(pureJSFunctionStr);
+        click = pureJSFunctionStr;
         return this;
     }
 
