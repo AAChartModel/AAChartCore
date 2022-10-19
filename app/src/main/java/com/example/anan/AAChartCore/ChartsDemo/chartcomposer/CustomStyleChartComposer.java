@@ -1382,7 +1382,7 @@ public class CustomStyleChartComposer {
                 .legendEnabled(false)
                 .series(new AASeriesElement[]{
                         new AASeriesElement()
-                                .name("<animate attributeName=\"r\" calcMode=\"spline\" values=\"0;'+5+'\" keyTimes=\"0;1\" dur=\"1\" keySplines=\"0 0.2 0.8 1\" begin=\"-0.5s\" repeatCount=\"indefinite\"></animate>")
+                                .name("Tokyo Hot")
                                 .lineWidth(5.0)
                                 .marker(new AAMarker()
                                         .states(new AAMarkerStates()
@@ -1666,4 +1666,109 @@ public class CustomStyleChartComposer {
                 });
     }
 
-}
+    //https://github.com/AAChartModel/AAChartKit-Swift/issues/389
+    public static AAChartModel configureMultiLevelStopsArrGradientColorAreasplineMixedLineChart() {
+        ArrayList<Object> randomNumArrA = new ArrayList<>();
+        ArrayList<Object> randomNumArrB = new ArrayList<>();
+        double y1;
+        double y2;
+        int Q = (int) (Math.random() * 50);
+        int range = 129;
+        for (int x = 0; x < range; x++) {
+            y1 = Math.sin(Q * (x * Math.PI / 180)) + x * 2.0 * 0.01;
+            y2 = Math.cos(Q * (x * Math.PI / 180)) + x * 3.0 * 0.01;
+            randomNumArrA.add(y1);
+            randomNumArrB.add(y2);
+        }
+
+        Object[][] redStopsArr = new Object[][]{
+                {0.0, AARgba(255, 0, 0, 1.0f)},//颜色字符串设置支持十六进制类型和 rgba 类型
+                {0.2, AARgba(255, 0, 0, 0.2f)},
+                {0.4, AARgba(255, 0, 0, 0.1f)},
+                {0.6, AARgba(255, 0, 0, 0.05f)},
+                {0.8, AARgba(255, 0, 0, 0.01f)},
+                {1.0, AAColor.Clear}
+        };
+
+        Map<String, Object> gradientRedColorDic = AAGradientColor.linearGradient(
+                AALinearGradientDirection.ToBottom,
+                redStopsArr
+        );
+
+        return new AAChartModel()
+                .chartType(AAChartType.Areaspline)
+                .stacking(AAChartStackingType.Normal)
+                .backgroundColor(AAColor.Black)
+                .colorsTheme(new String[]{"#1e90ff", "#04d69f", "#ef476f", "#ffd066",})
+                .dataLabelsEnabled(false)
+                .markerSymbol(AAChartSymbolType.Circle)
+                .markerRadius(5)
+                .markerSymbolStyle(AAChartSymbolStyleType.InnerBlank)
+                .yAxisGridLineWidth(0.5f)
+                .xAxisGridLineWidth(0.5f)
+                .series(new AASeriesElement[]{
+                        new AASeriesElement()
+                                .name("2017")
+                                .type(AAChartType.Spline)
+                                .lineWidth(6f)
+                                .data(randomNumArrA.toArray()),
+                        new AASeriesElement()
+                                .name("2018")
+                                .type(AAChartType.Spline)
+                                .lineWidth(6f)
+                                .data(randomNumArrB.toArray()),
+                        new AASeriesElement()
+                                .name("2020")
+                                .fillColor(gradientRedColorDic)
+                                .lineWidth(6f)
+                                .threshold(-4f)
+                                .data(randomNumArrA.toArray()),
+                });
+    }
+
+    //https://github.com/AAChartModel/AAChartKit/issues/1401
+    public static AAChartModel connectNullsForSingleAASeriesElement() {
+        Object[] dataArr = new Object[]{
+                0.45, null, null,
+                0.55, 0.58, 0.62, null, null,
+                0.56, 0.67, 0.50, 0.34, 0.50, null, null, null, null,
+                0.23, 0.47, 0.46, 0.38, 0.56, 0.48, 0.36, null, null, null, null, null, null, null, null,
+                0.74, 0.66, 0.65, 0.71, 0.59, 0.65, 0.77, 0.52, 0.53, 0.58, 0.53,
+        };
+
+        return new AAChartModel()
+                .chartType(AAChartType.Spline)
+                .subtitle("虚拟数据")
+                .colorsTheme(new String[]{"#1e90ff", "#ef476f", "#ffd066", "#04d69f"})
+                .yAxisTitle("摄氏度")
+                .dataLabelsEnabled(false)
+                .yAxisGridLineWidth(0f)
+                .stacking(AAChartStackingType.Normal)
+                .markerRadius(8f)
+                .markerSymbolStyle(AAChartSymbolStyleType.BorderBlank)
+                .series(new AASeriesElement[]{
+                        new AASeriesElement()
+                                .name("Do NOT Connect Nulls")
+                                .lineWidth(5f)
+                                .connectNulls(false)
+                                .data(dataArr),
+                        new AASeriesElement()
+                                .name("Connect Nulls")
+                                .lineWidth(5f)
+                                .connectNulls(true)
+                                .data(dataArr),
+                        new AASeriesElement()
+                                .name("Do NOT Connect Nulls")
+                                .lineWidth(5f)
+                                .connectNulls(false)
+                                .data(dataArr),
+                        new AASeriesElement()
+                                .name("Connect Nulls")
+                                .lineWidth(5f)
+                                .connectNulls(true)
+                                .data(dataArr)
+                });
+    }
+
+
+    }
