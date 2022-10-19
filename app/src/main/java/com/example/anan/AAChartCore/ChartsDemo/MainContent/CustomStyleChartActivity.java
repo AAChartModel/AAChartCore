@@ -119,6 +119,10 @@ public class CustomStyleChartActivity extends AppCompatActivity {
                 return drawLineChartWithPointsCoordinates();
             case "configureSpecialStyleColumnForNegativeDataMixedPositiveData":
                 return configureSpecialStyleColumnForNegativeDataMixedPositiveData();
+            case "configureMultiLevelStopsArrGradientColorAreasplineMixedLineChart":
+                return configureMultiLevelStopsArrGradientColorAreasplineMixedLineChart();
+            case "connectNullsForSingleAASeriesElement":
+                return connectNullsForSingleAASeriesElement();
 
         }
         return configureColorfulChart();
