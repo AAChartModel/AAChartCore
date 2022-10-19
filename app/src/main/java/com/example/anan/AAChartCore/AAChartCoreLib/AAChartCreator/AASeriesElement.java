@@ -81,6 +81,7 @@ public class AASeriesElement {
     private Boolean enableMouseTracking;
     private Boolean reversed;
     private String id;
+    private Boolean connectNulls;
 
     public AASeriesElement type(String prop) {
         type = prop;
@@ -264,6 +265,11 @@ public class AASeriesElement {
 
     public AASeriesElement id(String prop) {
         id = prop;
+        return this;
+    }
+
+    public AASeriesElement connectNulls(Boolean prop) {
+        connectNulls = prop;
         return this;
     }
 
