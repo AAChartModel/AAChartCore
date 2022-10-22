@@ -1,6 +1,6 @@
 package com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel;
 
-public class AABackground {
+public class AABackgroundElement {
     public Object backgroundColor;
     public String borderColor;
     public Number borderWidth;
@@ -9,36 +9,36 @@ public class AABackground {
     public Number outerRadius;
     public String shape;
 
-    public AABackground backgroundColor(Object prop) {
+    public AABackgroundElement backgroundColor(Object prop) {
         backgroundColor = prop;
         return this;
     }
-    public AABackground borderColor(String prop) {
+    public AABackgroundElement borderColor(String prop) {
         borderColor = prop;
         return this;
     }
 
-    public AABackground borderWidth(Number prop) {
+    public AABackgroundElement borderWidth(Number prop) {
         borderWidth = prop;
         return this;
     }
 
-    public AABackground className(String prop) {
+    public AABackgroundElement className(String prop) {
         className = prop;
         return this;
     }
 
-    public AABackground innerRadius(Number prop) {
+    public AABackgroundElement innerRadius(Number prop) {
         innerRadius = prop;
         return this;
     }
 
-    public AABackground outerRadius(Number prop) {
+    public AABackgroundElement outerRadius(Number prop) {
         outerRadius = prop;
         return this;
     }
 
-    public AABackground shape(String prop) {
+    public AABackgroundElement shape(String prop) {
         shape = prop;
         return this;
     }
