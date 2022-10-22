@@ -81,6 +81,16 @@ public class AAXAxis extends AAAxis {
         return this;
     }
 
+    public AAXAxis maxPadding(Number prop) {
+        maxPadding = prop;
+        return this;
+    }
+
+    public AAXAxis minPadding(Number prop) {
+        minPadding = prop;
+        return this;
+    }
+
     public AAXAxis minRange(Integer prop) {
         minRange = prop;
         return this;
@@ -151,8 +161,8 @@ public class AAXAxis extends AAAxis {
         return this;
     }
 
-    public AAXAxis off(Number prop) {
-        off = prop;
+    public AAXAxis offset(Number prop) {
+        offset = prop;
         return this;
     }
 
@@ -213,6 +223,11 @@ public class AAXAxis extends AAAxis {
 
     public AAXAxis tickPositions(Object[] prop) {
         tickPositions = prop;
+        return this;
+    }
+
+    public AAXAxis left(Object prop) {
+        left = prop;
         return this;
     }
 }

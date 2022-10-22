@@ -17,6 +17,8 @@ public class AAAxis {
     public String lineColor; //坐标轴轴线线颜色
     public Number max; //坐标轴最大值
     public Number min;//坐标轴最小值（设置为0就不会有负数）
+    public Number maxPadding;
+    public Number minPadding;
     public Integer minRange;
     public Integer minTickInterval; //The minimum tick interval allowed in axis values. For example on zooming in on an axis with daily data, this can be used to prevent the axis from showing hours. Defaults to the closest distance between two points on the axis.
     public String minorGridLineColor; //Color of the minor, secondary grid lines.
@@ -34,7 +36,7 @@ public class AAAxis {
     public String gridLineColor; //坐标轴网格线颜色
     public String gridLineDashStyle; //坐标轴网格线样式
     public String gridLineInterpolation;
-    public Number off;//坐标轴垂直偏移
+    public Number offset;//坐标轴垂直偏移
     public AALabels labels; //用于设置坐标轴文字相关的
     public Boolean visible; //用于设置坐标轴以及坐标轴文字是否显示
     public Boolean startOnTick; // Whether to force the axis to start on a tick. Use this option with the minPadding option to control the axis start. The default is false.
@@ -47,5 +49,6 @@ public class AAAxis {
     public Number tickLength;//坐标轴刻度线的长度。 默认是：10.
     public String tickPosition; //刻度线相对于轴线的位置，可用的值有 inside 和 outside，分别表示在轴线的内部和外部。 默认是：outside.
     public Object[] tickPositions; // Custom chart axis coordinates
+    public Object left;
 
 }

@@ -2,10 +2,23 @@ package com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel;
 
 public class AAYAxis extends AAAxis {
     public Object stackLabels;
+    public String tooltipValueFormat; ////Parallel coordinates only. https://api.highcharts.com.cn/highcharts/yAxis.tooltipValueFormat.html
+    public Object width;
     public AAYAxis stackLabels(String prop) {
         stackLabels = prop;
         return this;
     }
+
+    public AAYAxis tooltipValueFormat(String prop) {
+        tooltipValueFormat = prop;
+        return this;
+    }
+
+    public AAYAxis width(Object prop) {
+        width = prop;
+        return this;
+    }
+
     ///////////////////////////////////////////
 
     public AAYAxis allowDecimals(Boolean prop) {
@@ -88,6 +101,16 @@ public class AAYAxis extends AAAxis {
         return this;
     }
 
+    public AAYAxis maxPadding(Number prop) {
+        maxPadding = prop;
+        return this;
+    }
+
+    public AAYAxis minPadding(Number prop) {
+        minPadding = prop;
+        return this;
+    }
+
     public AAYAxis minRange(Integer prop) {
         minRange = prop;
         return this;
@@ -158,8 +181,8 @@ public class AAYAxis extends AAAxis {
         return this;
     }
 
-    public AAYAxis off(Number prop) {
-        off = prop;
+    public AAYAxis offset(Number prop) {
+        offset = prop;
         return this;
     }
 
@@ -220,6 +243,11 @@ public class AAYAxis extends AAAxis {
 
     public AAYAxis tickPositions(Object[] prop) {
         tickPositions = prop;
+        return this;
+    }
+
+    public AAYAxis left(Object prop) {
+        left = prop;
         return this;
     }
 
