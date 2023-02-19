@@ -255,6 +255,7 @@ public class MainActivity extends AppCompatActivity {
                     "automaticallyHideTooltipAfterItIsShown---在浮动提示框显示后自动隐藏",
                     "dynamicHeightGridLineAreaChart---动态高度的网格线区域填充图",
                     "customizeYAxisPlotLinesLabelBeSpecialStyle---自定义 Y 轴轴线上面的标签文字特殊样式",
+                    "configureECGStyleChart---配置心电图样式的图表",
             },
             /*JS Function For AAOptions*/
             {
@@ -497,6 +498,7 @@ public class MainActivity extends AppCompatActivity {
                     "automaticallyHideTooltipAfterItIsShown",
                     "dynamicHeightGridLineAreaChart",
                     "customizeYAxisPlotLinesLabelBeSpecialStyle",
+                    "configureECGStyleChart",
             },
 
             {
