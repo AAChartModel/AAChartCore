@@ -495,6 +495,9 @@ public class ChartOptionsComposer {
                                 .data(new Object[]{7.0, 6.9, 2.5, 14.5, 18.2, 21.5, 5.2, 26.5, 23.3, 45.3, 13.9, 9.6}),
                 });
         AAOptions aaOptions = aaChartModel.aa_toAAOptions();
+
+        aaOptions.plotOptions.series.minPointLength(5);
+
         aaOptions.plotOptions.series
                 .dataLabels(new AADataLabels()
                         .enabled(true)
@@ -2133,7 +2136,6 @@ public class ChartOptionsComposer {
                 .lineColor(AAColor.Black)
                 .min(10)
                 .max(50)
-                .tickInterval(5);
 
         aaOptions.legend
                 .itemMarginTop(10)
