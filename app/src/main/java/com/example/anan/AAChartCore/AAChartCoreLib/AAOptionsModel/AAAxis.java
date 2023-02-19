@@ -21,6 +21,7 @@ public class AAAxis {
     public Number minPadding;
     public Integer minRange;
     public Integer minTickInterval; //The minimum tick interval allowed in axis values. For example on zooming in on an axis with daily data, this can be used to prevent the axis from showing hours. Defaults to the closest distance between two points on the axis.
+    public Boolean minorTicks; //是否显示次刻度线
     public String minorGridLineColor; //Color of the minor, secondary grid lines.
     public String minorGridLineDashStyle; //The dash or dot style of the minor grid lines.
     public Number minorGridLineWidth; //Width of the minor, secondary grid lines.
@@ -43,7 +44,7 @@ public class AAAxis {
     public Boolean endOnTick; // Whether to force the axis to end on a tick. Use this option with the minPadding option to control the axis end. The default is false.
     public String tickColor; //坐标轴轴线下方刻度线颜色
     public Integer tickAmount;
-    public Integer tickInterval;//坐标轴刻度点间隔数(设置每隔几个点显示一个 坐标轴的内容:
+    public Number tickInterval;//坐标轴刻度点间隔数(设置每隔几个点显示一个 坐标轴的内容:
     public String tickmarkPlacement; //本参数只对分类轴有效。 当值为 on 时刻度线将在分类上方显示；当值为 between 时，刻度线将在两个分类中间显示。当 tickInterval 为 1 时，默认是 between，其他情况默认是 on。 默认是：null.
     public Number tickWidth;//坐标轴刻度线的宽度，设置为 0 时则不显示刻度线
     public Number tickLength;//坐标轴刻度线的长度。 默认是：10.
