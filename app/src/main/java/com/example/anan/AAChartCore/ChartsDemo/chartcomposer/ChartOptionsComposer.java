@@ -2135,7 +2135,7 @@ public class ChartOptionsComposer {
                 .lineWidth(1)
                 .lineColor(AAColor.Black)
                 .min(10)
-                .max(50)
+                .max(50);
 
         aaOptions.legend
                 .itemMarginTop(10)
