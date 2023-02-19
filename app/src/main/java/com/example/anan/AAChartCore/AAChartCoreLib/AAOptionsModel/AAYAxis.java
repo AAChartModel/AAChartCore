@@ -121,6 +121,11 @@ public class AAYAxis extends AAAxis {
         return this;
     }
 
+    public AAYAxis minorTicks(Boolean prop) {
+        minorTicks = prop;
+        return this;
+    }
+
     public AAYAxis minorGridLineColor(String prop) {
         minorGridLineColor = prop;
         return this;
@@ -216,7 +221,7 @@ public class AAYAxis extends AAAxis {
         return this;
     }
 
-    public AAYAxis tickInterval(Integer prop) {
+    public AAYAxis tickInterval(Number prop) {
         tickInterval = prop;
         return this;
     }
