@@ -1771,4 +1771,111 @@ public class CustomStyleChartComposer {
     }
 
 
+//- (NSArray *)generateRandomNumberArrayWithLength:(NSUInteger)length
+//    randomRange:(NSUInteger)randomRange
+//    minNum:(NSUInteger)minNum {
+//        NSMutableArray *randomNumArrA = [NSMutableArray array];
+//        for (NSUInteger x = 0; x < length; x++) {
+//            NSUInteger randomNum = arc4random() % randomRange + minNum;
+//        [randomNumArrA addObject:@(randomNum)];
+//        }
+//        return randomNumArrA;
+//    }
+
+public static ArrayList<Object> generateRandomNumberArrayWithLength(int length, int randomRange, int minNum) {
+        ArrayList<Object> randomNumArrA = new ArrayList<>();
+        for (int x = 0; x < length; x++) {
+            int randomNum = (int) (Math.random() * randomRange + minNum);
+            randomNumArrA.add(randomNum);
+        }
+        return randomNumArrA;
+    }
+
+
+//    - (NSArray *)generateRandomNumberMixedNullArrayWithLength:(NSUInteger)length
+//    randomRange:(NSUInteger)randomRange
+//    minNum:(NSUInteger)minNum {
+//        NSMutableArray *randomNumArrA = [NSMutableArray array];
+//        for (NSUInteger x = 0; x < length; x++) {
+//            if ((100 < x && x < 150) || (300 < x && x < 350)) {
+//                NSUInteger randomNum = arc4random() % randomRange + minNum;
+//            [randomNumArrA addObject:@(randomNum)];
+//            } else {
+//            [randomNumArrA addObject:NSNull.null];
+//            }
+//        }
+//        return randomNumArrA;
+//    }
+
+    public static ArrayList<Object> generateRandomNumberMixedNullArrayWithLength(int length, int randomRange, int minNum) {
+        ArrayList<Object> randomNumArrA = new ArrayList<>();
+        for (int x = 0; x < length; x++) {
+            if ((100 < x && x < 150) || (300 < x && x < 350)) {
+                int randomNum = (int) (Math.random() * randomRange + minNum);
+                randomNumArrA.add(randomNum);
+            } else {
+                randomNumArrA.add(null);
+            }
+        }
+        return randomNumArrA;
+    }
+
+
+////https://github.com/AAChartModel/AAChartKit/issues/1419
+//- (AAChartModel *)lineChartsWithLargeDifferencesInTheNumberOfDataInDifferentSeriesElement {
+//    return AAChartModel.new
+//        .chartTypeSet(AAChartTypeLine)
+//        .backgroundColorSet(AAColor.blackColor)
+//        .colorsThemeSet(@[@"#1e90ff",@"#04d69f",@"#ef476f",@"#ffd066",])
+//        .dataLabelsEnabledSet(false)
+//        .markerRadiusSet(@0)
+//        .seriesSet(@[
+//            AASeriesElement.new
+//                .nameSet(@"2017")
+//                .lineWidthSet(@6)
+//                .dataSet([self generateRandomNumberMixedNullArrayWithLength:3550 randomRange:5 minNum:100]),
+//            AASeriesElement.new
+//                .nameSet(@"2018")
+//                .lineWidthSet(@6)
+//                .dataSet([self generateRandomNumberArrayWithLength:3550 randomRange:100 minNum:200]),
+//            AASeriesElement.new
+//                .nameSet(@"2019")
+//                .lineWidthSet(@6)
+//                .dataSet([self generateRandomNumberArrayWithLength:3550 randomRange:150 minNum:400]),
+//            AASeriesElement.new
+//                .nameSet(@"2020")
+//                .lineWidthSet(@6)
+//                .dataSet([self generateRandomNumberArrayWithLength:3550 randomRange:150 minNum:600]),
+//        ]);
+//}
+
+//https://github.com/AAChartModel/AAChartKit/issues/1419
+    public static AAChartModel lineChartsWithLargeDifferencesInTheNumberOfDataInDifferentSeriesElement() {
+        return new AAChartModel()
+                .chartType(AAChartType.Line)
+                .backgroundColor("#000000")
+                .colorsTheme(new String[]{"#1e90ff", "#04d69f", "#ef476f", "#ffd066"})
+                .dataLabelsEnabled(false)
+                .markerRadius(0f)
+                .series(new AASeriesElement[]{
+                        new AASeriesElement()
+                                .name("2017")
+                                .lineWidth(6f)
+                                .data(generateRandomNumberMixedNullArrayWithLength(3550, 5, 100).toArray()),
+                        new AASeriesElement()
+                                .name("2018")
+                                .lineWidth(6f)
+                                .data(generateRandomNumberArrayWithLength(3550, 100, 200).toArray()),
+                        new AASeriesElement()
+                                .name("2019")
+                                .lineWidth(6f)
+                                .data(generateRandomNumberArrayWithLength(3550, 150, 400).toArray()),
+                        new AASeriesElement()
+                                .name("2020")
+                                .lineWidth(6f)
+                                .data(generateRandomNumberArrayWithLength(3550, 150, 600).toArray()),
+                });
+    }
+
+
     }

@@ -122,6 +122,7 @@ public class MainActivity extends AppCompatActivity {
                     "configureSpecialStyleColumnForNegativeDataMixedPositiveData---为正负数混合的柱形图自定义特殊样式效果",
                     "configureMultiLevelStopsArrGradientColorAreasplineMixedLineChart---多层次半透明渐变效果的曲线填充图混合折线图📈",
                     "connectNullsForSingleAASeriesElement---为单个 AASeriesElement 单独设置是否断点重连",
+                    "lineChartsWithLargeDifferencesInTheNumberOfDataInDifferentSeriesElement---不同 series 元素数据量差异较大的折线图📈",
 
             },
             /*使用AAOptions绘制图表*/
@@ -360,6 +361,7 @@ public class MainActivity extends AppCompatActivity {
                     "configureSpecialStyleColumnForNegativeDataMixedPositiveData",
                     "configureMultiLevelStopsArrGradientColorAreasplineMixedLineChart",
                     "connectNullsForSingleAASeriesElement",
+                    "lineChartsWithLargeDifferencesInTheNumberOfDataInDifferentSeriesElement"
 
             },
 

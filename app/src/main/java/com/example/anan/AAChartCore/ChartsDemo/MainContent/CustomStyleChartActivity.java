@@ -123,6 +123,8 @@ public class CustomStyleChartActivity extends AppCompatActivity {
                 return configureMultiLevelStopsArrGradientColorAreasplineMixedLineChart();
             case "connectNullsForSingleAASeriesElement":
                 return connectNullsForSingleAASeriesElement();
+            case "lineChartsWithLargeDifferencesInTheNumberOfDataInDifferentSeriesElement":
+                return lineChartsWithLargeDifferencesInTheNumberOfDataInDifferentSeriesElement();
 
         }
         return configureColorfulChart();
