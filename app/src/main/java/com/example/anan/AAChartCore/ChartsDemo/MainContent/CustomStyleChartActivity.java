@@ -125,6 +125,10 @@ public class CustomStyleChartActivity extends AppCompatActivity {
                 return connectNullsForSingleAASeriesElement();
             case "lineChartsWithLargeDifferencesInTheNumberOfDataInDifferentSeriesElement":
                 return lineChartsWithLargeDifferencesInTheNumberOfDataInDifferentSeriesElement();
+                case "customAreasplineChartWithColorfulGradientColorZones":
+                return customAreasplineChartWithColorfulGradientColorZones();
+
+
 
         }
         return configureColorfulChart();

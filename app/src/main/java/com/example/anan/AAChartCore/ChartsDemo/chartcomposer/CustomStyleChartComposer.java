@@ -11,6 +11,7 @@ import com.example.anan.AAChartCore.AAChartCoreLib.AAChartCreator.AASeriesElemen
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartAlignType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartAnimationType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartFontWeightType;
+import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartLineDashStyleType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartStackingType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartSymbolStyleType;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartSymbolType;
@@ -1877,5 +1878,192 @@ public static ArrayList<Object> generateRandomNumberArrayWithLength(int length, 
                 });
     }
 
+    ////https://github.com/AAChartModel/AAChartCore-Kotlin/issues/149
+    //- (AAChartModel *)customAreasplineChartWithColorfulGradientColorZones {
+    //    NSArray *redStopsArr = @[
+    //        @[@0.0, AARgbaColor(255, 0, 0, 1.0)],//颜色字符串设置支持十六进制类型和 rgba 类型
+    //        @[@1.0, AAColor.clearColor]
+    //    ];
+    //
+    //    NSArray *greenStopsArr = @[
+    //        @[@0.0, AARgbaColor(0, 255, 0, 1.0)],//颜色字符串设置支持十六进制类型和 rgba 类型
+    //        @[@1.0, AAColor.clearColor]
+    //    ];
+    //
+    //    NSArray *blueStopsArr = @[
+    //        @[@0.0, AARgbaColor(0, 0, 255, 1.0)],//颜色字符串设置支持十六进制类型和 rgba 类型
+    //        @[@1.0, AAColor.clearColor]
+    //    ];
+    //
+    //    NSDictionary *redGradientColorDic = [AAGradientColor gradientColorWithDirection:AALinearGradientDirectionToBottom stopsArray:redStopsArr];
+    //    NSDictionary *greenGradientColorDic = [AAGradientColor gradientColorWithDirection:AALinearGradientDirectionToBottom stopsArray:greenStopsArr];
+    //    NSDictionary *blueGradientColorDic = [AAGradientColor gradientColorWithDirection:AALinearGradientDirectionToBottom stopsArray:blueStopsArr];
+    //
+    //    AADataElement *singleSpecialData = AADataElement.new
+    //        .markerSet(AAMarker.new
+    //                   .radiusSet(@8)//曲线连接点半径
+    //                   .symbolSet(AAChartSymbolTypeCircle)//曲线点类型："circle", "square", "diamond", "triangle","triangle-down"，默认是"circle"
+    //                   .fillColorSet(AAColor.whiteColor)//点的填充色(用来设置折线连接点的填充色)
+    //                   .lineWidthSet(@5)//外沿线的宽度(用来设置折线连接点的轮廓描边的宽度)
+    //                   //外沿线的颜色(用来设置折线连接点的轮廓描边颜色，当值为空字符串时，默认取数据点或数据列的颜色)
+    //                   .lineColorSet(@"#1E90FF")//道奇蓝
+    //                   )
+    //        .dataLabelsSet(AADataLabels.new
+    //                       .enabledSet(true)
+    //                       .allowOverlapSet(true)
+    //                       .useHTMLSet(true)
+    //                       .backgroundColorSet(AARgbaColor(65, 111, 166, 1.0))
+    //                       .borderRadiusSet(@10)
+    //                       .shapeSet(@"callout")
+    //                       .formatSet(@"{point.category}<br>{series.name}: {point.y} %")
+    //                       .styleSet(AAStyleColorSizeWeight(AAColor.whiteColor, 12, AAChartFontWeightTypeBold))
+    //                       .xSet(@-80).ySet(@(5))
+    //                       .alignSet(AAChartAlignTypeCenter)
+    //                       .verticalAlignSet(AAChartVerticalAlignTypeTop)
+    //                       .overflowSet(@"none")
+    //                       .cropSet(false)
+    //                       )
+    //        .ySet(@85.3);
+    //
+    //    AAStyle *axisLabelsStyle = AAStyleColorSizeWeight(AAColor.whiteColor, 12, AAChartFontWeightTypeBold);
+    //
+    //    return AAChartModel.new
+    //        .chartTypeSet(AAChartTypeAreaspline)
+    //        .backgroundColorSet(AAColor.blackColor)
+    //        .categoriesSet(@[
+    //            @"Jan", @"Feb", @"Mar", @"Apr", @"May", @"Jun",
+    //            @"Jul", @"Aug", @"Sep", @"Oct", @"Nov", @"Dec"
+    //        ])
+    //        .dataLabelsEnabledSet(false)
+    //        .legendEnabledSet(false)
+    //        .markerRadiusSet(@0)
+    //        .xAxisLabelsStyleSet(axisLabelsStyle)
+    //        .yAxisLabelsStyleSet(axisLabelsStyle)
+    //        .xAxisGridLineStyleSet([AALineStyle styleWithColor:AAColor.whiteColor dashStyle:AAChartLineDashStyleTypeLongDashDotDot width:@0.5])
+    //        .yAxisGridLineStyleSet([AALineStyle styleWithWidth:@0])
+    //        .seriesSet(@[
+    //            AASeriesElement.new
+    //                .nameSet(@"空气湿度")
+    //                .lineWidthSet(@6)
+    //                .zoneAxisSet(@"x")
+    //                .zonesSet(@[
+    //                    AAZonesElement.new
+    //                        .valueSet(@2)
+    //                        .colorSet(AAColor.redColor)
+    //                        .fillColorSet((id)redGradientColorDic ),
+    //                    AAZonesElement.new
+    //                        .valueSet(@5)
+    //                        .colorSet(AAColor.greenColor)
+    //                        .fillColorSet((id)greenGradientColorDic),
+    //                    AAZonesElement.new
+    //                        .colorSet(AAColor.blueColor)
+    //                        .fillColorSet((id)blueGradientColorDic),
+    //                ])
+    //                .dataSet(@[@56.5, @33.3, @85.3, @23.9, @29.6, @34.5, @28.2, @26.5, @15.2, @56.5, @33.3, singleSpecialData]),
+    //        ]);
+    //}
+
+    //https://github.com/AAChartModel/AAChartCore-Kotlin/issues/149
+    public static AAChartModel customAreasplineChartWithColorfulGradientColorZones() {
+        Object[][] redStopsArr = new Object[][]{
+                new Object[]{0.0f, AARgba(255, 0, 0, 1.0f)},//颜色字符串设置支持十六进制类型和 rgba 类型
+                new Object[]{1.0f, AAColor.Clear}
+        };
+
+        Object[][] greenStopsArr = new Object[][]{
+                new Object[]{0.0f, AARgba(0, 255, 0, 1.0f)},
+                new Object[]{1.0f, AAColor.Clear}
+        };
+
+        Object[][] blueStopsArr = new Object[][]{
+                new Object[]{0.0f, AARgba(0, 0, 255, 1.0f)},
+                new Object[]{1.0f, AAColor.Clear}
+        };
+
+        Map<String, Object> redGradientColorDic = AAGradientColor.linearGradient(AALinearGradientDirection.ToBottom, redStopsArr);
+        Map<String, Object> greenGradientColorDic = AAGradientColor.linearGradient(AALinearGradientDirection.ToBottom, greenStopsArr);
+        Map<String, Object> blueGradientColorDic = AAGradientColor.linearGradient(AALinearGradientDirection.ToBottom, blueStopsArr);
+
+        AADataElement singleSpecialData = new AADataElement()
+                .marker(new AAMarker()
+                        .radius(8f)//曲线连接点半径
+                        .symbol(AAChartSymbolType.Circle)//曲线点类型："circle", "square", "diamond", "triangle","triangle-down"，默认是"circle"
+                        .fillColor(AAColor.White)//点的填充色(用来设置折线连接点的填充色)
+                        .lineWidth(5f)//外沿线的宽度(用来设置折线连接点的轮廓描边的宽度)
+                        //外沿线的颜色(用来设置折线连接点的轮廓描边颜色，当值为空字符串时，默认取数据点或数据列的颜色)
+                        .lineColor(AAColor.Red)
+                )
+                .dataLabels(new AADataLabels()
+                        .enabled(true)
+                        .allowOverlap(true)
+                        .useHTML(true)
+                        .backgroundColor(AARgba(65, 111, 166, 1.0f))
+                        .borderRadius(10f)
+                        .shape("callout")
+                        .format("{point.category}<br>{series.name}: {point.y} %")
+                        .style(new AAStyle()
+                                .color(AAColor.White)
+                                .fontSize(12f)
+                                .fontWeight(AAChartFontWeightType.Bold)
+                        )
+                        .x(-80f)
+                        .y(5f)
+                        .align(AAChartAlignType.Center)
+                        .verticalAlign(AAChartVerticalAlignType.Top)
+                        .overflow("none")
+                        .crop(false)
+                )
+                .y(85.3f);
+
+        AAStyle axisLabelsStyle = new AAStyle()
+                .color(AAColor.White)
+                .fontSize(12f)
+                .fontWeight(AAChartFontWeightType.Bold);
+
+        return new AAChartModel()
+                .chartType(AAChartType.Areaspline)
+                .backgroundColor(AAColor.Black)
+                .categories(new String[]{
+                        "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+                        "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+                })
+                .dataLabelsEnabled(false)
+                .legendEnabled(false)
+                .markerRadius(0f)
+//                .xAxisLabelsStyle(axisLabelsStyle)
+//                .yAxisLabelsStyle(axisLabelsStyle)
+//                .xAxisGridLineStyle(new AALineStyle()
+//                        .color(AAColor.White)
+//                        .dashStyle(AAChartLineDashStyleType.LongDashDotDot)
+//                        .width(0.5f)
+//                )
+//                .yAxisGridLineStyle(new AALineStyle()
+//                        .width(0f)
+//                )
+                .series(new AASeriesElement[]{
+                        new AASeriesElement()
+                                .name("空气湿度")
+                                .lineWidth(6f)
+                                .zoneAxis("x")
+                                .zones(new AAZonesElement[]{
+                                        new AAZonesElement()
+                                                .value(2)
+                                                .color(AAColor.Red)
+                                                .fillColor(redGradientColorDic),
+                                        new AAZonesElement()
+                                                .value(5)
+                                                .color(AAColor.Green)
+                                                .fillColor(greenGradientColorDic),
+                                        new AAZonesElement()
+                                                .color(AAColor.Blue)
+                                                .fillColor(blueGradientColorDic),
+                                })
+                                .data(new Object[]{
+                                56.5f, 33.3f, 85.3f, 23.9f, 29.6f, 34.5f, 28.2f, 26.5f, 15.2f, 56.5f, 33.3f, singleSpecialData
+                        }),
+                });
+
+
+    }
 
     }
