@@ -124,6 +124,7 @@ public class MainActivity extends AppCompatActivity {
                     "connectNullsForSingleAASeriesElement---为单个 AASeriesElement 单独设置是否断点重连",
                     "lineChartsWithLargeDifferencesInTheNumberOfDataInDifferentSeriesElement---不同 series 元素数据量差异较大的折线图📈",
                     "customAreasplineChartWithColorfulGradientColorZones---彩色分区渐变填充区域图📈",
+                    "largeDataStackingColumnChart---大数据量的堆积柱状图📊",
 
             },
             /*使用AAOptions绘制图表*/
@@ -364,6 +365,7 @@ public class MainActivity extends AppCompatActivity {
                     "connectNullsForSingleAASeriesElement",
                     "lineChartsWithLargeDifferencesInTheNumberOfDataInDifferentSeriesElement",
                     "customAreasplineChartWithColorfulGradientColorZones",
+                    "largeDataStackingColumnChart"
 
             },
 

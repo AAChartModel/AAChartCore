@@ -1878,6 +1878,29 @@ public static ArrayList<Object> generateRandomNumberArrayWithLength(int length, 
                 });
     }
 
+    public static AAChartModel largeDataStackingColumnChart() {
+        return new AAChartModel()
+                .chartType(AAChartType.Column)
+                .backgroundColor("#000000")
+                .colorsTheme(new String[]{"#1e90ff", "#04d69f", "#ef476f", "#ffd066"})
+                .dataLabelsEnabled(false)
+                .stacking(AAChartStackingType.Normal)
+                .series(new AASeriesElement[]{
+                        new AASeriesElement()
+                                .name("2018")
+                                .lineWidth(6f)
+                                .data(generateRandomNumberArrayWithLength(3550, 100, 200).toArray()),
+                        new AASeriesElement()
+                                .name("2019")
+                                .lineWidth(6f)
+                                .data(generateRandomNumberArrayWithLength(3550, 150, 400).toArray()),
+                        new AASeriesElement()
+                                .name("2020")
+                                .lineWidth(6f)
+                                .data(generateRandomNumberArrayWithLength(3550, 150, 600).toArray()),
+                });
+    }
+
     ////https://github.com/AAChartModel/AAChartCore-Kotlin/issues/149
     //- (AAChartModel *)customAreasplineChartWithColorfulGradientColorZones {
     //    NSArray *redStopsArr = @[
