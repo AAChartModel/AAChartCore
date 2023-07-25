@@ -720,16 +720,16 @@ public class MixedChartComposer {
                                 .fillColor(AAGradientColor.linearGradient(
                                         AALinearGradientDirection.ToTop,
                                         new Object[][]{
-                                                new Object[]{0.0, AARgba(30, 144, 255, 0.0f)},//颜色字符串设置支持十六进制类型和 rgba 类型
-                                                new Object[]{0.5, AARgba(30, 144, 255, 0.0f)},
-                                                new Object[]{1.0, AARgba(30, 144, 255, 0.6f)},}
+                                                {0.0, AARgba(30, 144, 255, 0.0f)},//颜色字符串设置支持十六进制类型和 rgba 类型
+                                                {0.5, AARgba(30, 144, 255, 0.0f)},
+                                                {1.0, AARgba(30, 144, 255, 0.6f)},}
                                 ))
                                 .negativeFillColor(AAGradientColor.linearGradient(
                                         AALinearGradientDirection.ToTop,
                                         new Object[][]{
-                                                new Object[]{0.0, AARgba(255, 0, 0, 0.6f)},//颜色字符串设置支持十六进制类型和 rgba 类型
-                                                new Object[]{0.5, AARgba(255, 0, 0, 0.0f)},
-                                                new Object[]{1.0, AARgba(255, 0, 0, 0.0f)},
+                                                {0.0, AARgba(255, 0, 0, 0.6f)},//颜色字符串设置支持十六进制类型和 rgba 类型
+                                                {0.5, AARgba(255, 0, 0, 0.0f)},
+                                                {1.0, AARgba(255, 0, 0, 0.0f)},
                                         }))
                                 .threshold(0)//default:0
                 });
@@ -756,30 +756,30 @@ public class MixedChartComposer {
                         new AASeriesElement()
                                 .name("工资变化曲线")
                                 .type(AAChartType.Areasplinerange)
-                                .data(new Object[]{
-                                new Object[]{3800, 5500},//流水线
-                                new Object[]{4000, 6500},//机器加工
-                                new Object[]{4000, 6800},//冲床
-                                new Object[]{4000, 7500},//模具工
-                                new Object[]{4200, 9000},//机器加工
-                                new Object[]{3800, 6800},//仓库
-                                new Object[]{5500, 7500},//维修工
-                                new Object[]{5000, 7200},//质检员
+                                .data(new Object[][]{
+                                {3800, 5500},//流水线
+                                {4000, 6500},//机器加工
+                                {4000, 6800},//冲床
+                                {4000, 7500},//模具工
+                                {4200, 9000},//机器加工
+                                {3800, 6800},//仓库
+                                {5500, 7500},//维修工
+                                {5000, 7200},//质检员
                         })
                         ,
                         new AASeriesElement()
                                 .name("工资变化棱形")
                                 .color(AAGradientColor.OceanBlue)
                                 .type(AAChartType.Columnrange)
-                                .data(new Object[]{
-                                new Object[]{3800, 5500},//流水线
-                                new Object[]{4000, 6500},//机器加工
-                                new Object[]{4000, 6800},//冲床
-                                new Object[]{4000, 7500},//模具工
-                                new Object[]{4200, 9000},//机器加工
-                                new Object[]{3800, 6800},//仓库
-                                new Object[]{5500, 7500},//维修工
-                                new Object[]{5000, 7200},//质检员
+                                .data(new Object[][]{
+                                {3800, 5500},//流水线
+                                {4000, 6500},//机器加工
+                                {4000, 6800},//冲床
+                                {4000, 7500},//模具工
+                                {4200, 9000},//机器加工
+                                {3800, 6800},//仓库
+                                {5500, 7500},//维修工
+                                {5000, 7200},//质检员
                         })
                         ,
                         new AASeriesElement()
