@@ -2,18 +2,17 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#ffffff"
     android:orientation="horizontal"
-    android:padding="5dp"
-    android:background="#ffffff">
+    android:padding="5dp">
 
     <TextView
         android:id="@+id/tv_colorful_index"
         android:layout_width="48dp"
         android:layout_height="match_parent"
-        android:textSize="20dp"
-        android:text="◉"
         android:gravity="center_vertical|center"
-        ></TextView>
+        android:text="◉"
+        android:textSize="20dp"></TextView>
 
 
     <TextView
@@ -21,14 +20,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
         android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp"
         android:layout_marginBottom="5dp"
         android:focusable="false"
-        android:text="图表名称"
         android:gravity="center_vertical|left"
-        android:textSize="18sp"
+        android:text="图表名称"
         android:textColor="#123456"
-        />
+        android:textSize="18sp" />
 
 </LinearLayout>

@@ -3,7 +3,7 @@ package com.example.anan.AAChartCore.ChartsDemo.MainContent;
 import static com.example.anan.AAChartCore.ChartsDemo.chartcomposer.MixedChartComposer.*;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartCreator.AAChartModel;

@@ -3,7 +3,6 @@ package com.example.anan.AAChartCore.ChartsDemo.chartcomposer;
 import static com.example.anan.AAChartCore.AAChartCoreLib.AATools.AADate.AADateUTC;
 
 import android.os.Build;
-import android.support.annotation.RequiresApi;
 
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartCreator.AAChartEvents;
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartCreator.AAChartModel;
