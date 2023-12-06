@@ -1,1 +1,2 @@
 include ':app'
+include ':aa_chart_core'

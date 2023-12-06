@@ -15,9 +15,9 @@
         android:orientation="vertical">
 
         <RadioGroup
+            android:id="@+id/stackingTypeRadioGroup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/stackingTypeRadioGroup"
             android:orientation="horizontal">
 
             <RadioButton
@@ -25,30 +25,30 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:textColor="@color/lightGray"
-                android:text="noStacking" />
+                android:text="noStacking"
+                android:textColor="@color/lightGray" />
 
             <RadioButton
                 android:id="@+id/normalStackingRadio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:textColor="@color/lightGray"
-                android:text="normalStacking" />
+                android:text="normalStacking"
+                android:textColor="@color/lightGray" />
 
             <RadioButton
                 android:id="@+id/percentStackingRadio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:textColor="@color/lightGray"
-                android:text="percentStacking" />
+                android:text="percentStacking"
+                android:textColor="@color/lightGray" />
         </RadioGroup>
 
         <RadioGroup
+            android:id="@+id/cornerStyleTypeRadioGroup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/cornerStyleTypeRadioGroup"
             android:orientation="horizontal">
 
             <RadioButton
@@ -56,30 +56,30 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:textColor="@color/lightGray"
-                android:text="squareCorners" />
+                android:text="squareCorners"
+                android:textColor="@color/lightGray" />
 
             <RadioButton
                 android:id="@+id/roundedCornersRadio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:textColor="@color/lightGray"
-                android:text="roundedCorners" />
+                android:text="roundedCorners"
+                android:textColor="@color/lightGray" />
 
             <RadioButton
                 android:id="@+id/wedgeCornersRadio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:textColor="@color/lightGray"
-                android:text="wedge" />
+                android:text="wedge"
+                android:textColor="@color/lightGray" />
         </RadioGroup>
 
         <RadioGroup
+            android:id="@+id/markerSymbolTypeRadioGroup"
             android:layout_width="match_parent"
             android:layout_height="38dp"
-            android:id="@+id/markerSymbolTypeRadioGroup"
             android:orientation="horizontal">
 
             <RadioButton
@@ -87,45 +87,45 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:text="⬤⬤"
                 android:textColor="@color/lightGray"
-                android:textSize="22dp"
-                android:text="⬤⬤" />
+                android:textSize="22dp" />
 
             <RadioButton
                 android:id="@+id/squareSymbolRadio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:text="■■"
                 android:textColor="@color/lightGray"
-                android:textSize="22dp"
-                android:text="■■" />
+                android:textSize="22dp" />
 
             <RadioButton
                 android:id="@+id/diamondSymbolRadio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:text="◆◆"
                 android:textColor="@color/lightGray"
-                android:textSize="22dp"
-                android:text="◆◆" />
+                android:textSize="22dp" />
 
             <RadioButton
                 android:id="@+id/triangleSymbolRadio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:text="▲▲"
                 android:textColor="@color/lightGray"
-                android:textSize="22dp"
-                android:text="▲▲" />
+                android:textSize="22dp" />
 
             <RadioButton
                 android:id="@+id/triangleDownSymbolRadio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:text="▼▼"
                 android:textColor="@color/lightGray"
-                android:textSize="22dp"
-                android:text="▼▼" />
+                android:textSize="22dp" />
         </RadioGroup>
 
         <LinearLayout
@@ -181,48 +181,48 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:textColor="@color/lightGray"
-                android:text="xReversed" />
+                android:text="xReversed"
+                android:textColor="@color/lightGray" />
 
             <TextView
                 android:id="@+id/textView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:textColor="@color/lightGray"
-                android:text="yReversed" />
+                android:text="yReversed"
+                android:textColor="@color/lightGray" />
 
             <TextView
                 android:id="@+id/textView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:textColor="@color/lightGray"
-                android:text="xInverted" />
+                android:text="xInverted"
+                android:textColor="@color/lightGray" />
 
             <TextView
                 android:id="@+id/textView4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:textColor="@color/lightGray"
-                android:text="polar" />
+                android:text="polar"
+                android:textColor="@color/lightGray" />
 
             <TextView
                 android:id="@+id/textView5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:textColor="@color/lightGray"
-                android:text="dataShow" />
+                android:text="dataShow"
+                android:textColor="@color/lightGray" />
 
             <TextView
                 android:id="@+id/markerHideTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:textColor="@color/lightGray"
-                android:text="markerHide" />
+                android:text="markerHide"
+                android:textColor="@color/lightGray" />
         </LinearLayout>
 
     </LinearLayout>
@@ -230,7 +230,6 @@
     <com.example.anan.AAChartCore.AAChartCoreLib.AAChartCreator.AAChartView
         android:id="@+id/AAChartView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        />
+        android:layout_height="match_parent" />
 
 </LinearLayout>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.anan.AAChartCore">
+    >
 
     <application
         android:allowBackup="true"
@@ -24,7 +24,7 @@
         <activity android:name=".ChartsDemo.AdditionalContent.JSFunctionForAAChartEventsActivity" />
         <activity android:name=".ChartsDemo.AdditionalContent.JSFunctionForAAOptionsActivity" />
 
-        <activity android:name=".ChartsDemo.MainContent.MainActivity">
+        <activity android:name=".ChartsDemo.MainContent.MainActivity" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

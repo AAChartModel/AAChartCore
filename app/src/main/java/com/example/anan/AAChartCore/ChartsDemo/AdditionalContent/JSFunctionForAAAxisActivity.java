@@ -4,7 +4,7 @@ import static com.example.anan.AAChartCore.ChartsDemo.chartcomposer.JSFunctionFo
 import static com.example.anan.AAChartCore.ChartsDemo.chartcomposer.JSFunctionForAAAxisComposer.customYAxisLabels;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.example.anan.AAChartCore.AAChartCoreLib.AAChartCreator.AAChartView;

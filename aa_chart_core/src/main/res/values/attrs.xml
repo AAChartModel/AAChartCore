@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="LyricsView">
+        <attr name="startOfVerseIndicatorPaddingTop" format="dimension" />
+        <attr name="startOfVerseIndicatorRadius" format="dimension" />
+        <attr name="startOfVerseIndicatorColor" format="reference|color" />
+        <attr name="paddingTop" format="dimension" />
+        <attr name="enablePreviousLines" format="boolean" />
+        <attr name="enableUpcomingLines" format="boolean" />
+        <attr name="lineSpacing" format="dimension" />
+        <attr name="textSize" format="dimension" />
+        <attr name="currentLineTextColor" format="reference|color" />
+        <attr name="previousLineTextColor" format="reference|color" />
+        <attr name="upcomingLineTextColor" format="reference|color" />
+        <attr name="currentLineTextSize" format="dimension" />
+        <attr name="currentLineHighlightedTextColor" format="reference|color" />
+        <attr name="labelWhenNoLyrics" format="string" />
+        <attr name="enableDragging" format="boolean" />
+        <attr name="textGravity">
+            <enum name="center" value="0" />
+            <enum name="left" value="1" />
+            <enum name="right" value="2" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="ScoringView">
+        <attr name="pitchIndicatorColor" format="reference|color" />
+        <attr name="pitchIndicatorRadius" format="dimension" />
+        <attr name="pitchStickHighlightedColor" format="reference|color" />
+        <attr name="pitchStickHeight" format="dimension" />
+        <attr name="initialScore" format="float" />
+        <attr name="movingPixelsPerMs" format="float" />
+        <attr name="hitScoreThreshold" format="float" />
+        <attr name="startPointHorizontalBias" format="float" />
+        <attr name="offProgressTimeThreshold" format="integer" />
+        <attr name="enableParticleEffect" format="boolean" />
+    </declare-styleable>
+</resources>
