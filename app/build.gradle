@@ -4,9 +4,9 @@ apply plugin: 'maven-publish'
 android {
     defaultConfig {
         applicationId "com.example.anan.AAChartCore"
-        minSdkVersion 19
-        targetSdkVersion 33
-        compileSdk 33
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        compileSdk rootProject.ext.compileSdkVersion
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"

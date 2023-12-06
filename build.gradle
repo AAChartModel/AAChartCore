@@ -1,12 +1,22 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
-    repositories {
-        google() // HIGHER PRIORITY
-        mavenCentral()
-        maven { url 'https://jitpack.io' }
-        maven { url 'https://maven.faceunity.com/repository/maven-public/' }
+    ext {
+        minSdkVersion = 17
+        compileSdkVersion = 33
+        targetSdkVersion = 33
     }
+
+    repositories {
+        mavenLocal()
+
+        google() // HIGHER PRIORITY
+
+        mavenCentral()
+
+        maven { url 'https://jitpack.io' }
+    }
+
     dependencies {
         classpath 'com.android.tools.build:gradle:7.3.1'
         // NOTE: Do not place your application dependencies here; they belong
@@ -16,10 +26,13 @@ buildscript {
 
 allprojects {
     repositories {
+        mavenLocal()
+
         google() // HIGHER PRIORITY
+
         mavenCentral()
-        maven { url 'https://jitpack.io' }
-        maven { url 'https://maven.faceunity.com/repository/maven-public/' }
+
+        maven { url 'https://www.jitpack.io' }
     }
 }
 
