@@ -54,12 +54,8 @@ import com.example.anan.AAChartCore.AAChartCoreLib.AATools.AAColor;
 import com.example.anan.AAChartCore.AAChartCoreLib.AATools.AAGradientColor;
 import com.example.anan.AAChartCore.AAChartCoreLib.AATools.AALinearGradientDirection;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.TimeZone;
 
 public class ChartOptionsComposer {
 

@@ -19,8 +19,6 @@ import com.example.anan.AAChartCore.AAChartCoreLib.AATools.AAColor;
 import com.example.anan.AAChartCore.AAChartCoreLib.AATools.AAGradientColor;
 import com.example.anan.AAChartCore.AAChartCoreLib.AATools.AALinearGradientDirection;
 
-import java.util.Map;
-
 public class MixedChartComposer {
 
 

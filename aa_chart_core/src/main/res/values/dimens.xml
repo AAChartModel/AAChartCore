@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="normal_text_size">14sp</dimen>
+    <dimen name="current_text_size">16sp</dimen>
+    <dimen name="line_spacing">16dp</dimen>
+    <dimen name="padding_top">0dp</dimen>
+    <dimen name="start_of_verse_indicator_padding_top">8dp</dimen>
+    <dimen name="start_of_verse_indicator_radius">6dp</dimen>
+    <dimen name="pitch_stick_height">6dp</dimen>
+    <dimen name="local_pitch_indicator_radius">8dp</dimen>
+</resources>

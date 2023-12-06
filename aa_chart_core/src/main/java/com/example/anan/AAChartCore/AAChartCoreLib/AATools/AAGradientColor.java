@@ -128,99 +128,99 @@ public class AAGradientColor {
 
 
     public static Map<String, Object> oceanBlueColor(AALinearGradientDirection direction) {
-        return linearGradient(direction,"#2E3192","#1BFFFF");
+        return linearGradient(direction, "#2E3192", "#1BFFFF");
     }
 
     public static Map<String, Object> sanguineColor(AALinearGradientDirection direction) {
-        return linearGradient(direction,"#D4145A","#FBB03B");
+        return linearGradient(direction, "#D4145A", "#FBB03B");
     }
 
     public static Map<String, Object> lusciousLimeColor(AALinearGradientDirection direction) {
-        return linearGradient(direction,"#009245","#FCEE21");
+        return linearGradient(direction, "#009245", "#FCEE21");
     }
 
     public static Map<String, Object> purpleLakeColor(AALinearGradientDirection direction) {
-        return linearGradient(direction,"#662D8C","#ED1E79");
+        return linearGradient(direction, "#662D8C", "#ED1E79");
     }
 
     public static Map<String, Object> freshPapayaColor(AALinearGradientDirection direction) {
-        return linearGradient(direction,"#ED1C24","#FCEE21");
+        return linearGradient(direction, "#ED1C24", "#FCEE21");
     }
 
     public static Map<String, Object> ultramarineColor(AALinearGradientDirection direction) {
-        return linearGradient(direction,"#00A8C5","#FFFF7E");
+        return linearGradient(direction, "#00A8C5", "#FFFF7E");
     }
 
     public static Map<String, Object> pinkSugarColor(AALinearGradientDirection direction) {
-        return linearGradient(direction,"#D74177","#FFE98A");
+        return linearGradient(direction, "#D74177", "#FFE98A");
     }
 
     public static Map<String, Object> lemonDrizzleColor(AALinearGradientDirection direction) {
-        return linearGradient(direction,"#FB872B","#D9E021");
+        return linearGradient(direction, "#FB872B", "#D9E021");
     }
 
     public static Map<String, Object> victoriaPurpleColor(AALinearGradientDirection direction) {
-        return linearGradient(direction,"#312A6C","#852D91");
+        return linearGradient(direction, "#312A6C", "#852D91");
     }
 
     public static Map<String, Object> springGreensColor(AALinearGradientDirection direction) {
-        return linearGradient(direction,"#009E00","#FFFF96");
+        return linearGradient(direction, "#009E00", "#FFFF96");
     }
 
     public static Map<String, Object> mysticMauveColor(AALinearGradientDirection direction) {
-        return linearGradient(direction,"#B066FE","#63E2FF");
+        return linearGradient(direction, "#B066FE", "#63E2FF");
     }
 
     public static Map<String, Object> reflexSilverColor(AALinearGradientDirection direction) {
-        return linearGradient(direction,"#808080","#E6E6E6");
+        return linearGradient(direction, "#808080", "#E6E6E6");
     }
 
     public static Map<String, Object> neonGlowColor(AALinearGradientDirection direction) {
-        return linearGradient(direction,"#00FFA1","#00FFFF");
+        return linearGradient(direction, "#00FFA1", "#00FFFF");
     }
 
     public static Map<String, Object> berrySmoothieColor(AALinearGradientDirection direction) {
-        return linearGradient(direction,"#8E78FF","#FC7D7B");
+        return linearGradient(direction, "#8E78FF", "#FC7D7B");
     }
 
     public static Map<String, Object> newLeafColor(AALinearGradientDirection direction) {
-        return linearGradient(direction,"#00537E","#3AA17E");
+        return linearGradient(direction, "#00537E", "#3AA17E");
     }
 
     public static Map<String, Object> cottonCandyColor(AALinearGradientDirection direction) {
-        return linearGradient(direction,"#FCA5F1","#B5FFFF");
+        return linearGradient(direction, "#FCA5F1", "#B5FFFF");
     }
 
     public static Map<String, Object> pixieDustColor(AALinearGradientDirection direction) {
-        return linearGradient(direction,"#D585FF","#00FFEE");
+        return linearGradient(direction, "#D585FF", "#00FFEE");
     }
 
     public static Map<String, Object> fizzyPeachColor(AALinearGradientDirection direction) {
-        return linearGradient(direction,"#F24645","#EBC08D");
+        return linearGradient(direction, "#F24645", "#EBC08D");
     }
 
     public static Map<String, Object> sweetDreamColor(AALinearGradientDirection direction) {
-        return linearGradient(direction,"#3A3897","#A3A1FF");
+        return linearGradient(direction, "#3A3897", "#A3A1FF");
     }
 
     public static Map<String, Object> firebrickColor(AALinearGradientDirection direction) {
-        return linearGradient(direction,"#45145A","#FF5300");
+        return linearGradient(direction, "#45145A", "#FF5300");
     }
 
     public static Map<String, Object> wroughtIronColor(AALinearGradientDirection direction) {
-        return linearGradient(direction,"#333333","#5A5454");
+        return linearGradient(direction, "#333333", "#5A5454");
     }
 
     public static Map<String, Object> deepSeaColor(AALinearGradientDirection direction) {
-        return linearGradient(direction,"#4F00BC","#29ABE2");
+        return linearGradient(direction, "#4F00BC", "#29ABE2");
     }
 
     public static Map<String, Object> coastalBreezeColor(AALinearGradientDirection direction) {
-        return linearGradient(direction,"#00B7FF","#FFFFC7");
+        return linearGradient(direction, "#00B7FF", "#FFFFC7");
     }
 
     public static Map<String, Object> eveningDelightColor(AALinearGradientDirection direction) {
-        return linearGradient(direction,"#93278F","#00A99D");
+        return linearGradient(direction, "#93278F", "#00A99D");
     }
 
     public static Map<String, Object> linearGradient(String startColor,
@@ -250,16 +250,16 @@ public class AAGradientColor {
     }
 
     /**
-     (0,0) ----------- (1,0)
-     |                   |
-     |                   |
-     |                   |
-     |                   |
-     |                   |
-     (0,1) ----------- (1,1)
+     * (0,0) ----------- (1,0)
+     * |                   |
+     * |                   |
+     * |                   |
+     * |                   |
+     * |                   |
+     * (0,1) ----------- (1,1)
      */
     private static Map<String, Integer> linearGradientMap(AALinearGradientDirection direction) {
-        switch (direction)    {
+        switch (direction) {
             case ToTop:
                 return linearGradientMap(0, 1, 0, 0);
             case ToBottom:
@@ -276,7 +276,8 @@ public class AAGradientColor {
                 return linearGradientMap(1, 0, 0, 1);
             case ToBottomRight:
                 return linearGradientMap(0, 0, 1, 1);
-            default: return null;
+            default:
+                return null;
         }
     }
 

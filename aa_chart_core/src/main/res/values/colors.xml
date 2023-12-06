@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="default_popular_color">#99FFFFFF</color>
+
+    <color name="previous_text_color">@color/default_popular_color</color>
+    <color name="upcoming_text_color">@color/default_popular_color</color>
+    <color name="highlighted_text_color">#FFF44336</color>
+
+    <color name="local_pitch_indicator_color">#F0F0F0F0</color>
+    <color name="local_pitch_indicator_emitter_color">#F44336</color>
+    <color name="pitch_stick_highlighted_color">#FFF44336</color>
+
+    <color name="leading_lines_color">#4DFFFFFF</color>
+    <color name="overpast_wall_start_color">#1F24C6FF</color>
+    <color name="overpast_wall_end_color">#00FFFFFF</color>
+</resources>
