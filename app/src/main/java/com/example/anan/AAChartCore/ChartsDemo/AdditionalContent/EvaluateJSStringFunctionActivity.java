@@ -5,17 +5,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
-import com.example.anan.AAChartCore.AAChartCoreLib.AAChartCreator.AAChartModel;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAChartCreator.AAChartView;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAChartCreator.AAMoveOverEventMessageModel;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAChartCreator.AASeriesElement;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartFontWeightType;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartStackingType;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartType;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AADataLabels;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAStyle;
-import com.example.anan.AAChartCore.AAChartCoreLib.AATools.AAColor;
-import com.example.anan.AAChartCore.AAChartCoreLib.AATools.AAGradientColor;
+import com.github.AAChartModel.AAChartCore.AAChartCreator.AAChartModel;
+import com.github.AAChartModel.AAChartCore.AAChartCreator.AAChartView;
+import com.github.AAChartModel.AAChartCore.AAChartCreator.AAMoveOverEventMessageModel;
+import com.github.AAChartModel.AAChartCore.AAChartCreator.AASeriesElement;
+import com.github.AAChartModel.AAChartCore.AAChartEnum.AAChartFontWeightType;
+import com.github.AAChartModel.AAChartCore.AAChartEnum.AAChartStackingType;
+import com.github.AAChartModel.AAChartCore.AAChartEnum.AAChartType;
+import com.github.AAChartModel.AAChartCore.AAOptionsModel.AADataLabels;
+import com.github.AAChartModel.AAChartCore.AAOptionsModel.AAStyle;
+import com.github.AAChartModel.AAChartCore.AATools.AAColor;
+import com.github.AAChartModel.AAChartCore.AATools.AAGradientColor;
 import com.example.anan.AAChartCore.R;
 
 public class EvaluateJSStringFunctionActivity extends AppCompatActivity implements AAChartView.AAChartViewCallBack {

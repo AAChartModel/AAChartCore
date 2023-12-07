@@ -4,8 +4,8 @@ import android.content.Intent;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.example.anan.AAChartCore.AAChartCoreLib.AAChartCreator.AAChartModel;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAChartCreator.AAChartView;
+import com.github.AAChartModel.AAChartCore.AAChartCreator.AAChartModel;
+import com.github.AAChartModel.AAChartCore.AAChartCreator.AAChartView;
 import com.example.anan.AAChartCore.R;
 import static com.example.anan.AAChartCore.ChartsDemo.chartcomposer.CustomStyleChartComposer.*;
 import static com.example.anan.AAChartCore.ChartsDemo.chartcomposer.CustomStyleChartComposer.configureColorfulChart;

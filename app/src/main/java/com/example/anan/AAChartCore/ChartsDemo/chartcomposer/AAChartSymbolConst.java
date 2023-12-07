@@ -1,6 +1,6 @@
 package com.example.anan.AAChartCore.ChartsDemo.chartcomposer;
 
-import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartSymbolType;
+import com.github.AAChartModel.AAChartCore.AAChartEnum.AAChartSymbolType;
 
 public class AAChartSymbolConst {
     public static final String predefinedSymbol1 = AAChartSymbolType.Triangle;

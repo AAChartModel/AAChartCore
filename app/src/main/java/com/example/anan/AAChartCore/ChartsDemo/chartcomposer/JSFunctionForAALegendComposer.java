@@ -1,20 +1,20 @@
 package com.example.anan.AAChartCore.ChartsDemo.chartcomposer;
 
-import com.example.anan.AAChartCore.AAChartCoreLib.AAChartCreator.AAChartModel;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAChartCreator.AASeriesElement;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartAlignType;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartLayoutType;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartStackingType;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartType;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartVerticalAlignType;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartZoomType;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAHover;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAOptions;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAPoint;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAPointEvents;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AASeriesEvents;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAStates;
-import com.example.anan.AAChartCore.AAChartCoreLib.AATools.AAColor;
+import com.github.AAChartModel.AAChartCore.AAChartCreator.AAChartModel;
+import com.github.AAChartModel.AAChartCore.AAChartCreator.AASeriesElement;
+import com.github.AAChartModel.AAChartCore.AAChartEnum.AAChartAlignType;
+import com.github.AAChartModel.AAChartCore.AAChartEnum.AAChartLayoutType;
+import com.github.AAChartModel.AAChartCore.AAChartEnum.AAChartStackingType;
+import com.github.AAChartModel.AAChartCore.AAChartEnum.AAChartType;
+import com.github.AAChartModel.AAChartCore.AAChartEnum.AAChartVerticalAlignType;
+import com.github.AAChartModel.AAChartCore.AAChartEnum.AAChartZoomType;
+import com.github.AAChartModel.AAChartCore.AAOptionsModel.AAHover;
+import com.github.AAChartModel.AAChartCore.AAOptionsModel.AAOptions;
+import com.github.AAChartModel.AAChartCore.AAOptionsModel.AAPoint;
+import com.github.AAChartModel.AAChartCore.AAOptionsModel.AAPointEvents;
+import com.github.AAChartModel.AAChartCore.AAOptionsModel.AASeriesEvents;
+import com.github.AAChartModel.AAChartCore.AAOptionsModel.AAStates;
+import com.github.AAChartModel.AAChartCore.AATools.AAColor;
 
 public class JSFunctionForAALegendComposer {
     public static AAOptions disableLegendClickEventForNormalChart() {

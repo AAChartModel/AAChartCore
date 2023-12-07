@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".ChartsDemo.AdditionalContent.ScrollableChartActivity">
 
-    <com.example.anan.AAChartCore.AAChartCoreLib.AAChartCreator.AAChartView
+    <com.github.AAChartModel.AAChartCore.AAChartCreator.AAChartView
         android:id="@+id/AAChartView1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

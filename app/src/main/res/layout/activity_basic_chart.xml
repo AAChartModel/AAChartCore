@@ -227,7 +227,7 @@
 
     </LinearLayout>
 
-    <com.example.anan.AAChartCore.AAChartCoreLib.AAChartCreator.AAChartView
+    <com.github.AAChartModel.AAChartCore.AAChartCreator.AAChartView
         android:id="@+id/AAChartView"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

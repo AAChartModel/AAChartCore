@@ -5,15 +5,15 @@ import android.os.Handler;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.example.anan.AAChartCore.AAChartCoreLib.AAChartCreator.AAChartModel;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAChartCreator.AAChartView;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAChartCreator.AAOptionsConstructor;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAChartCreator.AASeriesElement;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartStackingType;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartType;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAOptions;
-import com.example.anan.AAChartCore.AAChartCoreLib.AATools.AAGradientColor;
-import com.example.anan.AAChartCore.AAChartCoreLib.AATools.AALinearGradientDirection;
+import com.github.AAChartModel.AAChartCore.AAChartCreator.AAChartModel;
+import com.github.AAChartModel.AAChartCore.AAChartCreator.AAChartView;
+import com.github.AAChartModel.AAChartCore.AAChartCreator.AAOptionsConstructor;
+import com.github.AAChartModel.AAChartCore.AAChartCreator.AASeriesElement;
+import com.github.AAChartModel.AAChartCore.AAChartEnum.AAChartStackingType;
+import com.github.AAChartModel.AAChartCore.AAChartEnum.AAChartType;
+import com.github.AAChartModel.AAChartCore.AAOptionsModel.AAOptions;
+import com.github.AAChartModel.AAChartCore.AATools.AAGradientColor;
+import com.github.AAChartModel.AAChartCore.AATools.AALinearGradientDirection;
 import com.example.anan.AAChartCore.R;
 
 import java.util.Map;
