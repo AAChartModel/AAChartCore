@@ -9,12 +9,12 @@ import android.widget.RadioGroup;
 import android.widget.Switch;
 import android.widget.TextView;
 
-import com.example.anan.AAChartCore.AAChartCoreLib.AAChartCreator.AAChartModel;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartStackingType;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartSymbolType;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartType;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAChartCreator.AAChartView;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAChartCreator.AAMoveOverEventMessageModel;
+import com.github.AAChartModel.AAChartCore.AAChartCreator.AAChartModel;
+import com.github.AAChartModel.AAChartCore.AAChartEnum.AAChartStackingType;
+import com.github.AAChartModel.AAChartCore.AAChartEnum.AAChartSymbolType;
+import com.github.AAChartModel.AAChartCore.AAChartEnum.AAChartType;
+import com.github.AAChartModel.AAChartCore.AAChartCreator.AAChartView;
+import com.github.AAChartModel.AAChartCore.AAChartCreator.AAMoveOverEventMessageModel;
 import com.example.anan.AAChartCore.ChartsDemo.chartcomposer.BasicChartComposer;
 import com.example.anan.AAChartCore.R;
 import com.google.gson.Gson;

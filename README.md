@@ -71,17 +71,29 @@
 
 ## Installation
 
+### JitPack  (Recommend)
 
-### Manually  (old school way)
+```
+allprojects {
+    repositories {
+        ...
+        maven { url 'https://jitpack.io' }
+    }
+}
+```
 
-1. Download whole project demo of `AAChartCore`
-2. Drag the  `AAChartCoreLib folder` and `assets files` into your project.
+```
+dependencies {
+    ...
+    implementation 'com.github.AAChartModel:AAChartCore:-SNAPSHOT'
+}
+```
 
 ## Usage
 
 1. Creat the instance object of chart view:`AAChartView`
 ```xml
-        <AAChartCore.AAChartConfiger.AAChartView
+        <com.github.AAChartModel.AAChartCore.AAChartConfiger.AAChartView
         android:id="@+id/AAChartView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

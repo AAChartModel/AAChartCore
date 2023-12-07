@@ -1,17 +1,17 @@
 package com.example.anan.AAChartCore.ChartsDemo.chartcomposer;
 
-import com.example.anan.AAChartCore.AAChartCoreLib.AAChartCreator.AAChartModel;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAChartCreator.AASeriesElement;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartAnimationType;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartSymbolStyleType;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartType;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartVerticalAlignType;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AADataLabels;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAPie;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAStyle;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AATooltip;
-import com.example.anan.AAChartCore.AAChartCoreLib.AATools.AAColor;
-import com.example.anan.AAChartCore.AAChartCoreLib.AATools.AAGradientColor;
+import com.github.AAChartModel.AAChartCore.AAChartCreator.AAChartModel;
+import com.github.AAChartModel.AAChartCore.AAChartCreator.AASeriesElement;
+import com.github.AAChartModel.AAChartCore.AAChartEnum.AAChartAnimationType;
+import com.github.AAChartModel.AAChartCore.AAChartEnum.AAChartSymbolStyleType;
+import com.github.AAChartModel.AAChartCore.AAChartEnum.AAChartType;
+import com.github.AAChartModel.AAChartCore.AAChartEnum.AAChartVerticalAlignType;
+import com.github.AAChartModel.AAChartCore.AAOptionsModel.AADataLabels;
+import com.github.AAChartModel.AAChartCore.AAOptionsModel.AAPie;
+import com.github.AAChartModel.AAChartCore.AAOptionsModel.AAStyle;
+import com.github.AAChartModel.AAChartCore.AAOptionsModel.AATooltip;
+import com.github.AAChartModel.AAChartCore.AATools.AAColor;
+import com.github.AAChartModel.AAChartCore.AATools.AAGradientColor;
 
 import java.util.HashMap;
 import java.util.Map;

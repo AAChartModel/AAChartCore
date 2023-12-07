@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.ExpandableListView;
 import android.widget.Toast;
 
-import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartType;
+import com.github.AAChartModel.AAChartCore.AAChartEnum.AAChartType;
 import com.example.anan.AAChartCore.ChartsDemo.AdditionalContent.AdvancedUpdatingFeatureActivity;
 import com.example.anan.AAChartCore.ChartsDemo.AdditionalContent.DoubleChartsLinkedWorkActivity;
 import com.example.anan.AAChartCore.ChartsDemo.AdditionalContent.JSFunctionForAAAxisActivity;

@@ -5,8 +5,8 @@ import static com.example.anan.AAChartCore.ChartsDemo.chartcomposer.ChartOptions
 import android.content.Intent;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAChartCreator.AAChartView;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAOptions;
+import com.github.AAChartModel.AAChartCore.AAChartCreator.AAChartView;
+import com.github.AAChartModel.AAChartCore.AAOptionsModel.AAOptions;
 import com.example.anan.AAChartCore.R;
 
 public class DrawChartWithAAOptionsActivity extends AppCompatActivity {

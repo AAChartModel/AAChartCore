@@ -1,23 +1,23 @@
 package com.example.anan.AAChartCore.ChartsDemo.chartcomposer;
 
-import static com.example.anan.AAChartCore.AAChartCoreLib.AATools.AAColor.AARgba;
+import static com.github.AAChartModel.AAChartCore.AATools.AAColor.AARgba;
 
-import com.example.anan.AAChartCore.AAChartCoreLib.AAChartCreator.AAChartModel;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAChartCreator.AASeriesElement;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartFontWeightType;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartLineDashStyleType;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartStackingType;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartSymbolStyleType;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartSymbolType;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartType;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AADataElement;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AADataLabels;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAMarker;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAPie;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAOptionsModel.AAStyle;
-import com.example.anan.AAChartCore.AAChartCoreLib.AATools.AAColor;
-import com.example.anan.AAChartCore.AAChartCoreLib.AATools.AAGradientColor;
-import com.example.anan.AAChartCore.AAChartCoreLib.AATools.AALinearGradientDirection;
+import com.github.AAChartModel.AAChartCore.AAChartCreator.AAChartModel;
+import com.github.AAChartModel.AAChartCore.AAChartCreator.AASeriesElement;
+import com.github.AAChartModel.AAChartCore.AAChartEnum.AAChartFontWeightType;
+import com.github.AAChartModel.AAChartCore.AAChartEnum.AAChartLineDashStyleType;
+import com.github.AAChartModel.AAChartCore.AAChartEnum.AAChartStackingType;
+import com.github.AAChartModel.AAChartCore.AAChartEnum.AAChartSymbolStyleType;
+import com.github.AAChartModel.AAChartCore.AAChartEnum.AAChartSymbolType;
+import com.github.AAChartModel.AAChartCore.AAChartEnum.AAChartType;
+import com.github.AAChartModel.AAChartCore.AAOptionsModel.AADataElement;
+import com.github.AAChartModel.AAChartCore.AAOptionsModel.AADataLabels;
+import com.github.AAChartModel.AAChartCore.AAOptionsModel.AAMarker;
+import com.github.AAChartModel.AAChartCore.AAOptionsModel.AAPie;
+import com.github.AAChartModel.AAChartCore.AAOptionsModel.AAStyle;
+import com.github.AAChartModel.AAChartCore.AATools.AAColor;
+import com.github.AAChartModel.AAChartCore.AATools.AAGradientColor;
+import com.github.AAChartModel.AAChartCore.AATools.AALinearGradientDirection;
 
 public class MixedChartComposer {
 

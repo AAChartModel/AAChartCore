@@ -1,13 +1,13 @@
 package com.example.anan.AAChartCore.ChartsDemo.chartcomposer;
 
-import com.example.anan.AAChartCore.AAChartCoreLib.AAChartCreator.AAChartModel;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAChartCreator.AASeriesElement;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartAnimationType;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartSymbolStyleType;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartSymbolType;
-import com.example.anan.AAChartCore.AAChartCoreLib.AAChartEnum.AAChartType;
-import com.example.anan.AAChartCore.AAChartCoreLib.AATools.AAGradientColor;
-import com.example.anan.AAChartCore.AAChartCoreLib.AATools.AALinearGradientDirection;
+import com.github.AAChartModel.AAChartCore.AAChartCreator.AAChartModel;
+import com.github.AAChartModel.AAChartCore.AAChartCreator.AASeriesElement;
+import com.github.AAChartModel.AAChartCore.AAChartEnum.AAChartAnimationType;
+import com.github.AAChartModel.AAChartCore.AAChartEnum.AAChartSymbolStyleType;
+import com.github.AAChartModel.AAChartCore.AAChartEnum.AAChartSymbolType;
+import com.github.AAChartModel.AAChartCore.AAChartEnum.AAChartType;
+import com.github.AAChartModel.AAChartCore.AATools.AAGradientColor;
+import com.github.AAChartModel.AAChartCore.AATools.AALinearGradientDirection;
 
 import java.util.Map;
 

@@ -81,17 +81,29 @@
 
 ## 安装
 
-### 手动安装
+### JitPack
 
-1. 下载 Demo  `AAChartCoreDemo`
-2. 将 Demo 中的名为`AAChartCoreLib 文件夹` 和 `assets 下的所有文件`拖入至你的项目之中.
+```
+allprojects {
+    repositories {
+        ...
+        maven { url 'https://jitpack.io' }
+    }
+}
+```
 
+```
+dependencies {
+    ...
+    implementation 'com.github.AAChartModel:AAChartCore:-SNAPSHOT'
+}
+```
 
 ## 使用方法
 
 1. 创建视图*AAChartView*
 ```xml
-        <AAChartCore.AAChartConfiger.AAChartView
+        <com.github.AAChartModel.AAChartCore.AAChartConfiger.AAChartView
         android:id="@+id/AAChartView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
