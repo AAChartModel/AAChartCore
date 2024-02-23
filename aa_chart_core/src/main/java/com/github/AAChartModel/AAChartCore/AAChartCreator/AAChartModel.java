@@ -64,28 +64,28 @@ public class AAChartModel {
     public String  tooltipValueSuffix;    //浮动提示框单位后缀
     public Boolean gradientColorEnable;   //是否要为渐变色
     public Boolean polar;                 //是否极化图形(变为雷达图)
-    public Number[] margin;                //图表外边缘和绘图区域之间的边距
+    public Number[]margin;                //图表外边缘和绘图区域之间的边距
     public Boolean dataLabelsEnabled;     //是否显示数据
     public AAStyle dataLabelsStyle;       //数据文本风格样式
     public Boolean xAxisLabelsEnabled;    //x 轴是否显示数据
     public Integer xAxisTickInterval;     //x 轴刻度点间隔数(设置每隔几个点显示一个 X轴的内容)
     public String[]categories;            //x 轴是否显示数据
-    public Number   xAxisGridLineWidth;    //x 轴网格线的宽度
+    public Number  xAxisGridLineWidth;    //x 轴网格线的宽度
     public Boolean xAxisVisible;          //x 轴是否显示
     public Boolean yAxisVisible;          //y 轴是否显示
     public Boolean yAxisLabelsEnabled;    //y 轴是否显示数据
     public String  yAxisTitle;            //y 轴标题
-    public Number   yAxisLineWidth;        //y 轴轴线的宽度
-    public Number   yAxisMin;              //y 轴最小值
-    public Number   yAxisMax;              //y 轴最大值
+    public Number  yAxisLineWidth;        //y 轴轴线的宽度
+    public Number  yAxisMin;              //y 轴最小值
+    public Number  yAxisMax;              //y 轴最大值
     public Boolean yAxisAllowDecimals;    //y 轴是否允许显示小数
-    public Number   yAxisGridLineWidth;    //y 轴网格线的宽度
+    public Number  yAxisGridLineWidth;    //y 轴网格线的宽度
     public Object[]colorsTheme;           //图表主题颜色数组
     public Boolean legendEnabled;         //是否显示图例
     public Object  backgroundColor;       //图表背景色
-    public Number   borderRadius;          //柱状图长条图头部圆角半径(可用于设置头部的形状,仅对条形图,柱状图有效)
-    public Number   markerRadius;          //折线连接点的半径长度
-    public Object[] series;               //图表的数据列内容
+    public Number  borderRadius;          //柱状图长条图头部圆角半径(可用于设置头部的形状,仅对条形图,柱状图有效)
+    public Number  markerRadius;          //折线连接点的半径长度
+    public Object[]series;                //图表的数据列内容
     public Boolean touchEventEnabled;     //是否支持用户触摸事件
     public AAScrollablePlotArea scrollablePlotArea;
 
