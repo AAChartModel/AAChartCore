@@ -83,7 +83,7 @@
 
 ### JitPack
 
-```
+```groovy
 allprojects {
     repositories {
         ...
@@ -92,7 +92,7 @@ allprojects {
 }
 ```
 
-```
+```groovy
 dependencies {
     ...
     implementation 'com.github.AAChartModel:AAChartCore:-SNAPSHOT'
@@ -103,49 +103,48 @@ dependencies {
 
 1. 创建视图*AAChartView*
 ```xml
-        <com.github.AAChartModel.AAChartCore.AAChartConfiger.AAChartView
-        android:id="@+id/AAChartView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        />
+<com.github.AAChartModel.AAChartCore.AAChartCreator.AAChartView
+    android:id="@+id/AAChartView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" />
  ```
 
  ```java
-        AAChartView aaChartView = findViewById(R.id.AAChartView);
+AAChartView aaChartView = findViewById(R.id.AAChartView);
  ```
 2. 配置视图模型*AAChartModel*
 
 * 链式编程的方式配置 *AAChartModel* 模型对象属性
 ```java
 AAChartModel aaChartModel = new AAChartModel()
-.chartType(AAChartType.Area)
-.title("THE HEAT OF PROGRAMMING LANGUAGE")
-.subtitle("Virtual Data")
-.backgroundColor("#4b2b7f")
-.categories(new String[]{"Java","Swift","Python","Ruby", "PHP","Go","C","C#","C++"})
-.dataLabelsEnabled(false)
-.yAxisGridLineWidth(0f)
-.series(new AASeriesElement[]{
-    new AASeriesElement()
-    .name("Tokyo")
-    .data(new Object[]{7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6}),
-    new AASeriesElement()
-    .name("NewYork")
-    .data(new Object[]{0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5}),
-    new AASeriesElement()
-    .name("London")
-    .data(new Object[]{0.9, 0.6, 3.5, 8.4, 13.5, 17.0, 18.6, 17.9, 14.3, 9.0, 3.9, 1.0}),
-    new AASeriesElement()
-    .name("Berlin")
-    .data(new Object[]{3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8})
-});
+    .chartType(AAChartType.Area)
+    .title("THE HEAT OF PROGRAMMING LANGUAGE")
+    .subtitle("Virtual Data")
+    .backgroundColor("#4b2b7f")
+    .categories(new String[]{"Java", "Swift", "Python", "Ruby", "PHP", "Go", "C", "C#", "C++"})
+    .dataLabelsEnabled(false)
+    .yAxisGridLineWidth(0f)
+    .series(new AASeriesElement[]{
+        new AASeriesElement()
+            .name("Tokyo")
+            .data(new Object[]{7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6}),
+        new AASeriesElement()
+            .name("NewYork")
+            .data(new Object[]{0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5}),
+        new AASeriesElement()
+            .name("London")
+            .data(new Object[]{0.9, 0.6, 3.5, 8.4, 13.5, 17.0, 18.6, 17.9, 14.3, 9.0, 3.9, 1.0}),
+        new AASeriesElement()
+            .name("Berlin")
+            .data(new Object[]{3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8})
+    });
 ```
 
 3.  绘制图形(创建 AAChartView 实例对象后,首次绘制图形调用此方法)
 
 ```java
-        /*图表视图对象调用图表模型对象,绘制最终图形*/
-        aaChartView.aa_drawChartWithChartModel(aaChartModel);
+/*图表视图对象调用图表模型对象,绘制最终图形*/
+aaChartView.aa_drawChartWithChartModel(aaChartModel);
 ```
 
 🌹🌹🌹 好了,至此,有关于绘制图形的任务,一切皆已经搞定!!! 你将得到你想要的任意图形!!!
@@ -156,15 +155,15 @@ AAChartModel aaChartModel = new AAChartModel()
 * 仅仅刷新图形的`series`数据内容(首次绘制图形完成之后,后续刷新图表数据均建议调用此方法)
 
 ```java
-    /*仅仅更新了图表的series数组数据,不改动图表的其他内容*/
-    aaChartView.aa_onlyRefreshTheChartDataWithChartModelSeries(chartModelSeriesArray)
+/*仅仅更新了图表的series数组数据,不改动图表的其他内容*/
+aaChartView.aa_onlyRefreshTheChartDataWithChartModelSeries(chartModelSeriesArray)
 ```
 
 *   刷新图形除数据属性 `series` 以外的其他属性(首次绘制图形完成之后,后续刷新图表的属性均建议调用此方法 注意:仅仅刷新图形数据,则建议使用上面的👆`aa_onlyRefreshTheChartDataWithChartModelSeries`方法)
 
 ```java
-    /*更新 AAChartModel 整体内容(如修改了图表的类型,将 column chart 改为 area chart)之后,刷新图表*/
-    aaChartView.aa_refreshChartWholeContentWithChartModel(aaChartModel)
+/*更新 AAChartModel 整体内容(如修改了图表的类型,将 column chart 改为 area chart)之后,刷新图表*/
+aaChartView.aa_refreshChartWholeContentWithChartModel(aaChartModel)
 ```
 
 
