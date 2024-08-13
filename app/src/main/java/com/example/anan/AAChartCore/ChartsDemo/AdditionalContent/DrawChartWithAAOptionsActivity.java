@@ -96,7 +96,8 @@ public class DrawChartWithAAOptionsActivity extends AppCompatActivity {
                 return customTitleStyle(); //自定义标题样式
             case "configureBoxplotChartWithSpecialStyle":
                 return configureBoxplotChartWithSpecialStyle(); //自定义盒须图样式
-
+            case "leftAlignedAndReserveSpaceXAxisLabelsBarChart":
+                return leftAlignedAndReserveSpaceXAxisLabelsBarChart(); //条形图左对齐且保留空间
 
         }
         return configureAAPlotBandsForChart();

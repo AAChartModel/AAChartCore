@@ -2289,5 +2289,38 @@ public class ChartOptionsComposer {
         return aaOptions;
     }
 
+    public static AAOptions leftAlignedAndReserveSpaceXAxisLabelsBarChart() {
+        return new AAOptions()
+                .chart(new AAChart()
+                        .type(AAChartType.Bar))
+                .title(new AATitle()
+                        .text("Left aligned X axis labels"))
+                .xAxis(new AAXAxis()
+                        .categories(new String[]{"ApplesApplesApplesApplesApples", "Oranges", "Pears", "Grapes", "Bananas"})
+                        .labels(new AALabels()
+                                .align(AAChartAlignType.Left)
+                                .reserveSpace(true)))
+                .yAxis(new AAYAxis()
+                        .min(0)
+                        .title(new AATitle()
+                                .text("Total fruit consumption")))
+                .legend(new AALegend()
+                        .reversed(true))
+                .plotOptions(new AAPlotOptions()
+                        .series(new AASeries()
+                                .stacking(AAChartStackingType.Normal)))
+                .series(new AASeriesElement[]{
+                        new AASeriesElement()
+                                .name("John")
+                                .data(new Object[]{5, 3, 4, 7, 2}),
+                        new AASeriesElement()
+                                .name("Jane")
+                                .data(new Object[]{2, 2, 3, 2, 1}),
+                        new AASeriesElement()
+                                .name("Joe")
+                                .data(new Object[]{3, 4, 4, 2, 5})
+                });
+    }
+
 }
 

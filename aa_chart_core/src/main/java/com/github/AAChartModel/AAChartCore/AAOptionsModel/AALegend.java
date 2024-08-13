@@ -17,6 +17,7 @@ public class AALegend {
     public Number y;
     public Boolean floating;
     public String labelFormat;
+    public Boolean reversed;
 
     public AALegend layout(String prop) {
         layout = prop;
@@ -98,6 +99,9 @@ public class AALegend {
         return this;
     }
 
-
+    public AALegend reversed(Boolean prop) {
+        reversed = prop;
+        return this;
+    }
 
 }

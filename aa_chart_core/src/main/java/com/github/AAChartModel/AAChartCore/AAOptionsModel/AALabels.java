@@ -12,6 +12,7 @@ public class AALabels {
     public String format;//坐标轴格式化字符串。 默认是：{value}.
     public String formatter;//坐标轴格式化字符串。 默认是：{value}.
     public Number padding;//轴标签的内间距，作用是保证轴标签之间有空隙。 默认是：5.
+    public Boolean reserveSpace;//是否为标签预留空间
     public Number rotation;//轴标签的旋转角度 默认是：0.
     public Integer staggerLines;//只针对水平轴有效，定义轴标签显示行数。
     public Integer step;//显示 n 的倍数标签，例如设置为 2 则表示标签间隔一个轴标签显示。默认情况下，为了避免轴标签被覆盖，该参数会根据情况自动计算。可以通过设置此参数为 1 来阻止自动计算。
@@ -57,6 +58,11 @@ public class AALabels {
 
     public AALabels padding(Number prop) {
         padding = prop;
+        return this;
+    }
+
+    public AALabels reserveSpace(Boolean prop) {
+        reserveSpace = prop;
         return this;
     }
 
