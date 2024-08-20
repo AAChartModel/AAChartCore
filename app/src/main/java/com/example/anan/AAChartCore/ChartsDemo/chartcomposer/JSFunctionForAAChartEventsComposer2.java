@@ -9,10 +9,14 @@ import com.github.AAChartModel.AAChartCore.AAChartEnum.AAChartType;
 import com.github.AAChartModel.AAChartCore.AAOptionsModel.AAChart;
 import com.github.AAChartModel.AAChartCore.AAOptionsModel.AACrosshair;
 import com.github.AAChartModel.AAChartCore.AAOptionsModel.AADataLabels;
+import com.github.AAChartModel.AAChartCore.AAOptionsModel.AAHover;
 import com.github.AAChartModel.AAChartCore.AAOptionsModel.AAMarker;
 import com.github.AAChartModel.AAChartCore.AAOptionsModel.AAOptions;
 import com.github.AAChartModel.AAChartCore.AAOptionsModel.AAPlotOptions;
+import com.github.AAChartModel.AAChartCore.AAOptionsModel.AAPoint;
+import com.github.AAChartModel.AAChartCore.AAOptionsModel.AAPointEvents;
 import com.github.AAChartModel.AAChartCore.AAOptionsModel.AASeries;
+import com.github.AAChartModel.AAChartCore.AAOptionsModel.AAStates;
 import com.github.AAChartModel.AAChartCore.AAOptionsModel.AAStyle;
 import com.github.AAChartModel.AAChartCore.AAOptionsModel.AATitle;
 import com.github.AAChartModel.AAChartCore.AAOptionsModel.AATooltip;
@@ -21,6 +25,60 @@ import com.github.AAChartModel.AAChartCore.AAOptionsModel.AAYAxis;
 import com.github.AAChartModel.AAChartCore.AATools.AAColor;
 
 public class JSFunctionForAAChartEventsComposer2 {
+
+    //https://github.com/AAChartModel/AAChartCore/issues/203
+    public static AAOptions disableHoverEventTooltipEffect() {
+        AAOptions aaOptions = new AAOptions()
+                .chart(new AAChart()
+                        .type(AAChartType.Line)
+                        .events(new AAChartEvents()
+                                .load("function() {" +
+                                        "    const chart = this;" +
+                                        "    Highcharts.addEvent(chart.container, 'touchmove', function (e) {" +
+                                        "        e.preventDefault();" +
+                                        "        chart.tooltip.hide(0);" +
+                                        "    });" +
+                                        "}")
+                        )
+                )
+                .title(new AATitle()
+                        .text("Disable Hover Event Tooltip Effect")
+                )
+                .plotOptions(new AAPlotOptions()
+                        .series(new AASeries()
+                                .states(new AAStates()
+                                        .hover(new AAHover()
+                                                .enabled(false) // 禁用默认 hover 状态
+                                        )
+                                )
+                                .point(new AAPoint()
+                                        .events(new AAPointEvents()
+                                                .click("function() {" +
+                                                        "    const chart = this.series.chart;" +
+                                                        "    chart.tooltip.refresh(this);" +
+                                                        "}")
+                                        )
+                                )
+                                .marker(new AAMarker()
+                                        .enabled(true)
+                                        .radius(10)
+                                )
+                        )
+                )
+                .tooltip(new AATooltip()
+                        .enabled(true)
+                        .hideDelay(0) // 设置 tooltip 立刻隐藏
+                        .shared(false)
+                )
+                .series(new AASeriesElement[]{
+                        new AASeriesElement()
+                                .data(new Number[]{1, 3, 2, 4, 5})
+                });
+
+        return aaOptions;
+
+    }
+
 
 //https://github.com/AAChartModel/AAChartKit/issues/1557
 //https://github.com/AAChartModel/AAChartCore/issues/199
@@ -292,7 +350,7 @@ container.addEventListener('mouseup', function() {
          });
      }
      */
-    public static AAOptions createChartOptions() {
+    public static AAOptions autoCrosshairAndTooltip() {
         AAOptions aaOptions = new AAOptions()
                 .title(new AATitle()
                         .text("Auto Crosshair And Tooltip"))

@@ -22,6 +22,7 @@ public class AATooltip {
     public Number padding;
     public String pointFormatter;
     public String positioner;
+    public Integer hideDelay;
     public AADateTimeLabelFormats dateTimeLabelFormats;
     public String shape;
 
@@ -117,6 +118,11 @@ public class AATooltip {
 
     public AATooltip positioner(String prop) {
         positioner = AAJSStringPurer.pureAnonymousJSFunctionString(prop);
+        return this;
+    }
+
+    public AATooltip hideDelay(Integer prop) {
+        hideDelay = prop;
         return this;
     }
 

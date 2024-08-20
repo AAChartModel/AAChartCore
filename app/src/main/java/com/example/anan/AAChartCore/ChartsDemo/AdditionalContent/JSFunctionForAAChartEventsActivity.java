@@ -6,6 +6,7 @@ import android.content.Intent;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.example.anan.AAChartCore.ChartsDemo.chartcomposer.JSFunctionForAAChartEventsComposer2;
 import com.github.AAChartModel.AAChartCore.AAChartCreator.AAChartView;
 import com.github.AAChartModel.AAChartCore.AAOptionsModel.AAOptions;
 import com.example.anan.AAChartCore.R;
@@ -37,7 +38,7 @@ public class JSFunctionForAAChartEventsActivity extends AppCompatActivity {
             case "automaticallyHideTooltipAfterItIsShown": return automaticallyHideTooltipAfterItIsShown(); //图表加载完成后,自动隐藏浮动提示框
             case "dynamicHeightGridLineAreaChart": return dynamicHeightGridLineAreaChart(); //动态高度网格线的区域填充图
             case "customizeYAxisPlotLinesLabelBeSpecialStyle": return customizeYAxisPlotLinesLabelBeSpecialStyle(); //自定义 Y 轴轴线上面的标签文字特殊样式
-            case "configureECGStyleChart": return configureECGStyleChart(); //配置 ECG 样式的图表
+            case "configureECGStyleChart": return JSFunctionForAAChartEventsComposer2.disableHoverEventTooltipEffect(); //配置 ECG 样式的图表
         }
         return null;
     }
