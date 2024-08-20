@@ -13,7 +13,7 @@ import java.util.Map;
 
 public class BasicChartComposer {
 
-    public static AAChartModel configureBasicOptions() {
+    private static AAChartModel configureBasicOptions() {
         return new AAChartModel()
                 .backgroundColor("#4b2b7f")
                 .dataLabelsEnabled(false)
