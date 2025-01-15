@@ -25,13 +25,6 @@
 
 package com.github.AAChartModel.AAChartCore.AAChartCreator;
 
-import com.google.gson.internal.LinkedTreeMap;
+public class AAMoveOverEventMessageModel extends AAEventMessageModel {
 
-public class AAMoveOverEventMessageModel {
-    public String name;
-    public Double x;
-    public Double y;
-    public String category;
-    public LinkedTreeMap offset;
-    public Integer index;
 }

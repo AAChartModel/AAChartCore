@@ -16,6 +16,7 @@ public class AAOptions {
     public Object[] colors;
     public AACredits credits;
     public AALang defaultOptions;
+    public Boolean clickEventEnabled;
     public Boolean touchEventEnabled;
 
     public AAOptions chart(AAChart prop) {
@@ -90,6 +91,11 @@ public class AAOptions {
 
     public AAOptions defaultOptions(AALang prop) {
         defaultOptions = prop;
+        return this;
+    }
+
+    public AAOptions clickEventEnabled(Boolean prop) {
+        clickEventEnabled = prop;
         return this;
     }
 

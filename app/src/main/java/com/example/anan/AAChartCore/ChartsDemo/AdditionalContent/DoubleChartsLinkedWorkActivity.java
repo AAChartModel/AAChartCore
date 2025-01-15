@@ -7,6 +7,7 @@ import android.os.Bundle;
 
 import com.github.AAChartModel.AAChartCore.AAChartCreator.AAChartModel;
 import com.github.AAChartModel.AAChartCore.AAChartCreator.AAChartView;
+import com.github.AAChartModel.AAChartCore.AAChartCreator.AAClickEventMessageModel;
 import com.github.AAChartModel.AAChartCore.AAChartCreator.AAMoveOverEventMessageModel;
 import com.github.AAChartModel.AAChartCore.AAChartCreator.AAOptionsConstructor;
 import com.github.AAChartModel.AAChartCore.AAChartCreator.AASeriesElement;
@@ -107,7 +108,8 @@ public class DoubleChartsLinkedWorkActivity extends AppCompatActivity implements
                 .yAxisReversed(true)
                 .inverted(true)
                 .legendEnabled(false)
-                .touchEventEnabled(true)
+                .clickEventEnabled(true) // 设置开启点击事件
+                .touchEventEnabled(true)//设置关闭触摸滑动事件
                 .series(new AASeriesElement[]{
                         new AASeriesElement()
                                 .name("Tokyo")
@@ -166,8 +168,11 @@ public class DoubleChartsLinkedWorkActivity extends AppCompatActivity implements
     }
 
     @Override
-    public void chartViewMoveOverEventMessage(AAChartView aaChartView, AAMoveOverEventMessageModel messageModel) {
-        this.selectedGradientColor = gradientColorsArr[messageModel.index];
+    public void chartViewClickEventMessage(AAChartView aaChartView, AAClickEventMessageModel clickEventMessage) {
+        //打印点击事件信息
+        System.out.println("🖱🖱🖱获取点击事件 clickMessageModel = " + clickEventMessage);
+        //do nothing
+        this.selectedGradientColor = gradientColorsArr[clickEventMessage.index];
 
 
         Handler mainHandler = new Handler(Looper.getMainLooper());
@@ -182,8 +187,28 @@ public class DoubleChartsLinkedWorkActivity extends AppCompatActivity implements
                 aaChartView2.aa_onlyRefreshTheChartDataWithChartOptionsSeriesArray(aaSeriesElementsArr);
             }
         });
+    }
+
+    @Override
+    public void chartViewMoveOverEventMessage(AAChartView aaChartView, AAMoveOverEventMessageModel moveOverEventMessage) {
+        //打印点击事件信息
+        System.out.println("👋👋👋获取手指掠过事件 moveOverEventMessage  " + moveOverEventMessage);
+        this.selectedGradientColor = gradientColorsArr[moveOverEventMessage.index];
+        Handler mainHandler = new Handler(Looper.getMainLooper());
+        mainHandler.post(new Runnable() {
+            @Override
+            public void run() {
+                //已在主线程中，可以更新UI
+                AASeriesElement[] aaSeriesElementsArr = new AASeriesElement[]{
+                        new AASeriesElement()
+                                .data(configureSeriesDataArray())
+                };
+                aaChartView2.aa_onlyRefreshTheChartDataWithChartOptionsSeriesArray(aaSeriesElementsArr);
+            }
+        });
 
     }
+
 
 
 }

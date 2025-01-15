@@ -43,6 +43,11 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import com.github.AAChartModel.AAChartCore.AAOptionsModel.AAOptions;
+import com.github.AAChartModel.AAChartCore.AAOptionsModel.AAPlotOptions;
+import com.github.AAChartModel.AAChartCore.AAOptionsModel.AAPoint;
+import com.github.AAChartModel.AAChartCore.AAOptionsModel.AAPointEvents;
+import com.github.AAChartModel.AAChartCore.AAOptionsModel.AASeries;
+import com.github.AAChartModel.AAChartCore.AATools.AAColor;
 import com.github.AAChartModel.AAChartCore.AATools.AAJSStringPurer;
 import com.google.gson.Gson;
 import com.google.gson.internal.LinkedTreeMap;
@@ -54,9 +59,18 @@ public class AAChartView extends WebView {
 
     public interface AAChartViewCallBack {
         void chartViewDidFinishLoad(AAChartView aaChartView);
+
+        //  @objc optional func aaChartView(_ aaChartView: AAChartView, clickEventMessage: AAClickEventMessageModel)
+        //    @objc optional func aaChartView(_ aaChartView: AAChartView, moveOverEventMessage: AAMoveOverEventMessageModel)
+
+        default void chartViewClickEventMessage(
+                AAChartView aaChartView,
+                AAClickEventMessageModel clickEventMessage
+        ) { }
+
         void chartViewMoveOverEventMessage(
                 AAChartView aaChartView,
-                AAMoveOverEventMessageModel messageModel
+                AAMoveOverEventMessageModel moveOverEventMessage
         );
     }
 
@@ -140,21 +154,37 @@ public class AAChartView extends WebView {
         this.addJavascriptInterface(this, "androidObject");
     }
 
-
     //js调用安卓，必须加@JavascriptInterface注释的方法才可以被js调用
     @JavascriptInterface
-    public String androidMethod(String message) {
+    public String clickEventAndroidMethod(String message) {
         Gson gson = new Gson();
         Map<String, Object> messageBody = new HashMap<>();
         messageBody = gson.fromJson(message, messageBody.getClass());
-        AAMoveOverEventMessageModel eventMessageModel = getEventMessageModel(messageBody);
+
+        // 调用泛型方法并传递 MyEventMessage.class 作为 eventType 参数
+        AAClickEventMessageModel clickEventMessageModel = this.getEventMessageModel(messageBody, AAClickEventMessageModel.class);
+
         if (callBack != null) {
-            callBack.chartViewMoveOverEventMessage(this,eventMessageModel);
+            callBack.chartViewClickEventMessage(this, clickEventMessageModel);
         }
 //       Log.i("androidMethod","++++++++++++++++显示总共调用了几次");
         return "";
     }
 
+    //js调用安卓，必须加@JavascriptInterface注释的方法才可以被js调用
+    @JavascriptInterface
+    public String moveOverEventAndroidMethod(String message) {
+        Gson gson = new Gson();
+        Map<String, Object> messageBody = new HashMap<>();
+        messageBody = gson.fromJson(message, messageBody.getClass());
+        // 调用泛型方法并传递 MyEventMessage.class 作为 eventType 参数
+        AAMoveOverEventMessageModel moveOverEventMessageModel = this.getEventMessageModel(messageBody, AAMoveOverEventMessageModel.class);
+        if (callBack != null) {
+            callBack.chartViewMoveOverEventMessage(this, moveOverEventMessageModel);
+        }
+//       Log.i("androidMethod","++++++++++++++++显示总共调用了几次");
+        return "";
+    }
 
     public void aa_drawChartWithChartModel(final AAChartModel chartModel) {
         AAOptions aaOptions = chartModel.aa_toAAOptions();
@@ -326,13 +356,50 @@ public class AAChartView extends WebView {
         });
     }
 
-    private void configureChartOptionsAndDrawChart(AAOptions chartOptions) {
+    //    private func configurePlotOptionsSeriesPointEvents(_ aaOptions: AAOptions) {
+    //        if aaOptions.plotOptions == nil {
+    //            aaOptions.plotOptions = AAPlotOptions().series(AASeries().point(AAPoint().events(AAPointEvents())))
+    //        } else if aaOptions.plotOptions?.series == nil {
+    //            aaOptions.plotOptions?.series = AASeries().point(AAPoint().events(AAPointEvents()))
+    //        } else if aaOptions.plotOptions?.series?.point == nil {
+    //            aaOptions.plotOptions?.series?.point = AAPoint().events(AAPointEvents())
+    //        } else if aaOptions.plotOptions?.series?.point?.events == nil {
+    //            aaOptions.plotOptions?.series?.point?.events = AAPointEvents()
+    //        }
+    //    }
+    private void configurePlotOptionsSeriesPointEvents(AAOptions aaOptions) {
+        if (aaOptions.plotOptions == null) {
+            aaOptions.plotOptions = new AAPlotOptions().series(new AASeries().point(new AAPoint().events(new AAPointEvents())));
+        } else if (aaOptions.plotOptions.series == null) {
+            aaOptions.plotOptions.series = new AASeries().point(new AAPoint().events(new AAPointEvents()));
+        } else if (aaOptions.plotOptions.series.point == null) {
+            aaOptions.plotOptions.series.point = new AAPoint().events(new AAPointEvents());
+        } else if (aaOptions.plotOptions.series.point.events == null) {
+            aaOptions.plotOptions.series.point.events = new AAPointEvents();
+        }
+    }
+
+    private void configureChartOptionsAndDrawChart(AAOptions aaOptions) {
+        if (aaOptions == null) {
+            return;
+        }
+
         if (isClearBackgroundColor) {
-            chartOptions.chart.backgroundColor("rgba(0,0,0,0)");
+            aaOptions.chart.backgroundColor(AAColor.Clear);
+        }
+
+        // 提取布尔表达式以提高可读性，并防止 NullPointerException
+        boolean isClickEventEnabled = (aaOptions.clickEventEnabled != null && aaOptions.clickEventEnabled);
+        boolean isTouchEventEnabled = (aaOptions.touchEventEnabled != null && aaOptions.touchEventEnabled);
+
+        boolean isAnyEventEnabled = isClickEventEnabled || isTouchEventEnabled;
+
+        if (isAnyEventEnabled) {
+            configurePlotOptionsSeriesPointEvents(aaOptions);
         }
 
         Gson gson = new Gson();
-        String aaOptionsJsonStr = gson.toJson(chartOptions);
+        String aaOptionsJsonStr = gson.toJson(aaOptions);
         this.optionsJson = aaOptionsJsonStr;
         String javaScriptStr = "loadTheHighChartView('"
                 + aaOptionsJsonStr + "','"
@@ -367,8 +434,15 @@ public class AAChartView extends WebView {
         });
     }
 
-    private AAMoveOverEventMessageModel getEventMessageModel(Map<String, Object> messageBody) {
-        AAMoveOverEventMessageModel eventMessageModel =  new AAMoveOverEventMessageModel();
+    public <T extends AAEventMessageModel> T getEventMessageModel(Map<String, Object> messageBody, Class<T> eventType) {
+        T eventMessageModel;
+        try {
+            // 通过反射实例化泛型类型
+            eventMessageModel = eventType.getDeclaredConstructor().newInstance();
+        } catch (Exception e) {
+            throw new RuntimeException("Failed to create instance of " + eventType, e);
+        }
+
         eventMessageModel.name = messageBody.get("name").toString();
         eventMessageModel.x = (Double) messageBody.get("x");
         eventMessageModel.y = (Double) messageBody.get("y");
@@ -376,8 +450,10 @@ public class AAChartView extends WebView {
         eventMessageModel.offset = (LinkedTreeMap) messageBody.get("offset");
         Double index = (Double) messageBody.get("index");
         eventMessageModel.index = index.intValue();
+
         return eventMessageModel;
     }
+
 
 
     private void safeEvaluateJavaScriptString(String javaScriptString) {

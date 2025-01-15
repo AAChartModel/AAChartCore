@@ -33,44 +33,55 @@
         };
 
         function configurePlotOptions(aaOptions) {
-                    var aaPlotOptions = aaOptions.plotOptions;
-                    var animation = aaPlotOptions.series.animation;
-                    if (animation) {//懒调用(只有在 AAChartModel 实例对象设置了 animationType 属性值的时候才会调用设置动画类型的函数,否则不调用)
-                        var animationEasingType = animation.easing;
-                        animation.easing = configureTheChartAnimationEasingType(animationEasingType);
-                    }
-                    // 添加鼠标事件
-                    if (aaOptions.touchEventEnabled == true && aaPlotOptions.series) {
-                        configureChartTouchEvent(aaPlotOptions);
-                    }
-                }
+            var aaPlotOptions = aaOptions.plotOptions;
+            var animation = aaPlotOptions.series.animation;
+            if (animation) {//懒调用(只有在 AAChartModel 实例对象设置了 animationType 属性值的时候才会调用设置动画类型的函数,否则不调用)
+                var animationEasingType = animation.easing;
+                animation.easing = configureTheChartAnimationEasingType(animationEasingType);
+            }
+
+            if (aaOptions.clickEventEnabled == true) {
+                configureChartClickEvent(aaPlotOptions);
+            }
+
+            if (aaOptions.touchEventEnabled == true) {
+                configureChartTouchEvent(aaPlotOptions);
+            }
+        }
+
+        function configureEventMessageBody(selectedPoint) {
+            return {
+                name: selectedPoint.series.name,
+                y: selectedPoint.y,
+                x: selectedPoint.x,
+                category: selectedPoint.category,
+                offset: {
+                    plotX: selectedPoint.plotX,
+                    plotY: selectedPoint.plotY
+                },
+                index: selectedPoint.index,
+            };
+        }
+
+        function configureChartClickEvent(aaPlotOptions) {
+            var clickEventFunc = function() {
+                var message = configureEventMessageBody(this);
+                var messageStr = JSON.stringify(message);
+                window.androidObject.clickEventAndroidMethod(messageStr);
+            };
+
+            aaPlotOptions.series.point.events.click = clickEventFunc;
+        }
 
         function configureChartTouchEvent(aaPlotOptions) {
-                    var mouseOverFunc = function(){
-                        var message = {
-                            name: this.series.name,
-                            y :this.y,
-                            x: this.x,
-                            category: this.category ? this.category:"",
-                            offset: {plotX:this.plotX,plotY:this.plotY},
-                            index: this.index,
-                        };
+            var mouseOverEventFunc = function() {
+                var message = configureEventMessageBody(this);
+                var messageStr = JSON.stringify(message);
+                window.androidObject.moveOverEventAndroidMethod(messageStr);
+            };
 
-                        var messageStr = JSON.stringify(message);
-                        window.androidObject.androidMethod(messageStr);
-                    };
-
-                    if (aaPlotOptions.series.point) {// set property directly for series point
-                        aaPlotOptions.series.point.events.mouseOver = mouseOverFunc;
-                    } else {// create a new series point object instance
-                        var seriesPoint = {
-                            events:{
-                                mouseOver: mouseOverFunc,
-                             }
-                         };
-                    aaPlotOptions.series.point = seriesPoint;
-                    }
-                }
+            aaPlotOptions.series.point.events.mouseOver = mouseOverEventFunc;
+        }
 
         function onlyRefreshTheChartDataWithSeries(receivedSeries, animation) {
             var receivedSeriesArr = JSON.parse(receivedSeries);

@@ -86,6 +86,7 @@ public class AAChartModel {
     public Number  borderRadius;          //柱状图长条图头部圆角半径(可用于设置头部的形状,仅对条形图,柱状图有效)
     public Number  markerRadius;          //折线连接点的半径长度
     public Object[]series;                //图表的数据列内容
+    public Boolean clickEventEnabled;     //是否支持用户点击事件
     public Boolean touchEventEnabled;     //是否支持用户触摸事件
     public AAScrollablePlotArea scrollablePlotArea;
 
@@ -299,6 +300,11 @@ public class AAChartModel {
 
     public AAChartModel series(Object[] prop) {
         series = prop;
+        return this;
+    }
+
+    public AAChartModel clickEventEnabled(Boolean prop) {
+        clickEventEnabled = prop;
         return this;
     }
 
