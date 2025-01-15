@@ -58,21 +58,19 @@ import java.util.Map;
 public class AAChartView extends WebView {
 
     public interface AAChartViewCallBack {
-        void chartViewDidFinishLoad(AAChartView aaChartView);
-
-        //  @objc optional func aaChartView(_ aaChartView: AAChartView, clickEventMessage: AAClickEventMessageModel)
-        //    @objc optional func aaChartView(_ aaChartView: AAChartView, moveOverEventMessage: AAMoveOverEventMessageModel)
-
+        default void chartViewDidFinishLoad(
+                AAChartView aaChartView
+        ) { }
         default void chartViewClickEventMessage(
                 AAChartView aaChartView,
                 AAClickEventMessageModel clickEventMessage
         ) { }
-
-        void chartViewMoveOverEventMessage(
+        default void chartViewMoveOverEventMessage(
                 AAChartView aaChartView,
                 AAMoveOverEventMessageModel moveOverEventMessage
-        );
+        ) { }
     }
+
 
     public Number contentWidth;
     public Number contentHeight;
@@ -356,17 +354,6 @@ public class AAChartView extends WebView {
         });
     }
 
-    //    private func configurePlotOptionsSeriesPointEvents(_ aaOptions: AAOptions) {
-    //        if aaOptions.plotOptions == nil {
-    //            aaOptions.plotOptions = AAPlotOptions().series(AASeries().point(AAPoint().events(AAPointEvents())))
-    //        } else if aaOptions.plotOptions?.series == nil {
-    //            aaOptions.plotOptions?.series = AASeries().point(AAPoint().events(AAPointEvents()))
-    //        } else if aaOptions.plotOptions?.series?.point == nil {
-    //            aaOptions.plotOptions?.series?.point = AAPoint().events(AAPointEvents())
-    //        } else if aaOptions.plotOptions?.series?.point?.events == nil {
-    //            aaOptions.plotOptions?.series?.point?.events = AAPointEvents()
-    //        }
-    //    }
     private void configurePlotOptionsSeriesPointEvents(AAOptions aaOptions) {
         if (aaOptions.plotOptions == null) {
             aaOptions.plotOptions = new AAPlotOptions().series(new AASeries().point(new AAPoint().events(new AAPointEvents())));
@@ -434,7 +421,7 @@ public class AAChartView extends WebView {
         });
     }
 
-    public <T extends AAEventMessageModel> T getEventMessageModel(Map<String, Object> messageBody, Class<T> eventType) {
+    private <T extends AAEventMessageModel> T getEventMessageModel(Map<String, Object> messageBody, Class<T> eventType) {
         T eventMessageModel;
         try {
             // 通过反射实例化泛型类型
@@ -453,8 +440,6 @@ public class AAChartView extends WebView {
 
         return eventMessageModel;
     }
-
-
 
     private void safeEvaluateJavaScriptString(String javaScriptString) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
