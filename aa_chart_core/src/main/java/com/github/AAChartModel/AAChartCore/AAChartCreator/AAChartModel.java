@@ -87,7 +87,7 @@ public class AAChartModel {
     public Number  markerRadius;          //折线连接点的半径长度
     public Object[]series;                //图表的数据列内容
     public Boolean clickEventEnabled;     //是否支持用户点击事件
-    public Boolean touchEventEnabled;     //是否支持用户触摸事件
+    public Boolean touchEventEnabled;     //是否支持用户触摸(手指掠过)事件
     public AAScrollablePlotArea scrollablePlotArea;
 
 

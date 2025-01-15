@@ -32,6 +32,7 @@
 
 package com.github.AAChartModel.AAChartCore.AAChartCreator;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.os.Build;
@@ -143,6 +144,7 @@ public class AAChartView extends WebView {
         setupBasicContent();
     }
 
+    @SuppressLint("SetJavaScriptEnabled")
     private void setupBasicContent() {
         // Do some initialize work.
         this.contentWidth = 420f;
@@ -163,10 +165,8 @@ public class AAChartView extends WebView {
         Gson gson = new Gson();
         Map<String, Object> messageBody = new HashMap<>();
         messageBody = gson.fromJson(message, messageBody.getClass());
-
         // 调用泛型方法并传递 MyEventMessage.class 作为 eventType 参数
         AAClickEventMessageModel clickEventMessageModel = this.getEventMessageModel(messageBody, AAClickEventMessageModel.class);
-
         if (callBack != null) {
             callBack.chartViewClickEventMessage(this, clickEventMessageModel);
         }

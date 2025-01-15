@@ -108,8 +108,8 @@ public class DoubleChartsLinkedWorkActivity extends AppCompatActivity implements
                 .yAxisReversed(true)
                 .inverted(true)
                 .legendEnabled(false)
-                .clickEventEnabled(true) // 设置开启点击事件
-                .touchEventEnabled(true)//设置关闭触摸滑动事件
+                .clickEventEnabled(true) //设置点击事件
+                .touchEventEnabled(true) //设置触摸(手指掠过)事件
                 .series(new AASeriesElement[]{
                         new AASeriesElement()
                                 .name("Tokyo")
@@ -191,8 +191,8 @@ public class DoubleChartsLinkedWorkActivity extends AppCompatActivity implements
 
     @Override
     public void chartViewMoveOverEventMessage(AAChartView aaChartView, AAMoveOverEventMessageModel moveOverEventMessage) {
-        //打印点击事件信息
-        System.out.println("👋👋👋获取手指掠过事件 moveOverEventMessage  " + moveOverEventMessage);
+        //打印触摸(手指掠过)事件信息
+        System.out.println("👋👋👋获取触摸(手指掠过)事件 moveOverEventMessage  " + moveOverEventMessage);
         this.selectedGradientColor = gradientColorsArr[moveOverEventMessage.index];
         Handler mainHandler = new Handler(Looper.getMainLooper());
         mainHandler.post(new Runnable() {

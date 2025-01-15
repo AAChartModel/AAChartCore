@@ -124,8 +124,8 @@ public class AAOptionsConstructor
                 .legend(aaLegend)
                 .series(aaChartModel.series)
                 .colors(aaChartModel.colorsTheme) //设置颜色主题
-                .clickEventEnabled(aaChartModel.clickEventEnabled) //是否支持点击事件
-                .touchEventEnabled(aaChartModel.touchEventEnabled) //是否支持触摸事件
+                .clickEventEnabled(aaChartModel.clickEventEnabled) //设置点击事件
+                .touchEventEnabled(aaChartModel.touchEventEnabled) //设置触摸(手指掠过)事件
                 ;
 
         configureAxisContentAndStyle(aaOptions,aaChartModel);
