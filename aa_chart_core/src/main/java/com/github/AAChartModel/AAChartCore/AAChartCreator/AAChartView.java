@@ -60,15 +60,20 @@ public class AAChartView extends WebView {
     public interface AAChartViewCallBack {
         default void chartViewDidFinishLoad(
                 AAChartView aaChartView
-        ) { }
+        ) {
+        }
+
         default void chartViewClickEventMessage(
                 AAChartView aaChartView,
                 AAClickEventMessageModel clickEventMessage
-        ) { }
+        ) {
+        }
+
         default void chartViewMoveOverEventMessage(
                 AAChartView aaChartView,
                 AAMoveOverEventMessageModel moveOverEventMessage
-        ) { }
+        ) {
+        }
     }
 
 
