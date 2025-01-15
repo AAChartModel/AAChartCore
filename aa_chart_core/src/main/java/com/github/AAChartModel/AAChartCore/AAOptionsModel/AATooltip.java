@@ -3,7 +3,6 @@ package com.github.AAChartModel.AAChartCore.AAOptionsModel;
 import com.github.AAChartModel.AAChartCore.AATools.AAJSStringPurer;
 
 public class AATooltip {
-    //    var animation: Any? = null
     public Object animation;
     public Object backgroundColor;
     public String borderColor;
@@ -27,16 +26,6 @@ public class AATooltip {
     public Integer hideDelay;
     public AADateTimeLabelFormats dateTimeLabelFormats;
     public String shape;
-
-    //    fun animation(prop: AAAnimation): AATooltip {
-    //        animation = prop
-    //        return this
-    //    }
-    //
-    //    fun animation(prop: Boolean): AATooltip {
-    //        animation = prop
-    //        return this
-    //    }
 
     public AATooltip animation(AAAnimation prop) {
         animation = prop;
