@@ -13,6 +13,7 @@ import com.github.AAChartModel.AAChartCore.AAOptionsModel.AAChart;
 import com.github.AAChartModel.AAChartCore.AAOptionsModel.AADataLabels;
 import com.github.AAChartModel.AAChartCore.AAOptionsModel.AAHover;
 import com.github.AAChartModel.AAChartCore.AAOptionsModel.AALabels;
+import com.github.AAChartModel.AAChartCore.AAOptionsModel.AAMarker;
 import com.github.AAChartModel.AAChartCore.AAOptionsModel.AAOptions;
 import com.github.AAChartModel.AAChartCore.AAOptionsModel.AAPlotOptions;
 import com.github.AAChartModel.AAChartCore.AAOptionsModel.AAPoint;
@@ -29,6 +30,8 @@ import com.github.AAChartModel.AAChartCore.AATools.AAColor;
 import com.github.AAChartModel.AAChartCore.AATools.AAGradientColor;
 import com.github.AAChartModel.AAChartCore.AATools.AALinearGradientDirection;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 
 public class JSFunctionForAAOptionsComposer {
@@ -259,4 +262,99 @@ public class JSFunctionForAAOptionsComposer {
         return "[" + originalJsArrStr + "]";
     }
 
+    static ArrayList<Map<String, Object>> createSplineDataWithCurve(double[] point1, double[] point2, double curveOffset) {
+        double x0 = point1[0];
+        double y0 = point1[1];
+        double x2 = point2[0];
+        double y2 = point2[1];
+
+        double x1 = (x0 + x2) / 2;
+        double y1 = (y0 + y2) / 2 + curveOffset;
+
+        ArrayList<Map<String, Object>> data = new ArrayList<>();
+
+        // 第一个点
+        Map<String, Object> point1Map = new HashMap<>();
+        point1Map.put("x", x0);
+        point1Map.put("y", y0);
+        data.add(point1Map);
+
+        // 中间虚拟点
+        Map<String, Object> virtualPoint = new HashMap<>();
+        virtualPoint.put("x", x1);
+        virtualPoint.put("y", y1);
+
+        Map<String, Object> marker = new HashMap<>();
+        marker.put("enabled", false);
+        Map<String, Object> states = new HashMap<>();
+        Map<String, Object> hover = new HashMap<>();
+        hover.put("enabled", false);
+        states.put("hover", hover);
+        marker.put("states", states);
+        virtualPoint.put("marker", marker);
+
+        Map<String, Object> dataLabels = new HashMap<>();
+        dataLabels.put("enabled", false);
+        virtualPoint.put("dataLabels", dataLabels);
+
+        virtualPoint.put("isVirtual", true);
+        data.add(virtualPoint);
+
+        // 第二个点
+        Map<String, Object> point2Map = new HashMap<>();
+        point2Map.put("x", x2);
+        point2Map.put("y", y2);
+        data.add(point2Map);
+
+        return data;
+    }
+
+    public static AAOptions doublePointsSplineChart() {
+        double[] dataPoint1 = {1.0, 5.0};
+        double[] dataPoint2 = {8.0, 15.0};
+        ArrayList<Map<String, Object>> splineData = createSplineDataWithCurve(dataPoint1, dataPoint2, 2.0);
+
+        AAOptions options = new AAOptions()
+                .chart(new AAChart()
+                        .type(AAChartType.Spline))
+                .title(new AATitle()
+                        .text("两点间的曲线 (中间点无交互)"))
+                .tooltip(new AATooltip()
+                        .useHTML(true)
+                        .formatter("function() {\n" +
+                                "            if (!this.points || this.points.length === 0) {\n" +
+                                "                return false;\n" +
+                                "            }\n" +
+                                "            \n" +
+                                "            let wholeContentStr = this.points[0].x + '<br/>';\n" +
+                                "            let length = this.points.length;\n" +
+                                "            \n" +
+                                "            for (let i = 0; i < length; i++) {\n" +
+                                "                let thisPoint = this.points[i];\n" +
+                                "                \n" +
+                                "                if (thisPoint.point && thisPoint.point.isVirtual) {\n" +
+                                "                    return false;\n" +
+                                "                }\n" +
+                                "                \n" +
+                                "                let yValue = thisPoint.y;\n" +
+                                "                if (yValue != 0) {\n" +
+                                "                    let prefixStr = '<span style=\\\"' + 'color:'+ thisPoint.color + '; font-size:13px\\\"' + '>◉ ';\n" +
+                                "                    wholeContentStr += prefixStr + thisPoint.series.name + ': ' + yValue + '<br/>';\n" +
+                                "                }\n" +
+                                "            }\n" +
+                                "            return wholeContentStr;\n" +
+                                "        }"
+
+                        ))
+                .series(new AASeriesElement[]{
+                        new AASeriesElement()
+                                .name("Curved Line")
+                                .data(splineData.toArray())
+                                .marker(new AAMarker()
+                                .enabled(true)
+                                .radius(5f))
+                });
+
+        return options;
+    }
 }
