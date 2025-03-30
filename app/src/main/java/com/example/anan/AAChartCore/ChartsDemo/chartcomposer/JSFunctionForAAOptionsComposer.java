@@ -168,7 +168,7 @@ public class JSFunctionForAAOptionsComposer {
         return aaOptions;
     }
 
-    // Refer to the issue https://github.com/AAChartModel/AAChartKit/issues/589
+    //https://github.com/AAChartModel/AAChartKit/issues/589
     public static AAOptions customizeEveryDataLabelSinglelyByDataLabelsFormatter() {
         AAChartModel aaChartModel = new AAChartModel()
                 .chartType(AAChartType.Areaspline)//图表类型
@@ -309,6 +309,7 @@ public class JSFunctionForAAOptionsComposer {
         return data;
     }
 
+    //https://github.com/AAChartModel/AAChartCore/issues/208
     public static AAOptions doublePointsSplineChart() {
         double[] dataPoint1 = {1.0, 5.0};
         double[] dataPoint2 = {8.0, 15.0};
