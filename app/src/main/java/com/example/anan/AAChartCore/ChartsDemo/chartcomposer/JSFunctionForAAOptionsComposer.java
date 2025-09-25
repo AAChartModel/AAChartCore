@@ -267,23 +267,38 @@ public class JSFunctionForAAOptionsComposer {
 
         AAOptions aaOptions = aaChartModel.aa_toAAOptions();
 
-        //设置x轴的轴线为一个粗线
-        aaOptions.xAxis.lineWidth = 3;
-        //设置y轴的轴线为一个粗线
-        aaOptions.yAxis.lineWidth = 3;
+        // 设置轴线样式, 方便 beforeDraw 脚本里读取颜色并应用不同虚线样式
+        String xAxisColor = "#1E90FF"; // 道奇蓝
+        String yAxisColor = "#FF7F50"; // 珊瑚橙
 
-        aaOptions
-                .beforeDrawChartJavaScript("function () {"
+        aaOptions.xAxis.lineWidth = 3;
+        aaOptions.xAxis.lineColor = xAxisColor;
+
+        aaOptions.yAxis.lineWidth = 3;
+        aaOptions.yAxis.lineColor = yAxisColor;
+
+        String beforeDrawScript = String.format("function () {"
                         + "(function (H) {"
                         + "H.wrap(H.Axis.prototype, 'render', function (proceed) {"
                         + "proceed.apply(this, Array.prototype.slice.call(arguments, 1));"
                         + "var axis = this;"
+                        + "if (axis.horiz) {"
                         + "if (axis.axisLine) {"
-                        + "axis.axisLine.attr({'stroke-dasharray': '4,2'});"
+                        + "axis.axisLine.attr({'stroke-dasharray': '3,2,1,2','stroke': '%s'});"
+                        + "}"
+                        + "} else {"
+                        + "if (axis.axisLine) {"
+                        + "axis.axisLine.attr({'stroke-dasharray': '8,3,1,3,1,3','stroke': '%s'});"
+                        + "}"
                         + "}"
                         + "});"
                         + "}(Highcharts));"
-                        + "}")
+                        + "}",
+                xAxisColor,
+                yAxisColor);
+
+        aaOptions
+                .beforeDrawChartJavaScript(beforeDrawScript)
                 .afterDrawChartJavaScript("function () {"
                         + "console.log('afterDrawChartJavaScript fired');"
                         + "if (typeof aaGlobalChart !== 'undefined' && aaGlobalChart) {"
