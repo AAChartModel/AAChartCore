@@ -18,6 +18,8 @@ public class AAOptions {
     public AALang defaultOptions;
     public Boolean clickEventEnabled;
     public Boolean touchEventEnabled;
+    public String beforeDrawChartJavaScript;
+    public String afterDrawChartJavaScript;
 
     public AAOptions chart(AAChart prop) {
         chart = prop;
@@ -101,6 +103,16 @@ public class AAOptions {
 
     public AAOptions touchEventEnabled(Boolean prop) {
         touchEventEnabled = prop;
+        return this;
+    }
+
+    public AAOptions beforeDrawChartJavaScript(String prop) {
+        beforeDrawChartJavaScript = prop;
+        return this;
+    }
+
+    public AAOptions afterDrawChartJavaScript(String prop) {
+        afterDrawChartJavaScript = prop;
         return this;
     }
 

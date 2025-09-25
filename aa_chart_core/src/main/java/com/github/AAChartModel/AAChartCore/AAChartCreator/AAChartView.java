@@ -391,7 +391,26 @@ public class AAChartView extends WebView {
         }
 
         Gson gson = new Gson();
-        String aaOptionsJsonStr = gson.toJson(aaOptions);
+        String aaOptionsJsonStr;
+
+        String originalBeforeDrawScript = aaOptions.beforeDrawChartJavaScript;
+        String originalAfterDrawScript = aaOptions.afterDrawChartJavaScript;
+
+        try {
+            if (originalBeforeDrawScript != null) {
+                aaOptions.beforeDrawChartJavaScript = AAJSStringPurer.pureJavaScriptFunctionString(originalBeforeDrawScript);
+            }
+
+            if (originalAfterDrawScript != null) {
+                aaOptions.afterDrawChartJavaScript = AAJSStringPurer.pureJavaScriptFunctionString(originalAfterDrawScript);
+            }
+
+            aaOptionsJsonStr = gson.toJson(aaOptions);
+        } finally {
+            aaOptions.beforeDrawChartJavaScript = originalBeforeDrawScript;
+            aaOptions.afterDrawChartJavaScript = originalAfterDrawScript;
+        }
+
         this.optionsJson = aaOptionsJsonStr;
         String javaScriptStr = "loadTheHighChartView('"
                 + aaOptionsJsonStr + "','"
