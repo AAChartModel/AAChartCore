@@ -30,9 +30,13 @@ function loadTheHighChartView (sender,receivedWidth, receivedHeight) {
         });
     }
 
-    if (beforeDrawScript && beforeDrawScript.length > 0) {
+    if (beforeDrawScript) {
         try {
-            eval(beforeDrawScript);
+            if (typeof beforeDrawScript === 'function') {
+                beforeDrawScript.call(window);
+            } else if (typeof beforeDrawScript === 'string' && beforeDrawScript.length > 0) {
+                eval(beforeDrawScript);
+            }
         } catch (error) {
             console.error('Error executing beforeDrawChartJavaScript:', error);
         }
@@ -44,9 +48,13 @@ function loadTheHighChartView (sender,receivedWidth, receivedHeight) {
 
     aaGlobalChart = Highcharts.chart('container', aaOptions);
     //全局配置(可通过全局配置设置主题)https://api.hcharts.cn/highcharts#Highcharts.setOptions
-    if (afterDrawScript && afterDrawScript.length > 0) {
+    if (afterDrawScript) {
         try {
-            eval(afterDrawScript);
+            if (typeof afterDrawScript === 'function') {
+                afterDrawScript.call(aaGlobalChart, aaGlobalChart);
+            } else if (typeof afterDrawScript === 'string' && afterDrawScript.length > 0) {
+                eval(afterDrawScript);
+            }
         } catch (error) {
             console.error('Error executing afterDrawChartJavaScript:', error);
         }

@@ -398,11 +398,11 @@ public class AAChartView extends WebView {
 
         try {
             if (originalBeforeDrawScript != null) {
-                aaOptions.beforeDrawChartJavaScript = AAJSStringPurer.pureJavaScriptFunctionString(originalBeforeDrawScript);
+                aaOptions.beforeDrawChartJavaScript = AAJSStringPurer.pureAnonymousJSFunctionString(originalBeforeDrawScript);
             }
 
             if (originalAfterDrawScript != null) {
-                aaOptions.afterDrawChartJavaScript = AAJSStringPurer.pureJavaScriptFunctionString(originalAfterDrawScript);
+                aaOptions.afterDrawChartJavaScript = AAJSStringPurer.pureAnonymousJSFunctionString(originalAfterDrawScript);
             }
 
             aaOptionsJsonStr = gson.toJson(aaOptions);

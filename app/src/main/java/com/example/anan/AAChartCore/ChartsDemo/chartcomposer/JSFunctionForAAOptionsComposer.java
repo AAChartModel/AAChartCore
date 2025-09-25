@@ -252,6 +252,44 @@ public class JSFunctionForAAOptionsComposer {
         return aaOptions;
     }
 
+    public static AAOptions verifyBeforeAndAfterDrawJavaScriptCallbacks() {
+        AAChartModel aaChartModel = new AAChartModel()
+                .chartType(AAChartType.Column)
+                .title("Before / After Draw JS Demo")
+                .subtitle("背景将由 beforeDraw 脚本修改")
+                .categories(new String[]{"一月", "二月", "三月", "四月", "五月", "六月"})
+                .series(new AASeriesElement[]{
+                        new AASeriesElement()
+                                .name("访客量")
+                                .data(new Object[]{45, 88, 63, 72, 95, 102})
+                                .color(AAGradientColor.MysticMauve)
+                });
+
+        AAOptions aaOptions = aaChartModel.aa_toAAOptions();
+
+        aaOptions
+                .beforeDrawChartJavaScript("function () {"
+                        + "console.log('beforeDrawChartJavaScript fired');"
+                        + "var container = document.getElementById('container');"
+                        + "if (container) {"
+                        + "container.style.background = 'linear-gradient(135deg, #FFEFD5 0%, #FFDAB9 100%)';"
+                        + "container.setAttribute('data-before-draw', 'executed');"
+                        + "}"
+                        + "}")
+                .afterDrawChartJavaScript("function () {"
+                        + "console.log('afterDrawChartJavaScript fired');"
+                        + "if (typeof aaGlobalChart !== 'undefined' && aaGlobalChart) {"
+                        + "aaGlobalChart.setTitle({ text: 'JS 回调已执行 ✅' });"
+                        + "aaGlobalChart.renderer.label('afterDraw 已执行', 10, 10)"
+                        + ".attr({ zIndex: 8, padding: 10 })"
+                        + ".css({ color: '#FFFFFF', fontSize: '12px', backgroundColor: 'rgba(25, 118, 210, 0.75)' })"
+                        + ".add();"
+                        + "}"
+                        + "}");
+
+        return aaOptions;
+    }
+
 
         private static String javaScriptArrayStringWithJavaArray(Object[] javaArray) {
         StringBuilder originalJsArrStr = new StringBuilder();

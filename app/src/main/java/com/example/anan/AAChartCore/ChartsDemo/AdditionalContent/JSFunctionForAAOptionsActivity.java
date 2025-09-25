@@ -31,7 +31,7 @@ public class JSFunctionForAAOptionsActivity extends AppCompatActivity {
             case "customDoubleXAxesChart": return customDoubleXAxesChart();//自定义双 X 轴图表
             case "disableColumnChartUnselectEventEffectBySeriesPointEventClickFunction": return disableColumnChartUnselectEventEffectBySeriesPointEventClickFunction();//禁用柱状图图表的选中状态
             case "customizeEveryDataLabelSinglelyByDataLabelsFormatter": return customizeEveryDataLabelSinglelyByDataLabelsFormatter();//自定义每个数据点的数据标签内容
-            case "configureColorfulDataLabelsForPieChart": return configureColorfulDataLabelsForPieChart();//为饼图图表配置多彩的数据标签
+            case "configureColorfulDataLabelsForPieChart": return verifyBeforeAndAfterDrawJavaScriptCallbacks();//为饼图图表配置多彩的数据标签
             default:
                 return customDoubleXAxesChart();
         }
