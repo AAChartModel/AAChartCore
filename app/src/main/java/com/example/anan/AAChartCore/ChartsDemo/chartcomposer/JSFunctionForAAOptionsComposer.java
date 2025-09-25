@@ -277,38 +277,52 @@ public class JSFunctionForAAOptionsComposer {
         aaOptions.yAxis.lineWidth = 3;
         aaOptions.yAxis.lineColor = yAxisColor;
 
-        String beforeDrawScript = String.format("function () {"
-                        + "(function (H) {"
-                        + "H.wrap(H.Axis.prototype, 'render', function (proceed) {"
-                        + "proceed.apply(this, Array.prototype.slice.call(arguments, 1));"
-                        + "var axis = this;"
-                        + "if (axis.horiz) {"
-                        + "if (axis.axisLine) {"
-                        + "axis.axisLine.attr({'stroke-dasharray': '3,2,1,2','stroke': '%s'});"
-                        + "}"
-                        + "} else {"
-                        + "if (axis.axisLine) {"
-                        + "axis.axisLine.attr({'stroke-dasharray': '8,3,1,3,1,3','stroke': '%s'});"
-                        + "}"
-                        + "}"
-                        + "});"
-                        + "}(Highcharts));"
+        String beforeDrawScript = String.format(
+                "function () {\n"
+                        + "    (function (H) {\n"
+                        + "        H.wrap(H.Axis.prototype, 'render', function (proceed) {\n"
+                        + "            proceed.apply(this, Array.prototype.slice.call(arguments, 1));\n"
+                        + "            var axis = this;\n"
+                        + "            if (axis.horiz) {\n"
+                        + "                if (axis.axisLine) {\n"
+                        + "                    axis.axisLine.attr({\n"
+                        + "                        'stroke-dasharray': '3,2,1,2',\n"
+                        + "                        'stroke': '%s'\n"
+                        + "                    });\n"
+                        + "                }\n"
+                        + "            } else {\n"
+                        + "                if (axis.axisLine) {\n"
+                        + "                    axis.axisLine.attr({\n"
+                        + "                        'stroke-dasharray': '8,3,1,3,1,3',\n"
+                        + "                        'stroke': '%s'\n"
+                        + "                    });\n"
+                        + "                }\n"
+                        + "            }\n"
+                        + "        });\n"
+                        + "    }(Highcharts));\n"
                         + "}",
                 xAxisColor,
                 yAxisColor);
 
+        String afterDrawScript = "function () {\n"
+                + "    console.log('afterDrawChartJavaScript fired');\n"
+                + "    if (typeof aaGlobalChart !== 'undefined' && aaGlobalChart) {\n"
+                + "        aaGlobalChart.setTitle({ text: 'JS 回调已执行 ✅' });\n"
+                + "        aaGlobalChart.renderer\n"
+                + "            .label('afterDraw 已执行', 10, 10)\n"
+                + "            .attr({ zIndex: 8, padding: 10 })\n"
+                + "            .css({\n"
+                + "                color: '#FFFFFF',\n"
+                + "                fontSize: '12px',\n"
+                + "                backgroundColor: 'rgba(25, 118, 210, 0.75)'\n"
+                + "            })\n"
+                + "            .add();\n"
+                + "    }\n"
+                + "}";
+
         aaOptions
                 .beforeDrawChartJavaScript(beforeDrawScript)
-                .afterDrawChartJavaScript("function () {"
-                        + "console.log('afterDrawChartJavaScript fired');"
-                        + "if (typeof aaGlobalChart !== 'undefined' && aaGlobalChart) {"
-                        + "aaGlobalChart.setTitle({ text: 'JS 回调已执行 ✅' });"
-                        + "aaGlobalChart.renderer.label('afterDraw 已执行', 10, 10)"
-                        + ".attr({ zIndex: 8, padding: 10 })"
-                        + ".css({ color: '#FFFFFF', fontSize: '12px', backgroundColor: 'rgba(25, 118, 210, 0.75)' })"
-                        + ".add();"
-                        + "}"
-                        + "}");
+                .afterDrawChartJavaScript(afterDrawScript);
 
         return aaOptions;
     }
