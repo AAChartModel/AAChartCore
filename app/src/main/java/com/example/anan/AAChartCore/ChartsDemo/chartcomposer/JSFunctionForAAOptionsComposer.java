@@ -267,14 +267,22 @@ public class JSFunctionForAAOptionsComposer {
 
         AAOptions aaOptions = aaChartModel.aa_toAAOptions();
 
+        //设置x轴的轴线为一个粗线
+        aaOptions.xAxis.lineWidth = 3;
+        //设置y轴的轴线为一个粗线
+        aaOptions.yAxis.lineWidth = 3;
+
         aaOptions
                 .beforeDrawChartJavaScript("function () {"
-                        + "console.log('beforeDrawChartJavaScript fired');"
-                        + "var container = document.getElementById('container');"
-                        + "if (container) {"
-                        + "container.style.background = 'linear-gradient(135deg, #FFEFD5 0%, #FFDAB9 100%)';"
-                        + "container.setAttribute('data-before-draw', 'executed');"
+                        + "(function (H) {"
+                        + "H.wrap(H.Axis.prototype, 'render', function (proceed) {"
+                        + "proceed.apply(this, Array.prototype.slice.call(arguments, 1));"
+                        + "var axis = this;"
+                        + "if (axis.axisLine) {"
+                        + "axis.axisLine.attr({'stroke-dasharray': '4,2'});"
                         + "}"
+                        + "});"
+                        + "}(Highcharts));"
                         + "}")
                 .afterDrawChartJavaScript("function () {"
                         + "console.log('afterDrawChartJavaScript fired');"
