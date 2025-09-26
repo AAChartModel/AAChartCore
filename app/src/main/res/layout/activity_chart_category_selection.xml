@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="选择图表类别"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="32dp" />
+
+    <Button
+        android:id="@+id/basic_charts_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="基础图表"
+        android:textSize="18sp"
+        android:layout_marginBottom="16dp"
+        android:padding="16dp" />
+
+    <Button
+        android:id="@+id/special_charts_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="特殊图表"
+        android:textSize="18sp"
+        android:layout_marginBottom="16dp"
+        android:padding="16dp" />
+
+    <Button
+        android:id="@+id/mixed_charts_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="混合图表"
+        android:textSize="18sp"
+        android:layout_marginBottom="16dp"
+        android:padding="16dp" />
+
+    <Button
+        android:id="@+id/custom_style_charts_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="自定义样式图表"
+        android:textSize="18sp"
+        android:padding="16dp" />
+
+</LinearLayout>

@@ -529,7 +529,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.show_chart_list_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, ChartListActivity.class);
+                Intent intent = new Intent(MainActivity.this, ChartCategorySelectionActivity.class);
                 startActivity(intent);
             }
         });

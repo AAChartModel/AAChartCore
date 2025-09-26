@@ -42,6 +42,7 @@
         <activity android:name=".ChartsDemo.MainContent.CustomStyleChartActivity" />
         <activity android:name=".ChartsDemo.MainContent.MixedChartActivity" />
         <activity android:name=".ChartsDemo.MainContent.ChartListActivity" />
+        <activity android:name=".ChartsDemo.MainContent.ChartCategorySelectionActivity" />
     </application>
 
 </manifest>
