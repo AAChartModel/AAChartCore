@@ -525,6 +525,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         setupExpandableListView();
+
+        findViewById(R.id.show_chart_list_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ChartListActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     void  setupExpandableListView() {
