@@ -47,6 +47,15 @@
         android:layout_height="wrap_content"
         android:text="自定义样式图表"
         android:textSize="18sp"
+        android:layout_marginBottom="16dp"
+        android:padding="16dp" />
+
+    <Button
+        android:id="@+id/chart_options_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="图表选项配置"
+        android:textSize="18sp"
         android:padding="16dp" />
 
 </LinearLayout>

@@ -56,5 +56,15 @@ public class ChartCategorySelectionActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        Button chartOptionsBtn = findViewById(R.id.chart_options_button);
+        chartOptionsBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ChartCategorySelectionActivity.this, ChartListActivity.class);
+                intent.putExtra("chart_category", "options");
+                startActivity(intent);
+            }
+        });
     }
 }
