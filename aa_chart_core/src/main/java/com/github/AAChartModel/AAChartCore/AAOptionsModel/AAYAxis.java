@@ -36,8 +36,26 @@ public class AAYAxis extends AAAxis {
         return this;
     }
 
-    public AAYAxis title(AATitle prop) {
+    public AAYAxis title(AAAxisTitle prop) {
         title = prop;
+        return this;
+    }
+
+    // 为了保持向后兼容性，添加对 AATitle 的支持
+    // 同时添加方法废弃警告⚠️, 提示用户使用新的 AAAxisTitle 类型
+    @Deprecated
+    public AAYAxis title(AATitle prop) {
+        if (prop != null) {
+            AAAxisTitle axisTitle = new AAAxisTitle()
+                    .text(prop.text)
+                    .style(prop.style)
+                    .x(prop.x)
+                    .y(prop.y)
+                    .useHTML(prop.useHTML);
+            title = axisTitle;
+        } else {
+            title = null;
+        }
         return this;
     }
 

@@ -4,7 +4,7 @@ public class AAAxis {
     public Boolean allowDecimals;
     public Object alternateGridColor;
     public AACrosshair crosshair; //准星线样式设置
-    public AATitle title;
+    public AAAxisTitle title;
     public String type;
     public AADateTimeLabelFormats dateTimeLabelFormats;
     public AAPlotBandsElement[] plotBands;

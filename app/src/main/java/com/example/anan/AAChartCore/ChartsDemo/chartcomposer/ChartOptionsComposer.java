@@ -18,6 +18,7 @@ import com.github.AAChartModel.AAChartCore.AAChartEnum.AAChartType;
 import com.github.AAChartModel.AAChartCore.AAChartEnum.AAChartVerticalAlignType;
 import com.github.AAChartModel.AAChartCore.AAChartEnum.AAChartZoomType;
 import com.github.AAChartModel.AAChartCore.AAOptionsModel.AAAnimation;
+import com.github.AAChartModel.AAChartCore.AAOptionsModel.AAAxisTitle;
 import com.github.AAChartModel.AAChartCore.AAOptionsModel.AABoxplot;
 import com.github.AAChartModel.AAChartCore.AAOptionsModel.AABubble;
 import com.github.AAChartModel.AAChartCore.AAOptionsModel.AAChart;
@@ -1749,7 +1750,7 @@ public class ChartOptionsComposer {
                         .tickInterval(1)
                         .minorTickInterval(0.1)
                         .gridLineWidth(1)
-                        .title(null))
+                        .title((AAAxisTitle)null))
                 .series(new AASeriesElement[]{
                         new AASeriesElement()
                                 .marker(aaMarker)

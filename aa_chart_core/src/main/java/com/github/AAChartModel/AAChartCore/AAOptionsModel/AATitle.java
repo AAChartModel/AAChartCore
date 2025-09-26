@@ -10,7 +10,7 @@ public class AATitle {
     public String verticalAlign;
     public Number x;
     public Number y;
-    public Boolean userHTML;
+    public Boolean useHTML;
 
     public AATitle text(String prop) {
         text = prop;
@@ -43,7 +43,7 @@ public class AATitle {
     }
 
     public AATitle userHTML(Boolean prop) {
-        userHTML = prop;
+        useHTML = prop;
         return this;
     }
 }
