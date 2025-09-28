@@ -31,11 +31,11 @@ public class ChartListActivity extends AppCompatActivity {
 
         OptionsBundle optionsBundle = AAOptionsListProvider.provideChartOptions(category);
         if (optionsBundle != null) {
-            ChartListAdapter adapter = new ChartListAdapter(this, optionsBundle.titles, optionsBundle.options);
+            ChartListAdapter adapter = new ChartListAdapter(this, category, optionsBundle.titles, optionsBundle.options);
             recyclerView.setAdapter(adapter);
         } else {
             AAChartModel[] chartModels = AAChartModelListProvider.provideChartModels(category);
-            ChartListAdapter adapter = new ChartListAdapter(this, chartModels);
+            ChartListAdapter adapter = new ChartListAdapter(this, category, chartModels);
             recyclerView.setAdapter(adapter);
         }
     }

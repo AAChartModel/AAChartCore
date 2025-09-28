@@ -4,6 +4,13 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="white">#FFFFFF</color>
-    <color name="lightGray">#cccccc</color>
+    <color name="lightGray">#E2E8F0</color>
+    <color name="chartCardStart">#FFFFFFFF</color>
+    <color name="chartCardEnd">#F2F5FA</color>
+    <color name="chartIndexStart">#FF9A9E</color>
+    <color name="chartIndexEnd">#FECF6A</color>
+    <color name="chartMetaText">#5A6B7A</color>
+    <color name="chartDivider">#E3E9F2</color>
+    <color name="chartTitleColor">#1A202C</color>
 
 </resources>
