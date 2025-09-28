@@ -7,6 +7,7 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.anan.AAChartCore.ChartsDemo.ChartListProvider.ChartCategories;
 import com.example.anan.AAChartCore.R;
 
 public class ChartCategorySelectionActivity extends AppCompatActivity {
@@ -20,51 +21,87 @@ public class ChartCategorySelectionActivity extends AppCompatActivity {
         Button specialChartsBtn = findViewById(R.id.special_charts_button);
         Button mixedChartsBtn = findViewById(R.id.mixed_charts_button);
         Button customStyleChartsBtn = findViewById(R.id.custom_style_charts_button);
+        Button chartOptionsBtn = findViewById(R.id.chart_options_button);
+        Button jsAxisBtn = findViewById(R.id.js_axis_button);
+        Button jsTooltipBtn = findViewById(R.id.js_tooltip_button);
+        Button jsLegendBtn = findViewById(R.id.js_legend_button);
+        Button jsOptionsFunctionBtn = findViewById(R.id.js_options_function_button);
+        Button jsChartEventsBtn = findViewById(R.id.js_chart_events_button);
 
         basicChartsBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ChartCategorySelectionActivity.this, ChartListActivity.class);
-                intent.putExtra("chart_category", "basic");
-                startActivity(intent);
+                startChartListActivity(ChartCategories.BASIC);
             }
         });
 
         specialChartsBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ChartCategorySelectionActivity.this, ChartListActivity.class);
-                intent.putExtra("chart_category", "special");
-                startActivity(intent);
+                startChartListActivity(ChartCategories.SPECIAL);
             }
         });
 
         mixedChartsBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ChartCategorySelectionActivity.this, ChartListActivity.class);
-                intent.putExtra("chart_category", "mixed");
-                startActivity(intent);
+                startChartListActivity(ChartCategories.MIXED);
             }
         });
 
         customStyleChartsBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ChartCategorySelectionActivity.this, ChartListActivity.class);
-                intent.putExtra("chart_category", "custom");
-                startActivity(intent);
+                startChartListActivity(ChartCategories.CUSTOM);
             }
         });
 
-        Button chartOptionsBtn = findViewById(R.id.chart_options_button);
         chartOptionsBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ChartCategorySelectionActivity.this, ChartListActivity.class);
-                intent.putExtra("chart_category", "options");
-                startActivity(intent);
+                startChartListActivity(ChartCategories.OPTIONS);
             }
         });
+
+        jsAxisBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startChartListActivity(ChartCategories.JS_AXIS);
+            }
+        });
+
+        jsTooltipBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startChartListActivity(ChartCategories.JS_TOOLTIP);
+            }
+        });
+
+        jsLegendBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startChartListActivity(ChartCategories.JS_LEGEND);
+            }
+        });
+
+        jsOptionsFunctionBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startChartListActivity(ChartCategories.JS_OPTIONS);
+            }
+        });
+
+        jsChartEventsBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startChartListActivity(ChartCategories.JS_CHART_EVENTS);
+            }
+        });
+    }
+
+    private void startChartListActivity(String category) {
+        Intent intent = new Intent(ChartCategorySelectionActivity.this, ChartListActivity.class);
+        intent.putExtra("chart_category", category);
+        startActivity(intent);
     }
 }

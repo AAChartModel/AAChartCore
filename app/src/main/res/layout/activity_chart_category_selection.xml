@@ -1,61 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp">
+    android:layout_height="match_parent">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="选择图表类别"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:gravity="center"
-        android:layout_marginBottom="32dp" />
+        android:orientation="vertical"
+        android:padding="16dp">
 
-    <Button
-        android:id="@+id/basic_charts_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="基础图表"
-        android:textSize="18sp"
-        android:layout_marginBottom="16dp"
-        android:padding="16dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="选择图表类别"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="32dp" />
 
-    <Button
-        android:id="@+id/special_charts_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="特殊图表"
-        android:textSize="18sp"
-        android:layout_marginBottom="16dp"
-        android:padding="16dp" />
+        <Button
+            android:id="@+id/basic_charts_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="基础图表"
+            android:textSize="18sp"
+            android:layout_marginBottom="16dp"
+            android:padding="16dp" />
 
-    <Button
-        android:id="@+id/mixed_charts_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="混合图表"
-        android:textSize="18sp"
-        android:layout_marginBottom="16dp"
-        android:padding="16dp" />
+        <Button
+            android:id="@+id/special_charts_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="特殊图表"
+            android:textSize="18sp"
+            android:layout_marginBottom="16dp"
+            android:padding="16dp" />
 
-    <Button
-        android:id="@+id/custom_style_charts_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="自定义样式图表"
-        android:textSize="18sp"
-        android:layout_marginBottom="16dp"
-        android:padding="16dp" />
+        <Button
+            android:id="@+id/mixed_charts_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="混合图表"
+            android:textSize="18sp"
+            android:layout_marginBottom="16dp"
+            android:padding="16dp" />
 
-    <Button
-        android:id="@+id/chart_options_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="图表选项配置"
-        android:textSize="18sp"
-        android:padding="16dp" />
+        <Button
+            android:id="@+id/custom_style_charts_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="自定义样式图表"
+            android:textSize="18sp"
+            android:layout_marginBottom="16dp"
+            android:padding="16dp" />
 
-</LinearLayout>
+        <Button
+            android:id="@+id/chart_options_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="图表选项配置"
+            android:textSize="18sp"
+            android:layout_marginBottom="16dp"
+            android:padding="16dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"
+            android:layout_marginBottom="16dp" />
+
+        <Button
+            android:id="@+id/js_axis_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="JS 函数 · 坐标轴"
+            android:textSize="18sp"
+            android:layout_marginBottom="16dp"
+            android:padding="16dp" />
+
+        <Button
+            android:id="@+id/js_tooltip_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="JS 函数 · Tooltip"
+            android:textSize="18sp"
+            android:layout_marginBottom="16dp"
+            android:padding="16dp" />
+
+        <Button
+            android:id="@+id/js_legend_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="JS 函数 · Legend"
+            android:textSize="18sp"
+            android:layout_marginBottom="16dp"
+            android:padding="16dp" />
+
+        <Button
+            android:id="@+id/js_options_function_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="JS 函数 · Options"
+            android:textSize="18sp"
+            android:layout_marginBottom="16dp"
+            android:padding="16dp" />
+
+        <Button
+            android:id="@+id/js_chart_events_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="JS 函数 · Chart Events"
+            android:textSize="18sp"
+            android:layout_marginBottom="16dp"
+            android:padding="16dp" />
+
+    </LinearLayout>
+
+</ScrollView>

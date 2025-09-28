@@ -19,6 +19,7 @@ public class ChartListAdapter extends RecyclerView.Adapter<ChartListAdapter.Char
     private Context mContext;
     private AAChartModel[] mChartModels;
     private AAOptions[] mChartOptions;
+    private String[] mChartOptionTitles;
     private boolean isOptionsMode = false;
 
     public ChartListAdapter(Context context, AAChartModel[] chartModels) {
@@ -27,8 +28,13 @@ public class ChartListAdapter extends RecyclerView.Adapter<ChartListAdapter.Char
     }
     
     public ChartListAdapter(Context context, AAOptions[] chartOptions) {
+        this(context, generateDefaultTitles(chartOptions.length), chartOptions);
+    }
+
+    public ChartListAdapter(Context context, String[] chartOptionTitles, AAOptions[] chartOptions) {
         mContext = context;
         mChartOptions = chartOptions;
+        mChartOptionTitles = chartOptionTitles;
         isOptionsMode = true;
     }
 
@@ -43,8 +49,10 @@ public class ChartListAdapter extends RecyclerView.Adapter<ChartListAdapter.Char
     public void onBindViewHolder(@NonNull ChartViewHolder holder, int position) {
         if (isOptionsMode) {
             AAOptions chartOption = mChartOptions[position];
-            // 由于AAOptions中可能没有直接的标题，我们暂时使用默认标题
-            holder.chartTitle.setText("Chart Options " + (position + 1));
+            String title = (mChartOptionTitles != null && position < mChartOptionTitles.length)
+                    ? mChartOptionTitles[position]
+                    : "Chart Options " + (position + 1);
+            holder.chartTitle.setText(title);
             holder.chartView.aa_drawChartWithChartOptions(chartOption);
         } else {
             AAChartModel chartModel = mChartModels[position];
@@ -56,6 +64,14 @@ public class ChartListAdapter extends RecyclerView.Adapter<ChartListAdapter.Char
     @Override
     public int getItemCount() {
         return isOptionsMode ? mChartOptions.length : mChartModels.length;
+    }
+
+    private static String[] generateDefaultTitles(int count) {
+        String[] titles = new String[count];
+        for (int i = 0; i < count; i++) {
+            titles[i] = "Chart Options " + (i + 1);
+        }
+        return titles;
     }
 
     static class ChartViewHolder extends RecyclerView.ViewHolder {

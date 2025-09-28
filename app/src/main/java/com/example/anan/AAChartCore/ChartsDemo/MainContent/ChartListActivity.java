@@ -8,6 +8,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.anan.AAChartCore.ChartsDemo.ChartListProvider.AAChartModelListProvider;
 import com.example.anan.AAChartCore.ChartsDemo.ChartListProvider.AAOptionsListProvider;
+import com.example.anan.AAChartCore.ChartsDemo.ChartListProvider.AAOptionsListProvider.OptionsBundle;
+import com.example.anan.AAChartCore.ChartsDemo.ChartListProvider.ChartCategories;
 import com.example.anan.AAChartCore.R;
 import com.github.AAChartModel.AAChartCore.AAChartCreator.AAChartModel;
 import com.github.AAChartModel.AAChartCore.AAOptionsModel.AAOptions;
@@ -23,10 +25,13 @@ public class ChartListActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         String category = getIntent().getStringExtra("chart_category");
+        if (category == null) {
+            category = ChartCategories.BASIC;
+        }
 
-        if (category != null && category.equals("options")) {
-            AAOptions[] chartOptions = AAOptionsListProvider.provideChartOptions();
-            ChartListAdapter adapter = new ChartListAdapter(this, chartOptions);
+        OptionsBundle optionsBundle = AAOptionsListProvider.provideChartOptions(category);
+        if (optionsBundle != null) {
+            ChartListAdapter adapter = new ChartListAdapter(this, optionsBundle.titles, optionsBundle.options);
             recyclerView.setAdapter(adapter);
         } else {
             AAChartModel[] chartModels = AAChartModelListProvider.provideChartModels(category);

@@ -14,16 +14,19 @@ public final class AAChartModelListProvider {
 	}
 
 	public static AAChartModel[] provideChartModels(String category) {
-		if (category == null || "basic".equals(category)) {
+		if (category == null || ChartCategories.BASIC.equals(category)) {
 			return provideBasicChartModels();
-		} else if ("special".equals(category)) {
-			return provideSpecialChartModels();
-		} else if ("mixed".equals(category)) {
-			return provideMixedChartModels();
-		} else if ("custom".equals(category)) {
-			return provideCustomStyleChartModels();
 		}
-		return new AAChartModel[0];
+		switch (category) {
+			case ChartCategories.SPECIAL:
+				return provideSpecialChartModels();
+			case ChartCategories.MIXED:
+				return provideMixedChartModels();
+			case ChartCategories.CUSTOM:
+				return provideCustomStyleChartModels();
+			default:
+				return new AAChartModel[0];
+		}
 	}
 
 	private static AAChartModel[] provideBasicChartModels() {
