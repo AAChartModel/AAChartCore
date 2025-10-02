@@ -153,7 +153,7 @@ public class DoubleChartsLinkedWorkActivity extends AppCompatActivity implements
         for (int i = 0; i < maxRange; i++) {
             y1 = Math.sin(random * (i * Math.PI / 180)) + i * 2 * 0.01;
             AADataElement aaDataElement = new AADataElement()
-                    .color(selectedGradientColor)
+                    .color(selectedGradientColor != null ? selectedGradientColor : AAGradientColor.OceanBlue)
                     .y((float) y1);
 
             numberArr1[i] = aaDataElement;
@@ -169,10 +169,18 @@ public class DoubleChartsLinkedWorkActivity extends AppCompatActivity implements
 
     @Override
     public void chartViewClickEventMessage(AAChartView aaChartView, AAClickEventMessageModel clickEventMessage) {
+        if (clickEventMessage == null || clickEventMessage.index == null) {
+            return;
+        }
+
         //打印点击事件信息
         System.out.println("🖱🖱🖱获取点击事件 clickMessageModel = " + clickEventMessage);
-        //do nothing
-        this.selectedGradientColor = gradientColorsArr[clickEventMessage.index];
+
+        // 防止数组越界
+        int index = clickEventMessage.index;
+        if (gradientColorsArr != null && index >= 0 && index < gradientColorsArr.length) {
+            this.selectedGradientColor = gradientColorsArr[index];
+        }
 
 
         Handler mainHandler = new Handler(Looper.getMainLooper());
@@ -191,9 +199,18 @@ public class DoubleChartsLinkedWorkActivity extends AppCompatActivity implements
 
     @Override
     public void chartViewMoveOverEventMessage(AAChartView aaChartView, AAMoveOverEventMessageModel moveOverEventMessage) {
+        if (moveOverEventMessage == null || moveOverEventMessage.index == null) {
+            return;
+        }
+
         //打印触摸(手指掠过)事件信息
         System.out.println("👋👋👋获取触摸(手指掠过)事件 moveOverEventMessage  " + moveOverEventMessage);
-        this.selectedGradientColor = gradientColorsArr[moveOverEventMessage.index];
+
+        // 防止数组越界
+        int index = moveOverEventMessage.index;
+        if (gradientColorsArr != null && index >= 0 && index < gradientColorsArr.length) {
+            this.selectedGradientColor = gradientColorsArr[index];
+        }
         Handler mainHandler = new Handler(Looper.getMainLooper());
         mainHandler.post(new Runnable() {
             @Override

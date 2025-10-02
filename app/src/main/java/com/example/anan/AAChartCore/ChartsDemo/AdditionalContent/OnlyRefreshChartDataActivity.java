@@ -57,12 +57,16 @@ public class OnlyRefreshChartDataActivity extends AppCompatActivity {
     private AAChartModel configureAAChartModel() {
        AAChartModel aaChartModel = configureChartBasicContent();
 
-
         Intent intent = getIntent();
+        if (intent == null) {
+            // 如果 intent 为 null，使用默认图表类型
+            return configureChartWithDefaultType();
+        }
+
         String chartType = intent.getStringExtra("chartType");
         AASeriesElement[] aaSeriesElementsArr = configureChartSeriesArray();
 
-        if (chartType.equals("stepArea") || chartType.equals("stepLine")) {
+        if (chartType != null && (chartType.equals("stepArea") || chartType.equals("stepLine"))) {
             for (int i =0; i < aaSeriesElementsArr.length; i++ ) {
                 AASeriesElement aaSeriesElement = aaSeriesElementsArr[i];
                 aaSeriesElement.step(true);
@@ -73,13 +77,28 @@ public class OnlyRefreshChartDataActivity extends AppCompatActivity {
         return aaChartModel;
     }
 
+    private AAChartModel configureChartWithDefaultType() {
+        AASeriesElement[] aaSeriesElementsArr = configureChartSeriesArray();
+        return new AAChartModel()
+                .chartType(AAChartType.Column)
+                .series(aaSeriesElementsArr);
+    }
+
     private AAChartModel configureChartBasicContent() {
         Intent intent = getIntent();
-        String chartType = intent.getStringExtra("chartType");
-        if (chartType.equals("stepArea") ) {
-            chartType = AAChartType.Area;
-        } else if (chartType.equals("stepLine")) {
-            chartType = AAChartType.Line;
+        String chartType = AAChartType.Column; // 设置默认值
+
+        if (intent != null) {
+            String intentChartType = intent.getStringExtra("chartType");
+            if (intentChartType != null) {
+                if (intentChartType.equals("stepArea") ) {
+                    chartType = AAChartType.Area;
+                } else if (intentChartType.equals("stepLine")) {
+                    chartType = AAChartType.Line;
+                } else {
+                    chartType = intentChartType;
+                }
+            }
         }
 
         Map gradientColorMap1 = AAGradientColor.linearGradient(

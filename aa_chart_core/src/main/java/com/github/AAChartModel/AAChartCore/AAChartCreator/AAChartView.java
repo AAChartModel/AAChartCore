@@ -348,7 +348,10 @@ public class AAChartView extends WebView {
         this.loadUrl("file:///android_asset/AAChartView.html");
         this.setWebViewClient(new WebViewClient() {
             @Override
-            public void onPageFinished(WebView view,String url) {
+            public void onPageFinished(WebView view, String url) {
+                if (view == null || url == null) {
+                    return;
+                }
 //                Log.i("js files load","图表加载完成!!!!!!!! ");
                 configureChartOptionsAndDrawChart(aaOptions);
 
@@ -426,6 +429,10 @@ public class AAChartView extends WebView {
                                      String url,
                                      String message,
                                      final JsResult result) {
+                if (view == null || url == null || message == null || result == null) {
+                    return false;
+                }
+
                 super.onJsAlert(view, url, message, result);
 
                 String urlStr = "url --->" + url + "\n\n\n";
@@ -446,6 +453,10 @@ public class AAChartView extends WebView {
     }
 
     private <T extends AAEventMessageModel> T getEventMessageModel(Map<String, Object> messageBody, Class<T> eventType) {
+        if (messageBody == null || eventType == null) {
+            throw new RuntimeException("Invalid parameters: messageBody or eventType is null");
+        }
+
         T eventMessageModel;
         try {
             // 通过反射实例化泛型类型
@@ -454,12 +465,16 @@ public class AAChartView extends WebView {
             throw new RuntimeException("Failed to create instance of " + eventType, e);
         }
 
-        eventMessageModel.name = messageBody.get("name").toString();
+        // 添加空指针检查
+        Object nameObj = messageBody.get("name");
+        Object categoryObj = messageBody.get("category");
+
+        eventMessageModel.name = nameObj != null ? nameObj.toString() : "";
         eventMessageModel.x = (Double) messageBody.get("x");
         eventMessageModel.y = (Double) messageBody.get("y");
-        eventMessageModel.category = messageBody.get("category").toString();
+        eventMessageModel.category = categoryObj != null ? categoryObj.toString() : "";
         Double index = (Double) messageBody.get("index");
-        eventMessageModel.index = index.intValue();
+        eventMessageModel.index = index != null ? index.intValue() : 0;
         eventMessageModel.offset = (LinkedTreeMap) messageBody.get("offset");
         return eventMessageModel;
     }
