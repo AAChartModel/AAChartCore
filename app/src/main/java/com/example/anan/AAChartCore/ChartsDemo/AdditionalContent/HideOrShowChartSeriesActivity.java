@@ -151,48 +151,47 @@ public class HideOrShowChartSeriesActivity extends AppCompatActivity
          */
         @Override
         public void onCheckedChanged(RadioGroup group, int checkedId) {
-            if (group.getId() == R.id.stackingTypeRadioGroup) {
+            int groupId = group.getId();
+            int checkedRadioButtonId = group.getCheckedRadioButtonId();
+            
+            if (groupId == R.id.stackingTypeRadioGroup) {
                 //根据不同ID 弹出不同的吐司
-                switch (group.getCheckedRadioButtonId()) {
-                    case R.id.hide1: aaChartView.aa_hideTheSeriesElementContent(0);
-                        break;
-                    case R.id.hide2: aaChartView.aa_hideTheSeriesElementContent(1);
-                        break;
-                    case R.id.hide3: aaChartView.aa_hideTheSeriesElementContent(2);
-                        break;
-                    case R.id.hide4: aaChartView.aa_hideTheSeriesElementContent(3);
-                        break;
+                if (checkedRadioButtonId == R.id.hide1) {
+                    aaChartView.aa_hideTheSeriesElementContent(0);
+                } else if (checkedRadioButtonId == R.id.hide2) {
+                    aaChartView.aa_hideTheSeriesElementContent(1);
+                } else if (checkedRadioButtonId == R.id.hide3) {
+                    aaChartView.aa_hideTheSeriesElementContent(2);
+                } else if (checkedRadioButtonId == R.id.hide4) {
+                    aaChartView.aa_hideTheSeriesElementContent(3);
                 }
             } else {
-                switch (group.getCheckedRadioButtonId()) {
-                    case R.id.show1: aaChartView.aa_showTheSeriesElementContent(0);
-                        break;
-                    case R.id.show2: aaChartView.aa_showTheSeriesElementContent(1);
-                        break;
-                    case R.id.show3: aaChartView.aa_showTheSeriesElementContent(2);
-                        break;
-                    case R.id.show4: aaChartView.aa_showTheSeriesElementContent(3);
-                        break;
+                if (checkedRadioButtonId == R.id.show1) {
+                    aaChartView.aa_showTheSeriesElementContent(0);
+                } else if (checkedRadioButtonId == R.id.show2) {
+                    aaChartView.aa_showTheSeriesElementContent(1);
+                } else if (checkedRadioButtonId == R.id.show3) {
+                    aaChartView.aa_showTheSeriesElementContent(2);
+                } else if (checkedRadioButtonId == R.id.show4) {
+                    aaChartView.aa_showTheSeriesElementContent(3);
                 }
             }
         }
 
         @Override
         public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-            switch (buttonView.getId()) {
-                case R.id.switch1: aaChartView.setChartSeriesHidden(isChecked);
-                    break;
-                case R.id.switch2: aaChartView.setContentHeight(60f);
-                    break;
-                case R.id.switch3: aaChartView.setContentWidth(80f);
-                    break;
+            int buttonViewId = buttonView.getId();
+            if (buttonViewId == R.id.switch1) {
+                aaChartView.setChartSeriesHidden(isChecked);
+            } else if (buttonViewId == R.id.switch2) {
+                aaChartView.setContentHeight(60f);
+            } else if (buttonViewId == R.id.switch3) {
+                aaChartView.setContentWidth(80f);
+            }
 //                case R.id.switch4: aaChartModel.polar(isChecked);
 //                    break;
 //                case R.id.switch5: aaChartModel.dataLabelsEnabled(isChecked);
 //                    break;
-            }
-
-
         }
 
         @Override

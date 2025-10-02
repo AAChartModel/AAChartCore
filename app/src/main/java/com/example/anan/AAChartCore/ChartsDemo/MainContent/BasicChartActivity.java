@@ -129,67 +129,56 @@ public class BasicChartActivity extends AppCompatActivity
      */
     @Override
     public void onCheckedChanged(RadioGroup group, int checkedId) {
+        int checkedRadioButtonId = group.getCheckedRadioButtonId();
+        
         if (group.getId() == R.id.stackingTypeRadioGroup) {
-            switch (group.getCheckedRadioButtonId()) {
-                case R.id.noStackingRadio:
-                    aaChartModel.stacking(AAChartStackingType.False);
-                    break;
-                case R.id.normalStackingRadio:
-                    aaChartModel.stacking(AAChartStackingType.Normal);
-                    break;
-                case R.id.percentStackingRadio:
-                    aaChartModel.stacking(AAChartStackingType.Percent);
-                    break;
+            if (checkedRadioButtonId == R.id.noStackingRadio) {
+                aaChartModel.stacking(AAChartStackingType.False);
+            } else if (checkedRadioButtonId == R.id.normalStackingRadio) {
+                aaChartModel.stacking(AAChartStackingType.Normal);
+            } else if (checkedRadioButtonId == R.id.percentStackingRadio) {
+                aaChartModel.stacking(AAChartStackingType.Percent);
             }
         } else if (group.getId() == R.id.cornerStyleTypeRadioGroup) {
-            switch (group.getCheckedRadioButtonId()) {
-                case R.id.squareCornersRadio:
-                    aaChartModel.borderRadius(1f);
-                    break;
-                case R.id.roundedCornersRadio:
-                    aaChartModel.borderRadius(10f);
-                    break;
-                case R.id.wedgeCornersRadio:
-                    aaChartModel.borderRadius(100f);
-                    break;
+            if (checkedRadioButtonId == R.id.squareCornersRadio) {
+                aaChartModel.borderRadius(1f);
+            } else if (checkedRadioButtonId == R.id.roundedCornersRadio) {
+                aaChartModel.borderRadius(10f);
+            } else if (checkedRadioButtonId == R.id.wedgeCornersRadio) {
+                aaChartModel.borderRadius(100f);
             }
         } else {
-            switch (group.getCheckedRadioButtonId()) {
-                case R.id.circleSymbolRadio:
-                    aaChartModel.markerSymbol(AAChartSymbolType.Circle);
-                    break;
-                case R.id.squareSymbolRadio:
-                    aaChartModel.markerSymbol(AAChartSymbolType.Square);
-                    break;
-                case R.id.diamondSymbolRadio:
-                    aaChartModel.markerSymbol(AAChartSymbolType.Diamond);
-                    break;
-                case R.id.triangleSymbolRadio:
-                    aaChartModel.markerSymbol(AAChartSymbolType.Triangle);
-                    break;
-                case R.id.triangleDownSymbolRadio:
-                    aaChartModel.markerSymbol(AAChartSymbolType.Triangle_down);
-                    break;
+            if (checkedRadioButtonId == R.id.circleSymbolRadio) {
+                aaChartModel.markerSymbol(AAChartSymbolType.Circle);
+            } else if (checkedRadioButtonId == R.id.squareSymbolRadio) {
+                aaChartModel.markerSymbol(AAChartSymbolType.Square);
+            } else if (checkedRadioButtonId == R.id.diamondSymbolRadio) {
+                aaChartModel.markerSymbol(AAChartSymbolType.Diamond);
+            } else if (checkedRadioButtonId == R.id.triangleSymbolRadio) {
+                aaChartModel.markerSymbol(AAChartSymbolType.Triangle);
+            } else if (checkedRadioButtonId == R.id.triangleDownSymbolRadio) {
+                aaChartModel.markerSymbol(AAChartSymbolType.Triangle_down);
             }
         }
 
         aaChartView.aa_refreshChartWithChartModel(aaChartModel);
-        }
+    }
 
     @Override
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-        switch (buttonView.getId()) {
-            case R.id.xReversedSwitch: aaChartModel.xAxisReversed(isChecked);
-                break;
-            case R.id.yReversedSwitch: aaChartModel.yAxisReversed(isChecked);
-                break;
-            case R.id.xInvertedSwitch: aaChartModel.inverted(isChecked);
-                break;
-            case R.id.polarSwitch: aaChartModel.polar(isChecked);
-                break;
-            case R.id.dataShowSwitch: aaChartModel.dataLabelsEnabled(isChecked);
-                break;
-            case R.id.markerHideSwitch: aaChartModel.markerRadius(isChecked ? 0f : 6f);
+        int buttonViewId = buttonView.getId();
+        if (buttonViewId == R.id.xReversedSwitch) {
+            aaChartModel.xAxisReversed(isChecked);
+        } else if (buttonViewId == R.id.yReversedSwitch) {
+            aaChartModel.yAxisReversed(isChecked);
+        } else if (buttonViewId == R.id.xInvertedSwitch) {
+            aaChartModel.inverted(isChecked);
+        } else if (buttonViewId == R.id.polarSwitch) {
+            aaChartModel.polar(isChecked);
+        } else if (buttonViewId == R.id.dataShowSwitch) {
+            aaChartModel.dataLabelsEnabled(isChecked);
+        } else if (buttonViewId == R.id.markerHideSwitch) {
+            aaChartModel.markerRadius(isChecked ? 0f : 6f);
         }
 
         aaChartView.aa_refreshChartWithChartModel(aaChartModel);
