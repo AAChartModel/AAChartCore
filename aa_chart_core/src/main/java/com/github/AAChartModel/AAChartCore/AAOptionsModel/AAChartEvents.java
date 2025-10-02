@@ -1,4 +1,4 @@
-package com.github.AAChartModel.AAChartCore.AAChartCreator;
+package com.github.AAChartModel.AAChartCore.AAOptionsModel;
 
 import com.github.AAChartModel.AAChartCore.AATools.AAJSStringPurer;
 
