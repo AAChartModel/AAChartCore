@@ -1,7 +1,5 @@
 package com.github.AAChartModel.AAChartCore.AAOptionsModel;
 
-import com.github.AAChartModel.AAChartCore.AAChartEnum.AAChartAxisTitleAlignValueType;
-
 public class AAAxisTitle {
     public String align;
     public String margin;
@@ -14,8 +12,8 @@ public class AAAxisTitle {
     public Number x;
     public Number y;
 
-    public AAAxisTitle align(AAChartAxisTitleAlignValueType prop) {
-        align = prop.getValue();
+    public AAAxisTitle align(String prop) {
+        align = prop;
         return this;
     }
 
