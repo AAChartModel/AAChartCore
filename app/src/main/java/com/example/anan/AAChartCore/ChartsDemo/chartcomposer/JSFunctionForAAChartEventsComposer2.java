@@ -3,7 +3,7 @@ package com.example.anan.AAChartCore.ChartsDemo.chartcomposer;
 import static com.github.AAChartModel.AAChartCore.AAChartEnum.AAChartLineDashStyleType.LongDashDotDot;
 import static com.github.AAChartModel.AAChartCore.AAChartEnum.AAChartStackingType.Normal;
 
-import com.github.AAChartModel.AAChartCore.AAChartCreator.AAChartEvents;
+import com.github.AAChartModel.AAChartCore.AAOptionsModel.AAChartEvents;
 import com.github.AAChartModel.AAChartCore.AAChartCreator.AASeriesElement;
 import com.github.AAChartModel.AAChartCore.AAChartEnum.AAChartType;
 import com.github.AAChartModel.AAChartCore.AAOptionsModel.AAChart;

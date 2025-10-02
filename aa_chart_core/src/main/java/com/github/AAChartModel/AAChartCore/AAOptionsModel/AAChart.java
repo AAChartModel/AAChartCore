@@ -1,7 +1,5 @@
 package com.github.AAChartModel.AAChartCore.AAOptionsModel;
 
-import com.github.AAChartModel.AAChartCore.AAChartCreator.AAChartEvents;
-
 public class AAChart {
     public String type;
     public Object backgroundColor;
