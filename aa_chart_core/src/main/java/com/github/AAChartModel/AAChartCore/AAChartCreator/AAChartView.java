@@ -53,7 +53,9 @@ import com.github.AAChartModel.AAChartCore.AATools.AAJSStringPurer;
 import com.google.gson.Gson;
 import com.google.gson.internal.LinkedTreeMap;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 
 public class AAChartView extends AAChartViewOpenAPI {
@@ -83,6 +85,11 @@ public class AAChartView extends AAChartViewOpenAPI {
     public Boolean chartSeriesHidden;
     public Boolean isClearBackgroundColor;
     public AAChartViewCallBack callBack;
+
+    // --- Plugin Loader ---
+    private AAChartViewPluginLoaderProtocol pluginLoader;
+    public Set<String> userPluginPaths = new HashSet<>();
+    public Map<String, String> dependencies = new HashMap<>();
 
     public void setContentWidth(Number contentWidth) {
         this.contentWidth = contentWidth;
@@ -154,6 +161,13 @@ public class AAChartView extends AAChartViewOpenAPI {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             this.setWebContentsDebuggingEnabled(true);
         }
+        
+        // Initialize plugin loader with provider
+        this.pluginLoader = new AAChartViewPluginLoader(
+            getContext(), 
+            new AAChartViewPluginProvider(getContext())
+        );
+        
         //把当前对象作为androidObject别名传递给js
         //js通过window.androidObject.androidMethod()就可以直接调用安卓的androidMethod方法
         this.addJavascriptInterface(this, "androidObject");
@@ -231,6 +245,9 @@ public class AAChartView extends AAChartViewOpenAPI {
             return;
         }
 
+        // Configure the plugin loader (determines required plugins, gets scripts)
+        pluginLoader.configure(aaOptions);
+
         if (isClearBackgroundColor) {
             aaOptions.chart.backgroundColor(AAColor.Clear);
         }
@@ -267,11 +284,31 @@ public class AAChartView extends AAChartViewOpenAPI {
         }
 
         this.optionsJson = aaOptionsJsonStr;
-        String javaScriptStr = "loadTheHighChartView('"
-                + aaOptionsJsonStr + "','"
-                + this.contentWidth + "','"
-                + this.contentHeight + "')";
-        this.safeEvaluateJavaScriptString(javaScriptStr);
+        
+        // Load plugins if needed before drawing the chart
+        final AAChartView chartView = this;
+        pluginLoader.loadPluginsIfNeeded(
+            this,
+            userPluginPaths,
+            dependencies,
+            new Runnable() {
+                @Override
+                public void run() {
+                    // Execute pre-draw script via loader
+                    pluginLoader.executeBeforeDrawScript(chartView);
+                    
+                    // Draw the chart
+                    String javaScriptStr = "loadTheHighChartView('"
+                            + optionsJson + "','"
+                            + contentWidth + "','"
+                            + contentHeight + "')";
+                    safeEvaluateJavaScriptString(javaScriptStr);
+                    
+                    // Execute post-draw script via loader
+                    pluginLoader.executeAfterDrawScript(chartView);
+                }
+            }
+        );
     }
 
     @Override
