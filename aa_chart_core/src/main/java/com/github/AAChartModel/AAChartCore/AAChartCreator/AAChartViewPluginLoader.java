@@ -36,10 +36,12 @@
 package com.github.AAChartModel.AAChartCore.AAChartCreator;
 
 import android.content.Context;
+import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
 import android.util.LruCache;
+import android.webkit.ValueCallback;
 import android.webkit.WebView;
 
 import com.github.AAChartModel.AAChartCore.AAOptionsModel.AAOptions;
@@ -411,12 +413,14 @@ public class AAChartViewPluginLoader implements AAChartViewPluginLoaderProtocol 
         mainHandler.post(new Runnable() {
             @Override
             public void run() {
-                webView.evaluateJavascript(javaScript, new android.webkit.ValueCallback<String>() {
-                    @Override
-                    public void onReceiveValue(String value) {
-                        callback.onComplete(null);
-                    }
-                });
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+                    webView.evaluateJavascript(javaScript, new ValueCallback<String>() {
+                        @Override
+                        public void onReceiveValue(String value) {
+                            callback.onComplete(null);
+                        }
+                    });
+                }
             }
         });
     }
