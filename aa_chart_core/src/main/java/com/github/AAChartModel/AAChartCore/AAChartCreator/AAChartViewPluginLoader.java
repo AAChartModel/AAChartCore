@@ -414,12 +414,18 @@ public class AAChartViewPluginLoader implements AAChartViewPluginLoaderProtocol 
             @Override
             public void run() {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+                    // API 19+: Use evaluateJavascript with callback support
                     webView.evaluateJavascript(javaScript, new ValueCallback<String>() {
                         @Override
                         public void onReceiveValue(String value) {
                             callback.onComplete(null);
                         }
                     });
+                } else {
+                    // API < 19: Use loadUrl (no return value support)
+                    webView.loadUrl("javascript:" + javaScript);
+                    // Complete immediately since loadUrl doesn't provide callback
+                    callback.onComplete(null);
                 }
             }
         });
