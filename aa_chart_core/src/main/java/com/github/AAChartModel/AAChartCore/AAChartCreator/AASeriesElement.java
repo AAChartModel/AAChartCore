@@ -44,44 +44,44 @@ import com.github.AAChartModel.AAChartCore.AAOptionsModel.AAZonesElement;
 
 public class AASeriesElement {
 
-    private String type;
-    private Boolean allowPointSelect;
-    private String name;
-    private Object[] data;
-    private Number lineWidth;//折线图、曲线图、直方折线图、折线填充图、曲线填充图、直方折线填充图的线条宽度
-    private String borderColor; //The border color, It is only valid for column, bar, pie, columnrange, pyramid and funnel chart types
-    private Number borderWidth; //The border width, It is only valid for column, bar, pie, columnrange, pyramid and funnel chart types
-    private Number borderRadius; //The corner radius of the border surrounding each column or bar.
-    private Object borderRadiusTopLeft;
-    private Object borderRadiusTopRight;
-    private Object borderRadiusBottomLeft;
-    private Object borderRadiusBottomRight;
-    private Object color;
-    private Object fillColor;
-    private Number fillOpacity;//折线填充图、曲线填充图、直方折线填充图等填充图类型的填充颜色透明度
-    private Number threshold;//The threshold, also called zero level or base level. For line type series this is only used in conjunction with negativeColor. default：0.
-    private String negativeColor;// The color for the parts of the graph or points that are below the threshold
-    private Object negativeFillColor;
-    private Object size;
-    private Object innerSize;
-    private String dashStyle;
-    private Integer yAxis;
-    private AADataLabels dataLabels;
-    private AAMarker marker;
-    private Object step;
-    private Object states;
-    private Boolean colorByPoint;
-    private Integer zIndex;
-    private AAZonesElement[] zones;
-    private String zoneAxis;
-    private AAShadow shadow;
-    private String stack;
-    private AATooltip tooltip;
-    private Boolean showInLegend;
-    private Boolean enableMouseTracking;
-    private Boolean reversed;
-    private String id;
-    private Boolean connectNulls;
+    public String type;
+    public Boolean allowPointSelect;
+    public String name;
+    public Object[] data;
+    public Number lineWidth;//折线图、曲线图、直方折线图、折线填充图、曲线填充图、直方折线填充图的线条宽度
+    public String borderColor; //The border color, It is only valid for column, bar, pie, columnrange, pyramid and funnel chart types
+    public Number borderWidth; //The border width, It is only valid for column, bar, pie, columnrange, pyramid and funnel chart types
+    public Number borderRadius; //The corner radius of the border surrounding each column or bar.
+    public Object borderRadiusTopLeft;
+    public Object borderRadiusTopRight;
+    public Object borderRadiusBottomLeft;
+    public Object borderRadiusBottomRight;
+    public Object color;
+    public Object fillColor;
+    public Number fillOpacity;//折线填充图、曲线填充图、直方折线填充图等填充图类型的填充颜色透明度
+    public Number threshold;//The threshold, also called zero level or base level. For line type series this is only used in conjunction with negativeColor. default：0.
+    public String negativeColor;// The color for the parts of the graph or points that are below the threshold
+    public Object negativeFillColor;
+    public Object size;
+    public Object innerSize;
+    public String dashStyle;
+    public Integer yAxis;
+    public AADataLabels dataLabels;
+    public AAMarker marker;
+    public Object step;
+    public Object states;
+    public Boolean colorByPoint;
+    public Integer zIndex;
+    public AAZonesElement[] zones;
+    public String zoneAxis;
+    public AAShadow shadow;
+    public String stack;
+    public AATooltip tooltip;
+    public Boolean showInLegend;
+    public Boolean enableMouseTracking;
+    public Boolean reversed;
+    public String id;
+    public Boolean connectNulls;
 
     public AASeriesElement type(String prop) {
         type = prop;
