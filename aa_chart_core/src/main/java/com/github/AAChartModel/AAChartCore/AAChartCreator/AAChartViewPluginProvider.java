@@ -137,9 +137,9 @@ public class AAChartViewPluginProvider implements AAChartViewPluginProviderProto
         // --- Advanced Charts requiring Highcharts-More ---
         new AAChartPluginConfiguration(
             new String[] {
-                "columnpyramid",
+                AAChartType.Columnpyramid,
                 AAChartType.Bubble,
-                "packedbubble",
+                AAChartType.Packedbubble,
                 AAChartType.Arearange,
                 AAChartType.Areasplinerange,
                 AAChartType.Columnrange,

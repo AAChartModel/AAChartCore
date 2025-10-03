@@ -248,8 +248,8 @@ public class AAChartViewPluginLoader implements AAChartViewPluginLoaderProtocol 
      * Priority plugins that should be loaded first (standard version)
      */
     private static final List<String> priorityPlugins = Arrays.asList(
-        "AAFunnel.js",
-        "AAHighcharts-More.js"
+            AAChartPluginScriptType.FUNNEL.getFileName(),
+            AAChartPluginScriptType.HIGHCHARTS_MORE.getFileName()
     );
 
     /**

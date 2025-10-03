@@ -10,7 +10,9 @@ public interface AAChartType {
     String Scatter         = "scatter"; //A scatter plot uses cartesian coordinates to display values for two variables for a set of data.
     String Pie             = "pie"; //A pie chart is a circular graphic which is divided into slices to illustrate numerical proportion.
     String Bubble          = "bubble"; //A bubble series is a three dimensional series type where each point renders an X, Y and Z value. Each points is drawn as a bubble where the position along the X and Y axes mark the X and Y values, and the size of the bubble relates to the Z value.
+    String Packedbubble    = "packedbubble"; //A packed bubble series is a two dimensional series type, where each point renders a value in X, Y position. Each point is drawn as a bubble where the bubbles don't overlap with each other and the radius of the bubble relates to the value.
     String Pyramid         = "pyramid"; //A pyramid series is a special type of funnel, without neck and reversed by default.
+    String Columnpyramid   = "columnpyramid"; //Column pyramid series display one pyramid per value along an X axis. To display horizontal pyramids, set chart.inverted to true.
     String Funnel          = "funnel"; //Funnel charts are a type of chart often used to visualize stages in a sales project, where the top are the initial stages with the most clients. It requires that the modules/funnel.js file is loaded.
     String Columnrange     = "columnrange"; //The column range is a cartesian series type with higher and lower Y values along an X axis. To display horizontal bars, set chart.inverted to true.
     String Arearange       = "arearange"; //The area range series is a carteseian series with higher and lower values for each point along an X axis, where the area between the values is shaded.
