@@ -61,7 +61,9 @@ public final class AAChartModelListProvider {
 				SpecialChartComposer.configureFunnelChart(),
 				SpecialChartComposer.configureErrorbarChart(),
 				SpecialChartComposer.configureGaugeChart(),
-				SpecialChartComposer.configurePolygonChart()
+				SpecialChartComposer.configurePolygonChart(),
+				SpecialChartComposer.configurePackedbubbleChart(),
+				SpecialChartComposer.configureColumnpyramidChart()
 		};
 	}
 

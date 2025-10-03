@@ -177,6 +177,12 @@ public class SpecialChartComposer {
 
     }
 
+    public static AAChartModel configurePackedbubbleChart() {
+        return configureBubbleChart()
+                .chartType(AAChartType.Packedbubble);
+    }
+
+
     public static AAChartModel configureScatterChart() {
         AASeriesElement elementOne = new AASeriesElement()
                 .name("Female")
@@ -928,6 +934,13 @@ public class SpecialChartComposer {
                         })
                         ,
                 });
+    }
+
+    public static AAChartModel configureColumnpyramidChart() {
+        return configureStepLineChart()
+                .chartType(AAChartType.Columnpyramid)
+                .title("COLUMN PYRAMID CHART")
+                .subtitle("virtual data");
     }
 
     public static AAChartModel configureFunnelChart() {
