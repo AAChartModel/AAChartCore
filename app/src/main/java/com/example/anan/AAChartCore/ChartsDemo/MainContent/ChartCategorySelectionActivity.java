@@ -27,6 +27,7 @@ public class ChartCategorySelectionActivity extends AppCompatActivity {
         Button jsLegendBtn = findViewById(R.id.js_legend_button);
         Button jsOptionsFunctionBtn = findViewById(R.id.js_options_function_button);
         Button jsChartEventsBtn = findViewById(R.id.js_chart_events_button);
+        Button officialSamplesBtn = findViewById(R.id.official_samples_button);
 
         basicChartsBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -95,6 +96,13 @@ public class ChartCategorySelectionActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startChartListActivity(ChartCategories.JS_CHART_EVENTS);
+            }
+        });
+
+        officialSamplesBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startChartListActivity(ChartCategories.OFFICIAL_SAMPLES);
             }
         });
     }

@@ -7,6 +7,7 @@ import com.example.anan.AAChartCore.ChartsDemo.chartcomposer.JSFunctionForAAChar
 import com.example.anan.AAChartCore.ChartsDemo.chartcomposer.JSFunctionForAALegendComposer;
 import com.example.anan.AAChartCore.ChartsDemo.chartcomposer.JSFunctionForAAOptionsComposer;
 import com.example.anan.AAChartCore.ChartsDemo.chartcomposer.JSFunctionForAATooltipComposer;
+import com.example.anan.AAChartCore.ChartsDemo.ChartListProvider.OfficalSamplesChartProvider;
 import com.github.AAChartModel.AAChartCore.AAOptionsModel.AAOptions;
 
 public final class AAOptionsListProvider {
@@ -31,6 +32,8 @@ public final class AAOptionsListProvider {
 				return provideOptionsFunctionBundle();
 			case ChartCategories.JS_CHART_EVENTS:
 				return provideChartEventsOptionsBundle();
+			case ChartCategories.OFFICIAL_SAMPLES:
+				return provideOfficialSamplesBundle();
 			default:
 				return null;
 		}
@@ -200,6 +203,39 @@ public final class AAOptionsListProvider {
 				JSFunctionForAAChartEventsComposer2.disableHoverEventTooltipEffect()
 		};
 		return bundle(titles, options, "JS Events");
+	}
+
+	private static OptionsBundle provideOfficialSamplesBundle() {
+		String[] titles = new String[]{
+				"基础面积图",
+				"带有负值的面积图",
+				"堆积面积图",
+				"百分比堆积面积图",
+				"带有缺失点的面积图",
+				"翻转面积图",
+				"曲线面积图",
+				"区域范围图",
+				"区域范围图和折线图混合图",
+				"基础柱状图",
+				"堆积柱状图",
+				"人口金字塔图",
+				"基础条形图",
+				"带有负值的条形图",
+				"带有数据标签的堆积条形图",
+				"带有数据标签的堆积条形图2",
+				"百分比堆积条形图",
+				"带有旋转标签的条形图",
+				"嵌套条形图",
+				"条形范围图",
+				"基本饼状图",
+				"带有图例的基本饼状图",
+				"带有渐变色的基本饼状图",
+				"带有渐变色的基本饼状图2",
+				"带有单色的基本饼状图",
+				"自定义饼状图标题位置"
+		};
+		AAOptions[] options = OfficalSamplesChartProvider.officalChartSampleItems().toArray(new AAOptions[0]);
+		return bundle(titles, options, "Official Samples");
 	}
 
 	private static OptionsBundle bundle(String[] titles, AAOptions[] options, String fallbackPrefix) {

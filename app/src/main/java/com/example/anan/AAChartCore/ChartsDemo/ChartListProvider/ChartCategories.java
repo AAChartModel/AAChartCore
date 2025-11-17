@@ -13,6 +13,7 @@ public final class ChartCategories {
     public static final String JS_LEGEND = "js_legend";
     public static final String JS_OPTIONS = "js_options";
     public static final String JS_CHART_EVENTS = "js_chart_events";
+    public static final String OFFICIAL_SAMPLES = "official_samples";
 
     private ChartCategories() {
     }
