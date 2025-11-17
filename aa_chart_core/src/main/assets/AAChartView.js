@@ -2,13 +2,20 @@
 var aaGlobalChart;
 
 function loadTheHighChartView (sender,receivedWidth, receivedHeight) {
-    var aaOptions = JSON.parse(sender, function (key, value) {
-        if (   typeof(value) == 'string'
-            && value.indexOf('function') != -1) {
-            return eval(value)
-        }
-        return value;
-    });
+    var aaOptions;
+    try {
+        aaOptions = JSON.parse(sender, function (key, value) {
+            if (   typeof(value) == 'string'
+                && value.indexOf('function') != -1) {
+                return eval(value)
+            }
+            return value;
+        });
+    } catch (error) {
+        console.error('JSON parse error:', error);
+        console.error('Invalid JSON string:', sender);
+        throw error;
+    }
 
     var beforeDrawScript = aaOptions.beforeDrawChartJavaScript;
     var afterDrawScript = aaOptions.afterDrawChartJavaScript;
@@ -114,7 +121,14 @@ function configureChartTouchEvent(aaPlotOptions) {
 }
 
 function onlyRefreshTheChartDataWithSeries(receivedSeries, animation) {
-    var receivedSeriesArr = JSON.parse(receivedSeries);
+    var receivedSeriesArr;
+    try {
+        receivedSeriesArr = JSON.parse(receivedSeries);
+    } catch (error) {
+        console.error('JSON parse error in onlyRefreshTheChartDataWithSeries:', error);
+        console.error('Invalid JSON string:', receivedSeries);
+        return;
+    }
     var seriesArrLength = receivedSeriesArr.length;
     for (var i = 0; i < seriesArrLength; i++) {
         var receivedSeriesElementData = receivedSeriesArr[i].data;
@@ -129,12 +143,26 @@ function onlyRefreshTheChartDataWithSeries(receivedSeries, animation) {
 }
 
 function updateChart(optionsStr, redraw) {
-    var options = JSON.parse(optionsStr);
+    var options;
+    try {
+        options = JSON.parse(optionsStr);
+    } catch (error) {
+        console.error('JSON parse error in updateChart:', error);
+        console.error('Invalid JSON string:', optionsStr);
+        return;
+    }
     aaGlobalChart.update(options,redraw);
 }
 
 function addPointToChartSeries(elementIndex, optionsStr, redraw, shift, animation) {
-    var options = JSON.parse(optionsStr);
+    var options;
+    try {
+        options = JSON.parse(optionsStr);
+    } catch (error) {
+        console.error('JSON parse error in addPointToChartSeries:', error);
+        console.error('Invalid JSON string:', optionsStr);
+        return;
+    }
     var redrawBool = (redraw == "true") ? true:false;
     var shiftBool = (shift == "true") ? true:false;
     var animationBool = (animation == "true") ? true:false;
@@ -178,7 +206,14 @@ function hideTheSeriesElementContentWithIndex(elementIndex) {
 }
 
 function addElementToChartSeriesWithElement(elementStr) {
-    var seriesElement = JSON.parse(elementStr);
+    var seriesElement;
+    try {
+        seriesElement = JSON.parse(elementStr);
+    } catch (error) {
+        console.error('JSON parse error in addElementToChartSeriesWithElement:', error);
+        console.error('Invalid JSON string:', elementStr);
+        return;
+    }
     aaGlobalChart.addSeries(seriesElement);
 }
 
