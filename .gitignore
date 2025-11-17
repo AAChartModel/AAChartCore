@@ -33,3 +33,4 @@ google-services.json
 # Android Profiling
 *.hprof
 .idea/gradle.xml
+/.claude
