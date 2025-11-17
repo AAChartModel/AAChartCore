@@ -8,13 +8,18 @@ buildscript {
     }
 
     repositories {
+        // 阿里云镜像 - 优先使用
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/repository/central' }
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
+        maven { url 'https://maven.aliyun.com/repository/apache-snapshots' }
+
         mavenLocal()
-
-        google() // HIGHER PRIORITY
-
-        mavenCentral()
-
         maven { url 'https://jitpack.io' }
+
+        // Google仓库作为备用
+        google()
     }
 
     dependencies {
@@ -27,13 +32,18 @@ buildscript {
 
 allprojects {
     repositories {
+        // 阿里云镜像 - 优先使用
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/repository/central' }
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
+        maven { url 'https://maven.aliyun.com/repository/apache-snapshots' }
+
         mavenLocal()
+        maven { url 'https://jitpack.io' }
 
-        google() // HIGHER PRIORITY
-
-        mavenCentral()
-
-        maven { url 'https://www.jitpack.io' }
+        // Google仓库作为备用
+        google()
     }
 }
 
