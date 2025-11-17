@@ -9,8 +9,11 @@
 [![](https://img.shields.io/badge/support-Animation-yellow.svg)](https://github.com/AAChartModel/AAChartCore#supported-animation-type-for-now)</br>
 [![](https://jaywcjlove.github.io/sb/lang/chinese.svg)](https://github.com/AAChartModel/AAChartCore/blob/master/CHINESE-README.md)</br>
 [![](https://jaywcjlove.github.io/sb/lang/english.svg)](https://github.com/AAChartModel/AAChartCore)</br>
-[![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/AAChartModel/AAChartCore.svg)](http://isitmaintained.com/project/AAChartModel/AAChartCore "Average time to resolve an issue")</br>
-[![Percentage of issues still open](http://isitmaintained.com/badge/open/AAChartModel/AAChartCore.svg)](http://isitmaintained.com/project/AAChartModel/AAChartCore "Percentage of issues still open")
+[![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/AAChartModel/AAChartKit-Swift.svg)](http://isitmaintained.com/project/AAChartModel/AAChartKit-Swift "Average time to resolve an issue")
+[![Percentage of issues still open](http://isitmaintained.com/badge/open/AAChartModel/AAChartKit-Swift.svg)](http://isitmaintained.com/project/AAChartModel/AAChartKit-Swift "Percentage of issues still open")
+[![Weekly download statistics](https://jitpack.io/v/AAChartModel/AAChartCore/week.svg)](https://jitpack.io/#AAChartModel/AAChartCore)
+[![Monthly download statistics](https://jitpack.io/v/AAChartModel/AAChartCore/month.svg)](https://jitpack.io/#AAChartModel/AAChartCore)
+[![Release](https://jitpack.io/v/AAChartModel/AAChartCore.svg)](https://jitpack.io/#AAChartModel/AAChartCore)
 
 ## [ **English Document 🇬🇧** ](https://github.com/AAChartModel/AAChartCore)  |  [ **简体中文文档 🇨🇳** ](https://github.com/AAChartModel/AAChartCore/blob/master/CHINESE-README.md)
 
