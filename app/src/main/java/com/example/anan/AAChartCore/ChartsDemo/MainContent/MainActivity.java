@@ -15,7 +15,6 @@ import com.example.anan.AAChartCore.ChartsDemo.AdditionalContent.JSFunctionForAA
 import com.example.anan.AAChartCore.ChartsDemo.AdditionalContent.JSFunctionForAALegendActivity;
 import com.example.anan.AAChartCore.ChartsDemo.AdditionalContent.JSFunctionForAAOptionsActivity;
 import com.example.anan.AAChartCore.ChartsDemo.AdditionalContent.JSFunctionForAATooltipActivity;
-import com.example.anan.AAChartCore.ChartsDemo.AdditionalContent.DrawChartWithAAOptionsActivity;
 import com.example.anan.AAChartCore.ChartsDemo.AdditionalContent.EvaluateJSStringFunctionActivity;
 import com.example.anan.AAChartCore.ChartsDemo.AdditionalContent.HideOrShowChartSeriesActivity;
 import com.example.anan.AAChartCore.ChartsDemo.AdditionalContent.JSFunctionForAAChartEventsActivity;
@@ -28,43 +27,6 @@ public class MainActivity extends AppCompatActivity {
     private static final String  kChartTypeKey = "chartType";
 
     private String[][] chartTypeNameArr = {
-            /*使用AAOptions绘制图表*/
-            {
-                    "customLegendStyle",
-                    "drawChartWithOptionsOne",
-                    "AAPlotLinesForChart",
-                    "customAATooltipWithJSFunction",
-                    "customXAxisCrosshairStyle",
-                    "XAxisLabelsFontColorWithHTMLString",
-                    "XAxisLabelsFontColorAndFontSizeWithHTMLString",
-                    "_DataLabels_XAXis_YAxis_Legend_Style",
-                    "XAxisPlotBand",
-                    "configureTheMirrorColumnChart",
-                    "configureDoubleYAxisChartOptions",
-                    "configureTripleYAxesMixedChart",
-                    "customLineChartDataLabelsFormat",
-                    "configureDoubleYAxesAndColumnLineMixedChart",
-                    "configureDoubleYAxesMarketDepthChart",
-                    "customAreaChartTooltipStyleLikeHTMLTable",
-                    "simpleGaugeChart",
-                    "gaugeChartWithPlotBand",
-                    "doubleLayerHalfPieChart",
-                    "customAreasplineChartTooltipContentWithHeaderFormat---通过 tooltip 的 headerFormat 属性来自定义 曲线填充图的 tooltip",
-                    "customAreaChartTooltipStyleWithTotalValueHeader---浮动提示框 header 显示总值信息",
-                    "configureYAxisLabelsNumericSymbolsMagnitudeOfAerasplineChart---自定义 Y 轴的 Labels 国际单位符基数及国际单位符",
-                    "timeDataWithIrregularIntervalsChart---X 轴时间不连续的折线图",
-                    "logarithmicAxisLineChart---对数轴折线图📈",
-                    "logarithmicAxisScatterChart---对数轴散点图",
-                    "disableMixedChartInactiveAnimationEffect---禁用混合图表的 inactive 动画效果",
-                    "adjustBubbleChartMinAndMax---调整气泡图的 min 和 max 相关属性",
-                    "customLineChartDataLabelsFormat---自定义曲线图的 DataLabels 的 format 属性",
-                    "customLineChartDataLabelsFormat2---自定义曲线图的 DataLabels 的 format 属性(更简易方法)",
-                    "complicatedScatterChart---复杂的自定义散点图",
-                    "customColumnrangeChartGroupStyleAndSeriesStatesHoverColor---自定义柱状图 group 样式及 series 元素时的柱形颜色",
-                    "customTitleStyle---自定义标题样式",
-                    "configureBoxplotChartWithSpecialStyle---自定义盒须图样式",
-
-            },
             /*即时刷新📈📊图表数据*/
             {
                     "Column Chart---柱形图",
@@ -171,40 +133,6 @@ public class MainActivity extends AppCompatActivity {
     };
 
     String[][] chartTypeArr = {
-            {
-                    /*使用AAOptions绘制图表*/
-                    "customLegendStyle",
-                    "AAPlotBandsForChart",
-                    "AAPlotLinesForChart",
-                    "customAATooltipWithJSFunction",
-                    "customXAxisCrosshairStyle",
-                    "XAxisLabelsFontColorWithHTMLString",
-                    "XAxisLabelsFontColorAndFontSizeWithHTMLString",
-                    "_DataLabels_XAXis_YAxis_Legend_Style",
-                    "XAxisPlotBand",
-                    "configureTheMirrorColumnChart",
-                    "configureDoubleYAxisChartOptions",
-                    "configureTripleYAxesMixedChart",
-                    "customLineChartDataLabelsFormat",
-                    "configureDoubleYAxesAndColumnLineMixedChart",
-                    "configureDoubleYAxesMarketDepthChart",
-                    "customAreaChartTooltipStyleLikeHTMLTable",
-                    "simpleGaugeChart",
-                    "gaugeChartWithPlotBand",
-                    "doubleLayerHalfPieChart",
-                    "customAreasplineChartTooltipContentWithHeaderFormat",
-                    "customAreaChartTooltipStyleWithTotalValueHeader",
-                    "configureYAxisLabelsNumericSymbolsMagnitudeOfAerasplineChart",
-                    "timeDataWithIrregularIntervalsChart",
-                    "logarithmicAxisLineChart",
-                    "logarithmicAxisScatterChart",
-                    "disableMixedChartInactiveAnimationEffect",
-                    "adjustBubbleChartMinAndMax",
-                    "customLineChartDataLabelsFormat",
-                    "customLineChartDataLabelsFormat2",
-                    "complicatedScatterChart",
-                    "customColumnrangeChartGroupStyleAndSeriesStatesHoverColor",
-            },
             {
                     /*即时刷新📈📊图表数据*/
                     AAChartType.Column,
@@ -341,30 +269,32 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        // 确保返回时第二个 tab 被选中
         TabLayout tabLayout = findViewById(R.id.tab_layout);
-        TabLayout.Tab secondTab = tabLayout.getTabAt(1);
-        if (secondTab != null && !secondTab.isSelected()) {
-            secondTab.select();
+        TabLayout.Tab thirdTab = tabLayout.getTabAt(2);
+        if (thirdTab != null && !thirdTab.isSelected()) {
+            thirdTab.select();
         }
     }
 
     void setupTabLayout() {
         TabLayout tabLayout = findViewById(R.id.tab_layout);
-        // 默认选中第二个 tab (AAOptions)
-        TabLayout.Tab aaOptionsTab = tabLayout.getTabAt(1);
-        if (aaOptionsTab != null) {
-            aaOptionsTab.select();
+        TabLayout.Tab moreTab = tabLayout.getTabAt(2);
+        if (moreTab != null) {
+            moreTab.select();
         }
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-                if (tab.getPosition() == 0) {
-                    // 切换到 AAChartModel 页面
-                    Intent intent = new Intent(MainActivity.this, AAChartModelListActivity.class);
-                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
-                    startActivity(intent);
+                switch (tab.getPosition()) {
+                    case 0:
+                        startActivity(new Intent(MainActivity.this, AAChartModelListActivity.class)
+                                .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP));
+                        break;
+                    case 1:
+                        startActivity(new Intent(MainActivity.this, AAOptionsListActivity.class)
+                                .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP));
+                        break;
                 }
             }
 
@@ -373,18 +303,13 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onTabReselected(TabLayout.Tab tab) {
-                if (tab.getPosition() == 0) {
-                    Intent intent = new Intent(MainActivity.this, AAChartModelListActivity.class);
-                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
-                    startActivity(intent);
-                }
+                onTabSelected(tab);
             }
         });
     }
 
     void  setupExpandableListView() {
         String[] groupTitleArr = {
-                "Draw Chart With AAOptions | 通过Options绘图",
                 "Only Refresh data | 即时刷新图表数据",
                 "Chart Options Advanced Updating | 图表高级更新",
                 "JS Function For AAOptions | 通过带有 JS 函数的 Options 绘图",
@@ -407,37 +332,34 @@ public class MainActivity extends AppCompatActivity {
             public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
                String chartType = chartTypeArr[groupPosition][childPosition];
                 switch (groupPosition) {
-                    case 0: /*使用AAOptions绘制图表*/
-                        goToDrawChartWithAAOptionsActivity(chartType);
-                        break;
-                    case 1: /*即时刷新📈📊图表数据*/
+                    case 0: /*即时刷新📈📊图表数据*/
                         goToOnlyRefreshChartDataActivity(chartType);
                         break;
-                    case 2: /*图表高级更新功能*/
+                    case 1: /*图表高级更新功能*/
                         goToAdvancedUpdatingFeatureActivity(chartType,childPosition);
                         break;
-                    case 3: /*formatter js function*/
+                    case 2: /*formatter js function*/
                         goToCustomTooltipWithJSFunctionActivity(chartType);
                         break;
-                    case 4:  /*eval JS Function*/
+                    case 3:  /*eval JS Function*/
                         goToEvaluateJSStringFunctionActivity(chartType);
                         break;
-                    case 5:  /*Double Charts Linked Work*/
+                    case 4:  /*Double Charts Linked Work*/
                         goToDoubleChartsLinkedWorkActivity(chartType);
                         break;
-                    case 6: /*Scrollable Chart---可滚动图表*/
+                    case 5: /*Scrollable Chart---可滚动图表*/
                         gotoScrollableChartActivity(chartType,childPosition);
                         break;
-                    case 7: /*JJS Function For AAAxis Labels | 通过带有 JS 函数的自定义 AAAxis 的文字标签*/
+                    case 6: /*JJS Function For AAAxis Labels | 通过带有 JS 函数的自定义 AAAxis 的文字标签*/
                         gotoJSFunctionForAAAxisActivity(chartType,childPosition);
                         break;
-                    case 8: /*JS Function For AALegend | 通过带有 JS 函数的自定义 AALegend*/
+                    case 7: /*JS Function For AALegend | 通过带有 JS 函数的自定义 AALegend*/
                         gotoJSFunctionForAALegendActivity(chartType,childPosition);
                         break;
-                    case 9: /*JS Function For AAChartEvents---通过 JSFunction 自定义 AAChartEvents 的事件*/
+                    case 8: /*JS Function For AAChartEvents---通过 JSFunction 自定义 AAChartEvents 的事件*/
                         gotoJSFunctionForAAChartEventsActivity(chartType,childPosition);
                         break;
-                    case 10: /*JS Function For AAOptions---通过 JSFunction 自定义 AAOptions 内容*/
+                    case 9: /*JS Function For AAOptions---通过 JSFunction 自定义 AAOptions 内容*/
                         gotoJSFunctionForAAOptionsActivity(chartType,childPosition);
                         break;
 
@@ -449,12 +371,6 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-
-    void goToDrawChartWithAAOptionsActivity(String chartType) {
-        Intent intent = new Intent(this, DrawChartWithAAOptionsActivity.class);
-        intent.putExtra(kChartTypeKey, chartType);
-        startActivity(intent);
-    }
 
     void goToOnlyRefreshChartDataActivity(String chartType) {
         Intent intent = new Intent(this, OnlyRefreshChartDataActivity.class);

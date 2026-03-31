@@ -11,10 +11,12 @@
         android:id="@+id/tab_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/tabBackgroundColor"
         app:tabGravity="fill"
         app:tabMode="fixed"
-        app:tabSelectedTextColor="#FF4081"
-        app:tabTextColor="#757575">
+        app:tabSelectedTextColor="@color/tabSelectedTextColor"
+        app:tabTextColor="@color/tabTextColor"
+        app:tabIndicatorColor="@color/tabIndicatorColor">
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
@@ -26,12 +28,18 @@
             android:layout_height="wrap_content"
             android:text="AAOptions" />
 
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="More" />
+
     </com.google.android.material.tabs.TabLayout>
 
     <ExpandableListView
         android:id="@+id/exlist_lol"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:childDivider="#D5D5D5" />
+        android:background="@color/listBackground"
+        android:childDivider="@color/listChildDividerColor" />
 
 </LinearLayout>

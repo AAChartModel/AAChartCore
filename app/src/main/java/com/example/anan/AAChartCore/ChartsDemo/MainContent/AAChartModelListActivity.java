@@ -243,11 +243,15 @@ public class AAChartModelListActivity extends AppCompatActivity {
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-                if (tab.getPosition() == 1) {
-                    // 切换到 AAOptions 页面 (MainActivity)
-                    Intent intent = new Intent(AAChartModelListActivity.this, MainActivity.class);
-                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
-                    startActivity(intent);
+                switch (tab.getPosition()) {
+                    case 1:
+                        startActivity(new Intent(AAChartModelListActivity.this, AAOptionsListActivity.class)
+                                .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP));
+                        break;
+                    case 2:
+                        startActivity(new Intent(AAChartModelListActivity.this, MainActivity.class)
+                                .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP));
+                        break;
                 }
             }
 
@@ -256,11 +260,7 @@ public class AAChartModelListActivity extends AppCompatActivity {
 
             @Override
             public void onTabReselected(TabLayout.Tab tab) {
-                if (tab.getPosition() == 1) {
-                    Intent intent = new Intent(AAChartModelListActivity.this, MainActivity.class);
-                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
-                    startActivity(intent);
-                }
+                onTabSelected(tab);
             }
         });
     }

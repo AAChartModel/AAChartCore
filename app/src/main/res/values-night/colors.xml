@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#7986CB</color>
+    <color name="colorPrimaryDark">#1A1A2E</color>
+    <color name="colorAccent">#FF80AB</color>
+    <color name="white">#121212</color>
+    <color name="lightGray">#2D3748</color>
+    <color name="chartCardStart">#FF1E1E1E</color>
+    <color name="chartCardEnd">#FF2A2A3A</color>
+    <color name="chartMetaText">#A0AEC0</color>
+    <color name="chartDivider">#2D3748</color>
+    <color name="chartTitleColor">#E2E8F0</color>
+
+    <!-- List page colors (night) -->
+    <color name="listBackground">#121212</color>
+    <color name="listItemBackground">#1E1E1E</color>
+    <color name="listGroupTextColor">#E0E0E0</color>
+    <color name="listItemTextColor">#B0BEC5</color>
+    <color name="listChildDividerColor">#333333</color>
+    <color name="tabTextColor">#9E9E9E</color>
+    <color name="tabSelectedTextColor">#FF80AB</color>
+    <color name="tabBackgroundColor">#1E1E1E</color>
+    <color name="tabIndicatorColor">#FF80AB</color>
+
+</resources>
