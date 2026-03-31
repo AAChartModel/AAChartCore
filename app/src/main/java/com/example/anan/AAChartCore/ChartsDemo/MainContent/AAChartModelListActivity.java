@@ -249,6 +249,10 @@ public class AAChartModelListActivity extends AppCompatActivity {
                                 .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP));
                         break;
                     case 2:
+                        startActivity(new Intent(AAChartModelListActivity.this, AAOptionsWithJSListActivity.class)
+                                .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP));
+                        break;
+                    case 3:
                         startActivity(new Intent(AAChartModelListActivity.this, MainActivity.class)
                                 .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP));
                         break;

@@ -11,13 +11,8 @@ import com.google.android.material.tabs.TabLayout;
 import com.github.AAChartModel.AAChartCore.AAChartEnum.AAChartType;
 import com.example.anan.AAChartCore.ChartsDemo.AdditionalContent.AdvancedUpdatingFeatureActivity;
 import com.example.anan.AAChartCore.ChartsDemo.AdditionalContent.DoubleChartsLinkedWorkActivity;
-import com.example.anan.AAChartCore.ChartsDemo.AdditionalContent.JSFunctionForAAAxisActivity;
-import com.example.anan.AAChartCore.ChartsDemo.AdditionalContent.JSFunctionForAALegendActivity;
-import com.example.anan.AAChartCore.ChartsDemo.AdditionalContent.JSFunctionForAAOptionsActivity;
-import com.example.anan.AAChartCore.ChartsDemo.AdditionalContent.JSFunctionForAATooltipActivity;
 import com.example.anan.AAChartCore.ChartsDemo.AdditionalContent.EvaluateJSStringFunctionActivity;
 import com.example.anan.AAChartCore.ChartsDemo.AdditionalContent.HideOrShowChartSeriesActivity;
-import com.example.anan.AAChartCore.ChartsDemo.AdditionalContent.JSFunctionForAAChartEventsActivity;
 import com.example.anan.AAChartCore.ChartsDemo.AdditionalContent.OnlyRefreshChartDataActivity;
 import com.example.anan.AAChartCore.ChartsDemo.AdditionalContent.ScrollableChartActivity;
 import com.example.anan.AAChartCore.R;
@@ -48,29 +43,6 @@ public class MainActivity extends AppCompatActivity {
                     "Step Line Chart--- 直方折线图",
                     "Line Chart---折线图",
                     "Spline Chart---曲线图",},
-            /*自定义 formatter 函数*/
-            {
-                    "简单字符串拼接",
-                    "自定义不同单位后缀",
-                    "自定义多彩颜色文字",
-                    "值为0时,在tooltip中不显示",
-                    "自定义箱线图的浮动提示框头部内容",
-
-                    "自定义分组堆积柱状图tooltip内容",
-                    "customArearangeChartTooltip---自定义折线范围图的tooltip",
-                    "调整折线图的 X 轴左边距",
-                    "通过来自外部的数据源来自定义 tooltip (而非常规的来自图表的 series)",
-                    "customTooltipPostionerFunction---自定义浮动提示框 Positioner 函数",
-
-                    "fixedTooltipPositionByCustomPositionerFunction---通过 Positioner 函数来实现一个位置固定的提示框",
-                    "customPlotAreaOutsideComlicatedTooltipStyle---通过 Positioner 函数来实现绘图区外的复杂浮动提示框样式",
-                    "disableColumnChartUnselectEventEffectBySeriesPointEventClickFunction---通过 Series 的 Point 的选中事件函数来禁用条形图反选效果",
-                    "customAreasplineChartTooltipStyleByDivWithCSS---通过自定义 div 的 css 样式来自定义复杂效果的 tooltip 浮动提示框",
-                    "makePieChartShow0Data---使饼图显示为 0 的数据",
-
-                    "setCrosshairAndTooltipToTheDefaultPositionAfterLoadingChart---图表加载完成后, 在指定位置默认显示 crosshair 和 tooltip",
-                    "customColumnChartBorderStyleAndStatesHoverColor---自定义📊柱状图的 border 样式和手指或鼠标 hover 时的显示效果",
-            },
             /*执行由 JavaScript 字符串映射转换成的 js function 函数*/
             {
                     "eval JS function 1",
@@ -89,47 +61,6 @@ public class MainActivity extends AppCompatActivity {
                     "Step Line Chart--- 直方折线图",
                     "Line Chart---折线图",
                     "Spline Chart---曲线图",},
-
-            /*JS Function For AAAXis Labels*/
-            {
-                    "customYAxisLabels---自定义Y轴文字",
-                    "customYAxisLabels2---自定义Y轴文字2",
-                    "customAreaChartXAxisLabelsTextUnitSuffix1---自定义X轴文字单位后缀(通过 formatter 函数)",
-                    "customAreaChartXAxisLabelsTextUnitSuffix2---自定义X轴文字单位后缀(不通过 formatter 函数)",
-                    "configureTheAxesLabelsFormattersOfDoubleYAxesChart---配置双 Y 轴图表的 Y 轴文字标签的 Formatter 函数 示例 1",
-                    "configureTheAxesLabelsFormattersOfDoubleYAxesChart2---配置双 Y 轴图表的 Y 轴文字标签的 Formatter 函数 示例 2",
-                    "configureTheAxesLabelsFormattersOfDoubleYAxesChart3---配置双 Y 轴图表的 Y 轴文字标签的 Formatter 函数 示例 3",
-                    "customColumnChartXAxisLabelsTextByInterceptTheFirstFourCharacters---通过截取前四个字符来自定义 X 轴 labels",
-                    "customSpiderChartStyle---自定义蜘蛛🕷🕸图样式",
-                    "customizeEveryDataLabelSinglelyByDataLabelsFormatter---通过 DataLabels 的 formatter 函数来实现单个数据标签🏷自定义",
-                    "customXAxisLabelsBeImages---自定义 X轴 labels 为一组图片",
-            },
-            /*JS Function For AALegend*/
-            {
-                    "disableLegendClickEventForNormalChart---禁用常规图表 legend 点击事件",
-                    "disableLegendClickEventForPieChart---禁用饼图 legend 点击事件",
-                    "customLegendItemClickEvent---自定义图例 legend 的点击事件",
-            },
-            /*JS Function For AAChartEvents*/
-            {
-                    "setCrosshairAndTooltipToTheDefaultPositionAfterLoadingChart---图表加载完成后设置 crosshair 和 tooltip 到默认位置",
-                    "generalDrawingChart---普通绘图",
-                    "advancedTimeLineChart---高级时间轴绘图",
-                    "configureBlinkMarkerChart---配置闪烁特效的 marker 图表",
-                    "configureSpecialStyleMarkerOfSingleDataElementChartWithBlinkEffect---配置闪烁特效的 marker 图表2",
-                    "configureScatterChartWithBlinkEffect---配置闪烁特效的散点图",
-                    "automaticallyHideTooltipAfterItIsShown---在浮动提示框显示后自动隐藏",
-                    "dynamicHeightGridLineAreaChart---动态高度的网格线区域填充图",
-                    "customizeYAxisPlotLinesLabelBeSpecialStyle---自定义 Y 轴轴线上面的标签文字特殊样式",
-                    "configureECGStyleChart---配置心电图样式的图表",
-            },
-            /*JS Function For AAOptions*/
-            {
-                    "customDoubleXAxesChart---自定义双 X 轴图表",
-                    "disableColumnChartUnselectEventEffectBySeriesPointEventClickFunction---通过 Series 的 Point 的选中事件函数来禁用条形图反选效果",
-                    "customizeEveryDataLabelSinglelyByDataLabelsFormatter---通过 formatter 来自定义单个 dataLabels 元素",
-                    "configureColorfulDataLabelsForPieChart---为饼图配置多彩 dataLabels"
-            },
     };
 
     String[][] chartTypeArr = {
@@ -157,29 +88,6 @@ public class MainActivity extends AppCompatActivity {
                     AAChartType.Spline,
             },
             {
-                    /*自定义 formatter 函数*/
-                    "customAreaChartTooltipStyleWithSimpleFormatString",
-                    "customAreaChartTooltipStyleWithDifferentUnitSuffix",
-                    "customAreaChartTooltipStyleWithColorfulHtmlLabels",
-                    "customLineChartTooltipStyleWhenValueBeZeroDoNotShow",
-                    "customBoxplotTooltipContent",
-
-                    "customStackedAndGroupedColumnChartTooltip",
-                    "customArearangeChartTooltip",
-                    "customLineChartOriginalPointPositionByConfiguringXAxisFormatterAndTooltipFormatter",
-                    "customTooltipWhichDataSourceComeFromOutSideRatherThanSeries",
-                    "customTooltipPostionerFunction",
-
-                    "fixedTooltipPositionByCustomPositionerFunction",
-                    "customPlotAreaOutsideComlicatedTooltipStyle",
-                    "disableColumnChartUnselectEventEffectBySeriesPointEventClickFunction",
-                    "customAreasplineChartTooltipStyleByDivWithCSS",
-                    "makePieChartShow0Data",
-
-                    "customColumnChartXAxisLabelsTextByInterceptTheFirstFourCharacters",
-                    "customColumnChartBorderStyleAndStatesHoverColor",
-            },
-            {
                     /*执行由 JavaScript 字符串映射转换成的 js function 函数*/
                     "evalJSFunction1",
                     "evalJSFunction2",
@@ -200,51 +108,6 @@ public class MainActivity extends AppCompatActivity {
                     AAChartType.Line,
                     AAChartType.Spline,
             },
-
-            {
-                    /*JS Function For AAAXis Labels*/
-                    "customYAxisLabels",
-                    "customYAxisLabels2",
-                    "customAreaChartXAxisLabelsTextUnitSuffix1",
-                    "customAreaChartXAxisLabelsTextUnitSuffix2",
-                    "configureTheAxesLabelsFormattersOfDoubleYAxesChart",
-                    "configureTheAxesLabelsFormattersOfDoubleYAxesChart2",
-                    "configureTheAxesLabelsFormattersOfDoubleYAxesChart3",
-                    "customColumnChartXAxisLabelsTextByInterceptTheFirstFourCharacters",
-                    "customSpiderChartStyle",
-                    "customizeEveryDataLabelSinglelyByDataLabelsFormatter",
-                    "customXAxisLabelsBeImages",
-            },
-
-            {
-                    /*JS Function For AALegend*/
-                    "disableLegendClickEventForNormalChart",
-                    "disableLegendClickEventForPieChart",
-                    "customLegendItemClickEvent",
-            },
-
-            {
-                    /*JS Function For AAChartEvents*/
-                    "setCrosshairAndTooltipToTheDefaultPositionAfterLoadingChart",
-                    "generalDrawingChart",
-                    "advancedTimeLineChart",
-                    "configureBlinkMarkerChart",
-                    "configureSpecialStyleMarkerOfSingleDataElementChartWithBlinkEffect",
-                    "configureScatterChartWithBlinkEffect",
-                    "automaticallyHideTooltipAfterItIsShown",
-                    "dynamicHeightGridLineAreaChart",
-                    "customizeYAxisPlotLinesLabelBeSpecialStyle",
-                    "configureECGStyleChart",
-            },
-
-            {
-                    /*JS Function For AAOptions*/
-                    "customDoubleXAxesChart",
-                    "disableColumnChartUnselectEventEffectBySeriesPointEventClickFunction",
-                    "customizeEveryDataLabelSinglelyByDataLabelsFormatter",
-                    "configureColorfulDataLabelsForPieChart"
-            },
-
     };
 
     private String chartType;
@@ -270,7 +133,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         TabLayout tabLayout = findViewById(R.id.tab_layout);
-        TabLayout.Tab thirdTab = tabLayout.getTabAt(2);
+        TabLayout.Tab thirdTab = tabLayout.getTabAt(3);
         if (thirdTab != null && !thirdTab.isSelected()) {
             thirdTab.select();
         }
@@ -278,7 +141,7 @@ public class MainActivity extends AppCompatActivity {
 
     void setupTabLayout() {
         TabLayout tabLayout = findViewById(R.id.tab_layout);
-        TabLayout.Tab moreTab = tabLayout.getTabAt(2);
+        TabLayout.Tab moreTab = tabLayout.getTabAt(3);
         if (moreTab != null) {
             moreTab.select();
         }
@@ -293,6 +156,10 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case 1:
                         startActivity(new Intent(MainActivity.this, AAOptionsListActivity.class)
+                                .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP));
+                        break;
+                    case 2:
+                        startActivity(new Intent(MainActivity.this, AAOptionsWithJSListActivity.class)
                                 .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP));
                         break;
                 }
@@ -312,14 +179,9 @@ public class MainActivity extends AppCompatActivity {
         String[] groupTitleArr = {
                 "Only Refresh data | 即时刷新图表数据",
                 "Chart Options Advanced Updating | 图表高级更新",
-                "JS Function For AAOptions | 通过带有 JS 函数的 Options 绘图",
                 "Evaluate JS String Function | 执行js函数",
                 "Double Charts Linked Work | 双表联动",
                 "Scrollable chart | 可滚动的图表",
-                "JS Function For AAAxis Labels | 通过带有 JS 函数的自定义 AAAxis 的文字标签",
-                "JS Function For AALegend | 通过带有 JS 函数的自定义 AALegend",
-                "JS Function For AAChartEvents---通过 JSFunction 自定义 AAChartEvents 的事件",
-                "JS Function For AAOptions---通过 JSFunction 自定义 AAOptions 内容",
         };
 
         ExpandableListView listView = (ExpandableListView) findViewById(R.id.exlist_lol);
@@ -338,31 +200,15 @@ public class MainActivity extends AppCompatActivity {
                     case 1: /*图表高级更新功能*/
                         goToAdvancedUpdatingFeatureActivity(chartType,childPosition);
                         break;
-                    case 2: /*formatter js function*/
-                        goToCustomTooltipWithJSFunctionActivity(chartType);
-                        break;
-                    case 3:  /*eval JS Function*/
+                    case 2:  /*eval JS Function*/
                         goToEvaluateJSStringFunctionActivity(chartType);
                         break;
-                    case 4:  /*Double Charts Linked Work*/
+                    case 3:  /*Double Charts Linked Work*/
                         goToDoubleChartsLinkedWorkActivity(chartType);
                         break;
-                    case 5: /*Scrollable Chart---可滚动图表*/
+                    case 4: /*Scrollable Chart---可滚动图表*/
                         gotoScrollableChartActivity(chartType,childPosition);
                         break;
-                    case 6: /*JJS Function For AAAxis Labels | 通过带有 JS 函数的自定义 AAAxis 的文字标签*/
-                        gotoJSFunctionForAAAxisActivity(chartType,childPosition);
-                        break;
-                    case 7: /*JS Function For AALegend | 通过带有 JS 函数的自定义 AALegend*/
-                        gotoJSFunctionForAALegendActivity(chartType,childPosition);
-                        break;
-                    case 8: /*JS Function For AAChartEvents---通过 JSFunction 自定义 AAChartEvents 的事件*/
-                        gotoJSFunctionForAAChartEventsActivity(chartType,childPosition);
-                        break;
-                    case 9: /*JS Function For AAOptions---通过 JSFunction 自定义 AAOptions 内容*/
-                        gotoJSFunctionForAAOptionsActivity(chartType,childPosition);
-                        break;
-
                 }
 
                 Toast.makeText(MainActivity.this, "你点击了：" + chartTypeNameArr[groupPosition][childPosition], Toast.LENGTH_SHORT).show();
@@ -382,12 +228,6 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, AdvancedUpdatingFeatureActivity.class);
         intent.putExtra(kChartTypeKey, chartType);
         intent.putExtra("position",position);
-        startActivity(intent);
-    }
-
-    void goToCustomTooltipWithJSFunctionActivity(String chartType) {
-        Intent intent = new Intent(this, JSFunctionForAATooltipActivity.class);
-        intent.putExtra(kChartTypeKey, chartType);
         startActivity(intent);
     }
 
@@ -411,34 +251,6 @@ public class MainActivity extends AppCompatActivity {
 
     void gotoScrollableChartActivity(String chartType, int position) {
         Intent intent = new Intent(this, ScrollableChartActivity.class);
-        intent.putExtra(kChartTypeKey, chartType);
-        intent.putExtra("position",position);
-        startActivity(intent);
-    }
-
-    void gotoJSFunctionForAAAxisActivity(String chartType, int position) {
-        Intent intent = new Intent(this, JSFunctionForAAAxisActivity.class);
-        intent.putExtra(kChartTypeKey, chartType);
-        intent.putExtra("position",position);
-        startActivity(intent);
-    }
-
-    void gotoJSFunctionForAALegendActivity(String chartType, int position) {
-        Intent intent = new Intent(this, JSFunctionForAALegendActivity.class);
-        intent.putExtra(kChartTypeKey, chartType);
-        intent.putExtra("position",position);
-        startActivity(intent);
-    }
-
-    void gotoJSFunctionForAAChartEventsActivity(String chartType, int position) {
-        Intent intent = new Intent(this, JSFunctionForAAChartEventsActivity.class);
-        intent.putExtra(kChartTypeKey, chartType);
-        intent.putExtra("position",position);
-        startActivity(intent);
-    }
-
-    void gotoJSFunctionForAAOptionsActivity(String chartType, int position) {
-        Intent intent = new Intent(this, JSFunctionForAAOptionsActivity.class);
         intent.putExtra(kChartTypeKey, chartType);
         intent.putExtra("position",position);
         startActivity(intent);

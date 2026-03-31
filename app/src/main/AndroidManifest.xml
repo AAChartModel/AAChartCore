@@ -45,6 +45,7 @@
         <activity android:name=".ChartsDemo.MainContent.ChartCategorySelectionActivity" />
         <activity android:name=".ChartsDemo.MainContent.AAChartModelListActivity" />
         <activity android:name=".ChartsDemo.MainContent.AAOptionsListActivity" />
+        <activity android:name=".ChartsDemo.MainContent.AAOptionsWithJSListActivity" />
     </application>
 
 </manifest>
