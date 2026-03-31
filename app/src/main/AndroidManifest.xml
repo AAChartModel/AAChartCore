@@ -43,6 +43,7 @@
         <activity android:name=".ChartsDemo.MainContent.MixedChartActivity" />
         <activity android:name=".ChartsDemo.MainContent.ChartListActivity" />
         <activity android:name=".ChartsDemo.MainContent.ChartCategorySelectionActivity" />
+        <activity android:name=".ChartsDemo.MainContent.AAChartModelListActivity" />
     </application>
 
 </manifest>
