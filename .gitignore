@@ -34,3 +34,4 @@ google-services.json
 *.hprof
 .idea/gradle.xml
 /.claude
+/.idea
