@@ -3,7 +3,7 @@
 # AAChartCore
  
 [![Support](https://img.shields.io/badge/Support-Android-brightgreen.svg)](https://github.com/AAChartModel/AAChartCore) </br>
-[![](https://img.shields.io/badge/license-MIT-brightgreen.svg)](https://github.com/AAChartModel/AAChartCore/blob/master/LICENSE)</br>
+[![](https://img.shields.io/badge/license-Apache--2.0-brightgreen.svg)](https://github.com/AAChartModel/AAChartCore/blob/master/LICENSE)</br>
 [![](https://img.shields.io/badge/language-Kotlin-green.svg)](https://github.com/AAChartModel/AAChartCore) </br>
 [![](https://img.shields.io/badge/support-Java-orange.svg)](https://github.com/AAChartModel/AAChartCore)</br>
 [![](https://img.shields.io/badge/support-Animation-yellow.svg)](https://github.com/AAChartModel/AAChartCore#supported-animation-type-for-now)</br>
